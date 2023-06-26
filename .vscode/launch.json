@@ -1,0 +1,60 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+
+		{
+			"name": "Select HomeyDev2023",
+			"type": "node",
+			"request": "launch",
+			"cwd": "${workspaceFolder}",
+			"runtimeExecutable": "homey",
+			"args": ["select", "-n", "HomeyDev2023"]
+		},
+		{
+			"name": "Launch app on HomeyDev2023",
+			"type": "node",
+			"request": "launch",
+			"cwd": "${workspaceFolder}",
+			"runtimeExecutable": "homey",
+			"args": ["app", "run", "--remote"],
+			"outputCapture": "std",
+			"serverReadyAction": {
+				"pattern": "Debugger listening on",
+				"action": "startDebugging",
+				"name": "Attach to HomeyDev2023"
+			}
+		},
+		{
+			"name": "Attach to HomeyDev2023",
+			"type": "node",
+			"request": "attach",
+			"address": "10.0.0.68",
+			"port": 9229,
+			"localRoot": "${workspaceFolder}",
+			"remoteRoot": "/app/"
+		},
+    {
+			"name": "Launch app on Docker",
+			"type": "node",
+			"request": "launch",
+			"cwd": "${workspaceFolder}",
+			"runtimeExecutable": "homey",
+			"args": ["app", "run"],
+			"outputCapture": "std",
+			"serverReadyAction": {
+				"pattern": "Debugger listening on",
+				"action": "startDebugging",
+				"name": "Attach to Docker"
+			}
+		},
+    {
+			"name": "Attach to Docker",
+			"type": "node",
+			"request": "attach",
+			"address": "0.0.0.0",
+			"port": 9229,
+			"localRoot": "${workspaceFolder}",
+			"remoteRoot": "/app/"
+		}
+	]
+}

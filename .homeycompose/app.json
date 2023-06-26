@@ -1,0 +1,57 @@
+{
+  "id": "com.gruijter.zigbee2mqtt",
+  "version": "1.0.0",
+  "compatibility": ">=8.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Zigbee2MQTT"
+  },
+  "description": {
+    "en": "Use Zigbee devices via MQTT"
+  },
+  "category": [
+    "tools"
+  ],
+  "tags": {
+    "en": [
+      "Zigbee",
+      "MQTT"
+    ]
+  },
+  "brandColor": "#e8861e",
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Robin de Gruijter",
+    "email": "gruijter@hotmail.com"
+  },
+  "copyright": "Robin de Gruijter (gruijter@hotmail.com)",
+  "license": "GPL-3.0-or-later",
+  "contributors": {
+    "developers": [
+      {
+        "name": "Robin de Gruijter",
+        "email": "gruijter@hotmail.com"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "gruijter"
+      }
+    }
+  },
+  "homeyCommunityTopicId": 83214,
+  "bugs": {
+    "url": "https://github.com/gruijter/com.gruijter.zigbee2mqtt/issues",
+    "source": "https://github.com/gruijter/com.gruijter.zigbee2mqtt"
+  }
+}

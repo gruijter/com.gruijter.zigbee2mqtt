@@ -1,0 +1,71 @@
+<script>
+	Homey.setTitle('Zigbee2MQTT');
+	Homey.setSubtitle('MQTT broker settings');
+	// fillSettings();
+	// console.dir(Homey, { depth: 0 });
+	Homey.hideLoadingOverlay();
+
+	// function fillSettings() {
+		Homey.managerSettings.get...........
+		Homey.get('settings', async (err, settings) => {
+			// if (err) return Homey.alert(err);
+			if (!settings || !settings.host) return;
+			document.getElementById("host").innerHTML = settings.host;
+			document.getElementById('port').innerHTML = settings.port;
+			document.getElementById('tls').checked = settings.tls;
+			document.getElementById('username').innerHTML = settings.username;
+			document.getElementById('password').innerHTML = settings.password;
+			document.getElementById('topic').innerHTML = settings.topic;
+			Homey.hideLoadingOverlay();
+		});
+	}
+
+	async function save() {
+		try {
+			Homey.showLoadingOverlay();
+			const settings = {
+				host: document.getElementById('host').value,
+				port: Number(document.getElementById('port').value) || 1883,
+				tls: document.getElementById('tls').checked,
+				username: document.getElementById('username').value,
+				password: document.getElementById('password').value,
+				topic: document.getElementById('topic').value,
+			};
+			const result = await Homey.emit('mqtt', settings);
+			Homey.hideLoadingOverlay();
+			// Homey.alert(result, 'info');
+		} catch (error) { 
+			Homey.hideLoadingOverlay();
+			Homey.alert(error, 'error');
+		}
+	}
+</script>
+
+<div class="homey-form-group">
+	<label class="homey-form-label" for="host">IP address or URL</label>
+	<input class="homey-form-input" id="host" type="text" placeholder="e.g. 10.0.0.100" value="" />
+</div>
+<div class="homey-form-group">
+	<label class="homey-form-label" for="port">Port</label>
+	<input class="homey-form-input" id="port" type="number" placeholder="1883" value=1883 />
+</div>
+
+<label class="homey-form-checkbox">
+	<input class="homey-form-checkbox-input" type="checkbox" id="tls" name="tls" />
+	<span class="homey-form-checkbox-checkmark"></span>
+	<span class="homey-form-checkbox-text">Secure TLS</span>
+</label>
+
+<div class="homey-form-group">
+	<label class="homey-form-label" for="username">Username</label>
+	<input class="homey-form-input" id="username" type="text" placeholder="optional" value="" />
+</div>
+<div class="homey-form-group">
+	<label class="homey-form-label" for="password">Password</label>
+	<input class="homey-form-input" id="password" type="password" value="" />
+</div>
+<div class="homey-form-group">
+	<label class="homey-form-label" for="topic">Zigbee2MQTT TOP Topic</label>
+	<input class="homey-form-input" id="topic" type="text" placeholder="defaults to zigbee2mqtt" value="" />
+</div>
+<button class="homey-button-primary-full" onclick="save()">SAVE</button>

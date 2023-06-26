@@ -1,0 +1,278 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.gruijter.zigbee2mqtt",
+  "version": "1.0.0",
+  "compatibility": ">=8.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Zigbee2MQTT"
+  },
+  "description": {
+    "en": "Use Zigbee devices via MQTT"
+  },
+  "category": [
+    "tools"
+  ],
+  "tags": {
+    "en": [
+      "Zigbee",
+      "MQTT"
+    ]
+  },
+  "brandColor": "#e8861e",
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Robin de Gruijter",
+    "email": "gruijter@hotmail.com"
+  },
+  "copyright": "Robin de Gruijter (gruijter@hotmail.com)",
+  "license": "GPL-3.0-or-later",
+  "contributors": {
+    "developers": [
+      {
+        "name": "Robin de Gruijter",
+        "email": "gruijter@hotmail.com"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "gruijter"
+      }
+    }
+  },
+  "homeyCommunityTopicId": 83214,
+  "bugs": {
+    "url": "https://github.com/gruijter/com.gruijter.zigbee2mqtt/issues",
+    "source": "https://github.com/gruijter/com.gruijter.zigbee2mqtt"
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Bridge"
+      },
+      "class": "other",
+      "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/bridge/assets/images/small.jpg",
+        "large": "/drivers/bridge/assets/images/large.jpg",
+        "xlarge": "/drivers/bridge/assets/images/xlarge.jpg"
+      },
+      "pair": [
+        {
+          "id": "mqtt_settings"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "bridge",
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Bridge information"
+          },
+          "children": [
+            {
+              "id": "uid",
+              "type": "label",
+              "label": {
+                "en": "IEEE Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "version",
+              "type": "label",
+              "label": {
+                "en": "Version"
+              },
+              "value": ""
+            },
+            {
+              "id": "zigbee_channel",
+              "type": "label",
+              "label": {
+                "en": "Channel"
+              },
+              "value": ""
+            },
+            {
+              "id": "pan_id",
+              "type": "label",
+              "label": {
+                "en": "PAN ID"
+              },
+              "value": ""
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "MQTT settings"
+          },
+          "children": [
+            {
+              "id": "host",
+              "type": "text",
+              "label": {
+                "en": "Host"
+              },
+              "value": ""
+            },
+            {
+              "id": "port",
+              "type": "number",
+              "label": {
+                "en": "Port"
+              },
+              "value": 1883
+            },
+            {
+              "id": "tls",
+              "type": "checkbox",
+              "label": {
+                "en": "Use TLS"
+              },
+              "value": false
+            },
+            {
+              "id": "username",
+              "type": "text",
+              "label": {
+                "en": "Username"
+              },
+              "value": ""
+            },
+            {
+              "id": "password",
+              "type": "password",
+              "label": {
+                "en": "Password"
+              },
+              "value": ""
+            },
+            {
+              "id": "topic",
+              "type": "text",
+              "label": {
+                "en": "Base topic",
+                "nl": "Base topic"
+              },
+              "hint": {
+                "en": "Default is zigbee2mqtt"
+              },
+              "value": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "Device"
+      },
+      "class": "other",
+      "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/device/assets/images/small.jpg",
+        "large": "/drivers/device/assets/images/large.jpg",
+        "xlarge": "/drivers/device/assets/images/xlarge.jpg"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "device",
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device information"
+          },
+          "children": [
+            {
+              "id": "friendly_name",
+              "type": "label",
+              "label": {
+                "en": "Zigbee2mqtt Name"
+              },
+              "value": ""
+            },
+            {
+              "id": "uid",
+              "type": "label",
+              "label": {
+                "en": "Device IEEE Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "bridge_uid",
+              "type": "label",
+              "label": {
+                "en": "Bridge IEEE Address"
+              },
+              "value": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "measure_linkquality": {
+      "type": "number",
+      "title": {
+        "en": "Link quality"
+      },
+      "units": {
+        "en": "lqi"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "icon": "./assets/link_quality.svg"
+    }
+  }
+}

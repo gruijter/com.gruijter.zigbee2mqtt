@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Link quality"
+  },
+  "units": {
+    "en": "lqi"
+  },
+  "getable": true,
+  "setable": false,
+  "insights": true,
+  "icon": "./assets/link_quality.svg"
+}

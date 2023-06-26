@@ -1,0 +1,34 @@
+[
+	{
+		"type": "group",
+		"label": {
+				"en": "Device information"
+		},
+		"children": [
+			{
+				"id": "friendly_name",
+				"type": "label",
+				"label": {
+						"en": "Zigbee2mqtt Name"
+				},
+				"value": ""
+			},
+			{
+				"id": "uid",
+				"type": "label",
+				"label": {
+						"en": "Device IEEE Address"
+				},
+				"value": ""
+			},
+			{
+				"id": "bridge_uid",
+				"type": "label",
+				"label": {
+						"en": "Bridge IEEE Address"
+				},
+				"value": ""
+			}
+		]
+	}
+]

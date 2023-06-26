@@ -1,0 +1,102 @@
+[
+	{
+		"type": "group",
+		"label": {
+				"en": "Bridge information"
+		},
+		"children": [
+			{
+				"id": "uid",
+				"type": "label",
+				"label": {
+						"en": "IEEE Address"
+				},
+				"value": ""
+			},
+			{
+				"id": "version",
+				"type": "label",
+				"label": {
+						"en": "Version"
+				},
+				"value": ""
+			},
+			{
+				"id": "zigbee_channel",
+				"type": "label",
+				"label": {
+						"en": "Channel"
+				},
+				"value": ""
+			},
+			{
+				"id": "pan_id",
+				"type": "label",
+				"label": {
+						"en": "PAN ID"
+				},
+				"value": ""
+			}
+		]
+	},
+	{
+		"type": "group",
+		"label": {
+				"en": "MQTT settings"
+		},
+		"children": [
+			{
+				"id": "host",
+				"type": "text",
+				"label": {
+						"en": "Host"
+				},
+				"value": ""
+			},
+			{
+				"id": "port",
+				"type": "number",
+				"label": {
+						"en": "Port"
+				},
+				"value": 1883
+			},
+			{
+				"id": "tls",
+				"type": "checkbox",
+				"label": {
+						"en": "Use TLS"
+				},
+				"value": false
+			},
+			{
+				"id": "username",
+				"type": "text",
+				"label": {
+						"en": "Username"
+				},
+				"value": ""
+			},
+			{
+				"id": "password",
+				"type": "password",
+				"label": {
+						"en": "Password"
+				},
+				"value": ""
+			},
+			{
+				"id": "topic",
+				"type": "text",
+				"label": {
+						"en": "Base topic",
+						"nl": "Base topic"
+				},
+				"hint" : {
+					"en": "Default is zigbee2mqtt"
+				},
+				"value": ""
+			}
+		]
+	}
+]
