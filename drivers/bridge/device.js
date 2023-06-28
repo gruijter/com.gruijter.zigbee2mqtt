@@ -43,6 +43,7 @@ class MyDevice extends Device {
 
 	async onUninit() {
 		this.log('Device unInit', this.getName());
+		this.homey.removeAllListeners('devicelistupdate');
 		if (this.client) await this.client.end();
 		await setTimeoutPromise(2000);	// wait 2 secs
 	}
@@ -122,6 +123,7 @@ class MyDevice extends Device {
 						console.log('device list was updated');
 						const devices = info.filter((device) => device.type === 'EndDevice' || device.type === 'Router');
 						this.devices = devices;
+						this.homey.emit('devicelistupdate', true);
 					}
 
 					// check for namechange

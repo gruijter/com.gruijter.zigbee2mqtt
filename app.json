@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "compatibility": ">=8.0.0",
   "sdk": 3,
   "platforms": [
@@ -206,9 +206,9 @@
         "lan"
       ],
       "images": {
-        "small": "/drivers/device/assets/images/small.jpg",
-        "large": "/drivers/device/assets/images/large.jpg",
-        "xlarge": "/drivers/device/assets/images/xlarge.jpg"
+        "small": "/drivers/device/assets/images/small.png",
+        "large": "/drivers/device/assets/images/large.png",
+        "xlarge": "/drivers/device/assets/images/xlarge.png"
       },
       "pair": [
         {

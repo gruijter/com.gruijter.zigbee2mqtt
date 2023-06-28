@@ -12,9 +12,9 @@
 		"lan"
 	],
 	"images": {
-		"small": "{{driverAssetsPath}}/images/small.jpg",
-		"large": "{{driverAssetsPath}}/images/large.jpg",
-		"xlarge": "{{driverAssetsPath}}/images/xlarge.jpg"
+		"small": "{{driverAssetsPath}}/images/small.png",
+		"large": "{{driverAssetsPath}}/images/large.png",
+		"xlarge": "{{driverAssetsPath}}/images/xlarge.png"
 	},
 	"pair": [
 		{

@@ -32,12 +32,11 @@ class MyApp extends Homey.App {
 		this.log('app onUninit');
 	}
 
-	registerFlowListeners() {
-		// action cards
-		const sendCommand = this.homey.flow.getActionCard('send_command');
-		sendCommand.registerRunListener((args) => args.device.sendCommand(args.command, 'flow'));
-
-	}
+	// registerFlowListeners() {
+	// 	// action cards
+	// 	const sendCommand = this.homey.flow.getActionCard('send_command');
+	// 	sendCommand.registerRunListener((args) => args.device.sendCommand(args.command, 'flow'));
+	// }
 }
 
 module.exports = MyApp;
