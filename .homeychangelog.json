@@ -1,4 +1,10 @@
 {
+  "1.0.3": {
+    "en": "Added many device capabilities. Bridge available/unavailable detection added."
+  },
+  "1.0.2": {
+    "en": "Fix adding bridge."
+  },
   "1.0.1": {
     "en": "Code updates and stability fixes."
   },

@@ -171,7 +171,7 @@ class MyDevice extends Device {
 					const info = JSON.parse(message);
 					// Map the incoming value to a capability or setting
 					if (topic.includes(this.deviceTopic)) {
-						console.log(`${this.getName()} update:`, info);
+						// console.log(`${this.getName()} update:`, info);
 						// this.setAvailable();
 						const { capabilityMap } = this.driver.ds;
 						Object.entries(info).forEach((entry) => {

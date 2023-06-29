@@ -64,8 +64,8 @@ class MyDriver extends Driver {
 			bridgeSettings.topic = baseTopic;
 			bridgeSettings.version = discovered.version;
 			bridgeSettings.uid = discovered.coordinator.ieee_address;
-			bridgeSettings.zigbee_channel = discovered.network.channel;
-			bridgeSettings.pan_id = discovered.network.pan_id;
+			bridgeSettings.zigbee_channel = discovered.network.channel.toString();
+			bridgeSettings.pan_id = discovered.network.pan_id.toString();
 
 			const device = {
 				name: `Bridge_${discovered.coordinator.ieee_address}`,

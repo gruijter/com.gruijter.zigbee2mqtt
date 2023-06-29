@@ -110,17 +110,17 @@ class MyDevice extends Device {
 					if (topic.includes(`${this.bridgeTopic}/state`)) {
 						if (info === 'online' || info.state === 'online') {
 							this.log('Zigbee2MQTT bridge is connected');
-							// this.setAvailable();
+							this.setAvailable();
 						}
 						if (info === 'offline' || info.state === 'offline') {
 							this.error('Zigbee2MQTT bridge disconnected');
-							// this.setUnavailable('Zigbee2MQTT bridge disconnected');
+							this.setUnavailable('Zigbee2MQTT bridge is disconnected');
 						}
 					}
 
 					// get device list
 					if (topic.includes(`${this.bridgeTopic}/devices`)) {
-						console.log('device list was updated');
+						// console.log('device list was updated');
 						const devices = info.filter((device) => device.type === 'EndDevice' || device.type === 'Router');
 						this.devices = devices;
 						this.homey.emit('devicelistupdate', true);
