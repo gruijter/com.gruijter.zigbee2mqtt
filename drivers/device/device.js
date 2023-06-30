@@ -239,7 +239,7 @@ class MyDevice extends Device {
 			this.registerCapabilityListener('onoff', (onoff) => {
 				let state = 'OFF';
 				if (onoff) state = 'ON';
-				this.setCommand({ state }, 'app');
+				this.setCommand({ state }, 'app').catch(this.error);
 			});
 
 			// this.registerMultipleCapabilityListener(['charge_target_slow', 'charge_target_fast'], async (values) => {

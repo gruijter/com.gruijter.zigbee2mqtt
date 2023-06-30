@@ -1,4 +1,7 @@
 {
+  "1.0.4": {
+    "en": "Fix app crash on setCommand."
+  },
   "1.0.3": {
     "en": "Added many device capabilities. Bridge available/unavailable detection added."
   },
