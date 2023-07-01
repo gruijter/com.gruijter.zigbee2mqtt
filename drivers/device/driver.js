@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 /*
 Copyright 2023, Robin de Gruijter (gruijter@hotmail.com)
 
@@ -21,7 +22,7 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 const { Driver } = require('homey');
 // const util = require('util');
-const { capabilityMap, iconMap } = require('../../capabilitymap');
+const { capabilityMap, classIconMap } = require('../../capabilitymap');
 
 // const setTimeoutPromise = util.promisify(setTimeout);
 
@@ -67,13 +68,17 @@ const mapProperty = (zb2mqttDevice) => {
 	return { caps, capUnits };
 };
 
-const mapIcon = (zb2mqttDevice) => {
+const mapClassIcon = (zb2mqttDevice) => {
 	const d = zb2mqttDevice.definition.description.toLowerCase();
 	let icon = 'icon.svg';
-	Object.entries(iconMap).reverse().forEach((pair) => {
-		if (d.includes(pair[0].toLowerCase())) [, icon] = pair;
+	let homeyClass = 'other';
+	Object.entries(classIconMap).reverse().forEach((pair) => {
+		if (d.includes(pair[0].toLowerCase())) {
+			icon = pair[1][1];
+			homeyClass = pair[1][0];
+		}
 	});
-	return icon;
+	return { homeyClass, icon };
 };
 
 class MyDriver extends Driver {
@@ -108,9 +113,14 @@ class MyDriver extends Driver {
 							friendly_name: dev.friendly_name,
 							bridge_uid: bridge.getData().id,
 						};
+						if (dev.definition) {
+							settings.model = dev.definition.model;
+							settings.description = dev.definition.description;
+						}
 						// map capabilities and device icons to Homey
 						const { caps, capUnits } = mapProperty(dev);
-						const icon = mapIcon(dev);
+						const { homeyClass, icon } = mapClassIcon(dev);
+						settings.homeyclass = homeyClass;
 						const device = {
 							name: dev.friendly_name,
 							data: {

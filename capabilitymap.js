@@ -111,14 +111,16 @@ const capabilityMap = {
 	// : (val) => ['speaker_shuffle', val],
 };
 
-// map Zigbee2MQTT device description to Homey icon. First hit is chosen. '(part of) description': 'iconName'.
-const iconMap = {
-	'door sensor': 'contact.svg',
-	plug: 'plug.svg',
+// map Zigbee2MQTT device description to Homey class and icon. First hit is chosen. '(part of) description': ['homeyClass', 'iconName']
+const classIconMap = {
+	'door sensor': ['sensor', 'contact.svg'],
+	plug: ['socket', 'socket.svg'],
+	bulb: ['light', 'light.svg'],
+	led: ['light', 'light.svg'],
 };
 
 module.exports = {
-	capabilityMap, iconMap,
+	capabilityMap, classIconMap,
 };
 
 /*

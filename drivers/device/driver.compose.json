@@ -2,7 +2,7 @@
 	"name": {
 		"en": "Device"
 	},
-	"class": "other",
+	"class": "socket",
 	"capabilities": [
 	],
 	"platforms": [

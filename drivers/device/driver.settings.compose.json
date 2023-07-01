@@ -14,6 +14,14 @@
 				"value": ""
 			},
 			{
+				"id": "bridge_uid",
+				"type": "label",
+				"label": {
+						"en": "Bridge IEEE Address"
+				},
+				"value": ""
+			},
+			{
 				"id": "uid",
 				"type": "label",
 				"label": {
@@ -22,12 +30,89 @@
 				"value": ""
 			},
 			{
-				"id": "bridge_uid",
+				"id": "model",
 				"type": "label",
 				"label": {
-						"en": "Bridge IEEE Address"
+						"en": "Model"
 				},
 				"value": ""
+			},
+			{
+				"id": "description",
+				"type": "label",
+				"label": {
+						"en": "Description"
+				},
+				"value": ""
+			}
+		]
+	},
+	{
+		"type": "group",
+		"label": {
+				"en": "Device settings"
+		},
+		"children": [
+			{
+				"id": "homeyclass",
+				"type": "dropdown",
+				"value": "en",
+				"label": {
+						"en": "Device Class"
+				},
+				"hint": {
+					"en": "This setting will effect the behavior in Homey flows."
+				},
+				"values": [
+					{
+						"id": "other",
+						"label": {
+								"en": "Other"
+						}
+					},
+					{
+						"id": "sensor",
+						"label": {
+								"en": "Sensor"
+						}
+					},
+					{
+						"id": "socket",
+						"label": {
+								"en": "Socket"
+						}
+					},
+					{
+						"id": "light",
+						"label": {
+								"en": "Light"
+						}
+					},
+					{
+						"id": "heater",
+						"label": {
+								"en": "Heater"
+						}
+					},
+					{
+						"id": "thermostat",
+						"label": {
+								"en": "Thermostat"
+						}
+					},
+					{
+						"id": "lock",
+						"label": {
+								"en": "Lock"
+						}
+					},
+					{
+						"id": "button",
+						"label": {
+								"en": "Button"
+						}
+					}
+				]
 			}
 		]
 	}

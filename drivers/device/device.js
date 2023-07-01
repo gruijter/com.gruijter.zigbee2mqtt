@@ -56,7 +56,7 @@ class MyDevice extends Device {
 
 	async setCapabilityUnits() {
 		try {
-			this.log(`checking device migration for ${this.getName()}`);
+			this.log(`setting Capability Units for ${this.getName()}`);
 			this.setUnavailable('Device is migrating. Please wait!');
 			const { capUnits } = this.store;
 			const capUnitsArray = Object.entries(capUnits);
@@ -77,11 +77,19 @@ class MyDevice extends Device {
 
 	async onAdded() {
 		this.log('Device added', this.getName());
+		if (this.getClass !== this.getSettings().homeyclass)	{
+			this.log(`setting new Class for ${this.getName()}`, this.getSettings().homeyclass);
+			await this.setClass(this.getSettings().homeyclass).catch(this.error);
+		}
 		await this.setCapabilityUnits();
 	}
 
-	async onSettings({ newSettings }) { 	// oldSettings changedKeys
+	async onSettings({ newSettings, changedKeys }) { 	// oldSettings changedKeys
 		this.log('Settings changed', newSettings);
+		if (changedKeys.includes('homeyclass')) {
+			this.log(`setting new Class for ${this.getName()}`, this.getClass(), this.getSettings().homeyclass);
+			await this.setClass(newSettings.homeyclass).catch(this.error);
+		}
 		this.restartDevice(1000).catch(this.error);
 	}
 

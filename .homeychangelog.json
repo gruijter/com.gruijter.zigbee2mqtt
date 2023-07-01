@@ -1,4 +1,7 @@
 {
+  "1.0.5": {
+    "en": "Added device class mapping. Added additional device information in settings."
+  },
   "1.0.4": {
     "en": "Fix app crash on setCommand."
   },
