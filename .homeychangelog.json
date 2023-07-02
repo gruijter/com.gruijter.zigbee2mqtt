@@ -1,4 +1,7 @@
 {
+  "1.0.6": {
+    "en": "Stability fixes. Increased maxListeners (devices) to 100."
+  },
   "1.0.5": {
     "en": "Added device class mapping. Added additional device information in settings."
   },

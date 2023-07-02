@@ -44,40 +44,44 @@ const { capabilityMap, classIconMap } = require('../../capabilitymap');
 const mapProperty = (zb2mqttDevice) => {
 	const homeyCapabilities = [];
 	const capUnits = {};
-	zb2mqttDevice.definition.exposes.forEach((exp) => {
-		// specific or composite (e.g. light or switch)
-		if (exp.features) {
-			exp.features.forEach((feature) => {
-				const mapFunc = capabilityMap[feature.property];
-				if (mapFunc) { 		//  included in Homey maping
-					const capVal = mapFunc();
-					homeyCapabilities.push(capVal[0]);
-					if (feature.unit && feature.unit !== '') capUnits[capVal[0]] = feature.unit;
-				}
-			});
-		}
-		// generic types (e.g. numeric or binary)
-		const mapFunc = capabilityMap[exp.property];
-		if (mapFunc) { 		//  included in Homey maping
-			const capVal = mapFunc();
-			homeyCapabilities.push(capVal[0]);
-			if (exp.unit && exp.unit !== '') capUnits[capVal[0]] = exp.unit;
-		}
-	});
+	if (zb2mqttDevice.definition && zb2mqttDevice.definition.exposes) {
+		zb2mqttDevice.definition.exposes.forEach((exp) => {
+			// specific or composite (e.g. light or switch)
+			if (exp.features) {
+				exp.features.forEach((feature) => {
+					const mapFunc = capabilityMap[feature.property];
+					if (mapFunc) { 		//  included in Homey maping
+						const capVal = mapFunc();
+						homeyCapabilities.push(capVal[0]);
+						if (feature.unit && feature.unit !== '') capUnits[capVal[0]] = feature.unit;
+					}
+				});
+			}
+			// generic types (e.g. numeric or binary)
+			const mapFunc = capabilityMap[exp.property];
+			if (mapFunc) { 		//  included in Homey maping
+				const capVal = mapFunc();
+				homeyCapabilities.push(capVal[0]);
+				if (exp.unit && exp.unit !== '') capUnits[capVal[0]] = exp.unit;
+			}
+		});
+	}
 	const caps = homeyCapabilities.filter((cap) => cap !== null);
 	return { caps, capUnits };
 };
 
 const mapClassIcon = (zb2mqttDevice) => {
-	const d = zb2mqttDevice.definition.description.toLowerCase();
 	let icon = 'icon.svg';
 	let homeyClass = 'other';
-	Object.entries(classIconMap).reverse().forEach((pair) => {
-		if (d.includes(pair[0].toLowerCase())) {
-			icon = pair[1][1];
-			homeyClass = pair[1][0];
-		}
-	});
+	if (zb2mqttDevice.definition && zb2mqttDevice.definition.description) {
+		const d = zb2mqttDevice.definition.description.toLowerCase();
+		Object.entries(classIconMap).reverse().forEach((pair) => {
+			if (d.includes(pair[0].toLowerCase())) {
+				icon = pair[1][1];
+				homeyClass = pair[1][0];
+			}
+		});
+	}
 	return { homeyClass, icon };
 };
 
@@ -107,32 +111,34 @@ class MyDriver extends Driver {
 				if (!bridges || !bridges[0]) { throw Error('Cannot find bridge device in Homey. Bridge needs to be added first!'); }
 				const devices = [];
 				bridges.forEach((bridge) => {
-					bridge.devices.forEach((dev) => {
-						const settings = {
-							uid: dev.ieee_address,
-							friendly_name: dev.friendly_name,
-							bridge_uid: bridge.getData().id,
-						};
-						if (dev.definition) {
-							settings.model = dev.definition.model;
-							settings.description = dev.definition.description;
-						}
-						// map capabilities and device icons to Homey
-						const { caps, capUnits } = mapProperty(dev);
-						const { homeyClass, icon } = mapClassIcon(dev);
-						settings.homeyclass = homeyClass;
-						const device = {
-							name: dev.friendly_name,
-							data: {
-								id: dev.ieee_address, // `zigbee2mqtt_${Math.random().toString(16).substring(2, 8)}`,
-							},
-							icon, // "/my_icon.svg", // relative to: /drivers/<driver_id>/assets/
-							capabilities: [...caps],
-							store: { dev, capUnits },
-							settings,
-						};
-						devices.push(device);
-					});
+					bridge.devices
+						.filter((dev) => dev.definition && dev.definition.exposes)
+						.forEach((dev) => {
+							const settings = {
+								uid: dev.ieee_address,
+								friendly_name: dev.friendly_name,
+								bridge_uid: bridge.getData().id,
+							};
+							if (dev.definition) {
+								settings.model = dev.definition.model;
+								settings.description = dev.definition.description;
+							}
+							// map capabilities and device icons to Homey
+							const { caps, capUnits } = mapProperty(dev);
+							const { homeyClass, icon } = mapClassIcon(dev);
+							settings.homeyclass = homeyClass;
+							const device = {
+								name: dev.friendly_name,
+								data: {
+									id: dev.ieee_address, // `zigbee2mqtt_${Math.random().toString(16).substring(2, 8)}`,
+								},
+								icon, // "/my_icon.svg", // relative to: /drivers/<driver_id>/assets/
+								capabilities: [...caps],
+								store: { dev, capUnits },
+								settings,
+							};
+							devices.push(device);
+						});
 				});
 				// console.dir(devices, { depth: null });
 				return Promise.all(devices);

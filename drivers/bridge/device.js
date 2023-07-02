@@ -102,9 +102,9 @@ class MyDevice extends Device {
 
 			const handleMessage = async (topic, message) => {
 				try {
-					this.log(`message received from topic: ${topic}`);
 					if (message.toString() === '') return;
 					const info = JSON.parse(message);
+					// console.log(`message received from topic: ${topic}`, info);
 
 					// check for online/offline
 					if (topic.includes(`${this.bridgeTopic}/state`)) {
@@ -148,7 +148,7 @@ class MyDevice extends Device {
 					await this.client.subscribe([`${this.bridgeTopic}/state`]); // bridge online/offline updates
 					this.log(`Subscribing to ${this.bridgeTopic}/devices`);
 					await this.client.subscribe([`${this.bridgeTopic}/devices`]); // bridge all devices updates
-					this.log('mqtt subscriptions ok');
+					this.log('mqtt bridge subscriptions ok');
 				} catch (error) {
 					this.error(error);
 				}
@@ -164,6 +164,7 @@ class MyDevice extends Device {
 				.on('end', () => { this.log('mqtt client ended'); })
 				.on('connect', subscribeTopics)
 				.on('message', handleMessage);
+			this.client.setMaxListeners(100); // INCREASE LISTENERS
 			if (this.client.connected) await subscribeTopics();
 			return Promise.resolve(true);
 		} catch (error) {

@@ -25,6 +25,7 @@ class MyApp extends Homey.App {
 
 	async onInit() {
 		// this.registerFlowListeners();
+		this.homey.setMaxListeners(100); // INCREASE LISTENERS
 		this.log('App has been initialized');
 	}
 

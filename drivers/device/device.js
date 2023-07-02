@@ -200,7 +200,7 @@ class MyDevice extends Device {
 				try {
 					this.log(`Subscribing to ${this.deviceTopic}`);
 					await this.bridge.client.subscribe([`${this.deviceTopic}`]); // device state updates
-					this.log('mqtt subscriptions ok');
+					this.log(`${this.getName()} mqtt subscriptions ok`);
 				} catch (error) {
 					this.error(error);
 				}
