@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg height="800px" width="800px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 512 512"  xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#000000;}
+</style>
+<g>
+	<path class="st0" d="M153.225,256.568h57.062V98.544h-57.062c-36.544,0-67.206,24.836-76.241,58.53H0v40.973h76.988
+		C86.027,231.732,116.685,256.568,153.225,256.568z"/>
+	<path class="st0" d="M512,157.074h-76.991c-9.032-33.694-39.69-58.53-76.234-58.53h-57.062v158.024h57.062
+		c36.54,0,67.194-24.836,76.23-58.522H512V157.074z"/>
+	<polygon class="st0" points="151.441,348.564 89.272,348.564 89.272,366.262 89.272,383.962 151.441,383.962 151.441,413.456 
+		218.754,366.262 151.441,319.07 	"/>
+	<polygon class="st0" points="360.555,319.07 293.242,366.262 360.555,413.456 360.555,383.962 422.724,383.962 422.724,366.262 
+		422.724,348.564 360.555,348.564 	"/>
+</g>
+</svg>

@@ -25,6 +25,15 @@ const util = require('util');
 
 const setTimeoutPromise = util.promisify(setTimeout);
 
+const capabilities = [
+	'allow_joining',
+	'allow_joining_timeout',
+	'meter_joined_devices',
+	// 'measure_linkquality', // NO WAY TO RETRIEVE RETAINED STATES WITH DEFAULT Z2M CONFIG
+	'meter_mpm',
+	'alarm_offline',
+];
+
 class MyDriver extends Driver {
 
 	async onInit() {
@@ -72,7 +81,7 @@ class MyDriver extends Driver {
 				data: {
 					id: discovered.coordinator.ieee_address, // `zigbee2mqtt_${Math.random().toString(16).substring(2, 8)}`,
 				},
-				// icon: "/my_icon.svg", // relative to: /drivers/<driver_id>/assets/
+				capabilities,
 				settings: bridgeSettings,
 			};
 			return [device];

@@ -1,0 +1,18 @@
+{
+	"type": "boolean",
+	"title": {
+		"en": "Allow joining"
+	},
+	"getable": true,
+	"setable": true,
+	"insights": true,
+	"icon": "./assets/allow_joining.svg",
+	"insightsTitleTrue": {
+		"en": "Joining on"
+	},
+	"insightsTitleFalse": {
+		"en": "Joining off"
+	},
+	"uiComponent": "toggle",
+	"uiQuickAction": false
+}

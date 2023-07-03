@@ -1,4 +1,7 @@
 {
+  "1.1.0": {
+    "en": "Device: Bridge offline detection. Bridge: Added disconnect alarm, join switch, # joined devices, messages per minute."
+  },
   "1.0.6": {
     "en": "Stability fixes. Increased maxListeners (devices) to 100."
   },

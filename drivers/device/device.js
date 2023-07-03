@@ -224,6 +224,7 @@ class MyDevice extends Device {
 		this.bridge.client.removeListener('connect', this.subscribeTopics);
 		this.bridge.client.removeListener('message', this.handleMessage);
 		if (this.eventListenerDeviceListUpdate) this.homey.removeListener('devicelistupdate', this.eventListenerDeviceListUpdate);
+		if (this.eventListenerBridgeOffline) this.homey.removeListener('bridgeoffline', this.eventListenerBridgeOffline);
 	}
 
 	// register homey event listeners
@@ -234,6 +235,14 @@ class MyDevice extends Device {
 			this.checkChangedOrDeleted().catch(this.error);
 		};
 		this.homey.on('devicelistupdate', this.eventListenerDeviceListUpdate);
+
+		if (this.eventListenerBridgeOffline) this.homey.removeListener('bridgeoffline', this.eventListenerBridgeOffline);
+		this.eventListenerBridgeOffline = async (offline) => {
+			// console.log('bridgeOffline event received');
+			if (offline) this.setUnavailable('Bridge is offline').catch(this.error);
+			else this.setAvailable().catch(this.error);
+		};
+		this.homey.on('bridgeoffline', this.eventListenerBridgeOffline);
 	}
 
 	// register capability listeners

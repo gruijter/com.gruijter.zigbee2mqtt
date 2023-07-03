@@ -1,0 +1,10 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Joined devices"
+  },
+  "getable": true,
+  "setable": false,
+  "insights": true,
+  "icon": "./assets/meter_joined_devices.svg"
+}

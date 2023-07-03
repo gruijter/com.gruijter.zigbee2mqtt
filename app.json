@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "compatibility": ">=8.0.0",
   "sdk": 3,
   "platforms": [
@@ -346,6 +346,51 @@
     }
   ],
   "capabilities": {
+    "alarm_offline": {
+      "type": "boolean",
+      "title": {
+        "en": "Bridge offline"
+      },
+      "insightsTitleTrue": {
+        "en": "Offline"
+      },
+      "insightsTitleFalse": {
+        "en": "Online"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "icon": "./assets/alarm_offline.svg"
+    },
+    "allow_joining": {
+      "type": "boolean",
+      "title": {
+        "en": "Allow joining"
+      },
+      "getable": true,
+      "setable": true,
+      "insights": true,
+      "icon": "./assets/allow_joining.svg",
+      "insightsTitleTrue": {
+        "en": "Joining on"
+      },
+      "insightsTitleFalse": {
+        "en": "Joining off"
+      },
+      "uiComponent": "toggle",
+      "uiQuickAction": false
+    },
+    "allow_joining_timeout": {
+      "type": "number",
+      "title": {
+        "en": "Joining timeout"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": false,
+      "icon": "./assets/allow_joining_timeout.svg"
+    },
     "measure_linkquality": {
       "type": "number",
       "title": {
@@ -358,6 +403,26 @@
       "setable": false,
       "insights": true,
       "icon": "./assets/link_quality.svg"
+    },
+    "meter_joined_devices": {
+      "type": "number",
+      "title": {
+        "en": "Joined devices"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "icon": "./assets/meter_joined_devices.svg"
+    },
+    "meter_mpm": {
+      "type": "number",
+      "title": {
+        "en": "Msgs/minute"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "icon": "./assets/meter_mpm.svg"
     }
   }
 }

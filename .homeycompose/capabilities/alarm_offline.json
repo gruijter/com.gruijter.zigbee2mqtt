@@ -1,0 +1,17 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Bridge offline"
+  },
+  "insightsTitleTrue": {
+    "en": "Offline"
+  },
+  "insightsTitleFalse": {
+    "en": "Online"
+  },
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": false,
+  "insights": true,
+  "icon": "./assets/alarm_offline.svg"
+}

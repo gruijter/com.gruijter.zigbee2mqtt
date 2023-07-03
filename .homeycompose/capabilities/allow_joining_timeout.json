@@ -1,0 +1,10 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Joining timeout"
+  },
+  "getable": true,
+  "setable": false,
+  "insights": false,
+  "icon": "./assets/allow_joining_timeout.svg"
+}

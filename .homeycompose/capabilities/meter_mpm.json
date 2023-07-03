@@ -1,0 +1,10 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Msgs/minute"
+  },
+  "getable": true,
+  "setable": false,
+  "insights": true,
+  "icon": "./assets/meter_mpm.svg"
+}
