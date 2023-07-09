@@ -1,4 +1,7 @@
 {
+  "1.2.0": {
+    "en": "Device: Auto restart after bridge reconnect. Added more device capabilities and subcapabilities. Added more settable capabilities (target_temperature, locked). Added migration check on start. Added thermostat valve class."
+  },
   "1.1.0": {
     "en": "Device: Bridge offline detection. Bridge: Added disconnect alarm, join switch, # joined devices, messages per minute."
   },

@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable no-await-in-loop */
 /*
 Copyright 2023, Robin de Gruijter (gruijter@hotmail.com)
@@ -22,6 +23,7 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 const { Device } = require('homey');
 const util = require('util');
+const { capabilityMap, mapProperty } = require('../../capabilitymap');
 
 const setTimeoutPromise = util.promisify(setTimeout);
 
@@ -32,11 +34,11 @@ class MyDevice extends Device {
 			this.store = this.getStore();
 			this.settings = await this.getSettings();
 
-			// await this.migrate();
+			await this.registerHomeyEventListeners();
 			await this.connectBridge();
 			await this.checkChangedOrDeleted();
+			await this.migrate();
 			await this.registerListeners();
-			await this.registerHomeyEventListeners();
 			await this.getStatus({ state: '' }, 'appInit');
 
 			this.restarting = false;
@@ -44,6 +46,8 @@ class MyDevice extends Device {
 			this.log(this.getName(), 'has been initialized');
 		} catch (error) {
 			this.error(error);
+			this.setUnavailable(error);
+			this.restarting = false;
 			this.restartDevice(60 * 1000).catch(this.error);
 		}
 	}
@@ -52,27 +56,6 @@ class MyDevice extends Device {
 		this.log('Device unInit', this.getName());
 		this.destroyListeners();
 		await setTimeoutPromise(2000);	// wait 2 secs
-	}
-
-	async setCapabilityUnits() {
-		try {
-			this.log(`setting Capability Units for ${this.getName()}`);
-			this.setUnavailable('Device is migrating. Please wait!');
-			const { capUnits } = this.store;
-			const capUnitsArray = Object.entries(capUnits);
-			for (let index = 0; index < capUnitsArray.length; index += 1) {
-				this.log('Migrating units for', capUnitsArray[index][0], capUnitsArray[index][1]);
-				const capOptions = {
-					units: { en: capUnitsArray[index][1] },
-					// decimals: dec,
-				};
-				await this.setCapabilityOptions(capUnitsArray[index][0], capOptions).catch(this.error);
-				await setTimeoutPromise(2 * 1000);
-			}
-			this.restartDevice(1000).catch(this.error);
-		} catch (error) {
-			this.error(error);
-		}
 	}
 
 	async onAdded() {
@@ -99,7 +82,7 @@ class MyDevice extends Device {
 	}
 
 	async restartDevice(delay) {
-		if (this.bridge && this.bridge.client) this.destroyListeners();
+		if (this.bridge && this.bridge.client && this.bridge.client.connected) this.destroyListeners();
 		if (this.restarting) return;
 		this.restarting = true;
 		// if (this.client) await this.client.end();
@@ -108,6 +91,76 @@ class MyDevice extends Device {
 		// this.setUnavailable('Device is restarting');
 		await setTimeoutPromise(dly);
 		this.onInit();
+	}
+
+	async migrate() {
+		try {
+			this.log(`checking device migration for ${this.getName()}`);
+			// check and repair incorrect capability(order)
+			if (!this.bridge || !this.bridge.devices) return;
+			const [deviceInfo] = this.bridge.devices.filter((dev) => dev.ieee_address === this.settings.uid);
+			const { capUnits } = mapProperty(deviceInfo);
+			const correctCaps = mapProperty(deviceInfo).caps;
+			let capsChanged = false;
+
+			// store the capability states before migration
+			const sym = Object.getOwnPropertySymbols(this).find((s) => String(s) === 'Symbol(state)');
+			const state = this[sym];
+
+			for (let index = 0; index < correctCaps.length; index += 1) {
+				const caps = this.getCapabilities();
+				const newCap = correctCaps[index];
+				if (caps[index] !== newCap) {
+					this.setUnavailable('Device is migrating. Please wait!');
+					capsChanged = true;
+					// remove all caps from here
+					for (let i = index; i < caps.length; i += 1) {
+						this.log(`removing capability ${caps[i]} for ${this.getName()}`);
+						await this.removeCapability(caps[i])
+							.catch((error) => this.log(error));
+						await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
+					}
+					// add the new cap
+					this.log(`adding capability ${newCap} for ${this.getName()}`);
+					await this.addCapability(newCap);
+					// restore capability state
+					if (state[newCap]) this.log(`${this.getName()} restoring value ${newCap} to ${state[newCap]}`);
+					// else this.log(`${this.getName()} has gotten a new capability ${newCap}!`);
+					if (state[newCap] !== undefined) this.setCapability(newCap, state[newCap]);
+					await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
+				}
+				if (capsChanged) {
+					await this.setStoreValue('capUnits', capUnits);
+					await this.setCapabilityUnits();
+				}
+			}
+		} catch (error) {
+			this.error(error);
+		}
+	}
+
+	async setCapabilityUnits() {
+		try {
+			this.log(`setting Capability Units for ${this.getName()}`);
+			this.setUnavailable('Device is migrating. Please wait!');
+			const { capUnits } = this.store;
+			const capUnitsArray = Object.entries(capUnits);
+			for (let index = 0; index < capUnitsArray.length; index += 1) {
+				if (capUnitsArray[index][0]) {
+					this.log('Migrating units for', capUnitsArray[index][0], capUnitsArray[index][1]);
+					const capOptions = {
+						units: { en: capUnitsArray[index][1][0] },
+						// title: { en: capUnitsArray[index][1][1] },
+						// decimals: dec,
+					};
+					await this.setCapabilityOptions(capUnitsArray[index][0], capOptions).catch(this.error);
+					await setTimeoutPromise(2 * 1000);
+				}
+			}
+			this.restartDevice(1000).catch(this.error);
+		} catch (error) {
+			this.error(error);
+		}
 	}
 
 	setCapability(capability, value) {
@@ -148,17 +201,17 @@ class MyDevice extends Device {
 
 	async checkChangedOrDeleted() {
 		if (!this.bridge || !this.bridge.devices) return;
-		const deviceInfo = this.bridge.devices.filter((dev) => dev.ieee_address === this.settings.uid);
+		const [deviceInfo] = this.bridge.devices.filter((dev) => dev.ieee_address === this.settings.uid);
 		// check deleted
-		if (!deviceInfo[0]) {
+		if (!deviceInfo) {
 			this.error('device was deleted in Zigbee2MQTT', this.settings.friendly_name);
 			this.setUnavailable('device went missing in Zigbee2MQTT');
 			throw Error('device went missing in Zigbee2MQTT');
 		}
 		// check for name change
-		if (deviceInfo[0] && deviceInfo[0].friendly_name !== this.settings.friendly_name) {
-			this.log('device was renamed in Zigbee2MQTT', this.settings.friendly_name, deviceInfo[0].friendly_name);
-			this.setSettings({ friendly_name: deviceInfo[0].friendly_name });
+		if (deviceInfo.friendly_name !== this.settings.friendly_name) {
+			this.log('device was renamed in Zigbee2MQTT', this.settings.friendly_name, deviceInfo.friendly_name);
+			this.setSettings({ friendly_name: deviceInfo.friendly_name });
 			this.restartDevice(1000).catch(this.error);
 		}
 	}
@@ -168,6 +221,7 @@ class MyDevice extends Device {
 			await setTimeoutPromise(5000);
 			const bridgeDriver = this.homey.drivers.getDriver('bridge');
 			await bridgeDriver.ready(() => null);
+			if (bridgeDriver.getDevices().length < 1) throw Error('The source bridge device is missing in Homey.');
 			const bridge = bridgeDriver.getDevice({ id: this.settings.bridge_uid });
 			if (!bridge || !bridge.client) { throw Error('Cannot connect to source bridge device in Homey.'); }
 			this.bridge = bridge;
@@ -181,7 +235,6 @@ class MyDevice extends Device {
 					if (topic.includes(this.deviceTopic)) {
 						// console.log(`${this.getName()} update:`, info);
 						// this.setAvailable();
-						const { capabilityMap } = this.driver.ds;
 						Object.entries(info).forEach((entry) => {
 							const mapFunc = capabilityMap[entry[0]];
 							if (!mapFunc) return;	// not included in Homey maping
@@ -239,24 +292,34 @@ class MyDevice extends Device {
 		if (this.eventListenerBridgeOffline) this.homey.removeListener('bridgeoffline', this.eventListenerBridgeOffline);
 		this.eventListenerBridgeOffline = async (offline) => {
 			// console.log('bridgeOffline event received');
-			if (offline) this.setUnavailable('Bridge is offline').catch(this.error);
-			else this.setAvailable().catch(this.error);
+			if (offline) {
+				this.setUnavailable('Bridge is offline').catch(this.error);
+				this.bridgeOffline = true;
+			}	else {
+				if (this.bridgeOffline) this.restartDevice(1000).catch(this.error);
+				this.bridgeOffline = false;
+			}
 		};
 		this.homey.on('bridgeoffline', this.eventListenerBridgeOffline);
 	}
 
-	// register capability listeners
+	// register capability listeners for settable commands
 	registerListeners() {
 		try {
 			if (this.listenersSet) return true;
-			this.log('registering listeners');
-
+			// this.log('registering listeners');
 			// capabilityListeners will be overwritten, so no need to unregister them
 
-			this.registerCapabilityListener('onoff', (onoff) => {
-				let state = 'OFF';
-				if (onoff) state = 'ON';
-				this.setCommand({ state }, 'app').catch(this.error);
+			const capArray = Object.entries(capabilityMap);
+			capArray.forEach((map) => {
+				const mapFunc = map[1];
+				if (mapFunc().length > 2 && this.getCapabilities().includes(mapFunc()[0])) {	// capability setting is mapped and present in device
+					this.log(`${this.getName()} adding capability listener ${mapFunc()[0]}`);
+					this.registerCapabilityListener(mapFunc()[0], (val) => {
+						const command = mapFunc(val)[2];
+						this.setCommand(command, 'app').catch(this.error);
+					});
+				}
 			});
 
 			// this.registerMultipleCapabilityListener(['charge_target_slow', 'charge_target_fast'], async (values) => {

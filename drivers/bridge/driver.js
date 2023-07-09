@@ -38,6 +38,7 @@ class MyDriver extends Driver {
 
 	async onInit() {
 		this.log('zigbee2mqtt bridge driver has been initialized');
+		this.ds = { deviceCapabilities: capabilities };
 	}
 
 	async onUninit() {

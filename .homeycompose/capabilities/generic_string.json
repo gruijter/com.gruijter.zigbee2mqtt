@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Text"
+  },
+  "units": {
+    "en": ""
+  },
+  "getable": true,
+  "setable": false,
+  "insights": false
+}

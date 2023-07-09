@@ -22,68 +22,9 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 const { Driver } = require('homey');
 // const util = require('util');
-const { capabilityMap, classIconMap } = require('../../capabilitymap');
+const { capabilityMap, mapProperty, mapClassIcon } = require('../../capabilitymap');
 
 // const setTimeoutPromise = util.promisify(setTimeout);
-
-// const capabilities = [
-// 	'measure_linkquality',
-// 	'measure_battery',
-// 	'measure_power',
-// 	'measure_current',
-// 	'measure_voltage',
-// 	'meter_power',
-
-// 	'alarm_battery',
-// 	'alarm_contact',
-// 	'alarm_tamper',
-// 	'onoff',
-// ];
-
-// map capabilities to Homey
-const mapProperty = (zb2mqttDevice) => {
-	const homeyCapabilities = [];
-	const capUnits = {};
-	if (zb2mqttDevice.definition && zb2mqttDevice.definition.exposes) {
-		zb2mqttDevice.definition.exposes.forEach((exp) => {
-			// specific or composite (e.g. light or switch)
-			if (exp.features) {
-				exp.features.forEach((feature) => {
-					const mapFunc = capabilityMap[feature.property];
-					if (mapFunc) { 		//  included in Homey maping
-						const capVal = mapFunc();
-						homeyCapabilities.push(capVal[0]);
-						if (feature.unit && feature.unit !== '') capUnits[capVal[0]] = feature.unit;
-					}
-				});
-			}
-			// generic types (e.g. numeric or binary)
-			const mapFunc = capabilityMap[exp.property];
-			if (mapFunc) { 		//  included in Homey maping
-				const capVal = mapFunc();
-				homeyCapabilities.push(capVal[0]);
-				if (exp.unit && exp.unit !== '') capUnits[capVal[0]] = exp.unit;
-			}
-		});
-	}
-	const caps = homeyCapabilities.filter((cap) => cap !== null);
-	return { caps, capUnits };
-};
-
-const mapClassIcon = (zb2mqttDevice) => {
-	let icon = 'icon.svg';
-	let homeyClass = 'other';
-	if (zb2mqttDevice.definition && zb2mqttDevice.definition.description) {
-		const d = zb2mqttDevice.definition.description.toLowerCase();
-		Object.entries(classIconMap).reverse().forEach((pair) => {
-			if (d.includes(pair[0].toLowerCase())) {
-				icon = pair[1][1];
-				homeyClass = pair[1][0];
-			}
-		});
-	}
-	return { homeyClass, icon };
-};
 
 class MyDriver extends Driver {
 

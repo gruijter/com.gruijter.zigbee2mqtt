@@ -31,11 +31,11 @@ class MyDevice extends Device {
 		try {
 			this.settings = await this.getSettings();
 			this.bridgeTopic = `${this.settings.topic}/bridge`; // default zigbee2mqtt/bridge
-
 			this.msgCounter = 0;
 			this.lastMPMUpdate = Date.now();
-
 			await this.destroyListeners();
+			await this.migrate();
+
 			await this.connectBridge();
 			await this.registerListeners();
 			this.restarting = false;
@@ -43,6 +43,7 @@ class MyDevice extends Device {
 			this.log(this.getName(), 'bridge device has been initialized');
 		} catch (error) {
 			this.error(error);
+			this.restarting = false;
 			this.restartDevice(60 * 1000).catch(this.error);
 		}
 	}
@@ -50,7 +51,7 @@ class MyDevice extends Device {
 	async onUninit() {
 		this.log('Device unInit', this.getName());
 		await this.destroyListeners();
-		await setTimeoutPromise(2000);	// wait 2 secs
+		await setTimeoutPromise(5000);	// wait 5 secs
 	}
 
 	async onAdded() {
@@ -65,6 +66,44 @@ class MyDevice extends Device {
 	async onDeleted() {
 		await this.destroyListeners();
 		this.log('Device deleted', this.getName());
+	}
+
+	async migrate() {
+		try {
+			this.log(`checking device migration for ${this.getName()}`);
+			// store the capability states before migration
+			const sym = Object.getOwnPropertySymbols(this).find((s) => String(s) === 'Symbol(state)');
+			const state = this[sym];
+			// check and repair incorrect capability(order)
+			let capsChanged = false;
+			const correctCaps = this.driver.ds.deviceCapabilities;
+			for (let index = 0; index < correctCaps.length; index += 1) {
+				const caps = this.getCapabilities();
+				const newCap = correctCaps[index];
+				if (caps[index] !== newCap) {
+					this.setUnavailable('Device is migrating. Please wait!');
+					capsChanged = true;
+					// remove all caps from here
+					for (let i = index; i < caps.length; i += 1) {
+						this.log(`removing capability ${caps[i]} for ${this.getName()}`);
+						await this.removeCapability(caps[i])
+							.catch((error) => this.log(error));
+						await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
+					}
+					// add the new cap
+					this.log(`adding capability ${newCap} for ${this.getName()}`);
+					await this.addCapability(newCap);
+					// restore capability state
+					if (state[newCap]) this.log(`${this.getName()} restoring value ${newCap} to ${state[newCap]}`);
+					// else this.log(`${this.getName()} has gotten a new capability ${newCap}!`);
+					if (state[newCap] !== undefined) this.setCapability(newCap, state[newCap]);
+					await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
+				}
+			}
+			if (capsChanged) this.restartDevice(1 * 1000).catch(this.error);
+		} catch (error) {
+			this.error(error);
+		}
 	}
 
 	async restartDevice(delay) {
@@ -126,16 +165,16 @@ class MyDevice extends Device {
 					if (topic.includes(`${this.bridgeTopic}/state`)) {
 						if (info === 'online' || info.state === 'online') {
 							this.log('Zigbee2MQTT bridge is connected');
-							this.setCapability('alarm_offline', false);
 							// INFORM ALL DEVICES UNAVAILABLE
 							this.homey.emit('bridgeoffline', false);
+							this.setCapability('alarm_offline', false);
 							// this.setAvailable();
 						}
 						if (info === 'offline' || info.state === 'offline') {
 							this.error('Zigbee2MQTT bridge disconnected');
-							this.setCapability('alarm_offline', true);
 							// INFORM ALL DEVICES AVAILABLE
 							this.homey.emit('bridgeoffline', true);
+							this.setCapability('alarm_offline', true);
 							// this.setUnavailable('Zigbee2MQTT bridge is disconnected');
 						}
 					}
@@ -199,9 +238,9 @@ class MyDevice extends Device {
 					if (event === 'close') this.log('mqtt closed (disconnected)');
 					if (event === 'offline') this.log('mqtt broker is offline');
 					if (event === 'end') this.log('mqtt client ended');
-					this.setCapability('alarm_offline', true);
 					// INFORM ALL DEVICES UNAVAILABLE
 					this.homey.emit('bridgeoffline', true);
+					this.setCapability('alarm_offline', true);
 				} catch (error) {
 					this.error(error);
 				}
@@ -236,8 +275,8 @@ class MyDevice extends Device {
 	async destroyListeners() {
 		try {
 			this.log('removing listeners', this.getName());
-			this.homey.removeAllListeners('devicelistupdate');
-			this.homey.removeAllListeners('bridgeoffline');
+			// this.homey.removeAllListeners('devicelistupdate');
+			// this.homey.removeAllListeners('bridgeoffline');
 			if (this.client) await this.client.end();
 		} catch (error) {
 			this.error(error);
