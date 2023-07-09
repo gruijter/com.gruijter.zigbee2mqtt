@@ -146,7 +146,7 @@ class MyDevice extends Device {
 			const { capUnits } = this.store;
 			const capUnitsArray = Object.entries(capUnits);
 			for (let index = 0; index < capUnitsArray.length; index += 1) {
-				if (capUnitsArray[index][0]) {
+				if (capUnitsArray[index][1] && capUnitsArray[index][1][0]) {
 					this.log('Migrating units for', capUnitsArray[index][0], capUnitsArray[index][1]);
 					const capOptions = {
 						units: { en: capUnitsArray[index][1][0] },

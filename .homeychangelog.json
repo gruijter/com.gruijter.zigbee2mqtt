@@ -1,4 +1,7 @@
 {
+  "1.2.1": {
+    "en": "Improved thermostat capability mapping. Improved capability unit migration."
+  },
   "1.2.0": {
     "en": "Device: Auto restart after bridge reconnect. Added more device capabilities and subcapabilities. Added more settable capabilities (target_temperature, locked). Added migration check on start. Added thermostat valve class."
   },
