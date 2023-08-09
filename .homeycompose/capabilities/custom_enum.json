@@ -1,0 +1,16 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "SELECTION"
+  },
+  "values": [
+    { "id": "enum1", "title": { "en": "First option" }},
+    { "id": "enum2", "title": { "en": "Second option" }},
+    { "id": "enum3", "title": { "en": "Third option" }},
+    { "id": "enum4", "title": { "en": "Fourth option" }}
+  ],
+  "uiComponent": "picker",
+  "getable": true,
+  "setable": false,
+  "insights": false
+}

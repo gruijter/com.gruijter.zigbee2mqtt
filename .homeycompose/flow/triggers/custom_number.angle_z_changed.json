@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The Z-angle changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device&capabilities=custom_number.angle_z"
+		}
+	],
+	"tokens": [
+		{
+			"name": "custom_number.angle_z",
+			"type": "number",
+			"title": { 
+				"en": "angle_z"
+			},
+			"example": 48
+		}
+	]
+}

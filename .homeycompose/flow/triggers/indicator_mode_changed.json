@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The Indicator Mode changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device&capabilities=indicator_mode"
+		}
+	],
+	"tokens": [
+		{
+			"name": "indicator_mode",
+			"type": "string",
+			"title": { 
+				"en": "Indicator Mode"
+			},
+			"example": "off"
+		}
+	]
+}

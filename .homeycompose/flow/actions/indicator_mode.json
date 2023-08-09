@@ -1,0 +1,38 @@
+{
+	"title": {
+		"en": "Set Indicator Mode"
+	},
+	"titleFormatted": {
+			"en": "Set Indicator Mode to [[val]]"
+	},
+	"highlight": true,
+	"args": [
+		{
+			"type": "device",
+			"name": "device",
+			"filter": "driver_id=device&capabilities=indicator_mode"
+		},
+		{
+			"type": "dropdown",
+			"name": "val",
+			"values": [
+				{
+					"id": "off",
+					"title": { "en": "Off" }
+				},
+				{
+					"id": "off/on",
+					"title": { "en": "Off/On" }
+				},
+				{
+					"id": "on/off",
+					"title": { "en": "On/Off" }
+				},
+				{
+					"id": "on",
+					"title": { "en": "On" }
+				}
+			]
+		}
+	]
+}

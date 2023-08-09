@@ -1,0 +1,15 @@
+{
+	"title": {
+		"en": "The Vibration Alarm turned On"
+	},
+	"highlight": true,
+	"args": [
+		{
+			"type": "device",
+			"name": "device",
+			"filter": "driver_id=device&capabilities=alarm_generic.vibration"
+		}
+	]
+}
+
+

@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The link quality changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device&capabilities=measure_linkquality"
+		}
+	],
+	"tokens": [
+		{
+			"name": "measure_linkquality",
+			"type": "number",
+			"title": { 
+				"en": "Link quality"
+			},
+			"example": 53
+		}
+	]
+}

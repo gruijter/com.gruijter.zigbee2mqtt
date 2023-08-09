@@ -1,0 +1,34 @@
+{
+	"title": {
+		"en": "Set Power Outage Memory"
+	},
+	"titleFormatted": {
+			"en": "Set Power Outage Memory to [[val]]"
+	},
+	"highlight": true,
+	"args": [
+		{
+			"type": "device",
+			"name": "device",
+			"filter": "driver_id=device&capabilities=power_outage_memory"
+		},
+		{
+			"type": "dropdown",
+			"name": "val",
+			"values": [
+				{
+					"id": "off",
+					"title": { "en": "Off" }
+				},
+				{
+					"id": "on",
+					"title": { "en": "On" }
+				},
+				{
+					"id": "previous",
+					"title": { "en": "Restore" }
+				}
+			]
+		}
+	]
+}

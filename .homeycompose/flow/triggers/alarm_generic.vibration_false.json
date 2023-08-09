@@ -1,0 +1,15 @@
+{
+	"title": {
+		"en": "The Fault Alarm turned Off"
+	},
+	"highlight": true,
+	"args": [
+		{
+			"type": "device",
+			"name": "device",
+			"filter": "driver_id=device&capabilities=alarm_generic.fault"
+		}
+	]
+}
+
+

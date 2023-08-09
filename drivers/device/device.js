@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable camelcase */
 /* eslint-disable no-await-in-loop */
 /*
@@ -26,6 +27,40 @@ const util = require('util');
 const { capabilityMap, mapProperty } = require('../../capabilitymap');
 
 const setTimeoutPromise = util.promisify(setTimeout);
+
+/**
+ * Converts hsb data to rgb object.
+ * @param {number} hue Hue [0 - 1]
+ * @param {number} sat Saturation [0 - 1]
+ * @param {number} dim Brightness [0 - 1]
+ * @returns {object} RGB object. [0 - 255]
+ */
+const hsbToRgb = (hue, sat, dim) => {
+	let red;
+	let green;
+	let blue;
+	const i = Math.floor(hue * 6);
+	const f = hue * 6 - i;
+	const p = dim * (1 - sat);
+	const q = dim * (1 - f * sat);
+	const t = dim * (1 - (1 - f) * sat);
+	switch (i % 6) {
+		case 0: red = dim; green = t; blue = p;	break;
+		case 1: red = q; green = dim; blue = p;	break;
+		case 2: red = p; green = dim; blue = t; break;
+		case 3: red = p; green = q; blue = dim; break;
+		case 4: red = t; green = p; blue = dim; break;
+		case 5: red = dim; green = p; blue = q; break;
+		default: red = dim; green = dim; blue = dim;
+	}
+	const r = Math.round(red * 255);
+	const g = Math.round(green * 255);
+	const b = Math.round(blue * 255);
+	const rgbHexString = `${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+	return {
+		r, g, b, rgbHexString,
+	};
+};
 
 class MyDevice extends Device {
 
@@ -99,9 +134,18 @@ class MyDevice extends Device {
 			// check and repair incorrect capability(order)
 			if (!this.bridge || !this.bridge.devices) return;
 			const [deviceInfo] = this.bridge.devices.filter((dev) => dev.ieee_address === this.settings.uid);
-			const { capUnits } = mapProperty(deviceInfo);
-			const correctCaps = mapProperty(deviceInfo).caps;
+			const { caps: correctCaps, capDetails } = mapProperty(deviceInfo);
+			await this.setStoreValue('capDetails', { ...capDetails });
+			await this.setStoreValue('caps', { ...correctCaps });
 			let capsChanged = false;
+
+			// if (this.getName() === 'GU10 LED links') {
+			// 	console.dir(deviceInfo, { depth: null });
+			// 	console.dir(capDetails, { depth: null });
+			// 	console.dir(correctCaps, { depth: null });
+			// 	const capDetailsArray = Object.entries(capDetails);
+			// 	console.dir(capDetailsArray, { depth: null });
+			// }
 
 			// store the capability states before migration
 			const sym = Object.getOwnPropertySymbols(this).find((s) => String(s) === 'Symbol(state)');
@@ -129,10 +173,9 @@ class MyDevice extends Device {
 					if (state[newCap] !== undefined) this.setCapability(newCap, state[newCap]);
 					await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
 				}
-				if (capsChanged) {
-					await this.setStoreValue('capUnits', capUnits);
-					await this.setCapabilityUnits();
-				}
+			}
+			if (capsChanged) {
+				await this.setCapabilityUnits();
 			}
 		} catch (error) {
 			this.error(error);
@@ -141,20 +184,27 @@ class MyDevice extends Device {
 
 	async setCapabilityUnits() {
 		try {
-			this.log(`setting Capability Units for ${this.getName()}`);
+			this.log(`setting Capability Units and Titles for ${this.getName()}`);
 			this.setUnavailable('Device is migrating. Please wait!');
-			const { capUnits } = this.store;
-			const capUnitsArray = Object.entries(capUnits);
-			for (let index = 0; index < capUnitsArray.length; index += 1) {
-				if (capUnitsArray[index][1] && capUnitsArray[index][1][0]) {
-					this.log('Migrating units for', capUnitsArray[index][0], capUnitsArray[index][1]);
-					const capOptions = {
-						units: { en: capUnitsArray[index][1][0] },
-						// title: { en: capUnitsArray[index][1][1] },
-						// decimals: dec,
-					};
-					await this.setCapabilityOptions(capUnitsArray[index][0], capOptions).catch(this.error);
-					await setTimeoutPromise(2 * 1000);
+			const { capDetails } = this.store;
+			// console.log(capDetails);
+			if (!capDetails) return;
+			const capDetailsArray = Object.entries(capDetails);
+			// console.dir(capDetailsArray, { depth: null });
+			for (let index = 0; index < capDetailsArray.length; index += 1) {
+				if (capDetailsArray[index][1]) { // && capDetailsArray[index][1].unit) {
+					const capOptions = { };
+					if (capDetailsArray[index][1].unit) { capOptions.units = { en: capDetailsArray[index][1].unit }; }
+					if (capDetailsArray[index][1].name && !capDetailsArray[index][0].includes('onoff')) {
+						const title = capDetailsArray[index][1].name.replace(/./, (c) => c.toUpperCase());
+						capOptions.title = { en: title };
+					}
+					// decimals: dec,
+					if (Object.keys(capOptions).length > 0) {
+						this.log('Migrating units for', capDetailsArray[index][0], capDetailsArray[index][1].unit, capDetailsArray[index][1].name);
+						await this.setCapabilityOptions(capDetailsArray[index][0], capOptions).catch(this.error);
+						await setTimeoutPromise(2 * 1000);
+					}
 				}
 			}
 			this.restartDevice(1000).catch(this.error);
@@ -186,6 +236,7 @@ class MyDevice extends Device {
 
 	async getStatus(payload, source) {
 		if (!this.bridge || !this.bridge.client || !this.bridge.client.connected) return Promise.reject(Error('Bridge is not connected'));
+		if (this.store && this.store.dev && this.store.dev.power_source === 'Battery') return Promise.resolve(true); // skip battery devices
 		const pl = payload || { state: '' };
 		await this.bridge.client.publish(`${this.deviceTopic}/get`, JSON.stringify(pl));
 		this.log(`${JSON.stringify(pl)} sent by ${source}`);
@@ -193,7 +244,33 @@ class MyDevice extends Device {
 	}
 
 	async setCommand(payload, source) {
-		if (!this.bridge || !this.bridge.client || !this.bridge.client.connected) return Promise.reject(Error('Bridge is not connected'));
+		if (!this.bridge || !this.bridge.client || !this.bridge.client.connected) throw Error('Bridge is not connected');
+		if (!this.store || !this.store.capDetails) throw Error('Store capabilities undefined');
+		// get the capDetails for this command
+		const [payLoadArray] = Object.entries(payload);
+		const capDetail = Object.entries(this.store.capDetails).find((cap) => cap[1].property === payLoadArray[0]);
+		if (!capDetail[1]) throw Error(`${payLoadArray[0]} capability not supported`);
+		// check if command is settable
+		const mask = 0b00010;
+		const { access } = capDetail[1];
+		// eslint-disable-next-line no-bitwise
+		const settable = (access & mask) === mask;
+		if (!settable) throw Error(`${payLoadArray[0]} capability is not settable`);
+		// check if ENUM command is supported by this device
+		if (capDetail[1].values && !capDetail[1].values.includes(payLoadArray[1])) throw Error(`${payLoadArray[1]} command not supported`);
+		await this.bridge.client.publish(`${this.deviceTopic}/set`, JSON.stringify(payload));
+		this.log(`${JSON.stringify(payload)} sent by ${source}`);
+		return Promise.resolve(true);
+	}
+
+	// special for color light
+	async dimHueSat(values, source) {
+		this.log(`${this.getName()} dim/hue/set requested via ${source}`);
+		const hue = values.light_hue || this.getCapabilityValue('light_hue');
+		const sat = values.light_saturation || this.getCapabilityValue('light_saturation');
+		const dim = this.getCapabilityValue('dim');
+		const { r, g, b } = hsbToRgb(hue, sat, dim);
+		const payload = { color: { r, g, b } };
 		await this.bridge.client.publish(`${this.deviceTopic}/set`, JSON.stringify(payload));
 		this.log(`${JSON.stringify(payload)} sent by ${source}`);
 		return Promise.resolve(true);
@@ -236,10 +313,16 @@ class MyDevice extends Device {
 						// console.log(`${this.getName()} update:`, info);
 						// this.setAvailable();
 						Object.entries(info).forEach((entry) => {
-							const mapFunc = capabilityMap[entry[0]];
-							if (!mapFunc) return;	// not included in Homey maping
-							const capVal = mapFunc(entry[1]);
-							this.setCapability(capVal[0], capVal[1]);
+							// exception for color light
+							if (entry[0] === 'color' && this.getCapabilities().includes('light_hue')) {
+								if (Object.prototype.hasOwnProperty.call(entry[1], 'hue')) this.setCapability('light_hue', entry[1].hue / 100);
+								if (Object.prototype.hasOwnProperty.call(entry[1], 'saturation')) this.setCapability('saturation', entry[1].saturation / 100);
+							} else {
+								const mapFunc = capabilityMap[entry[0]];
+								if (!mapFunc) return;	// not included in Homey maping
+								const capVal = mapFunc(entry[1]);
+								this.setCapability(capVal[0], capVal[1]);
+							}
 						});
 					}
 
@@ -269,15 +352,6 @@ class MyDevice extends Device {
 		} catch (error) {
 			return Promise.reject(error);
 		}
-	}
-
-	// remove listeners
-	destroyListeners() {
-		this.log('removing listeners', this.getName());
-		this.bridge.client.removeListener('connect', this.subscribeTopics);
-		this.bridge.client.removeListener('message', this.handleMessage);
-		if (this.eventListenerDeviceListUpdate) this.homey.removeListener('devicelistupdate', this.eventListenerDeviceListUpdate);
-		if (this.eventListenerBridgeOffline) this.homey.removeListener('bridgeoffline', this.eventListenerBridgeOffline);
 	}
 
 	// register homey event listeners
@@ -315,19 +389,19 @@ class MyDevice extends Device {
 				const mapFunc = map[1];
 				if (mapFunc().length > 2 && this.getCapabilities().includes(mapFunc()[0])) {	// capability setting is mapped and present in device
 					this.log(`${this.getName()} adding capability listener ${mapFunc()[0]}`);
-					this.registerCapabilityListener(mapFunc()[0], (val) => {
+					this.registerCapabilityListener(mapFunc()[0], async (val) => {
 						const command = mapFunc(val)[2];
-						this.setCommand(command, 'app').catch(this.error);
+						await this.setCommand(command, 'app').catch(this.error);
 					});
 				}
 			});
 
-			// this.registerMultipleCapabilityListener(['charge_target_slow', 'charge_target_fast'], async (values) => {
-			// 	const slow = Number(values.charge_target_slow) || Number(this.getCapabilityValue('charge_target_slow'));
-			// 	const fast = Number(values.charge_target_fast) || Number(this.getCapabilityValue('charge_target_fast'));
-			// 	const targets = { slow, fast };
-			// 	this.setChargeTargets(targets, 'app').catch(this.error);
-			// }, 10000);
+			// add exception for color light
+			if (this.getCapabilities().includes('light_hue')) {
+				this.registerMultipleCapabilityListener(['light_hue', 'light_saturation'], (values) => {
+					this.dimHueSat(values, 'app').catch(this.error);
+				}, 500);
+			}
 
 			this.listenersSet = true;
 			return Promise.resolve(true);
@@ -335,6 +409,16 @@ class MyDevice extends Device {
 			return Promise.reject(error);
 		}
 	}
+
+	// remove listeners
+	destroyListeners() {
+		this.log('removing listeners', this.getName());
+		this.bridge.client.removeListener('connect', this.subscribeTopics);
+		this.bridge.client.removeListener('message', this.handleMessage);
+		if (this.eventListenerDeviceListUpdate) this.homey.removeListener('devicelistupdate', this.eventListenerDeviceListUpdate);
+		if (this.eventListenerBridgeOffline) this.homey.removeListener('bridgeoffline', this.eventListenerBridgeOffline);
+	}
+
 }
 
 module.exports = MyDevice;

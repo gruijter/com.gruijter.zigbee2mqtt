@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The Power On Behavior changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device&capabilities=power_on_behavior"
+		}
+	],
+	"tokens": [
+		{
+			"name": "power_on_behavior",
+			"type": "string",
+			"title": { 
+				"en": "Power On Behavior"
+			},
+			"example": "off"
+		}
+	]
+}

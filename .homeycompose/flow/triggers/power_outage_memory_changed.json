@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The Power Outage Memory changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device&capabilities=power_outage_memory"
+		}
+	],
+	"tokens": [
+		{
+			"name": "power_outage_memory",
+			"type": "string",
+			"title": { 
+				"en": "Power Outage Memory"
+			},
+			"example": "off"
+		}
+	]
+}

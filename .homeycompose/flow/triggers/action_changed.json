@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The action changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device&capabilities=action"
+		}
+	],
+	"tokens": [
+		{
+			"name": "action",
+			"type": "string",
+			"title": { 
+				"en": "Action"
+			},
+			"example": "off"
+		}
+	]
+}

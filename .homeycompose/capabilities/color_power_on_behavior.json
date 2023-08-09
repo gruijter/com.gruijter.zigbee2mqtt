@@ -1,0 +1,15 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Color Power On Behavior"
+  },
+  "values": [
+    { "id": "initial", "title": { "en": "Initial" }},
+    { "id": "customized", "title": { "en": "Customized" }},
+    { "id": "previous", "title": { "en": "Previous" }}
+  ],
+  "uiComponent": "picker",
+  "getable": true,
+  "setable": true,
+  "insights": false
+}

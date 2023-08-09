@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "compatibility": ">=8.0.0",
   "sdk": 3,
   "platforms": [
@@ -54,6 +54,1237 @@
   "bugs": {
     "url": "https://github.com/gruijter/com.gruijter.zigbee2mqtt/issues",
     "source": "https://github.com/gruijter/com.gruijter.zigbee2mqtt"
+  },
+  "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "The action changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=action"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "action",
+            "type": "string",
+            "title": {
+              "en": "Action"
+            },
+            "example": "off"
+          }
+        ],
+        "id": "action_changed"
+      },
+      {
+        "title": {
+          "en": "The Vibration Alarm turned Off"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=alarm_generic.vibration"
+          }
+        ],
+        "id": "alarm_generic.fault_false"
+      },
+      {
+        "title": {
+          "en": "The Fault Alarm turned On"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=alarm_generic.fault"
+          }
+        ],
+        "id": "alarm_generic.fault_true"
+      },
+      {
+        "title": {
+          "en": "The Fault Alarm turned Off"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=alarm_generic.fault"
+          }
+        ],
+        "id": "alarm_generic.vibration_false"
+      },
+      {
+        "title": {
+          "en": "The Vibration Alarm turned On"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=alarm_generic.vibration"
+          }
+        ],
+        "id": "alarm_generic.vibration_true"
+      },
+      {
+        "title": {
+          "en": "The Offline Alarm turned Off"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bridge"
+          }
+        ],
+        "id": "alarm_offline_false"
+      },
+      {
+        "title": {
+          "en": "The Offline Alarm turned On"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bridge"
+          }
+        ],
+        "id": "alarm_offline_true"
+      },
+      {
+        "title": {
+          "en": "Joining turned Off"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bridge"
+          }
+        ],
+        "id": "allow_joining_false"
+      },
+      {
+        "title": {
+          "en": "Joining turned On"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bridge"
+          }
+        ],
+        "id": "allow_joining_true"
+      },
+      {
+        "title": {
+          "en": "The Color Power On Behavior changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=color_power_on_behavior"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "color_power_on_behavior",
+            "type": "string",
+            "title": {
+              "en": "Power On Behavior"
+            },
+            "example": "previous"
+          }
+        ],
+        "id": "color_power_on_behavior_changed"
+      },
+      {
+        "title": {
+          "en": "The X-angle changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=custom_number.angle_x"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "custom_number.angle_x",
+            "type": "number",
+            "title": {
+              "en": "angle_x"
+            },
+            "example": 48
+          }
+        ],
+        "id": "custom_number.angle_x_changed"
+      },
+      {
+        "title": {
+          "en": "The Y-angle changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=custom_number.angle_y"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "custom_number.angle_y",
+            "type": "number",
+            "title": {
+              "en": "angle_y"
+            },
+            "example": 48
+          }
+        ],
+        "id": "custom_number.angle_y_changed"
+      },
+      {
+        "title": {
+          "en": "The Z-angle changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=custom_number.angle_z"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "custom_number.angle_z",
+            "type": "number",
+            "title": {
+              "en": "angle_z"
+            },
+            "example": 48
+          }
+        ],
+        "id": "custom_number.angle_z_changed"
+      },
+      {
+        "title": {
+          "en": "The strength changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=custom_number.strength"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "custom_number.strength",
+            "type": "number",
+            "title": {
+              "en": "Strength"
+            },
+            "example": 48
+          }
+        ],
+        "id": "custom_number.strength_changed"
+      },
+      {
+        "title": {
+          "en": "The dim level L1 changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=dim.l1"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "dim.l1",
+            "type": "number",
+            "title": {
+              "en": "Dim level"
+            },
+            "example": 53
+          }
+        ],
+        "id": "dim.l1_changed"
+      },
+      {
+        "title": {
+          "en": "The dim level L2 changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=dim.l2"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "dim.l2",
+            "type": "number",
+            "title": {
+              "en": "Dim level"
+            },
+            "example": 53
+          }
+        ],
+        "id": "dim.l2_changed"
+      },
+      {
+        "title": {
+          "en": "The Indicator Mode changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=indicator_mode"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "indicator_mode",
+            "type": "string",
+            "title": {
+              "en": "Indicator Mode"
+            },
+            "example": "off"
+          }
+        ],
+        "id": "indicator_mode_changed"
+      },
+      {
+        "title": {
+          "en": "The soil humidity changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=measure_humidity.soil"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_humidity.soil",
+            "type": "number",
+            "title": {
+              "en": "Humidity"
+            },
+            "example": 53
+          }
+        ],
+        "id": "measure_humidity.soil_changed"
+      },
+      {
+        "title": {
+          "en": "The link quality changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=measure_linkquality"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_linkquality",
+            "type": "number",
+            "title": {
+              "en": "Link quality"
+            },
+            "example": 53
+          }
+        ],
+        "id": "measure_linkquality_changed"
+      },
+      {
+        "title": {
+          "en": "The luminance lux changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=measure_luminance.lux"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_luminance.lux",
+            "type": "number",
+            "title": {
+              "en": "Luminance"
+            },
+            "example": 53
+          }
+        ],
+        "id": "measure_luminance.lux_changed"
+      },
+      {
+        "title": {
+          "en": "The device temperature changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=measure_temperature.device"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_temperature.device",
+            "type": "number",
+            "title": {
+              "en": "Temperature"
+            },
+            "example": 53
+          }
+        ],
+        "id": "measure_temperature.device_changed"
+      },
+      {
+        "title": {
+          "en": "The sensor temperature changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=measure_temperature.sensor"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_temperature.sensor",
+            "type": "number",
+            "title": {
+              "en": "Temperature"
+            },
+            "example": 53
+          }
+        ],
+        "id": "measure_temperature.sensor_changed"
+      },
+      {
+        "title": {
+          "en": "The number of joined devices changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bridge"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "meter_joined_devices",
+            "type": "number",
+            "title": {
+              "en": "Joined devices"
+            },
+            "example": 53
+          }
+        ],
+        "id": "meter_joined_devices_changed"
+      },
+      {
+        "title": {
+          "en": "The messages per minute changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bridge"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "meter_mpm",
+            "type": "number",
+            "title": {
+              "en": "Messages per minute"
+            },
+            "example": 53
+          }
+        ],
+        "id": "meter_mpm_changed"
+      },
+      {
+        "title": {
+          "en": "Turned Off"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=onoff.l1"
+          }
+        ],
+        "id": "onoff.l1_false"
+      },
+      {
+        "title": {
+          "en": "Turned On"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=onoff.l1"
+          }
+        ],
+        "id": "onoff.l1_true"
+      },
+      {
+        "title": {
+          "en": "The Power On Behavior changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=power_on_behavior"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "power_on_behavior",
+            "type": "string",
+            "title": {
+              "en": "Power On Behavior"
+            },
+            "example": "off"
+          }
+        ],
+        "id": "power_on_behavior_changed"
+      },
+      {
+        "title": {
+          "en": "The Power Outage Memory changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=power_outage_memory"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "power_outage_memory",
+            "type": "string",
+            "title": {
+              "en": "Power Outage Memory"
+            },
+            "example": "off"
+          }
+        ],
+        "id": "power_outage_memory_changed"
+      },
+      {
+        "title": {
+          "en": "The preset changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=preset"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "preset",
+            "type": "string",
+            "title": {
+              "en": "Preset"
+            },
+            "example": "auto"
+          }
+        ],
+        "id": "preset_changed"
+      },
+      {
+        "title": {
+          "en": "The sensitivity changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=sensitivity_enum"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "sensitivity_enum",
+            "type": "string",
+            "title": {
+              "en": "Sensitivity"
+            },
+            "example": "low"
+          }
+        ],
+        "id": "sensitivity_enum_changed"
+      },
+      {
+        "title": {
+          "en": "The switch type changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=switch_type"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "switch_type",
+            "type": "string",
+            "title": {
+              "en": "Switch type"
+            },
+            "example": "toggle"
+          }
+        ],
+        "id": "switch_type_changed"
+      },
+      {
+        "title": {
+          "en": "The switch type L1 changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=switch_type.l1"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "switch_type.l1",
+            "type": "string",
+            "title": {
+              "en": "Switch type L1"
+            },
+            "example": "toggle"
+          }
+        ],
+        "id": "switch_type.l1_changed"
+      },
+      {
+        "title": {
+          "en": "The switch type L1 changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=switch_type.l2"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "switch_type.l2",
+            "type": "string",
+            "title": {
+              "en": "Switch type L2"
+            },
+            "example": "toggle"
+          }
+        ],
+        "id": "switch_type.l2_changed"
+      },
+      {
+        "title": {
+          "en": "The preset changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=system_mode"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "system_mode",
+            "type": "string",
+            "title": {
+              "en": "System mode"
+            },
+            "example": "auto"
+          }
+        ],
+        "id": "system_mode_changed"
+      }
+    ],
+    "actions": [
+      {
+        "title": {
+          "en": "Set Color Power On Behavior"
+        },
+        "titleFormatted": {
+          "en": "Set Color Power On Behavior to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=color_power_on_behavior"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "initial",
+                "title": {
+                  "en": "Initial"
+                }
+              },
+              {
+                "id": "customized",
+                "title": {
+                  "en": "Customized"
+                }
+              },
+              {
+                "id": "previous",
+                "title": {
+                  "en": "Previous"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "color_power_on_behavior"
+      },
+      {
+        "title": {
+          "en": "Dim L1"
+        },
+        "titleFormatted": {
+          "en": "Dim L1 to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=dim.l1"
+          },
+          {
+            "name": "val",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "value": 0.5,
+            "label": "%",
+            "labelMultiplier": 100,
+            "labelDecimals": 0
+          }
+        ],
+        "id": "dim.l1"
+      },
+      {
+        "title": {
+          "en": "Dim L1"
+        },
+        "titleFormatted": {
+          "en": "Dim L1 to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=dim.l2"
+          },
+          {
+            "name": "val",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "value": 0.5,
+            "label": "%",
+            "labelMultiplier": 100,
+            "labelDecimals": 0
+          }
+        ],
+        "id": "dim.l2"
+      },
+      {
+        "title": {
+          "en": "Set Indicator Mode"
+        },
+        "titleFormatted": {
+          "en": "Set Indicator Mode to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=indicator_mode"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "off",
+                "title": {
+                  "en": "Off"
+                }
+              },
+              {
+                "id": "off/on",
+                "title": {
+                  "en": "Off/On"
+                }
+              },
+              {
+                "id": "on/off",
+                "title": {
+                  "en": "On/Off"
+                }
+              },
+              {
+                "id": "on",
+                "title": {
+                  "en": "On"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "indicator_mode"
+      },
+      {
+        "title": {
+          "en": "Switch Child Lock On or Off"
+        },
+        "titleFormatted": {
+          "en": "Switch Child Lock [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=locked.child"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On"
+            }
+          }
+        ],
+        "id": "locked.child"
+      },
+      {
+        "title": {
+          "en": "Switch L1 On or Off"
+        },
+        "titleFormatted": {
+          "en": "Switch L1 [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=onoff.l1"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On"
+            }
+          }
+        ],
+        "id": "onoff.l1"
+      },
+      {
+        "title": {
+          "en": "Switch L2 On or Off"
+        },
+        "titleFormatted": {
+          "en": "Switch L2 [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=onoff.l2"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On"
+            }
+          }
+        ],
+        "id": "onoff.l2"
+      },
+      {
+        "title": {
+          "en": "Set Power On Behavior"
+        },
+        "titleFormatted": {
+          "en": "Set Power On Behavior to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=power_on_behavior"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "off",
+                "title": {
+                  "en": "Off"
+                }
+              },
+              {
+                "id": "on",
+                "title": {
+                  "en": "On"
+                }
+              },
+              {
+                "id": "toggle",
+                "title": {
+                  "en": "Toggle"
+                }
+              },
+              {
+                "id": "previous",
+                "title": {
+                  "en": "Previous"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "power_on_behavior"
+      },
+      {
+        "title": {
+          "en": "Set Power Outage Memory"
+        },
+        "titleFormatted": {
+          "en": "Set Power Outage Memory to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=power_outage_memory"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "off",
+                "title": {
+                  "en": "Off"
+                }
+              },
+              {
+                "id": "on",
+                "title": {
+                  "en": "On"
+                }
+              },
+              {
+                "id": "previous",
+                "title": {
+                  "en": "Restore"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "power_outage_memory"
+      },
+      {
+        "title": {
+          "en": "Set Preset"
+        },
+        "titleFormatted": {
+          "en": "Set Preset to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=preset"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "auto",
+                "title": {
+                  "en": "Automatic"
+                }
+              },
+              {
+                "id": "manual",
+                "title": {
+                  "en": "Manual"
+                }
+              },
+              {
+                "id": "holiday",
+                "title": {
+                  "en": "Holiday"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "preset"
+      },
+      {
+        "title": {
+          "en": "Set Preset"
+        },
+        "titleFormatted": {
+          "en": "Set Preset to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=preset"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "auto",
+                "title": {
+                  "en": "Automatic"
+                }
+              },
+              {
+                "id": "manual",
+                "title": {
+                  "en": "Manual"
+                }
+              },
+              {
+                "id": "holiday",
+                "title": {
+                  "en": "Holiday"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "preset copy"
+      },
+      {
+        "title": {
+          "en": "Set Switch Type"
+        },
+        "titleFormatted": {
+          "en": "Set Switch Type to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=switch_type"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "toggle",
+                "title": {
+                  "en": "toggle"
+                }
+              },
+              {
+                "id": "state",
+                "title": {
+                  "en": "State"
+                }
+              },
+              {
+                "id": "momentary",
+                "title": {
+                  "en": "Momentary"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "switch_type"
+      },
+      {
+        "title": {
+          "en": "Set Switch Type L1"
+        },
+        "titleFormatted": {
+          "en": "Set L1 Switch Type to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=switch_type.l1"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "toggle",
+                "title": {
+                  "en": "toggle"
+                }
+              },
+              {
+                "id": "state",
+                "title": {
+                  "en": "State"
+                }
+              },
+              {
+                "id": "momentary",
+                "title": {
+                  "en": "Momentary"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "switch_type.l1"
+      },
+      {
+        "title": {
+          "en": "Set Switch Type L2"
+        },
+        "titleFormatted": {
+          "en": "Set L2 Switch Type to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device&capabilities=switch_type.l2"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "toggle",
+                "title": {
+                  "en": "toggle"
+                }
+              },
+              {
+                "id": "state",
+                "title": {
+                  "en": "State"
+                }
+              },
+              {
+                "id": "momentary",
+                "title": {
+                  "en": "Momentary"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "switch_type.l2"
+      }
+    ]
   },
   "drivers": [
     {
@@ -346,6 +1577,18 @@
     }
   ],
   "capabilities": {
+    "action": {
+      "type": "string",
+      "title": {
+        "en": "Action"
+      },
+      "units": {
+        "en": ""
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true
+    },
     "alarm_offline": {
       "type": "boolean",
       "title": {
@@ -391,7 +1634,85 @@
       "insights": false,
       "icon": "./assets/allow_joining_timeout.svg"
     },
-    "generic_string": {
+    "color_power_on_behavior": {
+      "type": "enum",
+      "title": {
+        "en": "Color Power On Behavior"
+      },
+      "values": [
+        {
+          "id": "initial",
+          "title": {
+            "en": "Initial"
+          }
+        },
+        {
+          "id": "customized",
+          "title": {
+            "en": "Customized"
+          }
+        },
+        {
+          "id": "previous",
+          "title": {
+            "en": "Previous"
+          }
+        }
+      ],
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "insights": false
+    },
+    "custom_enum": {
+      "type": "enum",
+      "title": {
+        "en": "SELECTION"
+      },
+      "values": [
+        {
+          "id": "enum1",
+          "title": {
+            "en": "First option"
+          }
+        },
+        {
+          "id": "enum2",
+          "title": {
+            "en": "Second option"
+          }
+        },
+        {
+          "id": "enum3",
+          "title": {
+            "en": "Third option"
+          }
+        },
+        {
+          "id": "enum4",
+          "title": {
+            "en": "Fourth option"
+          }
+        }
+      ],
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": false,
+      "insights": false
+    },
+    "custom_number": {
+      "type": "number",
+      "title": {
+        "en": ""
+      },
+      "units": {
+        "en": ""
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true
+    },
+    "custom_string": {
       "type": "string",
       "title": {
         "en": "Text"
@@ -401,6 +1722,90 @@
       },
       "getable": true,
       "setable": false,
+      "insights": false
+    },
+    "effect": {
+      "type": "enum",
+      "title": {
+        "en": "SELECTION"
+      },
+      "values": [
+        {
+          "id": "blink",
+          "title": {
+            "en": "Blink"
+          }
+        },
+        {
+          "id": "breathe",
+          "title": {
+            "en": "Breathe"
+          }
+        },
+        {
+          "id": "okay",
+          "title": {
+            "en": "Okay"
+          }
+        },
+        {
+          "id": "channel_change",
+          "title": {
+            "en": "Channel change"
+          }
+        },
+        {
+          "id": "finish_effect",
+          "title": {
+            "en": "Finish effect"
+          }
+        },
+        {
+          "id": "stop_effect",
+          "title": {
+            "en": "Stop effect"
+          }
+        }
+      ],
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "insights": false
+    },
+    "indicator_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Indicator mode"
+      },
+      "values": [
+        {
+          "id": "off",
+          "title": {
+            "en": "Off"
+          }
+        },
+        {
+          "id": "on",
+          "title": {
+            "en": "On"
+          }
+        },
+        {
+          "id": "off/on",
+          "title": {
+            "en": "Off/On"
+          }
+        },
+        {
+          "id": "on/off",
+          "title": {
+            "en": "On/Off"
+          }
+        }
+      ],
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
       "insights": false
     },
     "measure_linkquality": {
@@ -435,6 +1840,228 @@
       "setable": false,
       "insights": true,
       "icon": "./assets/meter_mpm.svg"
+    },
+    "power_on_behavior": {
+      "type": "enum",
+      "title": {
+        "en": "Power On Behavior"
+      },
+      "values": [
+        {
+          "id": "off",
+          "title": {
+            "en": "Off"
+          }
+        },
+        {
+          "id": "on",
+          "title": {
+            "en": "On"
+          }
+        },
+        {
+          "id": "toggle",
+          "title": {
+            "en": "Toggle"
+          }
+        },
+        {
+          "id": "previous",
+          "title": {
+            "en": "Previous"
+          }
+        }
+      ],
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "insights": false
+    },
+    "power_outage_memory": {
+      "type": "enum",
+      "title": {
+        "en": "Power Outage Memory"
+      },
+      "values": [
+        {
+          "id": "off",
+          "title": {
+            "en": "Off"
+          }
+        },
+        {
+          "id": "on",
+          "title": {
+            "en": "On"
+          }
+        },
+        {
+          "id": "restore",
+          "title": {
+            "en": "Restore"
+          }
+        }
+      ],
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "insights": false
+    },
+    "preset": {
+      "type": "enum",
+      "title": {
+        "en": "Preset"
+      },
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto"
+          }
+        },
+        {
+          "id": "manual",
+          "title": {
+            "en": "Manual"
+          }
+        },
+        {
+          "id": "holiday",
+          "title": {
+            "en": "Holiday"
+          }
+        }
+      ],
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "insights": false
+    },
+    "sensitivity_enum": {
+      "type": "enum",
+      "title": {
+        "en": "Sensitivity"
+      },
+      "values": [
+        {
+          "id": "low",
+          "title": {
+            "en": "Low"
+          }
+        },
+        {
+          "id": "medium",
+          "title": {
+            "en": "Medium"
+          }
+        },
+        {
+          "id": "high",
+          "title": {
+            "en": "High"
+          }
+        }
+      ],
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "insights": false
+    },
+    "switch_type": {
+      "type": "enum",
+      "title": {
+        "en": "Switch type"
+      },
+      "values": [
+        {
+          "id": "toggle",
+          "title": {
+            "en": "Toggle"
+          }
+        },
+        {
+          "id": "state",
+          "title": {
+            "en": "State"
+          }
+        },
+        {
+          "id": "momentary",
+          "title": {
+            "en": "Momentary"
+          }
+        }
+      ],
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "insights": false
+    },
+    "system_mode": {
+      "type": "enum",
+      "title": {
+        "en": "System Mode"
+      },
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto"
+          }
+        },
+        {
+          "id": "heat",
+          "title": {
+            "en": "Heat"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off"
+          }
+        },
+        {
+          "id": "cool",
+          "title": {
+            "en": "Cool"
+          }
+        },
+        {
+          "id": "emergency_heating",
+          "title": {
+            "en": "Emergency Heat"
+          }
+        },
+        {
+          "id": "precooling",
+          "title": {
+            "en": "Precool"
+          }
+        },
+        {
+          "id": "fan_only",
+          "title": {
+            "en": "Fan only"
+          }
+        },
+        {
+          "id": "dry",
+          "title": {
+            "en": "Dry"
+          }
+        },
+        {
+          "id": "sleep",
+          "title": {
+            "en": "Sleep"
+          }
+        }
+      ],
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "insights": false
     }
   }
 }

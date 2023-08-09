@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The sensor temperature changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device&capabilities=measure_temperature.sensor"
+		}
+	],
+	"tokens": [
+		{
+			"name": "measure_temperature.sensor",
+			"type": "number",
+			"title": { 
+				"en": "Temperature"
+			},
+			"example": 53
+		}
+	]
+}

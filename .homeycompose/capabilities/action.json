@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Action"
+  },
+  "units": {
+    "en": ""
+  },
+  "getable": true,
+  "setable": false,
+  "insights": true
+}

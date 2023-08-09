@@ -1,4 +1,10 @@
 {
+  "2.0.0": {
+    "en": "Greatly extended capability support, including buttons, actions, color lights. Added many flowcards."
+  },
+  "1.3.0": {
+    "en": "Inhibit state retrieval for battery devices, or sending command to read-only exposes. Added power_on_behavior, power_outage_memory, indicator_mode. Added thermostat preset and system_mode."
+  },
   "1.2.1": {
     "en": "Improved thermostat capability mapping. Improved capability unit migration."
   },

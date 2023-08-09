@@ -1,0 +1,15 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Switch type"
+  },
+  "values": [
+    { "id": "toggle", "title": { "en": "Toggle" }},
+    { "id": "state", "title": { "en": "State" }},
+    { "id": "momentary", "title": { "en": "Momentary" }}
+  ],
+  "uiComponent": "picker",
+  "getable": true,
+  "setable": true,
+  "insights": false
+}

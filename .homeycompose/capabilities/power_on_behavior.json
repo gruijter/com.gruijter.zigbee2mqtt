@@ -1,0 +1,16 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Power On Behavior"
+  },
+  "values": [
+    { "id": "off", "title": { "en": "Off" }},
+    { "id": "on", "title": { "en": "On" }},
+    { "id": "toggle", "title": { "en": "Toggle" }},
+    { "id": "previous", "title": { "en": "Previous" }}
+  ],
+  "uiComponent": "picker",
+  "getable": true,
+  "setable": true,
+  "insights": false
+}

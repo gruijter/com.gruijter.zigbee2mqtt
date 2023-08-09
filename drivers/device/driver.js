@@ -65,7 +65,7 @@ class MyDriver extends Driver {
 								settings.description = dev.definition.description;
 							}
 							// map capabilities and device icons to Homey
-							const { caps, capUnits } = mapProperty(dev);
+							const { caps, capDetails } = mapProperty(dev);
 							const { homeyClass, icon } = mapClassIcon(dev);
 							settings.homeyclass = homeyClass;
 							const device = {
@@ -75,7 +75,7 @@ class MyDriver extends Driver {
 								},
 								icon, // "/my_icon.svg", // relative to: /drivers/<driver_id>/assets/
 								capabilities: [...caps],
-								store: { dev, capUnits },
+								store: { dev, capDetails },
 								settings,
 							};
 							devices.push(device);

@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The Y-angle changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device&capabilities=custom_number.angle_y"
+		}
+	],
+	"tokens": [
+		{
+			"name": "custom_number.angle_y",
+			"type": "number",
+			"title": { 
+				"en": "angle_y"
+			},
+			"example": 48
+		}
+	]
+}

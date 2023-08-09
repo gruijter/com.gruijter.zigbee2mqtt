@@ -1,0 +1,34 @@
+{
+	"title": {
+		"en": "Set Switch Type L2"
+	},
+	"titleFormatted": {
+			"en": "Set L2 Switch Type to [[val]]"
+	},
+	"highlight": true,
+	"args": [
+		{
+			"type": "device",
+			"name": "device",
+			"filter": "driver_id=device&capabilities=switch_type.l2"
+		},
+		{
+			"type": "dropdown",
+			"name": "val",
+			"values": [
+				{
+					"id": "toggle",
+					"title": { "en": "toggle" }
+				},
+				{
+					"id": "state",
+					"title": { "en": "State" }
+				},
+				{
+					"id": "momentary",
+					"title": { "en": "Momentary" }
+				}
+			]
+		}
+	]
+}

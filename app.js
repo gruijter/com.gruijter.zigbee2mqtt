@@ -20,24 +20,48 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 'use strict';
 
 const Homey = require('homey');
+const { capabilityMap, getExpMap } = require('./capabilitymap');
 
 class MyApp extends Homey.App {
 
 	async onInit() {
-		// this.registerFlowListeners();
-		this.homey.setMaxListeners(100); // INCREASE LISTENERS
-		this.log('App has been initialized');
+		try {
+			this.registerFlowListeners();
+			this.homey.setMaxListeners(100); // INCREASE LISTENERS
+			this.log('App has been initialized');
+		} catch (error) {
+			this.error(error);
+		}
 	}
 
 	async onUninit() {
 		this.log('app onUninit');
 	}
 
-	// registerFlowListeners() {
-	// 	// action cards
-	// 	const sendCommand = this.homey.flow.getActionCard('send_command');
-	// 	sendCommand.registerRunListener((args) => args.device.sendCommand(args.command, 'flow'));
-	// }
+	registerFlowListeners() {
+		// custom action cards
+		// const setDimL1 = this.homey.flow.getActionCard('set_dim.l1');
+		// setDimL1.registerRunListener((args) => args.device.setCommand({ brightness_l1: Number(args.dim) * 254 }, 'flow'));
+
+		const actionListeners = [];
+		const actionList = Homey.manifest.flow.actions;
+		const expMap = getExpMap();
+		actionList.forEach((action, index) => {
+			const z2mExp = expMap[action.id];
+			const mapFunc = capabilityMap[z2mExp];
+			if (!mapFunc) return;	// not included in Homey maping
+			this.log('setting up action listener', action.id, mapFunc('val')[2]);
+			actionListeners[index] = this.homey.flow.getActionCard(action.id);
+			actionListeners[index].registerRunListener((args) => {
+				try {
+					args.device.setCommand(mapFunc(args.val)[2], 'flow');
+				} catch (error) {
+					this.error(error);
+				}
+			});
+		});
+	}
+
 }
 
 module.exports = MyApp;

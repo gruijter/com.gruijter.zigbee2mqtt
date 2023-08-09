@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The soil humidity changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device&capabilities=measure_humidity.soil"
+		}
+	],
+	"tokens": [
+		{
+			"name": "measure_humidity.soil",
+			"type": "number",
+			"title": { 
+				"en": "Humidity"
+			},
+			"example": 53
+		}
+	]
+}

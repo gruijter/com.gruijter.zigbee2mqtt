@@ -1,0 +1,21 @@
+{
+	"title": {
+		"en": "Switch Child Lock On or Off"
+	},
+		"titleFormatted": {
+				"en": "Switch Child Lock [[val]]"
+		},
+		"highlight": true,
+		"args": [
+				{
+						"type": "device",
+						"name": "device",
+						"filter": "driver_id=device&capabilities=locked.child"
+				},
+				{
+						"type": "checkbox",
+						"name": "val",
+						"title": { "en": "On" }
+				}
+		]
+}

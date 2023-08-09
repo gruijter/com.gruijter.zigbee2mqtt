@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The X-angle changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device&capabilities=custom_number.angle_x"
+		}
+	],
+	"tokens": [
+		{
+			"name": "custom_number.angle_x",
+			"type": "number",
+			"title": { 
+				"en": "angle_x"
+			},
+			"example": 48
+		}
+	]
+}

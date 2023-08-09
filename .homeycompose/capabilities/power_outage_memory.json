@@ -1,0 +1,15 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Power Outage Memory"
+  },
+  "values": [
+    { "id": "off", "title": { "en": "Off" }},
+    { "id": "on", "title": { "en": "On" }},
+    { "id": "restore", "title": { "en": "Restore" }}
+  ],
+  "uiComponent": "picker",
+  "getable": true,
+  "setable": true,
+  "insights": false
+}

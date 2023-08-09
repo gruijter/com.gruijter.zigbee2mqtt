@@ -1,0 +1,38 @@
+{
+	"title": {
+		"en": "Set Power On Behavior"
+	},
+	"titleFormatted": {
+			"en": "Set Power On Behavior to [[val]]"
+	},
+	"highlight": true,
+	"args": [
+		{
+			"type": "device",
+			"name": "device",
+			"filter": "driver_id=device&capabilities=power_on_behavior"
+		},
+		{
+			"type": "dropdown",
+			"name": "val",
+			"values": [
+				{
+					"id": "off",
+					"title": { "en": "Off" }
+				},
+				{
+					"id": "on",
+					"title": { "en": "On" }
+				},
+				{
+					"id": "toggle",
+					"title": { "en": "Toggle" }
+				},
+				{
+					"id": "previous",
+					"title": { "en": "Previous" }
+				}
+			]
+		}
+	]
+}

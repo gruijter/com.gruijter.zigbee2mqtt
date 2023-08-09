@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The messages per minute changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=bridge"
+		}
+	],
+	"tokens": [
+		{
+			"name": "meter_mpm",
+			"type": "number",
+			"title": { 
+				"en": "Messages per minute"
+			},
+			"example": 53
+		}
+	]
+}

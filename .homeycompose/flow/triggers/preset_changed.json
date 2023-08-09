@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The preset changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device&capabilities=preset"
+		}
+	],
+	"tokens": [
+		{
+			"name": "preset",
+			"type": "string",
+			"title": { 
+				"en": "Preset"
+			},
+			"example": "auto"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The dim level L2 changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device&capabilities=dim.l2"
+		}
+	],
+	"tokens": [
+		{
+			"name": "dim.l2",
+			"type": "number",
+			"title": { 
+				"en": "Dim level"
+			},
+			"example": 53
+		}
+	]
+}

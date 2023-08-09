@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The strength changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device&capabilities=custom_number.strength"
+		}
+	],
+	"tokens": [
+		{
+			"name": "custom_number.strength",
+			"type": "number",
+			"title": { 
+				"en": "Strength"
+			},
+			"example": 48
+		}
+	]
+}

@@ -1,0 +1,34 @@
+{
+	"title": {
+		"en": "Set Switch Type"
+	},
+	"titleFormatted": {
+			"en": "Set Switch Type to [[val]]"
+	},
+	"highlight": true,
+	"args": [
+		{
+			"type": "device",
+			"name": "device",
+			"filter": "driver_id=device&capabilities=switch_type"
+		},
+		{
+			"type": "dropdown",
+			"name": "val",
+			"values": [
+				{
+					"id": "toggle",
+					"title": { "en": "toggle" }
+				},
+				{
+					"id": "state",
+					"title": { "en": "State" }
+				},
+				{
+					"id": "momentary",
+					"title": { "en": "Momentary" }
+				}
+			]
+		}
+	]
+}

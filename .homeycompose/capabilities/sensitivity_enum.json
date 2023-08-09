@@ -1,0 +1,15 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Sensitivity"
+  },
+  "values": [
+    { "id": "low", "title": { "en": "Low" }},
+    { "id": "medium", "title": { "en": "Medium" }},
+    { "id": "high", "title": { "en": "High" }}
+  ],
+  "uiComponent": "picker",
+  "getable": true,
+  "setable": true,
+  "insights": false
+}

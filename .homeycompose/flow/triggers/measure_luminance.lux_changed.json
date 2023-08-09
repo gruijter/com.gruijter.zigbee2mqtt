@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The luminance lux changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device&capabilities=measure_luminance.lux"
+		}
+	],
+	"tokens": [
+		{
+			"name": "measure_luminance.lux",
+			"type": "number",
+			"title": { 
+				"en": "Luminance"
+			},
+			"example": 53
+		}
+	]
+}

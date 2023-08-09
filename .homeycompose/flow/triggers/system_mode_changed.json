@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The preset changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device&capabilities=system_mode"
+		}
+	],
+	"tokens": [
+		{
+			"name": "system_mode",
+			"type": "string",
+			"title": { 
+				"en": "System mode"
+			},
+			"example": "auto"
+		}
+	]
+}

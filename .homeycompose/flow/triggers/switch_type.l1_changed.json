@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The switch type L1 changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device&capabilities=switch_type.l1"
+		}
+	],
+	"tokens": [
+		{
+			"name": "switch_type.l1",
+			"type": "string",
+			"title": { 
+				"en": "Switch type L1"
+			},
+			"example": "toggle"
+		}
+	]
+}

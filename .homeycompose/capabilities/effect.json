@@ -1,0 +1,18 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "SELECTION"
+  },
+  "values": [
+    { "id": "blink", "title": { "en": "Blink" }},
+    { "id": "breathe", "title": { "en": "Breathe" }},
+    { "id": "okay", "title": { "en": "Okay" }},
+    { "id": "channel_change", "title": { "en": "Channel change" }},
+    { "id": "finish_effect", "title": { "en": "Finish effect" }},
+    { "id": "stop_effect", "title": { "en": "Stop effect" }}
+  ],
+  "uiComponent": "picker",
+  "getable": true,
+  "setable": true,
+  "insights": false
+}

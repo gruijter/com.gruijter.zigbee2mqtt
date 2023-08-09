@@ -1,0 +1,15 @@
+{
+		"title": {
+				"en": "The Offline Alarm turned On"
+		},
+		"highlight": true,
+		"args": [
+				{
+						"type": "device",
+						"name": "device",
+						"filter": "driver_id=bridge"
+				}
+		]
+}
+
+

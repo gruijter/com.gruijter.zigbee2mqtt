@@ -1,0 +1,16 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Indicator mode"
+  },
+  "values": [
+    { "id": "off", "title": { "en": "Off" }},
+    { "id": "on", "title": { "en": "On" }},
+    { "id": "off/on", "title": { "en": "Off/On" }},
+    { "id": "on/off", "title": { "en": "On/Off" }}
+  ],
+  "uiComponent": "picker",
+  "getable": true,
+  "setable": true,
+  "insights": false
+}

@@ -1,0 +1,34 @@
+{
+	"title": {
+		"en": "Set Color Power On Behavior"
+	},
+	"titleFormatted": {
+			"en": "Set Color Power On Behavior to [[val]]"
+	},
+	"highlight": true,
+	"args": [
+		{
+			"type": "device",
+			"name": "device",
+			"filter": "driver_id=device&capabilities=color_power_on_behavior"
+		},
+		{
+			"type": "dropdown",
+			"name": "val",
+			"values": [
+				{
+					"id": "initial",
+					"title": { "en": "Initial" }
+				},
+				{
+					"id": "customized",
+					"title": { "en": "Customized" }
+				},
+				{
+					"id": "previous",
+					"title": { "en": "Previous" }
+				}
+			]
+		}
+	]
+}

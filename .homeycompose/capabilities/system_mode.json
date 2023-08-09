@@ -1,0 +1,21 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "System Mode"
+  },
+  "values": [
+    { "id": "auto", "title": { "en": "Auto" }},
+    { "id": "heat", "title": { "en": "Heat" }},
+    { "id": "off", "title": { "en": "Off" }},
+    { "id": "cool", "title": { "en": "Cool" }},
+    { "id": "emergency_heating", "title": { "en": "Emergency Heat" }},
+    { "id": "precooling", "title": { "en": "Precool" }},
+    { "id": "fan_only", "title": { "en": "Fan only" }},
+    { "id": "dry", "title": { "en": "Dry" }},
+    { "id": "sleep", "title": { "en": "Sleep" }}
+  ],
+  "uiComponent": "picker",
+  "getable": true,
+  "setable": true,
+  "insights": false
+}

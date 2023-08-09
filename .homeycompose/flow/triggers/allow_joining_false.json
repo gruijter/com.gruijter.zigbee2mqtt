@@ -1,0 +1,15 @@
+{
+	"title": {
+		"en": "Joining turned Off"
+	},
+	"highlight": true,
+	"args": [
+		{
+			"type": "device",
+			"name": "device",
+			"filter": "driver_id=bridge"
+		}
+	]
+}
+
+

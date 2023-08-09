@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The number of joined devices changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=bridge"
+		}
+	],
+	"tokens": [
+		{
+			"name": "meter_joined_devices",
+			"type": "number",
+			"title": { 
+				"en": "Joined devices"
+			},
+			"example": 53
+		}
+	]
+}

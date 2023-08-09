@@ -1,0 +1,15 @@
+{
+	"title": {
+		"en": "Turned On"
+	},
+	"highlight": true,
+	"args": [
+		{
+			"type": "device",
+			"name": "device",
+			"filter": "driver_id=device&capabilities=onoff.l1"
+		}
+	]
+}
+
+

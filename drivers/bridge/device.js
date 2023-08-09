@@ -153,12 +153,38 @@ class MyDevice extends Device {
 
 					// get bridge info and join permit status
 					if (topic.includes(`${this.bridgeTopic}/info`)) {
-						// console.log(`${this.getName()} new info`, info);
-						this.setCapability('allow_joining', info.permit_join);
-						this.setCapability('allow_joining_timeout', Number(info.permit_join_timeout));
-						if (info.config && info.config.devices) this.setCapability('meter_joined_devices', Object.keys(info.config.devices).length);
+						// console.dir(info, { depth: null });
 						// console.dir(info.config.devices, { depth: null });
-						// add channel pan_id and version change
+
+						// check for joining status
+						if (info.permit_join !== this.getCapabilityValue('allow_joining')) {
+							this.setCapability('allow_joining', info.permit_join);
+							this.log('Allow joining:', info.permit_join);
+						}
+						this.setCapability('allow_joining_timeout', Number(info.permit_join_timeout));
+
+						// check number of joined devices
+						if (info.config && info.config.devices) this.setCapability('meter_joined_devices', Object.keys(info.config.devices).length);
+
+						// check for channel, pan_id and version change
+						if (info.version !== this.getSettings().version) {
+							this.setSettings({ version: info.version });
+							const excerpt = `Zigbee2MQTT Bridge was updated to ${info.version}`;
+							this.log(excerpt);
+							await this.homey.notifications.createNotification({ excerpt });
+						}
+						if (info.network.pan_id.toString() !== this.getSettings().pan_id) {
+							this.setSettings({ pan_id: info.network.pan_id.toString() });
+							const excerpt = `Zigbee2MQTT PanID was changed to ${info.network.pan_id.toString()}`;
+							this.log(excerpt);
+							await this.homey.notifications.createNotification({ excerpt });
+						}
+						if (info.network.channel.toString() !== this.getSettings().zigbee_channel) {
+							this.setSettings({ zigbee_channel: info.network.channel.toString() });
+							const excerpt = `Zigbee2MQTT channel was changed to ${info.network.channel.toString()}`;
+							this.log(excerpt);
+							await this.homey.notifications.createNotification({ excerpt });
+						}
 					}
 
 					// check for online/offline

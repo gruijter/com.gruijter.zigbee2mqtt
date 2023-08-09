@@ -1,0 +1,27 @@
+{
+	"title": {
+		"en": "Dim L1"
+	},
+	"titleFormatted": {
+			"en": "Dim L1 to [[val]]"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device&capabilities=dim.l1"
+		},
+		{
+			"name": "val",
+			"type": "range",
+			"min": 0,
+			"max": 1,
+			"step": 0.01,
+			"value": 0.5,
+			"label": "%",
+			"labelMultiplier": 100,
+			"labelDecimals": 0
+		}
+	]
+}

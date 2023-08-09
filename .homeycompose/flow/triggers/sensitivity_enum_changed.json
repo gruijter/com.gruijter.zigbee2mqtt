@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The sensitivity changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device&capabilities=sensitivity_enum"
+		}
+	],
+	"tokens": [
+		{
+			"name": "sensitivity_enum",
+			"type": "string",
+			"title": { 
+				"en": "Sensitivity"
+			},
+			"example": "low"
+		}
+	]
+}
