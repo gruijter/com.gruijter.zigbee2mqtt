@@ -121,7 +121,10 @@ class MyDriver extends Driver {
 		const infoTopic = baseTopic === '' ? 'zigbee2mqtt/bridge/info' : `${baseTopic}/bridge/info`;
 		let info = null;
 		const messageListener = (topic, message) => {
-			info = JSON.parse(message);
+			info = message;
+			try {
+				info = JSON.parse(message);
+			} catch (error) { this.log(error); }
 			this.log('info received from MQTT bridge', topic);
 			this.log(info);
 		};

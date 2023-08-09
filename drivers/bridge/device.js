@@ -174,14 +174,16 @@ class MyDevice extends Device {
 							await this.homey.notifications.createNotification({ excerpt });
 						}
 						if (info.network.pan_id.toString() !== this.getSettings().pan_id) {
-							this.setSettings({ pan_id: info.network.pan_id.toString() });
-							const excerpt = `Zigbee2MQTT PanID was changed to ${info.network.pan_id.toString()}`;
+							const pid = info.network && info.network.pan_id ? info.network.pan_id.toString() : '';
+							this.setSettings({ pan_id: pid });
+							const excerpt = `Zigbee2MQTT PanID was changed to ${pid}`;
 							this.log(excerpt);
 							await this.homey.notifications.createNotification({ excerpt });
 						}
 						if (info.network.channel.toString() !== this.getSettings().zigbee_channel) {
-							this.setSettings({ zigbee_channel: info.network.channel.toString() });
-							const excerpt = `Zigbee2MQTT channel was changed to ${info.network.channel.toString()}`;
+							const zc = info.network && info.network.channel ? info.network.channel.toString() : '';
+							this.setSettings({ zigbee_channel: zc });
+							const excerpt = `Zigbee2MQTT channel was changed to ${zc}`;
 							this.log(excerpt);
 							await this.homey.notifications.createNotification({ excerpt });
 						}

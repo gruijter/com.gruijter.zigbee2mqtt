@@ -1,4 +1,7 @@
 {
+  "2.0.1": {
+    "en": "Added several trigger flowcards. Stability improvements."
+  },
   "2.0.0": {
     "en": "Greatly extended capability support, including buttons, actions, color lights. Added many flowcards."
   },

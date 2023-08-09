@@ -77,7 +77,7 @@ class MyDevice extends Device {
 			await this.getStatus({ state: '' }, 'appInit');
 
 			this.restarting = false;
-			this.setAvailable();
+			this.setAvailable().catch(this.error);
 			this.log(this.getName(), 'has been initialized');
 		} catch (error) {
 			this.error(error);
@@ -282,13 +282,13 @@ class MyDevice extends Device {
 		// check deleted
 		if (!deviceInfo) {
 			this.error('device was deleted in Zigbee2MQTT', this.settings.friendly_name);
-			this.setUnavailable('device went missing in Zigbee2MQTT');
+			this.setUnavailable('device went missing in Zigbee2MQTT').catch(this.error);
 			throw Error('device went missing in Zigbee2MQTT');
 		}
 		// check for name change
 		if (deviceInfo.friendly_name !== this.settings.friendly_name) {
 			this.log('device was renamed in Zigbee2MQTT', this.settings.friendly_name, deviceInfo.friendly_name);
-			this.setSettings({ friendly_name: deviceInfo.friendly_name });
+			this.setSettings({ friendly_name: deviceInfo.friendly_name }).catch(this.error);
 			this.restartDevice(1000).catch(this.error);
 		}
 	}
