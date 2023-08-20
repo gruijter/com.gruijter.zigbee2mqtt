@@ -1,9 +1,9 @@
 {
 	"title": {
-		"en": "Dim L1"
+		"en": "Dim L2"
 	},
 	"titleFormatted": {
-			"en": "Dim L1 to [[val]]"
+			"en": "Dim L2 to [[val]]"
 	},
 	"highlight": true,
 	"args": [
