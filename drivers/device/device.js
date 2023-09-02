@@ -81,7 +81,7 @@ class MyDevice extends Device {
 			this.log(this.getName(), 'has been initialized');
 		} catch (error) {
 			this.error(error);
-			this.setUnavailable(error);
+			this.setUnavailable(error).catch(this.error);
 			this.restarting = false;
 			this.restartDevice(60 * 1000).catch(this.error);
 		}
@@ -155,7 +155,7 @@ class MyDevice extends Device {
 				const caps = this.getCapabilities();
 				const newCap = correctCaps[index];
 				if (caps[index] !== newCap) {
-					this.setUnavailable('Device is migrating. Please wait!');
+					this.setUnavailable('Device is migrating. Please wait!').catch(this.error);
 					capsChanged = true;
 					// remove all caps from here
 					for (let i = index; i < caps.length; i += 1) {
@@ -185,9 +185,9 @@ class MyDevice extends Device {
 	async setCapabilityUnits() {
 		try {
 			this.log(`setting Capability Units and Titles for ${this.getName()}`);
-			this.setUnavailable('Device is migrating. Please wait!');
+			this.setUnavailable('Device is migrating. Please wait!').catch(this.error);
 			const { capDetails } = this.store;
-			// console.log(capDetails);
+			// console.log(this.getName(), capDetails);
 			if (!capDetails) return;
 			const capDetailsArray = Object.entries(capDetails);
 			// console.dir(capDetailsArray, { depth: null });
@@ -321,6 +321,8 @@ class MyDevice extends Device {
 								const mapFunc = capabilityMap[entry[0]];
 								if (!mapFunc) return;	// not included in Homey maping
 								const capVal = mapFunc(entry[1]);
+								// Add extra triger for ACTION
+								if (capVal[0] === 'action') this.setCapability(capVal[0], '---');
 								this.setCapability(capVal[0], capVal[1]);
 							}
 						});

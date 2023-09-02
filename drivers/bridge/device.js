@@ -39,7 +39,7 @@ class MyDevice extends Device {
 			await this.connectBridge();
 			await this.registerListeners();
 			this.restarting = false;
-			this.setAvailable();
+			this.setAvailable().catch(this.error);
 			this.log(this.getName(), 'bridge device has been initialized');
 		} catch (error) {
 			this.error(error);
@@ -81,7 +81,7 @@ class MyDevice extends Device {
 				const caps = this.getCapabilities();
 				const newCap = correctCaps[index];
 				if (caps[index] !== newCap) {
-					this.setUnavailable('Device is migrating. Please wait!');
+					this.setUnavailable('Device is migrating. Please wait!').catch(this.error);
 					capsChanged = true;
 					// remove all caps from here
 					for (let i = index; i < caps.length; i += 1) {

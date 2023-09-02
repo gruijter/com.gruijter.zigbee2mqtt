@@ -88,7 +88,7 @@ const capabilityMap = {
 	state_l1: (val) => ['onoff.l1', val === 'ON', { state_l1: val ? 'ON' : 'OFF' }],
 	state_l2: (val) => ['onoff.l2', val === 'ON', { state_l2: val ? 'ON' : 'OFF' }],
 	device_fault: (val) => ['alarm_generic.fault', val],
-	vibration: (val) => ['alarm_generic.vibration', val],
+	vibration: (val) => ['alarm_motion.vibration', val],
 	gas: (val) => ['alarm_generic.gas', val],
 	occupancy: (val) => ['alarm_motion.occupancy', val],
 	presence: (val) => ['alarm_motion.presence', val],

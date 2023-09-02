@@ -1,4 +1,7 @@
 {
+  "2.0.3": {
+    "en": "Actions are now always triggered, even when action didn't change. Stability improvements"
+  },
   "2.0.2": {
     "en": "Typo fixes. Added trigger flowcard. Stability improvements"
   },
