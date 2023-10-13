@@ -1,0 +1,119 @@
+[
+    {
+        "type": "group",
+        "label": {
+                "en": "Group information"
+        },
+        "children": [
+            {
+                "id": "friendly_name",
+                "type": "label",
+                "label": {
+                        "en": "Zigbee2mqtt Name"
+                },
+                "value": ""
+            },
+            {
+                "id": "bridge_uid",
+                "type": "label",
+                "label": {
+                        "en": "Bridge IEEE Address"
+                },
+                "value": ""
+            },
+            {
+                "id": "uid",
+                "type": "label",
+                "label": {
+                        "en": "Group Id"
+                },
+                "value": ""
+            },
+            {
+                "id": "model",
+                "type": "label",
+                "label": {
+                        "en": "Model"
+                },
+                "value": ""
+            },
+            {
+                "id": "description",
+                "type": "label",
+                "label": {
+                        "en": "Description"
+                },
+                "value": ""
+            }
+        ]
+    },
+    {
+        "type": "group",
+        "label": {
+                "en": "Group settings"
+        },
+        "children": [
+            {
+                "id": "homeyclass",
+                "type": "dropdown",
+                "value": "en",
+                "label": {
+                        "en": "Group Class"
+                },
+                "hint": {
+                    "en": "This setting will effect the behavior in Homey flows."
+                },
+                "values": [
+                    {
+                        "id": "other",
+                        "label": {
+                                "en": "Other"
+                        }
+                    },
+                    {
+                        "id": "sensor",
+                        "label": {
+                                "en": "Sensor"
+                        }
+                    },
+                    {
+                        "id": "socket",
+                        "label": {
+                                "en": "Socket"
+                        }
+                    },
+                    {
+                        "id": "light",
+                        "label": {
+                                "en": "Light"
+                        }
+                    },
+                    {
+                        "id": "heater",
+                        "label": {
+                                "en": "Heater"
+                        }
+                    },
+                    {
+                        "id": "thermostat",
+                        "label": {
+                                "en": "Thermostat"
+                        }
+                    },
+                    {
+                        "id": "lock",
+                        "label": {
+                                "en": "Lock"
+                        }
+                    },
+                    {
+                        "id": "button",
+                        "label": {
+                                "en": "Button"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

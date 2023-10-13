@@ -51,9 +51,9 @@
     }
   },
   "homeyCommunityTopicId": 83214,
+  "source": "https://github.com/gruijter/com.gruijter.zigbee2mqtt",
   "bugs": {
-    "url": "https://github.com/gruijter/com.gruijter.zigbee2mqtt/issues",
-    "source": "https://github.com/gruijter/com.gruijter.zigbee2mqtt"
+    "url": "https://github.com/gruijter/com.gruijter.zigbee2mqtt/issues"
   },
   "flow": {
     "triggers": [
@@ -1686,6 +1686,38 @@
           ]
         }
       ]
+    },
+    {
+      "name": {
+        "en": "Group"
+      },
+      "class": "socket",
+      "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/group/assets/images/small.png",
+        "large": "/drivers/group/assets/images/large.png",
+        "xlarge": "/drivers/group/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "group"
     }
   ],
   "capabilities": {

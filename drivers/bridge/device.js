@@ -228,6 +228,14 @@ class MyDevice extends Device {
 						this.homey.emit('devicelistupdate', true);
 					}
 
+					// get group list
+					if (topic.includes(`${this.bridgeTopic}/groups`)) {
+						// console.log('group list was updated', info);
+						this.groups = info;
+						console.dir(this.groups, { depth: null });
+						this.homey.emit('grouplistupdate', true);
+					}
+
 					// check for namechange
 					// if (topic.includes(`${this.bridgeTopic}/devices`)) {
 					// 	const deviceInfo = info.filter((dev) => dev.ieee_address === this.settings.uid);
@@ -253,7 +261,9 @@ class MyDevice extends Device {
 					this.log(`Subscribing to ${this.bridgeTopic}/state`);
 					await this.client.subscribe([`${this.bridgeTopic}/state`]); // bridge online/offline updates
 					this.log(`Subscribing to ${this.bridgeTopic}/devices`);
-					await this.client.subscribe([`${this.bridgeTopic}/devices`]); // bridge all devices updates
+					await this.client.subscribe([`${this.bridgeTopic}/devices`]); // bridge all device updates
+					this.log(`Subscribing to ${this.bridgeTopic}/groups`);
+					await this.client.subscribe([`${this.bridgeTopic}/groups`]); // bridge all group updates
 					this.log('mqtt bridge subscriptions ok');
 				} catch (error) {
 					this.error(error);
@@ -304,6 +314,7 @@ class MyDevice extends Device {
 		try {
 			this.log('removing listeners', this.getName());
 			// this.homey.removeAllListeners('devicelistupdate');
+			// this.homey.removeAllListeners('grouplistupdate');
 			// this.homey.removeAllListeners('bridgeoffline');
 			if (this.client) await this.client.end();
 		} catch (error) {
