@@ -7,7 +7,7 @@
 		{
 				"type": "device",
 				"name": "device",
-				"filter": "driver_id=device&capabilities=switch_type.l1"
+				"filter": "driver_id=device|group&capabilities=switch_type.l1"
 		}
 	],
 	"tokens": [

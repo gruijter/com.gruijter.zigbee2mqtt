@@ -7,7 +7,7 @@
 		{
 			"type": "device",
 			"name": "device",
-			"filter": "driver_id=device&capabilities=alarm_generic.gas"
+			"filter": "driver_id=device|group&capabilities=alarm_generic.gas"
 		}
 	]
 }

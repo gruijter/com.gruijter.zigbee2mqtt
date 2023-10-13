@@ -10,7 +10,7 @@
 		{
 			"type": "device",
 			"name": "device",
-			"filter": "driver_id=device&capabilities=switch_type"
+			"filter": "driver_id=device|group&capabilities=switch_type"
 		},
 		{
 			"type": "dropdown",

@@ -7,7 +7,7 @@
 		{
 				"type": "device",
 				"name": "device",
-				"filter": "driver_id=device&capabilities=measure_temperature.sensor"
+				"filter": "driver_id=device|group&capabilities=measure_temperature.sensor"
 		}
 	],
 	"tokens": [
