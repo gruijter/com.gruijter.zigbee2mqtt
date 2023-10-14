@@ -222,7 +222,7 @@ class MyDevice extends Device {
 					// get device list
 					if (topic.includes(`${this.bridgeTopic}/devices`)) {
 						// console.log('device list was updated', info);
-						const devices = info.filter((device) => device.type === 'EndDevice' || device.type === 'Router');
+						const devices = info.filter((device) => device.type === 'EndDevice' || device.type === 'Router' || device.type === 'GreenPower');
 						this.devices = devices;
 						// console.dir(this.devices, { depth: null });
 						this.homey.emit('devicelistupdate', true);
