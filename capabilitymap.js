@@ -158,10 +158,12 @@ const classIconMap = {
 	'on/off switch': ['sensor', 'wireless_switch.svg'],
 	'2 gang switch module': ['socket', '2gangswitch.svg'],
 	'2 channel dimmer': ['light', '2gangdimmer.svg'],
-	plug: ['socket', 'socket.svg'],
-	bulb: ['light', 'light.svg'],
+	'plug': ['socket', 'socket.svg'],
+	'bulb': ['light', 'light.svg'],
+	'gu10': ['light', 'light.svg'],
+	'e27': ['light', 'light.svg'],
 	'led controller': ['light', 'light.svg'],
-	led: ['light', 'light.svg'],
+	'led': ['light', 'light.svg'],
 };
 
 // map capabilities to Homey
