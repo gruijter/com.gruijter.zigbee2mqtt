@@ -55,17 +55,22 @@ class MyDriver extends Driver {
 				bridges.forEach((bridge) => {
 					bridge.groups
 						.forEach((item) => {
-							const dev = bridge.devices.filter((dev) => dev.definition && dev.definition.exposes).find((dev) => dev.ieee_address == item.members[0].ieee_address);
+							const members = item.members.map((member) => member.ieee_address);
+							const devices = bridge.devices.filter((dev) => dev.definition && dev.definition.exposes && members.includes(dev.ieee_address));
+							const models = [...new Set(devices.map((dev) => dev.definition.model).filter(n => n))].join(', ');
+							const description = [...new Set(devices.map((dev) => dev.definition.description).filter(n => n))].join(', ');
 
 							const settings = {
 								uid: item.id,
 								friendly_name: item.friendly_name,
 								bridge_uid: bridge.getData().id,
 								members: item.members,
+								models: models,
+								description: description,
 							};
 							// map capabilities and group icons to Homey
-							const { caps, capDetails } = mapProperty(dev);
-							const { homeyClass, icon } = mapClassIcon(dev);
+							const { caps, capDetails } = mapProperty(devices[0]);
+							const { homeyClass, icon } = mapClassIcon(devices[0]);
 							settings.homeyclass = homeyClass;
 							const group = {
 								name: item.friendly_name,
