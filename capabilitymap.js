@@ -210,9 +210,7 @@ const mapProperty = function mapProperty(Z2MDevice) {
 			} else mapExposure(exp); // generic types (e.g. numeric or binary)
 		});
 	}
-	const caps = homeyCapabilities
-		.filter((cap) => cap !== null)
-		.sort();
+	const caps = homeyCapabilities.filter((cap) => cap !== null);	// .sort();
 	return { caps, capDetails };
 };
 

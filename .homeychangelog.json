@@ -1,4 +1,7 @@
 {
+  "2.0.5": {
+    "en": "Fixed ever migrating devices with duplicate capabilities. Added support to GreenPower devices."
+  },
   "2.0.4": {
     "en": "Fixed fault and vibration trigger cards."
   },
