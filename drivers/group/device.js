@@ -134,23 +134,11 @@ class MyDevice extends Device {
 			// check and repair incorrect capability(order)
 			if (!this.bridge || !this.bridge.groups) return;
 			const [groupInfo] = this.bridge.groups.filter((group) => group.id === this.settings.uid);
-
-			this.log(groupInfo.members[0].ieee_address);
-			const [deviceInfo] = this.bridge.devices.filter((dev) => dev.definition && dev.definition.exposes).find((dev) => dev.ieee_address == groupInfo.members[0].ieee_address);
-			this.log(deviceInfo);
-
+			const deviceInfo = this.bridge.devices.filter((dev) => dev.definition && dev.definition.exposes).find((dev) => dev.ieee_address == groupInfo.members[0].ieee_address);
 			const { caps: correctCaps, capDetails } = mapProperty(deviceInfo);
 			await this.setStoreValue('capDetails', { ...capDetails });
 			await this.setStoreValue('caps', { ...correctCaps });
 			let capsChanged = false;
-
-			// if (this.getName() === 'GU10 LED links') {
-			// 	console.dir(groupInfo, { depth: null });
-			// 	console.dir(capDetails, { depth: null });
-			// 	console.dir(correctCaps, { depth: null });
-			// 	const capDetailsArray = Object.entries(capDetails);
-			// 	console.dir(capDetailsArray, { depth: null });
-			// }
 
 			// store the capability states before migration
 			const sym = Object.getOwnPropertySymbols(this).find((s) => String(s) === 'Symbol(state)');
@@ -431,26 +419,4 @@ class MyDevice extends Device {
 module.exports = MyDevice;
 
 /*
-{
-	battery: 100,
-	battery_low: false,
-	contact: true,
-	linkquality: 25,
-	tamper: false,
-	voltage": 3000
-}
-
-{
-	child_lock: "UNLOCK",
-	current: 0,
-	energy: 7.12,
-	indicator_mode: "off/on",
-	linkquality: 218,
-	power: 0,
-	power_outage_memory: "restore",
-	state: "ON",
-	update: { installed_version: 192, latest_version: 192, state: idle },
-	voltage: 232
-}
-
 */

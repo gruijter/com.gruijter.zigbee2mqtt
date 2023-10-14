@@ -97,16 +97,28 @@ class MyDriver extends Driver {
 module.exports = MyDriver;
 
 /*  
-{
-	friendly_name: 'Hal',
-	id: 1,
-	members: [ [Object], [Object], [Object], [Object] ],
-	scenes: []
-},
-{
-	friendly_name: 'Overloop',
-	id: 2,
-	members: [ [Object], [Object], [Object], [Object] ],
-	scenes: []
-}
+[
+  {
+    friendly_name: 'Hal',
+    id: 1,
+    members: [
+      { endpoint: 11, ieee_address: '0x0017880109XXX' },
+      { endpoint: 11, ieee_address: '0x001788010fXXX' },
+      { endpoint: 11, ieee_address: '0x001788010fXXX' },
+      { endpoint: 11, ieee_address: '0x00178801dfXXX' }
+    ],
+    scenes: []
+  },
+  {
+    friendly_name: 'Overloop',
+    id: 2,
+    members: [
+      { endpoint: 11, ieee_address: '0x001788010fXXX' },
+      { endpoint: 11, ieee_address: '0x00178801dfXXX' },
+      { endpoint: 11, ieee_address: '0x001788010fXXX' },
+      { endpoint: 11, ieee_address: '0x00178801dfXXX' }
+    ],
+    scenes: []
+  }
+]
 */
