@@ -179,19 +179,24 @@ const getExpMap = function mapExposure() {
 // map capabilities to Homey
 const mapProperty = function mapProperty(Z2MDevice) {
 	const homeyCapabilities = [];
+	function pushUniqueCapabilities(capVal) {
+		if (!homeyCapabilities.includes(capVal)) {
+			homeyCapabilities.push(capVal);
+		}
+	}
 	const capDetails = {};
 	const mapExposure = (exp) => {
 		// create exception for color lights
 		if (exp.property === 'color') {
-			homeyCapabilities.push('light_hue');
+			pushUniqueCapabilities('light_hue');
 			capDetails.light_hue = exp;
-			homeyCapabilities.push('light_saturation');
+			pushUniqueCapabilities('light_saturation');
 			capDetails.light_saturation = exp;
 		} else {
 			const mapFunc = capabilityMap[exp.property];
 			if (mapFunc) { 		//  included in Homey mapping
 				const capVal = mapFunc();
-				homeyCapabilities.push(capVal[0]);
+				pushUniqueCapabilities(capVal[0]);
 				capDetails[capVal[0]] = exp; // [exp.unit, exp.name, exp.values];
 			}
 		}
@@ -205,7 +210,9 @@ const mapProperty = function mapProperty(Z2MDevice) {
 			} else mapExposure(exp); // generic types (e.g. numeric or binary)
 		});
 	}
-	const caps = homeyCapabilities.filter((cap) => cap !== null);
+	const caps = homeyCapabilities
+		.filter((cap) => cap !== null)
+		.sort();
 	return { caps, capDetails };
 };
 
