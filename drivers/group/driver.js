@@ -55,9 +55,7 @@ class MyDriver extends Driver {
 				bridges.forEach((bridge) => {
 					bridge.groups
 						.forEach((item) => {
-
 							const dev = bridge.devices.filter((dev) => dev.definition && dev.definition.exposes).find((dev) => dev.ieee_address == item.members[0].ieee_address);
-							this.log(dev);
 
 							const settings = {
 								uid: item.id,
