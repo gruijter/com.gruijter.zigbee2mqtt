@@ -233,7 +233,7 @@ class MyDevice extends Device {
 					if (topic.includes(`${this.bridgeTopic}/groups`)) {
 						// console.log('group list was updated', info);
 						this.groups = info;
-						console.dir(this.groups, { depth: null });
+						// console.dir(this.groups, { depth: null });
 						this.homey.emit('grouplistupdate', true);
 					}
 

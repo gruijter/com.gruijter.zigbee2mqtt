@@ -156,6 +156,7 @@ const classIconMap = {
 	'vibration sensor': ['sensor', 'vibration_sensor.svg'],
 	'wireless switch': ['sensor', 'wireless_switch.svg'],
 	'on/off switch': ['sensor', 'wireless_switch.svg'],
+	'wall switch module': ['button', 'wireless_switch.svg'],
 	'2 gang switch module': ['socket', '2gangswitch.svg'],
 	'2 channel dimmer': ['light', '2gangdimmer.svg'],
 	'plug': ['socket', 'socket.svg'],
