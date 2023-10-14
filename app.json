@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "2.0.3",
+  "version": "2.0.5",
   "compatibility": ">=8.0.0",
   "sdk": 3,
   "platforms": [
@@ -87,14 +87,14 @@
       },
       {
         "title": {
-          "en": "The Vibration Alarm turned Off"
+          "en": "The Fault Alarm turned Off"
         },
         "highlight": true,
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device|group&capabilities=alarm_generic.vibration"
+            "filter": "driver_id=device|group&capabilities=alarm_generic.fault"
           }
         ],
         "id": "alarm_generic.fault_false"
@@ -157,20 +157,6 @@
       },
       {
         "title": {
-          "en": "The Vibration Alarm turned On"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device|group&capabilities=alarm_generic.vibration"
-          }
-        ],
-        "id": "alarm_generic.vibration_true"
-      },
-      {
-        "title": {
           "en": "The Occupancy Alarm turned Off"
         },
         "highlight": true,
@@ -224,6 +210,20 @@
           }
         ],
         "id": "alarm_motion.presence_true"
+      },
+      {
+        "title": {
+          "en": "The Vibration Alarm turned Off"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=alarm_motion.vibration"
+          }
+        ],
+        "id": "alarm_motion.vibration_false"
       },
       {
         "title": {

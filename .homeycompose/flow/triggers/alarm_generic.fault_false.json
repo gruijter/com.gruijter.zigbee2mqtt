@@ -1,13 +1,13 @@
 {
 	"title": {
-		"en": "The Vibration Alarm turned Off"
+		"en": "The Fault Alarm turned Off"
 	},
 	"highlight": true,
 	"args": [
 		{
 			"type": "device",
 			"name": "device",
-			"filter": "driver_id=device|group&capabilities=alarm_generic.vibration"
+			"filter": "driver_id=device|group&capabilities=alarm_generic.fault"
 		}
 	]
 }
