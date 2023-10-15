@@ -1,6 +1,6 @@
 {
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "compatibility": ">=8.0.0",
   "sdk": 3,
   "platforms": [
@@ -43,6 +43,9 @@
       {
         "name": "Stefan Renne",
         "email": "srenne1@gmail.com"
+      },
+      {
+        "name": "Vitaliy Yakovchuk"
       }
     ]
   },
