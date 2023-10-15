@@ -25,7 +25,7 @@ const util = require('util');
 
 const setTimeoutPromise = util.promisify(setTimeout);
 
-class MyDevice extends Device {
+module.exports = class Zigbee2MQTTBridge extends Device {
 
 	async onInit() {
 		try {
@@ -237,17 +237,6 @@ class MyDevice extends Device {
 						this.homey.emit('grouplistupdate', true);
 					}
 
-					// check for namechange
-					// if (topic.includes(`${this.bridgeTopic}/devices`)) {
-					// 	const deviceInfo = info.filter((dev) => dev.ieee_address === this.settings.uid);
-					// 	if (!deviceInfo[0]) this.setUnavailable('device went missing in Zigbee2MQTT');
-					// 	if (deviceInfo[0] && deviceInfo[0].friendly_name !== this.settings.friendly_name) {
-					// 		this.log('device was renamed in Zigbee2MQTT', this.settings.friendly_name, deviceInfo[0].friendly_name);
-					// 		this.setSettings({ friendly_name: deviceInfo[0].friendly_name });
-					// 		this.restartDevice(1000).catch(this.error);
-					// 	}
-					// }
-
 				} catch (error) {
 					this.error(error);
 				}
@@ -344,8 +333,6 @@ class MyDevice extends Device {
 	}
 
 }
-
-module.exports = MyDevice;
 
 /*
 
