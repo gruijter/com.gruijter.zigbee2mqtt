@@ -167,7 +167,7 @@ const classIconMap = {
 	gu10: ['light', 'light.svg'],
 	e27: ['light', 'light.svg'],
 	'led controller': ['light', 'light.svg'],
-	'led': ['light', 'light.svg'],
+	led: ['light', 'light.svg'],
 };
 
 // map capabilities to Homey
