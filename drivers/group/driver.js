@@ -39,6 +39,7 @@ module.exports = class ZigbeeGroupDriver extends Zigbee2MQTTDriver {
 				const groups = [];
 				bridges.forEach((bridge) => {
 					bridge.groups
+						.filter((item) => item.members.length > 0)
 						.forEach((item) => {
 							const members = item.members.map((member) => member.ieee_address);
 							const devices = bridge.devices.filter((dev) => dev.definition && dev.definition.exposes && members.includes(dev.ieee_address));
