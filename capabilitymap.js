@@ -68,6 +68,7 @@ const capabilityMap = {
 	// : (val) => ['light_hue', val.hue], // { color: { x: Number(val), y: Number(val) } }
 	// : (val) => ['light_saturation', Number(val)],
 	color_temp: (val) => ['light_temperature', (Number(val) - 153) / 347, { color_temp: 153 + (Number(val) * 347) }],
+	color_mode: (val) => ['light_mode', val === 'xy' || val === 'hs' ? 'color' : 'temperature'],
 
 	// Standard Homey enum capabilities
 	// light_mode
@@ -161,10 +162,10 @@ const classIconMap = {
 	'smart button': ['button', 'wireless_switch.svg'],
 	'2 gang switch module': ['socket', '2gangswitch.svg'],
 	'2 channel dimmer': ['light', '2gangdimmer.svg'],
-	'plug': ['socket', 'socket.svg'],
-	'bulb': ['light', 'light.svg'],
-	'gu10': ['light', 'light.svg'],
-	'e27': ['light', 'light.svg'],
+	plug: ['socket', 'socket.svg'],
+	bulb: ['light', 'light.svg'],
+	gu10: ['light', 'light.svg'],
+	e27: ['light', 'light.svg'],
 	'led controller': ['light', 'light.svg'],
 	'led': ['light', 'light.svg'],
 };
@@ -197,6 +198,8 @@ const mapProperty = function mapProperty(Z2MDevice) {
 			capDetails.light_hue = exp;
 			pushUniqueCapabilities('light_saturation');
 			capDetails.light_saturation = exp;
+			pushUniqueCapabilities('light_mode');
+			capDetails.light_mode = exp;
 		} else {
 			const mapFunc = capabilityMap[exp.property];
 			if (mapFunc) { 		//  included in Homey mapping

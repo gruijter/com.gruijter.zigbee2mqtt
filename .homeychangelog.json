@@ -1,4 +1,7 @@
 {
+  "2.1.0": {
+    "en": "Added Zigbee Group support (BETA). Fixed color mode for the lights. Added more class mappings. Added support for HUE wall switch."
+  },
   "2.0.5": {
     "en": "Fixed ever migrating devices with duplicate capabilities. Added support to GreenPower devices."
   },

@@ -42,7 +42,6 @@ module.exports = class ZigbeeGroup extends Zigbee2MQTTDevice {
 			this.checkChangedOrDeleted().catch(this.error);
 		};
 		this.homey.on('grouplistupdate', this.eventListenerGroupListUpdate);
-
         await super.registerHomeyEventListeners();
 	}
 
@@ -51,6 +50,5 @@ module.exports = class ZigbeeGroup extends Zigbee2MQTTDevice {
 		if (this.eventListenerGroupListUpdate) this.homey.removeListener('grouplistupdate', this.eventListenerGroupListUpdate);
 	}
 }
-
 /*
 */

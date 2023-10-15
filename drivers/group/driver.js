@@ -78,7 +78,6 @@ module.exports = class ZigbeeGroupDriver extends Zigbee2MQTTDriver {
 		});
 	}
 }
-
 /*  
 [
   {

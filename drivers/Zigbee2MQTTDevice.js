@@ -267,22 +267,31 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 
 	// special for color light
 	async dimHueSat(values, source) {
+		if (values?.light_mode === 'temperature') {
+			return;
+		}
 		this.log(`${this.getName()} dim/hue/set requested via ${source}`);
 		const hue = values.light_hue || this.getCapabilityValue('light_hue');
 		const sat = values.light_saturation || this.getCapabilityValue('light_saturation');
-		const dim = this.getCapabilityValue('dim');
-		const { r, g, b } = hsbToRgb(hue, sat, dim);
-		const payload = { color: { r, g, b } };
+		const payload = this.getColorPayload(hue, sat);
 		await this.bridge.client.publish(`${this.deviceTopic}/set`, JSON.stringify(payload));
 		this.log(`${JSON.stringify(payload)} sent by ${source}`);
 		return Promise.resolve(true);
 	}
 
-	async checkChangedOrDeleted() {
+	getColorPayload(hue, sat) {
+		if (this.store.capDetails?.light_mode?.name === 'color_hs') {
+			return { color: { hue: 360 * hue, saturation: 100 * sat } };
+		} else {
+			const dim = this.getCapabilityValue('dim');
+			const { r, g, b } = hsbToRgb(hue, sat, dim);
+			return { color: { r, g, b } };
+		}
+	}
 
+	async checkChangedOrDeleted() {
 		const [deviceInfo] = this.getDeviceInfo();
 		if (!deviceInfo) return;
-
 		// check deleted
 		if (!deviceInfo) {
 			this.error(this.zigbee2MqttType(), ' was deleted in Zigbee2MQTT', this.settings.friendly_name);
@@ -319,7 +328,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 						Object.entries(info).forEach((entry) => {
 							// exception for color light
 							if (entry[0] === 'color' && this.getCapabilities().includes('light_hue')) {
-								if (Object.prototype.hasOwnProperty.call(entry[1], 'hue')) this.setCapability('light_hue', entry[1].hue / 100);
+								if (Object.prototype.hasOwnProperty.call(entry[1], 'hue')) this.setCapability('light_hue', entry[1].hue / 360);
 								if (Object.prototype.hasOwnProperty.call(entry[1], 'saturation')) this.setCapability('saturation', entry[1].saturation / 100);
 							} else {
 								const mapFunc = capabilityMap[entry[0]];
@@ -398,7 +407,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 
 			// add exception for color light
 			if (this.getCapabilities().includes('light_hue')) {
-				this.registerMultipleCapabilityListener(['light_hue', 'light_saturation'], (values) => {
+				this.registerMultipleCapabilityListener(['light_hue', 'light_saturation', 'light_mode'], (values) => {
 					this.dimHueSat(values, 'app').catch(this.error);
 				}, 500);
 			}
