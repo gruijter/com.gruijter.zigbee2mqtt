@@ -10,7 +10,7 @@
 				{
 						"type": "device",
 						"name": "device",
-						"filter": "driver_id=device&capabilities=onoff.l2"
+						"filter": "driver_id=device|group&capabilities=onoff.l2"
 				},
 				{
 						"type": "checkbox",

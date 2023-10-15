@@ -7,7 +7,7 @@
 		{
 				"type": "device",
 				"name": "device",
-				"filter": "driver_id=device&capabilities=system_mode"
+				"filter": "driver_id=device|group&capabilities=system_mode"
 		}
 	],
 	"tokens": [

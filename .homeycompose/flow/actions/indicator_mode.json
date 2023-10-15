@@ -10,7 +10,7 @@
 		{
 			"type": "device",
 			"name": "device",
-			"filter": "driver_id=device&capabilities=indicator_mode"
+			"filter": "driver_id=device|group&capabilities=indicator_mode"
 		},
 		{
 			"type": "dropdown",

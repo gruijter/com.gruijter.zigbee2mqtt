@@ -7,7 +7,7 @@
 		{
 				"type": "device",
 				"name": "device",
-				"filter": "driver_id=device&capabilities=power_outage_memory"
+				"filter": "driver_id=device|group&capabilities=power_outage_memory"
 		}
 	],
 	"tokens": [

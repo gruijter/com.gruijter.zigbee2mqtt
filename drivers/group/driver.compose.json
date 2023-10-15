@@ -1,0 +1,32 @@
+{
+	"name": {
+		"en": "Group"
+	},
+	"class": "socket",
+	"capabilities": [
+	],
+	"platforms": [
+		"local"
+	],
+	"connectivity": [
+		"lan"
+	],
+	"images": {
+		"small": "{{driverAssetsPath}}/images/small.png",
+		"large": "{{driverAssetsPath}}/images/large.png",
+		"xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+	},
+	"pair": [
+		{
+			"id": "list_devices",
+			"template": "list_devices",
+			"navigation": {
+				"next": "add_devices"
+			}
+		},
+		{
+			"id": "add_devices",
+			"template": "add_devices"
+		}
+	]
+}

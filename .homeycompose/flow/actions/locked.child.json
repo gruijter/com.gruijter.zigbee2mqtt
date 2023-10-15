@@ -10,7 +10,7 @@
 				{
 						"type": "device",
 						"name": "device",
-						"filter": "driver_id=device&capabilities=locked.child"
+						"filter": "driver_id=device|group&capabilities=locked.child"
 				},
 				{
 						"type": "checkbox",

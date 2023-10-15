@@ -40,6 +40,10 @@
       {
         "name": "Robin de Gruijter",
         "email": "gruijter@hotmail.com"
+      },
+      {
+        "name": "Stefan Renne",
+        "email": "srenne1@gmail.com"
       }
     ]
   },
@@ -51,9 +55,9 @@
     }
   },
   "homeyCommunityTopicId": 83214,
+  "source": "https://github.com/gruijter/com.gruijter.zigbee2mqtt",
   "bugs": {
-    "url": "https://github.com/gruijter/com.gruijter.zigbee2mqtt/issues",
-    "source": "https://github.com/gruijter/com.gruijter.zigbee2mqtt"
+    "url": "https://github.com/gruijter/com.gruijter.zigbee2mqtt/issues"
   },
   "flow": {
     "triggers": [
@@ -66,7 +70,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=action"
+            "filter": "driver_id=device|group&capabilities=action"
           }
         ],
         "tokens": [
@@ -90,7 +94,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=alarm_generic.fault"
+            "filter": "driver_id=device|group&capabilities=alarm_generic.fault"
           }
         ],
         "id": "alarm_generic.fault_false"
@@ -104,7 +108,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=alarm_generic.fault"
+            "filter": "driver_id=device|group&capabilities=alarm_generic.fault"
           }
         ],
         "id": "alarm_generic.fault_true"
@@ -118,7 +122,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=alarm_generic.gas"
+            "filter": "driver_id=device|group&capabilities=alarm_generic.gas"
           }
         ],
         "id": "alarm_generic.gas_false"
@@ -132,10 +136,24 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=alarm_generic.gas"
+            "filter": "driver_id=device|group&capabilities=alarm_generic.gas"
           }
         ],
         "id": "alarm_generic.gas_true"
+      },
+      {
+        "title": {
+          "en": "The Fault Alarm turned Off"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=alarm_generic.fault"
+          }
+        ],
+        "id": "alarm_generic.vibration_false"
       },
       {
         "title": {
@@ -146,7 +164,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=alarm_motion.occupancy"
+            "filter": "driver_id=device|group&capabilities=alarm_motion.occupancy"
           }
         ],
         "id": "alarm_motion.occupancy_false"
@@ -160,7 +178,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=alarm_motion.occupancy"
+            "filter": "driver_id=device|group&capabilities=alarm_motion.occupancy"
           }
         ],
         "id": "alarm_motion.occupancy_true"
@@ -174,7 +192,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=alarm_motion.presence"
+            "filter": "driver_id=device|group&capabilities=alarm_motion.presence"
           }
         ],
         "id": "alarm_motion.presence_false"
@@ -188,7 +206,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=alarm_motion.presence"
+            "filter": "driver_id=device|group&capabilities=alarm_motion.presence"
           }
         ],
         "id": "alarm_motion.presence_true"
@@ -202,24 +220,10 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=alarm_motion.vibration"
+            "filter": "driver_id=device|group&capabilities=alarm_motion.vibration"
           }
         ],
         "id": "alarm_motion.vibration_false"
-      },
-      {
-        "title": {
-          "en": "The Vibration Alarm turned On"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device&capabilities=alarm_motion.vibration"
-          }
-        ],
-        "id": "alarm_motion.vibration_true"
       },
       {
         "title": {
@@ -286,7 +290,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=color_power_on_behavior"
+            "filter": "driver_id=device|group&capabilities=color_power_on_behavior"
           }
         ],
         "tokens": [
@@ -310,7 +314,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=custom_number.angle_x"
+            "filter": "driver_id=device|group&capabilities=custom_number.angle_x"
           }
         ],
         "tokens": [
@@ -334,7 +338,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=custom_number.angle_y"
+            "filter": "driver_id=device|group&capabilities=custom_number.angle_y"
           }
         ],
         "tokens": [
@@ -358,7 +362,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=custom_number.angle_z"
+            "filter": "driver_id=device|group&capabilities=custom_number.angle_z"
           }
         ],
         "tokens": [
@@ -382,7 +386,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=custom_number.strength"
+            "filter": "driver_id=device|group&capabilities=custom_number.strength"
           }
         ],
         "tokens": [
@@ -406,7 +410,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=dim.l1"
+            "filter": "driver_id=device|group&capabilities=dim.l1"
           }
         ],
         "tokens": [
@@ -430,7 +434,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=dim.l2"
+            "filter": "driver_id=device|group&capabilities=dim.l2"
           }
         ],
         "tokens": [
@@ -454,7 +458,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=indicator_mode"
+            "filter": "driver_id=device|group&capabilities=indicator_mode"
           }
         ],
         "tokens": [
@@ -478,7 +482,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=measure_humidity.soil"
+            "filter": "driver_id=device|group&capabilities=measure_humidity.soil"
           }
         ],
         "tokens": [
@@ -502,7 +506,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=measure_linkquality"
+            "filter": "driver_id=device|group&capabilities=measure_linkquality"
           }
         ],
         "tokens": [
@@ -526,7 +530,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=measure_luminance.lux"
+            "filter": "driver_id=device|group&capabilities=measure_luminance.lux"
           }
         ],
         "tokens": [
@@ -550,7 +554,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=measure_temperature.device"
+            "filter": "driver_id=device|group&capabilities=measure_temperature.device"
           }
         ],
         "tokens": [
@@ -574,7 +578,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=measure_temperature.sensor"
+            "filter": "driver_id=device|group&capabilities=measure_temperature.sensor"
           }
         ],
         "tokens": [
@@ -646,7 +650,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=onoff.l1"
+            "filter": "driver_id=device|group&capabilities=onoff.l1"
           }
         ],
         "id": "onoff.l1_false"
@@ -660,7 +664,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=onoff.l1"
+            "filter": "driver_id=device|group&capabilities=onoff.l1"
           }
         ],
         "id": "onoff.l1_true"
@@ -674,7 +678,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=onoff.l2"
+            "filter": "driver_id=device|group&capabilities=onoff.l2"
           }
         ],
         "id": "onoff.l2_false"
@@ -688,7 +692,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=onoff.l2"
+            "filter": "driver_id=device|group&capabilities=onoff.l2"
           }
         ],
         "id": "onoff.l2_true"
@@ -702,7 +706,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=power_on_behavior"
+            "filter": "driver_id=device|group&capabilities=power_on_behavior"
           }
         ],
         "tokens": [
@@ -726,7 +730,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=power_outage_memory"
+            "filter": "driver_id=device|group&capabilities=power_outage_memory"
           }
         ],
         "tokens": [
@@ -750,7 +754,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=preset"
+            "filter": "driver_id=device|group&capabilities=preset"
           }
         ],
         "tokens": [
@@ -774,7 +778,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=sensitivity_enum"
+            "filter": "driver_id=device|group&capabilities=sensitivity_enum"
           }
         ],
         "tokens": [
@@ -798,7 +802,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=switch_type"
+            "filter": "driver_id=device|group&capabilities=switch_type"
           }
         ],
         "tokens": [
@@ -822,7 +826,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=switch_type.l1"
+            "filter": "driver_id=device|group&capabilities=switch_type.l1"
           }
         ],
         "tokens": [
@@ -846,7 +850,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=switch_type.l2"
+            "filter": "driver_id=device|group&capabilities=switch_type.l2"
           }
         ],
         "tokens": [
@@ -870,7 +874,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=system_mode"
+            "filter": "driver_id=device|group&capabilities=system_mode"
           }
         ],
         "tokens": [
@@ -899,7 +903,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=color_power_on_behavior"
+            "filter": "driver_id=device|group&capabilities=color_power_on_behavior"
           },
           {
             "type": "dropdown",
@@ -940,7 +944,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=dim.l1"
+            "filter": "driver_id=device|group&capabilities=dim.l1"
           },
           {
             "name": "val",
@@ -968,7 +972,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=dim.l2"
+            "filter": "driver_id=device|group&capabilities=dim.l2"
           },
           {
             "name": "val",
@@ -996,7 +1000,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=indicator_mode"
+            "filter": "driver_id=device|group&capabilities=indicator_mode"
           },
           {
             "type": "dropdown",
@@ -1043,7 +1047,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=locked.child"
+            "filter": "driver_id=device|group&capabilities=locked.child"
           },
           {
             "type": "checkbox",
@@ -1067,7 +1071,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=onoff.l1"
+            "filter": "driver_id=device|group&capabilities=onoff.l1"
           },
           {
             "type": "checkbox",
@@ -1091,7 +1095,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=onoff.l2"
+            "filter": "driver_id=device|group&capabilities=onoff.l2"
           },
           {
             "type": "checkbox",
@@ -1115,7 +1119,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=power_on_behavior"
+            "filter": "driver_id=device|group&capabilities=power_on_behavior"
           },
           {
             "type": "dropdown",
@@ -1162,7 +1166,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=power_outage_memory"
+            "filter": "driver_id=device|group&capabilities=power_outage_memory"
           },
           {
             "type": "dropdown",
@@ -1203,7 +1207,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=preset"
+            "filter": "driver_id=device|group&capabilities=preset"
           },
           {
             "type": "dropdown",
@@ -1244,7 +1248,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=preset"
+            "filter": "driver_id=device|group&capabilities=preset"
           },
           {
             "type": "dropdown",
@@ -1285,7 +1289,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=switch_type"
+            "filter": "driver_id=device|group&capabilities=switch_type"
           },
           {
             "type": "dropdown",
@@ -1326,7 +1330,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=switch_type.l1"
+            "filter": "driver_id=device|group&capabilities=switch_type.l1"
           },
           {
             "type": "dropdown",
@@ -1367,7 +1371,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device&capabilities=switch_type.l2"
+            "filter": "driver_id=device|group&capabilities=switch_type.l2"
           },
           {
             "type": "dropdown",
@@ -1686,6 +1690,38 @@
           ]
         }
       ]
+    },
+    {
+      "name": {
+        "en": "Group"
+      },
+      "class": "socket",
+      "capabilities": [],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/group/assets/images/small.png",
+        "large": "/drivers/group/assets/images/large.png",
+        "xlarge": "/drivers/group/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "group"
     }
   ],
   "capabilities": {

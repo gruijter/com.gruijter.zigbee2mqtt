@@ -139,14 +139,6 @@ class MyDevice extends Device {
 			await this.setStoreValue('caps', { ...correctCaps });
 			let capsChanged = false;
 
-			// if (this.getName() === 'GU10 LED links') {
-			// 	console.dir(deviceInfo, { depth: null });
-			// 	console.dir(capDetails, { depth: null });
-			// 	console.dir(correctCaps, { depth: null });
-			// 	const capDetailsArray = Object.entries(capDetails);
-			// 	console.dir(capDetailsArray, { depth: null });
-			// }
-
 			// store the capability states before migration
 			const sym = Object.getOwnPropertySymbols(this).find((s) => String(s) === 'Symbol(state)');
 			const state = this[sym];

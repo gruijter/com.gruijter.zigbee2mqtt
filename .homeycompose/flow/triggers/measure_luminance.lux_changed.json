@@ -7,7 +7,7 @@
 		{
 				"type": "device",
 				"name": "device",
-				"filter": "driver_id=device&capabilities=measure_luminance.lux"
+				"filter": "driver_id=device|group&capabilities=measure_luminance.lux"
 		}
 	],
 	"tokens": [
