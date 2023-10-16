@@ -20,25 +20,10 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 'use strict';
 
-const { Driver } = require('homey');
-// const util = require('util');
-const { capabilityMap, mapProperty, mapClassIcon } = require('../../capabilitymap');
+const Zigbee2MQTTDriver = require('../Zigbee2MQTTDriver');
+const { mapProperty, mapClassIcon } = require('../../capabilitymap');
 
-// const setTimeoutPromise = util.promisify(setTimeout);
-
-class MyDriver extends Driver {
-
-	async onInit() {
-		this.ds = {
-			// deviceCapabilities: capabilities,
-			capabilityMap,
-		};
-		this.log('Device driver has been initialized');
-	}
-
-	async onUninit() {
-		this.log('driver onUninit');
-	}
+module.exports = class ZigbeeDeviceDriver extends Zigbee2MQTTDriver { 
 
 	async onPair(session) {
 
@@ -81,7 +66,6 @@ class MyDriver extends Driver {
 							devices.push(device);
 						});
 				});
-				// console.dir(devices, { depth: null });
 				return Promise.all(devices);
 			} catch (error) {
 				this.error(error);
@@ -90,10 +74,7 @@ class MyDriver extends Driver {
 		});
 
 	}
-
 }
-
-module.exports = MyDriver;
 
 /*
 [

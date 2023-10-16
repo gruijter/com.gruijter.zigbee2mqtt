@@ -20,25 +20,10 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 'use strict';
 
-const { Driver } = require('homey');
-// const util = require('util');
-const { capabilityMap, mapProperty, mapClassIcon } = require('../../capabilitymap');
+const Zigbee2MQTTDriver = require('../Zigbee2MQTTDriver');
+const { mapProperty, mapClassIcon } = require('../../capabilitymap');
 
-// const setTimeoutPromise = util.promisify(setTimeout);
-
-class MyDriver extends Driver {
-
-	async onInit() {
-		this.ds = {
-			// groupCapabilities: capabilities,
-			capabilityMap,
-		};
-		this.log('Device driver has been initialized');
-	}
-
-	async onUninit() {
-		this.log('driver onUninit');
-	}
+module.exports = class ZigbeeGroupDriver extends Zigbee2MQTTDriver { 
 
 	async onPair(session) {
 
@@ -54,6 +39,7 @@ class MyDriver extends Driver {
 				const groups = [];
 				bridges.forEach((bridge) => {
 					bridge.groups
+						.filter((item) => item.members.length > 0)
 						.forEach((item) => {
 							const members = item.members.map((member) => member.ieee_address);
 							const devices = bridge.devices.filter((dev) => dev.definition && dev.definition.exposes && members.includes(dev.ieee_address));
@@ -85,20 +71,14 @@ class MyDriver extends Driver {
 							groups.push(group);
 						});
 				});
-				// console.dir(groups, { depth: null });
 				return Promise.all(groups);
 			} catch (error) {
 				this.error(error);
 				return Promise.reject(error);
 			}
 		});
-
 	}
-
 }
-
-module.exports = MyDriver;
-
 /*  
 [
   {

@@ -34,7 +34,7 @@ const capabilities = [
 	'alarm_offline',
 ];
 
-class MyDriver extends Driver {
+module.exports = class Zigbee2MQTTBridgeDriver extends Driver {
 
 	async onInit() {
 		this.log('zigbee2mqtt bridge driver has been initialized');
@@ -138,8 +138,6 @@ class MyDriver extends Driver {
 	}
 
 }
-
-module.exports = MyDriver;
 
 /*
 
