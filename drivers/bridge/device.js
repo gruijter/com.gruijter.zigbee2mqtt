@@ -332,7 +332,7 @@ module.exports = class Zigbee2MQTTBridge extends Device {
 		}
 	}
 
-}
+};
 
 /*
 

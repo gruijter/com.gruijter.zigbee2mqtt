@@ -1,4 +1,7 @@
 {
+  "2.1.1": {
+    "en": "Fixed groups without members. Added support for HUE smart button and Aqara temperature, humidity and pressure sensor."
+  },
   "2.1.0": {
     "en": "Added Zigbee Group support (BETA). Fixed color mode for the lights. Added more class mappings. Added support for HUE wall switch."
   },
