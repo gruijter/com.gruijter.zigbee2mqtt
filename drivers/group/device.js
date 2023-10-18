@@ -24,15 +24,16 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 const Zigbee2MQTTDevice = require('../Zigbee2MQTTDevice');
 
-module.exports = class ZigbeeGroup extends Zigbee2MQTTDevice { 
-
-	zigbee2MqttType() {
-		return "Group"
-	}
+module.exports = class ZigbeeGroup extends Zigbee2MQTTDevice {
 
 	getDeviceInfo() {
-		if (!this.bridge || !this.bridge.groups) return;
+		if (!this.bridge || !this.bridge.groups) throw Error('No bridge, or bridge not ready');
 		return this.bridge.groups.filter((group) => group.id === this.settings.uid);
+	}
+
+	async onInit() {
+		this.zigbee2MqttType = 'Group';
+		await super.onInit();
 	}
 
 	// register homey event listeners
@@ -42,13 +43,13 @@ module.exports = class ZigbeeGroup extends Zigbee2MQTTDevice {
 			this.checkChangedOrDeleted().catch(this.error);
 		};
 		this.homey.on('grouplistupdate', this.eventListenerGroupListUpdate);
-        await super.registerHomeyEventListeners();
+		await super.registerHomeyEventListeners();
 	}
 
 	destroyListeners() {
-        super.destroyListeners();
+		super.destroyListeners();
 		if (this.eventListenerGroupListUpdate) this.homey.removeListener('grouplistupdate', this.eventListenerGroupListUpdate);
 	}
-}
+};
 /*
 */

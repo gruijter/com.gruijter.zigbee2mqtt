@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable prefer-destructuring */
 /*
 Copyright 2023, Robin de Gruijter (gruijter@hotmail.com)
@@ -23,7 +24,7 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 const Zigbee2MQTTDriver = require('../Zigbee2MQTTDriver');
 const { mapProperty, mapClassIcon } = require('../../capabilitymap');
 
-module.exports = class ZigbeeGroupDriver extends Zigbee2MQTTDriver { 
+module.exports = class ZigbeeGroupDriver extends Zigbee2MQTTDriver {
 
 	async onPair(session) {
 
@@ -43,16 +44,16 @@ module.exports = class ZigbeeGroupDriver extends Zigbee2MQTTDriver {
 						.forEach((item) => {
 							const members = item.members.map((member) => member.ieee_address);
 							const devices = bridge.devices.filter((dev) => dev.definition && dev.definition.exposes && members.includes(dev.ieee_address));
-							const models = [...new Set(devices.map((dev) => dev.definition.model).filter(n => n))].join(', ');
-							const description = [...new Set(devices.map((dev) => dev.definition.description).filter(n => n))].join(', ');
+							const models = [...new Set(devices.map((dev) => dev.definition.model).filter((n) => n))].join(', ');
+							const description = [...new Set(devices.map((dev) => dev.definition.description).filter((n) => n))].join(', ');
 
 							const settings = {
 								uid: item.id,
 								friendly_name: item.friendly_name,
 								bridge_uid: bridge.getData().id,
 								members: item.members,
-								models: models,
-								description: description,
+								models,
+								description,
 							};
 							// map capabilities and group icons to Homey
 							const { caps, capDetails } = mapProperty(devices[0]);
@@ -78,8 +79,8 @@ module.exports = class ZigbeeGroupDriver extends Zigbee2MQTTDriver {
 			}
 		});
 	}
-}
-/*  
+};
+/*
 [
   {
     friendly_name: 'Hal',

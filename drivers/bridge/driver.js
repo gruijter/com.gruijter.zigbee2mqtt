@@ -137,7 +137,7 @@ module.exports = class Zigbee2MQTTBridgeDriver extends Driver {
 		return info;
 	}
 
-}
+};
 
 /*
 

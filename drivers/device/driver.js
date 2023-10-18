@@ -23,7 +23,7 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 const Zigbee2MQTTDriver = require('../Zigbee2MQTTDriver');
 const { mapProperty, mapClassIcon } = require('../../capabilitymap');
 
-module.exports = class ZigbeeDeviceDriver extends Zigbee2MQTTDriver { 
+module.exports = class ZigbeeDeviceDriver extends Zigbee2MQTTDriver {
 
 	async onPair(session) {
 
@@ -74,7 +74,7 @@ module.exports = class ZigbeeDeviceDriver extends Zigbee2MQTTDriver {
 		});
 
 	}
-}
+};
 
 /*
 [
