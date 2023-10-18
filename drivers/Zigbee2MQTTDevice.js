@@ -92,13 +92,13 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 	}
 
 	async onUninit() {
-		this.log(this.zigbee2MqttType, ' unInit', this.getName());
+		this.log(this.zigbee2MqttType, 'unInit', this.getName());
 		this.destroyListeners();
 		await setTimeoutPromise(2000);	// wait 2 secs
 	}
 
 	async onAdded() {
-		this.log(this.zigbee2MqttType, ' added', this.getName());
+		this.log(this.zigbee2MqttType, 'added', this.getName());
 		if (this.getClass !== this.getSettings().homeyclass)	{
 			this.log(`setting new Class for ${this.getName()}`, this.getSettings().homeyclass);
 			await this.setClass(this.getSettings().homeyclass).catch(this.error);
@@ -117,7 +117,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 
 	async onDeleted() {
 		if (this.bridge && this.bridge.client) this.destroyListeners();
-		this.log(this.zigbee2MqttType, ' deleted', this.getName());
+		this.log(this.zigbee2MqttType, 'deleted', this.getName());
 	}
 
 	async restartDevice(delay) {
@@ -127,7 +127,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 		// if (this.client) await this.client.end();
 		const dly = delay || 1000 * 5;
 		this.log(`Device will restart in ${dly / 1000} seconds`);
-		// this.setUnavailable(this.zigbee2MqttType, ' is restarting');
+		// this.setUnavailable(this.zigbee2MqttType, 'is restarting');
 		await setTimeoutPromise(dly);
 		this.onInit();
 	}
@@ -153,7 +153,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 				const caps = this.getCapabilities();
 				const newCap = correctCaps[index];
 				if (caps[index] !== newCap) {
-					this.setUnavailable(this.zigbee2MqttType, ' is migrating. Please wait!').catch(this.error);
+					this.setUnavailable(this.zigbee2MqttType, 'is migrating. Please wait!').catch(this.error);
 					capsChanged = true;
 					// remove all caps from here
 					for (let i = index; i < caps.length; i += 1) {
@@ -183,7 +183,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 	async setCapabilityUnits() {
 		try {
 			this.log(`setting Capability Units and Titles for ${this.getName()}`);
-			this.setUnavailable(this.zigbee2MqttType, ' is migrating. Please wait!').catch(this.error);
+			this.setUnavailable(this.zigbee2MqttType, 'is migrating. Please wait!').catch(this.error);
 			const { capDetails } = this.store;
 			// console.log(this.getName(), capDetails);
 			if (!capDetails) return;
@@ -290,14 +290,14 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 		if (!deviceInfo) return;
 		// check deleted
 		if (!deviceInfo) {
-			this.error(this.zigbee2MqttType, ' was deleted in Zigbee2MQTT', this.settings.friendly_name);
-			this.setUnavailable(this.zigbee2MqttType, ' went missing in Zigbee2MQTT').catch(this.error);
-			throw Error(this.zigbee2MqttType, ' went missing in Zigbee2MQTT');
+			this.error(this.zigbee2MqttType, 'was deleted in Zigbee2MQTT', this.settings.friendly_name);
+			this.setUnavailable(this.zigbee2MqttType, 'went missing in Zigbee2MQTT').catch(this.error);
+			throw Error(this.zigbee2MqttType, 'went missing in Zigbee2MQTT');
 		}
 		// check for name change
 		if (deviceInfo.friendly_name !== this.settings.friendly_name) {
-			this.log(this.zigbee2MqttType, ' was renamed in Zigbee2MQTT', this.settings.friendly_name, deviceInfo.friendly_name);
-			this.setSettings({ friendly_name: deviceInfo.friendly_name }).catch(this.error);
+			this.log(this.zigbee2MqttType, 'was renamed in Zigbee2MQTT', this.settings.friendly_name, deviceInfo.friendly_name);
+			this.setSetting('friendly_name', deviceInfo.friendly_name);
 			this.restartDevice(1000).catch(this.error);
 		}
 	}

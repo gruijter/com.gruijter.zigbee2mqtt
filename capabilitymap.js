@@ -209,15 +209,20 @@ const mapProperty = function mapProperty(Z2MDevice) {
 			}
 		}
 	};
-	if (Z2MDevice.definition && Z2MDevice.definition.exposes) {
-		Z2MDevice.definition.exposes.forEach((exp) => {
-			if (exp.features) {	// specific or composite (e.g. light or switch)
-				exp.features.forEach((feature) => {
-					mapExposure(feature);
-				});
-			} else mapExposure(exp); // generic types (e.g. numeric or binary)
-		});
+
+	let exposes = [];
+	if (Z2MDevice.devices && Z2MDevice.devices[0].definition && Z2MDevice.devices[0].definition.exposes) {
+		exposes = Z2MDevice.devices[0].definition.exposes;
+	} else if (Z2MDevice.definition && Z2MDevice.definition.exposes) {
+		exposes = Z2MDevice.definition.exposes;
 	}
+	exposes.forEach((exp) => {
+		if (exp.features) {	// specific or composite (e.g. light or switch)
+			exp.features.forEach((feature) => {
+				mapExposure(feature);
+			});
+		} else mapExposure(exp); // generic types (e.g. numeric or binary)
+	});
 	const caps = homeyCapabilities.filter((cap) => cap !== null);	// .sort();
 	return { caps, capDetails };
 };
