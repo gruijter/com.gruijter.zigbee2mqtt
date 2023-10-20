@@ -30,7 +30,7 @@ module.exports = class ZigbeeGroup extends Zigbee2MQTTDevice {
 		if (!this.bridge) throw Error('No bridge, or bridge not ready');
 		if (!this.bridge.devices) throw Error('No devices, or devices not ready');
 		if (!this.bridge.groups) throw Error('No groups, or groups not ready');
-		const groups = this.bridge.groups.filter((group) => group.id === this.settings.uid);
+		const groups = this.bridge.groups.filter((group) => group.id.toString() === this.settings.uid);
 		const group = groups[0];
 		const members = group.members.map((member) => member.ieee_address);
 		const devices = this.bridge.devices.filter((dev) => dev.definition && dev.definition.exposes && members.includes(dev.ieee_address));

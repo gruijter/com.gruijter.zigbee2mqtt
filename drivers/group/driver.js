@@ -48,7 +48,7 @@ module.exports = class ZigbeeGroupDriver extends Zigbee2MQTTDriver {
 							const description = [...new Set(devices.map((dev) => dev.definition.description).filter((n) => n))].join(', ');
 
 							const settings = {
-								uid: item.id,
+								uid: item.id.toString(),
 								friendly_name: item.friendly_name,
 								bridge_uid: bridge.getData().id,
 								members: item.members,
