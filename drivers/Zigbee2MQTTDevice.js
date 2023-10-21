@@ -275,7 +275,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 	}
 
 	getColorPayload(hue, sat) {
-		if (this.store.capDetails && this.store.capDetails.light_mode && this.store.capDetails.light_mode.light_mode.name === 'color_hs') {
+		if (this.store.capDetails && this.store.capDetails.light_mode && this.store.capDetails.light_mode.name === 'color_hs') {
 			return { color: { hue: 360 * hue, saturation: 100 * sat } };
 		}
 		const dim = this.getCapabilityValue('dim');
