@@ -1,4 +1,7 @@
 {
+  "2.1.2": {
+    "en": "Fixed color mode for lights."
+  },
   "2.1.1": {
     "en": "Fixed groups without members. Added support for HUE smart button and Aqara temperature, humidity and pressure sensor."
   },
