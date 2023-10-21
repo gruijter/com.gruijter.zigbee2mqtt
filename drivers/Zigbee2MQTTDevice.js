@@ -64,17 +64,18 @@ const hsbToRgb = (hue, sat, dim) => {
 
 module.exports = class Zigbee2MQTTDevice extends Device {
 
-	getDeviceInfo() {
-		throw Error('getDeviceInfo is not implemented');
-	}
+	// getDeviceInfo() {
+	// 	this.error('why does this method exist?');
+	// 	throw Error('getDeviceInfo is not implemented');
+	// }
 
 	async onInit() {
 		try {
 			this.store = this.getStore();
 			this.settings = await this.getSettings();
 
-			await this.registerHomeyEventListeners();
 			await this.connectBridge();
+			await this.registerHomeyEventListeners();
 			await this.checkChangedOrDeleted();
 			await this.migrate();
 			await this.registerListeners();
@@ -153,7 +154,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 				const caps = this.getCapabilities();
 				const newCap = correctCaps[index];
 				if (caps[index] !== newCap) {
-					this.setUnavailable(this.zigbee2MqttType, 'is migrating. Please wait!').catch(this.error);
+					this.setUnavailable(`${this.zigbee2MqttType} is migrating. Please wait!`).catch(this.error);
 					capsChanged = true;
 					// remove all caps from here
 					for (let i = index; i < caps.length; i += 1) {
@@ -183,7 +184,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 	async setCapabilityUnits() {
 		try {
 			this.log(`setting Capability Units and Titles for ${this.getName()}`);
-			this.setUnavailable(this.zigbee2MqttType, 'is migrating. Please wait!').catch(this.error);
+			this.setUnavailable(`${this.zigbee2MqttType} is migrating. Please wait!`).catch(this.error);
 			const { capDetails } = this.store;
 			// console.log(this.getName(), capDetails);
 			if (!capDetails) return;
@@ -263,9 +264,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 
 	// special for color light
 	async dimHueSat(values, source) {
-		if (values?.light_mode === 'temperature') {
-			return;
-		}
+		if (values && values.light_mode === 'temperature') return Promise.resolve(true);
 		this.log(`${this.getName()} dim/hue/set requested via ${source}`);
 		const hue = values.light_hue || this.getCapabilityValue('light_hue');
 		const sat = values.light_saturation || this.getCapabilityValue('light_saturation');
@@ -276,13 +275,12 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 	}
 
 	getColorPayload(hue, sat) {
-		if (this.store.capDetails?.light_mode?.name === 'color_hs') {
+		if (this.store.capDetails && this.store.capDetails.light_mode && this.store.capDetails.light_mode.light_mode.name === 'color_hs') {
 			return { color: { hue: 360 * hue, saturation: 100 * sat } };
-		} else {
-			const dim = this.getCapabilityValue('dim');
-			const { r, g, b } = hsbToRgb(hue, sat, dim);
-			return { color: { r, g, b } };
 		}
+		const dim = this.getCapabilityValue('dim');
+		const { r, g, b } = hsbToRgb(hue, sat, dim);
+		return { color: { r, g, b } };
 	}
 
 	async checkChangedOrDeleted() {
@@ -291,7 +289,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 		// check deleted
 		if (!deviceInfo) {
 			this.error(this.zigbee2MqttType, 'was deleted in Zigbee2MQTT', this.settings.friendly_name);
-			this.setUnavailable(this.zigbee2MqttType, 'went missing in Zigbee2MQTT').catch(this.error);
+			this.setUnavailable(`${this.zigbee2MqttType} went missing in Zigbee2MQTT`).catch(this.error);
 			throw Error(this.zigbee2MqttType, 'went missing in Zigbee2MQTT');
 		}
 		// check for name change
@@ -304,7 +302,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 
 	async connectBridge() {
 		try {
-			await setTimeoutPromise(5000);
+			await setTimeoutPromise(1000);
 			const bridgeDriver = this.homey.drivers.getDriver('bridge');
 			await bridgeDriver.ready(() => null);
 			if (bridgeDriver.getDevices().length < 1) throw Error('The source bridge device is missing in Homey.');
@@ -336,7 +334,6 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 							}
 						});
 					}
-
 				} catch (error) {
 					this.error(error);
 				}
@@ -423,4 +420,4 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 		if (this.eventListenerBridgeOffline) this.homey.removeListener('bridgeoffline', this.eventListenerBridgeOffline);
 	}
 
-}
+};

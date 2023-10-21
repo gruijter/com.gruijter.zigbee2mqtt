@@ -81,7 +81,7 @@ module.exports = class Zigbee2MQTTBridge extends Device {
 				const caps = this.getCapabilities();
 				const newCap = correctCaps[index];
 				if (caps[index] !== newCap) {
-					this.setUnavailable('Device is migrating. Please wait!').catch(this.error);
+					this.setUnavailable('Bridge device is migrating. Please wait!').catch(this.error);
 					capsChanged = true;
 					// remove all caps from here
 					for (let i = index; i < caps.length; i += 1) {
@@ -248,12 +248,12 @@ module.exports = class Zigbee2MQTTBridge extends Device {
 					await this.client.subscribe([`${this.bridgeTopic}/info`]); // bridge info updates
 					this.log(`Subscribing to ${this.bridgeTopic}/logging`);
 					await this.client.subscribe([`${this.bridgeTopic}/logging`]); // bridge logging updates
+					this.log(`Subscribing to ${this.bridgeTopic}/groups`);
+					await this.client.subscribe([`${this.bridgeTopic}/groups`]); // bridge all group updates
 					this.log(`Subscribing to ${this.bridgeTopic}/state`);
 					await this.client.subscribe([`${this.bridgeTopic}/state`]); // bridge online/offline updates
 					this.log(`Subscribing to ${this.bridgeTopic}/devices`);
 					await this.client.subscribe([`${this.bridgeTopic}/devices`]); // bridge all device updates
-					this.log(`Subscribing to ${this.bridgeTopic}/groups`);
-					await this.client.subscribe([`${this.bridgeTopic}/groups`]); // bridge all group updates
 					this.log('mqtt bridge subscriptions ok');
 				} catch (error) {
 					this.error(error);
