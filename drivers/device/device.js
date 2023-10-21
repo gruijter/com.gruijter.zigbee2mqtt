@@ -26,13 +26,15 @@ const Zigbee2MQTTDevice = require('../Zigbee2MQTTDevice');
 
 module.exports = class ZigbeeDevice extends Zigbee2MQTTDevice {
 
-	zigbee2MqttType() {
-		return 'Device';
+	getDeviceInfo() {
+		if (!this.bridge) throw Error('No bridge, or bridge not ready');
+		if (!this.bridge.devices) throw Error('No devices, or devices not ready');
+		return this.bridge.devices.filter((dev) => dev.ieee_address === this.settings.uid);
 	}
 
-	getDeviceInfo() {
-		if (!this.bridge || !this.bridge.devices) throw Error('No bridge, or bridge not ready');
-		return this.bridge.devices.filter((dev) => dev.ieee_address === this.settings.uid);
+	async onInit() {
+		this.zigbee2MqttType = 'Device';
+		await super.onInit();
 	}
 
 	// register homey event listeners

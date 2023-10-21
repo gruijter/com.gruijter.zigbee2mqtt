@@ -35,4 +35,4 @@ module.exports = class Zigbee2MQTTDriver extends Driver {
 	async onUninit() {
 		this.log('driver onUninit');
 	}
-}
+};

@@ -24,15 +24,23 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 const Zigbee2MQTTDevice = require('../Zigbee2MQTTDevice');
 
-module.exports = class ZigbeeGroup extends Zigbee2MQTTDevice { 
-
-	zigbee2MqttType() {
-		return "Group"
-	}
+module.exports = class ZigbeeGroup extends Zigbee2MQTTDevice {
 
 	getDeviceInfo() {
-		if (!this.bridge || !this.bridge.groups) return;
-		return this.bridge.groups.filter((group) => group.id === this.settings.uid);
+		if (!this.bridge) throw Error('No bridge, or bridge not ready');
+		if (!this.bridge.devices) throw Error('No devices, or devices not ready');
+		if (!this.bridge.groups) throw Error('No groups, or groups not ready');
+		const groups = this.bridge.groups.filter((group) => group.id.toString() === this.settings.uid);
+		const group = groups[0];
+		const members = group.members.map((member) => member.ieee_address);
+		const devices = this.bridge.devices.filter((dev) => dev.definition && dev.definition.exposes && members.includes(dev.ieee_address));
+		group.devices = devices;
+		return [group];
+	}
+
+	async onInit() {
+		this.zigbee2MqttType = 'Group';
+		await super.onInit();
 	}
 
 	// register homey event listeners
@@ -42,13 +50,13 @@ module.exports = class ZigbeeGroup extends Zigbee2MQTTDevice {
 			this.checkChangedOrDeleted().catch(this.error);
 		};
 		this.homey.on('grouplistupdate', this.eventListenerGroupListUpdate);
-        await super.registerHomeyEventListeners();
+		await super.registerHomeyEventListeners();
 	}
 
 	destroyListeners() {
-        super.destroyListeners();
+		super.destroyListeners();
 		if (this.eventListenerGroupListUpdate) this.homey.removeListener('grouplistupdate', this.eventListenerGroupListUpdate);
 	}
-}
+};
 /*
 */
