@@ -74,7 +74,9 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 			this.store = this.getStore();
 			this.settings = await this.getSettings();
 
+			await setTimeoutPromise(2000);
 			await this.connectBridge();
+			await setTimeoutPromise(2000);
 			await this.registerHomeyEventListeners();
 			await this.checkChangedOrDeleted();
 			await this.migrate();
@@ -302,7 +304,6 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 
 	async connectBridge() {
 		try {
-			await setTimeoutPromise(1000);
 			const bridgeDriver = this.homey.drivers.getDriver('bridge');
 			await bridgeDriver.ready(() => null);
 			if (bridgeDriver.getDevices().length < 1) throw Error('The source bridge device is missing in Homey.');
