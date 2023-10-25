@@ -1687,6 +1687,12 @@
                   "label": {
                     "en": "Button"
                   }
+                },
+                {
+                  "id": "windowcoverings",
+                  "label": {
+                    "en": "Window Coverings"
+                  }
                 }
               ]
             }
@@ -1837,6 +1843,12 @@
                   "id": "button",
                   "label": {
                     "en": "Button"
+                  }
+                },
+                {
+                  "id": "windowcoverings",
+                  "label": {
+                    "en": "Window Coverings"
                   }
                 }
               ]

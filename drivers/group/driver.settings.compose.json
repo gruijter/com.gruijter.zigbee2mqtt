@@ -111,6 +111,12 @@
                         "label": {
                                 "en": "Button"
                         }
+                    },
+                    {
+                        "id": "windowcoverings",
+                        "label": {
+                                "en": "Window Coverings"
+                        }
                     }
                 ]
             }
