@@ -1,4 +1,7 @@
 {
+  "2.1.4": {
+    "en": "Added support for left/right switch (Livolo TI0001)."
+  },
   "2.1.3": {
     "en": "Fixed vibration alarm flow card. Improved app startup behavior."
   },
