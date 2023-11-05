@@ -702,6 +702,62 @@
       },
       {
         "title": {
+          "en": "Turned Off"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.left"
+          }
+        ],
+        "id": "onoff.left_false"
+      },
+      {
+        "title": {
+          "en": "Turned On"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.left"
+          }
+        ],
+        "id": "onoff.left_true"
+      },
+      {
+        "title": {
+          "en": "Turned Off"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.right"
+          }
+        ],
+        "id": "onoff.right_false"
+      },
+      {
+        "title": {
+          "en": "Turned On"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.right"
+          }
+        ],
+        "id": "onoff.right_true"
+      },
+      {
+        "title": {
           "en": "The Power On Behavior changed"
         },
         "highlight": true,
@@ -867,6 +923,54 @@
           }
         ],
         "id": "switch_type.l2_changed"
+      },
+      {
+        "title": {
+          "en": "The switch type Left changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=switch_type.left"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "switch_type.left",
+            "type": "string",
+            "title": {
+              "en": "Switch type left"
+            },
+            "example": "toggle"
+          }
+        ],
+        "id": "switch_type.left_changed"
+      },
+      {
+        "title": {
+          "en": "The switch type Right changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=switch_type.right"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "switch_type.right",
+            "type": "string",
+            "title": {
+              "en": "Switch type right"
+            },
+            "example": "toggle"
+          }
+        ],
+        "id": "switch_type.right_changed"
       },
       {
         "title": {
@@ -1109,6 +1213,54 @@
           }
         ],
         "id": "onoff.l2"
+      },
+      {
+        "title": {
+          "en": "Switch Left On or Off"
+        },
+        "titleFormatted": {
+          "en": "Switch Left [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.left"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On"
+            }
+          }
+        ],
+        "id": "onoff.left"
+      },
+      {
+        "title": {
+          "en": "Switch Right On or Off"
+        },
+        "titleFormatted": {
+          "en": "Switch Right [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.right"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On"
+            }
+          }
+        ],
+        "id": "onoff.right"
       },
       {
         "title": {
@@ -1402,6 +1554,88 @@
           }
         ],
         "id": "switch_type.l2"
+      },
+      {
+        "title": {
+          "en": "Set Switch Type Left"
+        },
+        "titleFormatted": {
+          "en": "Set Left Switch Type to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=switch_type.left"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "toggle",
+                "title": {
+                  "en": "toggle"
+                }
+              },
+              {
+                "id": "state",
+                "title": {
+                  "en": "State"
+                }
+              },
+              {
+                "id": "momentary",
+                "title": {
+                  "en": "Momentary"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "switch_type.left"
+      },
+      {
+        "title": {
+          "en": "Set Switch Type Right"
+        },
+        "titleFormatted": {
+          "en": "Set Right Switch Type to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=switch_type.right"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "toggle",
+                "title": {
+                  "en": "toggle"
+                }
+              },
+              {
+                "id": "state",
+                "title": {
+                  "en": "State"
+                }
+              },
+              {
+                "id": "momentary",
+                "title": {
+                  "en": "Momentary"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "switch_type.right"
       }
     ]
   },

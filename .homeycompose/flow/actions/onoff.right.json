@@ -1,0 +1,21 @@
+{
+	"title": {
+		"en": "Switch Right On or Off"
+	},
+		"titleFormatted": {
+				"en": "Switch Right [[val]]"
+		},
+		"highlight": true,
+		"args": [
+				{
+						"type": "device",
+						"name": "device",
+						"filter": "driver_id=device|group&capabilities=onoff.right"
+				},
+				{
+						"type": "checkbox",
+						"name": "val",
+						"title": { "en": "On" }
+				}
+		]
+}

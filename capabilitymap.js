@@ -88,6 +88,8 @@ const capabilityMap = {
 	state: (val) => ['onoff', val === 'ON', { state: val ? 'ON' : 'OFF' }],
 	state_l1: (val) => ['onoff.l1', val === 'ON', { state_l1: val ? 'ON' : 'OFF' }],
 	state_l2: (val) => ['onoff.l2', val === 'ON', { state_l2: val ? 'ON' : 'OFF' }],
+	state_left: (val) => ['onoff.left', val === 'ON', { state_left: val ? 'ON' : 'OFF' }],
+	state_right: (val) => ['onoff.right', val === 'ON', { state_right: val ? 'ON' : 'OFF' }],
 	device_fault: (val) => ['alarm_generic.fault', val],
 	vibration: (val) => ['alarm_motion.vibration', val],
 	gas: (val) => ['alarm_generic.gas', val],
@@ -141,6 +143,8 @@ const capabilityMap = {
 	switch_type: (val) => ['switch_type', val, { switch_type: val }], // [toggle, state, momentary]
 	switch_type_l1: (val) => ['switch_type.l1', val, { switch_type_l1: val }], // [toggle, state, momentary]
 	switch_type_l2: (val) => ['switch_type.l2', val, { switch_type_l2: val }], // [toggle, state, momentary]
+	switch_type_left: (val) => ['switch_type.left', val, { switch_type_left: val }], // [toggle, state, momentary]
+	switch_type_right: (val) => ['switch_type.right', val, { switch_type_right: val }], // [toggle, state, momentary]
 
 	// useless ENUM capabilities
 	// system_mode: (val) => ['system_mode', val, { system_mode: val }],	// ["auto", "heat", "off", "cool", "emergency_heating", "precooling", "fan_only", "dry", "sleep" ]

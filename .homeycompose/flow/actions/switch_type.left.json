@@ -1,0 +1,34 @@
+{
+	"title": {
+		"en": "Set Switch Type Left"
+	},
+	"titleFormatted": {
+			"en": "Set Left Switch Type to [[val]]"
+	},
+	"highlight": true,
+	"args": [
+		{
+			"type": "device",
+			"name": "device",
+			"filter": "driver_id=device|group&capabilities=switch_type.left"
+		},
+		{
+			"type": "dropdown",
+			"name": "val",
+			"values": [
+				{
+					"id": "toggle",
+					"title": { "en": "toggle" }
+				},
+				{
+					"id": "state",
+					"title": { "en": "State" }
+				},
+				{
+					"id": "momentary",
+					"title": { "en": "Momentary" }
+				}
+			]
+		}
+	]
+}
