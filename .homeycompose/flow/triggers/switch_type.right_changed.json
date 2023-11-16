@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The switch type Right changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device|group&capabilities=switch_type.right"
+		}
+	],
+	"tokens": [
+		{
+			"name": "switch_type.right",
+			"type": "string",
+			"title": { 
+				"en": "Switch type right"
+			},
+			"example": "toggle"
+		}
+	]
+}
