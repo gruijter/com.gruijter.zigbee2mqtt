@@ -57,7 +57,7 @@ const capabilityMap = {
 	// : (val) => ['meter_rain', Number(val)]
 	// : (val) => ['volume_set.strength', Number(val)],
 	// : (val) => ['windowcoverings_tilt_set', Number(val)]
-	// : (val) => ['windowcoverings_set', Number(val)]
+	position: (val) => ['windowcoverings_set', Number(val) / 100, { position: Number(val) * 100 }],
 	// : (val) => ['speaker_duration', Number(val)]
 	// : (val) => ['speaker_position', Number(val)]
 
@@ -172,6 +172,10 @@ const classIconMap = {
 	e27: ['light', 'light.svg'],
 	'led controller': ['light', 'light.svg'],
 	led: ['light', 'light.svg'],
+	fyrtur: ['windowcoverings', 'window_coverings.svg'],
+	kadrilj: ['windowcoverings', 'window_coverings.svg'],
+	praktlysing: ['windowcoverings', 'window_coverings.svg'],
+	tredansen: ['windowcoverings', 'window_coverings.svg'],
 };
 
 // map capabilities to Homey
@@ -188,7 +192,7 @@ const getExpMap = function mapExposure() {
 
 // map capabilities to Homey
 const mapProperty = function mapProperty(Z2MDevice) {
-	const homeyCapabilities = [];
+	let homeyCapabilities = [];
 	function pushUniqueCapabilities(capVal) {
 		if (!homeyCapabilities.includes(capVal)) {
 			homeyCapabilities.push(capVal);
@@ -196,6 +200,12 @@ const mapProperty = function mapProperty(Z2MDevice) {
 	}
 	const capDetails = {};
 	const mapExposure = (exp) => {
+
+		// create exception for blinds
+		if (exp.property === 'windowcoverings_set' || exp.property === 'position') {
+			homeyCapabilities = homeyCapabilities.filter((cap) => cap !== 'onoff');
+		}
+
 		// create exception for color lights
 		if (exp.property === 'color') {
 			pushUniqueCapabilities('light_hue');
