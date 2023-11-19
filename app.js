@@ -47,6 +47,20 @@ class MyApp extends Homey.App {
 		const actionList = Homey.manifest.flow.actions;
 		const expMap = getExpMap();
 		actionList.forEach((action, index) => {
+			// actions for bridge
+			if (action.args && action.args[0].filter && action.args[0].filter.includes('bridge')) {
+				this.log('setting up Bridge action listener', action.id);
+				actionListeners[index] = this.homey.flow.getActionCard(action.id);
+				actionListeners[index].registerRunListener((args) => {
+					try {
+						args.device[action.id](args.val, 'flow');
+					} catch (error) {
+						this.error(error);
+					}
+				});
+			}
+
+			// actions for device or group
 			const z2mExp = expMap[action.id];
 			const mapFunc = capabilityMap[z2mExp];
 			if (!mapFunc) return;	// not included in Homey maping

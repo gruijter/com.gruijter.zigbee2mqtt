@@ -98,5 +98,22 @@
 				"value": ""
 			}
 		]
+	},
+	{
+		"type": "group",
+		"label": {
+				"en": "Bridge settings"
+		},
+		"children": [
+			{
+				"id": "force_info_log_level",
+				"type": "checkbox",
+				"label": {
+						"en": "Force Info Logs"
+				},
+				"hint": { "en": "Force the log level to INFO on (re)start. INFO or DEBUG level is required for the Msgs/minute counter." },
+				"value": true
+			}
+		]
 	}
 ]

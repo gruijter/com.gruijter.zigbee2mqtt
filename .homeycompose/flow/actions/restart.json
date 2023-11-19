@@ -1,0 +1,16 @@
+{
+	"title": {
+		"en": "Restart Z2M"
+	},
+	"hint": {
+		"en": "Restart the Zigbee2MQTT bridge"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=bridge"
+		}
+	]
+}

@@ -38,6 +38,7 @@ module.exports = class Zigbee2MQTTBridge extends Device {
 
 			await this.connectBridge();
 			await this.registerListeners();
+			if (this.settings.force_info_log_level) await this.setLogLevel('info', 'onInit');
 			this.restarting = false;
 			this.setAvailable().catch(this.error);
 			this.log(this.getName(), 'bridge device has been initialized');
@@ -209,13 +210,17 @@ module.exports = class Zigbee2MQTTBridge extends Device {
 
 					// get logging msg/minute
 					if (topic.includes(`${this.bridgeTopic}/logging`)) {
-						// console.log('logging was updated', info.message);
-						this.msgCounter += 1;
-						const minutesPassed = (Date.now() - this.lastMPMUpdate) / (60 * 1000);
-						if (minutesPassed > 1) {
-							this.setCapability('meter_mpm', Math.round((10 * this.msgCounter) / minutesPassed) / 10);
-							this.lastMPMUpdate = Date.now();
-							this.msgCounter = 0;
+						if (info.level === 'info'
+							&& info.message.includes('MQTT publish: topic')
+							&& !info.message.includes(`${this.bridgeTopic}/response`)) {
+							// console.log('logging was updated', info);
+							this.msgCounter += 1;
+							const minutesPassed = (Date.now() - this.lastMPMUpdate) / (60 * 1000);
+							if (minutesPassed > 1) {
+								this.setCapability('meter_mpm', Math.round((10 * this.msgCounter) / minutesPassed) / 10);
+								this.lastMPMUpdate = Date.now();
+								this.msgCounter = 0;
+							}
 						}
 					}
 
@@ -292,10 +297,26 @@ module.exports = class Zigbee2MQTTBridge extends Device {
 		}
 	}
 
-	async joinOnOff(payload, source) {
+	async joinOnOff(onoff, source) {
 		if (!this.client || !this.client.connected) return Promise.reject(Error('Bridge is not connected'));
+		const payload = { value: onoff, time: 240 };
 		await this.client.publish(`${this.bridgeTopic}/request/permit_join`, JSON.stringify(payload));
-		this.log(`Permit_join ${JSON.stringify(payload)} sent by ${source}`);
+		this.log(`Permit_join ${onoff} sent by ${source}`);
+		return Promise.resolve(true);
+	}
+
+	async setLogLevel(level, source) {
+		if (!this.client || !this.client.connected) return Promise.reject(Error('Bridge is not connected'));
+		const payload = { options: { advanced: { log_level: level } } };
+		await this.client.publish(`${this.bridgeTopic}/request/options`, JSON.stringify(payload));
+		this.log(`Log level set to ${level} by ${source}`);
+		return Promise.resolve(true);
+	}
+
+	async restart(ignore, source) {
+		if (!this.client || !this.client.connected) return Promise.reject(Error('Bridge is not connected'));
+		await this.client.publish(`${this.bridgeTopic}/request/restart`, '');
+		this.log(`Restart Z2M command sent by ${source}`);
 		return Promise.resolve(true);
 	}
 
@@ -321,8 +342,8 @@ module.exports = class Zigbee2MQTTBridge extends Device {
 			// capabilityListeners will be overwritten, so no need to unregister them
 
 			this.registerCapabilityListener('allow_joining', (onoff) => {
-				const payload = { value: onoff, time: 240 };
-				this.joinOnOff(payload, 'app').catch(this.error);
+				// const payload = { value: onoff, time: 240 };
+				this.joinOnOff(onoff, 'app').catch(this.error);
 			});
 
 			this.listenersSet = true;

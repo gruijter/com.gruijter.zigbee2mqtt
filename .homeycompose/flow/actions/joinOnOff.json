@@ -1,0 +1,24 @@
+{
+	"title": {
+		"en": "Allow Joining On or Off"
+	},
+	"titleFormatted": {
+			"en": "Allow device joining [[val]]"
+	},
+	"hint": {
+		"en": "When On, the Zigbee2MQTT bridge will allow joining for 5 minutes."
+	},
+	"highlight": true,
+	"args": [
+			{
+					"type": "device",
+					"name": "device",
+					"filter": "driver_id=bridge"
+			},
+			{
+					"type": "checkbox",
+					"name": "val",
+					"title": { "en": "On" }
+			}
+	]
+}

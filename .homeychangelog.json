@@ -1,4 +1,10 @@
 {
+  "2.2.0": {
+    "en": "Added force bridge log level to INFO on startup. Added Bridge flow cards for restart, allow_joining and set_log_level. Improved Msgs/minute counter."
+  },
+  "2.1.5": {
+    "en": "Added support for Ikea blinds (Fyrtur, Kadrilj, Praktlysing, Tredansen)."
+  },
   "2.1.4": {
     "en": "Added support for left/right switch (Livolo TI0001)."
   },

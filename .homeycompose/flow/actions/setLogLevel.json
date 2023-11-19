@@ -1,0 +1,39 @@
+{
+	"title": {
+		"en": "Set log level"
+	},
+	"titleFormatted": {
+			"en": "Set log level to [[val]]"
+	},
+	"hint": { "en": "INFO or DEBUG level is required for the Msgs/minute counter." },
+	"highlight": true,
+	"args": [
+		{
+			"type": "device",
+			"name": "device",
+			"filter": "driver_id=bridge"
+		},
+		{
+			"type": "dropdown",
+			"name": "val",
+			"values": [
+				{
+					"id": "debug",
+					"title": { "en": "Debug" }
+				},
+				{
+					"id": "info",
+					"title": { "en": "Info" }
+				},
+				{
+					"id": "warn",
+					"title": { "en": "Warn" }
+				},
+				{
+					"id": "error",
+					"title": { "en": "Error" }
+				}
+			]
+		}
+	]
+}
