@@ -89,6 +89,7 @@ const capabilityMap = {
 	state_l1: (val) => ['onoff.l1', val === 'ON', { state_l1: val ? 'ON' : 'OFF' }],
 	state_l2: (val) => ['onoff.l2', val === 'ON', { state_l2: val ? 'ON' : 'OFF' }],
 	state_left: (val) => ['onoff.left', val === 'ON', { state_left: val ? 'ON' : 'OFF' }],
+	state_center: (val) => ['onoff.center', val === 'ON', { state_center: val ? 'ON' : 'OFF' }],
 	state_right: (val) => ['onoff.right', val === 'ON', { state_right: val ? 'ON' : 'OFF' }],
 	device_fault: (val) => ['alarm_generic.fault', val],
 	vibration: (val) => ['alarm_motion.vibration', val],
@@ -144,6 +145,7 @@ const capabilityMap = {
 	switch_type_l1: (val) => ['switch_type.l1', val, { switch_type_l1: val }], // [toggle, state, momentary]
 	switch_type_l2: (val) => ['switch_type.l2', val, { switch_type_l2: val }], // [toggle, state, momentary]
 	switch_type_left: (val) => ['switch_type.left', val, { switch_type_left: val }], // [toggle, state, momentary]
+	switch_type_center: (val) => ['switch_type.center', val, { switch_type_center: val }], // [toggle, state, momentary]
 	switch_type_right: (val) => ['switch_type.right', val, { switch_type_right: val }], // [toggle, state, momentary]
 
 	// useless ENUM capabilities

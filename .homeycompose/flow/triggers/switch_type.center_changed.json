@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The switch type Center changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device|group&capabilities=switch_type.center"
+		}
+	],
+	"tokens": [
+		{
+			"name": "switch_type.center",
+			"type": "string",
+			"title": { 
+				"en": "Switch type center"
+			},
+			"example": "toggle"
+		}
+	]
+}

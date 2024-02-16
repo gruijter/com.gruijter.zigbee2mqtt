@@ -1,0 +1,21 @@
+{
+	"title": {
+		"en": "Switch Center On or Off"
+	},
+		"titleFormatted": {
+				"en": "Switch Center [[val]]"
+		},
+		"highlight": true,
+		"args": [
+				{
+						"type": "device",
+						"name": "device",
+						"filter": "driver_id=device|group&capabilities=onoff.center"
+				},
+				{
+						"type": "checkbox",
+						"name": "val",
+						"title": { "en": "On" }
+				}
+		]
+}
