@@ -28,8 +28,8 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 const capabilityMap = {
 	// Standard Homey Number capabilities
 	current_heating_setpoint: (val) => ['target_temperature', Number(val), { current_heating_setpoint: Number(val) }],
-	temperature: (val) => ['measure_temperature.sensor', Number(val)],
-	local_temperature: (val) => ['measure_temperature', Number(val)],
+	temperature: (val) => ['measure_temperature', Number(val)],
+	local_temperature: (val) => ['measure_temperature.local', Number(val)],
 	device_temperature: (val) => ['measure_temperature.device', Number(val)],
 	co: (val) => ['measure_co', Number(val)],
 	co2: (val) => ['measure_co2', Number(val)],

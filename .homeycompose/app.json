@@ -1,6 +1,6 @@
 {
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "2.2.0",
+  "version": "2.2.2",
   "compatibility": ">=8.0.0",
   "sdk": 3,
   "platforms": [
@@ -49,6 +49,9 @@
       },
       {
         "name": "Niels Nijveldt"
+      },
+      {
+        "name": "Kringloper"
       }
     ]
   },

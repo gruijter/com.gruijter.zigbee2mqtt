@@ -1,4 +1,10 @@
 {
+  "2.2.2": {
+    "en": "Replaced mapping for temperature and temperature.local capabilities."
+  },
+  "2.2.1": {
+    "en": "Added support for center button on three-way switch (Kringloper)."
+  },
   "2.2.0": {
     "en": "Added force bridge log level to INFO on startup. Added Bridge flow cards for restart, allow_joining and set_log_level. Improved Msgs/minute counter."
   },
