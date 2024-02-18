@@ -1,4 +1,7 @@
 {
+  "2.3.0": {
+    "en": "Fixed capabilities naming and units migration. Added open_window mapping."
+  },
   "2.2.2": {
     "en": "Replaced mapping for temperature and temperature.local capabilities."
   },

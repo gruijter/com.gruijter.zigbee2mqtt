@@ -91,6 +91,10 @@ const capabilityMap = {
 	state_left: (val) => ['onoff.left', val === 'ON', { state_left: val ? 'ON' : 'OFF' }],
 	state_center: (val) => ['onoff.center', val === 'ON', { state_center: val ? 'ON' : 'OFF' }],
 	state_right: (val) => ['onoff.right', val === 'ON', { state_right: val ? 'ON' : 'OFF' }],
+
+	// frost_protection: (val) => ['onoff.frost_protection', val === 'ON', { frost_protection: val ? 'ON' : 'OFF' }],
+	open_window: (val) => ['alarm_generic.open_window', val === 'ON'],
+
 	device_fault: (val) => ['alarm_generic.fault', val],
 	vibration: (val) => ['alarm_motion.vibration', val],
 	gas: (val) => ['alarm_generic.gas', val],
@@ -202,6 +206,8 @@ const mapProperty = function mapProperty(Z2MDevice) {
 	}
 	const capDetails = {};
 	const mapExposure = (exp) => {
+
+		// if (exp.property.includes('open_window')) console.log(exp);
 
 		// create exception for blinds
 		if (exp.property === 'windowcoverings_set' || exp.property === 'position') {
