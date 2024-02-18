@@ -1,13 +1,13 @@
 {
 	"title": {
-		"en": "Left Turned On"
+		"en": "Center Turned On"
 	},
 	"highlight": true,
 	"args": [
 		{
 			"type": "device",
 			"name": "device",
-			"filter": "driver_id=device|group&capabilities=onoff.left"
+			"filter": "driver_id=device|group&capabilities=onoff.center"
 		}
 	]
 }

@@ -649,6 +649,34 @@
       },
       {
         "title": {
+          "en": "Center Turned Off"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.center"
+          }
+        ],
+        "id": "onoff.center_false"
+      },
+      {
+        "title": {
+          "en": "Center Turned On"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.center"
+          }
+        ],
+        "id": "onoff.center_true"
+      },
+      {
+        "title": {
           "en": "Turned Off"
         },
         "highlight": true,
@@ -705,7 +733,7 @@
       },
       {
         "title": {
-          "en": "Turned Off"
+          "en": "Left Turned Off"
         },
         "highlight": true,
         "args": [
@@ -719,7 +747,7 @@
       },
       {
         "title": {
-          "en": "Turned On"
+          "en": "Left Turned On"
         },
         "highlight": true,
         "args": [
@@ -733,7 +761,7 @@
       },
       {
         "title": {
-          "en": "Turned Off"
+          "en": "Right Turned Off"
         },
         "highlight": true,
         "args": [
@@ -747,7 +775,7 @@
       },
       {
         "title": {
-          "en": "Turned On"
+          "en": "Right Turned On"
         },
         "highlight": true,
         "args": [
@@ -878,6 +906,30 @@
           }
         ],
         "id": "switch_type_changed"
+      },
+      {
+        "title": {
+          "en": "The switch type Center changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=switch_type.center"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "switch_type.center",
+            "type": "string",
+            "title": {
+              "en": "Switch type center"
+            },
+            "example": "toggle"
+          }
+        ],
+        "id": "switch_type.center_changed"
       },
       {
         "title": {
@@ -1195,6 +1247,30 @@
           }
         ],
         "id": "locked.child"
+      },
+      {
+        "title": {
+          "en": "Switch Center On or Off"
+        },
+        "titleFormatted": {
+          "en": "Switch Center [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.center"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On"
+            }
+          }
+        ],
+        "id": "onoff.center"
       },
       {
         "title": {
@@ -1528,6 +1604,47 @@
           }
         ],
         "id": "switch_type"
+      },
+      {
+        "title": {
+          "en": "Set Switch Type Center"
+        },
+        "titleFormatted": {
+          "en": "Set Center Switch Type to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=switch_type.center"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "toggle",
+                "title": {
+                  "en": "toggle"
+                }
+              },
+              {
+                "id": "state",
+                "title": {
+                  "en": "State"
+                }
+              },
+              {
+                "id": "momentary",
+                "title": {
+                  "en": "Momentary"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "switch_type.center"
       },
       {
         "title": {
