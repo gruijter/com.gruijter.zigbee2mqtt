@@ -28,8 +28,8 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 const capabilityMap = {
 	// Standard Homey Number capabilities
 	current_heating_setpoint: (val) => ['target_temperature', Number(val), { current_heating_setpoint: Number(val) }],
-	temperature: (val) => ['measure_temperature.sensor', Number(val)],
-	local_temperature: (val) => ['measure_temperature', Number(val)],
+	temperature: (val) => ['measure_temperature', Number(val)],
+	local_temperature: (val) => ['measure_temperature.local', Number(val)],
 	device_temperature: (val) => ['measure_temperature.device', Number(val)],
 	co: (val) => ['measure_co', Number(val)],
 	co2: (val) => ['measure_co2', Number(val)],
@@ -91,6 +91,10 @@ const capabilityMap = {
 	state_left: (val) => ['onoff.left', val === 'ON', { state_left: val ? 'ON' : 'OFF' }],
 	state_center: (val) => ['onoff.center', val === 'ON', { state_center: val ? 'ON' : 'OFF' }],
 	state_right: (val) => ['onoff.right', val === 'ON', { state_right: val ? 'ON' : 'OFF' }],
+
+	// frost_protection: (val) => ['onoff.frost_protection', val === 'ON', { frost_protection: val ? 'ON' : 'OFF' }],
+	open_window: (val) => ['alarm_generic.open_window', val === 'ON'],
+
 	device_fault: (val) => ['alarm_generic.fault', val],
 	vibration: (val) => ['alarm_motion.vibration', val],
 	gas: (val) => ['alarm_generic.gas', val],
@@ -202,6 +206,8 @@ const mapProperty = function mapProperty(Z2MDevice) {
 	}
 	const capDetails = {};
 	const mapExposure = (exp) => {
+
+		// if (exp.property.includes('open_window')) console.log(exp);
 
 		// create exception for blinds
 		if (exp.property === 'windowcoverings_set' || exp.property === 'position') {

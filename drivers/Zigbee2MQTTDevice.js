@@ -106,7 +106,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 			this.log(`setting new Class for ${this.getName()}`, this.getSettings().homeyclass);
 			await this.setClass(this.getSettings().homeyclass).catch(this.error);
 		}
-		await this.setCapabilityUnits();
+		// await this.setCapabilityUnits();
 	}
 
 	async onSettings({ newSettings, changedKeys }) { 	// oldSettings changedKeys
@@ -146,7 +146,6 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 			const { caps: correctCaps, capDetails } = mapProperty(deviceInfo);
 			await this.setStoreValue('capDetails', { ...capDetails });
 			await this.setStoreValue('caps', { ...correctCaps });
-			let capsChanged = false;
 
 			// store the capability states before migration
 			const sym = Object.getOwnPropertySymbols(this).find((s) => String(s) === 'Symbol(state)');
@@ -157,7 +156,6 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 				const newCap = correctCaps[index];
 				if (caps[index] !== newCap) {
 					this.setUnavailable(`${this.zigbee2MqttType} is migrating. Please wait!`).catch(this.error);
-					capsChanged = true;
 					// remove all caps from here
 					for (let i = index; i < caps.length; i += 1) {
 						this.log(`removing capability ${caps[i]} for ${this.getName()}`);
@@ -175,9 +173,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 					await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
 				}
 			}
-			if (capsChanged) {
-				await this.setCapabilityUnits();
-			}
+			await this.setCapabilityUnits();
 		} catch (error) {
 			this.error(error);
 		}
@@ -185,14 +181,17 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 
 	async setCapabilityUnits() {
 		try {
-			this.log(`setting Capability Units and Titles for ${this.getName()}`);
+			this.log(`Checking Capability Units and Titles for ${this.getName()}`);
 			this.setUnavailable(`${this.zigbee2MqttType} is migrating. Please wait!`).catch(this.error);
+			let unitsChanged = false;
 			const { capDetails } = this.store;
 			// console.log(this.getName(), capDetails);
+
 			if (!capDetails) return;
 			const capDetailsArray = Object.entries(capDetails);
 			// console.dir(capDetailsArray, { depth: null });
 			for (let index = 0; index < capDetailsArray.length; index += 1) {
+
 				if (capDetailsArray[index][1]) { // && capDetailsArray[index][1].unit) {
 					const capOptions = { };
 					if (capDetailsArray[index][1].unit) { capOptions.units = { en: capDetailsArray[index][1].unit }; }
@@ -202,13 +201,22 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 					}
 					// decimals: dec,
 					if (Object.keys(capOptions).length > 0) {
-						this.log('Migrating units for', capDetailsArray[index][0], capDetailsArray[index][1].unit, capDetailsArray[index][1].name);
-						await this.setCapabilityOptions(capDetailsArray[index][0], capOptions).catch(this.error);
-						await setTimeoutPromise(2 * 1000);
+						// check if the unit or name changed for this capability
+						let currentCapOptions = {};
+						try {
+							currentCapOptions = this.getCapabilityOptions(capDetailsArray[index][0]);
+						} catch (error) {	this.log(`${this.getName()} has no capability options set for ${capDetailsArray[index][0]}`); }
+						// console.log(this.getName(), capDetailsArray[index][0], currentCapOptions);
+						if ((currentCapOptions.unit !== capOptions.unit) || (currentCapOptions.name !== capOptions.name)) {
+							unitsChanged = true;
+							this.log('Migrating unit and title for', capDetailsArray[index][0], capDetailsArray[index][1].unit, capDetailsArray[index][1].name);
+							await this.setCapabilityOptions(capDetailsArray[index][0], capOptions).catch(this.error);
+							await setTimeoutPromise(2 * 1000);
+						}
 					}
 				}
 			}
-			this.restartDevice(1000).catch(this.error);
+			if (unitsChanged) this.restartDevice(1000).catch(this.error);
 		} catch (error) {
 			this.error(error);
 		}
