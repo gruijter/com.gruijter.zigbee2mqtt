@@ -1,0 +1,27 @@
+{
+	"title": {
+		"en": "Set valve state"
+	},
+	"titleFormatted": {
+			"en": "Set valve state to [[val]]"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device|group&capabilities=valve_state"
+		},
+		{
+			"name": "val",
+			"type": "range",
+			"min": 0,
+			"max": 1,
+			"step": 0.1,
+			"value": 0.5,
+			"label": "%",
+			"labelMultiplier": 100,
+			"labelDecimals": 0
+		}
+	]
+}

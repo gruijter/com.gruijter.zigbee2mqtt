@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Target distance"
+  },
+  "units": {
+    "en": "m"
+  },
+  "getable": true,
+  "setable": false,
+  "insights": true,
+  "icon": "./assets/meter_mpm.svg"
+}

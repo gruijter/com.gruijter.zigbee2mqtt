@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Water flow"
+  },
+  "units": {
+    "en": "%"
+  },
+  "getable": true,
+  "setable": false,
+  "insights": true,
+  "icon": "./assets/meter_mpm.svg"
+}

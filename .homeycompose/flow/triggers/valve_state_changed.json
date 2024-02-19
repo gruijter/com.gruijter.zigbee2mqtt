@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The valve state changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device|group&capabilities=valve_state"
+		}
+	],
+	"tokens": [
+		{
+			"name": "valve_state",
+			"type": "number",
+			"title": { 
+				"en": "%"
+			},
+			"example": 53
+		}
+	]
+}

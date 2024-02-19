@@ -60,6 +60,9 @@ const capabilityMap = {
 	position: (val) => ['windowcoverings_set', Number(val) / 100, { position: Number(val) * 100 }],
 	// : (val) => ['speaker_duration', Number(val)]
 	// : (val) => ['speaker_position', Number(val)]
+	water_flow: (val) => ['measure_waterflow', Number(val)],
+	valve_state: (val) => ['valve_state', Number(val), { valve_state: Number(val) * 100 }],
+	target_distance: (val) => ['target_distance', Number(val)],
 
 	// color light related number capabilities
 	brightness: (val) => ['dim', Number(val) / 254, { brightness: Number(val) * 254 }],
