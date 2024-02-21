@@ -1,0 +1,12 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Valve state"
+  },
+  "units": {
+    "en": "%"
+  },
+  "getable": true,
+  "setable": true,
+  "insights": true
+}

@@ -604,6 +604,30 @@
       },
       {
         "title": {
+          "en": "The water flow changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=measure_waterflow"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_waterflow.",
+            "type": "number",
+            "title": {
+              "en": "%"
+            },
+            "example": 53
+          }
+        ],
+        "id": "measure_waterflow_changed"
+      },
+      {
+        "title": {
           "en": "The number of joined devices changed"
         },
         "highlight": true,
@@ -1053,6 +1077,30 @@
           }
         ],
         "id": "system_mode_changed"
+      },
+      {
+        "title": {
+          "en": "The valve state changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=valve_state"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "valve_state",
+            "type": "number",
+            "title": {
+              "en": "%"
+            },
+            "example": 53
+          }
+        ],
+        "id": "valve_state_changed"
       }
     ],
     "actions": [
@@ -1812,6 +1860,34 @@
           }
         ],
         "id": "switch_type.right"
+      },
+      {
+        "title": {
+          "en": "Set valve state"
+        },
+        "titleFormatted": {
+          "en": "Set valve state to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=valve_state"
+          },
+          {
+            "name": "val",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.1,
+            "value": 0.5,
+            "label": "%",
+            "labelMultiplier": 100,
+            "labelDecimals": 0
+          }
+        ],
+        "id": "valve_state"
       }
     ]
   },
@@ -2532,6 +2608,19 @@
       "insights": true,
       "icon": "./assets/link_quality.svg"
     },
+    "measure_waterflow": {
+      "type": "number",
+      "title": {
+        "en": "Water flow"
+      },
+      "units": {
+        "en": "%"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "icon": "./assets/meter_mpm.svg"
+    },
     "meter_joined_devices": {
       "type": "number",
       "title": {
@@ -2773,6 +2862,31 @@
       "getable": true,
       "setable": true,
       "insights": false
+    },
+    "target_distance": {
+      "type": "number",
+      "title": {
+        "en": "Target distance"
+      },
+      "units": {
+        "en": "m"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "icon": "./assets/meter_mpm.svg"
+    },
+    "valve_state": {
+      "type": "number",
+      "title": {
+        "en": "Valve state"
+      },
+      "units": {
+        "en": "%"
+      },
+      "getable": true,
+      "setable": true,
+      "insights": true
     }
   }
 }
