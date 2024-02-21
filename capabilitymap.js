@@ -50,7 +50,7 @@ const capabilityMap = {
 	illuminance: (val) => ['measure_luminance', Number(val)],
 	illuminance_lux: (val) => ['measure_luminance.lux', Number(val)],
 	// : (val) => ['measure_ultraviolet', Number(val)],
-	// : (val) => ['measure_water', Number(val)],
+	water_flow: (val) => ['measure_water', Number(val)],
 	energy: (val) => ['meter_power', Number(val)],
 	water_consumed: (val) => ['meter_water', Number(val)],
 	// : (val) => ['meter_gas', Number(val)]
@@ -60,7 +60,6 @@ const capabilityMap = {
 	position: (val) => ['windowcoverings_set', Number(val) / 100, { position: Number(val) * 100 }],
 	// : (val) => ['speaker_duration', Number(val)]
 	// : (val) => ['speaker_position', Number(val)]
-	water_flow: (val) => ['measure_waterflow', Number(val)],
 	valve_state: (val) => ['valve_state', Number(val), { valve_state: Number(val) * 100 }],
 	target_distance: (val) => ['target_distance', Number(val)],
 

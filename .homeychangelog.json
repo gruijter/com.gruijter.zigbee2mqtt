@@ -1,4 +1,7 @@
 {
+  "2.3.1": {
+    "en": "Added capability mapping for measure_water, valve_state and target_distance. Stability improvements."
+  },
   "2.3.0": {
     "en": "Fixed capabilities naming and units migration. Added open_window mapping."
   },

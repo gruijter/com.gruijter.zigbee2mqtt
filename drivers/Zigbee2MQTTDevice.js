@@ -255,6 +255,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 	async setCommand(payload, source) {
 		if (!this.bridge || !this.bridge.client || !this.bridge.client.connected) throw Error('Bridge is not connected');
 		if (!this.store || !this.store.capDetails) throw Error('Store capabilities undefined');
+		if (!payload) throw Error('setCommand started without payload');
 		// get the capDetails for this command
 		const [payLoadArray] = Object.entries(payload);
 		const capDetail = Object.entries(this.store.capDetails).find((cap) => cap[1].property === payLoadArray[0]);

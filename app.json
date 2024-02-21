@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "compatibility": ">=8.0.0",
   "sdk": 3,
   "platforms": [
@@ -601,30 +601,6 @@
           }
         ],
         "id": "measure_temperature.sensor_changed"
-      },
-      {
-        "title": {
-          "en": "The water flow changed"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device|group&capabilities=measure_waterflow"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "measure_waterflow.",
-            "type": "number",
-            "title": {
-              "en": "%"
-            },
-            "example": 53
-          }
-        ],
-        "id": "measure_waterflow_changed"
       },
       {
         "title": {
@@ -2607,19 +2583,6 @@
       "setable": false,
       "insights": true,
       "icon": "./assets/link_quality.svg"
-    },
-    "measure_waterflow": {
-      "type": "number",
-      "title": {
-        "en": "Water flow"
-      },
-      "units": {
-        "en": "%"
-      },
-      "getable": true,
-      "setable": false,
-      "insights": true,
-      "icon": "./assets/meter_mpm.svg"
     },
     "meter_joined_devices": {
       "type": "number",
