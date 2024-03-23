@@ -51,9 +51,9 @@ class MyApp extends Homey.App {
 			if (action.args && action.args[0].filter && action.args[0].filter.includes('bridge')) {
 				this.log('setting up Bridge action listener', action.id);
 				actionListeners[index] = this.homey.flow.getActionCard(action.id);
-				actionListeners[index].registerRunListener((args) => {
+				actionListeners[index].registerRunListener(async (args) => {
 					try {
-						args.device[action.id](args.val, 'flow');
+						await args.device[action.id](args.val, 'flow');
 					} catch (error) {
 						this.error(error);
 					}
@@ -66,9 +66,9 @@ class MyApp extends Homey.App {
 			if (!mapFunc) return;	// not included in Homey maping
 			this.log('setting up action listener', action.id, mapFunc('val')[2]);
 			actionListeners[index] = this.homey.flow.getActionCard(action.id);
-			actionListeners[index].registerRunListener((args) => {
+			actionListeners[index].registerRunListener(async (args) => {
 				try {
-					args.device.setCommand(mapFunc(args.val)[2], 'flow');
+					await args.device.setCommand(mapFunc(args.val)[2], 'flow');
 				} catch (error) {
 					this.error(error);
 				}
