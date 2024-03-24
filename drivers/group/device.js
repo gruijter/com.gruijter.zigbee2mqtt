@@ -2,7 +2,7 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-await-in-loop */
 /*
-Copyright 2023, Robin de Gruijter (gruijter@hotmail.com)
+Copyright 2023 - 2024, Robin de Gruijter (gruijter@hotmail.com)
 
 This file is part of com.gruijter.zigbee2mqtt.
 

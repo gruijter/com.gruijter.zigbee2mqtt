@@ -1,4 +1,7 @@
 {
+  "2.3.3": {
+    "en": "Added class icons for motion sensors and dimmers."
+  },
   "2.3.2": {
     "en": "Stability improvements."
   },
