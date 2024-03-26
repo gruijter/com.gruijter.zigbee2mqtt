@@ -326,7 +326,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 					if (message.toString() === '') return;
 					const info = JSON.parse(message);
 					// Map the incoming value to a capability or setting
-					if (topic == this.deviceTopic) {
+					if (topic === this.deviceTopic) {
 						// console.log(`${this.getName()} update:`, info);
 						// this.setAvailable();
 						Object.entries(info).forEach((entry) => {
