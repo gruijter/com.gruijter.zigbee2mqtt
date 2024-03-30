@@ -1,4 +1,7 @@
 {
+  "2.3.4": {
+    "en": "Fixed device topic match."
+  },
   "2.3.3": {
     "en": "Added class icons for motion sensors and dimmers."
   },
