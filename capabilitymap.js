@@ -169,6 +169,7 @@ const classIconMap = {
 	'vibration sensor': ['sensor', 'vibration_sensor.svg'],
 	'pressure sensor': ['sensor', 'vibration_sensor.svg'],
 	'wireless switch': ['sensor', 'wireless_switch.svg'],
+	'dimmer switch': ['sensor', 'wireless_switch.svg'],
 	'on/off switch': ['sensor', 'wireless_switch.svg'],
 	motion: ['sensor', 'motion.svg'],
 	'wall switch module': ['button', 'wireless_switch.svg'],
@@ -186,6 +187,10 @@ const classIconMap = {
 	kadrilj: ['windowcoverings', 'window_coverings.svg'],
 	praktlysing: ['windowcoverings', 'window_coverings.svg'],
 	tredansen: ['windowcoverings', 'window_coverings.svg'],
+	parasol: ['sensor', 'contact.svg'],
+	'tradfri shortcut': ['button', 'wireless_switch.svg'],
+	rodret: ['button', 'wireless_switch.svg'],
+	somrig: ['button', 'wireless_switch.svg'],
 };
 
 // map capabilities to Homey
