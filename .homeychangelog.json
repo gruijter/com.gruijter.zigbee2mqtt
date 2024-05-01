@@ -1,4 +1,7 @@
 {
+  "2.4.0": {
+    "en": "Added support for more ikea devices. Changed alarm_motion key so that it is presented as zone activity."
+  },
   "2.3.4": {
     "en": "Fixed device topic match."
   },
