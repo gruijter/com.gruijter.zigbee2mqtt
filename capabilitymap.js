@@ -90,9 +90,12 @@ const capabilityMap = {
 	state: (val) => ['onoff', val === 'ON', { state: val ? 'ON' : 'OFF' }],
 	state_l1: (val) => ['onoff.l1', val === 'ON', { state_l1: val ? 'ON' : 'OFF' }],
 	state_l2: (val) => ['onoff.l2', val === 'ON', { state_l2: val ? 'ON' : 'OFF' }],
+	state_l3: (val) => ['onoff.l3', val === 'ON', { state_l3: val ? 'ON' : 'OFF' }],
+	state_l4: (val) => ['onoff.l4', val === 'ON', { state_l4: val ? 'ON' : 'OFF' }],
 	state_left: (val) => ['onoff.left', val === 'ON', { state_left: val ? 'ON' : 'OFF' }],
 	state_center: (val) => ['onoff.center', val === 'ON', { state_center: val ? 'ON' : 'OFF' }],
 	state_right: (val) => ['onoff.right', val === 'ON', { state_right: val ? 'ON' : 'OFF' }],
+	backlight_mode: (val) => ['onoff.backlight', val === 'ON', { backlight_mode: val ? 'ON' : 'OFF' }],
 
 	// frost_protection: (val) => ['onoff.frost_protection', val === 'ON', { frost_protection: val ? 'ON' : 'OFF' }],
 	open_window: (val) => ['alarm_generic.open_window', val === 'ON'],

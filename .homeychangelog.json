@@ -1,4 +1,7 @@
 {
+  "2.4.1": {
+    "en": "Added L3 and L4 switch support. Added backlight_mode support. Improved naming of switch flo cards."
+  },
   "2.4.0": {
     "en": "Added support for more ikea devices. Changed alarm_motion key so that it is presented as zone activity."
   },

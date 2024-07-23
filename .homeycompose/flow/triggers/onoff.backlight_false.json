@@ -1,13 +1,13 @@
 {
 	"title": {
-		"en": "L1 turned On"
+		"en": "Backlight turned Off"
 	},
 	"highlight": true,
 	"args": [
 		{
 			"type": "device",
 			"name": "device",
-			"filter": "driver_id=device|group&capabilities=onoff.l1"
+			"filter": "driver_id=device|group&capabilities=onoff.backlight"
 		}
 	]
 }

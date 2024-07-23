@@ -1,0 +1,21 @@
+{
+	"title": {
+		"en": "Switch backlight On or Off"
+	},
+		"titleFormatted": {
+				"en": "Backlight [[val]]"
+		},
+		"highlight": true,
+		"args": [
+				{
+						"type": "device",
+						"name": "device",
+						"filter": "driver_id=device|group&capabilities=onoff.backlight"
+				},
+				{
+						"type": "checkbox",
+						"name": "val",
+						"title": { "en": "On" }
+				}
+		]
+}
