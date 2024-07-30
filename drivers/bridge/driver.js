@@ -28,9 +28,10 @@ const setTimeoutPromise = util.promisify(setTimeout);
 const capabilities = [
 	'allow_joining',
 	'allow_joining_timeout',
-	'meter_joined_devices',
-	// 'measure_linkquality', // NO WAY TO RETRIEVE RETAINED STATES WITH DEFAULT Z2M CONFIG
 	'meter_mpm',
+	'meter_joined_devices',
+	'meter_joined_groups',
+	// 'measure_linkquality', // NO WAY TO RETRIEVE RETAINED STATES WITH DEFAULT Z2M CONFIG
 	'alarm_offline',
 ];
 
