@@ -1,6 +1,6 @@
 {
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "compatibility": ">=8.0.0",
   "sdk": 3,
   "platforms": [

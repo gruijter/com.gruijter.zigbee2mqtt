@@ -1,4 +1,7 @@
 {
+  "2.4.2": {
+    "en": "Added joined groups capability for bridge."
+  },
   "2.4.1": {
     "en": "Added L3 and L4 switch support. Added backlight_mode support. Improved naming of switch flo cards."
   },
