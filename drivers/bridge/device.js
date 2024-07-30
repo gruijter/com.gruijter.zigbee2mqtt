@@ -167,6 +167,9 @@ module.exports = class Zigbee2MQTTBridge extends Device {
 						// check number of joined devices
 						if (info.config && info.config.devices) this.setCapability('meter_joined_devices', Object.keys(info.config.devices).length);
 
+						// check number of joined groups
+						if (info.config && info.config.groups) this.setCapability('meter_joined_groups', Object.keys(info.config.groups).length);
+
 						// check for channel, pan_id and version change
 						if (info.version !== this.getSettings().version) {
 							this.setSetting('version', info.version);
@@ -192,6 +195,10 @@ module.exports = class Zigbee2MQTTBridge extends Device {
 
 					// check for online/offline
 					if (topic.includes(`${this.bridgeTopic}/state`)) {
+
+						console.dir("===STEFAN===");
+						console.dir(info, { depth: null });
+
 						if (info === 'online' || info.state === 'online') {
 							this.log('Zigbee2MQTT bridge is connected');
 							// INFORM ALL DEVICES UNAVAILABLE
@@ -289,7 +296,7 @@ module.exports = class Zigbee2MQTTBridge extends Device {
 				.on('reconnect', () => { this.log('mqtt is trying to reconnect'); })
 				.on('connect', subscribeTopics)
 				.on('message', handleMessage);
-			this.client.setMaxListeners(100); // INCREASE LISTENERS
+			this.client.setMaxListeners(200); // INCREASE LISTENERS
 			if (this.client.connected) await subscribeTopics();
 			return Promise.resolve(true);
 		} catch (error) {

@@ -2750,6 +2750,16 @@
       "insights": true,
       "icon": "./assets/meter_joined_devices.svg"
     },
+    "meter_joined_groups": {
+      "type": "number",
+      "title": {
+        "en": "Joined groups"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "icon": "./assets/meter_joined_devices.svg"
+    },
     "meter_mpm": {
       "type": "number",
       "title": {
