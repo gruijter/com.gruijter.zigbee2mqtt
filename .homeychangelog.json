@@ -1,4 +1,7 @@
 {
+  "2.4.3": {
+    "en": "Fix status bridge for legacy_availability_payload."
+  },
   "2.4.2": {
     "en": "Added joined groups capability for bridge."
   },

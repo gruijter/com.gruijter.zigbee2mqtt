@@ -195,14 +195,14 @@ module.exports = class Zigbee2MQTTBridge extends Device {
 
 					// check for online/offline
 					if (topic.includes(`${this.bridgeTopic}/state`)) {
-						if (info === 'online' || info.state === 'online') {
+						if (message === 'online' || info.state === 'online') {
 							this.log('Zigbee2MQTT bridge is connected');
 							// INFORM ALL DEVICES UNAVAILABLE
 							this.homey.emit('bridgeoffline', false);
 							this.setCapability('alarm_offline', false);
 							// this.setAvailable();
 						}
-						if (info === 'offline' || info.state === 'offline') {
+						if (message === 'offline' || info.state === 'offline') {
 							this.error('Zigbee2MQTT bridge disconnected');
 							// INFORM ALL DEVICES AVAILABLE
 							this.homey.emit('bridgeoffline', true);
