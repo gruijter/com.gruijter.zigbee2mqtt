@@ -1,4 +1,7 @@
 {
+  "2.4.4": {
+    "en": "Fix dependencies."
+  },
   "2.4.3": {
     "en": "Fix status bridge for legacy_availability_payload."
   },
