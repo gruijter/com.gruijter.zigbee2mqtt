@@ -26,37 +26,38 @@ const Zigbee2MQTTDevice = require('../Zigbee2MQTTDevice');
 
 module.exports = class ZigbeeGroup extends Zigbee2MQTTDevice {
 
-	getDeviceInfo() {
-		if (!this.bridge) throw Error('No bridge, or bridge not ready');
-		if (!this.bridge.devices) throw Error('No devices, or devices not ready');
-		if (!this.bridge.groups) throw Error('No groups, or groups not ready');
-		const groups = this.bridge.groups.filter((group) => group.id.toString() === this.settings.uid);
-		const group = groups[0];
-		const members = group.members.map((member) => member.ieee_address);
-		const devices = this.bridge.devices.filter((dev) => dev.definition && dev.definition.exposes && members.includes(dev.ieee_address));
-		group.devices = devices;
-		return [group];
-	}
+  getDeviceInfo() {
+    if (!this.bridge) throw Error('No bridge, or bridge not ready');
+    if (!this.bridge.devices) throw Error('No devices, or devices not ready');
+    if (!this.bridge.groups) throw Error('No groups, or groups not ready');
+    const groups = this.bridge.groups.filter((group) => group.id.toString() === this.settings.uid);
+    const group = groups[0];
+    const members = group.members.map((member) => member.ieee_address);
+    const devices = this.bridge.devices.filter((dev) => dev.definition && dev.definition.exposes && members.includes(dev.ieee_address));
+    group.devices = devices;
+    return [group];
+  }
 
-	async onInit() {
-		this.zigbee2MqttType = 'Group';
-		await super.onInit();
-	}
+  async onInit() {
+    this.zigbee2MqttType = 'Group';
+    await super.onInit();
+  }
 
-	// register homey event listeners
-	async registerHomeyEventListeners() {
-		if (this.eventListenerGroupListUpdate) this.homey.removeListener('grouplistupdate', this.eventListenerGroupListUpdate);
-		this.eventListenerGroupListUpdate = async () => {
-			this.checkChangedOrDeleted().catch(this.error);
-		};
-		this.homey.on('grouplistupdate', this.eventListenerGroupListUpdate);
-		await super.registerHomeyEventListeners();
-	}
+  // register homey event listeners
+  async registerHomeyEventListeners() {
+    if (this.eventListenerGroupListUpdate) this.homey.removeListener('grouplistupdate', this.eventListenerGroupListUpdate);
+    this.eventListenerGroupListUpdate = async () => {
+      this.checkChangedOrDeleted().catch((error) => this.error(error));
+    };
+    this.homey.on('grouplistupdate', this.eventListenerGroupListUpdate);
+    await super.registerHomeyEventListeners();
+  }
 
-	destroyListeners() {
-		super.destroyListeners();
-		if (this.eventListenerGroupListUpdate) this.homey.removeListener('grouplistupdate', this.eventListenerGroupListUpdate);
-	}
+  destroyListeners() {
+    super.destroyListeners();
+    if (this.eventListenerGroupListUpdate) this.homey.removeListener('grouplistupdate', this.eventListenerGroupListUpdate);
+  }
+
 };
 /*
 */

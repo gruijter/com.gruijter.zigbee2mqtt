@@ -24,57 +24,57 @@ const { capabilityMap, getExpMap } = require('./capabilitymap');
 
 class MyApp extends Homey.App {
 
-	async onInit() {
-		try {
-			this.registerFlowListeners();
-			this.homey.setMaxListeners(100); // INCREASE LISTENERS
-			this.log('App has been initialized');
-		} catch (error) {
-			this.error(error);
-		}
-	}
+  async onInit() {
+    try {
+      this.registerFlowListeners();
+      this.homey.setMaxListeners(100); // INCREASE LISTENERS
+      this.log('App has been initialized');
+    } catch (error) {
+      this.error(error);
+    }
+  }
 
-	async onUninit() {
-		this.log('app onUninit');
-	}
+  async onUninit() {
+    this.log('app onUninit');
+  }
 
-	registerFlowListeners() {
-		// custom action cards
-		// const setDimL1 = this.homey.flow.getActionCard('set_dim.l1');
-		// setDimL1.registerRunListener((args) => args.device.setCommand({ brightness_l1: Number(args.dim) * 254 }, 'flow'));
+  registerFlowListeners() {
+    // custom action cards
+    // const setDimL1 = this.homey.flow.getActionCard('set_dim.l1');
+    // setDimL1.registerRunListener((args) => args.device.setCommand({ brightness_l1: Number(args.dim) * 254 }, 'flow'));
 
-		const actionListeners = [];
-		const actionList = Homey.manifest.flow.actions;
-		const expMap = getExpMap();
-		actionList.forEach((action, index) => {
-			// actions for bridge
-			if (action.args && action.args[0].filter && action.args[0].filter.includes('bridge')) {
-				this.log('setting up Bridge action listener', action.id);
-				actionListeners[index] = this.homey.flow.getActionCard(action.id);
-				actionListeners[index].registerRunListener(async (args) => {
-					try {
-						await args.device[action.id](args.val, 'flow');
-					} catch (error) {
-						this.error(error);
-					}
-				});
-			}
+    const actionListeners = [];
+    const actionList = Homey.manifest.flow.actions;
+    const expMap = getExpMap();
+    actionList.forEach((action, index) => {
+      // actions for bridge
+      if (action.args && action.args[0].filter && action.args[0].filter.includes('bridge')) {
+        this.log('setting up Bridge action listener', action.id);
+        actionListeners[index] = this.homey.flow.getActionCard(action.id);
+        actionListeners[index].registerRunListener(async (args) => {
+          try {
+            await args.device[action.id](args.val, 'flow');
+          } catch (error) {
+            this.error(error);
+          }
+        });
+      }
 
-			// actions for device or group
-			const z2mExp = expMap[action.id];
-			const mapFunc = capabilityMap[z2mExp];
-			if (!mapFunc) return;	// not included in Homey maping
-			this.log('setting up action listener', action.id, mapFunc('val')[2]);
-			actionListeners[index] = this.homey.flow.getActionCard(action.id);
-			actionListeners[index].registerRunListener(async (args) => {
-				try {
-					await args.device.setCommand(mapFunc(args.val)[2], 'flow');
-				} catch (error) {
-					this.error(error);
-				}
-			});
-		});
-	}
+      // actions for device or group
+      const z2mExp = expMap[action.id];
+      const mapFunc = capabilityMap[z2mExp];
+      if (!mapFunc) return; // not included in Homey maping
+      this.log('setting up action listener', action.id, mapFunc('val')[2]);
+      actionListeners[index] = this.homey.flow.getActionCard(action.id);
+      actionListeners[index].registerRunListener(async (args) => {
+        try {
+          await args.device.setCommand(mapFunc(args.val)[2], 'flow');
+        } catch (error) {
+          this.error(error);
+        }
+      });
+    });
+  }
 
 }
 

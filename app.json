@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "2.4.5",
+  "version": "2.4.6",
   "compatibility": ">=8.0.0",
   "sdk": 3,
   "platforms": [
@@ -1361,6 +1361,47 @@
       },
       {
         "title": {
+          "en": "Set Sensor"
+        },
+        "titleFormatted": {
+          "en": "Set Sensor to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=moes_sensor"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "IN",
+                "title": {
+                  "en": "Indoor"
+                }
+              },
+              {
+                "id": "AL",
+                "title": {
+                  "en": "All"
+                }
+              },
+              {
+                "id": "OU",
+                "title": {
+                  "en": "Outdoor"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "moes_sensor"
+      },
+      {
+        "title": {
           "en": "Switch backlight On or Off"
         },
         "titleFormatted": {
@@ -1550,6 +1591,30 @@
           }
         ],
         "id": "onoff.right"
+      },
+      {
+        "title": {
+          "en": "Switch system mode Heat or Off"
+        },
+        "titleFormatted": {
+          "en": "System mode [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.system_mode"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On"
+            }
+          }
+        ],
+        "id": "onoff.system_mode"
       },
       {
         "title": {
@@ -2769,6 +2834,36 @@
       "setable": false,
       "insights": true,
       "icon": "./assets/meter_mpm.svg"
+    },
+    "moes_sensor": {
+      "type": "enum",
+      "title": {
+        "en": "Sensor"
+      },
+      "values": [
+        {
+          "id": "IN",
+          "title": {
+            "en": "Indoor"
+          }
+        },
+        {
+          "id": "AL",
+          "title": {
+            "en": "All"
+          }
+        },
+        {
+          "id": "OU",
+          "title": {
+            "en": "Outdoor"
+          }
+        }
+      ],
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "insights": false
     },
     "power_on_behavior": {
       "type": "enum",

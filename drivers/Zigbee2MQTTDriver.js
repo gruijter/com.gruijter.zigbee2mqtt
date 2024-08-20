@@ -25,14 +25,15 @@ const { capabilityMap } = require('../capabilitymap');
 
 module.exports = class Zigbee2MQTTDriver extends Driver {
 
-	async onInit() {
-		this.ds = {
-			capabilityMap,
-		};
-		this.log('Device driver has been initialized');
-	}
+  async onInit() {
+    this.ds = {
+      capabilityMap,
+    };
+    this.log('Device driver has been initialized');
+  }
 
-	async onUninit() {
-		this.log('driver onUninit');
-	}
+  async onUninit() {
+    this.log('driver onUninit');
+  }
+
 };

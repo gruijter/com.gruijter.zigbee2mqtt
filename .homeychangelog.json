@@ -1,4 +1,7 @@
 {
+  "2.4.6": {
+    "en": "Added support for Mode and Sensor setting of MOES BHT series thermostat."
+  },
   "2.4.5": {
     "en": "Fix dependencies again."
   },

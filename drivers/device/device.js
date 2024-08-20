@@ -26,54 +26,55 @@ const Zigbee2MQTTDevice = require('../Zigbee2MQTTDevice');
 
 module.exports = class ZigbeeDevice extends Zigbee2MQTTDevice {
 
-	getDeviceInfo() {
-		if (!this.bridge) throw Error('No bridge, or bridge not ready');
-		if (!this.bridge.devices) throw Error('No devices, or devices not ready');
-		return this.bridge.devices.filter((dev) => dev.ieee_address === this.settings.uid);
-	}
+  getDeviceInfo() {
+    if (!this.bridge) throw Error('No bridge, or bridge not ready');
+    if (!this.bridge.devices) throw Error('No devices, or devices not ready');
+    return this.bridge.devices.filter((dev) => dev.ieee_address === this.settings.uid);
+  }
 
-	async onInit() {
-		this.zigbee2MqttType = 'Device';
-		await super.onInit();
-	}
+  async onInit() {
+    this.zigbee2MqttType = 'Device';
+    await super.onInit();
+  }
 
-	// register homey event listeners
-	async registerHomeyEventListeners() {
-		if (this.eventListenerDeviceListUpdate) this.homey.removeListener('devicelistupdate', this.eventListenerDeviceListUpdate);
-		this.eventListenerDeviceListUpdate = async () => {
-			this.checkChangedOrDeleted().catch(this.error);
-		};
-		this.homey.on('devicelistupdate', this.eventListenerDeviceListUpdate);
-		await super.registerHomeyEventListeners();
-	}
+  // register homey event listeners
+  async registerHomeyEventListeners() {
+    if (this.eventListenerDeviceListUpdate) this.homey.removeListener('devicelistupdate', this.eventListenerDeviceListUpdate);
+    this.eventListenerDeviceListUpdate = async () => {
+      this.checkChangedOrDeleted().catch((error) => this.error(error));
+    };
+    this.homey.on('devicelistupdate', this.eventListenerDeviceListUpdate);
+    await super.registerHomeyEventListeners();
+  }
 
-	destroyListeners() {
-		super.destroyListeners();
-		if (this.eventListenerDeviceListUpdate) this.homey.removeListener('devicelistupdate', this.eventListenerDeviceListUpdate);
-	}
+  destroyListeners() {
+    super.destroyListeners();
+    if (this.eventListenerDeviceListUpdate) this.homey.removeListener('devicelistupdate', this.eventListenerDeviceListUpdate);
+  }
+
 };
 
 /*
 {
-	battery: 100,
-	battery_low: false,
-	contact: true,
-	linkquality: 25,
-	tamper: false,
-	voltage": 3000
+  battery: 100,
+  battery_low: false,
+  contact: true,
+  linkquality: 25,
+  tamper: false,
+  voltage": 3000
 }
 
 {
-	child_lock: "UNLOCK",
-	current: 0,
-	energy: 7.12,
-	indicator_mode: "off/on",
-	linkquality: 218,
-	power: 0,
-	power_outage_memory: "restore",
-	state: "ON",
-	update: { installed_version: 192, latest_version: 192, state: idle },
-	voltage: 232
+  child_lock: "UNLOCK",
+  current: 0,
+  energy: 7.12,
+  indicator_mode: "off/on",
+  linkquality: 218,
+  power: 0,
+  power_outage_memory: "restore",
+  state: "ON",
+  update: { installed_version: 192, latest_version: 192, state: idle },
+  voltage: 232
 }
 
 */

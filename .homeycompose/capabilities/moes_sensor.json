@@ -1,0 +1,15 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Sensor"
+  },
+  "values": [
+    { "id": "IN", "title": { "en": "Indoor" }},
+    { "id": "AL", "title": { "en": "All" }},
+    { "id": "OU", "title": { "en": "Outdoor" }}
+  ],
+  "uiComponent": "picker",
+  "getable": true,
+  "setable": true,
+  "insights": false
+}

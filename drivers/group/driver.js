@@ -26,59 +26,61 @@ const { mapProperty, mapClassIcon } = require('../../capabilitymap');
 
 module.exports = class ZigbeeGroupDriver extends Zigbee2MQTTDriver {
 
-	async onPair(session) {
+  async onPair(session) {
+    session.setHandler('list_devices', async () => {
+      // get all groups from all bridges
+      try {
+        this.log('Pairing of new Attached group started');
+        const bridgeDriver = this.homey.drivers.getDriver('bridge');
+        await bridgeDriver.ready(() => null);
+        const bridges = bridgeDriver.getDevices();
+        if (!bridges || !bridges[0]) {
+          throw Error('Cannot find bridge group in Homey. Bridge needs to be added first!');
+        }
 
-		session.setHandler('list_devices', async () => {
-			// get all groups from all bridges
-			try {
-				this.log('Pairing of new Attached group started');
-				const bridgeDriver = this.homey.drivers.getDriver('bridge');
-				await bridgeDriver.ready(() => null);
-				const bridges = bridgeDriver.getDevices();
-				if (!bridges || !bridges[0]) { throw Error('Cannot find bridge group in Homey. Bridge needs to be added first!'); }
+        const groups = [];
+        bridges.forEach((bridge) => {
+          bridge.groups
+            .filter((item) => item.members.length > 0)
+            .forEach((item) => {
+              const members = item.members.map((member) => member.ieee_address);
+              const devices = bridge.devices.filter((dev) => dev.definition && dev.definition.exposes && members.includes(dev.ieee_address));
+              const models = [...new Set(devices.map((dev) => dev.definition.model).filter((n) => n))].join(', ');
+              const description = [...new Set(devices.map((dev) => dev.definition.description).filter((n) => n))].join(', ');
 
-				const groups = [];
-				bridges.forEach((bridge) => {
-					bridge.groups
-						.filter((item) => item.members.length > 0)
-						.forEach((item) => {
-							const members = item.members.map((member) => member.ieee_address);
-							const devices = bridge.devices.filter((dev) => dev.definition && dev.definition.exposes && members.includes(dev.ieee_address));
-							const models = [...new Set(devices.map((dev) => dev.definition.model).filter((n) => n))].join(', ');
-							const description = [...new Set(devices.map((dev) => dev.definition.description).filter((n) => n))].join(', ');
+              const settings = {
+                uid: item.id.toString(),
+                friendly_name: item.friendly_name,
+                bridge_uid: bridge.getData().id,
+                members: item.members,
+                models,
+                description,
+              };
+              // map capabilities and group icons to Homey
+              const { caps, capDetails } = mapProperty(devices[0]);
+              const { homeyClass, icon } = mapClassIcon(devices[0]);
+              settings.homeyclass = homeyClass;
+              const group = {
+                name: item.friendly_name,
+                data: {
+                  id: item.id, // `zigbee2mqtt_${Math.random().toString(16).substring(2, 8)}`,
+                },
+                icon, // "/my_icon.svg", // relative to: /drivers/<driver_id>/assets/
+                capabilities: [...caps],
+                store: { item, capDetails },
+                settings,
+              };
+              groups.push(group);
+            });
+        });
+        return Promise.all(groups);
+      } catch (error) {
+        this.error(error);
+        return Promise.reject(error);
+      }
+    });
+  }
 
-							const settings = {
-								uid: item.id.toString(),
-								friendly_name: item.friendly_name,
-								bridge_uid: bridge.getData().id,
-								members: item.members,
-								models,
-								description,
-							};
-							// map capabilities and group icons to Homey
-							const { caps, capDetails } = mapProperty(devices[0]);
-							const { homeyClass, icon } = mapClassIcon(devices[0]);
-							settings.homeyclass = homeyClass;
-							const group = {
-								name: item.friendly_name,
-								data: {
-									id: item.id, // `zigbee2mqtt_${Math.random().toString(16).substring(2, 8)}`,
-								},
-								icon, // "/my_icon.svg", // relative to: /drivers/<driver_id>/assets/
-								capabilities: [...caps],
-								store: { item, capDetails },
-								settings,
-							};
-							groups.push(group);
-						});
-				});
-				return Promise.all(groups);
-			} catch (error) {
-				this.error(error);
-				return Promise.reject(error);
-			}
-		});
-	}
 };
 /*
 [
