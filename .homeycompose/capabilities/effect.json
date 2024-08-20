@@ -1,7 +1,7 @@
 {
   "type": "enum",
   "title": {
-    "en": "SELECTION"
+    "en": "Effect"
   },
   "values": [
     { "id": "blink", "title": { "en": "Blink" }},
@@ -9,7 +9,9 @@
     { "id": "okay", "title": { "en": "Okay" }},
     { "id": "channel_change", "title": { "en": "Channel change" }},
     { "id": "finish_effect", "title": { "en": "Finish effect" }},
-    { "id": "stop_effect", "title": { "en": "Stop effect" }}
+    { "id": "stop_effect", "title": { "en": "Stop effect" }},
+    { "id": "colorloop", "title": { "en": "Colorloop" }},
+    { "id": "stop_colorloop", "title": { "en": "Stop colorloop" }}
   ],
   "uiComponent": "picker",
   "getable": true,

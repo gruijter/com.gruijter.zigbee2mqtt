@@ -1,0 +1,30 @@
+{
+	"title": {
+		"en": "Set effect"
+	},
+	"titleFormatted": {
+			"en": "Set Color Power On Behavior to [[val]]"
+	},
+	"highlight": true,
+	"args": [
+		{
+			"type": "device",
+			"name": "device",
+			"filter": "driver_id=device|group&capabilities=color_power_on_behavior"
+		},
+		{
+			"type": "dropdown",
+			"name": "val",
+			"values": [
+				{ "id": "blink", "title": { "en": "Blink" }},
+				{ "id": "breathe", "title": { "en": "Breathe" }},
+				{ "id": "okay", "title": { "en": "Okay" }},
+				{ "id": "channel_change", "title": { "en": "Channel change" }},
+				{ "id": "finish_effect", "title": { "en": "Finish effect" }},
+				{ "id": "stop_effect", "title": { "en": "Stop effect" }},
+				{ "id": "colorloop", "title": { "en": "Colorloop" }},
+				{ "id": "stop_colorloop", "title": { "en": "Stop colorloop" }}
+			]
+		}
+	]
+}
