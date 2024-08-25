@@ -96,7 +96,7 @@ const capabilityMap = {
   state_center: (val) => ['onoff.center', val === 'ON', { state_center: val ? 'ON' : 'OFF' }],
   state_right: (val) => ['onoff.right', val === 'ON', { state_right: val ? 'ON' : 'OFF' }],
   backlight_mode: (val) => ['onoff.backlight', val === 'ON', { backlight_mode: val ? 'ON' : 'OFF' }],
-  system_mode: (val) => ['onoff.system_mode', val === 'on', { system_mode: val ? 'heat' : 'off' }], // MOES BHT series thermostat
+  system_mode: (val) => ['onoff', val === 'heat', { system_mode: val ? 'heat' : 'off' }], // MOES BHT series thermostat
 
   // frost_protection: (val) => ['onoff.frost_protection', val === 'ON', { frost_protection: val ? 'ON' : 'OFF' }],
   open_window: (val) => ['alarm_generic.open_window', val === 'ON'],
