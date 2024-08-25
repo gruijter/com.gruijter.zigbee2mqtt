@@ -157,7 +157,7 @@ const capabilityMap = {
   switch_type_left: (val) => ['switch_type.left', val, { switch_type_left: val }], // [toggle, state, momentary]
   switch_type_center: (val) => ['switch_type.center', val, { switch_type_center: val }], // [toggle, state, momentary]
   switch_type_right: (val) => ['switch_type.right', val, { switch_type_right: val }], // [toggle, state, momentary]
-  moes_sensor: (val) => ['moes_sensor', val, { sensor: val }], // ["IN", "AL", "OU"]  // MOES BHT series thermostat
+  sensor: (val) => ['moes_sensor', val, { sensor: val }], // ["IN", "AL", "OU"]  // MOES BHT series thermostat
 
   // useless ENUM capabilities
   // system_mode: (val) => ['system_mode', val, { system_mode: val }], // ["auto", "heat", "off", "cool", "emergency_heating", "precooling", "fan_only", "dry", "sleep" ]
