@@ -170,6 +170,7 @@ const capabilityMap = {
 const classIconMap = {
   'door sensor': ['sensor', 'contact.svg'],
   'radiator valve': ['thermostat', 'radiator_valve.svg'],
+  thermostat: ['thermostat', 'thermostat.svg'],
   'soil sensor': ['sensor', 'soil_sensor.svg'],
   'vibration sensor': ['sensor', 'vibration_sensor.svg'],
   'pressure sensor': ['sensor', 'vibration_sensor.svg'],
