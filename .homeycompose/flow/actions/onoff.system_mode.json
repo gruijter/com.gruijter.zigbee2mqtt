@@ -3,7 +3,7 @@
 		"en": "Switch system mode Heat or Off"
 	},
 		"titleFormatted": {
-				"en": "System mode [[val]]"
+				"en": "Set system mode to heat [[val]]"
 		},
 		"highlight": true,
 		"args": [
@@ -15,7 +15,7 @@
 				{
 						"type": "checkbox",
 						"name": "val",
-						"title": { "en": "On" }
+						"title": { "en": "System mode" }
 				}
 		]
 }
