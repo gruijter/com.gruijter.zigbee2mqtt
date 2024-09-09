@@ -1,6 +1,6 @@
 {
   "2.4.7": {
-    "en": "Extended light effect options. Added flow card for setting light effect."
+    "en": "Extended light effect options. Added flow card for setting light effect. Fixed MOES thermostat. Added Sensor setting for thermostats and presence detectors."
   },
   "2.4.6": {
     "en": "Added support for Mode and Sensor setting of MOES BHT series thermostat."

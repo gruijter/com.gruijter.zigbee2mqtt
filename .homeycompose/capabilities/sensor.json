@@ -1,0 +1,28 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Sensor"
+  },
+  "values": [
+    { "id": "IN", "title": { "en": "Internal (IN)" }},
+    { "id": "OU", "title": { "en": "External (OU)" }},
+    { "id": "AL", "title": { "en": "All (AL)" }},
+    { "id": "internal", "title": { "en": "Internal" }},
+    { "id": "external", "title": { "en": "External" }},
+    { "id": "both", "title": { "en": "Both" }},
+    { "id": "air", "title": { "en": "Air" }},
+    { "id": "floor", "title": { "en": "Floor" }},
+    { "id": "supervisor_floor", "title": { "en": "Supervisor_floor" }},
+    { "id": "air_sensor", "title": { "en": "Air_sensor" }},
+    { "id": "floor_sensor", "title": { "en": "Floor_sensor" }},
+    { "id": "max_guard", "title": { "en": "Max_guard" }},
+    { "id": "on", "title": { "en": "On" }},
+    { "id": "off", "title": { "en": "Off" }},
+    { "id": "occupied", "title": { "en": "Occupied" }},
+    { "id": "unuccupied", "title": { "en": "Unoccupied" }}
+  ],
+  "uiComponent": "picker",
+  "getable": true,
+  "setable": true,
+  "insights": false
+}

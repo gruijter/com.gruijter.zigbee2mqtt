@@ -96,7 +96,7 @@ const capabilityMap = {
   state_center: (val) => ['onoff.center', val === 'ON', { state_center: val ? 'ON' : 'OFF' }],
   state_right: (val) => ['onoff.right', val === 'ON', { state_right: val ? 'ON' : 'OFF' }],
   backlight_mode: (val) => ['onoff.backlight', val === 'ON', { backlight_mode: val ? 'ON' : 'OFF' }],
-  system_mode: (val) => ['onoff.system_mode', val === 'on', { system_mode: val ? 'heat' : 'off' }], // MOES BHT series thermostat
+  system_mode: (val) => ['onoff.system_mode', val === 'heat', { system_mode: val ? 'heat' : 'off' }], // MOES BHT series thermostat
 
   // frost_protection: (val) => ['onoff.frost_protection', val === 'ON', { frost_protection: val ? 'ON' : 'OFF' }],
   open_window: (val) => ['alarm_generic.open_window', val === 'ON'],
@@ -157,7 +157,7 @@ const capabilityMap = {
   switch_type_left: (val) => ['switch_type.left', val, { switch_type_left: val }], // [toggle, state, momentary]
   switch_type_center: (val) => ['switch_type.center', val, { switch_type_center: val }], // [toggle, state, momentary]
   switch_type_right: (val) => ['switch_type.right', val, { switch_type_right: val }], // [toggle, state, momentary]
-  moes_sensor: (val) => ['moes_sensor', val, { sensor: val }], // ["IN", "AL", "OU"]  // MOES BHT series thermostat
+  sensor: (val) => ['sensor', val, { sensor: val }], // ["IN", "AL", "OU"]  // thermostats and mmWave presence
   effect: (val) => ['effect', val, { effect: val }], // [blink, breathe, okay, channel_change, finish_effect, stop_effect]
 
   // useless ENUM capabilities
@@ -170,6 +170,7 @@ const capabilityMap = {
 const classIconMap = {
   'door sensor': ['sensor', 'contact.svg'],
   'radiator valve': ['thermostat', 'radiator_valve.svg'],
+  thermostat: ['thermostat', 'thermostat.svg'],
   'soil sensor': ['sensor', 'soil_sensor.svg'],
   'vibration sensor': ['sensor', 'vibration_sensor.svg'],
   'pressure sensor': ['sensor', 'vibration_sensor.svg'],
