@@ -1432,47 +1432,6 @@
       },
       {
         "title": {
-          "en": "Set Sensor"
-        },
-        "titleFormatted": {
-          "en": "Set Sensor to [[val]]"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device|group&capabilities=moes_sensor"
-          },
-          {
-            "type": "dropdown",
-            "name": "val",
-            "values": [
-              {
-                "id": "IN",
-                "title": {
-                  "en": "Indoor"
-                }
-              },
-              {
-                "id": "AL",
-                "title": {
-                  "en": "All"
-                }
-              },
-              {
-                "id": "OU",
-                "title": {
-                  "en": "Outdoor"
-                }
-              }
-            ]
-          }
-        ],
-        "id": "moes_sensor"
-      },
-      {
-        "title": {
           "en": "Switch backlight On or Off"
         },
         "titleFormatted": {
@@ -1668,7 +1627,7 @@
           "en": "Switch system mode Heat or Off"
         },
         "titleFormatted": {
-          "en": "System mode [[val]]"
+          "en": "Set system mode to heat [[val]]"
         },
         "highlight": true,
         "args": [
@@ -1681,7 +1640,7 @@
             "type": "checkbox",
             "name": "val",
             "title": {
-              "en": "On"
+              "en": "Heat"
             }
           }
         ],
@@ -1832,6 +1791,125 @@
           }
         ],
         "id": "restart"
+      },
+      {
+        "title": {
+          "en": "Set Sensor"
+        },
+        "titleFormatted": {
+          "en": "Set Sensor to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=sensor"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "IN",
+                "title": {
+                  "en": "Internal (IN)"
+                }
+              },
+              {
+                "id": "OU",
+                "title": {
+                  "en": "External (OU)"
+                }
+              },
+              {
+                "id": "AL",
+                "title": {
+                  "en": "All (AL)"
+                }
+              },
+              {
+                "id": "internal",
+                "title": {
+                  "en": "Internal"
+                }
+              },
+              {
+                "id": "external",
+                "title": {
+                  "en": "External"
+                }
+              },
+              {
+                "id": "both",
+                "title": {
+                  "en": "Both"
+                }
+              },
+              {
+                "id": "air",
+                "title": {
+                  "en": "Air"
+                }
+              },
+              {
+                "id": "floor",
+                "title": {
+                  "en": "Floor"
+                }
+              },
+              {
+                "id": "supervisor_floor",
+                "title": {
+                  "en": "Supervisor_floor"
+                }
+              },
+              {
+                "id": "air_sensor",
+                "title": {
+                  "en": "Air_sensor"
+                }
+              },
+              {
+                "id": "floor_sensor",
+                "title": {
+                  "en": "Floor_sensor"
+                }
+              },
+              {
+                "id": "max_guard",
+                "title": {
+                  "en": "Max_guard"
+                }
+              },
+              {
+                "id": "on",
+                "title": {
+                  "en": "On"
+                }
+              },
+              {
+                "id": "off",
+                "title": {
+                  "en": "Off"
+                }
+              },
+              {
+                "id": "occupied",
+                "title": {
+                  "en": "Occupied"
+                }
+              },
+              {
+                "id": "unuccupied",
+                "title": {
+                  "en": "Unoccupied"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "sensor"
       },
       {
         "title": {
@@ -2918,36 +2996,6 @@
       "insights": true,
       "icon": "./assets/meter_mpm.svg"
     },
-    "moes_sensor": {
-      "type": "enum",
-      "title": {
-        "en": "Sensor"
-      },
-      "values": [
-        {
-          "id": "IN",
-          "title": {
-            "en": "Indoor"
-          }
-        },
-        {
-          "id": "AL",
-          "title": {
-            "en": "All"
-          }
-        },
-        {
-          "id": "OU",
-          "title": {
-            "en": "Outdoor"
-          }
-        }
-      ],
-      "uiComponent": "picker",
-      "getable": true,
-      "setable": true,
-      "insights": false
-    },
     "power_on_behavior": {
       "type": "enum",
       "title": {
@@ -3066,6 +3114,114 @@
           "id": "high",
           "title": {
             "en": "High"
+          }
+        }
+      ],
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "insights": false
+    },
+    "sensor": {
+      "type": "enum",
+      "title": {
+        "en": "Sensor"
+      },
+      "values": [
+        {
+          "id": "IN",
+          "title": {
+            "en": "Internal (IN)"
+          }
+        },
+        {
+          "id": "OU",
+          "title": {
+            "en": "External (OU)"
+          }
+        },
+        {
+          "id": "AL",
+          "title": {
+            "en": "All (AL)"
+          }
+        },
+        {
+          "id": "internal",
+          "title": {
+            "en": "Internal"
+          }
+        },
+        {
+          "id": "external",
+          "title": {
+            "en": "External"
+          }
+        },
+        {
+          "id": "both",
+          "title": {
+            "en": "Both"
+          }
+        },
+        {
+          "id": "air",
+          "title": {
+            "en": "Air"
+          }
+        },
+        {
+          "id": "floor",
+          "title": {
+            "en": "Floor"
+          }
+        },
+        {
+          "id": "supervisor_floor",
+          "title": {
+            "en": "Supervisor_floor"
+          }
+        },
+        {
+          "id": "air_sensor",
+          "title": {
+            "en": "Air_sensor"
+          }
+        },
+        {
+          "id": "floor_sensor",
+          "title": {
+            "en": "Floor_sensor"
+          }
+        },
+        {
+          "id": "max_guard",
+          "title": {
+            "en": "Max_guard"
+          }
+        },
+        {
+          "id": "on",
+          "title": {
+            "en": "On"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off"
+          }
+        },
+        {
+          "id": "occupied",
+          "title": {
+            "en": "Occupied"
+          }
+        },
+        {
+          "id": "unuccupied",
+          "title": {
+            "en": "Unoccupied"
           }
         }
       ],
