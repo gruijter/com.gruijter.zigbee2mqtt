@@ -81,7 +81,6 @@ class MyApp extends Homey.App {
     const action_event_received = this.homey.flow.getDeviceTriggerCard('action_event_received');
     action_event_received.registerRunListener(async (args, state) => {
       if (args.event !== state.event) return false;
-      this.log(`Device: ${args.device.getName()} - action_event_received ${state.event}`);
       return true;
     });
   }

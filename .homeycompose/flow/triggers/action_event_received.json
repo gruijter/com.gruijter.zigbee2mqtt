@@ -16,7 +16,7 @@
       "filter": "driver_id=device|group&capabilities=action"
     },
     {
-      "type": "string",
+      "type": "text",
       "name": "event",
       "title": {
         "en": "event"
@@ -24,6 +24,16 @@
       "placeholder": {
         "en": "event_name"
       }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "action",
+      "type": "string",
+      "title": {
+        "en": "Action"
+      },
+      "example": "off"
     }
   ]
 }
