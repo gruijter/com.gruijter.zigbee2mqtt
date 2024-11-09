@@ -1,4 +1,7 @@
 {
+  "2.4.8": {
+    "en": "Action event received trigger based on string match."
+  },
   "2.4.7": {
     "en": "Extended light effect options. Added flow card for setting light effect. Fixed MOES thermostat. Added Sensor setting for thermostats and presence detectors."
   },

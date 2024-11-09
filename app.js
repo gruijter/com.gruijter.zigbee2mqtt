@@ -23,6 +23,7 @@ const Homey = require('homey');
 const { capabilityMap, getExpMap } = require('./capabilitymap');
 
 class MyApp extends Homey.App {
+
   async onInit() {
     try {
       this.registerFlowListeners();
@@ -78,12 +79,13 @@ class MyApp extends Homey.App {
 
   registerFlowTriggers() {
     // custom trgger cards
-    const action_event_received = this.homey.flow.getDeviceTriggerCard('action_event_received');
-    action_event_received.registerRunListener(async (args, state) => {
+    const actionEventReceived = this.homey.flow.getDeviceTriggerCard('action_event_received');
+    actionEventReceived.registerRunListener(async (args, state) => {
       if (args.event !== state.event) return false;
       return true;
     });
   }
+
 }
 
 module.exports = MyApp;

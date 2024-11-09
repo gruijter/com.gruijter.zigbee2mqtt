@@ -1,8 +1,8 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "2.4.7",
-  "compatibility": ">=8.0.0",
+  "version": "2.4.8",
+  "compatibility": ">=10.0.0",
   "sdk": 3,
   "platforms": [
     "local"
@@ -53,6 +53,9 @@
       },
       {
         "name": "Kringloper"
+      },
+      {
+        "name": "Tapio Heiskanen"
       }
     ]
   },
@@ -93,6 +96,46 @@
           }
         ],
         "id": "action_changed"
+      },
+      {
+        "title": {
+          "en": "Action event received"
+        },
+        "titleFormatted": {
+          "en": "Action [[event]] received."
+        },
+        "hint": {
+          "en": "An action event matching given string was received."
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=action"
+          },
+          {
+            "type": "text",
+            "name": "event",
+            "title": {
+              "en": "event"
+            },
+            "placeholder": {
+              "en": "event_name"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "action",
+            "type": "string",
+            "title": {
+              "en": "Action"
+            },
+            "example": "off"
+          }
+        ],
+        "id": "action_event_received"
       },
       {
         "title": {
