@@ -1,0 +1,39 @@
+{
+  "title": {
+    "en": "Action event received"
+  },
+  "titleFormatted": {
+    "en": "Action [[event]] received."
+  },
+  "hint": {
+    "en": "An action event matching given string was received."
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=action"
+    },
+    {
+      "type": "text",
+      "name": "event",
+      "title": {
+        "en": "event"
+      },
+      "placeholder": {
+        "en": "event_name"
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "name": "action",
+      "type": "string",
+      "title": {
+        "en": "Action"
+      },
+      "example": "off"
+    }
+  ]
+}

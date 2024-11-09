@@ -45,25 +45,54 @@ const hsbToRgb = (hue, sat, dim) => {
   const q = dim * (1 - f * sat);
   const t = dim * (1 - (1 - f) * sat);
   switch (i % 6) {
-    case 0: red = dim; green = t; blue = p; break;
-    case 1: red = q; green = dim; blue = p; break;
-    case 2: red = p; green = dim; blue = t; break;
-    case 3: red = p; green = q; blue = dim; break;
-    case 4: red = t; green = p; blue = dim; break;
-    case 5: red = dim; green = p; blue = q; break;
-    default: red = dim; green = dim; blue = dim;
+    case 0:
+      red = dim;
+      green = t;
+      blue = p;
+      break;
+    case 1:
+      red = q;
+      green = dim;
+      blue = p;
+      break;
+    case 2:
+      red = p;
+      green = dim;
+      blue = t;
+      break;
+    case 3:
+      red = p;
+      green = q;
+      blue = dim;
+      break;
+    case 4:
+      red = t;
+      green = p;
+      blue = dim;
+      break;
+    case 5:
+      red = dim;
+      green = p;
+      blue = q;
+      break;
+    default:
+      red = dim;
+      green = dim;
+      blue = dim;
   }
   const r = Math.round(red * 255);
   const g = Math.round(green * 255);
   const b = Math.round(blue * 255);
   const rgbHexString = `${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
   return {
-    r, g, b, rgbHexString,
+    r,
+    g,
+    b,
+    rgbHexString,
   };
 };
 
 module.exports = class Zigbee2MQTTDevice extends Device {
-
   // getDeviceInfo() {
   //  this.error('why does this method exist?');
   //  throw Error('getDeviceInfo is not implemented');
@@ -109,7 +138,8 @@ module.exports = class Zigbee2MQTTDevice extends Device {
     // await this.setCapabilityUnits();
   }
 
-  async onSettings({ newSettings, changedKeys }) { // oldSettings changedKeys
+  async onSettings({ newSettings, changedKeys }) {
+    // oldSettings changedKeys
     this.log('Settings changed', newSettings);
     if (changedKeys.includes('homeyclass')) {
       this.log(`setting new Class for ${this.getName()}`, this.getClass(), this.getSettings().homeyclass);
@@ -159,8 +189,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
           // remove all caps from here
           for (let i = index; i < caps.length; i += 1) {
             this.log(`removing capability ${caps[i]} for ${this.getName()}`);
-            await this.removeCapability(caps[i])
-              .catch((error) => this.log(error));
+            await this.removeCapability(caps[i]).catch((error) => this.log(error));
             await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
           }
           // add the new cap
@@ -191,7 +220,8 @@ module.exports = class Zigbee2MQTTDevice extends Device {
       const capDetailsArray = Object.entries(capDetails);
       // console.dir(capDetailsArray, { depth: null });
       for (let index = 0; index < capDetailsArray.length; index += 1) {
-        if (capDetailsArray[index][1]) { // && capDetailsArray[index][1].unit) {
+        if (capDetailsArray[index][1]) {
+          // && capDetailsArray[index][1].unit) {
           const capOptions = {};
           if (capDetailsArray[index][1].unit) {
             capOptions.units = { en: capDetailsArray[index][1].unit };
@@ -210,7 +240,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
               this.log(`${this.getName()} has no capability options set for ${capDetailsArray[index][0]}`);
             }
             // console.log(this.getName(), capDetailsArray[index][0], currentCapOptions);
-            if ((currentCapOptions.unit !== capOptions.unit) || (currentCapOptions.name !== capOptions.name)) {
+            if (currentCapOptions.unit !== capOptions.unit || currentCapOptions.name !== capOptions.name) {
               unitsChanged = true;
               this.log('Migrating unit and title for', capDetailsArray[index][0], capDetailsArray[index][1].unit, capDetailsArray[index][1].name);
               await this.setCapabilityOptions(capDetailsArray[index][0], capOptions).catch(this.error);
@@ -227,10 +257,9 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 
   setCapability(capability, value) {
     if (this.hasCapability(capability) && value !== undefined) {
-      this.setCapabilityValue(capability, value)
-        .catch((error) => {
-          this.log(error, capability, value);
-        });
+      this.setCapabilityValue(capability, value).catch((error) => {
+        this.log(error, capability, value);
+      });
     }
   }
 
@@ -239,10 +268,9 @@ module.exports = class Zigbee2MQTTDevice extends Device {
       const settings = {};
       settings[setting] = value;
       this.log('New setting:', settings);
-      this.setSettings(settings, value)
-        .catch((error) => {
-          this.log(error, setting, value);
-        });
+      this.setSettings(settings, value).catch((error) => {
+        this.log(error, setting, value);
+      });
     }
   }
 
@@ -341,10 +369,19 @@ module.exports = class Zigbee2MQTTDevice extends Device {
                 if (Object.prototype.hasOwnProperty.call(entry[1], 'saturation')) this.setCapability('saturation', entry[1].saturation / 100);
               } else {
                 const mapFunc = capabilityMap[entry[0]];
-                if (!mapFunc) return; // not included in Homey maping
+                if (!mapFunc) return; // not included in Homey mapping
                 const capVal = mapFunc(entry[1]);
-                // Add extra triger for ACTION
-                if (capVal[0] === 'action') this.setCapability(capVal[0], '---');
+                // Add extra triggers for ACTION
+                if (capVal[0] === 'action') {
+                  // Action event received
+                  if (capVal[1] !== null && capVal[1] !== undefined && capVal[1] !== '') {
+                    const tokens = { action: capVal[1] };
+                    const state = { event: capVal[1] };
+                    this.homey.flow.getDeviceTriggerCard('action_event_received').trigger(this, tokens, state).catch(this.error);
+                  }
+                  // Original extra action trigger
+                  this.setCapability(capVal[0], '---');
+                }
                 this.setCapability(capVal[0], capVal[1]);
               }
             });
@@ -367,9 +404,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
       this.subscribeTopics = subscribeTopics;
 
       this.log('connecting to Bridge MQTT');
-      this.bridge.client
-        .on('connect', this.subscribeTopics)
-        .on('message', this.handleMessage);
+      this.bridge.client.on('connect', this.subscribeTopics).on('message', this.handleMessage);
       if (this.bridge.client.connected) await subscribeTopics();
       return Promise.resolve(true);
     } catch (error) {
@@ -403,7 +438,8 @@ module.exports = class Zigbee2MQTTDevice extends Device {
       const capArray = Object.entries(capabilityMap);
       capArray.forEach((map) => {
         const mapFunc = map[1];
-        if (mapFunc().length > 2 && this.getCapabilities().includes(mapFunc()[0])) { // capability setting is mapped and present in device
+        if (mapFunc().length > 2 && this.getCapabilities().includes(mapFunc()[0])) {
+          // capability setting is mapped and present in device
           this.log(`${this.getName()} adding capability listener ${mapFunc()[0]}`);
           this.registerCapabilityListener(mapFunc()[0], async (val) => {
             const command = mapFunc(val)[2];
@@ -414,9 +450,13 @@ module.exports = class Zigbee2MQTTDevice extends Device {
 
       // add exception for color light
       if (this.getCapabilities().includes('light_hue')) {
-        this.registerMultipleCapabilityListener(['light_hue', 'light_saturation', 'light_mode'], (values) => {
-          this.dimHueSat(values, 'app').catch((error) => this.error(error));
-        }, 500);
+        this.registerMultipleCapabilityListener(
+          ['light_hue', 'light_saturation', 'light_mode'],
+          (values) => {
+            this.dimHueSat(values, 'app').catch((error) => this.error(error));
+          },
+          500
+        );
       }
 
       this.listenersSet = true;
@@ -433,5 +473,4 @@ module.exports = class Zigbee2MQTTDevice extends Device {
     this.bridge.client.removeListener('message', this.handleMessage);
     if (this.eventListenerBridgeOffline) this.homey.removeListener('bridgeoffline', this.eventListenerBridgeOffline);
   }
-
 };
