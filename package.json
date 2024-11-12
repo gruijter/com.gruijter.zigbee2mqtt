@@ -1,6 +1,6 @@
 {
   "name": "com.gruijter.zigbee2mqtt",
-  "version": "2.4.6",
+  "version": "2.5.0",
   "main": "app.js",
   "engines": {
     "node": ">=12.16.1"

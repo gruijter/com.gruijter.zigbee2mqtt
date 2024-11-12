@@ -93,10 +93,6 @@ const hsbToRgb = (hue, sat, dim) => {
 };
 
 module.exports = class Zigbee2MQTTDevice extends Device {
-  // getDeviceInfo() {
-  //  this.error('why does this method exist?');
-  //  throw Error('getDeviceInfo is not implemented');
-  // }
 
   async onInit() {
     try {
@@ -304,6 +300,15 @@ module.exports = class Zigbee2MQTTDevice extends Device {
     return Promise.resolve(true);
   }
 
+  async setCustomPayload(payload, source) {
+    if (!this.bridge || !this.bridge.client || !this.bridge.client.connected) throw Error('Bridge is not connected');
+    if (!this.store || !this.store.capDetails) throw Error('Store capabilities undefined');
+    if (!payload) throw Error('setCommand started without payload');
+    await this.bridge.client.publish(`${this.deviceTopic}/set`, payload);
+    this.log(`${payload} sent by ${source}`);
+    return Promise.resolve(true);
+  }
+
   // special for color light
   async dimHueSat(values, source) {
     if (values && values.light_mode === 'temperature') return Promise.resolve(true);
@@ -455,7 +460,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
           (values) => {
             this.dimHueSat(values, 'app').catch((error) => this.error(error));
           },
-          500
+          500,
         );
       }
 
@@ -473,4 +478,5 @@ module.exports = class Zigbee2MQTTDevice extends Device {
     this.bridge.client.removeListener('message', this.handleMessage);
     if (this.eventListenerBridgeOffline) this.homey.removeListener('bridgeoffline', this.eventListenerBridgeOffline);
   }
+
 };

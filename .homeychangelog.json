@@ -1,4 +1,7 @@
 {
+  "2.5.0": {
+    "en": "Added support for SONOFF TRVZB thermostat. Added possibility to send custom payload settings via a flow."
+  },
   "2.4.8": {
     "en": "Action event received trigger based on string match."
   },

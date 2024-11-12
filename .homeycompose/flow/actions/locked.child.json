@@ -1,9 +1,9 @@
 {
 	"title": {
-		"en": "Switch Child Lock On or Off"
+		"en": "Turn Child Lock On or Off"
 	},
 		"titleFormatted": {
-				"en": "Switch Child Lock [[val]]"
+				"en": "Turn Child Lock on: [[val]]"
 		},
 		"highlight": true,
 		"args": [

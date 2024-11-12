@@ -1,0 +1,28 @@
+{
+  "title": {
+    "en": "Set a custom payload"
+  },
+  "titleFormatted": {
+    "en": "Set payload to [[val]]"
+  },
+  "hint": {
+    "en": "Place text in quotation marks:\n{\"child_lock\": \"LOCK\"}.\nUse numbers without quotation marks:\n{ \"current_heating_setpoint\": 21 }"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device"
+    },
+    {
+      "name": "val",
+      "type": "text",
+      "title": {
+        "en": "Payload"
+      },
+      "placeholder": {
+        "en": "e.g. { \"current_heating_setpoint\": 21 }"
+      }
+    }
+  ]
+}

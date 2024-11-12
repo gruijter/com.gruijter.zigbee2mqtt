@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The target temperature changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device|group&capabilities=target_temperature.local"
+		}
+	],
+	"tokens": [
+		{
+			"name": "target_temperature.local",
+			"type": "number",
+			"title": { 
+				"en": "Temperature"
+			},
+			"example": 23
+		}
+	]
+}

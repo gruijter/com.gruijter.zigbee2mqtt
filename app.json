@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "2.4.8",
+  "version": "2.5.0",
   "compatibility": ">=10.0.0",
   "sdk": 3,
   "platforms": [
@@ -991,6 +991,30 @@
       },
       {
         "title": {
+          "en": "The running state changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=running_state"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "running_state",
+            "type": "string",
+            "title": {
+              "en": "State"
+            },
+            "example": "off"
+          }
+        ],
+        "id": "running_state_changed"
+      },
+      {
+        "title": {
           "en": "The sensitivity changed"
         },
         "highlight": true,
@@ -1183,6 +1207,30 @@
       },
       {
         "title": {
+          "en": "The target temperature changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=target_temperature.local"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "target_temperature.local",
+            "type": "number",
+            "title": {
+              "en": "Temperature"
+            },
+            "example": 23
+          }
+        ],
+        "id": "target_temperature.local_changed"
+      },
+      {
+        "title": {
           "en": "The valve state changed"
         },
         "highlight": true,
@@ -1247,6 +1295,35 @@
           }
         ],
         "id": "color_power_on_behavior"
+      },
+      {
+        "title": {
+          "en": "Set a custom payload"
+        },
+        "titleFormatted": {
+          "en": "Set payload to [[val]]"
+        },
+        "hint": {
+          "en": "Place text in quotation marks:\n{\"child_lock\": \"LOCK\"}.\nUse numbers without quotation marks:\n{ \"current_heating_setpoint\": 21 }"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device"
+          },
+          {
+            "name": "val",
+            "type": "text",
+            "title": {
+              "en": "Payload"
+            },
+            "placeholder": {
+              "en": "e.g. { \"current_heating_setpoint\": 21 }"
+            }
+          }
+        ],
+        "id": "custom_payload_set"
       },
       {
         "title": {
@@ -1451,10 +1528,10 @@
       },
       {
         "title": {
-          "en": "Switch Child Lock On or Off"
+          "en": "Turn Child Lock On or Off"
         },
         "titleFormatted": {
-          "en": "Switch Child Lock [[val]]"
+          "en": "Turn Child Lock on: [[val]]"
         },
         "highlight": true,
         "args": [
@@ -2249,6 +2326,27 @@
           }
         ],
         "id": "switch_type.right"
+      },
+      {
+        "title": {
+          "en": "Set target temperature"
+        },
+        "titleFormatted": {
+          "en": "Set target temperature to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=target_temperature.local"
+          },
+          {
+            "name": "val",
+            "type": "range"
+          }
+        ],
+        "id": "target_temperature.local"
       },
       {
         "title": {
@@ -3134,6 +3232,18 @@
       "getable": true,
       "setable": true,
       "insights": false
+    },
+    "running_state": {
+      "type": "string",
+      "title": {
+        "en": "Running state"
+      },
+      "units": {
+        "en": ""
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true
     },
     "sensitivity_enum": {
       "type": "enum",

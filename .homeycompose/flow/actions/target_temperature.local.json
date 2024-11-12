@@ -1,0 +1,20 @@
+{
+	"title": {
+		"en": "Set target temperature"
+	},
+	"titleFormatted": {
+			"en": "Set target temperature to [[val]]"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device|group&capabilities=target_temperature.local"
+		},
+		{
+			"name": "val",
+			"type": "range"
+		}
+	]
+}

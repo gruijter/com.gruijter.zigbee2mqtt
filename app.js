@@ -75,6 +75,17 @@ class MyApp extends Homey.App {
         }
       });
     });
+
+    // add custom payload action
+    this.log('setting up action listener custom_payload_set');
+    actionListeners.custom_payload_set = this.homey.flow.getActionCard('custom_payload_set');
+    actionListeners.custom_payload_set.registerRunListener(async (args) => {
+      try {
+        await args.device.setCustomPayload(args.val, 'flow');
+      } catch (error) {
+        this.error(error);
+      }
+    });
   }
 
   registerFlowTriggers() {

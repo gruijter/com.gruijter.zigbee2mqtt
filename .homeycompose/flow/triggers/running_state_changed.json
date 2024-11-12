@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The running state changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device|group&capabilities=running_state"
+		}
+	],
+	"tokens": [
+		{
+			"name": "running_state",
+			"type": "string",
+			"title": { 
+				"en": "State"
+			},
+			"example": "off"
+		}
+	]
+}

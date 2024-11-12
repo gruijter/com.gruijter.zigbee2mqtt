@@ -29,6 +29,7 @@ const capabilityMap = {
   // Standard Homey Number capabilities
   current_heating_setpoint: (val) => ['target_temperature', Number(val), { current_heating_setpoint: Number(val) }],
   temperature: (val) => ['measure_temperature', Number(val)],
+  occupied_heating_setpoint: (val) => ['target_temperature.local', Number(val), { occupied_heating_setpoint: Number(val) }],
   local_temperature: (val) => ['measure_temperature.local', Number(val)],
   device_temperature: (val) => ['measure_temperature.device', Number(val)],
   co: (val) => ['measure_co', Number(val)],
@@ -144,6 +145,7 @@ const capabilityMap = {
 
   // Custom string capabilities
   action: (val) => ['action', (val || '').toString()],
+  running_state: (val) => ['running_state', (val || '').toString()],
 
   // Custom settable ENUM capabilities
   preset: (val) => ['preset', val, { preset: val }], // ["auto", "manual", "holiday"]
