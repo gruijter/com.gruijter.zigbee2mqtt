@@ -1,0 +1,23 @@
+{
+	"title": { 
+		"en": "The motion state changed"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=device|group&capabilities=motion_state"
+		}
+	],
+	"tokens": [
+		{
+			"name": "motion_state",
+			"type": "string",
+			"title": { 
+				"en": "State"
+			},
+			"example": "none"
+		}
+	]
+}

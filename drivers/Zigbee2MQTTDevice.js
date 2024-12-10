@@ -122,14 +122,14 @@ module.exports = class Zigbee2MQTTDevice extends Device {
   async onUninit() {
     this.log(this.zigbee2MqttType, 'unInit', this.getName());
     this.destroyListeners();
-    await setTimeoutPromise(2000); // wait 2 secs
+    await setTimeoutPromise(2000).catch((error) => this.error(error)); // wait 2 secs
   }
 
   async onAdded() {
     this.log(this.zigbee2MqttType, 'added', this.getName());
     if (this.getClass !== this.getSettings().homeyclass) {
       this.log(`setting new Class for ${this.getName()}`, this.getSettings().homeyclass);
-      await this.setClass(this.getSettings().homeyclass).catch(this.error);
+      await this.setClass(this.getSettings().homeyclass).catch((error) => this.error(error));
     }
     // await this.setCapabilityUnits();
   }
@@ -139,7 +139,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
     this.log('Settings changed', newSettings);
     if (changedKeys.includes('homeyclass')) {
       this.log(`setting new Class for ${this.getName()}`, this.getClass(), this.getSettings().homeyclass);
-      await this.setClass(newSettings.homeyclass).catch(this.error);
+      await this.setClass(newSettings.homeyclass).catch((error) => this.error(error));
     }
     this.restartDevice(1000).catch((error) => this.error(error));
   }
@@ -167,7 +167,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
       // check and repair incorrect capability(order)
 
       const [deviceInfo] = this.getDeviceInfo();
-      if (!deviceInfo) return;
+      if (!deviceInfo) return Promise.resolve(false);
 
       const { caps: correctCaps, capDetails } = mapProperty(deviceInfo);
       await this.setStoreValue('capDetails', { ...capDetails });
@@ -186,21 +186,22 @@ module.exports = class Zigbee2MQTTDevice extends Device {
           for (let i = index; i < caps.length; i += 1) {
             this.log(`removing capability ${caps[i]} for ${this.getName()}`);
             await this.removeCapability(caps[i]).catch((error) => this.log(error));
-            await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
+            await setTimeoutPromise(2 * 1000).catch((error) => this.log(error)); // wait a bit for Homey to settle
           }
           // add the new cap
           this.log(`adding capability ${newCap} for ${this.getName()}`);
-          await this.addCapability(newCap);
+          await this.addCapability(newCap).catch((error) => this.log(error));
           // restore capability state
           if (state[newCap]) this.log(`${this.getName()} restoring value ${newCap} to ${state[newCap]}`);
           // else this.log(`${this.getName()} has gotten a new capability ${newCap}!`);
-          if (state[newCap] !== undefined) this.setCapability(newCap, state[newCap]);
-          await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
+          if (state[newCap] !== undefined) this.setCapability(newCap, state[newCap]).catch((error) => this.error(error));
+          await setTimeoutPromise(2 * 1000).catch((error) => this.log(error)); // wait a bit for Homey to settle
         }
       }
       await this.setCapabilityUnits();
+      return Promise.resolve(true);
     } catch (error) {
-      this.error(error);
+      return Promise.reject(error);
     }
   }
 
@@ -240,7 +241,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
               unitsChanged = true;
               this.log('Migrating unit and title for', capDetailsArray[index][0], capDetailsArray[index][1].unit, capDetailsArray[index][1].name);
               await this.setCapabilityOptions(capDetailsArray[index][0], capOptions).catch(this.error);
-              await setTimeoutPromise(2 * 1000);
+              await setTimeoutPromise(2 * 1000).catch((error) => this.log(error));
             }
           }
         }
@@ -251,9 +252,9 @@ module.exports = class Zigbee2MQTTDevice extends Device {
     }
   }
 
-  setCapability(capability, value) {
+  async setCapability(capability, value) {
     if (this.hasCapability(capability) && value !== undefined) {
-      this.setCapabilityValue(capability, value).catch((error) => {
+      await this.setCapabilityValue(capability, value).catch((error) => {
         this.log(error, capability, value);
       });
     }
@@ -353,43 +354,43 @@ module.exports = class Zigbee2MQTTDevice extends Device {
       await bridgeDriver.ready(() => null);
       if (bridgeDriver.getDevices().length < 1) throw Error('The source bridge device is missing in Homey.');
       const bridge = bridgeDriver.getDevice({ id: this.settings.bridge_uid });
-      if (!bridge || !bridge.client) {
-        throw Error('Cannot connect to source bridge device in Homey.');
-      }
+      if (!bridge || !bridge.client) throw Error('Cannot connect to source bridge device in Homey.');
       this.bridge = bridge;
 
       this.deviceTopic = `${bridge.settings.topic}/${this.settings.friendly_name}`;
-      const handleMessage = async (topic, message) => {
+      const handleMessage = (topic, message) => {
         try {
-          if (message.toString() === '') return;
-          const info = JSON.parse(message);
-          // Map the incoming value to a capability or setting
-          if (topic === this.deviceTopic) {
-            // console.log(`${this.getName()} update:`, info);
-            // this.setAvailable();
-            Object.entries(info).forEach((entry) => {
-              // exception for color light
-              if (entry[0] === 'color' && this.getCapabilities().includes('light_hue')) {
-                if (Object.prototype.hasOwnProperty.call(entry[1], 'hue')) this.setCapability('light_hue', entry[1].hue / 360);
-                if (Object.prototype.hasOwnProperty.call(entry[1], 'saturation')) this.setCapability('saturation', entry[1].saturation / 100);
-              } else {
-                const mapFunc = capabilityMap[entry[0]];
-                if (!mapFunc) return; // not included in Homey mapping
-                const capVal = mapFunc(entry[1]);
-                // Add extra triggers for ACTION
-                if (capVal[0] === 'action') {
-                  // Action event received
-                  if (capVal[1] !== null && capVal[1] !== undefined && capVal[1] !== '') {
-                    const tokens = { action: capVal[1] };
-                    const state = { event: capVal[1] };
-                    this.homey.flow.getDeviceTriggerCard('action_event_received').trigger(this, tokens, state).catch(this.error);
+          if (message.toString() !== '') {
+            const info = JSON.parse(message);
+            // Map the incoming value to a capability or setting
+            if (topic === this.deviceTopic) {
+              // console.log(`${this.getName()} update:`, info);
+              // this.setAvailable();
+              Object.entries(info).forEach((entry) => {
+                // exception for color light
+                if (entry[0] === 'color' && this.getCapabilities().includes('light_hue')) {
+                  if (Object.prototype.hasOwnProperty.call(entry[1], 'hue')) this.setCapability('light_hue', entry[1].hue / 360).catch((error) => this.error(error));
+                  if (Object.prototype.hasOwnProperty.call(entry[1], 'saturation')) this.setCapability('saturation', entry[1].saturation / 100).catch((error) => this.error(error));
+                } else {
+                  const mapFunc = capabilityMap[entry[0]];
+                  if (mapFunc) { //  included in Homey mapping
+                    const capVal = mapFunc(entry[1]);
+                    // Add extra triggers for ACTION
+                    if (capVal[0] === 'action') {
+                      // Action event received
+                      if (capVal[1] !== null && capVal[1] !== undefined && capVal[1] !== '') {
+                        const tokens = { action: capVal[1] };
+                        const state = { event: capVal[1] };
+                        this.homey.flow.getDeviceTriggerCard('action_event_received').trigger(this, tokens, state).catch(this.error);
+                      }
+                      // Original extra action trigger
+                      this.setCapability(capVal[0], '---').catch((error) => this.error(error));
+                    }
+                    this.setCapability(capVal[0], capVal[1]).catch((error) => this.error(error));
                   }
-                  // Original extra action trigger
-                  this.setCapability(capVal[0], '---');
                 }
-                this.setCapability(capVal[0], capVal[1]);
-              }
-            });
+              });
+            }
           }
         } catch (error) {
           this.error(error);
@@ -409,7 +410,9 @@ module.exports = class Zigbee2MQTTDevice extends Device {
       this.subscribeTopics = subscribeTopics;
 
       this.log('connecting to Bridge MQTT');
-      this.bridge.client.on('connect', this.subscribeTopics).on('message', this.handleMessage);
+      this.bridge.client
+        .on('connect', this.subscribeTopics)
+        .on('message', this.handleMessage);
       if (this.bridge.client.connected) await subscribeTopics();
       return Promise.resolve(true);
     } catch (error) {
@@ -420,14 +423,14 @@ module.exports = class Zigbee2MQTTDevice extends Device {
   // register homey event listeners
   async registerHomeyEventListeners() {
     if (this.eventListenerBridgeOffline) this.homey.removeListener('bridgeoffline', this.eventListenerBridgeOffline);
-    this.eventListenerBridgeOffline = async (offline) => {
+    this.eventListenerBridgeOffline = (offline) => {
       // console.log('bridgeOffline event received');
       if (offline) {
         this.setUnavailable('Bridge is offline').catch(this.error);
         this.bridgeOffline = true;
-      } else {
-        if (this.bridgeOffline) this.restartDevice(1000).catch((error) => this.error(error));
+      } else if (this.bridgeOffline) {
         this.bridgeOffline = false;
+        this.restartDevice(1000).catch((error) => this.error(error));
       }
     };
     this.homey.on('bridgeoffline', this.eventListenerBridgeOffline);
@@ -436,25 +439,26 @@ module.exports = class Zigbee2MQTTDevice extends Device {
   // register capability listeners for settable commands
   registerListeners() {
     try {
-      if (this.listenersSet) return true;
-      // this.log('registering listeners');
-      // capabilityListeners will be overwritten, so no need to unregister them
-
+      if (!this.capabilityListeners) this.capabilityListeners = {};
       const capArray = Object.entries(capabilityMap);
       capArray.forEach((map) => {
         const mapFunc = map[1];
-        if (mapFunc().length > 2 && this.getCapabilities().includes(mapFunc()[0])) {
+        const capabilityName = mapFunc()[0];
+        if (mapFunc().length > 2 && this.getCapabilities().includes(capabilityName)) {
           // capability setting is mapped and present in device
-          this.log(`${this.getName()} adding capability listener ${mapFunc()[0]}`);
-          this.registerCapabilityListener(mapFunc()[0], async (val) => {
-            const command = mapFunc(val)[2];
-            await this.setCommand(command, 'app').catch(this.error);
-          });
+          if (!this.capabilityListeners[capabilityName]) {
+            this.log(`${this.getName()} adding capability listener ${capabilityName}`);
+            this.registerCapabilityListener(mapFunc()[0], (val) => {
+              const command = mapFunc(val)[2];
+              this.setCommand(command, 'app').catch((error) => this.error(error));
+            });
+            this.capabilityListeners[capabilityName] = true;
+          }
         }
       });
-
       // add exception for color light
-      if (this.getCapabilities().includes('light_hue')) {
+      if (this.getCapabilities().includes('light_hue') && !this.capabilityListeners.multiLight) {
+        this.log(`${this.getName()} adding multiple capability listener for Hue lights`);
         this.registerMultipleCapabilityListener(
           ['light_hue', 'light_saturation', 'light_mode'],
           (values) => {
@@ -462,9 +466,8 @@ module.exports = class Zigbee2MQTTDevice extends Device {
           },
           500,
         );
+        this.capabilityListeners.multiLight = true;
       }
-
-      this.listenersSet = true;
       return Promise.resolve(true);
     } catch (error) {
       return Promise.reject(error);

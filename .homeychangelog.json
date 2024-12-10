@@ -1,4 +1,7 @@
 {
+  "2.5.1": {
+    "en": "Added support for ZG-204ZM presence sensor. Stability improvements."
+  },
   "2.5.0": {
     "en": "Added support for SONOFF TRVZB thermostat. Added possibility to send custom payload settings via a flow."
   },

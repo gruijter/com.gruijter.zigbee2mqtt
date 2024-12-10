@@ -1,0 +1,12 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Motion state"
+  },
+  "units": {
+    "en": ""
+  },
+  "getable": true,
+  "setable": false,
+  "insights": true
+}

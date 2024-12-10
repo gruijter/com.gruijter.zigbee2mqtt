@@ -98,6 +98,7 @@ const capabilityMap = {
   state_right: (val) => ['onoff.right', val === 'ON', { state_right: val ? 'ON' : 'OFF' }],
   backlight_mode: (val) => ['onoff.backlight', val === 'ON', { backlight_mode: val ? 'ON' : 'OFF' }],
   system_mode: (val) => ['onoff.system_mode', val === 'heat', { system_mode: val ? 'heat' : 'off' }], // MOES BHT series thermostat
+  indicator: (val) => ['onoff.indicator', val === 'ON', { indicator: val ? 'ON' : 'OFF' }], // TuYa ZG-204ZM presence sensor
 
   // frost_protection: (val) => ['onoff.frost_protection', val === 'ON', { frost_protection: val ? 'ON' : 'OFF' }],
   open_window: (val) => ['alarm_generic.open_window', val === 'ON'],
@@ -146,6 +147,7 @@ const capabilityMap = {
   // Custom string capabilities
   action: (val) => ['action', (val || '').toString()],
   running_state: (val) => ['running_state', (val || '').toString()],
+  motion_state: (val) => ['motion_state', (val || '').toString()],
 
   // Custom settable ENUM capabilities
   preset: (val) => ['preset', val, { preset: val }], // ["auto", "manual", "holiday"]
@@ -180,6 +182,7 @@ const classIconMap = {
   'dimmer switch': ['sensor', 'wireless_switch.svg'],
   'on/off switch': ['sensor', 'wireless_switch.svg'],
   motion: ['sensor', 'motion.svg'],
+  presence: ['sensor', 'motion.svg'],
   'wall switch module': ['button', 'wireless_switch.svg'],
   'smart button': ['button', 'wireless_switch.svg'],
   '2 gang switch module': ['socket', '2gangswitch.svg'],
