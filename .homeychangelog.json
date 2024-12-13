@@ -1,4 +1,7 @@
 {
+  "2.6.0": {
+    "en": "Better mapping of motion/occupancy/presence/vibration alarms and its flow cards (Homey>=12.2.0)."
+  },
   "2.5.1": {
     "en": "Added support for ZG-204ZM presence sensor. Stability improvements."
   },

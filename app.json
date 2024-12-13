@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "2.5.1",
+  "version": "2.6.0",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -136,146 +136,6 @@
           }
         ],
         "id": "action_event_received"
-      },
-      {
-        "title": {
-          "en": "The Fault Alarm turned Off"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device|group&capabilities=alarm_generic.fault"
-          }
-        ],
-        "id": "alarm_generic.fault_false"
-      },
-      {
-        "title": {
-          "en": "The Fault Alarm turned On"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device|group&capabilities=alarm_generic.fault"
-          }
-        ],
-        "id": "alarm_generic.fault_true"
-      },
-      {
-        "title": {
-          "en": "The Gas Alarm turned Off"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device|group&capabilities=alarm_generic.gas"
-          }
-        ],
-        "id": "alarm_generic.gas_false"
-      },
-      {
-        "title": {
-          "en": "The Gas Alarm turned On"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device|group&capabilities=alarm_generic.gas"
-          }
-        ],
-        "id": "alarm_generic.gas_true"
-      },
-      {
-        "title": {
-          "en": "The Occupancy Alarm turned Off"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device|group&capabilities=alarm_motion.occupancy"
-          }
-        ],
-        "id": "alarm_motion.occupancy_false"
-      },
-      {
-        "title": {
-          "en": "The Occupancy Alarm turned On"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device|group&capabilities=alarm_motion.occupancy"
-          }
-        ],
-        "id": "alarm_motion.occupancy_true"
-      },
-      {
-        "title": {
-          "en": "The Presence Alarm turned Off"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device|group&capabilities=alarm_motion.presence"
-          }
-        ],
-        "id": "alarm_motion.presence_false"
-      },
-      {
-        "title": {
-          "en": "The Presence Alarm turned On"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device|group&capabilities=alarm_motion.presence"
-          }
-        ],
-        "id": "alarm_motion.presence_true"
-      },
-      {
-        "title": {
-          "en": "The Vibration Alarm turned Off"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device|group&capabilities=alarm_motion.vibration"
-          }
-        ],
-        "id": "alarm_motion.vibration_false"
-      },
-      {
-        "title": {
-          "en": "The Vibration Alarm turned On"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device|group&capabilities=alarm_motion.vibration"
-          }
-        ],
-        "id": "alarm_motion.vibration_true"
       },
       {
         "title": {
@@ -715,7 +575,7 @@
             "example": "none"
           }
         ],
-        "id": "motion_state_changed "
+        "id": "motion_state_changed"
       },
       {
         "title": {
