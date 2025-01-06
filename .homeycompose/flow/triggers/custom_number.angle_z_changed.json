@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The Z-angle changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=custom_number.angle_z"
-		}
-	],
-	"tokens": [
-		{
-			"name": "custom_number.angle_z",
-			"type": "number",
-			"title": { 
-				"en": "angle_z"
-			},
-			"example": 48
-		}
-	]
+  "title": {
+    "en": "The Z-angle changed",
+    "nl": "De Z-hoek is veranderd",
+    "da": "Z-vinklen har ændret sig",
+    "de": "Der Z-Winkel hat sich geändert",
+    "es": "El ángulo Z ha cambiado",
+    "fr": "L'angle Z a changé",
+    "it": "L'angolo Z è cambiato",
+    "no": "Z-vinkelen har endret seg",
+    "sv": "Z-vinkeln har ändrats",
+    "pl": "Kąt Z się zmienił",
+    "ru": "Угол Z изменился",
+    "ko": "Z-각도가 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=custom_number.angle_z"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "custom_number.angle_z",
+      "type": "number",
+      "title": {
+        "en": "angle_z",
+        "nl": "hoek_z",
+        "da": "vinkel_z",
+        "de": "winkel_z",
+        "es": "ángulo_z",
+        "fr": "angle_z",
+        "it": "angolo_z",
+        "no": "vinkel_z",
+        "sv": "vinkel_z",
+        "pl": "kąt_z",
+        "ru": "угол_z",
+        "ko": "각도_z"
+      },
+      "example": 48
+    }
+  ]
 }

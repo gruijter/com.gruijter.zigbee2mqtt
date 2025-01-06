@@ -1,10 +1,32 @@
 {
   "type": "number",
   "title": {
-    "en": "Target distance"
+    "en": "Target distance",
+    "nl": "Doelafstand",
+    "da": "Målafstand",
+    "de": "Zieldistanz",
+    "es": "Distancia objetivo",
+    "fr": "Distance cible",
+    "it": "Distanza target",
+    "no": "Måldistanse",
+    "sv": "Målavstånd",
+    "pl": "Odległość docelowa",
+    "ru": "Целевая дистанция",
+    "ko": "목표 거리"
   },
   "units": {
-    "en": "m"
+    "en": "m",
+    "nl": "m",
+    "da": "m",
+    "de": "m",
+    "es": "m",
+    "fr": "m",
+    "it": "m",
+    "no": "m",
+    "sv": "m",
+    "pl": "m",
+    "ru": "м",
+    "ko": "m"
   },
   "getable": true,
   "setable": false,

@@ -1,15 +1,24 @@
 {
-		"title": {
-				"en": "Joining turned On"
-		},
-		"highlight": true,
-		"args": [
-				{
-						"type": "device",
-						"name": "device",
-						"filter": "driver_id=bridge"
-				}
-		]
+  "title": {
+    "en": "Joining turned On",
+    "nl": "Deelnemen ingeschakeld",
+    "da": "Deltagelse aktiveret",
+    "de": "Beitritt eingeschaltet",
+    "es": "Participación activada",
+    "fr": "Participation activée",
+    "it": "Partecipazione attivata",
+    "no": "Deltakelse slått på",
+    "sv": "Deltagande aktiverat",
+    "pl": "Dołączenie włączone",
+    "ru": "Присоединение включено",
+    "ko": "참여 켜짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=bridge"
+    }
+  ]
 }
-
-

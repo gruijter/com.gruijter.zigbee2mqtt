@@ -1,32 +1,42 @@
 {
-	"name": {
-		"en": "Device"
-	},
-	"class": "socket",
-	"capabilities": [
-	],
-	"platforms": [
-		"local"
-	],
-	"connectivity": [
-		"lan"
-	],
-	"images": {
-		"small": "{{driverAssetsPath}}/images/small.png",
-		"large": "{{driverAssetsPath}}/images/large.png",
-		"xlarge": "{{driverAssetsPath}}/images/xlarge.png"
-	},
-	"pair": [
-		{
-			"id": "list_devices",
-			"template": "list_devices",
-			"navigation": {
-				"next": "add_devices"
-			}
-		},
-		{
-			"id": "add_devices",
-			"template": "add_devices"
-		}
-	]
+  "name": {
+    "en": "Device",
+    "nl": "Apparaat",
+    "da": "Enhed",
+    "de": "Gerät",
+    "es": "Dispositivo",
+    "fr": "Appareil",
+    "it": "Dispositivo",
+    "no": "Enhet",
+    "sv": "Enhet",
+    "pl": "Urządzenie",
+    "ru": "Устройство",
+    "ko": "장치"
+  },
+  "class": "socket",
+  "capabilities": [],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
 }

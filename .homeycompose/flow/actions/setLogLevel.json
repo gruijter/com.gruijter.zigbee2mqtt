@@ -1,39 +1,126 @@
 {
-	"title": {
-		"en": "Set log level"
-	},
-	"titleFormatted": {
-			"en": "Set log level to [[val]]"
-	},
-	"hint": { "en": "INFO or DEBUG level is required for the Msgs/minute counter." },
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=bridge"
-		},
-		{
-			"type": "dropdown",
-			"name": "val",
-			"values": [
-				{
-					"id": "debug",
-					"title": { "en": "Debug" }
-				},
-				{
-					"id": "info",
-					"title": { "en": "Info" }
-				},
-				{
-					"id": "warn",
-					"title": { "en": "Warn" }
-				},
-				{
-					"id": "error",
-					"title": { "en": "Error" }
-				}
-			]
-		}
-	]
+  "title": {
+    "en": "Set log level",
+    "nl": "Stel logniveau in",
+    "da": "Indstil logniveau",
+    "de": "Protokollebene festlegen",
+    "es": "Establecer nivel de registro",
+    "fr": "Définir le niveau de journal",
+    "it": "Imposta livello di registro",
+    "no": "Sett loggnivå",
+    "sv": "Ställ in loggnivå",
+    "pl": "Ustaw poziom logowania",
+    "ru": "Установить уровень логирования",
+    "ko": "로그 레벨 설정"
+  },
+  "titleFormatted": {
+    "en": "Set log level to [[val]]",
+    "nl": "Stel logniveau in op [[val]]",
+    "da": "Indstil logniveau til [[val]]",
+    "de": "Protokollebene auf [[val]] festlegen",
+    "es": "Establecer nivel de registro en [[val]]",
+    "fr": "Définir le niveau de journal sur [[val]]",
+    "it": "Imposta livello di registro a [[val]]",
+    "no": "Sett loggnivå til [[val]]",
+    "sv": "Ställ in loggnivå till [[val]]",
+    "pl": "Ustaw poziom logowania na [[val]]",
+    "ru": "Установить уровень логирования на [[val]]",
+    "ko": "[[val]]로 로그 레벨 설정"
+  },
+  "hint": {
+    "en": "INFO or DEBUG level is required for the Msgs/minute counter.",
+    "nl": "INFO of DEBUG-niveau is vereist voor de berichten/per minuut-teller.",
+    "da": "INFO eller DEBUG-niveau er påkrævet for Msgs/minut tælleren.",
+    "de": "INFO- oder DEBUG-Level ist für den Nachrichten-pro-Minute-Zähler erforderlich.",
+    "es": "Se requiere nivel de INFO o DEBUG para el contador de mensajes/minuto.",
+    "fr": "Le niveau INFO ou DEBUG est requis pour le compteur de messages/minute.",
+    "it": "È richiesto il livello INFO o DEBUG per il contatore Msgs/minuto.",
+    "no": "INFO eller DEBUG-nivå er nødvendig for meldinger/minutt-telleren.",
+    "sv": "INFO eller DEBUG-nivå krävs för meddelanden/minut räknaren.",
+    "pl": "Wymagany jest poziom INFO lub DEBUG dla licznika Msgs/minutę.",
+    "ru": "Для счетчика сообщений в минуту требуется уровень INFO или DEBUG.",
+    "ko": "분당 메세지 카운터에는 INFO 또는 DEBUG 레벨이 필요합니다."
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=bridge"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "debug",
+          "title": {
+            "en": "Debug",
+            "nl": "Debug",
+            "da": "Fejlsøgning",
+            "de": "Debuggen",
+            "es": "Depurar",
+            "fr": "Déboguer",
+            "it": "Debug",
+            "no": "Feilsøking",
+            "sv": "Felsök",
+            "pl": "Debugowanie",
+            "ru": "Отладка",
+            "ko": "디버그"
+          }
+        },
+        {
+          "id": "info",
+          "title": {
+            "en": "Info",
+            "nl": "Info",
+            "da": "Info",
+            "de": "Info",
+            "es": "Info",
+            "fr": "Info",
+            "it": "Info",
+            "no": "Info",
+            "sv": "Info",
+            "pl": "Info",
+            "ru": "Инфо",
+            "ko": "정보"
+          }
+        },
+        {
+          "id": "warn",
+          "title": {
+            "en": "Warn",
+            "nl": "Waarschuwen",
+            "da": "Advar",
+            "de": "Warnen",
+            "es": "Advertir",
+            "fr": "Avertir",
+            "it": "Avviso",
+            "no": "Advar",
+            "sv": "Varning",
+            "pl": "Ostrzeżenie",
+            "ru": "Предупреждение",
+            "ko": "경고"
+          }
+        },
+        {
+          "id": "error",
+          "title": {
+            "en": "Error",
+            "nl": "Fout",
+            "da": "Fejl",
+            "de": "Fehler",
+            "es": "Error",
+            "fr": "Erreur",
+            "it": "Errore",
+            "no": "Feil",
+            "sv": "Fel",
+            "pl": "Błąd",
+            "ru": "Ошибка",
+            "ko": "오류"
+          }
+        }
+      ]
+    }
+  ]
 }

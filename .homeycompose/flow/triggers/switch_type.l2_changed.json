@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The switch type L1 changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=switch_type.l2"
-		}
-	],
-	"tokens": [
-		{
-			"name": "switch_type.l2",
-			"type": "string",
-			"title": { 
-				"en": "Switch type L2"
-			},
-			"example": "toggle"
-		}
-	]
+  "title": {
+    "en": "The switch type L1 changed",
+    "nl": "Het schakeltype L1 is gewijzigd",
+    "da": "Kontakttype L1 ændret",
+    "de": "Der Schaltertyp L1 hat sich geändert",
+    "es": "El tipo de interruptor L1 ha cambiado",
+    "fr": "Le type de commutateur L1 a changé",
+    "it": "Il tipo di interruttore L1 è cambiato",
+    "no": "Brytertype L1 endret",
+    "sv": "Strömställartyp L1 har ändrats",
+    "pl": "Typ przełącznika L1 został zmieniony",
+    "ru": "Тип переключателя L1 изменился",
+    "ko": "스위치 유형 L1이 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=switch_type.l2"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "switch_type.l2",
+      "type": "string",
+      "title": {
+        "en": "Switch type L2",
+        "nl": "Schakeltype L2",
+        "da": "Kontakttype L2",
+        "de": "Schaltertyp L2",
+        "es": "Tipo de interruptor L2",
+        "fr": "Type de commutateur L2",
+        "it": "Tipo di interruttore L2",
+        "no": "Brytertype L2",
+        "sv": "Strömställartyp L2",
+        "pl": "Typ przełącznika L2",
+        "ru": "Тип переключателя L2",
+        "ko": "스위치 유형 L2"
+      },
+      "example": "toggle"
+    }
+  ]
 }

@@ -1,125 +1,323 @@
 [
-    {
-        "type": "group",
-        "label": {
-                "en": "Group information"
-        },
-        "children": [
-            {
-                "id": "friendly_name",
-                "type": "label",
-                "label": {
-                        "en": "Zigbee2mqtt Name"
-                },
-                "value": ""
-            },
-            {
-                "id": "bridge_uid",
-                "type": "label",
-                "label": {
-                        "en": "Bridge IEEE Address"
-                },
-                "value": ""
-            },
-            {
-                "id": "uid",
-                "type": "label",
-                "label": {
-                        "en": "Group Id"
-                },
-                "value": ""
-            },
-            {
-                "id": "models",
-                "type": "label",
-                "label": {
-                        "en": "Models"
-                },
-                "value": ""
-            },
-            {
-                "id": "description",
-                "type": "label",
-                "label": {
-                        "en": "Description"
-                },
-                "value": ""
-            }
-        ]
+  {
+    "type": "group",
+    "label": {
+      "en": "Group information",
+      "nl": "Groepsinformatie",
+      "da": "Gruppeinformation",
+      "de": "Gruppeninformationen",
+      "es": "Información del grupo",
+      "fr": "Informations du groupe",
+      "it": "Informazioni sul gruppo",
+      "no": "Gruppeinformasjon",
+      "sv": "Gruppinformation",
+      "pl": "Informacje o grupie",
+      "ru": "Информация о группе",
+      "ko": "그룹 정보"
     },
-    {
-        "type": "group",
+    "children": [
+      {
+        "id": "friendly_name",
+        "type": "label",
         "label": {
-                "en": "Group settings"
+          "en": "Zigbee2mqtt Name",
+          "nl": "Zigbee2mqtt Naam",
+          "da": "Zigbee2mqtt Navn",
+          "de": "Zigbee2mqtt Name",
+          "es": "Nombre Zigbee2mqtt",
+          "fr": "Nom Zigbee2mqtt",
+          "it": "Nome Zigbee2mqtt",
+          "no": "Zigbee2mqtt Navn",
+          "sv": "Zigbee2mqtt Namn",
+          "pl": "Nazwa Zigbee2mqtt",
+          "ru": "Имя Zigbee2mqtt",
+          "ko": "Zigbee2mqtt 이름"
         },
-        "children": [
-            {
-                "id": "homeyclass",
-                "type": "dropdown",
-                "value": "en",
-                "label": {
-                        "en": "Group Class"
-                },
-                "hint": {
-                    "en": "This setting will effect the behavior in Homey flows."
-                },
-                "values": [
-                    {
-                        "id": "other",
-                        "label": {
-                                "en": "Other"
-                        }
-                    },
-                    {
-                        "id": "sensor",
-                        "label": {
-                                "en": "Sensor"
-                        }
-                    },
-                    {
-                        "id": "socket",
-                        "label": {
-                                "en": "Socket"
-                        }
-                    },
-                    {
-                        "id": "light",
-                        "label": {
-                                "en": "Light"
-                        }
-                    },
-                    {
-                        "id": "heater",
-                        "label": {
-                                "en": "Heater"
-                        }
-                    },
-                    {
-                        "id": "thermostat",
-                        "label": {
-                                "en": "Thermostat"
-                        }
-                    },
-                    {
-                        "id": "lock",
-                        "label": {
-                                "en": "Lock"
-                        }
-                    },
-                    {
-                        "id": "button",
-                        "label": {
-                                "en": "Button"
-                        }
-                    },
-                    {
-                        "id": "windowcoverings",
-                        "label": {
-                                "en": "Window Coverings"
-                        }
-                    }
-                ]
+        "value": ""
+      },
+      {
+        "id": "bridge_uid",
+        "type": "label",
+        "label": {
+          "en": "Bridge IEEE Address",
+          "nl": "Bridge IEEE-adres",
+          "da": "Bridge IEEE-adresse",
+          "de": "Bridge IEEE-Adresse",
+          "es": "Dirección IEEE del puente",
+          "fr": "Adresse IEEE de la passerelle",
+          "it": "Indirizzo IEEE del bridge",
+          "no": "Bridge IEEE-adresse",
+          "sv": "Bridge IEEE-adress",
+          "pl": "Adres IEEE mostka",
+          "ru": "IEEE адрес моста",
+          "ko": "브리지 IEEE 주소"
+        },
+        "value": ""
+      },
+      {
+        "id": "uid",
+        "type": "label",
+        "label": {
+          "en": "Group Id",
+          "nl": "Groep Id",
+          "da": "Gruppe-id",
+          "de": "Gruppen-ID",
+          "es": "ID de grupo",
+          "fr": "Identifiant de groupe",
+          "it": "ID di gruppo",
+          "no": "Gruppe-ID",
+          "sv": "Grupp-ID",
+          "pl": "ID grupy",
+          "ru": "ID группы",
+          "ko": "그룹 ID"
+        },
+        "value": ""
+      },
+      {
+        "id": "models",
+        "type": "label",
+        "label": {
+          "en": "Models",
+          "nl": "Modellen",
+          "da": "Modeller",
+          "de": "Modelle",
+          "es": "Modelos",
+          "fr": "Modèles",
+          "it": "Modelli",
+          "no": "Modeller",
+          "sv": "Modeller",
+          "pl": "Modele",
+          "ru": "Модели",
+          "ko": "모델"
+        },
+        "value": ""
+      },
+      {
+        "id": "description",
+        "type": "label",
+        "label": {
+          "en": "Description",
+          "nl": "Beschrijving",
+          "da": "Beskrivelse",
+          "de": "Beschreibung",
+          "es": "Descripción",
+          "fr": "Description",
+          "it": "Descrizione",
+          "no": "Beskrivelse",
+          "sv": "Beskrivning",
+          "pl": "Opis",
+          "ru": "Описание",
+          "ko": "설명"
+        },
+        "value": ""
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Group settings",
+      "nl": "Groepsinstellingen",
+      "da": "Gruppens indstillinger",
+      "de": "Gruppeneinstellungen",
+      "es": "Configuración del grupo",
+      "fr": "Paramètres du groupe",
+      "it": "Impostazioni del gruppo",
+      "no": "Gruppeinnstillinger",
+      "sv": "Gruppinställningar",
+      "pl": "Ustawienia grupy",
+      "ru": "Настройки группы",
+      "ko": "그룹 설정"
+    },
+    "children": [
+      {
+        "id": "homeyclass",
+        "type": "dropdown",
+        "value": "en",
+        "label": {
+          "en": "Group Class",
+          "nl": "Groepsklasse",
+          "da": "Gruppeklasse",
+          "de": "Gruppenklasse",
+          "es": "Clase de grupo",
+          "fr": "Classe de groupe",
+          "it": "Classe del gruppo",
+          "no": "Gruppeklasse",
+          "sv": "Gruppklass",
+          "pl": "Klasa grupy",
+          "ru": "Класс группы",
+          "ko": "그룹 클래스"
+        },
+        "hint": {
+          "en": "This setting will effect the behavior in Homey flows.",
+          "nl": "Deze instelling beïnvloedt het gedrag in Homey-flows.",
+          "da": "Denne indstilling vil påvirke adfærden i Homey-flows.",
+          "de": "Diese Einstellung beeinflusst das Verhalten in Homey-Flows.",
+          "es": "Esta configuración afectará el comportamiento en los flujos de Homey.",
+          "fr": "Ce paramètre affectera le comportement dans les flux Homey.",
+          "it": "Questa impostazione influenzerà il comportamento nei flussi Homey.",
+          "no": "Denne innstillingen vil påvirke atferden i Homey-flows.",
+          "sv": "Denna inställning påverkar beteendet i Homey-flöden.",
+          "pl": "To ustawienie wpłynie na zachowanie w przepływach Homey.",
+          "ru": "Эта настройка повлияет на поведение в потоках Homey.",
+          "ko": "이 설정은 Homey 플로우에서의 동작에 영향을 미칩니다."
+        },
+        "values": [
+          {
+            "id": "other",
+            "label": {
+              "en": "Other",
+              "nl": "Andere",
+              "da": "Andet",
+              "de": "Andere",
+              "es": "Otro",
+              "fr": "Autre",
+              "it": "Altro",
+              "no": "Annet",
+              "sv": "Annat",
+              "pl": "Inny",
+              "ru": "Другое",
+              "ko": "기타"
             }
+          },
+          {
+            "id": "sensor",
+            "label": {
+              "en": "Sensor",
+              "nl": "Sensor",
+              "da": "Sensor",
+              "de": "Sensor",
+              "es": "Sensor",
+              "fr": "Capteur",
+              "it": "Sensore",
+              "no": "Sensor",
+              "sv": "Sensor",
+              "pl": "Czujnik",
+              "ru": "Датчик",
+              "ko": "센서"
+            }
+          },
+          {
+            "id": "socket",
+            "label": {
+              "en": "Socket",
+              "nl": "Stopcontact",
+              "da": "Stik",
+              "de": "Steckdose",
+              "es": "Enchufe",
+              "fr": "Prise",
+              "it": "Presa",
+              "no": "Stikkontakt",
+              "sv": "Uttag",
+              "pl": "Gniazdo",
+              "ru": "Розетка",
+              "ko": "소켓"
+            }
+          },
+          {
+            "id": "light",
+            "label": {
+              "en": "Light",
+              "nl": "Licht",
+              "da": "Lys",
+              "de": "Licht",
+              "es": "Luz",
+              "fr": "Lumière",
+              "it": "Luce",
+              "no": "Lys",
+              "sv": "Ljus",
+              "pl": "Światło",
+              "ru": "Свет",
+              "ko": "조명"
+            }
+          },
+          {
+            "id": "heater",
+            "label": {
+              "en": "Heater",
+              "nl": "Verwarming",
+              "da": "Varmelegeme",
+              "de": "Heizung",
+              "es": "Calefactor",
+              "fr": "Chauffage",
+              "it": "Riscaldatore",
+              "no": "Varmeapparat",
+              "sv": "Värmare",
+              "pl": "Grzejnik",
+              "ru": "Обогреватель",
+              "ko": "히터"
+            }
+          },
+          {
+            "id": "thermostat",
+            "label": {
+              "en": "Thermostat",
+              "nl": "Thermostaat",
+              "da": "Termostat",
+              "de": "Thermostat",
+              "es": "Termostato",
+              "fr": "Thermostat",
+              "it": "Termostato",
+              "no": "Termostat",
+              "sv": "Termostat",
+              "pl": "Termostat",
+              "ru": "Термостат",
+              "ko": "온도 조절기"
+            }
+          },
+          {
+            "id": "lock",
+            "label": {
+              "en": "Lock",
+              "nl": "Slot",
+              "da": "Lås",
+              "de": "Schloss",
+              "es": "Cerradura",
+              "fr": "Verrou",
+              "it": "Serratura",
+              "no": "Lås",
+              "sv": "Lås",
+              "pl": "Zamek",
+              "ru": "Замок",
+              "ko": "잠금"
+            }
+          },
+          {
+            "id": "button",
+            "label": {
+              "en": "Button",
+              "nl": "Knop",
+              "da": "Knap",
+              "de": "Taste",
+              "es": "Botón",
+              "fr": "Bouton",
+              "it": "Pulsante",
+              "no": "Knapp",
+              "sv": "Knapp",
+              "pl": "Przycisk",
+              "ru": "Кнопка",
+              "ko": "버튼"
+            }
+          },
+          {
+            "id": "windowcoverings",
+            "label": {
+              "en": "Window Coverings",
+              "nl": "Raambekleding",
+              "da": "Vinduesbeklædning",
+              "de": "Fensterabdeckungen",
+              "es": "Cortinas",
+              "fr": "Couvre-fenêtres",
+              "it": "Tende",
+              "no": "Vindusdekker",
+              "sv": "Fönsterbeklädnader",
+              "pl": "Osłony okienne",
+              "ru": "Шторы",
+              "ko": "창문 커버링"
+            }
+          }
         ]
-    }
+      }
+    ]
+  }
 ]

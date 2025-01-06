@@ -1,38 +1,112 @@
 {
-	"title": {
-		"en": "Set Power On Behavior"
-	},
-	"titleFormatted": {
-			"en": "Set Power On Behavior to [[val]]"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=power_on_behavior"
-		},
-		{
-			"type": "dropdown",
-			"name": "val",
-			"values": [
-				{
-					"id": "off",
-					"title": { "en": "Off" }
-				},
-				{
-					"id": "on",
-					"title": { "en": "On" }
-				},
-				{
-					"id": "toggle",
-					"title": { "en": "Toggle" }
-				},
-				{
-					"id": "previous",
-					"title": { "en": "Previous" }
-				}
-			]
-		}
-	]
+  "title": {
+    "en": "Set Power On Behavior",
+    "nl": "Zet Stroom Aanzet Gedrag",
+    "da": "Indstil Tændingsadfærd",
+    "de": "Einschaltverhalten festlegen",
+    "es": "Configurar Comportamiento de Encendido",
+    "fr": "Définir le comportement de mise sous tension",
+    "it": "Imposta Comportamento di Accensione",
+    "no": "Sett Strøm På Atferd",
+    "sv": "Ställ in Uppstartsbeteende",
+    "pl": "Ustaw Zachowanie Po Włączeniu",
+    "ru": "Установить Поведение Включения",
+    "ko": "전원 켜짐 동작 설정"
+  },
+  "titleFormatted": {
+    "en": "Set Power On Behavior to [[val]]",
+    "nl": "Zet Stroom Aanzet Gedrag op [[val]]",
+    "da": "Indstil Tændingsadfærd til [[val]]",
+    "de": "Einschaltverhalten auf [[val]] setzen",
+    "es": "Configurar Comportamiento de Encendido a [[val]]",
+    "fr": "Définir le comportement de mise sous tension sur [[val]]",
+    "it": "Imposta Comportamento di Accensione su [[val]]",
+    "no": "Sett Strøm På Atferd til [[val]]",
+    "sv": "Ställ in Uppstartsbeteende till [[val]]",
+    "pl": "Ustaw Zachowanie Po Włączeniu na [[val]]",
+    "ru": "Установить Поведение Включения на [[val]]",
+    "ko": "[[val]]의 전원 켜짐 동작 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=power_on_behavior"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "nl": "Uit",
+            "da": "Slukket",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "Éteint",
+            "it": "Spento",
+            "no": "Av",
+            "sv": "Av",
+            "pl": "Wyłączony",
+            "ru": "Выкл",
+            "ko": "꺼짐"
+          }
+        },
+        {
+          "id": "on",
+          "title": {
+            "en": "On",
+            "nl": "Aan",
+            "da": "Tændt",
+            "de": "Ein",
+            "es": "Encendido",
+            "fr": "Allumé",
+            "it": "Acceso",
+            "no": "På",
+            "sv": "På",
+            "pl": "Włączony",
+            "ru": "Вкл",
+            "ko": "켜짐"
+          }
+        },
+        {
+          "id": "toggle",
+          "title": {
+            "en": "Toggle",
+            "nl": "Wissel",
+            "da": "Skift",
+            "de": "Umschalten",
+            "es": "Alternar",
+            "fr": "Basculer",
+            "it": "Alterna",
+            "no": "Bytt",
+            "sv": "Växla",
+            "pl": "Przełącz",
+            "ru": "Переключить",
+            "ko": "전환"
+          }
+        },
+        {
+          "id": "previous",
+          "title": {
+            "en": "Previous",
+            "nl": "Vorige",
+            "da": "Tidligere",
+            "de": "Vorherige",
+            "es": "Anterior",
+            "fr": "Précédent",
+            "it": "Precedente",
+            "no": "Forrige",
+            "sv": "Föregående",
+            "pl": "Poprzedni",
+            "ru": "Предыдущий",
+            "ko": "이전"
+          }
+        }
+      ]
+    }
+  ]
 }

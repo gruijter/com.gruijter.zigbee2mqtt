@@ -1,17 +1,156 @@
 {
   "type": "enum",
   "title": {
-    "en": "Effect"
+    "en": "Effect",
+    "nl": "Effect",
+    "da": "Effekt",
+    "de": "Effekt",
+    "es": "Efecto",
+    "fr": "Effet",
+    "it": "Effetto",
+    "no": "Effekt",
+    "sv": "Effekt",
+    "pl": "Efekt",
+    "ru": "Эффект",
+    "ko": "효과"
   },
   "values": [
-    { "id": "blink", "title": { "en": "Blink" }},
-    { "id": "breathe", "title": { "en": "Breathe" }},
-    { "id": "okay", "title": { "en": "Okay" }},
-    { "id": "channel_change", "title": { "en": "Channel change" }},
-    { "id": "finish_effect", "title": { "en": "Finish effect" }},
-    { "id": "stop_effect", "title": { "en": "Stop effect" }},
-    { "id": "colorloop", "title": { "en": "Colorloop" }},
-    { "id": "stop_colorloop", "title": { "en": "Stop colorloop" }}
+    {
+      "id": "blink",
+      "title": {
+        "en": "Blink",
+        "nl": "Knipperen",
+        "da": "Blink",
+        "de": "Blinken",
+        "es": "Parpadear",
+        "fr": "Clignoter",
+        "it": "Lampeggiare",
+        "no": "Blink",
+        "sv": "Blinka",
+        "pl": "Migać",
+        "ru": "Мигание",
+        "ko": "깜박임"
+      }
+    },
+    {
+      "id": "breathe",
+      "title": {
+        "en": "Breathe",
+        "nl": "Ademhalen",
+        "da": "Ånde",
+        "de": "Atmen",
+        "es": "Respirar",
+        "fr": "Respirer",
+        "it": "Respirare",
+        "no": "Puste",
+        "sv": "Andas",
+        "pl": "Oddychać",
+        "ru": "Дыхание",
+        "ko": "숨쉬기"
+      }
+    },
+    {
+      "id": "okay",
+      "title": {
+        "en": "Okay",
+        "nl": "Okee",
+        "da": "Okay",
+        "de": "Okay",
+        "es": "Vale",
+        "fr": "D'accord",
+        "it": "Va bene",
+        "no": "Okay",
+        "sv": "Okej",
+        "pl": "Ok",
+        "ru": "Окей",
+        "ko": "괜찮아요"
+      }
+    },
+    {
+      "id": "channel_change",
+      "title": {
+        "en": "Channel change",
+        "nl": "Kanaal wijzigen",
+        "da": "Kanalændring",
+        "de": "Kanalwechsel",
+        "es": "Cambio de canal",
+        "fr": "Changement de canal",
+        "it": "Cambio canale",
+        "no": "Kanalskifte",
+        "sv": "Kanalförändring",
+        "pl": "Zmiana kanału",
+        "ru": "Смена канала",
+        "ko": "채널 변경"
+      }
+    },
+    {
+      "id": "finish_effect",
+      "title": {
+        "en": "Finish effect",
+        "nl": "Effect beëindigen",
+        "da": "Afslut effekt",
+        "de": "Effekt beenden",
+        "es": "Terminar efecto",
+        "fr": "Terminer l'effet",
+        "it": "Finisci effetto",
+        "no": "Fullfør effekt",
+        "sv": "Avsluta effekt",
+        "pl": "Zakończ efekt",
+        "ru": "Завершить эффект",
+        "ko": "효과 완료"
+      }
+    },
+    {
+      "id": "stop_effect",
+      "title": {
+        "en": "Stop effect",
+        "nl": "Effect stoppen",
+        "da": "Stop effekt",
+        "de": "Effekt stoppen",
+        "es": "Detener efecto",
+        "fr": "Arrêter l'effet",
+        "it": "Ferma effetto",
+        "no": "Stopp effekt",
+        "sv": "Stoppa effekt",
+        "pl": "Zatrzymaj efekt",
+        "ru": "Остановить эффект",
+        "ko": "효과 중지"
+      }
+    },
+    {
+      "id": "colorloop",
+      "title": {
+        "en": "Colorloop",
+        "nl": "Kleurenlus",
+        "da": "Farveloop",
+        "de": "Farbschleife",
+        "es": "Bucle de color",
+        "fr": "Boucle de couleur",
+        "it": "Ciclo colori",
+        "no": "Fargesløyfe",
+        "sv": "Färgslinga",
+        "pl": "Pętla kolorów",
+        "ru": "Цветовая петля",
+        "ko": "컬러 루프"
+      }
+    },
+    {
+      "id": "stop_colorloop",
+      "title": {
+        "en": "Stop colorloop",
+        "nl": "Kleurenlus stoppen",
+        "da": "Stop farveloop",
+        "de": "Farbschleife stoppen",
+        "es": "Detener bucle de color",
+        "fr": "Arrêter la boucle de couleur",
+        "it": "Ferma ciclo colori",
+        "no": "Stopp fargesløyfe",
+        "sv": "Stoppa färgslinga",
+        "pl": "Zatrzymaj pętlę kolorów",
+        "ru": "Остановить цветовую петлю",
+        "ko": "컬러 루프 중지"
+      }
+    }
   ],
   "uiComponent": "picker",
   "getable": true,

@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The motion state changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=motion_state"
-		}
-	],
-	"tokens": [
-		{
-			"name": "motion_state",
-			"type": "string",
-			"title": { 
-				"en": "State"
-			},
-			"example": "none"
-		}
-	]
+  "title": {
+    "en": "The motion state changed",
+    "nl": "De bewegingsstatus is veranderd",
+    "da": "Bevægelsestaten ændrede sig",
+    "de": "Der Bewegungszustand hat sich geändert",
+    "es": "El estado de movimiento cambió",
+    "fr": "L'état de mouvement a changé",
+    "it": "Lo stato del movimento è cambiato",
+    "no": "Bevegelsestilstanden endret seg",
+    "sv": "Rörelsestaten har ändrats",
+    "pl": "Stan ruchu uległ zmianie",
+    "ru": "Состояние движения изменилось",
+    "ko": "움직임 상태가 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=motion_state"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "motion_state",
+      "type": "string",
+      "title": {
+        "en": "State",
+        "nl": "Toestand",
+        "da": "Tilstand",
+        "de": "Zustand",
+        "es": "Estado",
+        "fr": "État",
+        "it": "Stato",
+        "no": "Tilstand",
+        "sv": "Tillstånd",
+        "pl": "Stan",
+        "ru": "Состояние",
+        "ko": "상태"
+      },
+      "example": "none"
+    }
+  ]
 }

@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The dim level L1 changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=dim.l1"
-		}
-	],
-	"tokens": [
-		{
-			"name": "dim.l1",
-			"type": "number",
-			"title": { 
-				"en": "Dim level"
-			},
-			"example": 53
-		}
-	]
+  "title": {
+    "en": "The dim level L1 changed",
+    "nl": "Het dimniveau L1 is gewijzigd",
+    "da": "Lysstyrkeniveau L1 er ændret",
+    "de": "Das Dimmniveau L1 hat sich geändert",
+    "es": "El nivel de atenuación L1 ha cambiado",
+    "fr": "Le niveau de luminosité L1 a changé",
+    "it": "Il livello di oscuramento L1 è cambiato",
+    "no": "Dimmenivå L1 er endret",
+    "sv": "Dämningsnivån L1 har ändrats",
+    "pl": "Poziom ściemniania L1 został zmieniony",
+    "ru": "Уровень затемнения L1 изменен",
+    "ko": "디밍 레벨 L1이 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=dim.l1"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "dim.l1",
+      "type": "number",
+      "title": {
+        "en": "Dim level",
+        "nl": "Dimniveau",
+        "da": "Lysstyrkeniveau",
+        "de": "Dimmniveau",
+        "es": "Nivel de atenuación",
+        "fr": "Niveau de luminosité",
+        "it": "Livello di oscuramento",
+        "no": "Dimmenivå",
+        "sv": "Dämningsnivå",
+        "pl": "Poziom ściemniania",
+        "ru": "Уровень затемнения",
+        "ko": "디밍 레벨"
+      },
+      "example": 53
+    }
+  ]
 }

@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The strength changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=custom_number.strength"
-		}
-	],
-	"tokens": [
-		{
-			"name": "custom_number.strength",
-			"type": "number",
-			"title": { 
-				"en": "Strength"
-			},
-			"example": 48
-		}
-	]
+  "title": {
+    "en": "The strength changed",
+    "nl": "De sterkte veranderde",
+    "da": "Styrken ændrede sig",
+    "de": "Die Stärke hat sich verändert",
+    "es": "La fuerza cambió",
+    "fr": "La force a changé",
+    "it": "La forza è cambiata",
+    "no": "Styrken endret seg",
+    "sv": "Styrkan ändrades",
+    "pl": "Siła się zmieniła",
+    "ru": "Сила изменилась",
+    "ko": "강도가 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=custom_number.strength"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "custom_number.strength",
+      "type": "number",
+      "title": {
+        "en": "Strength",
+        "nl": "Sterkte",
+        "da": "Styrke",
+        "de": "Stärke",
+        "es": "Fuerza",
+        "fr": "Force",
+        "it": "Forza",
+        "no": "Styrke",
+        "sv": "Styrka",
+        "pl": "Siła",
+        "ru": "Сила",
+        "ko": "강도"
+      },
+      "example": 48
+    }
+  ]
 }

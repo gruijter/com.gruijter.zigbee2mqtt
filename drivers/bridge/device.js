@@ -1,6 +1,6 @@
 /* eslint-disable no-await-in-loop */
 /*
-Copyright 2023 - 2024, Robin de Gruijter (gruijter@hotmail.com)
+Copyright 2023 - 2025, Robin de Gruijter (gruijter@hotmail.com)
 
 This file is part of com.gruijter.zigbee2mqtt.
 
@@ -30,12 +30,13 @@ module.exports = class Zigbee2MQTTBridge extends Device {
   async onInit() {
     try {
       this.settings = await this.getSettings();
-      this.bridgeTopic = `${this.settings.topic}/bridge`; // default zigbee2mqtt/bridge
+      this.baseTopic = `${this.settings.topic}`; // default zigbee2mqtt
+      this.devices = await this.getStoreValue('devices') || [];
+      this.deviceAvailability = {};
       this.msgCounter = 0;
       this.lastMPMUpdate = Date.now();
       await this.destroyListeners();
       await this.migrate();
-
       await this.connectBridge();
       await this.registerListeners();
       if (this.settings.force_info_log_level) await this.setLogLevel('info', 'onInit');
@@ -148,12 +149,12 @@ module.exports = class Zigbee2MQTTBridge extends Device {
 
       const handleMessage = async (topic, message) => {
         try {
+          // console.log(`message received from topic: ${topic}`);
           if (message.toString() === '') return;
           const info = JSON.parse(message);
-          // console.log(`message received from topic: ${topic}`, info);
 
           // get bridge info and join permit status
-          if (topic.includes(`${this.bridgeTopic}/info`)) {
+          if (topic.includes(`${this.baseTopic}/bridge/info`)) {
             // console.dir(info, { depth: null });
             // console.dir(info.config.devices, { depth: null });
 
@@ -193,8 +194,8 @@ module.exports = class Zigbee2MQTTBridge extends Device {
             }
           }
 
-          // check for online/offline
-          if (topic.includes(`${this.bridgeTopic}/state`)) {
+          // check for bridge online/offline
+          if (topic.includes(`${this.baseTopic}/bridge/state`)) {
             if (message === 'online' || info.state === 'online') {
               this.log('Zigbee2MQTT bridge is connected');
               // INFORM ALL DEVICES UNAVAILABLE
@@ -212,10 +213,10 @@ module.exports = class Zigbee2MQTTBridge extends Device {
           }
 
           // get logging msg/minute
-          if (topic.includes(`${this.bridgeTopic}/logging`)) {
+          if (topic.includes(`${this.baseTopic}/bridge/logging`)) {
             if (info.level === 'info'
               && info.message.includes('MQTT publish: topic')
-              && !info.message.includes(`${this.bridgeTopic}/response`)) {
+              && !info.message.includes(`${this.baseTopic}/bridge/response`)) {
               // console.log('logging was updated', info);
               this.msgCounter += 1;
               const minutesPassed = (Date.now() - this.lastMPMUpdate) / (60 * 1000);
@@ -228,17 +229,32 @@ module.exports = class Zigbee2MQTTBridge extends Device {
           }
 
           // get device list
-          if (topic.includes(`${this.bridgeTopic}/devices`)) {
+          if (topic.includes(`${this.baseTopic}/bridge/devices`)) {
             // console.log('device list was updated', info);
             const devices = info.filter((device) => device.type === 'EndDevice'
               || device.type === 'Router' || device.type === 'GreenPower');
+            // add last known availability state
+            devices.forEach((dev) => {
+              dev.availability = this.devices.find((oldDev) => oldDev.ieee_address === dev.ieee_address)?.availability;
+            });
             this.devices = devices;
             // console.dir(this.devices, { depth: null });
             this.homey.emit('devicelistupdate', true);
+            this.setStoreValue('devices', devices).catch((error) => this.error(error));
+          }
+
+          // check for devices online/offline
+          if (topic.includes('availability')) {
+            const deviceName = topic.split('/').slice(-2, -1)[0];
+            const idx = this.devices.findIndex((dev) => dev.friendly_name === deviceName);
+            if (idx !== -1) this.devices[idx].availability = info && info.state;
+            // console.log(this.devices[idx]);
+            const unavailables = this.devices.filter((dev) => dev.availability === 'offline');
+            this.setCapability('meter_offline_devices', unavailables.length);
           }
 
           // get group list
-          if (topic.includes(`${this.bridgeTopic}/groups`)) {
+          if (topic.includes(`${this.baseTopic}/bridge/groups`)) {
             // console.log('group list was updated', info);
             this.groups = info;
             // console.dir(this.groups, { depth: null });
@@ -251,16 +267,18 @@ module.exports = class Zigbee2MQTTBridge extends Device {
 
       const subscribeTopics = async () => {
         try {
-          this.log(`Subscribing to ${this.bridgeTopic}/info`);
-          await this.client.subscribe([`${this.bridgeTopic}/info`]); // bridge info updates
-          this.log(`Subscribing to ${this.bridgeTopic}/logging`);
-          await this.client.subscribe([`${this.bridgeTopic}/logging`]); // bridge logging updates
-          this.log(`Subscribing to ${this.bridgeTopic}/groups`);
-          await this.client.subscribe([`${this.bridgeTopic}/groups`]); // bridge all group updates
-          this.log(`Subscribing to ${this.bridgeTopic}/state`);
-          await this.client.subscribe([`${this.bridgeTopic}/state`]); // bridge online/offline updates
-          this.log(`Subscribing to ${this.bridgeTopic}/devices`);
-          await this.client.subscribe([`${this.bridgeTopic}/devices`]); // bridge all device updates
+          this.log(`Subscribing to ${this.baseTopic}/bridge/info`);
+          await this.client.subscribe([`${this.baseTopic}/bridge/info`]); // bridge info updates
+          this.log(`Subscribing to ${this.baseTopic}/bridge/logging`);
+          await this.client.subscribe([`${this.baseTopic}/bridge/logging`]); // bridge logging updates
+          this.log(`Subscribing to ${this.baseTopic}/bridge/groups`);
+          await this.client.subscribe([`${this.baseTopic}/bridge/groups`]); // bridge all group updates
+          this.log(`Subscribing to ${this.baseTopic}/bridge/state`);
+          await this.client.subscribe([`${this.baseTopic}/bridge/state`]); // bridge online/offline updates
+          this.log(`Subscribing to ${this.baseTopic}/bridge/devices`);
+          await this.client.subscribe([`${this.baseTopic}/bridge/devices`]); // bridge all device updates
+          this.log(`Subscribing to ${this.baseTopic}/+/availability`);
+          await this.client.subscribe([`${this.baseTopic}/+/availability`]); // bridge all devices availability update
           this.log('mqtt bridge subscriptions ok');
         } catch (error) {
           this.error(error);
@@ -304,7 +322,7 @@ module.exports = class Zigbee2MQTTBridge extends Device {
   async joinOnOff(onoff, source) {
     if (!this.client || !this.client.connected) return Promise.reject(Error('Bridge is not connected'));
     const payload = { value: onoff, time: 240 };
-    await this.client.publish(`${this.bridgeTopic}/request/permit_join`, JSON.stringify(payload));
+    await this.client.publish(`${this.baseTopic}/bridge/request/permit_join`, JSON.stringify(payload));
     this.log(`Permit_join ${onoff} sent by ${source}`);
     return Promise.resolve(true);
   }
@@ -312,14 +330,14 @@ module.exports = class Zigbee2MQTTBridge extends Device {
   async setLogLevel(level, source) {
     if (!this.client || !this.client.connected) return Promise.reject(Error('Bridge is not connected'));
     const payload = { options: { advanced: { log_level: level } } };
-    await this.client.publish(`${this.bridgeTopic}/request/options`, JSON.stringify(payload));
+    await this.client.publish(`${this.baseTopic}/bridge/request/options`, JSON.stringify(payload));
     this.log(`Log level set to ${level} by ${source}`);
     return Promise.resolve(true);
   }
 
   async restart(ignore, source) {
     if (!this.client || !this.client.connected) return Promise.reject(Error('Bridge is not connected'));
-    await this.client.publish(`${this.bridgeTopic}/request/restart`, '');
+    await this.client.publish(`${this.baseTopic}/bridge/request/restart`, '');
     this.log(`Restart Z2M command sent by ${source}`);
     return Promise.resolve(true);
   }

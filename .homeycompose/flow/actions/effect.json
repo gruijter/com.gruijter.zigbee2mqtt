@@ -1,30 +1,180 @@
 {
-	"title": {
-		"en": "Set effect"
-	},
-	"titleFormatted": {
-			"en": "Set Color Power On Behavior to [[val]]"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=color_power_on_behavior"
-		},
-		{
-			"type": "dropdown",
-			"name": "val",
-			"values": [
-				{ "id": "blink", "title": { "en": "Blink" }},
-				{ "id": "breathe", "title": { "en": "Breathe" }},
-				{ "id": "okay", "title": { "en": "Okay" }},
-				{ "id": "channel_change", "title": { "en": "Channel change" }},
-				{ "id": "finish_effect", "title": { "en": "Finish effect" }},
-				{ "id": "stop_effect", "title": { "en": "Stop effect" }},
-				{ "id": "colorloop", "title": { "en": "Colorloop" }},
-				{ "id": "stop_colorloop", "title": { "en": "Stop colorloop" }}
-			]
-		}
-	]
+  "title": {
+    "en": "Set effect",
+    "nl": "Effect instellen",
+    "da": "Indstil effekt",
+    "de": "Effekt festlegen",
+    "es": "Establecer efecto",
+    "fr": "Définir l'effet",
+    "it": "Imposta effetto",
+    "no": "Angi effekt",
+    "sv": "Ställ in effekt",
+    "pl": "Ustaw efekt",
+    "ru": "Установить эффект",
+    "ko": "효과 설정"
+  },
+  "titleFormatted": {
+    "en": "Set Color Power On Behavior to [[val]]",
+    "nl": "Stel kleuraan inschakelgedrag in op [[val]]",
+    "da": "Indstil farve tændingsadfærd til [[val]]",
+    "de": "Farbeinschaltverhalten auf [[val]] einstellen",
+    "es": "Establecer comportamiento de encendido de color en [[val]]",
+    "fr": "Définir le comportement de mise sous tension sur [[val]]",
+    "it": "Imposta il comportamento all'accensione del colore su [[val]]",
+    "no": "Sett farge slåpåatferd til [[val]]",
+    "sv": "Ställ in färgströmsbeteende till [[val]]",
+    "pl": "Ustaw zachowanie włączenia koloru na [[val]]",
+    "ru": "Установить поведение включения цвета на [[val]]",
+    "ko": "전원 켤 때 색상 설정을 [[val]]으로 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=color_power_on_behavior"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "blink",
+          "title": {
+            "en": "Blink",
+            "nl": "Knipperen",
+            "da": "Blink",
+            "de": "Blinken",
+            "es": "Parpadear",
+            "fr": "Clignoter",
+            "it": "Lampeggiare",
+            "no": "Blinke",
+            "sv": "Blinka",
+            "pl": "Miganie",
+            "ru": "Мигание",
+            "ko": "깜박임"
+          }
+        },
+        {
+          "id": "breathe",
+          "title": {
+            "en": "Breathe",
+            "nl": "Ademhalen",
+            "da": "Ånde",
+            "de": "Atmen",
+            "es": "Respirar",
+            "fr": "Respirer",
+            "it": "Respirare",
+            "no": "Puste",
+            "sv": "Andas",
+            "pl": "Oddychać",
+            "ru": "Дышать",
+            "ko": "호흡하다"
+          }
+        },
+        {
+          "id": "okay",
+          "title": {
+            "en": "Okay",
+            "nl": "Oké",
+            "da": "Okay",
+            "de": "Okay",
+            "es": "Vale",
+            "fr": "D'accord",
+            "it": "Va bene",
+            "no": "Okei",
+            "sv": "Okej",
+            "pl": "Okej",
+            "ru": "Окей",
+            "ko": "확인"
+          }
+        },
+        {
+          "id": "channel_change",
+          "title": {
+            "en": "Channel change",
+            "nl": "Kanaal wijzigen",
+            "da": "Kanalændring",
+            "de": "Kanalwechsel",
+            "es": "Cambio de canal",
+            "fr": "Changement de chaîne",
+            "it": "Cambio canale",
+            "no": "Kanalbytte",
+            "sv": "Kanaländring",
+            "pl": "Zmiana kanału",
+            "ru": "Смена канала",
+            "ko": "채널 변경"
+          }
+        },
+        {
+          "id": "finish_effect",
+          "title": {
+            "en": "Finish effect",
+            "nl": "Effect beëindigen",
+            "da": "Afslut effekt",
+            "de": "Effekt beenden",
+            "es": "Terminar efecto",
+            "fr": "Finir effet",
+            "it": "Termina effetto",
+            "no": "Fullfør effekt",
+            "sv": "Avsluta effekt",
+            "pl": "Zakończ efekt",
+            "ru": "Завершить эффект",
+            "ko": "효과 종료"
+          }
+        },
+        {
+          "id": "stop_effect",
+          "title": {
+            "en": "Stop effect",
+            "nl": "Effect stoppen",
+            "da": "Stop effekt",
+            "de": "Effekt stoppen",
+            "es": "Detener efecto",
+            "fr": "Arrêter l'effet",
+            "it": "Ferma effetto",
+            "no": "Stopp effekt",
+            "sv": "Stoppa effekt",
+            "pl": "Zatrzymaj efekt",
+            "ru": "Остановить эффект",
+            "ko": "효과 중지"
+          }
+        },
+        {
+          "id": "colorloop",
+          "title": {
+            "en": "Colorloop",
+            "nl": "Kleurloop",
+            "da": "Farveloop",
+            "de": "Farbwechsel",
+            "es": "Bucle de color",
+            "fr": "Boucle de couleur",
+            "it": "Loop di colori",
+            "no": "Fargeløkke",
+            "sv": "Färgslinga",
+            "pl": "Pętla kolorów",
+            "ru": "Цветовой цикл",
+            "ko": "색상 루프"
+          }
+        },
+        {
+          "id": "stop_colorloop",
+          "title": {
+            "en": "Stop colorloop",
+            "nl": "Kleurloop stoppen",
+            "da": "Stop farveloop",
+            "de": "Farbkreis anhalten",
+            "es": "Detener bucle de color",
+            "fr": "Arrêter la boucle de couleur",
+            "it": "Ferma loop di colori",
+            "no": "Stopp fargeløkke",
+            "sv": "Stoppa färgslinga",
+            "pl": "Zatrzymaj pętlę kolorów",
+            "ru": "Остановить цветовой цикл",
+            "ko": "색상 루프 중지"
+          }
+        }
+      ]
+    }
+  ]
 }

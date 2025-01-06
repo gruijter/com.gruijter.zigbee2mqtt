@@ -1,12 +1,45 @@
 {
   "title": {
-    "en": "Set a custom payload"
+    "en": "Set a custom payload",
+    "nl": "Stel een aangepaste payload in",
+    "da": "Indstil en tilpasset payload",
+    "de": "Setzen Sie eine benutzerdefinierte Nutzlast",
+    "es": "Establece una carga útil personalizada",
+    "fr": "Définir une charge utile personnalisée",
+    "it": "Imposta un payload personalizzato",
+    "no": "Angi en tilpasset nyttelast",
+    "sv": "Ställ in en anpassad payload",
+    "pl": "Ustaw niestandardowy ładunek",
+    "ru": "Установить пользовательскую нагрузку",
+    "ko": "사용자 지정 페이로드 설정"
   },
   "titleFormatted": {
-    "en": "Set payload to [[val]]"
+    "en": "Set payload to [[val]]",
+    "nl": "Stel payload in op [[val]]",
+    "da": "Indstil payload til [[val]]",
+    "de": "Stellen Sie die Nutzlast auf [[val]] ein",
+    "es": "Establecer la carga útil a [[val]]",
+    "fr": "Définir la charge utile sur [[val]]",
+    "it": "Imposta il payload su [[val]]",
+    "no": "Angi nyttelast til [[val]]",
+    "sv": "Ställ in nyttolast till [[val]]",
+    "pl": "Ustaw ładunek na [[val]]",
+    "ru": "Установить нагрузку на [[val]]",
+    "ko": "[[val]]로 페이로드 설정"
   },
   "hint": {
-    "en": "Place text in quotation marks:\n{\"child_lock\": \"LOCK\"}.\nUse numbers without quotation marks:\n{ \"current_heating_setpoint\": 21 }"
+    "en": "Place text in quotation marks:\n{\"child_lock\": \"LOCK\"}.\nUse numbers without quotation marks:\n{ \"current_heating_setpoint\": 21 }",
+    "nl": "Zet tekst tussen aanhalingstekens:\n{\"child_lock\": \"LOCK\"}.\nGebruik getallen zonder aanhalingstekens:\n{ \"current_heating_setpoint\": 21 }",
+    "da": "Sæt tekst i anførselstegn:\n{\"child_lock\": \"LOCK\"}.\nBrug tal uden anførselstegn:\n{ \"current_heating_setpoint\": 21 }",
+    "de": "Setzen Sie Text in Anführungszeichen:\n{\"child_lock\": \"LOCK\"}.\nVerwenden Sie Zahlen ohne Anführungszeichen:\n{ \"current_heating_setpoint\": 21 }",
+    "es": "Coloque el texto entre comillas:\n{\"child_lock\": \"LOCK\"}.\nUtilice números sin comillas:\n{ \"current_heating_setpoint\": 21 }",
+    "fr": "Placez le texte entre guillemets:\n{\"child_lock\": \"LOCK\"}.\nUtilisez des chiffres sans guillemets:\n{ \"current_heating_setpoint\": 21 }",
+    "it": "Inserisci il testo tra virgolette:\n{\"child_lock\": \"LOCK\"}.\nUsa i numeri senza virgolette:\n{ \"current_heating_setpoint\": 21 }",
+    "no": "Sett tekst i anførselstegn:\n{\"child_lock\": \"LOCK\"}.\nBruk tall uten anførselstegn:\n{ \"current_heating_setpoint\": 21 }",
+    "sv": "Placera texten i citattecken:\n{\"child_lock\": \"LOCK\"}.\nAnvänd siffror utan citattecken:\n{ \"current_heating_setpoint\": 21 }",
+    "pl": "Umieść tekst w cudzysłowie:\n{\"child_lock\": \"LOCK\"}.\nUżywaj liczb bez cudzysłowu:\n{ \"current_heating_setpoint\": 21 }",
+    "ru": "Поместите текст в кавычки:\n{\"child_lock\": \"LOCK\"}.\nИспользуйте числа без кавычек:\n{ \"current_heating_setpoint\": 21 }",
+    "ko": "텍스트를 큰따옴표로 묶으세요:\n{\"child_lock\": \"LOCK\"}.\n숫자는 따옴표 없이 사용하세요:\n{ \"current_heating_setpoint\": 21 }"
   },
   "args": [
     {
@@ -18,10 +51,32 @@
       "name": "val",
       "type": "text",
       "title": {
-        "en": "Payload"
+        "en": "Payload",
+        "nl": "Belasting",
+        "da": "Payload",
+        "de": "Nutzlast",
+        "es": "Carga útil",
+        "fr": "Charge utile",
+        "it": "Carico utile",
+        "no": "Nyttelast",
+        "sv": "Nyttolast",
+        "pl": "Ładunek",
+        "ru": "Нагрузка",
+        "ko": "페이로드"
       },
       "placeholder": {
-        "en": "e.g. { \"current_heating_setpoint\": 21 }"
+        "en": "e.g. { \"current_heating_setpoint\": 21 }",
+        "nl": "bijv. { \"current_heating_setpoint\": 21 }",
+        "da": "f.eks. { \"current_heating_setpoint\": 21 }",
+        "de": "z.B. { \"current_heating_setpoint\": 21 }",
+        "es": "p.ej. { \"current_heating_setpoint\": 21 }",
+        "fr": "p. ex. { \"current_heating_setpoint\": 21 }",
+        "it": "es. { \"current_heating_setpoint\": 21 }",
+        "no": "f.eks. { \"current_heating_setpoint\": 21 }",
+        "sv": "t.ex. { \"current_heating_setpoint\": 21 }",
+        "pl": "np. { \"current_heating_setpoint\": 21 }",
+        "ru": "напр. { \"current_heating_setpoint\": 21 }",
+        "ko": "예: { \"current_heating_setpoint\": 21 }"
       }
     }
   ]

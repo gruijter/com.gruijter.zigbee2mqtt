@@ -1,21 +1,56 @@
 {
-	"title": {
-		"en": "Switch Left On or Off"
-	},
-		"titleFormatted": {
-				"en": "Switch Left [[val]]"
-		},
-		"highlight": true,
-		"args": [
-				{
-						"type": "device",
-						"name": "device",
-						"filter": "driver_id=device|group&capabilities=onoff.left"
-				},
-				{
-						"type": "checkbox",
-						"name": "val",
-						"title": { "en": "On" }
-				}
-		]
+  "title": {
+    "en": "Switch Left On or Off",
+    "nl": "Schakel Links Aan of Uit",
+    "da": "Slå venstre til eller fra",
+    "de": "Links ein- oder ausschalten",
+    "es": "Activar o desactivar izquierda",
+    "fr": "Activer ou désactiver à gauche",
+    "it": "Accendi o spegni a sinistra",
+    "no": "Slå på eller av venstre",
+    "sv": "Slå på eller av vänster",
+    "pl": "Włącz lub wyłącz lewą stronę",
+    "ru": "Включить или выключить левый",
+    "ko": "왼쪽을 켜거나 끄기"
+  },
+  "titleFormatted": {
+    "en": "Switch Left [[val]]",
+    "nl": "Schakel Links [[val]]",
+    "da": "Slå til venstre [[val]]",
+    "de": "Schalter links [[val]]",
+    "es": "Interruptor izquierda [[val]]",
+    "fr": "Interrupteur gauche [[val]]",
+    "it": "Interruttore sinistro [[val]]",
+    "no": "Bryter til venstre [[val]]",
+    "sv": "Vänster brytare [[val]]",
+    "pl": "Przełącznik lewa [[val]]",
+    "ru": "Переключить налево [[val]]",
+    "ko": "왼쪽 스위치 [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.left"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "Tændt",
+        "de": "Ein",
+        "es": "Activado",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączony",
+        "ru": "Вкл",
+        "ko": "켜기"
+      }
+    }
+  ]
 }

@@ -1,15 +1,24 @@
 {
-	"title": {
-		"en": "Center Turned Off"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=onoff.center"
-		}
-	]
+  "title": {
+    "en": "Center Turned Off",
+    "nl": "Midden Uitgeschakeld",
+    "da": "Center Slukket",
+    "de": "Zentrum Ausgeschaltet",
+    "es": "Centro Apagado",
+    "fr": "Centre Éteint",
+    "it": "Centro Spento",
+    "no": "Senter Slått Av",
+    "sv": "Centrum Avstängd",
+    "pl": "Środek Wyłączony",
+    "ru": "Центр Выключен",
+    "ko": "센터 꺼짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.center"
+    }
+  ]
 }
-
-

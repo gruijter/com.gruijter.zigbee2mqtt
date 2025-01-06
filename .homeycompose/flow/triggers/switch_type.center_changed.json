@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The switch type Center changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=switch_type.center"
-		}
-	],
-	"tokens": [
-		{
-			"name": "switch_type.center",
-			"type": "string",
-			"title": { 
-				"en": "Switch type center"
-			},
-			"example": "toggle"
-		}
-	]
+  "title": {
+    "en": "The switch type Center changed",
+    "nl": "Het schakeltype Center is gewijzigd",
+    "da": "Kontaktcentertypen blev ændret",
+    "de": "Der Schalttyp Center wurde geändert",
+    "es": "El tipo de interruptor cambió el centro",
+    "fr": "Le type de commutateur Centre a changé",
+    "it": "Il tipo di interruttore Centro è cambiato",
+    "no": "Brytertypen Senter endret",
+    "sv": "Brytartyp Centrum ändras",
+    "pl": "Zmieniono typ przełącznika Centrum",
+    "ru": "Тип переключателя Центр изменился",
+    "ko": "스위치 유형 센터가 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=switch_type.center"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "switch_type.center",
+      "type": "string",
+      "title": {
+        "en": "Switch type center",
+        "nl": "Schakeltype midden",
+        "da": "Kontaktcentertype",
+        "de": "Schalttyp Mitte",
+        "es": "Tipo de interruptor centro",
+        "fr": "Type de commutateur centre",
+        "it": "Tipo di interruttore centro",
+        "no": "Brytertype senter",
+        "sv": "Brytartypcentrum",
+        "pl": "Typ przełącznika centrum",
+        "ru": "Тип переключателя Центр",
+        "ko": "스위치 유형 센터"
+      },
+      "example": "toggle"
+    }
+  ]
 }

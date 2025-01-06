@@ -1,15 +1,24 @@
 {
-	"title": {
-		"en": "The Offline Alarm turned Off"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=bridge"
-		}
-	]
+  "title": {
+    "en": "The Offline Alarm turned Off",
+    "nl": "Het Offline Alarm is Uitgeschakeld",
+    "da": "Offline Alarmerne slukket",
+    "de": "Der Offline-Alarm ist Ausgeschaltet",
+    "es": "La Alarma Offline se Desactivó",
+    "fr": "L'alarme Hors Ligne est Désactivée",
+    "it": "L'Allarme Offline è Disattivato",
+    "no": "Offline-alarmene slått av",
+    "sv": "Offline-larmet stängdes av",
+    "pl": "Alarm Offline Wyłączony",
+    "ru": "Оффлайн-сигнализация выключена",
+    "ko": "오프라인 알람이 꺼졌습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=bridge"
+    }
+  ]
 }
-
-

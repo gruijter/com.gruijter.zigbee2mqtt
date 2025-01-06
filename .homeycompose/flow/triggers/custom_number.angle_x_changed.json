@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The X-angle changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=custom_number.angle_x"
-		}
-	],
-	"tokens": [
-		{
-			"name": "custom_number.angle_x",
-			"type": "number",
-			"title": { 
-				"en": "angle_x"
-			},
-			"example": 48
-		}
-	]
+  "title": {
+    "en": "The X-angle changed",
+    "nl": "De X-hoek is veranderd",
+    "da": "X-vinklen er ændret",
+    "de": "Der X-Winkel hat sich geändert",
+    "es": "El ángulo X cambió",
+    "fr": "L'angle X a changé",
+    "it": "L'angolo X è cambiato",
+    "no": "X-vinkelen har endret seg",
+    "sv": "X-vinkeln har ändrats",
+    "pl": "Kąt X został zmieniony",
+    "ru": "Угол X изменился",
+    "ko": "X-각도가 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=custom_number.angle_x"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "custom_number.angle_x",
+      "type": "number",
+      "title": {
+        "en": "angle_x",
+        "nl": "hoek_x",
+        "da": "vinkel_x",
+        "de": "winkel_x",
+        "es": "ángulo_x",
+        "fr": "angle_x",
+        "it": "angolo_x",
+        "no": "vinkel_x",
+        "sv": "vinkel_x",
+        "pl": "kąt_x",
+        "ru": "угол_x",
+        "ko": "각도_x"
+      },
+      "example": 48
+    }
+  ]
 }

@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The soil humidity changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=measure_humidity.soil"
-		}
-	],
-	"tokens": [
-		{
-			"name": "measure_humidity.soil",
-			"type": "number",
-			"title": { 
-				"en": "Humidity"
-			},
-			"example": 53
-		}
-	]
+  "title": {
+    "en": "The soil humidity changed",
+    "nl": "De bodemvochtigheid is gewijzigd",
+    "da": "Jordfugtigheden ændrede sig",
+    "de": "Die Bodenfeuchtigkeit hat sich geändert",
+    "es": "La humedad del suelo ha cambiado",
+    "fr": "L'humidité du sol a changé",
+    "it": "L'umidità del suolo è cambiata",
+    "no": "Jordfuktigheten endret seg",
+    "sv": "Jordfuktigheten har förändrats",
+    "pl": "Wilgotność gleby uległa zmianie",
+    "ru": "Влажность почвы изменилась",
+    "ko": "토양 습도가 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=measure_humidity.soil"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_humidity.soil",
+      "type": "number",
+      "title": {
+        "en": "Humidity",
+        "nl": "Vochtigheid",
+        "da": "Fugtighed",
+        "de": "Feuchtigkeit",
+        "es": "Humedad",
+        "fr": "Humidité",
+        "it": "Umidità",
+        "no": "Fuktighet",
+        "sv": "Fuktighet",
+        "pl": "Wilgotność",
+        "ru": "Влажность",
+        "ko": "습도"
+      },
+      "example": 53
+    }
+  ]
 }

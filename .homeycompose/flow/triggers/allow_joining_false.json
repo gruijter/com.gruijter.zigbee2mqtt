@@ -1,15 +1,24 @@
 {
-	"title": {
-		"en": "Joining turned Off"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=bridge"
-		}
-	]
+  "title": {
+    "en": "Joining turned Off",
+    "nl": "Deelnemen uitgeschakeld",
+    "da": "Deltagelse slukket",
+    "de": "Beitritt ausgeschaltet",
+    "es": "Unirse desactivado",
+    "fr": "Participation désactivée",
+    "it": "Adesione disattivata",
+    "no": "Bli med slått av",
+    "sv": "Anslutning avstängd",
+    "pl": "Dołączanie wyłączone",
+    "ru": "Присоединение отключено",
+    "ko": "참여 꺼짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=bridge"
+    }
+  ]
 }
-
-

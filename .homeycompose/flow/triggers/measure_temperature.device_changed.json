@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The device temperature changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=measure_temperature.device"
-		}
-	],
-	"tokens": [
-		{
-			"name": "measure_temperature.device",
-			"type": "number",
-			"title": { 
-				"en": "Temperature"
-			},
-			"example": 53
-		}
-	]
+  "title": {
+    "en": "The device temperature changed",
+    "nl": "De apparaattemperatuur is gewijzigd",
+    "da": "Enhedens temperatur er ændret",
+    "de": "Die Gerätetemperatur hat sich geändert",
+    "es": "La temperatura del dispositivo ha cambiado",
+    "fr": "La température de l'appareil a changé",
+    "it": "La temperatura del dispositivo è cambiata",
+    "no": "Enhetstemperaturen har endret seg",
+    "sv": "Enhetens temperatur har ändrats",
+    "pl": "Temperatura urządzenia się zmieniła",
+    "ru": "Температура устройства изменилась",
+    "ko": "장치 온도가 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=measure_temperature.device"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_temperature.device",
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur",
+        "da": "Temperatur",
+        "de": "Temperatur",
+        "es": "Temperatura",
+        "fr": "Température",
+        "it": "Temperatura",
+        "no": "Temperatur",
+        "sv": "Temperatur",
+        "pl": "Temperatura",
+        "ru": "Температура",
+        "ko": "온도"
+      },
+      "example": 53
+    }
+  ]
 }

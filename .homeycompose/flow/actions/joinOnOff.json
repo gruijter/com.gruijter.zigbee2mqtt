@@ -1,24 +1,70 @@
 {
-	"title": {
-		"en": "Allow Joining On or Off"
-	},
-	"titleFormatted": {
-			"en": "Allow device joining [[val]]"
-	},
-	"hint": {
-		"en": "When On, the Zigbee2MQTT bridge will allow joining for 5 minutes."
-	},
-	"highlight": true,
-	"args": [
-			{
-					"type": "device",
-					"name": "device",
-					"filter": "driver_id=bridge"
-			},
-			{
-					"type": "checkbox",
-					"name": "val",
-					"title": { "en": "On" }
-			}
-	]
+  "title": {
+    "en": "Allow Joining On or Off",
+    "nl": "Sta deelname aan of uit toe",
+    "da": "Tillad tilslutning til eller fra",
+    "de": "Beitritt erlauben An oder Aus",
+    "es": "Permitir unión activada o desactivada",
+    "fr": "Autoriser la jonction activée ou désactivée",
+    "it": "Consenti l'accesso attivo o disattivo",
+    "no": "Tillat påmelding på eller av",
+    "sv": "Tillåt anslutning på eller av",
+    "pl": "Zezwól na dołączanie włączone lub wyłączone",
+    "ru": "Разрешить подключение Вкл или Выкл",
+    "ko": "가입 허용 켬 또는 끔"
+  },
+  "titleFormatted": {
+    "en": "Allow device joining [[val]]",
+    "nl": "Sta apparaat [[val]] deelname toe",
+    "da": "Tillad enhed tilslutning [[val]]",
+    "de": "Gerätebeitritt [[val]] erlauben",
+    "es": "Permitir unión de dispositivo [[val]]",
+    "fr": "Autoriser la jonction de périphérique [[val]]",
+    "it": "Consenti l'accesso del dispositivo [[val]]",
+    "no": "Tillat enheten [[val]] påmelding",
+    "sv": "Tillåt enhetsanslutning [[val]]",
+    "pl": "Zezwól na dołączanie urządzenia [[val]]",
+    "ru": "Разрешить подключение устройства [[val]]",
+    "ko": "장치 가입 허용 [[val]]"
+  },
+  "hint": {
+    "en": "When On, the Zigbee2MQTT bridge will allow joining for 5 minutes.",
+    "nl": "Wanneer Aan, zal de Zigbee2MQTT-brug 5 minuten toetreding toestaan.",
+    "da": "Når den er tændt, vil Zigbee2MQTT-broen tillade tilslutning i 5 minutter.",
+    "de": "Wenn eingeschaltet, erlaubt die Zigbee2MQTT-Brücke das Beitreten für 5 Minuten.",
+    "es": "Cuando está activado, el puente Zigbee2MQTT permitirá unirse durante 5 minutos.",
+    "fr": "Lorsqu'il est activé, le pont Zigbee2MQTT permettra la jonction pendant 5 minutes.",
+    "it": "Quando è attivo, il ponte Zigbee2MQTT consentirà l'accesso per 5 minuti.",
+    "no": "Når den er på, vil Zigbee2MQTT-broen tillate tilkobling i 5 minutter.",
+    "sv": "När det är på, kommer Zigbee2MQTT-bryggan att tillåta anslutning i 5 minuter.",
+    "pl": "Gdy jest włączone, mostek Zigbee2MQTT pozwoli na dołączanie przez 5 minut.",
+    "ru": "Когда включен, мост Zigbee2MQTT разрешит подключение на 5 минут.",
+    "ko": "켜져 있을 때, Zigbee2MQTT 브리지는 5분 동안 가입을 허용합니다."
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=bridge"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "Tændt",
+        "de": "An",
+        "es": "Activado",
+        "fr": "Activé",
+        "it": "Attivo",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączone",
+        "ru": "Вкл",
+        "ko": "켜기"
+      }
+    }
+  ]
 }

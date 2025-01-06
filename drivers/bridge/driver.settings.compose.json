@@ -1,119 +1,296 @@
 [
-	{
-		"type": "group",
-		"label": {
-				"en": "Bridge information"
-		},
-		"children": [
-			{
-				"id": "uid",
-				"type": "label",
-				"label": {
-						"en": "IEEE Address"
-				},
-				"value": ""
-			},
-			{
-				"id": "version",
-				"type": "label",
-				"label": {
-						"en": "Version"
-				},
-				"value": ""
-			},
-			{
-				"id": "zigbee_channel",
-				"type": "label",
-				"label": {
-						"en": "Channel"
-				},
-				"value": ""
-			},
-			{
-				"id": "pan_id",
-				"type": "label",
-				"label": {
-						"en": "PAN ID"
-				},
-				"value": ""
-			}
-		]
-	},
-	{
-		"type": "group",
-		"label": {
-				"en": "MQTT settings"
-		},
-		"children": [
-			{
-				"id": "host",
-				"type": "text",
-				"label": {
-						"en": "Host"
-				},
-				"value": ""
-			},
-			{
-				"id": "port",
-				"type": "number",
-				"label": {
-						"en": "Port"
-				},
-				"value": 1883
-			},
-			{
-				"id": "tls",
-				"type": "checkbox",
-				"label": {
-						"en": "Use TLS"
-				},
-				"value": false
-			},
-			{
-				"id": "username",
-				"type": "text",
-				"label": {
-						"en": "Username"
-				},
-				"value": ""
-			},
-			{
-				"id": "password",
-				"type": "password",
-				"label": {
-						"en": "Password"
-				},
-				"value": ""
-			},
-			{
-				"id": "topic",
-				"type": "text",
-				"label": {
-						"en": "Base topic",
-						"nl": "Base topic"
-				},
-				"hint" : {
-					"en": "Default is zigbee2mqtt"
-				},
-				"value": ""
-			}
-		]
-	},
-	{
-		"type": "group",
-		"label": {
-				"en": "Bridge settings"
-		},
-		"children": [
-			{
-				"id": "force_info_log_level",
-				"type": "checkbox",
-				"label": {
-						"en": "Force Info Logs"
-				},
-				"hint": { "en": "Force the log level to INFO on (re)start. INFO or DEBUG level is required for the Msgs/minute counter." },
-				"value": true
-			}
-		]
-	}
+  {
+    "type": "group",
+    "label": {
+      "en": "Bridge information",
+      "nl": "Bruginformatie",
+      "da": "Bro information",
+      "de": "Brückeninformationen",
+      "es": "Información del puente",
+      "fr": "Informations sur le pont",
+      "it": "Informazioni sul bridge",
+      "no": "Bro informasjon",
+      "sv": "Brygginformation",
+      "pl": "Informacje o mostku",
+      "ru": "Информация о мосте",
+      "ko": "브리지 정보"
+    },
+    "children": [
+      {
+        "id": "uid",
+        "type": "label",
+        "label": {
+          "en": "IEEE Address",
+          "nl": "IEEE-adres",
+          "da": "IEEE-adresse",
+          "de": "IEEE-Adresse",
+          "es": "Dirección IEEE",
+          "fr": "Adresse IEEE",
+          "it": "Indirizzo IEEE",
+          "no": "IEEE-adresse",
+          "sv": "IEEE-adress",
+          "pl": "Adres IEEE",
+          "ru": "IEEE адрес",
+          "ko": "IEEE 주소"
+        },
+        "value": ""
+      },
+      {
+        "id": "version",
+        "type": "label",
+        "label": {
+          "en": "Version",
+          "nl": "Versie",
+          "da": "Version",
+          "de": "Version",
+          "es": "Versión",
+          "fr": "Version",
+          "it": "Versione",
+          "no": "Versjon",
+          "sv": "Version",
+          "pl": "Wersja",
+          "ru": "Версия",
+          "ko": "버전"
+        },
+        "value": ""
+      },
+      {
+        "id": "zigbee_channel",
+        "type": "label",
+        "label": {
+          "en": "Channel",
+          "nl": "Kanaal",
+          "da": "Kanal",
+          "de": "Kanal",
+          "es": "Canal",
+          "fr": "Canal",
+          "it": "Canale",
+          "no": "Kanal",
+          "sv": "Kanal",
+          "pl": "Kanał",
+          "ru": "Канал",
+          "ko": "채널"
+        },
+        "value": ""
+      },
+      {
+        "id": "pan_id",
+        "type": "label",
+        "label": {
+          "en": "PAN ID",
+          "nl": "PAN-ID",
+          "da": "PAN-ID",
+          "de": "PAN-ID",
+          "es": "ID de PAN",
+          "fr": "ID PAN",
+          "it": "ID PAN",
+          "no": "PAN-ID",
+          "sv": "PAN ID",
+          "pl": "Identyfikator PAN",
+          "ru": "PAN ID",
+          "ko": "PAN ID"
+        },
+        "value": ""
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "MQTT settings",
+      "nl": "MQTT-instellingen",
+      "da": "MQTT-indstillinger",
+      "de": "MQTT-Einstellungen",
+      "es": "Configuraciones MQTT",
+      "fr": "Paramètres MQTT",
+      "it": "Impostazioni MQTT",
+      "no": "MQTT-innstillinger",
+      "sv": "MQTT-inställningar",
+      "pl": "Ustawienia MQTT",
+      "ru": "Настройки MQTT",
+      "ko": "MQTT 설정"
+    },
+    "children": [
+      {
+        "id": "host",
+        "type": "text",
+        "label": {
+          "en": "Host",
+          "nl": "Host",
+          "da": "Vært",
+          "de": "Host",
+          "es": "Anfitrión",
+          "fr": "Hôte",
+          "it": "Host",
+          "no": "Vert",
+          "sv": "Värd",
+          "pl": "Host",
+          "ru": "Хост",
+          "ko": "호스트"
+        },
+        "value": ""
+      },
+      {
+        "id": "port",
+        "type": "number",
+        "label": {
+          "en": "Port",
+          "nl": "Poort",
+          "da": "Port",
+          "de": "Port",
+          "es": "Puerto",
+          "fr": "Port",
+          "it": "Porta",
+          "no": "Port",
+          "sv": "Port",
+          "pl": "Port",
+          "ru": "Порт",
+          "ko": "포트"
+        },
+        "value": 1883
+      },
+      {
+        "id": "tls",
+        "type": "checkbox",
+        "label": {
+          "en": "Use TLS",
+          "nl": "Gebruik TLS",
+          "da": "Brug TLS",
+          "de": "TLS verwenden",
+          "es": "Usar TLS",
+          "fr": "Utiliser TLS",
+          "it": "Usa TLS",
+          "no": "Bruk TLS",
+          "sv": "Använd TLS",
+          "pl": "Użyj TLS",
+          "ru": "Использовать TLS",
+          "ko": "TLS 사용"
+        },
+        "value": false
+      },
+      {
+        "id": "username",
+        "type": "text",
+        "label": {
+          "en": "Username",
+          "nl": "Gebruikersnaam",
+          "da": "Brugernavn",
+          "de": "Benutzername",
+          "es": "Nombre de usuario",
+          "fr": "Nom d'utilisateur",
+          "it": "Nome utente",
+          "no": "Brukernavn",
+          "sv": "Användarnamn",
+          "pl": "Nazwa użytkownika",
+          "ru": "Имя пользователя",
+          "ko": "사용자 이름"
+        },
+        "value": ""
+      },
+      {
+        "id": "password",
+        "type": "password",
+        "label": {
+          "en": "Password",
+          "nl": "Wachtwoord",
+          "da": "Adgangskode",
+          "de": "Passwort",
+          "es": "Contraseña",
+          "fr": "Mot de passe",
+          "it": "Password",
+          "no": "Passord",
+          "sv": "Lösenord",
+          "pl": "Hasło",
+          "ru": "Пароль",
+          "ko": "비밀번호"
+        },
+        "value": ""
+      },
+      {
+        "id": "topic",
+        "type": "text",
+        "label": {
+          "en": "Base topic",
+          "nl": "Base topic",
+          "da": "Baseemne",
+          "de": "Basisthema",
+          "es": "Tema base",
+          "fr": "Sujet de base",
+          "it": "Argomento base",
+          "no": "Basetema",
+          "sv": "Basämne",
+          "pl": "Temat bazowy",
+          "ru": "Базовая тема",
+          "ko": "기본 주제"
+        },
+        "hint": {
+          "en": "Default is zigbee2mqtt",
+          "nl": "Standaard is zigbee2mqtt",
+          "da": "Standard er zigbee2mqtt",
+          "de": "Standard ist zigbee2mqtt",
+          "es": "El valor predeterminado es zigbee2mqtt",
+          "fr": "Par défaut, c'est zigbee2mqtt",
+          "it": "Il predefinito è zigbee2mqtt",
+          "no": "Standard er zigbee2mqtt",
+          "sv": "Standard är zigbee2mqtt",
+          "pl": "Domyślnie zigbee2mqtt",
+          "ru": "По умолчанию zigbee2mqtt",
+          "ko": "기본값은 zigbee2mqtt"
+        },
+        "value": ""
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Bridge settings",
+      "nl": "Bruginstellingen",
+      "da": "Broindstillinger",
+      "de": "Brückeneinstellungen",
+      "es": "Configuraciones del puente",
+      "fr": "Paramètres du pont",
+      "it": "Impostazioni del bridge",
+      "no": "Broinnstillinger",
+      "sv": "Brygginställningar",
+      "pl": "Ustawienia mostka",
+      "ru": "Настройки моста",
+      "ko": "브리지 설정"
+    },
+    "children": [
+      {
+        "id": "force_info_log_level",
+        "type": "checkbox",
+        "label": {
+          "en": "Force Info Logs",
+          "nl": "Forceer Info Logs",
+          "da": "Tving Info Logs",
+          "de": "Info-Logs erzwingen",
+          "es": "Forzar registros de información",
+          "fr": "Forcer les logs d'information",
+          "it": "Forza i log info",
+          "no": "Tving Info Logger",
+          "sv": "Tvinga Info Loggar",
+          "pl": "Wymuś dzienniki informacyjne",
+          "ru": "Принудительные лог-файлы",
+          "ko": "정보 로그 강제 사용"
+        },
+        "hint": {
+          "en": "Force the log level to INFO on (re)start. INFO or DEBUG level is required for the Msgs/minute counter.",
+          "nl": "Forceer het logniveau naar INFO bij (her)start. INFO of DEBUG niveau is vereist voor de Msgs/minuut teller.",
+          "da": "Tving logniveauet til INFO ved (gen)start. INFO eller DEBUG niveau er påkrævet for Msgs/minut tælleren.",
+          "de": "Erzwingen Sie das Log-Level auf INFO beim (Neu-)Start. INFO oder DEBUG-Level ist erforderlich für den Msgs/Minute Zähler.",
+          "es": "Fuerce el nivel de registro a INFO en el (re)inicio. Se requiere nivel INFO o DEBUG para el contador de Msgs/minuto.",
+          "fr": "Forcer le niveau de journalisation à INFO au démarrage (redémarrage). Le niveau INFO ou DEBUG est requis pour le compteur Msgs/minute.",
+          "it": "Forza il livello del log su INFO al (ri)avvio. È richiesto il livello INFO o DEBUG per il contatore Msgs/minuto.",
+          "no": "Tving loggnivået til INFO ved (ny)start. INFO eller DEBUG-nivå er nødvendig for Msgs/minutt-telleren.",
+          "sv": "Tvinga loggnivån till INFO vid (om)start. INFO eller DEBUG-nivå krävs för Msgs/minut-räknaren.",
+          "pl": "Wymusz poziom logowania na INFO przy (ponownym) uruchomieniu. Wymagany jest poziom INFO lub DEBUG dla licznika wiadomości/minutę.",
+          "ru": "Принудительное изменение уровня логирования на INFO при (пере)запуске. Для счетчика сообщений/минуту требуется уровень INFO или DEBUG.",
+          "ko": "(재)시작 시 로그 레벨을 INFO로 강제 설정합니다. Msgs/분 카운터에는 INFO 또는 DEBUG 레벨이 필요합니다."
+        },
+        "value": true
+      }
+    ]
+  }
 ]

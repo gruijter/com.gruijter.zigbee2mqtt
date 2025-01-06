@@ -1,21 +1,56 @@
 {
-	"title": {
-		"en": "Switch backlight On or Off"
-	},
-		"titleFormatted": {
-				"en": "Backlight [[val]]"
-		},
-		"highlight": true,
-		"args": [
-				{
-						"type": "device",
-						"name": "device",
-						"filter": "driver_id=device|group&capabilities=onoff.backlight"
-				},
-				{
-						"type": "checkbox",
-						"name": "val",
-						"title": { "en": "On" }
-				}
-		]
+  "title": {
+    "en": "Switch backlight On or Off",
+    "nl": "Schakel achtergrondverlichting in of uit",
+    "da": "Tænd eller sluk baggrundsbelysningen",
+    "de": "Hintergrundbeleuchtung ein- oder ausschalten",
+    "es": "Encender o apagar la luz de fondo",
+    "fr": "Allumer ou éteindre le rétroéclairage",
+    "it": "Accendere o spegnere la retroilluminazione",
+    "no": "Slå bakgrunnsbelysning av eller på",
+    "sv": "Slå på eller av bakgrundsbelysning",
+    "pl": "Włącz lub wyłącz podświetlenie",
+    "ru": "Включить или выключить подсветку",
+    "ko": "백라이트 켜기 또는 끄기"
+  },
+  "titleFormatted": {
+    "en": "Backlight [[val]]",
+    "nl": "Achtergrondverlichting [[val]]",
+    "da": "Baggrundsbelysning [[val]]",
+    "de": "Hintergrundbeleuchtung [[val]]",
+    "es": "Retroiluminación [[val]]",
+    "fr": "Rétroéclairage [[val]]",
+    "it": "Retroilluminazione [[val]]",
+    "no": "Bakgrunnsbelysning [[val]]",
+    "sv": "Bakgrundsbelysning [[val]]",
+    "pl": "Podświetlenie [[val]]",
+    "ru": "Подсветка [[val]]",
+    "ko": "백라이트 [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.backlight"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "Tændt",
+        "de": "Ein",
+        "es": "Encendido",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączone",
+        "ru": "Включено",
+        "ko": "켜짐"
+      }
+    }
+  ]
 }

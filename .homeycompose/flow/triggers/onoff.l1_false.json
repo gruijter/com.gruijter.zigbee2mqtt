@@ -1,15 +1,24 @@
 {
-	"title": {
-		"en": "L1 turned Off"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=onoff.l1"
-		}
-	]
+  "title": {
+    "en": "L1 turned Off",
+    "nl": "L1 uitgeschakeld",
+    "da": "L1 slukket",
+    "de": "L1 ausgeschaltet",
+    "es": "L1 apagado",
+    "fr": "L1 éteint",
+    "it": "L1 spento",
+    "no": "L1 slått av",
+    "sv": "L1 avstängd",
+    "pl": "L1 wyłączony",
+    "ru": "L1 выключен",
+    "ko": "L1 꺼짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.l1"
+    }
+  ]
 }
-
-

@@ -1,10 +1,31 @@
 {
   "type": "string",
   "title": {
-    "en": "Action"
+    "en": "Action",
+    "nl": "Actie",
+    "da": "Handling",
+    "de": "Aktion",
+    "es": "Acción",
+    "fr": "Action",
+    "it": "Azione",
+    "no": "Handling",
+    "sv": "Åtgärd",
+    "pl": "Akcja",
+    "ru": "Действие",
+    "ko": "작업"
   },
   "units": {
-    "en": ""
+    "en": "",
+    "da": "",
+    "de": "",
+    "es": "",
+    "fr": "",
+    "it": "",
+    "no": "",
+    "sv": "",
+    "pl": "",
+    "ru": "",
+    "ko": ""
   },
   "getable": true,
   "setable": false,

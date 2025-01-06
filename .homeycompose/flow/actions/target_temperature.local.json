@@ -1,20 +1,42 @@
 {
-	"title": {
-		"en": "Set target temperature"
-	},
-	"titleFormatted": {
-			"en": "Set target temperature to [[val]]"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=target_temperature.local"
-		},
-		{
-			"name": "val",
-			"type": "range"
-		}
-	]
+  "title": {
+    "en": "Set target temperature",
+    "nl": "Stel doeldemperatuur in",
+    "da": "Indstil målsætnings temperatur",
+    "de": "Zieltemperatur festlegen",
+    "es": "Establecer temperatura objetivo",
+    "fr": "Définir la température cible",
+    "it": "Imposta temperatura obiettivo",
+    "no": "Angi målertemperatur",
+    "sv": "Ställ in måltemperatur",
+    "pl": "Ustaw docelową temperaturę",
+    "ru": "Установить целевую температуру",
+    "ko": "목표 온도 설정"
+  },
+  "titleFormatted": {
+    "en": "Set target temperature to [[val]]",
+    "nl": "Stel doeldemperatuur in op [[val]]",
+    "da": "Indstil målsætningstemperaturen til [[val]]",
+    "de": "Zieltemperatur auf [[val]] festlegen",
+    "es": "Establecer temperatura objetivo a [[val]]",
+    "fr": "Définir la température cible à [[val]]",
+    "it": "Imposta temperatura obiettivo su [[val]]",
+    "no": "Angi målertemperatur til [[val]]",
+    "sv": "Ställ in måltemperatur till [[val]]",
+    "pl": "Ustaw docelową temperaturę na [[val]]",
+    "ru": "Установить целевую температуру на [[val]]",
+    "ko": "[[val]]의 목표 온도를 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=target_temperature.local"
+    },
+    {
+      "name": "val",
+      "type": "range"
+    }
+  ]
 }

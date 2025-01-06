@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The dim level L2 changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=dim.l2"
-		}
-	],
-	"tokens": [
-		{
-			"name": "dim.l2",
-			"type": "number",
-			"title": { 
-				"en": "Dim level"
-			},
-			"example": 53
-		}
-	]
+  "title": {
+    "en": "The dim level L2 changed",
+    "nl": "Het dimniveau L2 is veranderd",
+    "da": "Dæmpningsniveau L2 er ændret",
+    "de": "Das Dimmniveau L2 hat sich geändert",
+    "es": "El nivel de atenuación L2 ha cambiado",
+    "fr": "Le niveau de gradation L2 a changé",
+    "it": "Il livello di attenuazione L2 è cambiato",
+    "no": "Dempe nivå L2 har endret seg",
+    "sv": "Dämningsnivå L2 har ändrats",
+    "pl": "Poziom ściemniania L2 został zmieniony",
+    "ru": "Уровень затемнения L2 изменился",
+    "ko": "디밍 수준 L2가 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=dim.l2"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "dim.l2",
+      "type": "number",
+      "title": {
+        "en": "Dim level",
+        "nl": "Dimniveau",
+        "da": "Dæmpningsniveau",
+        "de": "Dimmniveau",
+        "es": "Nivel de atenuación",
+        "fr": "Niveau de la gradation",
+        "it": "Livello di attenuazione",
+        "no": "Dempingsnivå",
+        "sv": "Dämningsnivå",
+        "pl": "Poziom ściemniania",
+        "ru": "Уровень затемнения",
+        "ko": "디밍 수준"
+      },
+      "example": 53
+    }
+  ]
 }

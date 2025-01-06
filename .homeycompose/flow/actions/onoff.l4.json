@@ -1,21 +1,56 @@
 {
-	"title": {
-		"en": "Switch L4 On or Off"
-	},
-		"titleFormatted": {
-				"en": "Switch L4 [[val]]"
-		},
-		"highlight": true,
-		"args": [
-				{
-						"type": "device",
-						"name": "device",
-						"filter": "driver_id=device|group&capabilities=onoff.l4"
-				},
-				{
-						"type": "checkbox",
-						"name": "val",
-						"title": { "en": "On" }
-				}
-		]
+  "title": {
+    "en": "Switch L4 On or Off",
+    "nl": "Zet L4 Aan of Uit",
+    "da": "Tænd eller sluk L4",
+    "de": "Schalte L4 Ein oder Aus",
+    "es": "Encender o apagar L4",
+    "fr": "Allumer ou éteindre L4",
+    "it": "Accendi o spegni L4",
+    "no": "Slå L4 på eller av",
+    "sv": "Slå på eller av L4",
+    "pl": "Włącz lub wyłącz L4",
+    "ru": "Включить или выключить L4",
+    "ko": "L4 켜기 또는 끄기"
+  },
+  "titleFormatted": {
+    "en": "Switch L4 [[val]]",
+    "nl": "Schakel L4 [[val]]",
+    "da": "Skift L4 [[val]]",
+    "de": "Schalte L4 [[val]]",
+    "es": "Cambiar L4 [[val]]",
+    "fr": "Basculer L4 [[val]]",
+    "it": "Cambia L4 [[val]]",
+    "no": "Bytt L4 [[val]]",
+    "sv": "Växla L4 [[val]]",
+    "pl": "Przełącz L4 [[val]]",
+    "ru": "Переключить L4 [[val]]",
+    "ko": "L4 [[val]] 전환"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.l4"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "Til",
+        "de": "Ein",
+        "es": "Encendido",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączony",
+        "ru": "Включено",
+        "ko": "켜짐"
+      }
+    }
+  ]
 }

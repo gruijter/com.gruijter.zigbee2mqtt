@@ -1,15 +1,24 @@
 {
-	"title": {
-		"en": "L4 turned On"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=onoff.l4"
-		}
-	]
+  "title": {
+    "en": "L4 turned On",
+    "nl": "L4 ingeschakeld",
+    "da": "L4 tændt",
+    "de": "L4 eingeschaltet",
+    "es": "L4 encendido",
+    "fr": "L4 activé",
+    "it": "L4 acceso",
+    "no": "L4 slått på",
+    "sv": "L4 påslagen",
+    "pl": "L4 włączony",
+    "ru": "L4 включен",
+    "ko": "L4 켜짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.l4"
+    }
+  ]
 }
-
-

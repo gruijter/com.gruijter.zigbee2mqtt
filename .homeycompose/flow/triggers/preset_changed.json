@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The preset changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=preset"
-		}
-	],
-	"tokens": [
-		{
-			"name": "preset",
-			"type": "string",
-			"title": { 
-				"en": "Preset"
-			},
-			"example": "auto"
-		}
-	]
+  "title": {
+    "en": "The preset changed",
+    "nl": "Het preset is gewijzigd",
+    "da": "Forudindstillingen blev ændret",
+    "de": "Das Preset wurde geändert",
+    "es": "El ajuste preestablecido cambió",
+    "fr": "Le préréglage a changé",
+    "it": "Il preset è cambiato",
+    "no": "Forhåndsinnstillingen ble endret",
+    "sv": "Förinställningen ändrades",
+    "pl": "Ustawienie wstępne zostało zmienione",
+    "ru": "Предустановка изменена",
+    "ko": "사전 설정이 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=preset"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "preset",
+      "type": "string",
+      "title": {
+        "en": "Preset",
+        "nl": "Preset",
+        "da": "Forudindstilling",
+        "de": "Voreinstellung",
+        "es": "Ajuste preestablecido",
+        "fr": "Préréglage",
+        "it": "Preset",
+        "no": "Forhåndsinnstilling",
+        "sv": "Förinställning",
+        "pl": "Ustawienie wstępne",
+        "ru": "Предустановка",
+        "ko": "사전 설정"
+      },
+      "example": "auto"
+    }
+  ]
 }

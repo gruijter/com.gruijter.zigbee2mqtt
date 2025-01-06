@@ -1,15 +1,24 @@
 {
-	"title": {
-		"en": "L2 turned On"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=onoff.l2"
-		}
-	]
+  "title": {
+    "en": "L2 turned On",
+    "nl": "L2 ingeschakeld",
+    "da": "L2 tændt",
+    "de": "L2 eingeschaltet",
+    "es": "L2 encendido",
+    "fr": "L2 activé",
+    "it": "L2 acceso",
+    "no": "L2 slått på",
+    "sv": "L2 påslagen",
+    "pl": "L2 włączone",
+    "ru": "L2 включен",
+    "ko": "L2 켜짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.l2"
+    }
+  ]
 }
-
-

@@ -1,21 +1,56 @@
 {
-	"title": {
-		"en": "Switch system mode Heat or Off"
-	},
-		"titleFormatted": {
-				"en": "Set system mode to heat [[val]]"
-		},
-		"highlight": true,
-		"args": [
-				{
-						"type": "device",
-						"name": "device",
-						"filter": "driver_id=device|group&capabilities=onoff.system_mode"
-				},
-				{
-						"type": "checkbox",
-						"name": "val",
-						"title": { "en": "Heat" }
-				}
-		]
+  "title": {
+    "en": "Switch system mode Heat or Off",
+    "nl": "Schakel systeemmodus Verwarming of Uit",
+    "da": "Skift systemtilstand Varme eller Fra",
+    "de": "Wechseln Sie den Systemmodus Heizen oder Aus",
+    "es": "Cambiar el modo del sistema Calor o Apagar",
+    "fr": "Changer le mode système Chauffage ou Arrêt",
+    "it": "Cambia la modalità di sistema Riscaldare o Spento",
+    "no": "Bytt systemmodus Varme eller Av",
+    "sv": "Byt systemläge Värme eller Av",
+    "pl": "Przełącz tryb systemu Grzanie lub Wyłączony",
+    "ru": "Переключите режим системы Обогрев или Выкл",
+    "ko": "시스템 모드를 난방 또는 끄기로 전환"
+  },
+  "titleFormatted": {
+    "en": "Set system mode to heat [[val]]",
+    "nl": "Stel systeemmodus in op verwarming [[val]]",
+    "da": "Indstil systemtilstand til varme [[val]]",
+    "de": "Systemmodus auf Heizen einstellen [[val]]",
+    "es": "Poner el modo del sistema en calor [[val]]",
+    "fr": "Réglez le mode système sur chauffage [[val]]",
+    "it": "Imposta la modalità di sistema su riscaldamento [[val]]",
+    "no": "Sett systemmodus til varme [[val]]",
+    "sv": "Ställ in systemläge till värme [[val]]",
+    "pl": "Ustaw tryb systemu na ogrzewanie [[val]]",
+    "ru": "Установите режим системы на обогрев [[val]]",
+    "ko": "시스템 모드를 난방으로 설정 [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.system_mode"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "Heat",
+        "nl": "Verwarming",
+        "da": "Varme",
+        "de": "Heizen",
+        "es": "Calor",
+        "fr": "Chauffage",
+        "it": "Riscaldamento",
+        "no": "Varme",
+        "sv": "Värme",
+        "pl": "Ogrzewanie",
+        "ru": "Обогрев",
+        "ko": "난방"
+      }
+    }
+  ]
 }

@@ -1,10 +1,32 @@
 {
   "type": "string",
   "title": {
-    "en": "Text"
+    "en": "Text",
+    "nl": "Tekst",
+    "da": "Tekst",
+    "de": "Text",
+    "es": "Texto",
+    "fr": "Texte",
+    "it": "Testo",
+    "no": "Tekst",
+    "sv": "Text",
+    "pl": "Tekst",
+    "ru": "Текст",
+    "ko": "텍스트"
   },
   "units": {
-    "en": ""
+    "en": "",
+    "nl": "",
+    "da": "",
+    "de": "",
+    "es": "",
+    "fr": "",
+    "it": "",
+    "no": "",
+    "sv": "",
+    "pl": "",
+    "ru": "",
+    "ko": ""
   },
   "getable": true,
   "setable": false,

@@ -1,15 +1,24 @@
 {
-	"title": {
-		"en": "Center Turned On"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=onoff.center"
-		}
-	]
+  "title": {
+    "en": "Center Turned On",
+    "nl": "Center Ingeschakeld",
+    "da": "Center Tændt",
+    "de": "Zentrum Eingeschaltet",
+    "es": "Centro Activado",
+    "fr": "Centre Activé",
+    "it": "Centro Acceso",
+    "no": "Senter Slått På",
+    "sv": "Centrum Påslagen",
+    "pl": "Centrum Włączone",
+    "ru": "Центр Включен",
+    "ko": "센터 켜짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.center"
+    }
+  ]
 }
-
-

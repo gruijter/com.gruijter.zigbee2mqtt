@@ -1,38 +1,112 @@
 {
-	"title": {
-		"en": "Set Indicator Mode"
-	},
-	"titleFormatted": {
-			"en": "Set Indicator Mode to [[val]]"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=indicator_mode"
-		},
-		{
-			"type": "dropdown",
-			"name": "val",
-			"values": [
-				{
-					"id": "off",
-					"title": { "en": "Off" }
-				},
-				{
-					"id": "off/on",
-					"title": { "en": "Off/On" }
-				},
-				{
-					"id": "on/off",
-					"title": { "en": "On/Off" }
-				},
-				{
-					"id": "on",
-					"title": { "en": "On" }
-				}
-			]
-		}
-	]
+  "title": {
+    "en": "Set Indicator Mode",
+    "nl": "Stel de Indicator Modus in",
+    "da": "Indstil indikator tilstand",
+    "de": "Indikatormodus einstellen",
+    "es": "Establecer modo indicador",
+    "fr": "Définir le mode indicateur",
+    "it": "Imposta modalità indicatore",
+    "no": "Sett indikator modus",
+    "sv": "Ställ in indikatormodus",
+    "pl": "Ustaw tryb wskaźnika",
+    "ru": "Установить режим индикатора",
+    "ko": "지시자 모드 설정"
+  },
+  "titleFormatted": {
+    "en": "Set Indicator Mode to [[val]]",
+    "nl": "Stel de Indicator Modus in op [[val]]",
+    "da": "Indstil indikator tilstand til [[val]]",
+    "de": "Indikatormodus auf [[val]] einstellen",
+    "es": "Establecer modo indicador en [[val]]",
+    "fr": "Définir le mode indicateur sur [[val]]",
+    "it": "Imposta modalità indicatore su [[val]]",
+    "no": "Sett indikator modus til [[val]]",
+    "sv": "Ställ in indikatormodus till [[val]]",
+    "pl": "Ustaw tryb wskaźnika na [[val]]",
+    "ru": "Установить режим индикатора на [[val]]",
+    "ko": "[[val]]로 지시자 모드 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=indicator_mode"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "nl": "Uit",
+            "da": "Fra",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "Éteint",
+            "it": "Spento",
+            "no": "Av",
+            "sv": "Av",
+            "pl": "Wyłączony",
+            "ru": "Выкл",
+            "ko": "끔"
+          }
+        },
+        {
+          "id": "off/on",
+          "title": {
+            "en": "Off/On",
+            "nl": "Uit/Aan",
+            "da": "Fra/Til",
+            "de": "Aus/An",
+            "es": "Apagado/Encendido",
+            "fr": "Éteint/Allumé",
+            "it": "Spento/Acceso",
+            "no": "Av/På",
+            "sv": "Av/På",
+            "pl": "Wyłączony/Włączony",
+            "ru": "Выкл/Вкл",
+            "ko": "끔/켬"
+          }
+        },
+        {
+          "id": "on/off",
+          "title": {
+            "en": "On/Off",
+            "nl": "Aan/Uit",
+            "da": "Til/Fra",
+            "de": "An/Aus",
+            "es": "Encendido/Apagado",
+            "fr": "Allumé/Éteint",
+            "it": "Acceso/Spento",
+            "no": "På/Av",
+            "sv": "På/Av",
+            "pl": "Włączony/Wyłączony",
+            "ru": "Вкл/Выкл",
+            "ko": "켬/끔"
+          }
+        },
+        {
+          "id": "on",
+          "title": {
+            "en": "On",
+            "nl": "Aan",
+            "da": "Til",
+            "de": "An",
+            "es": "Encendido",
+            "fr": "Allumé",
+            "it": "Acceso",
+            "no": "På",
+            "sv": "På",
+            "pl": "Włączony",
+            "ru": "Вкл",
+            "ko": "켬"
+          }
+        }
+      ]
+    }
+  ]
 }

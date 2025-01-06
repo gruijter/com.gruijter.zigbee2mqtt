@@ -1,12 +1,71 @@
 {
   "type": "enum",
   "title": {
-    "en": "Preset"
+    "en": "Preset",
+    "nl": "Preset",
+    "da": "Forudindstilling",
+    "de": "Voreinstellung",
+    "es": "Preajuste",
+    "fr": "Préréglage",
+    "it": "Preimpostazione",
+    "no": "Forhåndsinnstilling",
+    "sv": "Förvalt",
+    "pl": "Ustawienie wstępne",
+    "ru": "Предустановка",
+    "ko": "프리셋"
   },
   "values": [
-    { "id": "auto", "title": { "en": "Auto" }},
-    { "id": "manual", "title": { "en": "Manual" }},
-    { "id": "holiday", "title": { "en": "Holiday" }}
+    {
+      "id": "auto",
+      "title": {
+        "en": "Auto",
+        "nl": "Auto",
+        "da": "Auto",
+        "de": "Auto",
+        "es": "Automático",
+        "fr": "Auto",
+        "it": "Auto",
+        "no": "Auto",
+        "sv": "Auto",
+        "pl": "Auto",
+        "ru": "Авто",
+        "ko": "자동"
+      }
+    },
+    {
+      "id": "manual",
+      "title": {
+        "en": "Manual",
+        "nl": "Handmatig",
+        "da": "Manuel",
+        "de": "Manuell",
+        "es": "Manual",
+        "fr": "Manuel",
+        "it": "Manuale",
+        "no": "Manuell",
+        "sv": "Manuell",
+        "pl": "Ręczny",
+        "ru": "Ручной",
+        "ko": "수동"
+      }
+    },
+    {
+      "id": "holiday",
+      "title": {
+        "en": "Holiday",
+        "nl": "Vakantie",
+        "da": "Feriedag",
+        "de": "Urlaub",
+        "es": "Vacaciones",
+        "fr": "Vacances",
+        "it": "Vacanza",
+        "no": "Ferietid",
+        "sv": "Semester",
+        "pl": "Urlop",
+        "ru": "Отпуск",
+        "ko": "휴일"
+      }
+    }
   ],
   "uiComponent": "picker",
   "getable": true,

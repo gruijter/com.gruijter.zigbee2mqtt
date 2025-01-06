@@ -1,34 +1,95 @@
 {
-	"title": {
-		"en": "Set Switch Type"
-	},
-	"titleFormatted": {
-			"en": "Set Switch Type to [[val]]"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=switch_type"
-		},
-		{
-			"type": "dropdown",
-			"name": "val",
-			"values": [
-				{
-					"id": "toggle",
-					"title": { "en": "toggle" }
-				},
-				{
-					"id": "state",
-					"title": { "en": "State" }
-				},
-				{
-					"id": "momentary",
-					"title": { "en": "Momentary" }
-				}
-			]
-		}
-	]
+  "title": {
+    "en": "Set Switch Type",
+    "nl": "Schakel Type Instellen",
+    "da": "Sæt Kontakt Type",
+    "de": "Schaltart Einstellen",
+    "es": "Establecer Tipo de Interruptor",
+    "fr": "Définir le Type d'Interrupteur",
+    "it": "Imposta Tipo di Interruttore",
+    "no": "Sett Brytertype",
+    "sv": "Ställ in Strömbrytartyp",
+    "pl": "Ustaw Typ Przełącznika",
+    "ru": "Установить Тип Переключателя",
+    "ko": "스위치 유형 설정"
+  },
+  "titleFormatted": {
+    "en": "Set Switch Type to [[val]]",
+    "nl": "Stel Schakel Type in op [[val]]",
+    "da": "Sæt Kontakt Type til [[val]]",
+    "de": "Schaltart Einstellen auf [[val]]",
+    "es": "Establecer Tipo de Interruptor en [[val]]",
+    "fr": "Définir le Type d'Interrupteur sur [[val]]",
+    "it": "Imposta Tipo di Interruttore su [[val]]",
+    "no": "Sett Brytertype til [[val]]",
+    "sv": "Ställ in Strömbrytartyp till [[val]]",
+    "pl": "Ustaw Typ Przełącznika na [[val]]",
+    "ru": "Установить Тип Переключателя на [[val]]",
+    "ko": "스위치 유형을 [[val]]로 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=switch_type"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "toggle",
+          "title": {
+            "en": "toggle",
+            "nl": "toggle",
+            "da": "skift",
+            "de": "wechseln",
+            "es": "alternar",
+            "fr": "basculer",
+            "it": "attiva/disattiva",
+            "no": "veksle",
+            "sv": "växla",
+            "pl": "przełącz",
+            "ru": "переключить",
+            "ko": "토글"
+          }
+        },
+        {
+          "id": "state",
+          "title": {
+            "en": "State",
+            "nl": "Staat",
+            "da": "Tilstand",
+            "de": "Zustand",
+            "es": "Estado",
+            "fr": "État",
+            "it": "Stato",
+            "no": "Tilstand",
+            "sv": "Tillstånd",
+            "pl": "Stan",
+            "ru": "Состояние",
+            "ko": "상태"
+          }
+        },
+        {
+          "id": "momentary",
+          "title": {
+            "en": "Momentary",
+            "nl": "Momentaan",
+            "da": "Øjeblikkelig",
+            "de": "Momentan",
+            "es": "Momentáneo",
+            "fr": "Momentané",
+            "it": "Momentaneo",
+            "no": "Momentant",
+            "sv": "Tillfällig",
+            "pl": "Chwilowy",
+            "ru": "Моментальный",
+            "ko": "순간적인"
+          }
+        }
+      ]
+    }
+  ]
 }

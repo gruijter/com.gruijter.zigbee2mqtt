@@ -1,12 +1,71 @@
 {
   "type": "enum",
   "title": {
-    "en": "Switch type"
+    "en": "Switch type",
+    "nl": "Schakelaar type",
+    "da": "Skifttype",
+    "de": "Schaltertyp",
+    "es": "Tipo de interruptor",
+    "fr": "Type de commutateur",
+    "it": "Tipo di interruttore",
+    "no": "Brytertype",
+    "sv": "Strömbrytartyp",
+    "pl": "Typ przełącznika",
+    "ru": "Тип переключателя",
+    "ko": "스위치 유형"
   },
   "values": [
-    { "id": "toggle", "title": { "en": "Toggle" }},
-    { "id": "state", "title": { "en": "State" }},
-    { "id": "momentary", "title": { "en": "Momentary" }}
+    {
+      "id": "toggle",
+      "title": {
+        "en": "Toggle",
+        "nl": "Wissel",
+        "da": "Skifte",
+        "de": "Umschalter",
+        "es": "Alternar",
+        "fr": "Basculer",
+        "it": "Interruttore",
+        "no": "Veksle",
+        "sv": "Växla",
+        "pl": "Przełącz",
+        "ru": "Переключить",
+        "ko": "토글"
+      }
+    },
+    {
+      "id": "state",
+      "title": {
+        "en": "State",
+        "nl": "Toestand",
+        "da": "Tilstand",
+        "de": "Zustand",
+        "es": "Estado",
+        "fr": "État",
+        "it": "Stato",
+        "no": "Tilstand",
+        "sv": "Tillstånd",
+        "pl": "Stan",
+        "ru": "Состояние",
+        "ko": "상태"
+      }
+    },
+    {
+      "id": "momentary",
+      "title": {
+        "en": "Momentary",
+        "nl": "Momentaan",
+        "da": "Kortvarig",
+        "de": "Momentan",
+        "es": "Momentáneo",
+        "fr": "Momentané",
+        "it": "Momentaneo",
+        "no": "Kortvarig",
+        "sv": "Tillfällig",
+        "pl": "Chwilowy",
+        "ru": "Мгновенный",
+        "ko": "순간적"
+      }
+    }
   ],
   "uiComponent": "picker",
   "getable": true,

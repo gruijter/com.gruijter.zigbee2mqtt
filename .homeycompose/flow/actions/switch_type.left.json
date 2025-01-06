@@ -1,34 +1,95 @@
 {
-	"title": {
-		"en": "Set Switch Type Left"
-	},
-	"titleFormatted": {
-			"en": "Set Left Switch Type to [[val]]"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=switch_type.left"
-		},
-		{
-			"type": "dropdown",
-			"name": "val",
-			"values": [
-				{
-					"id": "toggle",
-					"title": { "en": "toggle" }
-				},
-				{
-					"id": "state",
-					"title": { "en": "State" }
-				},
-				{
-					"id": "momentary",
-					"title": { "en": "Momentary" }
-				}
-			]
-		}
-	]
+  "title": {
+    "en": "Set Switch Type Left",
+    "nl": "Stel Schakelaar Type Links in",
+    "da": "Indstil Venstre Kontakttype",
+    "de": "Schaltertyp Links Einstellen",
+    "es": "Configurar Tipo de Interruptor Izquierdo",
+    "fr": "Définir le Type de Commutateur Gauche",
+    "it": "Imposta Tipo di Interruttore Sinistro",
+    "no": "Angi Venstre Brytertype",
+    "sv": "Ställ In Typ av Vänster Strömbrytare",
+    "pl": "Ustaw Lewy Typ Przełącznika",
+    "ru": "Установить Левый Тип Переключателя",
+    "ko": "왼쪽 스위치 유형 설정"
+  },
+  "titleFormatted": {
+    "en": "Set Left Switch Type to [[val]]",
+    "nl": "Stel Linker Schakelaar Type in op [[val]]",
+    "da": "Indstil Venstre Kontakttype til [[val]]",
+    "de": "Schaltertyp Links auf [[val]] Einstellen",
+    "es": "Configurar Tipo de Interruptor Izquierdo a [[val]]",
+    "fr": "Définir le Type de Commutateur Gauche sur [[val]]",
+    "it": "Imposta Tipo di Interruttore Sinistro su [[val]]",
+    "no": "Angi Venstre Brytertype til [[val]]",
+    "sv": "Ställ In Typ av Vänster Strömbrytare till [[val]]",
+    "pl": "Ustaw Lewy Typ Przełącznika na [[val]]",
+    "ru": "Установить Левый Тип Переключателя на [[val]]",
+    "ko": "왼쪽 스위치 유형을 [[val]](으)로 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=switch_type.left"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "toggle",
+          "title": {
+            "en": "toggle",
+            "nl": "schakel",
+            "da": "skifte",
+            "de": "umschalten",
+            "es": "alternar",
+            "fr": "basculer",
+            "it": "attiva/disattiva",
+            "no": "veksle",
+            "sv": "växla",
+            "pl": "przełącz",
+            "ru": "переключать",
+            "ko": "전환"
+          }
+        },
+        {
+          "id": "state",
+          "title": {
+            "en": "State",
+            "nl": "Staat",
+            "da": "Tilstand",
+            "de": "Zustand",
+            "es": "Estado",
+            "fr": "État",
+            "it": "Stato",
+            "no": "Tilstand",
+            "sv": "Tillstånd",
+            "pl": "Stan",
+            "ru": "Состояние",
+            "ko": "상태"
+          }
+        },
+        {
+          "id": "momentary",
+          "title": {
+            "en": "Momentary",
+            "nl": "Momentaan",
+            "da": "Øjeblikkelig",
+            "de": "Momentan",
+            "es": "Momentáneo",
+            "fr": "Momentané",
+            "it": "Momentaneo",
+            "no": "Kortvarig",
+            "sv": "Tillfällig",
+            "pl": "Chwilowy",
+            "ru": "Кратковременный",
+            "ko": "순간적인"
+          }
+        }
+      ]
+    }
+  ]
 }

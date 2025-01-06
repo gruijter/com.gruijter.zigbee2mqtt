@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The target temperature changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=target_temperature.local"
-		}
-	],
-	"tokens": [
-		{
-			"name": "target_temperature.local",
-			"type": "number",
-			"title": { 
-				"en": "Temperature"
-			},
-			"example": 23
-		}
-	]
+  "title": {
+    "en": "The target temperature changed",
+    "nl": "De doeldtemperatuur is veranderd",
+    "da": "Måltemperaturen er ændret",
+    "de": "Die Zieltemperatur hat sich geändert",
+    "es": "La temperatura objetivo ha cambiado",
+    "fr": "La température cible a changé",
+    "it": "La temperatura target è cambiata",
+    "no": "Måltemperaturen har endret seg",
+    "sv": "Måltemperaturen har ändrats",
+    "pl": "Temperatura docelowa została zmieniona",
+    "ru": "Целевая температура изменилась",
+    "ko": "목표 온도가 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=target_temperature.local"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "target_temperature.local",
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur",
+        "da": "Temperatur",
+        "de": "Temperatur",
+        "es": "Temperatura",
+        "fr": "Température",
+        "it": "Temperatura",
+        "no": "Temperatur",
+        "sv": "Temperatur",
+        "pl": "Temperatura",
+        "ru": "Температура",
+        "ko": "온도"
+      },
+      "example": 23
+    }
+  ]
 }

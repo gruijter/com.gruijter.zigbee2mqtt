@@ -1,5 +1,5 @@
 /*
-Copyright 2023 - 2024, Robin de Gruijter (gruijter@hotmail.com)
+Copyright 2023 - 2025, Robin de Gruijter (gruijter@hotmail.com)
 
 This file is part of com.gruijter.zigbee2mqtt.
 
@@ -30,6 +30,7 @@ const capabilities = [
   'allow_joining_timeout',
   'meter_mpm',
   'meter_joined_devices',
+  'meter_offline_devices',
   'meter_joined_groups',
   // 'measure_linkquality', // NO WAY TO RETRIEVE RETAINED STATES WITH DEFAULT Z2M CONFIG
   'alarm_offline',

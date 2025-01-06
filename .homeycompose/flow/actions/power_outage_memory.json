@@ -1,34 +1,95 @@
 {
-	"title": {
-		"en": "Set Power Outage Memory"
-	},
-	"titleFormatted": {
-			"en": "Set Power Outage Memory to [[val]]"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=power_outage_memory"
-		},
-		{
-			"type": "dropdown",
-			"name": "val",
-			"values": [
-				{
-					"id": "off",
-					"title": { "en": "Off" }
-				},
-				{
-					"id": "on",
-					"title": { "en": "On" }
-				},
-				{
-					"id": "previous",
-					"title": { "en": "Restore" }
-				}
-			]
-		}
-	]
+  "title": {
+    "en": "Set Power Outage Memory",
+    "nl": "Stel stroomuitvalgeheugen in",
+    "da": "Indstil strømafbrydelseshukommelse",
+    "de": "Speicher für Stromausfall einstellen",
+    "es": "Configurar memoria de corte de energía",
+    "fr": "Définir la mémoire de panne de courant",
+    "it": "Imposta la memoria di interruzione di corrente",
+    "no": "Sett strømbruddminne",
+    "sv": "Ställ in strömavbrottsminne",
+    "pl": "Ustaw pamięć przerwy w zasilaniu",
+    "ru": "Установить память отключения электроэнергии",
+    "ko": "정전 메모리 설정"
+  },
+  "titleFormatted": {
+    "en": "Set Power Outage Memory to [[val]]",
+    "nl": "Stel stroomuitvalgeheugen in op [[val]]",
+    "da": "Indstil strømafbrydelseshukommelse til [[val]]",
+    "de": "Stelle Stromausfall-Speicher auf [[val]] ein",
+    "es": "Configurar memoria de corte de energía a [[val]]",
+    "fr": "Définir la mémoire de panne de courant sur [[val]]",
+    "it": "Imposta la memoria di interruzione di corrente su [[val]]",
+    "no": "Sett strømbruddminne til [[val]]",
+    "sv": "Ställ in strömavbrottsminne till [[val]]",
+    "pl": "Ustaw pamięć przerwy w zasilaniu na [[val]]",
+    "ru": "Установить память отключения электроэнергии на [[val]]",
+    "ko": "[[val]]으로 정전 메모리 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=power_outage_memory"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "nl": "Uit",
+            "da": "Fra",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "Éteint",
+            "it": "Spento",
+            "no": "Av",
+            "sv": "Av",
+            "pl": "Wyłączone",
+            "ru": "Выкл",
+            "ko": "꺼짐"
+          }
+        },
+        {
+          "id": "on",
+          "title": {
+            "en": "On",
+            "nl": "Aan",
+            "da": "Til",
+            "de": "Ein",
+            "es": "Encendido",
+            "fr": "Allumé",
+            "it": "Acceso",
+            "no": "På",
+            "sv": "På",
+            "pl": "Włączone",
+            "ru": "Вкл",
+            "ko": "켜짐"
+          }
+        },
+        {
+          "id": "previous",
+          "title": {
+            "en": "Restore",
+            "nl": "Herstellen",
+            "da": "Gendan",
+            "de": "Wiederherstellen",
+            "es": "Restaurar",
+            "fr": "Restaurer",
+            "it": "Ripristina",
+            "no": "Gjenopprett",
+            "sv": "Återställ",
+            "pl": "Przywróć",
+            "ru": "Восстановить",
+            "ko": "복원"
+          }
+        }
+      ]
+    }
+  ]
 }

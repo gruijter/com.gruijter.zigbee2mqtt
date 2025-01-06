@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The Color Power On Behavior changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=color_power_on_behavior"
-		}
-	],
-	"tokens": [
-		{
-			"name": "color_power_on_behavior",
-			"type": "string",
-			"title": { 
-				"en": "Power On Behavior"
-			},
-			"example": "previous"
-		}
-	]
+  "title": {
+    "en": "The Color Power On Behavior changed",
+    "nl": "Het kleur aan-uitgedrag is gewijzigd",
+    "da": "Farve tændingsadfærd er ændret",
+    "de": "Das Farb-Einschaltverhalten hat sich geändert",
+    "es": "El comportamiento de encendido de color ha cambiado",
+    "fr": "Le comportement d'allumage de la couleur a changé",
+    "it": "Il comportamento di accensione del colore è cambiato",
+    "no": "Fargepåslagsatferden er endret",
+    "sv": "Färgpåslaget har ändrats",
+    "pl": "Zachowanie przy włączaniu koloru uległo zmianie",
+    "ru": "Изменилось поведение при включении цвета",
+    "ko": "색상 전원 켜기 동작이 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=color_power_on_behavior"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "color_power_on_behavior",
+      "type": "string",
+      "title": {
+        "en": "Power On Behavior",
+        "nl": "Aan-uitgedrag",
+        "da": "Tændingsadfærd",
+        "de": "Einschaltverhalten",
+        "es": "Comportamiento de encendido",
+        "fr": "Comportement d'allumage",
+        "it": "Comportamento di accensione",
+        "no": "Påslagsatferd",
+        "sv": "Påslagningsbeteende",
+        "pl": "Zachowanie przy włączaniu",
+        "ru": "Поведение при включении",
+        "ko": "전원 켜기 동작"
+      },
+      "example": "previous"
+    }
+  ]
 }

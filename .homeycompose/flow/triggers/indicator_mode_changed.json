@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The Indicator Mode changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=indicator_mode"
-		}
-	],
-	"tokens": [
-		{
-			"name": "indicator_mode",
-			"type": "string",
-			"title": { 
-				"en": "Indicator Mode"
-			},
-			"example": "off"
-		}
-	]
+  "title": {
+    "en": "The Indicator Mode changed",
+    "nl": "De Indicator Modus veranderde",
+    "da": "Indikatortilstand ændret",
+    "de": "Der Indikatormodus hat sich geändert",
+    "es": "El modo indicador cambió",
+    "fr": "Le mode indicateur a changé",
+    "it": "La modalità indicatore è cambiata",
+    "no": "Indikatormodus endret",
+    "sv": "Indikatormod läge ändrat",
+    "pl": "Tryb wskaźnika zmieniony",
+    "ru": "Режим индикатора изменен",
+    "ko": "지표 모드가 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=indicator_mode"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "indicator_mode",
+      "type": "string",
+      "title": {
+        "en": "Indicator Mode",
+        "nl": "Indicator Modus",
+        "da": "Indikatortilstand",
+        "de": "Indikatormodus",
+        "es": "Modo indicador",
+        "fr": "Mode indicateur",
+        "it": "Modalità indicatore",
+        "no": "Indikatormodus",
+        "sv": "Indikatormod",
+        "pl": "Tryb wskaźnika",
+        "ru": "Режим индикатора",
+        "ko": "지표 모드"
+      },
+      "example": "off"
+    }
+  ]
 }

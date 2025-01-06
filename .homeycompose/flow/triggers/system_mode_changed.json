@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The preset changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=system_mode"
-		}
-	],
-	"tokens": [
-		{
-			"name": "system_mode",
-			"type": "string",
-			"title": { 
-				"en": "System mode"
-			},
-			"example": "auto"
-		}
-	]
+  "title": {
+    "en": "The preset changed",
+    "nl": "De preset is veranderd",
+    "da": "Forudindstillingen er ændret",
+    "de": "Das Preset wurde geändert",
+    "es": "El preset ha cambiado",
+    "fr": "Le préréglage a changé",
+    "it": "Il preset è cambiato",
+    "no": "Forhåndsinnstillingen ble endret",
+    "sv": "Förinställningen har ändrats",
+    "pl": "Zmieniono ustawienie wstępne",
+    "ru": "Предустановка изменена",
+    "ko": "프리셋이 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=system_mode"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "system_mode",
+      "type": "string",
+      "title": {
+        "en": "System mode",
+        "nl": "Systeemmodus",
+        "da": "Systemtilstand",
+        "de": "Systemmodus",
+        "es": "Modo del sistema",
+        "fr": "Mode système",
+        "it": "Modalità di sistema",
+        "no": "Systemmodus",
+        "sv": "Systemläge",
+        "pl": "Tryb systemu",
+        "ru": "Режим системы",
+        "ko": "시스템 모드"
+      },
+      "example": "auto"
+    }
+  ]
 }

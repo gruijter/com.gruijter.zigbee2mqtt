@@ -1,7 +1,18 @@
 {
   "type": "number",
   "title": {
-    "en": "Joined devices"
+    "en": "Joined devices",
+    "nl": "Gekoppelde apparaten",
+    "da": "Tilsluttede enheder",
+    "de": "Verbundene Geräte",
+    "es": "Dispositivos conectados",
+    "fr": "Appareils connectés",
+    "it": "Dispositivi collegati",
+    "no": "Tilkoblede enheter",
+    "sv": "Anslutna enheter",
+    "pl": "Podłączone urządzenia",
+    "ru": "Подключенные устройства",
+    "ko": "연결된 장치"
   },
   "getable": true,
   "setable": false,

@@ -1,13 +1,46 @@
 {
   "type": "boolean",
   "title": {
-    "en": "Bridge offline"
+    "en": "Bridge offline",
+    "nl": "Brug offline",
+    "da": "Bro offline",
+    "de": "Brücke offline",
+    "es": "Puente fuera de línea",
+    "fr": "Pont hors ligne",
+    "it": "Ponte offline",
+    "no": "Bro offline",
+    "sv": "Bro offline",
+    "pl": "Most offline",
+    "ru": "Мост офлайн",
+    "ko": "브릿지 오프라인"
   },
   "insightsTitleTrue": {
-    "en": "Offline"
+    "en": "Offline",
+    "nl": "Offline",
+    "da": "Offline",
+    "de": "Offline",
+    "es": "Desconectado",
+    "fr": "Hors ligne",
+    "it": "Offline",
+    "no": "Frakoblet",
+    "sv": "Offline",
+    "pl": "Offline",
+    "ru": "Офлайн",
+    "ko": "오프라인"
   },
   "insightsTitleFalse": {
-    "en": "Online"
+    "en": "Online",
+    "nl": "Online",
+    "da": "Online",
+    "de": "Online",
+    "es": "Conectado",
+    "fr": "En ligne",
+    "it": "Online",
+    "no": "På nett",
+    "sv": "Online",
+    "pl": "Online",
+    "ru": "Онлайн",
+    "ko": "온라인"
   },
   "uiComponent": "sensor",
   "getable": true,

@@ -1,15 +1,24 @@
 {
-	"title": {
-		"en": "Right Turned Off"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=onoff.right"
-		}
-	]
+  "title": {
+    "en": "Right Turned Off",
+    "nl": "Rechts Uitgeschakeld",
+    "da": "Slukket til højre",
+    "de": "Rechts ausgeschaltet",
+    "es": "Apagado a la derecha",
+    "fr": "Éteint à droite",
+    "it": "Spento a destra",
+    "no": "Høyre slått av",
+    "sv": "Höger avstängd",
+    "pl": "Wyłączono po prawej",
+    "ru": "Выключено вправо",
+    "ko": "오른쪽 꺼짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.right"
+    }
+  ]
 }
-
-

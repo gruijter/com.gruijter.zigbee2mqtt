@@ -1,10 +1,32 @@
 {
   "type": "number",
   "title": {
-    "en": "Link quality"
+    "en": "Link quality",
+    "nl": "Link kwaliteit",
+    "da": "Link kvalitet",
+    "de": "Verbindungsqualität",
+    "es": "Calidad del enlace",
+    "fr": "Qualité du lien",
+    "it": "Qualità del collegamento",
+    "no": "Link kvalitet",
+    "sv": "Länk kvalitet",
+    "pl": "Jakość połączenia",
+    "ru": "Качество связи",
+    "ko": "링크 품질"
   },
   "units": {
-    "en": "lqi"
+    "en": "lqi",
+    "nl": "lqi",
+    "da": "lqi",
+    "de": "lqi",
+    "es": "lqi",
+    "fr": "lqi",
+    "it": "lqi",
+    "no": "lqi",
+    "sv": "lqi",
+    "pl": "lqi",
+    "ru": "lqi",
+    "ko": "lqi"
   },
   "getable": true,
   "setable": false,

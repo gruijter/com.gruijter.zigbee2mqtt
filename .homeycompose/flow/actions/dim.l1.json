@@ -1,27 +1,49 @@
 {
-	"title": {
-		"en": "Dim L1"
-	},
-	"titleFormatted": {
-			"en": "Dim L1 to [[val]]"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=dim.l1"
-		},
-		{
-			"name": "val",
-			"type": "range",
-			"min": 0,
-			"max": 1,
-			"step": 0.01,
-			"value": 0.5,
-			"label": "%",
-			"labelMultiplier": 100,
-			"labelDecimals": 0
-		}
-	]
+  "title": {
+    "en": "Dim L1",
+    "nl": "Dim L1",
+    "da": "Dæmp L1",
+    "de": "Dimme L1",
+    "es": "Atenuar L1",
+    "fr": "Atténuer L1",
+    "it": "Diminuisci L1",
+    "no": "Dim L1",
+    "sv": "Dimma L1",
+    "pl": "Ściemnij L1",
+    "ru": "Затемнить L1",
+    "ko": "디밍 L1"
+  },
+  "titleFormatted": {
+    "en": "Dim L1 to [[val]]",
+    "nl": "Dim L1 tot [[val]]",
+    "da": "Dæmp L1 til [[val]]",
+    "de": "Dimme L1 auf [[val]]",
+    "es": "Atenuar L1 a [[val]]",
+    "fr": "Atténuer L1 à [[val]]",
+    "it": "Diminuisci L1 a [[val]]",
+    "no": "Dim L1 til [[val]]",
+    "sv": "Dimma L1 till [[val]]",
+    "pl": "Ściemnij L1 do [[val]]",
+    "ru": "Затемнить L1 до [[val]]",
+    "ko": "디밍 L1 [[val]]로"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=dim.l1"
+    },
+    {
+      "name": "val",
+      "type": "range",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "value": 0.5,
+      "label": "%",
+      "labelMultiplier": 100,
+      "labelDecimals": 0
+    }
+  ]
 }

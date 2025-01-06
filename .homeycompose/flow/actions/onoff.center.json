@@ -1,21 +1,56 @@
 {
-	"title": {
-		"en": "Switch Center On or Off"
-	},
-		"titleFormatted": {
-				"en": "Switch Center [[val]]"
-		},
-		"highlight": true,
-		"args": [
-				{
-						"type": "device",
-						"name": "device",
-						"filter": "driver_id=device|group&capabilities=onoff.center"
-				},
-				{
-						"type": "checkbox",
-						"name": "val",
-						"title": { "en": "On" }
-				}
-		]
+  "title": {
+    "en": "Switch Center On or Off",
+    "nl": "Zet het centrum aan of uit",
+    "da": "Tænd eller sluk for center",
+    "de": "Schalten Sie das Zentrum ein oder aus",
+    "es": "Activar o desactivar el centro",
+    "fr": "Activer ou désactiver le centre",
+    "it": "Accendi o spegni il centro",
+    "no": "Slå senteret på eller av",
+    "sv": "Slå på eller av centrumet",
+    "pl": "Włącz lub wyłącz centrum",
+    "ru": "Включить или выключить центр",
+    "ko": "센터 켜기 또는 끄기"
+  },
+  "titleFormatted": {
+    "en": "Switch Center [[val]]",
+    "nl": "Schakel centrum [[val]]",
+    "da": "Skift center [[val]]",
+    "de": "Zentrum schalten [[val]]",
+    "es": "Cambiar centro [[val]]",
+    "fr": "Centre de commutation [[val]]",
+    "it": "Centro di commutazione [[val]]",
+    "no": "Bytt senter [[val]]",
+    "sv": "Växla centrum [[val]]",
+    "pl": "Przełącz centrum [[val]]",
+    "ru": "Переключить центр [[val]]",
+    "ko": "센터 전환 [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.center"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "På",
+        "de": "Ein",
+        "es": "Encendido",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączone",
+        "ru": "Включено",
+        "ko": "켬"
+      }
+    }
+  ]
 }

@@ -1,21 +1,56 @@
 {
-	"title": {
-		"en": "Switch Right On or Off"
-	},
-		"titleFormatted": {
-				"en": "Switch Right [[val]]"
-		},
-		"highlight": true,
-		"args": [
-				{
-						"type": "device",
-						"name": "device",
-						"filter": "driver_id=device|group&capabilities=onoff.right"
-				},
-				{
-						"type": "checkbox",
-						"name": "val",
-						"title": { "en": "On" }
-				}
-		]
+  "title": {
+    "en": "Switch Right On or Off",
+    "nl": "Schakel Rechts Aan of Uit",
+    "da": "Slå Højre Til eller Fra",
+    "de": "Rechts Ein- oder Ausschalten",
+    "es": "Encender o Apagar Derecha",
+    "fr": "Allumer ou Éteindre la Droite",
+    "it": "Accendi o Spegni a Destra",
+    "no": "Slå Høyre Av eller På",
+    "sv": "Slå Höger Av eller På",
+    "pl": "Włącz lub Wyłącz Prawy",
+    "ru": "Включить или Выключить Правый",
+    "ko": "오른쪽 켜기 또는 끄기"
+  },
+  "titleFormatted": {
+    "en": "Switch Right [[val]]",
+    "nl": "Schakel Rechts [[val]]",
+    "da": "Skift Højre [[val]]",
+    "de": "Schalte Rechts [[val]]",
+    "es": "Cambiar Derecha [[val]]",
+    "fr": "Commutez Droite [[val]]",
+    "it": "Cambia a Destra [[val]]",
+    "no": "Skift Høyre [[val]]",
+    "sv": "Byt Höger [[val]]",
+    "pl": "Przełącz Prawy [[val]]",
+    "ru": "Переключить Правый [[val]]",
+    "ko": "우회 전환 [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.right"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "Til",
+        "de": "An",
+        "es": "Encendido",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączony",
+        "ru": "Вкл",
+        "ko": "켜기"
+      }
+    }
+  ]
 }

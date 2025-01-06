@@ -1,16 +1,38 @@
 {
-	"title": {
-		"en": "Restart Z2M"
-	},
-	"hint": {
-		"en": "Restart the Zigbee2MQTT bridge"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=bridge"
-		}
-	]
+  "title": {
+    "en": "Restart Z2M",
+    "nl": "Herstart Z2M",
+    "da": "Genstart Z2M",
+    "de": "Z2M neu starten",
+    "es": "Reiniciar Z2M",
+    "fr": "Redémarrer Z2M",
+    "it": "Riavvia Z2M",
+    "no": "Start Z2M på nytt",
+    "sv": "Starta om Z2M",
+    "pl": "Zrestartuj Z2M",
+    "ru": "Перезапустить Z2M",
+    "ko": "Z2M 다시 시작"
+  },
+  "hint": {
+    "en": "Restart the Zigbee2MQTT bridge",
+    "nl": "Herstart de Zigbee2MQTT-brug",
+    "da": "Genstart Zigbee2MQTT-broen",
+    "de": "Zigbee2MQTT-Brücke neu starten",
+    "es": "Reiniciar el puente Zigbee2MQTT",
+    "fr": "Redémarrer le pont Zigbee2MQTT",
+    "it": "Riavvia il bridge Zigbee2MQTT",
+    "no": "Start Zigbee2MQTT-broen på nytt",
+    "sv": "Starta om Zigbee2MQTT-bryggan",
+    "pl": "Zrestartuj mostek Zigbee2MQTT",
+    "ru": "Перезапустить мост Zigbee2MQTT",
+    "ko": "Zigbee2MQTT 브리지 다시 시작"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=bridge"
+    }
+  ]
 }

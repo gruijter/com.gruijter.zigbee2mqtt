@@ -1,21 +1,56 @@
 {
-	"title": {
-		"en": "Switch L1 On or Off"
-	},
-		"titleFormatted": {
-				"en": "Switch L1 [[val]]"
-		},
-		"highlight": true,
-		"args": [
-				{
-						"type": "device",
-						"name": "device",
-						"filter": "driver_id=device|group&capabilities=onoff.l1"
-				},
-				{
-						"type": "checkbox",
-						"name": "val",
-						"title": { "en": "On" }
-				}
-		]
+  "title": {
+    "en": "Switch L1 On or Off",
+    "nl": "Schakel L1 in of uit",
+    "da": "Tænd eller sluk L1",
+    "de": "L1 ein- oder ausschalten",
+    "es": "Encender o apagar L1",
+    "fr": "Allumer ou éteindre L1",
+    "it": "Accendere o spegnere L1",
+    "no": "Slå L1 på eller av",
+    "sv": "Slå på eller av L1",
+    "pl": "Włącz lub wyłącz L1",
+    "ru": "Включить или выключить L1",
+    "ko": "L1 켜기 또는 끄기"
+  },
+  "titleFormatted": {
+    "en": "Switch L1 [[val]]",
+    "nl": "Schakel L1 [[val]]",
+    "da": "Tænd/sluk L1 [[val]]",
+    "de": "L1 schalten [[val]]",
+    "es": "Cambiar L1 [[val]]",
+    "fr": "Basculer L1 [[val]]",
+    "it": "Interruttore L1 [[val]]",
+    "no": "Bytt L1 [[val]]",
+    "sv": "Byt L1 [[val]]",
+    "pl": "Przełącz L1 [[val]]",
+    "ru": "Переключить L1 [[val]]",
+    "ko": "L1 [[val]] 전환"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.l1"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "Tændt",
+        "de": "Ein",
+        "es": "Encendido",
+        "fr": "Activé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączony",
+        "ru": "Вкл",
+        "ko": "켜짐"
+      }
+    }
+  ]
 }

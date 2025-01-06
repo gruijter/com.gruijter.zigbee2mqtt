@@ -1,7 +1,18 @@
 {
   "type": "number",
   "title": {
-    "en": "Joined groups"
+    "en": "Joined groups",
+    "nl": "Toegetreden groepen",
+    "da": "Deltagede grupper",
+    "de": "Beigetretene Gruppen",
+    "es": "Grupos unidos",
+    "fr": "Groupes rejoints",
+    "it": "Gruppi uniti",
+    "no": "Bli med i grupper",
+    "sv": "Gick med i grupper",
+    "pl": "Dołączone grupy",
+    "ru": "Присоединившиеся группы",
+    "ko": "가입한 그룹들"
   },
   "getable": true,
   "setable": false,

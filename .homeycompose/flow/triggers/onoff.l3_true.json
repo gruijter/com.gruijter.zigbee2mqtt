@@ -1,15 +1,24 @@
 {
-	"title": {
-		"en": "L3 turned On"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=onoff.l3"
-		}
-	]
+  "title": {
+    "en": "L3 turned On",
+    "nl": "L3 ingeschakeld",
+    "da": "L3 tændt",
+    "de": "L3 eingeschaltet",
+    "es": "L3 activado",
+    "fr": "L3 activé",
+    "it": "L3 acceso",
+    "no": "L3 slått på",
+    "sv": "L3 påslagen",
+    "pl": "L3 włączony",
+    "ru": "L3 включен",
+    "ko": "L3 켜짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.l3"
+    }
+  ]
 }
-
-

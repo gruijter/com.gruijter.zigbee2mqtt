@@ -1,25 +1,292 @@
 {
   "type": "enum",
   "title": {
-    "en": "Sensor"
+    "en": "Sensor",
+    "nl": "Sensor",
+    "da": "Sensor",
+    "de": "Sensor",
+    "es": "Sensor",
+    "fr": "Capteur",
+    "it": "Sensore",
+    "no": "Sensor",
+    "sv": "Sensor",
+    "pl": "Czujnik",
+    "ru": "Датчик",
+    "ko": "센서"
   },
   "values": [
-    { "id": "IN", "title": { "en": "Internal (IN)" }},
-    { "id": "OU", "title": { "en": "External (OU)" }},
-    { "id": "AL", "title": { "en": "All (AL)" }},
-    { "id": "internal", "title": { "en": "Internal" }},
-    { "id": "external", "title": { "en": "External" }},
-    { "id": "both", "title": { "en": "Both" }},
-    { "id": "air", "title": { "en": "Air" }},
-    { "id": "floor", "title": { "en": "Floor" }},
-    { "id": "supervisor_floor", "title": { "en": "Supervisor_floor" }},
-    { "id": "air_sensor", "title": { "en": "Air_sensor" }},
-    { "id": "floor_sensor", "title": { "en": "Floor_sensor" }},
-    { "id": "max_guard", "title": { "en": "Max_guard" }},
-    { "id": "on", "title": { "en": "On" }},
-    { "id": "off", "title": { "en": "Off" }},
-    { "id": "occupied", "title": { "en": "Occupied" }},
-    { "id": "unuccupied", "title": { "en": "Unoccupied" }}
+    {
+      "id": "IN",
+      "title": {
+        "en": "Internal (IN)",
+        "nl": "Intern (IN)",
+        "da": "Intern (IN)",
+        "de": "Intern (IN)",
+        "es": "Interno (IN)",
+        "fr": "Interne (IN)",
+        "it": "Interno (IN)",
+        "no": "Intern (IN)",
+        "sv": "Intern (IN)",
+        "pl": "Wewnętrzny (IN)",
+        "ru": "Внутренний (IN)",
+        "ko": "내부 (IN)"
+      }
+    },
+    {
+      "id": "OU",
+      "title": {
+        "en": "External (OU)",
+        "nl": "Extern (OU)",
+        "da": "Ekstern (OU)",
+        "de": "Extern (OU)",
+        "es": "Externo (OU)",
+        "fr": "Externe (OU)",
+        "it": "Esterno (OU)",
+        "no": "Ekstern (OU)",
+        "sv": "Extern (OU)",
+        "pl": "Zewnętrzny (OU)",
+        "ru": "Внешний (OU)",
+        "ko": "외부 (OU)"
+      }
+    },
+    {
+      "id": "AL",
+      "title": {
+        "en": "All (AL)",
+        "nl": "Alles (AL)",
+        "da": "Alle (AL)",
+        "de": "Alle (AL)",
+        "es": "Todo (AL)",
+        "fr": "Tout (AL)",
+        "it": "Tutto (AL)",
+        "no": "Alle (AL)",
+        "sv": "Alla (AL)",
+        "pl": "Wszystko (AL)",
+        "ru": "Все (AL)",
+        "ko": "모두 (AL)"
+      }
+    },
+    {
+      "id": "internal",
+      "title": {
+        "en": "Internal",
+        "nl": "Intern",
+        "da": "Intern",
+        "de": "Intern",
+        "es": "Interno",
+        "fr": "Interne",
+        "it": "Interno",
+        "no": "Intern",
+        "sv": "Intern",
+        "pl": "Wewnętrzny",
+        "ru": "Внутренний",
+        "ko": "내부"
+      }
+    },
+    {
+      "id": "external",
+      "title": {
+        "en": "External",
+        "nl": "Extern",
+        "da": "Ekstern",
+        "de": "Extern",
+        "es": "Externo",
+        "fr": "Externe",
+        "it": "Esterno",
+        "no": "Ekstern",
+        "sv": "Extern",
+        "pl": "Zewnętrzny",
+        "ru": "Внешний",
+        "ko": "외부"
+      }
+    },
+    {
+      "id": "both",
+      "title": {
+        "en": "Both",
+        "nl": "Beide",
+        "da": "Begge",
+        "de": "Beide",
+        "es": "Ambos",
+        "fr": "Les deux",
+        "it": "Entrambi",
+        "no": "Begge",
+        "sv": "Båda",
+        "pl": "Oba",
+        "ru": "Оба",
+        "ko": "둘 다"
+      }
+    },
+    {
+      "id": "air",
+      "title": {
+        "en": "Air",
+        "nl": "Lucht",
+        "da": "Luft",
+        "de": "Luft",
+        "es": "Aire",
+        "fr": "Air",
+        "it": "Aria",
+        "no": "Luft",
+        "sv": "Luft",
+        "pl": "Powietrze",
+        "ru": "Воздух",
+        "ko": "공기"
+      }
+    },
+    {
+      "id": "floor",
+      "title": {
+        "en": "Floor",
+        "nl": "Vloer",
+        "da": "Gulv",
+        "de": "Boden",
+        "es": "Suelo",
+        "fr": "Sol",
+        "it": "Pavimento",
+        "no": "Gulv",
+        "sv": "Golv",
+        "pl": "Podłoga",
+        "ru": "Пол",
+        "ko": "바닥"
+      }
+    },
+    {
+      "id": "supervisor_floor",
+      "title": {
+        "en": "Supervisor_floor",
+        "nl": "Toezichthoudersvloer",
+        "da": "Tilsynsgulv",
+        "de": "Aufsichtsfläche",
+        "es": "Supervisor_suelo",
+        "fr": "Sol_superviseur",
+        "it": "Supervisore_pavimento",
+        "no": "Tilsynsgulv",
+        "sv": "Övervakargolv",
+        "pl": "Piętro_nadzorcy",
+        "ru": "Этаж_супервайзора",
+        "ko": "관리자층"
+      }
+    },
+    {
+      "id": "air_sensor",
+      "title": {
+        "en": "Air_sensor",
+        "nl": "Luchtsensor",
+        "da": "Luftsensor",
+        "de": "Luftsensor",
+        "es": "Sensor_de_aire",
+        "fr": "Capteur_d'air",
+        "it": "Sensore_aria",
+        "no": "Luftsensor",
+        "sv": "Luftsensor",
+        "pl": "Czujnik_powietrza",
+        "ru": "Датчик_воздуха",
+        "ko": "공기센서"
+      }
+    },
+    {
+      "id": "floor_sensor",
+      "title": {
+        "en": "Floor_sensor",
+        "nl": "Vloersensor",
+        "da": "Gulvsensor",
+        "de": "Bodensensor",
+        "es": "Sensor_de_suelo",
+        "fr": "Capteur_de_sol",
+        "it": "Sensore_pavimento",
+        "no": "Gulvsensor",
+        "sv": "Golvensor",
+        "pl": "Czujnik_podłogi",
+        "ru": "Датчик_пола",
+        "ko": "바닥센서"
+      }
+    },
+    {
+      "id": "max_guard",
+      "title": {
+        "en": "Max_guard",
+        "nl": "Max_bewaking",
+        "da": "Max_vagt",
+        "de": "Max_Schutz",
+        "es": "Max_guardia",
+        "fr": "Max_surveillance",
+        "it": "Max_tutela",
+        "no": "Max_vakt",
+        "sv": "Max_skydd",
+        "pl": "Max_ochrona",
+        "ru": "Max_защита",
+        "ko": "최대보호"
+      }
+    },
+    {
+      "id": "on",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "På",
+        "de": "An",
+        "es": "Encendido",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączony",
+        "ru": "Вкл",
+        "ko": "켜짐"
+      }
+    },
+    {
+      "id": "off",
+      "title": {
+        "en": "Off",
+        "nl": "Uit",
+        "da": "Af",
+        "de": "Aus",
+        "es": "Apagado",
+        "fr": "Éteint",
+        "it": "Spento",
+        "no": "Av",
+        "sv": "Av",
+        "pl": "Wyłączony",
+        "ru": "Выкл",
+        "ko": "끔"
+      }
+    },
+    {
+      "id": "occupied",
+      "title": {
+        "en": "Occupied",
+        "nl": "Bezet",
+        "da": "Optaget",
+        "de": "Besetzt",
+        "es": "Ocupado",
+        "fr": "Occupé",
+        "it": "Occupato",
+        "no": "Opptatt",
+        "sv": "Upptagen",
+        "pl": "Zajęty",
+        "ru": "Занятый",
+        "ko": "사용 중"
+      }
+    },
+    {
+      "id": "unuccupied",
+      "title": {
+        "en": "Unoccupied",
+        "nl": "Onbezet",
+        "da": "Ikke optaget",
+        "de": "Unbesetzt",
+        "es": "Desocupado",
+        "fr": "Inoccupé",
+        "it": "Non occupato",
+        "no": "Ledig",
+        "sv": "Ledig",
+        "pl": "Niezajęty",
+        "ru": "Свободный",
+        "ko": "비어 있음"
+      }
+    }
   ],
   "uiComponent": "picker",
   "getable": true,

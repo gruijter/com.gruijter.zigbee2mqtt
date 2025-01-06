@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The switch type changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=switch_type"
-		}
-	],
-	"tokens": [
-		{
-			"name": "switch_type",
-			"type": "string",
-			"title": { 
-				"en": "Switch type"
-			},
-			"example": "toggle"
-		}
-	]
+  "title": {
+    "en": "The switch type changed",
+    "nl": "Het schakelaartype is veranderd",
+    "da": "Kontakttypen blev ændret",
+    "de": "Der Schaltertyp wurde geändert",
+    "es": "El tipo de interruptor cambió",
+    "fr": "Le type d'interrupteur a changé",
+    "it": "Il tipo di interruttore è cambiato",
+    "no": "Brytertypen ble endret",
+    "sv": "Switchtypen ändrades",
+    "pl": "Typ przełącznika został zmieniony",
+    "ru": "Тип переключателя изменен",
+    "ko": "스위치 유형이 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=switch_type"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "switch_type",
+      "type": "string",
+      "title": {
+        "en": "Switch type",
+        "nl": "Schakelaartype",
+        "da": "Kontakttype",
+        "de": "Schaltertyp",
+        "es": "Tipo de interruptor",
+        "fr": "Type d'interrupteur",
+        "it": "Tipo di interruttore",
+        "no": "Brytertype",
+        "sv": "Brytertyp",
+        "pl": "Typ przełącznika",
+        "ru": "Тип переключателя",
+        "ko": "스위치 유형"
+      },
+      "example": "toggle"
+    }
+  ]
 }

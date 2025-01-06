@@ -1,21 +1,56 @@
 {
-	"title": {
-		"en": "Switch indicator On or Off"
-	},
-		"titleFormatted": {
-				"en": "Switch indicator [[val]]"
-		},
-		"highlight": true,
-		"args": [
-				{
-						"type": "device",
-						"name": "device",
-						"filter": "driver_id=device|group&capabilities=onoff.indicator"
-				},
-				{
-						"type": "checkbox",
-						"name": "val",
-						"title": { "en": "On" }
-				}
-		]
+  "title": {
+    "en": "Switch indicator On or Off",
+    "nl": "Schakel indicator Aan of Uit",
+    "da": "Skift indikator Til eller Fra",
+    "de": "Schalteranzeige Ein oder Aus",
+    "es": "Cambiar indicador Encendido o Apagado",
+    "fr": "Indicateur Marche ou Arrêt",
+    "it": "Attiva ou disattiva l'indicatore",
+    "no": "Slå indikator På eller Av",
+    "sv": "Slå på eller av indikator",
+    "pl": "Przełącz wskaźnik Włącz lub Wyłącz",
+    "ru": "Включить или выключить индикатор",
+    "ko": "표시기 켜기 또는 끄기"
+  },
+  "titleFormatted": {
+    "en": "Switch indicator [[val]]",
+    "nl": "Schakel indicator [[val]]",
+    "da": "Skift indikator [[val]]",
+    "de": "Schalteranzeige [[val]]",
+    "es": "Cambiar indicador [[val]]",
+    "fr": "Indicateur [[val]]",
+    "it": "Interruttore indicatore [[val]]",
+    "no": "Slå indikator [[val]]",
+    "sv": "Slå på indikator [[val]]",
+    "pl": "Przełącz wskaźnik [[val]]",
+    "ru": "Переключить индикатор [[val]]",
+    "ko": "표시기 [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.indicator"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "På",
+        "de": "An",
+        "es": "Encender",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączony",
+        "ru": "Вкл.",
+        "ko": "켜기"
+      }
+    }
+  ]
 }

@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The action changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=action"
-		}
-	],
-	"tokens": [
-		{
-			"name": "action",
-			"type": "string",
-			"title": { 
-				"en": "Action"
-			},
-			"example": "off"
-		}
-	]
+  "title": {
+    "en": "The action changed",
+    "nl": "De actie is gewijzigd",
+    "da": "Handling ændret",
+    "de": "Die Aktion wurde geändert",
+    "es": "La acción cambió",
+    "fr": "L'action a changé",
+    "it": "L'azione è cambiata",
+    "no": "Handlingen endret",
+    "sv": "Åtgärden ändrades",
+    "pl": "Działanie zostało zmienione",
+    "ru": "Действие изменилось",
+    "ko": "동작이 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=action"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "action",
+      "type": "string",
+      "title": {
+        "en": "Action",
+        "nl": "Actie",
+        "da": "Handling",
+        "de": "Aktion",
+        "es": "Acción",
+        "fr": "Action",
+        "it": "Azione",
+        "no": "Handling",
+        "sv": "Åtgärd",
+        "pl": "Działanie",
+        "ru": "Действие",
+        "ko": "동작"
+      },
+      "example": "off"
+    }
+  ]
 }

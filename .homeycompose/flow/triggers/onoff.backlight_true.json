@@ -1,15 +1,24 @@
 {
-	"title": {
-		"en": "Backlight turned On"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=onoff.backlight"
-		}
-	]
+  "title": {
+    "en": "Backlight turned On",
+    "nl": "Achtergrondverlichting ingeschakeld",
+    "da": "Baggrundslys tændt",
+    "de": "Beleuchtung eingeschaltet",
+    "es": "Retroiluminación activada",
+    "fr": "Rétroéclairage activé",
+    "it": "Retroilluminazione accesa",
+    "no": "Bakgrunnsbelysning slått på",
+    "sv": "Bakgrundsbelysning påslagen",
+    "pl": "Podświetlenie włączone",
+    "ru": "Подсветка включена",
+    "ko": "백라이트 켜짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.backlight"
+    }
+  ]
 }
-
-

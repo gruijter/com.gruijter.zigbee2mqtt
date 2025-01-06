@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The number of joined devices changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=bridge"
-		}
-	],
-	"tokens": [
-		{
-			"name": "meter_joined_devices",
-			"type": "number",
-			"title": { 
-				"en": "Joined devices"
-			},
-			"example": 53
-		}
-	]
+  "title": {
+    "en": "The number of joined devices changed",
+    "nl": "Het aantal gekoppelde apparaten is gewijzigd",
+    "da": "Antallet af tilsluttede enheder er ændret",
+    "de": "Die Anzahl der verbundenen Geräte hat sich geändert",
+    "es": "El número de dispositivos conectados ha cambiado",
+    "fr": "Le nombre d'appareils connectés a changé",
+    "it": "Il numero di dispositivi collegati è cambiato",
+    "no": "Antall tilkoblede enheter har endret seg",
+    "sv": "Antalet anslutna enheter har ändrats",
+    "pl": "Liczba podłączonych urządzeń uległa zmianie",
+    "ru": "Количество подключенных устройств изменилось",
+    "ko": "연결된 장치 수가 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=bridge"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "meter_joined_devices",
+      "type": "number",
+      "title": {
+        "en": "Joined devices",
+        "nl": "Gekoppelde apparaten",
+        "da": "Tilsluttede enheder",
+        "de": "Verbundene Geräte",
+        "es": "Dispositivos conectados",
+        "fr": "Appareils connectés",
+        "it": "Dispositivi collegati",
+        "no": "Tilkoblede enheter",
+        "sv": "Anslutna enheter",
+        "pl": "Podłączone urządzenia",
+        "ru": "Подключенные устройства",
+        "ko": "연결된 장치"
+      },
+      "example": 53
+    }
+  ]
 }

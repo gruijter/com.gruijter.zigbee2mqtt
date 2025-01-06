@@ -1,0 +1,45 @@
+{
+  "title": {
+    "en": "The number of unavailable devices changed",
+    "nl": "Het aantal niet-beschikbare apparaten is gewijzigd",
+    "da": "Antallet af utilgængelige enheder er ændret",
+    "de": "Die Anzahl der nicht verfügbaren Geräte hat sich geändert",
+    "es": "El número de dispositivos no disponibles ha cambiado",
+    "fr": "Le nombre d'appareils indisponibles a changé",
+    "it": "Il numero di dispositivi non disponibili è cambiato",
+    "no": "Antall utilgjengelige enheter har endret seg",
+    "sv": "Antalet otillgängliga enheter har ändrats",
+    "pl": "Liczba niedostępnych urządzeń uległa zmianie",
+    "ru": "Количество недоступных устройств изменилось",
+    "ko": "사용할 수 없는 장치 수가 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=bridge"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "meter_unavailable_devices",
+      "type": "number",
+      "title": {
+        "en": "Unavailable devices",
+        "nl": "Niet-beschikbare apparaten",
+        "da": "Utilgængelige enheder",
+        "de": "Nicht verfügbare Geräte",
+        "es": "Dispositivos no disponibles",
+        "fr": "Appareils indisponibles",
+        "it": "Dispositivi non disponibili",
+        "no": "Utilgjengelige enheter",
+        "sv": "Otillgängliga enheter",
+        "pl": "Niedostępne urządzenia",
+        "ru": "Недоступные устройства",
+        "ko": "사용할 수 없는 장치"
+      },
+      "example": 3
+    }
+  ]
+}

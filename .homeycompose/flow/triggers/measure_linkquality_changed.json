@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The link quality changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=measure_linkquality"
-		}
-	],
-	"tokens": [
-		{
-			"name": "measure_linkquality",
-			"type": "number",
-			"title": { 
-				"en": "Link quality"
-			},
-			"example": 53
-		}
-	]
+  "title": {
+    "en": "The link quality changed",
+    "nl": "De verbindingskwaliteit is veranderd",
+    "da": "Linkkvaliteten ændrede sig",
+    "de": "Die Verbindungsqualität hat sich geändert",
+    "es": "La calidad del enlace cambió",
+    "fr": "La qualité du lien a changé",
+    "it": "La qualità del collegamento è cambiata",
+    "no": "Lenkekvaliteten endret seg",
+    "sv": "Länkkvaliteten har ändrats",
+    "pl": "Jakość połączenia zmieniła się",
+    "ru": "Качество соединения изменилось",
+    "ko": "링크 품질이 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=measure_linkquality"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_linkquality",
+      "type": "number",
+      "title": {
+        "en": "Link quality",
+        "nl": "Verbindingskwaliteit",
+        "da": "Linkkvalitet",
+        "de": "Verbindungsqualität",
+        "es": "Calidad del enlace",
+        "fr": "Qualité de lien",
+        "it": "Qualità del collegamento",
+        "no": "Lenkekvalitet",
+        "sv": "Länkkvalitet",
+        "pl": "Jakość połączenia",
+        "ru": "Качество соединения",
+        "ko": "링크 품질"
+      },
+      "example": 53
+    }
+  ]
 }

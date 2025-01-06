@@ -1,21 +1,56 @@
 {
-	"title": {
-		"en": "Switch L3 On or Off"
-	},
-		"titleFormatted": {
-				"en": "Switch L3 [[val]]"
-		},
-		"highlight": true,
-		"args": [
-				{
-						"type": "device",
-						"name": "device",
-						"filter": "driver_id=device|group&capabilities=onoff.l3"
-				},
-				{
-						"type": "checkbox",
-						"name": "val",
-						"title": { "en": "On" }
-				}
-		]
+  "title": {
+    "en": "Switch L3 On or Off",
+    "nl": "Schakel L3 in of uit",
+    "da": "Tænd eller sluk L3",
+    "de": "Schalten Sie L3 ein oder aus",
+    "es": "Encender o apagar L3",
+    "fr": "Allumer ou éteindre L3",
+    "it": "Accendi o spegni L3",
+    "no": "Slå L3 på eller av",
+    "sv": "Slå på eller stänga av L3",
+    "pl": "Włącz lub wyłącz L3",
+    "ru": "Включить или выключить L3",
+    "ko": "L3 켜기 또는 끄기"
+  },
+  "titleFormatted": {
+    "en": "Switch L3 [[val]]",
+    "nl": "Schakel L3 [[val]]",
+    "da": "Skift L3 [[val]]",
+    "de": "Schalten Sie L3 [[val]]",
+    "es": "Cambiar L3 [[val]]",
+    "fr": "Changer L3 [[val]]",
+    "it": "Cambia L3 [[val]]",
+    "no": "Bytt L3 [[val]]",
+    "sv": "Byt L3 [[val]]",
+    "pl": "Przełącz L3 [[val]]",
+    "ru": "Переключить L3 [[val]]",
+    "ko": "L3 [[val]] 전환"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.l3"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "Tænd",
+        "de": "Ein",
+        "es": "Encendido",
+        "fr": "Activé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączone",
+        "ru": "Вкл",
+        "ko": "켜기"
+      }
+    }
+  ]
 }

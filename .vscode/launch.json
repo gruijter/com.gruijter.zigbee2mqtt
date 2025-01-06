@@ -1,60 +1,135 @@
 {
-	"version": "0.2.0",
-	"configurations": [
-
-		{
-			"name": "Select HomeyDev2023",
-			"type": "node",
-			"request": "launch",
-			"cwd": "${workspaceFolder}",
-			"runtimeExecutable": "homey",
-			"args": ["select", "-n", "HomeyDev2023"]
-		},
-		{
-			"name": "Launch app on HomeyDev2023",
-			"type": "node",
-			"request": "launch",
-			"cwd": "${workspaceFolder}",
-			"runtimeExecutable": "homey",
-			"args": ["app", "run", "--remote"],
-			"outputCapture": "std",
-			"serverReadyAction": {
-				"pattern": "Debugger listening on",
-				"action": "startDebugging",
-				"name": "Attach to HomeyDev2023"
-			}
-		},
-		{
-			"name": "Attach to HomeyDev2023",
-			"type": "node",
-			"request": "attach",
-			"address": "10.0.0.68",
-			"port": 9229,
-			"localRoot": "${workspaceFolder}",
-			"remoteRoot": "/app/"
-		},
+  "version": "0.2.0",
+  "configurations": [
     {
-			"name": "Launch app on Docker",
-			"type": "node",
-			"request": "launch",
-			"cwd": "${workspaceFolder}",
-			"runtimeExecutable": "homey",
-			"args": ["app", "run"],
-			"outputCapture": "std",
-			"serverReadyAction": {
-				"pattern": "Debugger listening on",
-				"action": "startDebugging",
-				"name": "Attach to Docker"
-			}
-		},
+      "name": {
+        "en": "Select HomeyDev2023",
+        "nl": "Selecteer HomeyDev2023",
+        "da": "Vælg HomeyDev2023",
+        "de": "Wählen Sie HomeyDev2023",
+        "es": "Seleccionar HomeyDev2023",
+        "fr": "Sélectionner HomeyDev2023",
+        "it": "Seleziona HomeyDev2023",
+        "no": "Velg HomeyDev2023",
+        "sv": "Välj HomeyDev2023",
+        "pl": "Wybierz HomeyDev2023",
+        "ru": "Выберите HomeyDev2023",
+        "ko": "HomeyDev2023 선택"
+      },
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "homey",
+      "args": [
+        "select",
+        "-n",
+        "HomeyDev2023"
+      ]
+    },
     {
-			"name": "Attach to Docker",
-			"type": "node",
-			"request": "attach",
-			"address": "0.0.0.0",
-			"port": 9229,
-			"localRoot": "${workspaceFolder}",
-			"remoteRoot": "/app/"
-		}
-	]
+      "name": {
+        "en": "Launch app on HomeyDev2023",
+        "nl": "Start app op HomeyDev2023",
+        "da": "Start app på HomeyDev2023",
+        "de": "App auf HomeyDev2023 starten",
+        "es": "Lanzar la app en HomeyDev2023",
+        "fr": "Lancer l'application sur HomeyDev2023",
+        "it": "Avvia l'app su HomeyDev2023",
+        "no": "Start app på HomeyDev2023",
+        "sv": "Starta app på HomeyDev2023",
+        "pl": "Uruchom aplikację na HomeyDev2023",
+        "ru": "Запуск приложения на HomeyDev2023",
+        "ko": "HomeyDev2023에서 앱 실행"
+      },
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "homey",
+      "args": [
+        "app",
+        "run",
+        "--remote"
+      ],
+      "outputCapture": "std",
+      "serverReadyAction": {
+        "pattern": "Debugger listening on",
+        "action": "startDebugging",
+        "name": "Attach to HomeyDev2023"
+      }
+    },
+    {
+      "name": {
+        "en": "Attach to HomeyDev2023",
+        "nl": "Koppelen aan HomeyDev2023",
+        "da": "Tilslut til HomeyDev2023",
+        "de": "Anhängen an HomeyDev2023",
+        "es": "Adjuntar a HomeyDev2023",
+        "fr": "Attacher à HomeyDev2023",
+        "it": "Collegati a HomeyDev2023",
+        "no": "Koble til HomeyDev2023",
+        "sv": "Anslut till HomeyDev2023",
+        "pl": "Dołącz do HomeyDev2023",
+        "ru": "Подключиться к HomeyDev2023",
+        "ko": "HomeyDev2023에 연결"
+      },
+      "type": "node",
+      "request": "attach",
+      "address": "10.0.0.68",
+      "port": 9229,
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/app/"
+    },
+    {
+      "name": {
+        "en": "Launch app on Docker",
+        "nl": "Start app op Docker",
+        "da": "Start app på Docker",
+        "de": "App auf Docker starten",
+        "es": "Lanzar la app en Docker",
+        "fr": "Lancer l'application sur Docker",
+        "it": "Avvia l'app su Docker",
+        "no": "Start app på Docker",
+        "sv": "Starta app på Docker",
+        "pl": "Uruchom aplikację na Docker",
+        "ru": "Запуск приложения на Docker",
+        "ko": "Docker에서 앱 실행"
+      },
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "homey",
+      "args": [
+        "app",
+        "run"
+      ],
+      "outputCapture": "std",
+      "serverReadyAction": {
+        "pattern": "Debugger listening on",
+        "action": "startDebugging",
+        "name": "Attach to Docker"
+      }
+    },
+    {
+      "name": {
+        "en": "Attach to Docker",
+        "nl": "Koppelen aan Docker",
+        "da": "Tilslut til Docker",
+        "de": "Anhängen an Docker",
+        "es": "Adjuntar a Docker",
+        "fr": "Attacher à Docker",
+        "it": "Collegati a Docker",
+        "no": "Koble til Docker",
+        "sv": "Anslut till Docker",
+        "pl": "Dołącz do Docker",
+        "ru": "Подключиться к Docker",
+        "ko": "Docker에 연결"
+      },
+      "type": "node",
+      "request": "attach",
+      "address": "0.0.0.0",
+      "port": 9229,
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/app/"
+    }
+  ]
 }

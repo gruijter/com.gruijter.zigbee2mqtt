@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The Power On Behavior changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=power_on_behavior"
-		}
-	],
-	"tokens": [
-		{
-			"name": "power_on_behavior",
-			"type": "string",
-			"title": { 
-				"en": "Power On Behavior"
-			},
-			"example": "off"
-		}
-	]
+  "title": {
+    "en": "The Power On Behavior changed",
+    "nl": "Het gedrag bij inschakelen is gewijzigd",
+    "da": "Tændingsadfærden er ændret",
+    "de": "Das Einschaltverhalten hat sich geändert",
+    "es": "El comportamiento al encender ha cambiado",
+    "fr": "Le comportement à l'allumage a changé",
+    "it": "Il comportamento all'accensione è cambiato",
+    "no": "Strøm på oppførsel har endret seg",
+    "sv": "Ström på beteende har ändrats",
+    "pl": "Zmieniono zachowanie przy włączaniu",
+    "ru": "Изменено поведение при включении",
+    "ko": "전원 켜기 동작이 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=power_on_behavior"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "power_on_behavior",
+      "type": "string",
+      "title": {
+        "en": "Power On Behavior",
+        "nl": "Inschakelgedrag",
+        "da": "Tændingsadfærd",
+        "de": "Einschaltverhalten",
+        "es": "Comportamiento al encender",
+        "fr": "Comportement à l'allumage",
+        "it": "Comportamento all'accensione",
+        "no": "Strøm på oppførsel",
+        "sv": "Ström på beteende",
+        "pl": "Zachowanie przy włączaniu",
+        "ru": "Поведение при включении",
+        "ko": "전원 켜기 동작"
+      },
+      "example": "off"
+    }
+  ]
 }

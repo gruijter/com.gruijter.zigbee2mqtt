@@ -1,38 +1,316 @@
 {
-	"title": {
-		"en": "Set Sensor"
-	},
-	"titleFormatted": {
-			"en": "Set Sensor to [[val]]"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=sensor"
-		},
-		{
-			"type": "dropdown",
-			"name": "val",
-			"values": [
-				{ "id": "IN", "title": { "en": "Internal (IN)" }},
-				{ "id": "OU", "title": { "en": "External (OU)" }},
-				{ "id": "AL", "title": { "en": "All (AL)" }},
-				{ "id": "internal", "title": { "en": "Internal" }},
-				{ "id": "external", "title": { "en": "External" }},
-				{ "id": "both", "title": { "en": "Both" }},
-				{ "id": "air", "title": { "en": "Air" }},
-				{ "id": "floor", "title": { "en": "Floor" }},
-				{ "id": "supervisor_floor", "title": { "en": "Supervisor_floor" }},
-				{ "id": "air_sensor", "title": { "en": "Air_sensor" }},
-				{ "id": "floor_sensor", "title": { "en": "Floor_sensor" }},
-				{ "id": "max_guard", "title": { "en": "Max_guard" }},
-				{ "id": "on", "title": { "en": "On" }},
-				{ "id": "off", "title": { "en": "Off" }},
-				{ "id": "occupied", "title": { "en": "Occupied" }},
-				{ "id": "unuccupied", "title": { "en": "Unoccupied" }}
-			]
-		}
-	]
+  "title": {
+    "en": "Set Sensor",
+    "nl": "Stel Sensor in",
+    "da": "Indstil Sensor",
+    "de": "Sensor einstellen",
+    "es": "Configurar Sensor",
+    "fr": "Configurer le Capteur",
+    "it": "Imposta Sensore",
+    "no": "Sett Sensor",
+    "sv": "Ställ in Sensor",
+    "pl": "Ustaw Sensor",
+    "ru": "Установить Датчик",
+    "ko": "센서 설정"
+  },
+  "titleFormatted": {
+    "en": "Set Sensor to [[val]]",
+    "nl": "Stel Sensor in op [[val]]",
+    "da": "Indstil Sensor til [[val]]",
+    "de": "Sensor auf [[val]] einstellen",
+    "es": "Configurar Sensor a [[val]]",
+    "fr": "Configurer le Capteur à [[val]]",
+    "it": "Imposta Sensore su [[val]]",
+    "no": "Sett Sensor til [[val]]",
+    "sv": "Ställ in Sensor till [[val]]",
+    "pl": "Ustaw Sensor na [[val]]",
+    "ru": "Установить Датчик на [[val]]",
+    "ko": "센서를 [[val]]로 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=sensor"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "IN",
+          "title": {
+            "en": "Internal (IN)",
+            "nl": "Intern (IN)",
+            "da": "Intern (IN)",
+            "de": "Intern (IN)",
+            "es": "Interno (IN)",
+            "fr": "Interne (IN)",
+            "it": "Interno (IN)",
+            "no": "Intern (IN)",
+            "sv": "Intern (IN)",
+            "pl": "Wewnętrzny (IN)",
+            "ru": "Внутренний (IN)",
+            "ko": "내부 (IN)"
+          }
+        },
+        {
+          "id": "OU",
+          "title": {
+            "en": "External (OU)",
+            "nl": "Extern (OU)",
+            "da": "Ekstern (OU)",
+            "de": "Extern (OU)",
+            "es": "Externo (OU)",
+            "fr": "Externe (OU)",
+            "it": "Esterno (OU)",
+            "no": "Ekstern (OU)",
+            "sv": "Extern (OU)",
+            "pl": "Zewnętrzny (OU)",
+            "ru": "Внешний (OU)",
+            "ko": "외부 (OU)"
+          }
+        },
+        {
+          "id": "AL",
+          "title": {
+            "en": "All (AL)",
+            "nl": "Alle (AL)",
+            "da": "Alle (AL)",
+            "de": "Alle (AL)",
+            "es": "Todos (AL)",
+            "fr": "Tout (AL)",
+            "it": "Tutto (AL)",
+            "no": "Alle (AL)",
+            "sv": "Alla (AL)",
+            "pl": "Wszystkie (AL)",
+            "ru": "Все (AL)",
+            "ko": "모두 (AL)"
+          }
+        },
+        {
+          "id": "internal",
+          "title": {
+            "en": "Internal",
+            "nl": "Intern",
+            "da": "Intern",
+            "de": "Intern",
+            "es": "Interno",
+            "fr": "Interne",
+            "it": "Interno",
+            "no": "Intern",
+            "sv": "Intern",
+            "pl": "Wewnętrzny",
+            "ru": "Внутренний",
+            "ko": "내부"
+          }
+        },
+        {
+          "id": "external",
+          "title": {
+            "en": "External",
+            "nl": "Extern",
+            "da": "Ekstern",
+            "de": "Extern",
+            "es": "Externo",
+            "fr": "Externe",
+            "it": "Esterno",
+            "no": "Ekstern",
+            "sv": "Extern",
+            "pl": "Zewnętrzny",
+            "ru": "Внешний",
+            "ko": "외부"
+          }
+        },
+        {
+          "id": "both",
+          "title": {
+            "en": "Both",
+            "nl": "Beide",
+            "da": "Begge",
+            "de": "Beide",
+            "es": "Ambos",
+            "fr": "Les deux",
+            "it": "Entrambi",
+            "no": "Begge",
+            "sv": "Både",
+            "pl": "Oba",
+            "ru": "Оба",
+            "ko": "둘 다"
+          }
+        },
+        {
+          "id": "air",
+          "title": {
+            "en": "Air",
+            "nl": "Lucht",
+            "da": "Luft",
+            "de": "Luft",
+            "es": "Aire",
+            "fr": "Air",
+            "it": "Aria",
+            "no": "Luft",
+            "sv": "Luft",
+            "pl": "Powietrze",
+            "ru": "Воздух",
+            "ko": "공기"
+          }
+        },
+        {
+          "id": "floor",
+          "title": {
+            "en": "Floor",
+            "nl": "Vloer",
+            "da": "Gulv",
+            "de": "Boden",
+            "es": "Suelo",
+            "fr": "Sol",
+            "it": "Pavimento",
+            "no": "Gulv",
+            "sv": "Golv",
+            "pl": "Podłoga",
+            "ru": "Пол",
+            "ko": "바닥"
+          }
+        },
+        {
+          "id": "supervisor_floor",
+          "title": {
+            "en": "Supervisor_floor",
+            "nl": "Supervisor_vloer",
+            "da": "Supervisor_gulv",
+            "de": "Supervisor_Boden",
+            "es": "Supervisor_suelo",
+            "fr": "Superviseur_sol",
+            "it": "Supervisore_pavimento",
+            "no": "Tilsyn_mann_gulv",
+            "sv": "Tillsynsman_golv",
+            "pl": "Nadzorca_podłoga",
+            "ru": "Супервайзор_пол",
+            "ko": "감독자_바닥"
+          }
+        },
+        {
+          "id": "air_sensor",
+          "title": {
+            "en": "Air_sensor",
+            "nl": "Lucht_sensor",
+            "da": "Luft_sensor",
+            "de": "Luft_Sensor",
+            "es": "Aire_sensor",
+            "fr": "Air_capteur",
+            "it": "Aria_sensore",
+            "no": "Luft_sensor",
+            "sv": "Luft_sensor",
+            "pl": "Powietrze_sensor",
+            "ru": "Воздух_датчик",
+            "ko": "공기_센서"
+          }
+        },
+        {
+          "id": "floor_sensor",
+          "title": {
+            "en": "Floor_sensor",
+            "nl": "Vloer_sensor",
+            "da": "Gulv_sensor",
+            "de": "Boden_Sensor",
+            "es": "Suelo_sensor",
+            "fr": "Sol_capteur",
+            "it": "Pavimento_sensore",
+            "no": "Gulv_sensor",
+            "sv": "Golv_sensor",
+            "pl": "Podłoga_sensor",
+            "ru": "Пол_датчик",
+            "ko": "바닥_센서"
+          }
+        },
+        {
+          "id": "max_guard",
+          "title": {
+            "en": "Max_guard",
+            "nl": "Max_bewaking",
+            "da": "Max_beskytter",
+            "de": "Max_Schutz",
+            "es": "Máx_guardia",
+            "fr": "Max_garde",
+            "it": "Max_guardia",
+            "no": "Maks_vakt",
+            "sv": "Max_skärm",
+            "pl": "Maks_ochrona",
+            "ru": "Макс_охрана",
+            "ko": "최대_보호"
+          }
+        },
+        {
+          "id": "on",
+          "title": {
+            "en": "On",
+            "nl": "Aan",
+            "da": "Tændt",
+            "de": "An",
+            "es": "Encendido",
+            "fr": "Allumé",
+            "it": "Acceso",
+            "no": "På",
+            "sv": "På",
+            "pl": "Włączony",
+            "ru": "Вкл",
+            "ko": "켜짐"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "nl": "Uit",
+            "da": "Slukket",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "Éteint",
+            "it": "Spento",
+            "no": "Av",
+            "sv": "Av",
+            "pl": "Wyłączony",
+            "ru": "Выкл",
+            "ko": "꺼짐"
+          }
+        },
+        {
+          "id": "occupied",
+          "title": {
+            "en": "Occupied",
+            "nl": "Bezet",
+            "da": "Optaget",
+            "de": "Besetzt",
+            "es": "Ocupado",
+            "fr": "Occupé",
+            "it": "Occupato",
+            "no": "Opptatt",
+            "sv": "Upptagen",
+            "pl": "Zajęty",
+            "ru": "Занято",
+            "ko": "사용 중"
+          }
+        },
+        {
+          "id": "unuccupied",
+          "title": {
+            "en": "Unoccupied",
+            "nl": "Onbezet",
+            "da": "Ikke_optaget",
+            "de": "Unbesetzt",
+            "es": "Desocupado",
+            "fr": "Inoccupé",
+            "it": "Non_occupato",
+            "no": "Ubesatte",
+            "sv": "Ledig",
+            "pl": "Niezajęty",
+            "ru": "Свободно",
+            "ko": "비어 있음"
+          }
+        }
+      ]
+    }
+  ]
 }

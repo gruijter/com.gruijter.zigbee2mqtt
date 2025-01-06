@@ -1,12 +1,71 @@
 {
   "type": "enum",
   "title": {
-    "en": "Color Power On Behavior"
+    "en": "Color Power On Behavior",
+    "nl": "Kleur Aanzetten Gedrag",
+    "da": "Farve Tænding Adfærd",
+    "de": "Farb Ein-Schalt-Verhalten",
+    "es": "Comportamiento de Encendido de Color",
+    "fr": "Comportement d'Activation de Couleur",
+    "it": "Comportamento di Accensione Colore",
+    "no": "Farge På-Slag Adferd",
+    "sv": "Färg På Slå Beteende",
+    "pl": "Zachowanie Przy Włączeniu Koloru",
+    "ru": "Поведение При Включении Цвета",
+    "ko": "색상 전원 켜기 동작"
   },
   "values": [
-    { "id": "initial", "title": { "en": "Initial" }},
-    { "id": "customized", "title": { "en": "Customized" }},
-    { "id": "previous", "title": { "en": "Previous" }}
+    {
+      "id": "initial",
+      "title": {
+        "en": "Initial",
+        "nl": "Initieel",
+        "da": "Initial",
+        "de": "Initial",
+        "es": "Inicial",
+        "fr": "Initial",
+        "it": "Iniziale",
+        "no": "Opprinnelig",
+        "sv": "Initial",
+        "pl": "Początkowy",
+        "ru": "Начальный",
+        "ko": "초기"
+      }
+    },
+    {
+      "id": "customized",
+      "title": {
+        "en": "Customized",
+        "nl": "Gepersonaliseerd",
+        "da": "Tilpasset",
+        "de": "Benutzerdefiniert",
+        "es": "Personalizado",
+        "fr": "Personnalisé",
+        "it": "Personalizzato",
+        "no": "Tilpasset",
+        "sv": "Anpassad",
+        "pl": "Dostosowany",
+        "ru": "Настроенный",
+        "ko": "사용자 지정"
+      }
+    },
+    {
+      "id": "previous",
+      "title": {
+        "en": "Previous",
+        "nl": "Vorig",
+        "da": "Forrige",
+        "de": "Vorherige",
+        "es": "Anterior",
+        "fr": "Précédent",
+        "it": "Precedente",
+        "no": "Forrige",
+        "sv": "Tidigare",
+        "pl": "Poprzedni",
+        "ru": "Предыдущий",
+        "ko": "이전"
+      }
+    }
   ],
   "uiComponent": "picker",
   "getable": true,

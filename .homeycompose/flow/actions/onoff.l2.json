@@ -1,21 +1,56 @@
 {
-	"title": {
-		"en": "Switch L2 On or Off"
-	},
-		"titleFormatted": {
-				"en": "Switch L2 [[val]]"
-		},
-		"highlight": true,
-		"args": [
-				{
-						"type": "device",
-						"name": "device",
-						"filter": "driver_id=device|group&capabilities=onoff.l2"
-				},
-				{
-						"type": "checkbox",
-						"name": "val",
-						"title": { "en": "On" }
-				}
-		]
+  "title": {
+    "en": "Switch L2 On or Off",
+    "nl": "Schakel L2 Aan of Uit",
+    "da": "Tænd eller sluk L2",
+    "de": "L2 Ein- oder Ausschalten",
+    "es": "Encender o apagar L2",
+    "fr": "Allumer ou éteindre L2",
+    "it": "Accendere o spegnere L2",
+    "no": "Slå L2 på eller av",
+    "sv": "Slå på eller av L2",
+    "pl": "Włącz lub wyłącz L2",
+    "ru": "Включить или выключить L2",
+    "ko": "L2 켜기 또는 끄기"
+  },
+  "titleFormatted": {
+    "en": "Switch L2 [[val]]",
+    "nl": "Schakel L2 [[val]]",
+    "da": "Skift L2 [[val]]",
+    "de": "Wechsle L2 [[val]]",
+    "es": "Cambiar L2 [[val]]",
+    "fr": "Changer L2 [[val]]",
+    "it": "Modifica L2 [[val]]",
+    "no": "Bytt L2 [[val]]",
+    "sv": "Ändra L2 [[val]]",
+    "pl": "Przełącz L2 [[val]]",
+    "ru": "Переключить L2 [[val]]",
+    "ko": "L2 [[val]] 전환"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.l2"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "Tændt",
+        "de": "Ein",
+        "es": "Encendido",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączony",
+        "ru": "Вкл.",
+        "ko": "켜짐"
+      }
+    }
+  ]
 }

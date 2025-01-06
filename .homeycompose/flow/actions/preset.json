@@ -1,34 +1,95 @@
 {
-	"title": {
-		"en": "Set Preset"
-	},
-	"titleFormatted": {
-			"en": "Set Preset to [[val]]"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=preset"
-		},
-		{
-			"type": "dropdown",
-			"name": "val",
-			"values": [
-				{
-					"id": "auto",
-					"title": { "en": "Automatic" }
-				},
-				{
-					"id": "manual",
-					"title": { "en": "Manual" }
-				},
-				{
-					"id": "holiday",
-					"title": { "en": "Holiday" }
-				}
-			]
-		}
-	]
+  "title": {
+    "en": "Set Preset",
+    "nl": "Instelling instellen",
+    "da": "Sæt Forudindstilling",
+    "de": "Voreinstellung festlegen",
+    "es": "Establecer Preferencia",
+    "fr": "Définir Préréglage",
+    "it": "Imposta Preimpostazione",
+    "no": "Sett Forhåndsinnstilling",
+    "sv": "Ställ in Förinställning",
+    "pl": "Ustawienie Presetu",
+    "ru": "Установить Пресет",
+    "ko": "프리셋 설정"
+  },
+  "titleFormatted": {
+    "en": "Set Preset to [[val]]",
+    "nl": "Instelling instellen op [[val]]",
+    "da": "Sæt Forudindstilling til [[val]]",
+    "de": "Voreinstellung auf [[val]] festlegen",
+    "es": "Establecer Preferencia a [[val]]",
+    "fr": "Définir Préréglage à [[val]]",
+    "it": "Imposta Preimpostazione su [[val]]",
+    "no": "Sett Forhåndsinnstilling til [[val]]",
+    "sv": "Ställ in Förinställning till [[val]]",
+    "pl": "Ustawienie Presetu na [[val]]",
+    "ru": "Установить Пресет на [[val]]",
+    "ko": "프리셋을 [[val]]로 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=preset"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Automatic",
+            "nl": "Automatisch",
+            "da": "Automatisk",
+            "de": "Automatisch",
+            "es": "Automático",
+            "fr": "Automatique",
+            "it": "Automatico",
+            "no": "Automatisk",
+            "sv": "Automatisk",
+            "pl": "Automatyczny",
+            "ru": "Автоматический",
+            "ko": "자동"
+          }
+        },
+        {
+          "id": "manual",
+          "title": {
+            "en": "Manual",
+            "nl": "Handmatig",
+            "da": "Manuel",
+            "de": "Manuell",
+            "es": "Manual",
+            "fr": "Manuel",
+            "it": "Manuale",
+            "no": "Manuell",
+            "sv": "Manuell",
+            "pl": "Ręczny",
+            "ru": "Ручной",
+            "ko": "수동"
+          }
+        },
+        {
+          "id": "holiday",
+          "title": {
+            "en": "Holiday",
+            "nl": "Vakantie",
+            "da": "Ferie",
+            "de": "Urlaub",
+            "es": "Vacaciones",
+            "fr": "Vacances",
+            "it": "Vacanza",
+            "no": "Ferie",
+            "sv": "Helgdag",
+            "pl": "Wakacje",
+            "ru": "Праздник",
+            "ko": "휴가"
+          }
+        }
+      ]
+    }
+  ]
 }

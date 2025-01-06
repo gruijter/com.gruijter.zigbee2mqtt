@@ -1,34 +1,95 @@
 {
-	"title": {
-		"en": "Set Switch Type L1"
-	},
-	"titleFormatted": {
-			"en": "Set L1 Switch Type to [[val]]"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=switch_type.l1"
-		},
-		{
-			"type": "dropdown",
-			"name": "val",
-			"values": [
-				{
-					"id": "toggle",
-					"title": { "en": "toggle" }
-				},
-				{
-					"id": "state",
-					"title": { "en": "State" }
-				},
-				{
-					"id": "momentary",
-					"title": { "en": "Momentary" }
-				}
-			]
-		}
-	]
+  "title": {
+    "en": "Set Switch Type L1",
+    "nl": "Stel schakelaartype L1 in",
+    "da": "Indstil L1-type",
+    "de": "Schaltertyp L1 setzen",
+    "es": "Configurar tipo de interruptor L1",
+    "fr": "Définir le type de commutateur L1",
+    "it": "Imposta tipo switch L1",
+    "no": "Sett brytertype L1",
+    "sv": "Ställ in L1 bryttyp",
+    "pl": "Ustaw typ przełącznika L1",
+    "ru": "Установить тип переключателя L1",
+    "ko": "스위치 유형 L1 설정"
+  },
+  "titleFormatted": {
+    "en": "Set L1 Switch Type to [[val]]",
+    "nl": "Stel L1-schakelaartype in op [[val]]",
+    "da": "Indstil L1 switch-type til [[val]]",
+    "de": "Schaltertyp L1 auf [[val]] setzen",
+    "es": "Configurar tipo de interruptor L1 a [[val]]",
+    "fr": "Définir le type de commutateur L1 à [[val]]",
+    "it": "Imposta tipo switch L1 su [[val]]",
+    "no": "Sett L1 brytertype til [[val]]",
+    "sv": "Ställ in L1 bryttyp till [[val]]",
+    "pl": "Ustaw typ przełącznika L1 na [[val]]",
+    "ru": "Установить тип переключателя L1 на [[val]]",
+    "ko": "스위치 유형 L1을 [[val]]로 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=switch_type.l1"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "toggle",
+          "title": {
+            "en": "toggle",
+            "nl": "schakel",
+            "da": "skifte",
+            "de": "umschalten",
+            "es": "alternar",
+            "fr": "basculer",
+            "it": "invertire",
+            "no": "veksle",
+            "sv": "växla",
+            "pl": "przełącz",
+            "ru": "переключить",
+            "ko": "전환"
+          }
+        },
+        {
+          "id": "state",
+          "title": {
+            "en": "State",
+            "nl": "Toestand",
+            "da": "Tilstand",
+            "de": "Zustand",
+            "es": "Estado",
+            "fr": "État",
+            "it": "Stato",
+            "no": "Tilstand",
+            "sv": "Tillstånd",
+            "pl": "Stan",
+            "ru": "Состояние",
+            "ko": "상태"
+          }
+        },
+        {
+          "id": "momentary",
+          "title": {
+            "en": "Momentary",
+            "nl": "Momentaan",
+            "da": "Øjeblikkelig",
+            "de": "Momentan",
+            "es": "Momentáneo",
+            "fr": "Momentané",
+            "it": "Momento",
+            "no": "Øyeblikkelig",
+            "sv": "Tillfällig",
+            "pl": "Chwilowy",
+            "ru": "Моментальный",
+            "ko": "순간적"
+          }
+        }
+      ]
+    }
+  ]
 }

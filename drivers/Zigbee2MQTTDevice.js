@@ -2,7 +2,7 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-await-in-loop */
 /*
-Copyright 2023 - 2024, Robin de Gruijter (gruijter@hotmail.com)
+Copyright 2023 - 2025, Robin de Gruijter (gruijter@hotmail.com)
 
 This file is part of com.gruijter.zigbee2mqtt.
 
@@ -98,7 +98,6 @@ module.exports = class Zigbee2MQTTDevice extends Device {
     try {
       this.store = this.getStore();
       this.settings = await this.getSettings();
-
       await setTimeoutPromise(2000);
       await this.connectBridge();
       await setTimeoutPromise(2000);
@@ -107,9 +106,9 @@ module.exports = class Zigbee2MQTTDevice extends Device {
       await this.migrate();
       await this.registerListeners();
       await this.getStatus({ state: '' }, 'appInit');
-
       this.restarting = false;
-      this.setAvailable().catch(this.error);
+      if (this.availability === 'offline') this.setUnavailable('Device is offline').catch(this.error);
+      else await this.setAvailable();
       this.log(this.getName(), 'has been initialized');
     } catch (error) {
       this.error(error);
@@ -391,6 +390,12 @@ module.exports = class Zigbee2MQTTDevice extends Device {
                 }
               });
             }
+            // handle device availability
+            if (topic === `${this.deviceTopic}/availability`) {
+              this.availability = info && info.state;
+              if (this.availability === 'online') this.setAvailable().catch(this.error);
+              else if (this.availability === 'offline') this.setUnavailable('Device is offline').catch(this.error);
+            }
           }
         } catch (error) {
           this.error(error);
@@ -402,6 +407,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
         try {
           this.log(`Subscribing to ${this.deviceTopic}`);
           await this.bridge.client.subscribe([`${this.deviceTopic}`]); // device state updates
+          await this.bridge.client.subscribe([`${this.deviceTopic}/availability`]); // device availability updates
           this.log(`${this.getName()} mqtt subscriptions ok`);
         } catch (error) {
           this.error(error);

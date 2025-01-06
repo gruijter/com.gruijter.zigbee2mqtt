@@ -1,34 +1,95 @@
 {
-	"title": {
-		"en": "Set Switch Type Right"
-	},
-	"titleFormatted": {
-			"en": "Set Right Switch Type to [[val]]"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=switch_type.right"
-		},
-		{
-			"type": "dropdown",
-			"name": "val",
-			"values": [
-				{
-					"id": "toggle",
-					"title": { "en": "toggle" }
-				},
-				{
-					"id": "state",
-					"title": { "en": "State" }
-				},
-				{
-					"id": "momentary",
-					"title": { "en": "Momentary" }
-				}
-			]
-		}
-	]
+  "title": {
+    "en": "Set Switch Type Right",
+    "nl": "Stel Schakelaar Type Rechts in",
+    "da": "Indstil Højre Afbrydertype",
+    "de": "Rechten Schaltertyp Einstellen",
+    "es": "Configurar Tipo de Interruptor Derecho",
+    "fr": "Définir le Type d'Interrupteur Droit",
+    "it": "Imposta Tipo di Switch a Destra",
+    "no": "Sett Høyre Brytertype",
+    "sv": "Ställ in Höger Strömställartyp",
+    "pl": "Ustaw Typ Przełącznika po Prawej",
+    "ru": "Установить Правый Тип Переключателя",
+    "ko": "오른쪽 스위치 유형 설정"
+  },
+  "titleFormatted": {
+    "en": "Set Right Switch Type to [[val]]",
+    "nl": "Stel Rechter Switch Type in op [[val]]",
+    "da": "Indstil Højre Afbrydertype til [[val]]",
+    "de": "Rechten Schaltertyp auf [[val]] setzen",
+    "es": "Configurar Tipo de Interruptor Derecho a [[val]]",
+    "fr": "Définir le Type d'Interrupteur Droit sur [[val]]",
+    "it": "Imposta Tipo di Switch a Destra su [[val]]",
+    "no": "Sett Høyre Brytertype til [[val]]",
+    "sv": "Ställ in Höger Strömställartyp till [[val]]",
+    "pl": "Ustaw Typ Przełącznika po Prawej na [[val]]",
+    "ru": "Установить Правый Тип Переключателя на [[val]]",
+    "ko": "오른쪽 스위치 유형을 [[val]]로 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=switch_type.right"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "toggle",
+          "title": {
+            "en": "toggle",
+            "nl": "schakelaar",
+            "da": "skifte",
+            "de": "umschalten",
+            "es": "alternar",
+            "fr": "basculer",
+            "it": "interruttore",
+            "no": "veksle",
+            "sv": "växla",
+            "pl": "przełącz",
+            "ru": "переключение",
+            "ko": "토글"
+          }
+        },
+        {
+          "id": "state",
+          "title": {
+            "en": "State",
+            "nl": "Toestand",
+            "da": "Tilstand",
+            "de": "Zustand",
+            "es": "Estado",
+            "fr": "État",
+            "it": "Stato",
+            "no": "Tilstand",
+            "sv": "Tillstånd",
+            "pl": "Stan",
+            "ru": "Состояние",
+            "ko": "상태"
+          }
+        },
+        {
+          "id": "momentary",
+          "title": {
+            "en": "Momentary",
+            "nl": "Momentaan",
+            "da": "Øjeblikkelig",
+            "de": "Momentan",
+            "es": "Momentáneo",
+            "fr": "Momentané",
+            "it": "Momento",
+            "no": "Øyeblikkelig",
+            "sv": "Ögonblicklig",
+            "pl": "Chwilowy",
+            "ru": "Мгновенный",
+            "ko": "순간적인"
+          }
+        }
+      ]
+    }
+  ]
 }

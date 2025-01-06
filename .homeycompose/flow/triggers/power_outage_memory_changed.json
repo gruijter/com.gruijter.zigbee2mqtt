@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The Power Outage Memory changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=power_outage_memory"
-		}
-	],
-	"tokens": [
-		{
-			"name": "power_outage_memory",
-			"type": "string",
-			"title": { 
-				"en": "Power Outage Memory"
-			},
-			"example": "off"
-		}
-	]
+  "title": {
+    "en": "The Power Outage Memory changed",
+    "nl": "Het stroomuitvalgeheugen is gewijzigd",
+    "da": "Strømafbrydelseshukommelsen ændret sig",
+    "de": "Das Stromausfallgedächtnis hat sich geändert",
+    "es": "La memoria de corte de energía cambió",
+    "fr": "La mémoire de panne de courant a changé",
+    "it": "La memoria di interruzione di corrente è cambiata",
+    "no": "Strømbruddets hukommelse endret",
+    "sv": "Minnet för strömavbrott ändrades",
+    "pl": "Pamięć o przerwie w dostawie prądu została zmieniona",
+    "ru": "Память об отключении электроэнергии изменилась",
+    "ko": "정전 메모리가 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=power_outage_memory"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "power_outage_memory",
+      "type": "string",
+      "title": {
+        "en": "Power Outage Memory",
+        "nl": "Stroomuitvalgeheugen",
+        "da": "Strømafbrydelseshukommelse",
+        "de": "Stromausfallgedächtnis",
+        "es": "Memoria de corte de energía",
+        "fr": "Mémoire de panne de courant",
+        "it": "Memoria di interruzione di corrente",
+        "no": "Strømbruddets hukommelse",
+        "sv": "Minnet för strömavbrott",
+        "pl": "Pamięć o przerwie w dostawie prądu",
+        "ru": "Память об отключении электроэнергии",
+        "ko": "정전 메모리"
+      },
+      "example": "off"
+    }
+  ]
 }

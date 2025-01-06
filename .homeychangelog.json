@@ -1,4 +1,7 @@
 {
+  "2.7.0": {
+    "en": "Added offline device counter in Bridge. Set device unavailable when Z2M device is offline. Added AI translations for all languages."
+  },
   "2.6.0": {
     "en": "Better mapping of motion/occupancy/presence/vibration alarms and its flow cards (Homey>=12.2.0)."
   },

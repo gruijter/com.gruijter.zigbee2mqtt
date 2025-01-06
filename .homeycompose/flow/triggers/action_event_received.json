@@ -1,12 +1,45 @@
 {
   "title": {
-    "en": "Action event received"
+    "en": "Action event received",
+    "nl": "Actiegebeurtenis ontvangen",
+    "da": "Handling begivenhed modtaget",
+    "de": "Aktionsevent empfangen",
+    "es": "Evento de acción recibido",
+    "fr": "Événement d'action reçu",
+    "it": "Evento di azione ricevuto",
+    "no": "Handling hendelse mottatt",
+    "sv": "Åtgärdshändelse mottagen",
+    "pl": "Otrzymano zdarzenie akcji",
+    "ru": "Получено событие действия",
+    "ko": "작동 이벤트 수신됨"
   },
   "titleFormatted": {
-    "en": "Action [[event]] received."
+    "en": "Action [[event]] received.",
+    "nl": "Actie [[event]] ontvangen.",
+    "da": "Handling [[event]] modtaget.",
+    "de": "Aktion [[event]] empfangen.",
+    "es": "Evento [[event]] recibido.",
+    "fr": "Événement [[event]] reçu.",
+    "it": "Evento [[event]] ricevuto.",
+    "no": "Handling [[event]] mottatt.",
+    "sv": "Åtgärd [[event]] mottagen.",
+    "pl": "Otrzymano zdarzenie [[event]].",
+    "ru": "Получено событие [[event]].",
+    "ko": "작동 [[event]] 수신됨."
   },
   "hint": {
-    "en": "An action event matching given string was received."
+    "en": "An action event matching given string was received.",
+    "nl": "Er is een actiegebeurtenis ontvangen die overeenkomt met de opgegeven tekenreeks.",
+    "da": "En handling begivenhed, der matcher den angivne streng, blev modtaget.",
+    "de": "Ein Aktionsevent, das mit dem angegebenen String übereinstimmt, wurde empfangen.",
+    "es": "Se recibió un evento de acción que coincide con la cadena dada.",
+    "fr": "Un événement d'action correspondant à la chaîne donnée a été reçu.",
+    "it": "È stato ricevuto un evento di azione che corrisponde alla stringa fornita.",
+    "no": "En handling hendelse som samsvarer med gitt streng ble mottatt.",
+    "sv": "En åtgärdshändelse som matchar den angivna strängen mottogs.",
+    "pl": "Otrzymano zdarzenie akcji pasujące do podanego ciągu.",
+    "ru": "Получено событие действия, совпадающее с заданной строкой.",
+    "ko": "지정된 문자열과 일치하는 작동 이벤트가 수신되었습니다."
   },
   "highlight": true,
   "args": [
@@ -19,10 +52,32 @@
       "type": "text",
       "name": "event",
       "title": {
-        "en": "event"
+        "en": "event",
+        "nl": "evenement",
+        "da": "begivenhed",
+        "de": "Ereignis",
+        "es": "evento",
+        "fr": "événement",
+        "it": "evento",
+        "no": "hendelse",
+        "sv": "händelse",
+        "pl": "wydarzenie",
+        "ru": "событие",
+        "ko": "이벤트"
       },
       "placeholder": {
-        "en": "event_name"
+        "en": "event_name",
+        "nl": "evenement_naam",
+        "da": "begivenhed_navn",
+        "de": "ereignis_name",
+        "es": "nombre_evento",
+        "fr": "nom_événement",
+        "it": "nome_evento",
+        "no": "hendelse_navn",
+        "sv": "händelse_namn",
+        "pl": "nazwa_wydarzenia",
+        "ru": "имя_события",
+        "ko": "이벤트_이름"
       }
     }
   ],
@@ -31,7 +86,18 @@
       "name": "action",
       "type": "string",
       "title": {
-        "en": "Action"
+        "en": "Action",
+        "nl": "Actie",
+        "da": "Handling",
+        "de": "Aktion",
+        "es": "Acción",
+        "fr": "Action",
+        "it": "Azione",
+        "no": "Handling",
+        "sv": "Åtgärd",
+        "pl": "Akcja",
+        "ru": "Действие",
+        "ko": "작동"
       },
       "example": "off"
     }

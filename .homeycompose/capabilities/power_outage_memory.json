@@ -1,12 +1,71 @@
 {
   "type": "enum",
   "title": {
-    "en": "Power Outage Memory"
+    "en": "Power Outage Memory",
+    "nl": "Geheugen bij stroomuitval",
+    "da": "Strømafbrydelseshukommelse",
+    "de": "Stromausfall-Speicher",
+    "es": "Memoria de corte de energía",
+    "fr": "Mémoire de coupure de courant",
+    "it": "Memoria interruzione di corrente",
+    "no": "Strømbruddminne",
+    "sv": "Minnesstängning",
+    "pl": "Pamięć przerwy w zasilaniu",
+    "ru": "Память об отключении электроэнергии",
+    "ko": "전원 장애 메모리"
   },
   "values": [
-    { "id": "off", "title": { "en": "Off" }},
-    { "id": "on", "title": { "en": "On" }},
-    { "id": "restore", "title": { "en": "Restore" }}
+    {
+      "id": "off",
+      "title": {
+        "en": "Off",
+        "nl": "Uit",
+        "da": "Fra",
+        "de": "Aus",
+        "es": "Apagado",
+        "fr": "Éteint",
+        "it": "Spento",
+        "no": "Av",
+        "sv": "Av",
+        "pl": "Wyłączone",
+        "ru": "Выкл.",
+        "ko": "끄기"
+      }
+    },
+    {
+      "id": "on",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "Tændt",
+        "de": "Ein",
+        "es": "Encendido",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączone",
+        "ru": "Вкл.",
+        "ko": "켜기"
+      }
+    },
+    {
+      "id": "restore",
+      "title": {
+        "en": "Restore",
+        "nl": "Herstellen",
+        "da": "Gendan",
+        "de": "Wiederherstellen",
+        "es": "Restaurar",
+        "fr": "Restaurer",
+        "it": "Ripristina",
+        "no": "Gjenopprett",
+        "sv": "Återställ",
+        "pl": "Przywróć",
+        "ru": "Восстановить",
+        "ko": "복원"
+      }
+    }
   ],
   "uiComponent": "picker",
   "getable": true,

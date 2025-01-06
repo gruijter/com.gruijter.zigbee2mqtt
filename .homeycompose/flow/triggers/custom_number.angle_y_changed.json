@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The Y-angle changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=custom_number.angle_y"
-		}
-	],
-	"tokens": [
-		{
-			"name": "custom_number.angle_y",
-			"type": "number",
-			"title": { 
-				"en": "angle_y"
-			},
-			"example": 48
-		}
-	]
+  "title": {
+    "en": "The Y-angle changed",
+    "nl": "De Y-hoek is veranderd",
+    "da": "Y-vinklen ændrede sig",
+    "de": "Der Y-Winkel hat sich geändert",
+    "es": "El ángulo Y cambió",
+    "fr": "L'angle Y a changé",
+    "it": "L'angolo Y è cambiato",
+    "no": "Y-vinkelen endret seg",
+    "sv": "Y-vinkeln ändrades",
+    "pl": "Kąt Y zmienił się",
+    "ru": "Угол Y изменился",
+    "ko": "Y-각이 변했습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=custom_number.angle_y"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "custom_number.angle_y",
+      "type": "number",
+      "title": {
+        "en": "angle_y",
+        "nl": "hoek_y",
+        "da": "vinkel_y",
+        "de": "winkel_y",
+        "es": "ángulo_y",
+        "fr": "angle_y",
+        "it": "angolo_y",
+        "no": "vinkel_y",
+        "sv": "vinkel_y",
+        "pl": "kąt_y",
+        "ru": "угол_y",
+        "ko": "각도_y"
+      },
+      "example": 48
+    }
+  ]
 }

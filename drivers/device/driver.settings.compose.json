@@ -1,125 +1,323 @@
 [
-	{
-		"type": "group",
-		"label": {
-				"en": "Device information"
-		},
-		"children": [
-			{
-				"id": "friendly_name",
-				"type": "label",
-				"label": {
-						"en": "Zigbee2mqtt Name"
-				},
-				"value": ""
-			},
-			{
-				"id": "bridge_uid",
-				"type": "label",
-				"label": {
-						"en": "Bridge IEEE Address"
-				},
-				"value": ""
-			},
-			{
-				"id": "uid",
-				"type": "label",
-				"label": {
-						"en": "Device IEEE Address"
-				},
-				"value": ""
-			},
-			{
-				"id": "model",
-				"type": "label",
-				"label": {
-						"en": "Model"
-				},
-				"value": ""
-			},
-			{
-				"id": "description",
-				"type": "label",
-				"label": {
-						"en": "Description"
-				},
-				"value": ""
-			}
-		]
-	},
-	{
-		"type": "group",
-		"label": {
-				"en": "Device settings"
-		},
-		"children": [
-			{
-				"id": "homeyclass",
-				"type": "dropdown",
-				"value": "en",
-				"label": {
-						"en": "Device Class"
-				},
-				"hint": {
-					"en": "This setting will effect the behavior in Homey flows."
-				},
-				"values": [
-					{
-						"id": "other",
-						"label": {
-								"en": "Other"
-						}
-					},
-					{
-						"id": "sensor",
-						"label": {
-								"en": "Sensor"
-						}
-					},
-					{
-						"id": "socket",
-						"label": {
-								"en": "Socket"
-						}
-					},
-					{
-						"id": "light",
-						"label": {
-								"en": "Light"
-						}
-					},
-					{
-						"id": "heater",
-						"label": {
-								"en": "Heater"
-						}
-					},
-					{
-						"id": "thermostat",
-						"label": {
-								"en": "Thermostat"
-						}
-					},
-					{
-						"id": "lock",
-						"label": {
-								"en": "Lock"
-						}
-					},
-					{
-						"id": "button",
-						"label": {
-								"en": "Button"
-						}
-					},
-					{
-						"id": "windowcoverings",
-						"label": {
-							    "en": "Window Coverings"
-						}
-					}
-				]
-			}
-		]
-	}
+  {
+    "type": "group",
+    "label": {
+      "en": "Device information",
+      "nl": "Apparaatinformatie",
+      "da": "Enhedsoplysninger",
+      "de": "Geräteinformationen",
+      "es": "Información del dispositivo",
+      "fr": "Informations sur l'appareil",
+      "it": "Informazioni sul dispositivo",
+      "no": "Enhetsinformasjon",
+      "sv": "Enhetsinformation",
+      "pl": "Informacje o urządzeniu",
+      "ru": "Информация об устройстве",
+      "ko": "장치 정보"
+    },
+    "children": [
+      {
+        "id": "friendly_name",
+        "type": "label",
+        "label": {
+          "en": "Zigbee2mqtt Name",
+          "nl": "Zigbee2mqtt Naam",
+          "da": "Zigbee2mqtt Navn",
+          "de": "Zigbee2mqtt Name",
+          "es": "Nombre Zigbee2mqtt",
+          "fr": "Nom Zigbee2mqtt",
+          "it": "Nome Zigbee2mqtt",
+          "no": "Zigbee2mqtt Navn",
+          "sv": "Zigbee2mqtt Namn",
+          "pl": "Nazwa Zigbee2mqtt",
+          "ru": "Имя Zigbee2mqtt",
+          "ko": "Zigbee2mqtt 이름"
+        },
+        "value": ""
+      },
+      {
+        "id": "bridge_uid",
+        "type": "label",
+        "label": {
+          "en": "Bridge IEEE Address",
+          "nl": "Bridge IEEE-adres",
+          "da": "Bro IEEE-adresse",
+          "de": "Bridge IEEE Adresse",
+          "es": "Dirección IEEE del puente",
+          "fr": "Adresse IEEE du pont",
+          "it": "Indirizzo IEEE del ponte",
+          "no": "Bro IEEE-adresse",
+          "sv": "Brygga IEEE-adress",
+          "pl": "Adres IEEE mostka",
+          "ru": "Адрес IEEE моста",
+          "ko": "브리지 IEEE 주소"
+        },
+        "value": ""
+      },
+      {
+        "id": "uid",
+        "type": "label",
+        "label": {
+          "en": "Device IEEE Address",
+          "nl": "Apparaat IEEE-adres",
+          "da": "Enhed IEEE-adresse",
+          "de": "Gerät IEEE Adresse",
+          "es": "Dirección IEEE del dispositivo",
+          "fr": "Adresse IEEE de l'appareil",
+          "it": "Indirizzo IEEE del dispositivo",
+          "no": "Enhet IEEE-adresse",
+          "sv": "Enhet IEEE-adress",
+          "pl": "Adres IEEE urządzenia",
+          "ru": "Адрес IEEE устройства",
+          "ko": "장치 IEEE 주소"
+        },
+        "value": ""
+      },
+      {
+        "id": "model",
+        "type": "label",
+        "label": {
+          "en": "Model",
+          "nl": "Model",
+          "da": "Model",
+          "de": "Modell",
+          "es": "Modelo",
+          "fr": "Modèle",
+          "it": "Modello",
+          "no": "Modell",
+          "sv": "Modell",
+          "pl": "Model",
+          "ru": "Модель",
+          "ko": "모델"
+        },
+        "value": ""
+      },
+      {
+        "id": "description",
+        "type": "label",
+        "label": {
+          "en": "Description",
+          "nl": "Beschrijving",
+          "da": "Beskrivelse",
+          "de": "Beschreibung",
+          "es": "Descripción",
+          "fr": "Description",
+          "it": "Descrizione",
+          "no": "Beskrivelse",
+          "sv": "Beskrivning",
+          "pl": "Opis",
+          "ru": "Описание",
+          "ko": "설명"
+        },
+        "value": ""
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Device settings",
+      "nl": "Apparaatinstellingen",
+      "da": "Enhedsindstillinger",
+      "de": "Geräteeinstellungen",
+      "es": "Configuración del dispositivo",
+      "fr": "Paramètres de l'appareil",
+      "it": "Impostazioni del dispositivo",
+      "no": "Enhetsinnstillinger",
+      "sv": "Enhetsinställningar",
+      "pl": "Ustawienia urządzenia",
+      "ru": "Настройки устройства",
+      "ko": "장치 설정"
+    },
+    "children": [
+      {
+        "id": "homeyclass",
+        "type": "dropdown",
+        "value": "en",
+        "label": {
+          "en": "Device Class",
+          "nl": "Apparaatklasse",
+          "da": "Enhedsklasse",
+          "de": "Geräteklasse",
+          "es": "Clase de dispositivo",
+          "fr": "Classe de l'appareil",
+          "it": "Classe del dispositivo",
+          "no": "Enhetsklasse",
+          "sv": "Enhetsklass",
+          "pl": "Klasa urządzenia",
+          "ru": "Класс устройства",
+          "ko": "장치 클래스"
+        },
+        "hint": {
+          "en": "This setting will effect the behavior in Homey flows.",
+          "nl": "Deze instelling beïnvloedt het gedrag in Homey-flows.",
+          "da": "Denne indstilling vil påvirke adfærden i Homey flow.",
+          "de": "Diese Einstellung beeinflusst das Verhalten in Homey-Flows.",
+          "es": "Esta configuración afectará el comportamiento en los flujos de Homey.",
+          "fr": "Ce paramètre affectera le comportement des flux Homey.",
+          "it": "Questa impostazione influirà sul comportamento nei flow di Homey.",
+          "no": "Denne innstillingen vil påvirke oppførselen i Homey-strømmer.",
+          "sv": "Denna inställning kommer att påverka beteendet i Homey flöden.",
+          "pl": "To ustawienie wpłynie na zachowanie w przepływach Homey.",
+          "ru": "Эта настройка повлияет на поведение в потоках Homey.",
+          "ko": "이 설정은 Homey 흐름에서의 동작에 영향을 줍니다."
+        },
+        "values": [
+          {
+            "id": "other",
+            "label": {
+              "en": "Other",
+              "nl": "Andere",
+              "da": "Anden",
+              "de": "Andere",
+              "es": "Otro",
+              "fr": "Autre",
+              "it": "Altro",
+              "no": "Annen",
+              "sv": "Annat",
+              "pl": "Inny",
+              "ru": "Другое",
+              "ko": "기타"
+            }
+          },
+          {
+            "id": "sensor",
+            "label": {
+              "en": "Sensor",
+              "nl": "Sensor",
+              "da": "Sensor",
+              "de": "Sensor",
+              "es": "Sensor",
+              "fr": "Capteur",
+              "it": "Sensore",
+              "no": "Sensor",
+              "sv": "Sensor",
+              "pl": "Czujnik",
+              "ru": "Датчик",
+              "ko": "센서"
+            }
+          },
+          {
+            "id": "socket",
+            "label": {
+              "en": "Socket",
+              "nl": "Stopcontact",
+              "da": "Stik",
+              "de": "Steckdose",
+              "es": "Enchufe",
+              "fr": "Prise",
+              "it": "Presa",
+              "no": "Stikkontakt",
+              "sv": "Uttag",
+              "pl": "Gniazdo",
+              "ru": "Розетка",
+              "ko": "소켓"
+            }
+          },
+          {
+            "id": "light",
+            "label": {
+              "en": "Light",
+              "nl": "Licht",
+              "da": "Lys",
+              "de": "Licht",
+              "es": "Luz",
+              "fr": "Lumière",
+              "it": "Luce",
+              "no": "Lys",
+              "sv": "Ljus",
+              "pl": "Światło",
+              "ru": "Свет",
+              "ko": "조명"
+            }
+          },
+          {
+            "id": "heater",
+            "label": {
+              "en": "Heater",
+              "nl": "Verwarming",
+              "da": "Varmeapparat",
+              "de": "Heizung",
+              "es": "Calefactor",
+              "fr": "Chauffage",
+              "it": "Riscaldatore",
+              "no": "Varmeovn",
+              "sv": "Värmare",
+              "pl": "Grzejnik",
+              "ru": "Обогреватель",
+              "ko": "히터"
+            }
+          },
+          {
+            "id": "thermostat",
+            "label": {
+              "en": "Thermostat",
+              "nl": "Thermostaat",
+              "da": "Termostat",
+              "de": "Thermostat",
+              "es": "Termostato",
+              "fr": "Thermostat",
+              "it": "Termostato",
+              "no": "Termostat",
+              "sv": "Termostat",
+              "pl": "Termostat",
+              "ru": "Термостат",
+              "ko": "온도 조절기"
+            }
+          },
+          {
+            "id": "lock",
+            "label": {
+              "en": "Lock",
+              "nl": "Slot",
+              "da": "Lås",
+              "de": "Schloss",
+              "es": "Cerradura",
+              "fr": "Serrure",
+              "it": "Serratura",
+              "no": "Lås",
+              "sv": "Lås",
+              "pl": "Zamek",
+              "ru": "Замок",
+              "ko": "잠금"
+            }
+          },
+          {
+            "id": "button",
+            "label": {
+              "en": "Button",
+              "nl": "Knop",
+              "da": "Knap",
+              "de": "Knopf",
+              "es": "Botón",
+              "fr": "Bouton",
+              "it": "Pulsante",
+              "no": "Knappe",
+              "sv": "Knapp",
+              "pl": "Przycisk",
+              "ru": "Кнопка",
+              "ko": "버튼"
+            }
+          },
+          {
+            "id": "windowcoverings",
+            "label": {
+              "en": "Window Coverings",
+              "nl": "Raambekleding",
+              "da": "Vinduesbeklædning",
+              "de": "Fensterverkleidungen",
+              "es": "Cubiertas de ventanas",
+              "fr": "Habillages de fenêtre",
+              "it": "Coperture per finestre",
+              "no": "Vindusdekorasjoner",
+              "sv": "Fönsterbeklädnader",
+              "pl": "Osłony okienne",
+              "ru": "Оконные покрытия",
+              "ko": "창문 덮개"
+            }
+          }
+        ]
+      }
+    ]
+  }
 ]

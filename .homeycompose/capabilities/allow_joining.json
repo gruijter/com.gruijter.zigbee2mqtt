@@ -1,18 +1,51 @@
 {
-	"type": "boolean",
-	"title": {
-		"en": "Allow joining"
-	},
-	"getable": true,
-	"setable": true,
-	"insights": true,
-	"icon": "./assets/allow_joining.svg",
-	"insightsTitleTrue": {
-		"en": "Joining on"
-	},
-	"insightsTitleFalse": {
-		"en": "Joining off"
-	},
-	"uiComponent": "toggle",
-	"uiQuickAction": false
+  "type": "boolean",
+  "title": {
+    "en": "Allow joining",
+    "nl": "Toestaan toetreden",
+    "da": "Tillad at deltage",
+    "de": "Beitreten erlauben",
+    "es": "Permitir unirse",
+    "fr": "Autoriser l'adhésion",
+    "it": "Consenti l'unione",
+    "no": "Tillat å bli med",
+    "sv": "Tillåt att gå med",
+    "pl": "Zezwól na dołączenie",
+    "ru": "Разрешить присоединение",
+    "ko": "가입 허용"
+  },
+  "getable": true,
+  "setable": true,
+  "insights": true,
+  "icon": "./assets/allow_joining.svg",
+  "insightsTitleTrue": {
+    "en": "Joining on",
+    "nl": "Toetreden aan",
+    "da": "Deltagelse slået til",
+    "de": "Beitreten an",
+    "es": "Unirse activado",
+    "fr": "Adhésion activée",
+    "it": "Unione attiva",
+    "no": "Bli med er på",
+    "sv": "Gå med på",
+    "pl": "Dołączanie włączone",
+    "ru": "Присоединение включено",
+    "ko": "가입 켜짐"
+  },
+  "insightsTitleFalse": {
+    "en": "Joining off",
+    "nl": "Toetreden uit",
+    "da": "Deltagelse slået fra",
+    "de": "Beitreten aus",
+    "es": "Unirse desactivado",
+    "fr": "Adhésion désactivée",
+    "it": "Unione disattiva",
+    "no": "Bli med er av",
+    "sv": "Gå med av",
+    "pl": "Dołączanie wyłączone",
+    "ru": "Присоединение выключено",
+    "ko": "가입 꺼짐"
+  },
+  "uiComponent": "toggle",
+  "uiQuickAction": false
 }

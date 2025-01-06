@@ -1,13 +1,88 @@
 {
   "type": "enum",
   "title": {
-    "en": "SELECTION"
+    "en": "SELECTION",
+    "nl": "SELECTIE",
+    "da": "UDVALGELSE",
+    "de": "AUSWAHL",
+    "es": "SELECCIÓN",
+    "fr": "SÉLECTION",
+    "it": "SELEZIONE",
+    "no": "VALG",
+    "sv": "URVAL",
+    "pl": "WYBÓR",
+    "ru": "ВЫБОР",
+    "ko": "선택"
   },
   "values": [
-    { "id": "enum1", "title": { "en": "First option" }},
-    { "id": "enum2", "title": { "en": "Second option" }},
-    { "id": "enum3", "title": { "en": "Third option" }},
-    { "id": "enum4", "title": { "en": "Fourth option" }}
+    {
+      "id": "enum1",
+      "title": {
+        "en": "First option",
+        "nl": "Eerste optie",
+        "da": "Første mulighed",
+        "de": "Erste Option",
+        "es": "Primera opción",
+        "fr": "Première option",
+        "it": "Prima opzione",
+        "no": "Første alternativ",
+        "sv": "Första alternativet",
+        "pl": "Pierwsza opcja",
+        "ru": "Первый вариант",
+        "ko": "첫 번째 옵션"
+      }
+    },
+    {
+      "id": "enum2",
+      "title": {
+        "en": "Second option",
+        "nl": "Tweede optie",
+        "da": "Anden mulighed",
+        "de": "Zweite Option",
+        "es": "Segunda opción",
+        "fr": "Deuxième option",
+        "it": "Seconda opzione",
+        "no": "Andre alternativ",
+        "sv": "Andra alternativet",
+        "pl": "Druga opcja",
+        "ru": "Второй вариант",
+        "ko": "두 번째 옵션"
+      }
+    },
+    {
+      "id": "enum3",
+      "title": {
+        "en": "Third option",
+        "nl": "Derde optie",
+        "da": "Tredje mulighed",
+        "de": "Dritte Option",
+        "es": "Tercera opción",
+        "fr": "Troisième option",
+        "it": "Terza opzione",
+        "no": "Tredje alternativ",
+        "sv": "Tredje alternativet",
+        "pl": "Trzecia opcja",
+        "ru": "Третий вариант",
+        "ko": "세 번째 옵션"
+      }
+    },
+    {
+      "id": "enum4",
+      "title": {
+        "en": "Fourth option",
+        "nl": "Vierde optie",
+        "da": "Fjerde mulighed",
+        "de": "Vierte Option",
+        "es": "Cuarta opción",
+        "fr": "Quatrième option",
+        "it": "Quarta opzione",
+        "no": "Fjerde alternativ",
+        "sv": "Fjärde alternativet",
+        "pl": "Czwarta opcja",
+        "ru": "Четвертый вариант",
+        "ko": "네 번째 옵션"
+      }
+    }
   ],
   "uiComponent": "picker",
   "getable": true,

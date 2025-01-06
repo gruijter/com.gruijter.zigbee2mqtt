@@ -1,34 +1,95 @@
 {
-	"title": {
-		"en": "Set Color Power On Behavior"
-	},
-	"titleFormatted": {
-			"en": "Set Color Power On Behavior to [[val]]"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=color_power_on_behavior"
-		},
-		{
-			"type": "dropdown",
-			"name": "val",
-			"values": [
-				{
-					"id": "initial",
-					"title": { "en": "Initial" }
-				},
-				{
-					"id": "customized",
-					"title": { "en": "Customized" }
-				},
-				{
-					"id": "previous",
-					"title": { "en": "Previous" }
-				}
-			]
-		}
-	]
+  "title": {
+    "en": "Set Color Power On Behavior",
+    "nl": "Stel Kleuren Aan Gedrag in",
+    "da": "Indstil farvetændingsadfærd",
+    "de": "Farb-Einschaltverhalten festlegen",
+    "es": "Establecer el comportamiento de encendido del color",
+    "fr": "Définir le comportement de mise sous tension de la couleur",
+    "it": "Imposta comportamento accensione colore",
+    "no": "Sett farge-oppstartsadferd",
+    "sv": "Ställ in färgstartbeteende",
+    "pl": "Ustaw zachowanie przy włączaniu koloru",
+    "ru": "Установить цветовое поведение при включении",
+    "ko": "색상 전원 켜기 동작 설정"
+  },
+  "titleFormatted": {
+    "en": "Set Color Power On Behavior to [[val]]",
+    "nl": "Stel Kleuren Aan Gedrag in op [[val]]",
+    "da": "Indstil farvetændingsadfærd til [[val]]",
+    "de": "Farb-Einschaltverhalten auf [[val]] festlegen",
+    "es": "Establecer el comportamiento de encendido del color en [[val]]",
+    "fr": "Définir le comportement de mise sous tension de la couleur sur [[val]]",
+    "it": "Imposta comportamento accensione colore su [[val]]",
+    "no": "Sett farge-oppstartsadferd til [[val]]",
+    "sv": "Ställ in färgstartbeteende till [[val]]",
+    "pl": "Ustaw zachowanie przy włączaniu koloru jako [[val]]",
+    "ru": "Установить цветовое поведение при включении на [[val]]",
+    "ko": "[[val]] 색상 전원 켜기 동작 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=color_power_on_behavior"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "initial",
+          "title": {
+            "en": "Initial",
+            "nl": "Initieel",
+            "da": "Indledende",
+            "de": "Initial",
+            "es": "Inicial",
+            "fr": "Initial",
+            "it": "Iniziale",
+            "no": "Første",
+            "sv": "Initial",
+            "pl": "Początkowy",
+            "ru": "Начальный",
+            "ko": "초기"
+          }
+        },
+        {
+          "id": "customized",
+          "title": {
+            "en": "Customized",
+            "nl": "Gepersonaliseerd",
+            "da": "Tilpasset",
+            "de": "Angepasst",
+            "es": "Personalizado",
+            "fr": "Personnalisé",
+            "it": "Personalizzato",
+            "no": "Tilpasset",
+            "sv": "Anpassad",
+            "pl": "Dostosowany",
+            "ru": "Настроенный",
+            "ko": "사용자 지정"
+          }
+        },
+        {
+          "id": "previous",
+          "title": {
+            "en": "Previous",
+            "nl": "Vorige",
+            "da": "Tidligere",
+            "de": "Vorherige",
+            "es": "Anterior",
+            "fr": "Précédent",
+            "it": "Precedente",
+            "no": "Forrige",
+            "sv": "Föregående",
+            "pl": "Poprzedni",
+            "ru": "Предыдущий",
+            "ko": "이전"
+          }
+        }
+      ]
+    }
+  ]
 }

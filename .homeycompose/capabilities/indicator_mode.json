@@ -1,13 +1,88 @@
 {
   "type": "enum",
   "title": {
-    "en": "Indicator mode"
+    "en": "Indicator mode",
+    "nl": "Indicatiemodus",
+    "da": "Indikatortilstand",
+    "de": "Indikatormodus",
+    "es": "Modo indicador",
+    "fr": "Mode indicateur",
+    "it": "Modalità indicatore",
+    "no": "Indikatormodus",
+    "sv": "Indikatormodus",
+    "pl": "Tryb wskaźnika",
+    "ru": "Режим индикатора",
+    "ko": "표시기 모드"
   },
   "values": [
-    { "id": "off", "title": { "en": "Off" }},
-    { "id": "on", "title": { "en": "On" }},
-    { "id": "off/on", "title": { "en": "Off/On" }},
-    { "id": "on/off", "title": { "en": "On/Off" }}
+    {
+      "id": "off",
+      "title": {
+        "en": "Off",
+        "nl": "Uit",
+        "da": "Fra",
+        "de": "Aus",
+        "es": "Apagado",
+        "fr": "Éteint",
+        "it": "Spento",
+        "no": "Av",
+        "sv": "Av",
+        "pl": "Wyłączony",
+        "ru": "Выкл.",
+        "ko": "끔"
+      }
+    },
+    {
+      "id": "on",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "Tændt",
+        "de": "An",
+        "es": "Encendido",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączony",
+        "ru": "Вкл.",
+        "ko": "켬"
+      }
+    },
+    {
+      "id": "off/on",
+      "title": {
+        "en": "Off/On",
+        "nl": "Uit/Aan",
+        "da": "Fra/Til",
+        "de": "Aus/Ein",
+        "es": "Apagado/Encendido",
+        "fr": "Éteint/Allumé",
+        "it": "Spento/Acceso",
+        "no": "Av/På",
+        "sv": "Av/På",
+        "pl": "Wyłączony/Włączony",
+        "ru": "Выкл./Вкл.",
+        "ko": "끔/켬"
+      }
+    },
+    {
+      "id": "on/off",
+      "title": {
+        "en": "On/Off",
+        "nl": "Aan/Uit",
+        "da": "Til/Fra",
+        "de": "Ein/Aus",
+        "es": "Encendido/Apagado",
+        "fr": "Allumé/Éteint",
+        "it": "Acceso/Spento",
+        "no": "På/Av",
+        "sv": "På/Av",
+        "pl": "Włączony/Wyłączony",
+        "ru": "Вкл./Выкл.",
+        "ko": "켬/끔"
+      }
+    }
   ],
   "uiComponent": "picker",
   "getable": true,

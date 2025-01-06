@@ -1,0 +1,21 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Offline devices",
+    "nl": "Offline apparaten",
+    "da": "Offline enheder",
+    "de": "Offline-Geräte",
+    "es": "Dispositivos sin conexión",
+    "fr": "Appareils hors ligne",
+    "it": "Dispositivi offline",
+    "no": "Frakoblede enheter",
+    "sv": "Offline-enheter",
+    "pl": "Urządzenia offline",
+    "ru": "Офлайн устройства",
+    "ko": "오프라인 장치"
+  },
+  "getable": true,
+  "setable": false,
+  "insights": true,
+  "icon": "./assets/meter_offline_devices.svg"
+}

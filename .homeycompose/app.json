@@ -1,22 +1,88 @@
 {
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
     "local"
   ],
   "name": {
-    "en": "Zigbee2MQTT"
+    "en": "Zigbee2MQTT",
+    "nl": "Zigbee2MQTT",
+    "da": "Zigbee2MQTT",
+    "de": "Zigbee2MQTT",
+    "es": "Zigbee2MQTT",
+    "fr": "Zigbee2MQTT",
+    "it": "Zigbee2MQTT",
+    "no": "Zigbee2MQTT",
+    "sv": "Zigbee2MQTT",
+    "pl": "Zigbee2MQTT",
+    "ru": "Zigbee2MQTT",
+    "ko": "Zigbee2MQTT"
   },
   "description": {
-    "en": "Use Zigbee devices via MQTT"
+    "en": "Use Zigbee devices via MQTT",
+    "nl": "Gebruik Zigbee-apparaten via MQTT",
+    "da": "Brug Zigbee-enheder via MQTT",
+    "de": "Verwenden Sie Zigbee-Geräte über MQTT",
+    "es": "Usa dispositivos Zigbee a través de MQTT",
+    "fr": "Utilisez des appareils Zigbee via MQTT",
+    "it": "Usa dispositivi Zigbee tramite MQTT",
+    "no": "Bruk Zigbee-enheter via MQTT",
+    "sv": "Använd Zigbee-enheter via MQTT",
+    "pl": "Użyj urządzeń Zigbee przez MQTT",
+    "ru": "Используйте устройства Zigbee через MQTT",
+    "ko": "MQTT를 통해 Zigbee 장치 사용"
   },
   "category": [
     "tools"
   ],
   "tags": {
     "en": [
+      "Zigbee",
+      "MQTT"
+    ],
+    "nl": [
+      "Zigbee",
+      "MQTT"
+    ],
+    "da": [
+      "Zigbee",
+      "MQTT"
+    ],
+    "de": [
+      "Zigbee",
+      "MQTT"
+    ],
+    "es": [
+      "Zigbee",
+      "MQTT"
+    ],
+    "fr": [
+      "Zigbee",
+      "MQTT"
+    ],
+    "it": [
+      "Zigbee",
+      "MQTT"
+    ],
+    "no": [
+      "Zigbee",
+      "MQTT"
+    ],
+    "sv": [
+      "Zigbee",
+      "MQTT"
+    ],
+    "pl": [
+      "Zigbee",
+      "MQTT"
+    ],
+    "ru": [
+      "Zigbee",
+      "MQTT"
+    ],
+    "ko": [
       "Zigbee",
       "MQTT"
     ]

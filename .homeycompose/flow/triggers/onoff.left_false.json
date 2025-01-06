@@ -1,15 +1,24 @@
 {
-	"title": {
-		"en": "Left Turned Off"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=onoff.left"
-		}
-	]
+  "title": {
+    "en": "Left Turned Off",
+    "nl": "Links Uitgeschakeld",
+    "da": "Venstre Slukket",
+    "de": "Links Ausgeschaltet",
+    "es": "Izquierda Apagada",
+    "fr": "Gauche Éteint",
+    "it": "Sinistra Spenta",
+    "no": "Venstre Avslått",
+    "sv": "Vänster Avstängd",
+    "pl": "Lewa Wyłączona",
+    "ru": "Лево Выключено",
+    "ko": "왼쪽 꺼짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.left"
+    }
+  ]
 }
-
-

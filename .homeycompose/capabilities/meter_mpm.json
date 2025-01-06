@@ -1,7 +1,18 @@
 {
   "type": "number",
   "title": {
-    "en": "Msgs/minute"
+    "en": "Msgs/minute",
+    "nl": "Berichten/minuut",
+    "da": "Beskeder/minut",
+    "de": "Nachr./Minute",
+    "es": "Mensajes/minuto",
+    "fr": "Msgs/minute",
+    "it": "Messaggi/minuto",
+    "no": "Meldinger/minutt",
+    "sv": "Meddelanden/minut",
+    "pl": "Wiadomości/minuta",
+    "ru": "Сообщения/минута",
+    "ko": "메시지/분"
   },
   "getable": true,
   "setable": false,

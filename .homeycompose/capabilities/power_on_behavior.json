@@ -1,13 +1,88 @@
 {
   "type": "enum",
   "title": {
-    "en": "Power On Behavior"
+    "en": "Power On Behavior",
+    "nl": "Aan-standsgedrag",
+    "da": "Tændingsadfærd",
+    "de": "Verhalten beim Einschalten",
+    "es": "Comportamiento al Encender",
+    "fr": "Comportement à l'Allumage",
+    "it": "Comportamento di Accensione",
+    "no": "Oppstartsatferd",
+    "sv": "Strömpåslagningsbeteende",
+    "pl": "Zachowanie przy włączaniu",
+    "ru": "Поведение при включении",
+    "ko": "전원 켜기 동작"
   },
   "values": [
-    { "id": "off", "title": { "en": "Off" }},
-    { "id": "on", "title": { "en": "On" }},
-    { "id": "toggle", "title": { "en": "Toggle" }},
-    { "id": "previous", "title": { "en": "Previous" }}
+    {
+      "id": "off",
+      "title": {
+        "en": "Off",
+        "nl": "Uit",
+        "da": "Slukket",
+        "de": "Aus",
+        "es": "Apagado",
+        "fr": "Éteint",
+        "it": "Spento",
+        "no": "Av",
+        "sv": "Av",
+        "pl": "Wyłączony",
+        "ru": "Выкл.",
+        "ko": "끄기"
+      }
+    },
+    {
+      "id": "on",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "Tændt",
+        "de": "Ein",
+        "es": "Encendido",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączony",
+        "ru": "Вкл.",
+        "ko": "켜기"
+      }
+    },
+    {
+      "id": "toggle",
+      "title": {
+        "en": "Toggle",
+        "nl": "Schakelen",
+        "da": "Skifte",
+        "de": "Umschalten",
+        "es": "Alternar",
+        "fr": "Basculer",
+        "it": "Scambia",
+        "no": "Veksle",
+        "sv": "Växla",
+        "pl": "Przełącz",
+        "ru": "Переключить",
+        "ko": "전환"
+      }
+    },
+    {
+      "id": "previous",
+      "title": {
+        "en": "Previous",
+        "nl": "Vorig",
+        "da": "Forrige",
+        "de": "Vorherige",
+        "es": "Anterior",
+        "fr": "Précédent",
+        "it": "Precedente",
+        "no": "Forrige",
+        "sv": "Föregående",
+        "pl": "Poprzedni",
+        "ru": "Предыдущий",
+        "ko": "이전"
+      }
+    }
   ],
   "uiComponent": "picker",
   "getable": true,

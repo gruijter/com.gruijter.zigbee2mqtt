@@ -1,6 +1,15 @@
 {
 	"title": { 
-		"en": "The switch type Right changed"
+		"en": "The switch type Right changed",
+		"nl": "Het schakelaartype rechts is gewijzigd",
+		"de": "Der Schaltertyp rechts hat sich geändert",
+		"fr": "Le type d'interrupteur droit a changé",
+		"es": "El tipo de interruptor derecho ha cambiado",
+		"it": "Il tipo di interruttore destro è cambiato",
+		"sv": "Strömbrytartypen till höger har ändrats",
+		"no": "Brytertypen til høyre har endret seg",
+		"da": "Kontakttypen til højre er ændret",
+		"fi": "Kytkimen tyyppi oikealla on muuttunut"
 	},
 	"highlight": true,
 	"args": [
@@ -15,9 +24,20 @@
 			"name": "switch_type.right",
 			"type": "string",
 			"title": { 
-				"en": "Switch type right"
+				"en": "Switch type right",
+				"nl": "Schakelaartype rechts",
+				"de": "Schaltertyp rechts",
+				"fr": "Type d'interrupteur droit",
+				"es": "Tipo de interruptor derecho",
+				"it": "Tipo di interruttore destro",
+				"sv": "Strömbrytartyp höger",
+				"no": "Brytertype høyre",
+				"da": "Kontakttype højre",
+				"fi": "Kytkimen tyyppi oikealla"
 			},
 			"example": "toggle"
 		}
 	]
 }
+
+

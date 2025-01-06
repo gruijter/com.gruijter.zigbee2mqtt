@@ -1,7 +1,18 @@
 {
   "type": "number",
   "title": {
-    "en": "Joining timeout"
+    "en": "Joining timeout",
+    "nl": "Verbindingstijd overschrijden",
+    "da": "Tilslutning timeout",
+    "de": "Zeitüberschreitung beim Beitreten",
+    "es": "Tiempo de espera para unirse",
+    "fr": "Délai d'attente pour rejoindre",
+    "it": "Timeout di connessione",
+    "no": "Tilkoblingstid utløp",
+    "sv": "Anspråks timeout",
+    "pl": "Limit czasu połączenia",
+    "ru": "Тайм-аут подключения",
+    "ko": "가입 시간 초과"
   },
   "getable": true,
   "setable": false,

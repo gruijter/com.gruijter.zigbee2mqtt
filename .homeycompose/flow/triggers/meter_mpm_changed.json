@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The messages per minute changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=bridge"
-		}
-	],
-	"tokens": [
-		{
-			"name": "meter_mpm",
-			"type": "number",
-			"title": { 
-				"en": "Messages per minute"
-			},
-			"example": 53
-		}
-	]
+  "title": {
+    "en": "The messages per minute changed",
+    "nl": "De berichten per minuut zijn gewijzigd",
+    "da": "Beskeder pr. minut ændret",
+    "de": "Die Nachrichten pro Minute haben sich geändert",
+    "es": "Los mensajes por minuto han cambiado",
+    "fr": "Les messages par minute ont changé",
+    "it": "I messaggi per minuto sono cambiati",
+    "no": "Meldingene per minutt har endret seg",
+    "sv": "Meddelanden per minut har ändrats",
+    "pl": "Wiadomości na minutę zmieniły się",
+    "ru": "Сообщения в минуту изменились",
+    "ko": "분당 메시지가 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=bridge"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "meter_mpm",
+      "type": "number",
+      "title": {
+        "en": "Messages per minute",
+        "nl": "Berichten per minuut",
+        "da": "Beskeder pr. minut",
+        "de": "Nachrichten pro Minute",
+        "es": "Mensajes por minuto",
+        "fr": "Messages par minute",
+        "it": "Messaggi al minuto",
+        "no": "Meldinger per minutt",
+        "sv": "Meddelanden per minut",
+        "pl": "Wiadomości na minutę",
+        "ru": "Сообщения в минуту",
+        "ko": "분당 메시지"
+      },
+      "example": 53
+    }
+  ]
 }

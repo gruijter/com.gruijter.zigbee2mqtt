@@ -1,34 +1,95 @@
 {
-	"title": {
-		"en": "Set Switch Type Center"
-	},
-	"titleFormatted": {
-			"en": "Set Center Switch Type to [[val]]"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=switch_type.center"
-		},
-		{
-			"type": "dropdown",
-			"name": "val",
-			"values": [
-				{
-					"id": "toggle",
-					"title": { "en": "toggle" }
-				},
-				{
-					"id": "state",
-					"title": { "en": "State" }
-				},
-				{
-					"id": "momentary",
-					"title": { "en": "Momentary" }
-				}
-			]
-		}
-	]
+  "title": {
+    "en": "Set Switch Type Center",
+    "nl": "Stel Schakelaar Type Midden In",
+    "da": "Indstil Kontakttype Center",
+    "de": "Stelle Schaltertyp Mitte ein",
+    "es": "Establecer Tipo de Interruptor Central",
+    "fr": "Définir le Type de Commutateur Central",
+    "it": "Imposta Tipo Interruttore Centro",
+    "no": "Sett Brytertype Senter",
+    "sv": "Ställ in Strömbrytartyp Centrum",
+    "pl": "Ustaw Typ Przełącznika Środkowy",
+    "ru": "Установить Тип Выключателя Центральный",
+    "ko": "스위치 유형 중앙 설정"
+  },
+  "titleFormatted": {
+    "en": "Set Center Switch Type to [[val]]",
+    "nl": "Stel Middenschakelaar Type In op [[val]]",
+    "da": "Indstil Center Kontakttype til [[val]]",
+    "de": "Stelle Mitten-Schaltertyp auf [[val]] ein",
+    "es": "Establecer Tipo de Interruptor Central a [[val]]",
+    "fr": "Définir le Type de Commutateur Central sur [[val]]",
+    "it": "Imposta Tipo Interruttore Centro su [[val]]",
+    "no": "Sett Midtbrytertype til [[val]]",
+    "sv": "Ställ in Centrumbrytartyp till [[val]]",
+    "pl": "Ustaw Typ Przełącznika Środkowy na [[val]]",
+    "ru": "Установить Тип Центрального Выключателя на [[val]]",
+    "ko": "중앙 스위치 유형을 [[val]]로 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=switch_type.center"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "toggle",
+          "title": {
+            "en": "toggle",
+            "nl": "schakelaar",
+            "da": "skifte",
+            "de": "umschalten",
+            "es": "alternar",
+            "fr": "basculer",
+            "it": "alternare",
+            "no": "veksle",
+            "sv": "växla",
+            "pl": "przełącz",
+            "ru": "переключатель",
+            "ko": "토글"
+          }
+        },
+        {
+          "id": "state",
+          "title": {
+            "en": "State",
+            "nl": "Staat",
+            "da": "Tilstand",
+            "de": "Status",
+            "es": "Estado",
+            "fr": "État",
+            "it": "Stato",
+            "no": "Tilstand",
+            "sv": "Tillstånd",
+            "pl": "Stan",
+            "ru": "Состояние",
+            "ko": "상태"
+          }
+        },
+        {
+          "id": "momentary",
+          "title": {
+            "en": "Momentary",
+            "nl": "Momentopname",
+            "da": "Momentær",
+            "de": "Momentan",
+            "es": "Momentáneo",
+            "fr": "Momentané",
+            "it": "Momento",
+            "no": "Øyeblikkelig",
+            "sv": "Ögonblicklig",
+            "pl": "Chwilowy",
+            "ru": "Мгновенный",
+            "ko": "순간적"
+          }
+        }
+      ]
+    }
+  ]
 }

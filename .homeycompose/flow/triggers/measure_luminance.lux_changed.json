@@ -1,23 +1,45 @@
 {
-	"title": { 
-		"en": "The luminance lux changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=measure_luminance.lux"
-		}
-	],
-	"tokens": [
-		{
-			"name": "measure_luminance.lux",
-			"type": "number",
-			"title": { 
-				"en": "Luminance"
-			},
-			"example": 53
-		}
-	]
+  "title": {
+    "en": "The luminance lux changed",
+    "nl": "De luminantie lux is veranderd",
+    "da": "Luminans lux ændret sig",
+    "de": "Die Lichtstärke lux hat sich geändert",
+    "es": "La luminancia lux cambió",
+    "fr": "La luminance lux a changé",
+    "it": "La luminosità lux è cambiata",
+    "no": "Luminans lux endret seg",
+    "sv": "Luminans lux ändrades",
+    "pl": "Jasność lux została zmieniona",
+    "ru": "Освещенность люкс изменилась",
+    "ko": "조도 럭스가 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=measure_luminance.lux"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_luminance.lux",
+      "type": "number",
+      "title": {
+        "en": "Luminance",
+        "nl": "Luminantie",
+        "da": "Luminans",
+        "de": "Lichtstärke",
+        "es": "Luminancia",
+        "fr": "Luminance",
+        "it": "Luminosità",
+        "no": "Luminans",
+        "sv": "Luminans",
+        "pl": "Jasność",
+        "ru": "Освещенность",
+        "ko": "조도"
+      },
+      "example": 53
+    }
+  ]
 }

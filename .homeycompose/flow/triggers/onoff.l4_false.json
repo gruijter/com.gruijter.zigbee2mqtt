@@ -1,15 +1,24 @@
 {
-	"title": {
-		"en": "L4 turned Off"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=onoff.l4"
-		}
-	]
+  "title": {
+    "en": "L4 turned Off",
+    "nl": "L4 uitgeschakeld",
+    "da": "L4 slukket",
+    "de": "L4 ausgeschaltet",
+    "es": "L4 apagado",
+    "fr": "L4 éteint",
+    "it": "L4 spento",
+    "no": "L4 slått av",
+    "sv": "L4 avstängd",
+    "pl": "L4 wyłączony",
+    "ru": "L4 выключен",
+    "ko": "L4 끄기"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.l4"
+    }
+  ]
 }
-
-

@@ -1,6 +1,21 @@
 {
 	"title": { 
-		"en": "The sensitivity changed"
+		"en": "The sensitivity changed",
+		"nl": "De gevoeligheid is veranderd",
+		"de": "Die Empfindlichkeit hat sich geändert",
+		"fr": "La sensibilité a changé",
+		"es": "La sensibilidad ha cambiado",
+		"it": "La sensibilità è cambiata",
+		"sv": "Känsligheten har ändrats",
+		"no": "Følsomheten har endret seg",
+		"da": "Følsomheden er ændret",
+		"fi": "Herkkyys on muuttunut",
+		"pl": "Czułość została zmieniona",
+		"pt": "A sensibilidade mudou",
+		"ru": "Чувствительность изменилась",
+		"zh": "灵敏度已更改",
+		"ja": "感度が変わりました",
+		"ko": "감도가 변경되었습니다"
 	},
 	"highlight": true,
 	"args": [
@@ -15,7 +30,22 @@
 			"name": "sensitivity_enum",
 			"type": "string",
 			"title": { 
-				"en": "Sensitivity"
+				"en": "Sensitivity",
+				"nl": "Gevoeligheid",
+				"de": "Empfindlichkeit",
+				"fr": "Sensibilité",
+				"es": "Sensibilidad",
+				"it": "Sensibilità",
+				"sv": "Känslighet",
+				"no": "Følsomhet",
+				"da": "Følsomhed",
+				"fi": "Herkkyys",
+				"pl": "Czułość",
+				"pt": "Sensibilidade",
+				"ru": "Чувствительность",
+				"zh": "灵敏度",
+				"ja": "感度",
+				"ko": "감도"
 			},
 			"example": "low"
 		}

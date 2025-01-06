@@ -1,23 +1,44 @@
 {
-	"title": { 
-		"en": "The switch type Left changed"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=device|group&capabilities=switch_type.left"
-		}
-	],
-	"tokens": [
-		{
-			"name": "switch_type.left",
-			"type": "string",
-			"title": { 
-				"en": "Switch type left"
-			},
-			"example": "toggle"
-		}
-	]
+  "title": {
+    "en": "The switch type Left changed",
+    "nl": "Het schakelaartype links is gewijzigd",
+    "da": "Kontakttypen til venstre blev ændret",
+    "de": "Der Schaltertyp Links wurde geändert",
+    "es": "El tipo de interruptor izquierdo ha cambiado",
+    "fr": "Le type d'interrupteur gauche a changé",
+    "it": "Il tipo di interruttore sinistro è cambiato",
+    "no": "Brytertypen til venstre ble endret",
+    "sv": "Strömbrytartypen vänster har ändrats",
+    "pl": "Typ przełącznika lewy został zmieniony",
+    "ru": "Тип переключателя слева изменился",
+    "ko": "왼쪽 스위치 유형이 변경됨"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=switch_type.left"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "switch_type.left",
+      "type": "string",
+      "title": {
+        "en": "Switch type left",
+        "nl": "Schakelaartype links",
+        "de": "Schaltertyp links",
+        "fr": "Type d'interrupteur gauche",
+        "es": "Tipo de interruptor izquierdo",
+        "it": "Tipo di interruttore sinistro",
+        "sv": "Strömbrytartyp vänster",
+        "no": "Brytertype venstre",
+        "da": "Kontakttype venstre",
+        "fi": "Kytkimen tyyppi vasemmalla",
+        "ru": "Тип переключателя слева"
+      },
+      "example": "toggle"
+    }
+  ]
 }

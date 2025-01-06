@@ -1,15 +1,24 @@
 {
-	"title": {
-		"en": "Right Turned On"
-	},
-	"highlight": true,
-	"args": [
-		{
-			"type": "device",
-			"name": "device",
-			"filter": "driver_id=device|group&capabilities=onoff.right"
-		}
-	]
+  "title": {
+    "en": "Right Turned On",
+    "nl": "Rechts Aan",
+    "da": "Højre Tændt",
+    "de": "Rechts Eingeschaltet",
+    "es": "Encendido a la Derecha",
+    "fr": "Allumé à Droite",
+    "it": "Acceso a Destra",
+    "no": "Høyre Påslått",
+    "sv": "Höger Påslagen",
+    "pl": "Włączono Prawy",
+    "ru": "Включено Право",
+    "ko": "오른쪽 켜짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.right"
+    }
+  ]
 }
-
-
