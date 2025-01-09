@@ -1,4 +1,7 @@
 {
+  "2.7.1": {
+    "en": "Ignore group unavailable/offline."
+  },
   "2.7.0": {
     "en": "Added offline device counter in Bridge. Set device unavailable when Z2M device is offline. Added AI translations for all languages."
   },

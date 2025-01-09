@@ -390,8 +390,8 @@ module.exports = class Zigbee2MQTTDevice extends Device {
                 }
               });
             }
-            // handle device availability
-            if (topic === `${this.deviceTopic}/availability`) {
+            // handle device availability, but not for groups
+            if (this.zigbee2MqttType !== 'Group' && topic === `${this.deviceTopic}/availability`) {
               this.availability = info && info.state;
               if (this.availability === 'online') this.setAvailable().catch(this.error);
               else if (this.availability === 'offline') this.setUnavailable('Device is offline').catch(this.error);
