@@ -34,7 +34,9 @@ const capabilityMap = {
   device_temperature: (val) => ['measure_temperature.device', Number(val)],
   co: (val) => ['measure_co', Number(val)],
   co2: (val) => ['measure_co2', Number(val)],
-  smoke_concentration: (val) => ['measure_pm25', Number(val)],
+  smoke_concentration: (val) => ['measure_pm1', Number(val)],
+  pm10: (val) => ['measure_pm10', Number(val)],
+  pm25: (val) => ['measure_pm25', Number(val)],
   humidity: (val) => ['measure_humidity', Number(val)],
   soil_moisture: (val) => ['measure_humidity.soil', Number(val)],
   pressure: (val) => ['measure_pressure', Number(val)],
@@ -72,6 +74,8 @@ const capabilityMap = {
   // : (val) => ['light_saturation', Number(val)],
   color_temp: (val) => ['light_temperature', (Number(val) - 153) / 347, { color_temp: 153 + (Number(val) * 347) }],
   color_mode: (val) => ['light_mode', val === 'xy' || val === 'hs' ? 'color' : 'temperature'],
+  voc: (val) => ['measure_tvoc', Number(val)],
+  voc_index: (val) => ['measure_tvoc_index', Number(val)],
 
   // Standard Homey enum capabilities
   // light_mode

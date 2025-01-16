@@ -163,7 +163,8 @@ module.exports = class Zigbee2MQTTBridge extends Device {
               this.setCapability('allow_joining', info.permit_join);
               this.log('Allow joining:', info.permit_join);
             }
-            this.setCapability('allow_joining_timeout', Number(info.permit_join_timeout));
+            // start / reset joining timer
+            this.joiningTimer(info.permit_join_end).catch((error) => this.error(error));
 
             // check number of joined devices
             if (info.config && info.config.devices) this.setCapability('meter_joined_devices', Object.keys(info.config.devices).length);
@@ -319,9 +320,21 @@ module.exports = class Zigbee2MQTTBridge extends Device {
     }
   }
 
+  async joiningTimer(endTime) {
+    this.endTime = endTime;
+    const timeout = Math.round((new Date(endTime) - Date.now()) / 1000) % (60 * 60);
+    if (endTime && timeout > 0) {
+      this.setCapability('allow_joining_timeout', timeout);
+      await setTimeoutPromise(1000);
+      if (this.endTime) return this.joiningTimer(endTime);
+    }
+    this.setCapability('allow_joining_timeout', 0);
+    return Promise.resolve(true);
+  }
+
   async joinOnOff(onoff, source) {
     if (!this.client || !this.client.connected) return Promise.reject(Error('Bridge is not connected'));
-    const payload = { value: onoff, time: 240 };
+    const payload = { value: onoff, time: 240 * onoff };
     await this.client.publish(`${this.baseTopic}/bridge/request/permit_join`, JSON.stringify(payload));
     this.log(`Permit_join ${onoff} sent by ${source}`);
     return Promise.resolve(true);
@@ -364,7 +377,6 @@ module.exports = class Zigbee2MQTTBridge extends Device {
       // capabilityListeners will be overwritten, so no need to unregister them
 
       this.registerCapabilityListener('allow_joining', (onoff) => {
-        // const payload = { value: onoff, time: 240 };
         this.joinOnOff(onoff, 'app').catch((error) => this.error(error));
       });
 
