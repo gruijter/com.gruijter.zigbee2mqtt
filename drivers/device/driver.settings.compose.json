@@ -315,6 +315,23 @@
               "ru": "Оконные покрытия",
               "ko": "창문 덮개"
             }
+          },
+          {
+            "id": "smokealarm",
+            "label": {
+              "en": "Smoke Alarm",
+              "da": "Røgalarm",
+              "de": "Rauchmelder",
+              "es": "Detector de humo",
+              "fr": "Détecteur de fumée",
+              "it": "Rilevatore di fumo",
+              "ko": "연기 감지기",
+              "nl": "Rookmelder",
+              "no": "Røykvarsler",
+              "pl": "Alarm przeciwdymny",
+              "ru": "Датчик дыма",
+              "sv": "Rökalarm"
+            }
           }
         ]
       }

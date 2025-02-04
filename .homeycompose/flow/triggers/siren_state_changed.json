@@ -1,0 +1,23 @@
+{
+  "title": {
+    "en": "The siren state changed"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=siren_state"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "siren_state",
+      "type": "string",
+      "title": {
+        "en": "clear"
+      },
+      "example": "none"
+    }
+  ]
+}

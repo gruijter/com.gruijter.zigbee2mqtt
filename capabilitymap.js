@@ -76,6 +76,7 @@ const capabilityMap = {
   color_mode: (val) => ['light_mode', val === 'xy' || val === 'hs' ? 'color' : 'temperature'],
   voc: (val) => ['measure_tvoc', Number(val)],
   voc_index: (val) => ['measure_tvoc_index', Number(val)],
+  aqi: (val) => ['measure_aqi', Number(val)],
 
   // Standard Homey enum capabilities
   // light_mode
@@ -103,6 +104,9 @@ const capabilityMap = {
   backlight_mode: (val) => ['onoff.backlight', val === 'ON', { backlight_mode: val ? 'ON' : 'OFF' }],
   system_mode: (val) => ['onoff.system_mode', val === 'heat', { system_mode: val ? 'heat' : 'off' }], // MOES BHT series thermostat
   indicator: (val) => ['onoff.indicator', val === 'ON', { indicator: val ? 'ON' : 'OFF' }], // TuYa ZG-204ZM presence sensor
+  heartbeat: (val) => ['onoff.heartbeat', val === 'ON', { heartbeat: val ? 'ON' : 'OFF' }], // Bosch TwinGuard
+  pre_alarm: (val) => ['onoff.pre_alarm', val === 'ON', { pre_alarm: val ? 'ON' : 'OFF' }], // Bosch TwinGuard
+  self_test: (val) => ['onoff.self_test', val === 'ON', { self_test: val ? 'ON' : 'OFF' }], // Bosch TwinGuard
 
   // frost_protection: (val) => ['onoff.frost_protection', val === 'ON', { frost_protection: val ? 'ON' : 'OFF' }],
   open_window: (val) => ['alarm_generic.open_window', val === 'ON'],
@@ -152,6 +156,7 @@ const capabilityMap = {
   action: (val) => ['action', (val || '').toString()],
   running_state: (val) => ['running_state', (val || '').toString()],
   motion_state: (val) => ['motion_state', (val || '').toString()],
+  siren_state: (val) => ['siren_state', (val || '').toString()],
 
   // Custom settable ENUM capabilities
   preset: (val) => ['preset', val, { preset: val }], // ["auto", "manual", "holiday"]
@@ -167,6 +172,8 @@ const capabilityMap = {
   switch_type_right: (val) => ['switch_type.right', val, { switch_type_right: val }], // [toggle, state, momentary]
   sensor: (val) => ['sensor', val, { sensor: val }], // ["IN", "AL", "OU"]  // thermostats and mmWave presence
   effect: (val) => ['effect', val, { effect: val }], // [blink, breathe, okay, channel_change, finish_effect, stop_effect]
+  alarm: (val) => ['alarm_sound', val, { alarm: val }], // [stop, pre_alarm, fire, burglar]
+  sensitivity: (val) => ['sensitivity', val, { sensitivity: val }], // [low, medium, high]
 
   // useless ENUM capabilities
   // system_mode: (val) => ['system_mode', val, { system_mode: val }], // ["auto", "heat", "off", "cool", "emergency_heating", "precooling", "fan_only", "dry", "sleep" ]
@@ -207,6 +214,8 @@ const classIconMap = {
   'tradfri shortcut': ['button', 'wireless_switch.svg'],
   rodret: ['button', 'wireless_switch.svg'],
   somrig: ['button', 'wireless_switch.svg'],
+  twinguard: ['smokealarm', 'smoke_detector.svg'],
+  smoke: ['smokealarm', 'smoke_detector.svg'],
 };
 
 // map capabilities to Homey

@@ -1,0 +1,46 @@
+{
+  "title": {
+    "en": "Set alarm sound"
+  },
+  "titleFormatted": {
+    "en": "Set alarm sound to [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=alarm_sound"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "stop",
+          "title": {
+            "en": "Stop"
+          }
+        },
+        {
+          "id": "pre_alarm",
+          "title": {
+            "en": "Pre alarm"
+          }
+        },
+        {
+          "id": "fire",
+          "title": {
+            "en": "Fire"
+          }
+        },
+        {
+          "id": "burglar",
+          "title": {
+            "en": "Burglar"
+          }
+        }
+      ]
+    }
+  ]
+}

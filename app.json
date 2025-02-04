@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "2.8.0",
+  "version": "2.8.1",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -1813,6 +1813,30 @@
       },
       {
         "title": {
+          "en": "The siren state changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=siren_state"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "siren_state",
+            "type": "string",
+            "title": {
+              "en": "clear"
+            },
+            "example": "none"
+          }
+        ],
+        "id": "siren_state_changed"
+      },
+      {
+        "title": {
           "en": "The switch type changed",
           "nl": "Het schakelaartype is veranderd",
           "da": "Kontakttypen blev ændret",
@@ -2222,6 +2246,53 @@
       }
     ],
     "actions": [
+      {
+        "title": {
+          "en": "Set alarm sound"
+        },
+        "titleFormatted": {
+          "en": "Set alarm sound to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=alarm_sound"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "stop",
+                "title": {
+                  "en": "Stop"
+                }
+              },
+              {
+                "id": "pre_alarm",
+                "title": {
+                  "en": "Pre alarm"
+                }
+              },
+              {
+                "id": "fire",
+                "title": {
+                  "en": "Fire"
+                }
+              },
+              {
+                "id": "burglar",
+                "title": {
+                  "en": "Burglar"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "alarm_sound"
+      },
       {
         "title": {
           "en": "Set Color Power On Behavior",
@@ -3040,6 +3111,30 @@
       },
       {
         "title": {
+          "en": "Switch Heartbeat On or Off"
+        },
+        "titleFormatted": {
+          "en": "Switch Heartbeat [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.heartbeat"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On"
+            }
+          }
+        ],
+        "id": "onoff.heartbeat"
+      },
+      {
+        "title": {
           "en": "Switch indicator On or Off",
           "nl": "Schakel indicator Aan of Uit",
           "da": "Skift indikator Til eller Fra",
@@ -3382,6 +3477,30 @@
       },
       {
         "title": {
+          "en": "Switch Pre alarm On or Off"
+        },
+        "titleFormatted": {
+          "en": "Switch Pre alarm [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.pre_alarm"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On"
+            }
+          }
+        ],
+        "id": "onoff.pre_alarm"
+      },
+      {
+        "title": {
           "en": "Switch Right On or Off",
           "nl": "Schakel Rechts Aan of Uit",
           "da": "Slå Højre Til eller Fra",
@@ -3436,6 +3555,30 @@
           }
         ],
         "id": "onoff.right"
+      },
+      {
+        "title": {
+          "en": "Switch Selftest On or Off"
+        },
+        "titleFormatted": {
+          "en": "Switch Selftest [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.self_test"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On"
+            }
+          }
+        ],
+        "id": "onoff.self_test"
       },
       {
         "title": {
@@ -3837,6 +3980,47 @@
           }
         ],
         "id": "restart"
+      },
+      {
+        "title": {
+          "en": "Set sensitivity"
+        },
+        "titleFormatted": {
+          "en": "Set sensitivity to [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=sensitivity"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "low",
+                "title": {
+                  "en": "Low"
+                }
+              },
+              {
+                "id": "medium",
+                "title": {
+                  "en": "Medium"
+                }
+              },
+              {
+                "id": "high",
+                "title": {
+                  "en": "High"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "sensitivity"
       },
       {
         "title": {
@@ -5313,6 +5497,97 @@
       },
       "class": "socket",
       "capabilities": [],
+      "capabilitiesOptions": {
+        "locked.child": {
+          "title": {
+            "en": "Child lock"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.backlight": {
+          "title": {
+            "en": "Backlight"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.center": {
+          "title": {
+            "en": "Center"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.heartbeat": {
+          "title": {
+            "en": "Heartbeat"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.indicator": {
+          "title": {
+            "en": "Indicator"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.l1": {
+          "title": {
+            "en": "L1"
+          },
+          "uiQuickAction": true
+        },
+        "onoff.l2": {
+          "title": {
+            "en": "L2"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.l3": {
+          "title": {
+            "en": "L3"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.l4": {
+          "title": {
+            "en": "L4"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.left": {
+          "title": {
+            "en": "Left"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.pre_alarm": {
+          "title": {
+            "en": "Pre alarm"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.right": {
+          "title": {
+            "en": "Right"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.self_test": {
+          "title": {
+            "en": "Self test"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.system_mode": {
+          "title": {
+            "en": "System mode"
+          },
+          "uiQuickAction": false
+        },
+        "target_temperature.local": {
+          "title": {
+            "en": "Target temperature local"
+          }
+        }
+      },
       "platforms": [
         "local"
       ],
@@ -5654,6 +5929,23 @@
                     "pl": "Osłony okienne",
                     "ru": "Оконные покрытия",
                     "ko": "창문 덮개"
+                  }
+                },
+                {
+                  "id": "smokealarm",
+                  "label": {
+                    "en": "Smoke Alarm",
+                    "da": "Røgalarm",
+                    "de": "Rauchmelder",
+                    "es": "Detector de humo",
+                    "fr": "Détecteur de fumée",
+                    "it": "Rilevatore di fumo",
+                    "ko": "연기 감지기",
+                    "nl": "Rookmelder",
+                    "no": "Røykvarsler",
+                    "pl": "Alarm przeciwdymny",
+                    "ru": "Датчик дыма",
+                    "sv": "Rökalarm"
                   }
                 }
               ]
@@ -6112,6 +6404,42 @@
       "setable": false,
       "insights": true,
       "icon": "./assets/alarm_offline.svg"
+    },
+    "alarm_sound": {
+      "type": "enum",
+      "title": {
+        "en": "Alarm sound"
+      },
+      "values": [
+        {
+          "id": "stop",
+          "title": {
+            "en": "Stop"
+          }
+        },
+        {
+          "id": "pre_alarm",
+          "title": {
+            "en": "Pre alarm"
+          }
+        },
+        {
+          "id": "fire",
+          "title": {
+            "en": "Fire"
+          }
+        },
+        {
+          "id": "burglar",
+          "title": {
+            "en": "Burglar"
+          }
+        }
+      ],
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "insights": false
     },
     "allow_joining": {
       "type": "boolean",
@@ -7072,6 +7400,36 @@
       "setable": false,
       "insights": true
     },
+    "sensitivity": {
+      "type": "enum",
+      "title": {
+        "en": "Sensitivity"
+      },
+      "values": [
+        {
+          "id": "low",
+          "title": {
+            "en": "Low"
+          }
+        },
+        {
+          "id": "medium",
+          "title": {
+            "en": "Medium"
+          }
+        },
+        {
+          "id": "high",
+          "title": {
+            "en": "High"
+          }
+        }
+      ],
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "insights": false
+    },
     "sensitivity_enum": {
       "type": "enum",
       "title": {
@@ -7440,6 +7798,18 @@
       "getable": true,
       "setable": true,
       "insights": false
+    },
+    "siren_state": {
+      "type": "string",
+      "title": {
+        "en": "Siren state"
+      },
+      "units": {
+        "en": ""
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true
     },
     "switch_type": {
       "type": "enum",

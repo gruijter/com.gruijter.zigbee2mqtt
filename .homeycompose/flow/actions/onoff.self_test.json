@@ -1,0 +1,23 @@
+{
+  "title": {
+    "en": "Switch Selftest On or Off"
+  },
+  "titleFormatted": {
+    "en": "Switch Selftest [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.self_test"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On"
+      }
+    }
+  ]
+}

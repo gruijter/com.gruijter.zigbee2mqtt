@@ -1,0 +1,36 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Alarm sound"
+  },
+  "values": [
+    {
+      "id": "stop",
+      "title": {
+        "en": "Stop"
+      }
+    },
+    {
+      "id": "pre_alarm",
+      "title": {
+        "en": "Pre alarm"
+      }
+    },
+    {
+      "id": "fire",
+      "title": {
+        "en": "Fire"
+      }
+    },
+    {
+      "id": "burglar",
+      "title": {
+        "en": "Burglar"
+      }
+    }
+  ],
+  "uiComponent": "picker",
+  "getable": true,
+  "setable": true,
+  "insights": false
+}

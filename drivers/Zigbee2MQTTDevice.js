@@ -286,7 +286,7 @@ module.exports = class Zigbee2MQTTDevice extends Device {
     // get the capDetails for this command
     const [payLoadArray] = Object.entries(payload);
     const capDetail = Object.entries(this.store.capDetails).find((cap) => cap[1].property === payLoadArray[0]);
-    if (!capDetail[1]) throw Error(`${payLoadArray[0]} capability not supported`);
+    if (!capDetail || !capDetail[1]) throw Error(`${payLoadArray[0]} capability not supported`);
     // check if command is settable
     const mask = 0b00010;
     const { access } = capDetail[1];

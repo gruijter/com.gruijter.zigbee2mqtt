@@ -15,6 +15,97 @@
   },
   "class": "socket",
   "capabilities": [],
+  "capabilitiesOptions": {
+    "locked.child": {
+      "title": {
+        "en": "Child lock"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.backlight": {
+      "title": {
+        "en": "Backlight"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.center": {
+      "title": {
+        "en": "Center"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.heartbeat": {
+      "title": {
+        "en": "Heartbeat"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.indicator": {
+      "title": {
+        "en": "Indicator"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.l1": {
+      "title": {
+        "en": "L1"
+      },
+      "uiQuickAction": true
+    },
+    "onoff.l2": {
+      "title": {
+        "en": "L2"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.l3": {
+      "title": {
+        "en": "L3"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.l4": {
+      "title": {
+        "en": "L4"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.left": {
+      "title": {
+        "en": "Left"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.pre_alarm": {
+      "title": {
+        "en": "Pre alarm"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.right": {
+      "title": {
+        "en": "Right"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.self_test": {
+      "title": {
+        "en": "Self test"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.system_mode": {
+      "title": {
+        "en": "System mode"
+      },
+      "uiQuickAction": false
+    },
+    "target_temperature.local": {
+      "title": {
+        "en": "Target temperature local"
+      }
+    }
+  },
   "platforms": [
     "local"
   ],

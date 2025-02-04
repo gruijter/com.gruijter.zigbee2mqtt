@@ -1,0 +1,23 @@
+{
+  "title": {
+    "en": "Switch Pre alarm On or Off"
+  },
+  "titleFormatted": {
+    "en": "Switch Pre alarm [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.pre_alarm"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On"
+      }
+    }
+  ]
+}

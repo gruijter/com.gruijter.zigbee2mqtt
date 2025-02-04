@@ -1,4 +1,7 @@
 {
+  "2.8.1": {
+    "en": "Added support for Bosch TwinGuard; Self_test, Pre_alarm, Heartbeat, AQI, sensitivity, alarm_sound and siren_state. Added smokealarm class and icon. Fix onoff button titles."
+  },
   "2.8.0": {
     "en": "Added support for voc, voc_index, pm10, pm25. Mapping of smoke_concentration changed to pm1. Fixed joining action and timer for Z2M>=2.0."
   },
