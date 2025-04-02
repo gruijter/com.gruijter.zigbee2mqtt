@@ -7366,6 +7366,26 @@
       "setable": true,
       "insights": false
     },
+    "restart_bridge": {
+      "type": "boolean",
+      "title": {
+        "en": "Restart bridge",
+        "nl": "Bridge herstarten",
+        "da": "Genstart bro",
+        "de": "Brücke neu starten",
+        "es": "Reiniciar puente",
+        "fr": "Redémarrer le pont",
+        "it": "Riavvia il ponte",
+        "no": "Start broen på nytt",
+        "sv": "Starta om bron",
+        "pl": "Zrestartuj most",
+        "ru": "Перезапустить мост",
+        "ko": "브리지 재시작"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "button"
+    },
     "running_state": {
       "type": "string",
       "title": {

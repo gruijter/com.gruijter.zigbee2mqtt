@@ -380,6 +380,13 @@ module.exports = class Zigbee2MQTTBridge extends Device {
         this.joinOnOff(onoff, 'app').catch((error) => this.error(error));
       });
 
+      this.registerCapabilityListener('restart_bridge', async () => {
+        return this.restart(null, 'app').catch((error) => {
+            this.error(error);
+            throw error; 
+        });
+      });
+
       this.listenersSet = true;
       return Promise.resolve(true);
     } catch (error) {
