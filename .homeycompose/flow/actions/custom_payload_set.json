@@ -45,7 +45,7 @@
     {
       "type": "device",
       "name": "device",
-      "filter": "driver_id=device"
+      "filter": "driver_id=device|group"
     },
     {
       "name": "val",
