@@ -27,6 +27,7 @@ const setTimeoutPromise = util.promisify(setTimeout);
 
 const capabilities = [
   'allow_joining',
+  'restart_bridge',
   'allow_joining_timeout',
   'meter_mpm',
   'meter_joined_devices',
