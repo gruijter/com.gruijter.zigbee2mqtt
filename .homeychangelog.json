@@ -1,4 +1,10 @@
 {
+  "2.8.3": {
+    "en": "Added action_group mapping."
+  },
+  "2.8.2": {
+    "en": "Added Air Quality sensor icon. Added sending payload to groups. Added bridge reset button."
+  },
   "2.8.1": {
     "en": "Added support for Bosch TwinGuard; Self_test, Pre_alarm, Heartbeat, AQI, sensitivity, alarm_sound and siren_state. Added smokealarm class and icon. Fix onoff button titles."
   },

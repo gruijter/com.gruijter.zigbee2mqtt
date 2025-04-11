@@ -154,6 +154,7 @@ const capabilityMap = {
 
   // Custom string capabilities
   action: (val) => ['action', (val || '').toString()],
+  action_group: (val) => ['action.group', Number(val)],
   running_state: (val) => ['running_state', (val || '').toString()],
   motion_state: (val) => ['motion_state', (val || '').toString()],
   siren_state: (val) => ['siren_state', (val || '').toString()],
@@ -216,6 +217,7 @@ const classIconMap = {
   somrig: ['button', 'wireless_switch.svg'],
   twinguard: ['smokealarm', 'smoke_detector.svg'],
   smoke: ['smokealarm', 'smoke_detector.svg'],
+  'air quality': ['sensor', 'smoke_detector.svg'],
 };
 
 // map capabilities to Homey

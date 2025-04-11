@@ -382,8 +382,8 @@ module.exports = class Zigbee2MQTTBridge extends Device {
 
       this.registerCapabilityListener('restart_bridge', async () => {
         return this.restart(null, 'app').catch((error) => {
-            this.error(error);
-            throw error; 
+          this.error(error);
+          throw error;
         });
       });
 

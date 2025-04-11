@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -2436,7 +2436,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device"
+            "filter": "driver_id=device|group"
           },
           {
             "name": "val",
@@ -2589,25 +2589,25 @@
           "ko": "효과 설정"
         },
         "titleFormatted": {
-          "en": "Set Color Power On Behavior to [[val]]",
-          "nl": "Stel kleuraan inschakelgedrag in op [[val]]",
-          "da": "Indstil farve tændingsadfærd til [[val]]",
-          "de": "Farbeinschaltverhalten auf [[val]] einstellen",
-          "es": "Establecer comportamiento de encendido de color en [[val]]",
-          "fr": "Définir le comportement de mise sous tension sur [[val]]",
-          "it": "Imposta il comportamento all'accensione del colore su [[val]]",
-          "no": "Sett farge slåpåatferd til [[val]]",
-          "sv": "Ställ in färgströmsbeteende till [[val]]",
-          "pl": "Ustaw zachowanie włączenia koloru na [[val]]",
-          "ru": "Установить поведение включения цвета на [[val]]",
-          "ko": "전원 켤 때 색상 설정을 [[val]]으로 설정"
+          "en": "Set Effect to [[val]]",
+          "nl": "Stel Effect in op [[val]]",
+          "da": "Sæt Effekt til [[val]]",
+          "de": "Setze Effekt auf [[val]]",
+          "es": "Establecer Efecto a [[val]]",
+          "fr": "Définir l'effet sur [[val]]",
+          "it": "Imposta Effetto su [[val]]",
+          "no": "Sett Effekt til [[val]]",
+          "sv": "Sätt Effekt till [[val]]",
+          "pl": "Ustaw Efekt na [[val]]",
+          "ru": "Установить Эффект на [[val]]",
+          "ko": "효과를 [[val]]로 설정"
         },
         "highlight": true,
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device|group&capabilities=color_power_on_behavior"
+            "filter": "driver_id=device|group&capabilities=effect"
           },
           {
             "type": "dropdown",
