@@ -1106,7 +1106,7 @@
         ],
         "tokens": [
           {
-            "name": "meter_unavailable_devices",
+            "name": "meter_offline_devices",
             "type": "number",
             "title": {
               "en": "Unavailable devices",
@@ -1125,7 +1125,7 @@
             "example": 3
           }
         ],
-        "id": "meter_unavailable_devices_changed"
+        "id": "meter_offline_devices_changed"
       },
       {
         "title": {

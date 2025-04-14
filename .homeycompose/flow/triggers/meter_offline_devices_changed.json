@@ -23,7 +23,7 @@
   ],
   "tokens": [
     {
-      "name": "meter_unavailable_devices",
+      "name": "meter_offline_devices",
       "type": "number",
       "title": {
         "en": "Unavailable devices",
