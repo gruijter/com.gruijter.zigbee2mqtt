@@ -1,25 +1,69 @@
 {
   "type": "enum",
   "title": {
-    "en": "Sensitivity"
+    "en": "Sensitivity",
+    "nl": "Gevoeligheid",
+    "da": "Følsomhed",
+    "de": "Empfindlichkeit",
+    "es": "Sensibilidad",
+    "fr": "Sensibilité",
+    "it": "Sensibilità",
+    "no": "Sensitivitet",
+    "sv": "Känslighet",
+    "pl": "Czułość",
+    "ru": "Чувствительность",
+    "ko": "민감도"
   },
   "values": [
     {
       "id": "low",
       "title": {
-        "en": "Low"
+        "en": "Low",
+        "nl": "Laag",
+        "da": "Lav",
+        "de": "Niedrig",
+        "es": "Bajo",
+        "fr": "Bas",
+        "it": "Basso",
+        "no": "Lav",
+        "sv": "Låg",
+        "pl": "Niski",
+        "ru": "Низкий",
+        "ko": "낮은"
       }
     },
     {
       "id": "medium",
       "title": {
-        "en": "Medium"
+        "en": "Medium",
+        "nl": "Gemiddeld",
+        "da": "Mellem",
+        "de": "Mittel",
+        "es": "Medio",
+        "fr": "Moyen",
+        "it": "Medio",
+        "no": "Middels",
+        "sv": "Medium",
+        "pl": "Średni",
+        "ru": "Средний",
+        "ko": "중간"
       }
     },
     {
       "id": "high",
       "title": {
-        "en": "High"
+        "en": "High",
+        "nl": "Hoog",
+        "da": "Høj",
+        "de": "Hoch",
+        "es": "Alto",
+        "fr": "Élevé",
+        "it": "Alto",
+        "no": "Høy",
+        "sv": "Hög",
+        "pl": "Wysoki",
+        "ru": "Высокий",
+        "ko": "높은"
       }
     }
   ],

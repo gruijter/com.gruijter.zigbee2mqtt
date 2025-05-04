@@ -1,0 +1,35 @@
+{
+    "type": "number",
+    "title": {
+        "en": "Vibration strength",
+        "nl": "Trillingssterkte",
+        "da": "Vibrationsstyrke",
+        "de": "Vibrationsstärke",
+        "es": "Fuerza de vibración",
+        "fr": "Force de vibration",
+        "it": "Forza di vibrazione",
+        "no": "Vibrasjonsstyrke",
+        "sv": "Vibrationstyrka",
+        "pl": "Siła wibracji",
+        "ru": "Сила вибрации",
+        "ko": "진동 강도"
+    },
+    "units": {
+      "en": "",
+      "nl": "",
+      "da": "",
+      "de": "",
+      "es": "",
+      "fr": "",
+      "it": "",
+      "no": "",
+      "sv": "",
+      "pl": "",
+      "ru": "",
+      "ko": ""
+    },
+    "getable": true,
+    "setable": false,
+    "insights": true,
+    "icon": "./assets/vibrationstrength.svg"
+  }

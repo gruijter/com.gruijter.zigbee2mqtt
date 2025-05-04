@@ -1,0 +1,35 @@
+{
+    "type": "number",
+    "title": {
+        "en": "X axis",
+        "nl": "X-as",
+        "da": "X-akse",
+        "de": "X-Achse",
+        "es": "Eje X",
+        "fr": "Axe des X",
+        "it": "Asse X",
+        "no": "X-akse",
+        "sv": "X-axel",
+        "pl": "Oś X",
+        "ru": "Ось X",
+        "ko": "X축"
+    },
+    "units": {
+      "en": "°",
+      "nl": "°",
+      "da": "°",
+      "de": "°",
+      "es": "°",
+      "fr": "°",
+      "it": "°",
+      "no": "°",
+      "sv": "°",
+      "pl": "°",
+      "ru": "°",
+      "ko": "°"
+    },
+    "getable": true,
+    "setable": false,
+    "insights": true,
+    "icon": "./assets/axisx.svg"
+  }
