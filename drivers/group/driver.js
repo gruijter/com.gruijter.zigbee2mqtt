@@ -56,8 +56,11 @@ module.exports = class ZigbeeGroupDriver extends Zigbee2MQTTDriver {
                 models,
                 description,
               };
-              // map capabilities and group icons to Homey
-              const { caps, capDetails } = mapProperty(devices[0]);
+              // get all caps and then remove linkquality
+              let { caps, capDetails } = mapProperty(devices[0]);
+              caps = caps.filter(cap => cap !== 'measure_linkquality');
+              delete capDetails['measure_linkquality'];
+
               const { homeyClass, icon } = mapClassIcon(devices[0]);
               settings.homeyclass = homeyClass;
               const group = {
@@ -66,7 +69,7 @@ module.exports = class ZigbeeGroupDriver extends Zigbee2MQTTDriver {
                   id: item.id, // `zigbee2mqtt_${Math.random().toString(16).substring(2, 8)}`,
                 },
                 icon, // "/my_icon.svg", // relative to: /drivers/<driver_id>/assets/
-                capabilities: [...caps],
+                capabilities: caps,
                 store: { item, capDetails },
                 settings,
               };

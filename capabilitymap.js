@@ -25,6 +25,24 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 // FOR CUSTOM AND SUB CAPABILITIES TRIGGER FLOWS NEED TO BE CREATED IN .homeycompose/flow/triggers
 // FOR SETTABLE CUSTOM AND SUB CAPABILITIES ACTION FLOWS NEED TO BE CREATED IN .homeycompose/flow/actions
 
+function getDeviceModel(Z2MDevice) {
+  // First, look in Z2MDevice.definition.model (as seen in your object)
+  if (Z2MDevice.definition && Z2MDevice.definition.model) {
+    return Z2MDevice.definition.model.trim().toUpperCase();
+  }
+  // Alternatively try other locations if needed
+  if (Z2MDevice.modelId) {
+    return Z2MDevice.modelId.trim().toUpperCase();
+  }
+  if (Z2MDevice.devices && 
+      Z2MDevice.devices[0] && 
+      Z2MDevice.devices[0].definition && 
+      Z2MDevice.devices[0].definition.model) {
+    return Z2MDevice.devices[0].definition.model.trim().toUpperCase();
+  }
+  return '';
+}
+
 const capabilityMap = {
   // Standard Homey Number capabilities
   current_heating_setpoint: (val) => ['target_temperature', Number(val), { current_heating_setpoint: Number(val) }],
@@ -48,7 +66,15 @@ const capabilityMap = {
   // : (val) => ['measure_gust_angle', Number(val)],
   battery: (val) => ['measure_battery', Number(val)],
   power: (val) => ['measure_power', Number(val)],
-  voltage: (val) => ['measure_voltage', Number(val)],
+  // For voltage we choose the conversion based on the presence of "power"
+  // If hasPower is true, we assume voltage is in V; otherwise, we assume it's in mV.
+  voltage: (val, hasPower) => {
+    if (hasPower) {
+      return ['measure_voltage', Number(val)];
+    } else {
+      return ['measure_voltage_mv', Number(val)];
+    }
+  },
   current: (val) => ['measure_current', Number(val)],
   illuminance: (val) => ['measure_luminance', Number(val)],
   illuminance_lux: (val) => ['measure_luminance.lux', Number(val)],
@@ -147,11 +173,14 @@ const capabilityMap = {
 
   // Custom number capabilities
   linkquality: (val) => ['measure_linkquality', Number(val)],
-  strength: (val) => ['custom_number.strength', Number(val)],
-  angle_x: (val) => ['custom_number.angle_x', Number(val)],
-  angle_y: (val) => ['custom_number.angle_y', Number(val)],
-  angle_z: (val) => ['custom_number.angle_z', Number(val)],
-
+  strength: (val) => ['meter_strength', Number(val)],
+  angle_x: (val) => ['meter_angle_x', Number(val)],
+  angle_y: (val) => ['meter_angle_y', Number(val)],
+  angle_z: (val) => ['meter_angle_z', Number(val)],
+  x_axis: (val) => ['meter_axis_x', Number(val)],
+  y_axis: (val) => ['meter_axis_y', Number(val)],
+  z_axis: (val) => ['meter_axis_z', Number(val)],
+  
   // Custom string capabilities
   action: (val) => ['action', (val || '').toString()],
   action_group: (val) => ['action.group', Number(val)],
@@ -174,6 +203,7 @@ const capabilityMap = {
   sensor: (val) => ['sensor', val, { sensor: val }], // ["IN", "AL", "OU"]  // thermostats and mmWave presence
   effect: (val) => ['effect', val, { effect: val }], // [blink, breathe, okay, channel_change, finish_effect, stop_effect]
   alarm: (val) => ['alarm_sound', val, { alarm: val }], // [stop, pre_alarm, fire, burglar]
+  motion_sensitivity: (val) => ['motion_state', val, { motion_sensitivity: val }], // [low, medium, high]
   sensitivity: (val) => ['sensitivity', val, { sensitivity: val }], // [low, medium, high]
 
   // useless ENUM capabilities
@@ -205,8 +235,11 @@ const classIconMap = {
   gu10: ['light', 'light.svg'],
   e27: ['light', 'light.svg'],
   dimmer: ['light', 'light.svg'],
+  bloom: ['light', 'light.svg'],
+  lightstrip: ['light', 'light.svg'],
   'led controller': ['light', 'light.svg'],
   led: ['light', 'light.svg'],
+  'hue go': ['light', 'light.svg'],
   fyrtur: ['windowcoverings', 'window_coverings.svg'],
   kadrilj: ['windowcoverings', 'window_coverings.svg'],
   praktlysing: ['windowcoverings', 'window_coverings.svg'],
@@ -232,8 +265,22 @@ const getExpMap = function mapExposure() {
   return expMap;
 };
 
-// map capabilities to Homey
+// Define the skip map for specific device models
+const propertySkipMap = {
+  'DJT11LM': ['sensitivity'],
+  //'OTHERDEVICE': ['some_property', 'another_property'],
+  // Add more devices here easily
+};
+
 const mapProperty = function mapProperty(Z2MDevice) {
+  // Retrieve the model using our helper function
+  const modelId = getDeviceModel(Z2MDevice);
+  // Determine if the current device is a group
+  const isGroup = Array.isArray(Z2MDevice.members);
+
+  // Get the array of properties to skip for this model. This is done once per device.
+  const skipProperties = propertySkipMap[modelId] || [];
+  
   let homeyCapabilities = [];
   function pushUniqueCapabilities(capVal) {
     if (!homeyCapabilities.includes(capVal)) {
@@ -241,31 +288,6 @@ const mapProperty = function mapProperty(Z2MDevice) {
     }
   }
   const capDetails = {};
-  const mapExposure = (exp) => {
-    // if (exp.property.includes('open_window')) console.log(exp);
-
-    // create exception for blinds
-    if (exp.property === 'windowcoverings_set' || exp.property === 'position') {
-      homeyCapabilities = homeyCapabilities.filter((cap) => cap !== 'onoff');
-    }
-
-    // create exception for color lights
-    if (exp.property === 'color') {
-      pushUniqueCapabilities('light_hue');
-      capDetails.light_hue = exp;
-      pushUniqueCapabilities('light_saturation');
-      capDetails.light_saturation = exp;
-      pushUniqueCapabilities('light_mode');
-      capDetails.light_mode = exp;
-    } else {
-      const mapFunc = capabilityMap[exp.property];
-      if (mapFunc) { //  included in Homey mapping
-        const capVal = mapFunc();
-        pushUniqueCapabilities(capVal[0]);
-        capDetails[capVal[0]] = exp; // [exp.unit, exp.name, exp.values];
-      }
-    }
-  };
 
   let exposes = [];
   if (Z2MDevice.devices && Z2MDevice.devices[0].definition && Z2MDevice.devices[0].definition.exposes) {
@@ -273,14 +295,67 @@ const mapProperty = function mapProperty(Z2MDevice) {
   } else if (Z2MDevice.definition && Z2MDevice.definition.exposes) {
     exposes = Z2MDevice.definition.exposes;
   }
+
+  // Determine once if the device has a 'power' exposure.
+  const hasPower = exposes.some(exp => {
+    if (exp.property === 'power') return true;
+    if (exp.features) return exp.features.some(feature => feature.property === 'power');
+    return false;
+  });
+
+  const mapExposure = (exp) => {
+    if (exp.property === 'windowcoverings_set' || exp.property === 'position') {
+      homeyCapabilities = homeyCapabilities.filter((cap) => cap !== 'onoff');
+    }
+    if (exp.property === 'color') {
+      pushUniqueCapabilities('light_hue');
+      capDetails.light_hue = exp;
+      pushUniqueCapabilities('light_saturation');
+      capDetails.light_saturation = exp;
+      pushUniqueCapabilities('light_mode');
+      capDetails.light_mode = exp;
+    } else if (exp.property === 'voltage') {
+      // Special handling for voltage: pass the 'hasPower' flag and the value.
+      const capVal = capabilityMap.voltage(exp.value, hasPower);
+      const capName = capVal[0];
+      if (skipProperties.includes(capName)) return;
+      pushUniqueCapabilities(capName);
+      capDetails[capName] = exp;
+    } else {
+      const mapFunc = capabilityMap[exp.property];
+      if (mapFunc) {
+        const capVal = mapFunc();
+        const capName = capVal[0];
+
+        // Skip linkquality for groups
+        if (isGroup && capName === 'measure_linkquality') {
+          console.log(`Skipping ${capName} for group`);
+          return; // Do not add this capability
+        }
+  
+        // Check using the pre-determined skip list; only if the device model has rules
+        if (skipProperties.includes(capName)) {
+          // console.log(`Skipping capability '${capName}' for model '${modelId}'`);
+          return; // Do not add this capability
+        }
+  
+        pushUniqueCapabilities(capName);
+        capDetails[capName] = exp;
+      }
+    }
+  };
+
   exposes.forEach((exp) => {
-    if (exp.features) { // specific or composite (e.g. light or switch)
+    if (exp.features) {
       exp.features.forEach((feature) => {
         mapExposure(feature);
       });
-    } else mapExposure(exp); // generic types (e.g. numeric or binary)
+    } else {
+      mapExposure(exp);
+    }
   });
-  const caps = homeyCapabilities.filter((cap) => cap !== null); // .sort();
+  
+  const caps = homeyCapabilities.filter((cap) => cap !== null);
   return { caps, capDetails };
 };
 

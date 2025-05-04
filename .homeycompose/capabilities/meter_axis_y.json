@@ -1,0 +1,35 @@
+{
+    "type": "number",
+    "title": {
+        "en": "Y axis",
+        "nl": "Y-as",
+        "da": "Y-akse",
+        "de": "Y-Achse",
+        "es": "Eje Y",
+        "fr": "Axe des Y",
+        "it": "Asse Y",
+        "no": "Y-akse",
+        "sv": "Y-axel",
+        "pl": "Oś Y",
+        "ru": "Ось Y",
+        "ko": "Y축"
+    },
+    "units": {
+      "en": "°",
+      "nl": "°",
+      "da": "°",
+      "de": "°",
+      "es": "°",
+      "fr": "°",
+      "it": "°",
+      "no": "°",
+      "sv": "°",
+      "pl": "°",
+      "ru": "°",
+      "ko": "°"
+    },
+    "getable": true,
+    "setable": false,
+    "insights": true,
+    "icon": "./assets/axisy.svg"
+  }

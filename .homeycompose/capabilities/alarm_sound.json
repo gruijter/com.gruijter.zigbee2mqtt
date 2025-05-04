@@ -7,7 +7,7 @@
     {
       "id": "stop",
       "title": {
-        "en": "Stop"
+        "en": "Stop alarm"
       }
     },
     {
@@ -19,13 +19,13 @@
     {
       "id": "fire",
       "title": {
-        "en": "Fire"
+        "en": "Fire alarm"
       }
     },
     {
       "id": "burglar",
       "title": {
-        "en": "Burglar"
+        "en": "Burglar alarm"
       }
     }
   ],

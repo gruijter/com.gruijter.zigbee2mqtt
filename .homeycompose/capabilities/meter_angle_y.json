@@ -1,0 +1,35 @@
+{
+    "type": "number",
+    "title": {
+        "en": "Angle y",
+        "nl": "Hoek y",
+        "da": "Vinkel y",
+        "de": "Winkel y",
+        "es": "Ángulo y",
+        "fr": "Angle y",
+        "it": "Angolo y",
+        "no": "Vinkel y",
+        "sv": "Vinkel y",
+        "pl": "Kąt y",
+        "ru": "Угол y",
+        "ko": "각도 y"
+    },
+    "units": {
+      "en": "°",
+      "nl": "°",
+      "da": "°",
+      "de": "°",
+      "es": "°",
+      "fr": "°",
+      "it": "°",
+      "no": "°",
+      "sv": "°",
+      "pl": "°",
+      "ru": "°",
+      "ko": "°"
+    },
+    "getable": true,
+    "setable": false,
+    "insights": true,
+    "icon": "./assets/angley.svg"
+  }

@@ -1,0 +1,35 @@
+{
+    "type": "number",
+    "title": {
+        "en": "Z axis",
+        "nl": "Z-as",
+        "da": "Z-akse",
+        "de": "Z-Achse",
+        "es": "Eje Z",
+        "fr": "Axe des Z",
+        "it": "Asse Z",
+        "no": "Z-akse",
+        "sv": "Z-axel",
+        "pl": "Oś Z",
+        "ru": "Ось Z",
+        "ko": "Z축"
+    },
+    "units": {
+      "en": "°",
+      "nl": "°",
+      "da": "°",
+      "de": "°",
+      "es": "°",
+      "fr": "°",
+      "it": "°",
+      "no": "°",
+      "sv": "°",
+      "pl": "°",
+      "ru": "°",
+      "ko": "°"
+    },
+    "getable": true,
+    "setable": false,
+    "insights": true,
+    "icon": "./assets/axisz.svg"
+  }

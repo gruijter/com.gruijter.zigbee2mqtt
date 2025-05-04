@@ -1,0 +1,35 @@
+{
+    "type": "number",
+    "title": {
+        "en": "Angle x",
+        "nl": "Hoek x",
+        "da": "Vinkel x",
+        "de": "Winkel x",
+        "es": "Ángulo x",
+        "fr": "Angle x",
+        "it": "Angolo x",
+        "no": "Vinkel x",
+        "sv": "Vinkel x",
+        "pl": "Kąt x",
+        "ru": "Угол x",
+        "ko": "각도 x"
+    },
+    "units": {
+      "en": "°",
+      "nl": "°",
+      "da": "°",
+      "de": "°",
+      "es": "°",
+      "fr": "°",
+      "it": "°",
+      "no": "°",
+      "sv": "°",
+      "pl": "°",
+      "ru": "°",
+      "ko": "°"
+    },
+    "getable": true,
+    "setable": false,
+    "insights": true,
+    "icon": "./assets/anglex.svg"
+  }
