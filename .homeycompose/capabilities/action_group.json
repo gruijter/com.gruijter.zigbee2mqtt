@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Action group"
+  },
+  "units": {
+    "en": ""
+  },
+  "getable": true,
+  "setable": false,
+  "insights": true,
+  "icon": "./assets/action_group.svg"
+}

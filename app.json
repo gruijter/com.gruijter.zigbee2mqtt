@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "2.8.3",
+  "version": "2.9.0",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -290,6 +290,30 @@
           }
         ],
         "id": "action_event_received"
+      },
+      {
+        "title": {
+          "en": "The action group changed"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=action_group"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "action_group",
+            "type": "number",
+            "title": {
+              "en": "Action group"
+            },
+            "example": 12456
+          }
+        ],
+        "id": "action_group_changed"
       },
       {
         "title": {
@@ -1809,7 +1833,7 @@
             "example": "low"
           }
         ],
-        "id": "sensitivity_enum_changed"
+        "id": "sensitivity_changed"
       },
       {
         "title": {
@@ -6356,6 +6380,19 @@
       "insights": true,
       "icon": "./assets/action.svg"
     },
+    "action_group": {
+      "type": "number",
+      "title": {
+        "en": "Action group"
+      },
+      "units": {
+        "en": ""
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "icon": "./assets/action_group.svg"
+    },
     "alarm_offline": {
       "type": "boolean",
       "title": {
@@ -7380,78 +7417,24 @@
       "icon": "./assets/vibrationstrength.svg"
     },
     "motion_state": {
-      "type": "enum",
+      "type": "string",
       "title": {
-        "en": "Motion Sensitivity",
-        "nl": "Gevoeligheid",
-        "da": "Følsomhed",
-        "de": "Empfindlichkeit",
-        "es": "Sensibilidad",
-        "fr": "Sensibilité",
-        "it": "Sensibilità",
-        "no": "Sensitivitet",
-        "sv": "Känslighet",
-        "pl": "Czułość",
-        "ru": "Чувствительность",
-        "ko": "민감도"
+        "en": "Motion state",
+        "nl": "Bewegingsstatus",
+        "da": "Bevægelsestilstand",
+        "de": "Bewegungszustand",
+        "es": "Estado de movimiento",
+        "fr": "État de mouvement",
+        "it": "Stato di movimento",
+        "no": "Bevegelsestilstand",
+        "sv": "Rörelsetillstånd",
+        "pl": "Stan ruchu",
+        "ru": "Состояние движения",
+        "ko": "움직임 상태"
       },
-      "values": [
-        {
-          "id": "low",
-          "title": {
-            "en": "Low sensitivity",
-            "nl": "Laag",
-            "da": "Lav",
-            "de": "Niedrig",
-            "es": "Bajo",
-            "fr": "Bas",
-            "it": "Basso",
-            "no": "Lav",
-            "sv": "Låg",
-            "pl": "Niski",
-            "ru": "Низкий",
-            "ko": "낮은"
-          }
-        },
-        {
-          "id": "medium",
-          "title": {
-            "en": "Medium sensitivity",
-            "nl": "Gemiddeld",
-            "da": "Mellem",
-            "de": "Mittel",
-            "es": "Medio",
-            "fr": "Moyen",
-            "it": "Medio",
-            "no": "Middels",
-            "sv": "Medium",
-            "pl": "Średni",
-            "ru": "Средний",
-            "ko": "중간"
-          }
-        },
-        {
-          "id": "high",
-          "title": {
-            "en": "High sensitivity",
-            "nl": "Hoog",
-            "da": "Høj",
-            "de": "Hoch",
-            "es": "Alto",
-            "fr": "Élevé",
-            "it": "Alto",
-            "no": "Høy",
-            "sv": "Hög",
-            "pl": "Wysoki",
-            "ru": "Высокий",
-            "ko": "높은"
-          }
-        }
-      ],
-      "uiComponent": "picker",
       "getable": true,
-      "setable": true,
-      "insights": false
+      "setable": false,
+      "insights": true
     },
     "power_on_behavior": {
       "type": "enum",

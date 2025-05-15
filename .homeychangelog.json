@@ -1,4 +1,7 @@
 {
+  "2.9.0": {
+    "en": "Added support for iCasa remote. Added custom capabilities for axis, angles and vibration strength. Custom add and remove capabilities for certain device models. Converted Volt to millivolt. Recognized more devices with Light class. Removed LinkQuality from groups"
+  },
   "2.8.3": {
     "en": "Added action_group mapping."
   },

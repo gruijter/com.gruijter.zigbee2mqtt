@@ -1,0 +1,23 @@
+{
+  "title": {
+    "en": "The action group changed"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=action_group"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "action_group",
+      "type": "number",
+      "title": {
+        "en": "Action group"
+      },
+      "example": 12456
+    }
+  ]
+}

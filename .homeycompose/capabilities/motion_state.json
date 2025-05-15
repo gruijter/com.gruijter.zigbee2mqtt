@@ -1,74 +1,20 @@
 {
-  "type": "enum",
+  "type": "string",
   "title": {
-    "en": "Motion Sensitivity",
-    "nl": "Gevoeligheid",
-    "da": "Følsomhed",
-    "de": "Empfindlichkeit",
-    "es": "Sensibilidad",
-    "fr": "Sensibilité",
-    "it": "Sensibilità",
-    "no": "Sensitivitet",
-    "sv": "Känslighet",
-    "pl": "Czułość",
-    "ru": "Чувствительность",
-    "ko": "민감도"
+    "en": "Motion state",
+    "nl": "Bewegingsstatus",
+    "da": "Bevægelsestilstand",
+    "de": "Bewegungszustand",
+    "es": "Estado de movimiento",
+    "fr": "État de mouvement",
+    "it": "Stato di movimento",
+    "no": "Bevegelsestilstand",
+    "sv": "Rörelsetillstånd",
+    "pl": "Stan ruchu",
+    "ru": "Состояние движения",
+    "ko": "움직임 상태"
   },
-  "values": [
-    {
-      "id": "low",
-      "title": {
-        "en": "Low sensitivity",
-        "nl": "Laag",
-        "da": "Lav",
-        "de": "Niedrig",
-        "es": "Bajo",
-        "fr": "Bas",
-        "it": "Basso",
-        "no": "Lav",
-        "sv": "Låg",
-        "pl": "Niski",
-        "ru": "Низкий",
-        "ko": "낮은"
-      }
-    },
-    {
-      "id": "medium",
-      "title": {
-        "en": "Medium sensitivity",
-        "nl": "Gemiddeld",
-        "da": "Mellem",
-        "de": "Mittel",
-        "es": "Medio",
-        "fr": "Moyen",
-        "it": "Medio",
-        "no": "Middels",
-        "sv": "Medium",
-        "pl": "Średni",
-        "ru": "Средний",
-        "ko": "중간"
-      }
-    },
-    {
-      "id": "high",
-      "title": {
-        "en": "High sensitivity",
-        "nl": "Hoog",
-        "da": "Høj",
-        "de": "Hoch",
-        "es": "Alto",
-        "fr": "Élevé",
-        "it": "Alto",
-        "no": "Høy",
-        "sv": "Hög",
-        "pl": "Wysoki",
-        "ru": "Высокий",
-        "ko": "높은"
-      }
-    }
-  ],
-  "uiComponent": "picker",
   "getable": true,
-  "setable": true,
-  "insights": false
+  "setable": false,
+  "insights": true
 }

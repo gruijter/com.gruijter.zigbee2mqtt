@@ -34,10 +34,10 @@ function getDeviceModel(Z2MDevice) {
   if (Z2MDevice.modelId) {
     return Z2MDevice.modelId.trim().toUpperCase();
   }
-  if (Z2MDevice.devices && 
-      Z2MDevice.devices[0] && 
-      Z2MDevice.devices[0].definition && 
-      Z2MDevice.devices[0].definition.model) {
+  if (Z2MDevice.devices
+      && Z2MDevice.devices[0]
+      && Z2MDevice.devices[0].definition
+      && Z2MDevice.devices[0].definition.model) {
     return Z2MDevice.devices[0].definition.model.trim().toUpperCase();
   }
   return '';
@@ -69,11 +69,8 @@ const capabilityMap = {
   // For voltage we choose the conversion based on the presence of "power"
   // If hasPower is true, we assume voltage is in V; otherwise, we assume it's in mV.
   voltage: (val, hasPower) => {
-    if (hasPower) {
-      return ['measure_voltage', Number(val)];
-    } else {
-      return ['measure_voltage_mv', Number(val)];
-    }
+    if (hasPower) return ['measure_voltage', Number(val)];
+    return ['measure_voltage_mv', Number(val)];
   },
   current: (val) => ['measure_current', Number(val)],
   illuminance: (val) => ['measure_luminance', Number(val)],
@@ -180,10 +177,10 @@ const capabilityMap = {
   x_axis: (val) => ['meter_axis_x', Number(val)],
   y_axis: (val) => ['meter_axis_y', Number(val)],
   z_axis: (val) => ['meter_axis_z', Number(val)],
-  
+  action_group: (val) => ['action_group', Number(val)],
+
   // Custom string capabilities
   action: (val) => ['action', (val || '').toString()],
-  action_group: (val) => ['action.group', Number(val)],
   running_state: (val) => ['running_state', (val || '').toString()],
   motion_state: (val) => ['motion_state', (val || '').toString()],
   siren_state: (val) => ['siren_state', (val || '').toString()],
@@ -203,12 +200,11 @@ const capabilityMap = {
   sensor: (val) => ['sensor', val, { sensor: val }], // ["IN", "AL", "OU"]  // thermostats and mmWave presence
   effect: (val) => ['effect', val, { effect: val }], // [blink, breathe, okay, channel_change, finish_effect, stop_effect]
   alarm: (val) => ['alarm_sound', val, { alarm: val }], // [stop, pre_alarm, fire, burglar]
-  motion_sensitivity: (val) => ['motion_state', val, { motion_sensitivity: val }], // [low, medium, high]
   sensitivity: (val) => ['sensitivity', val, { sensitivity: val }], // [low, medium, high]
+  motion_sensitivity: (val) => ['sensitivity.motion', val, { motion_sensitivity: val }], // [low, medium, high]
 
   // useless ENUM capabilities
   // system_mode: (val) => ['system_mode', val, { system_mode: val }], // ["auto", "heat", "off", "cool", "emergency_heating", "precooling", "fan_only", "dry", "sleep" ]
-  // sensitivity: (val) => ['sensitivity_enum', val, { sensitivity: val }], // [low, medium, high]
 
 };
 
@@ -251,6 +247,7 @@ const classIconMap = {
   twinguard: ['smokealarm', 'smoke_detector.svg'],
   smoke: ['smokealarm', 'smoke_detector.svg'],
   'air quality': ['sensor', 'smoke_detector.svg'],
+  'remote control': ['remote', 'remote_control.svg'],
 };
 
 // map capabilities to Homey
@@ -267,9 +264,21 @@ const getExpMap = function mapExposure() {
 
 // Define the skip map for specific device models
 const propertySkipMap = {
-  'DJT11LM': ['sensitivity'],
-  //'OTHERDEVICE': ['some_property', 'another_property'],
-  // Add more devices here easily
+  DJT11LM: ['sensitivity'],
+  // 'OTHERDEVICE': ['some_property', 'another_property'],
+};
+
+// Define the add map for specific device models
+const propertyAddMap = {
+  'ICZB-RM11S': [
+    {
+      access: 1,
+      name: 'action group',
+      property: 'action_group',
+      type: 'numeric',
+      unit: '',
+    },
+  ],
 };
 
 const mapProperty = function mapProperty(Z2MDevice) {
@@ -278,9 +287,10 @@ const mapProperty = function mapProperty(Z2MDevice) {
   // Determine if the current device is a group
   const isGroup = Array.isArray(Z2MDevice.members);
 
-  // Get the array of properties to skip for this model. This is done once per device.
+  // Get the array of properties to skip and/or add for this model. This is done once per device.
   const skipProperties = propertySkipMap[modelId] || [];
-  
+  const addProperties = propertyAddMap[modelId] || [];
+
   let homeyCapabilities = [];
   function pushUniqueCapabilities(capVal) {
     if (!homeyCapabilities.includes(capVal)) {
@@ -295,11 +305,12 @@ const mapProperty = function mapProperty(Z2MDevice) {
   } else if (Z2MDevice.definition && Z2MDevice.definition.exposes) {
     exposes = Z2MDevice.definition.exposes;
   }
+  exposes = exposes.concat(addProperties);
 
   // Determine once if the device has a 'power' exposure.
-  const hasPower = exposes.some(exp => {
+  const hasPower = exposes.some((exp) => {
     if (exp.property === 'power') return true;
-    if (exp.features) return exp.features.some(feature => feature.property === 'power');
+    if (exp.features) return exp.features.some((feature) => feature.property === 'power');
     return false;
   });
 
@@ -329,16 +340,14 @@ const mapProperty = function mapProperty(Z2MDevice) {
 
         // Skip linkquality for groups
         if (isGroup && capName === 'measure_linkquality') {
-          console.log(`Skipping ${capName} for group`);
           return; // Do not add this capability
         }
-  
+
         // Check using the pre-determined skip list; only if the device model has rules
         if (skipProperties.includes(capName)) {
-          // console.log(`Skipping capability '${capName}' for model '${modelId}'`);
           return; // Do not add this capability
         }
-  
+
         pushUniqueCapabilities(capName);
         capDetails[capName] = exp;
       }
@@ -354,7 +363,7 @@ const mapProperty = function mapProperty(Z2MDevice) {
       mapExposure(exp);
     }
   });
-  
+
   const caps = homeyCapabilities.filter((cap) => cap !== null);
   return { caps, capDetails };
 };
