@@ -825,7 +825,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device|group&capabilities=measure_linkquality"
+            "filter": "driver_id=device&capabilities=measure_linkquality"
           }
         ],
         "tokens": [
@@ -1781,12 +1781,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device|group&capabilities=sensitivity_enum"
+            "filter": "driver_id=device|group&capabilities=sensitivity"
           }
         ],
         "tokens": [
           {
-            "name": "sensitivity_enum",
+            "name": "sensitivity",
             "type": "string",
             "title": {
               "en": "Sensitivity",
@@ -6353,7 +6353,8 @@
       },
       "getable": true,
       "setable": false,
-      "insights": true
+      "insights": true,
+      "icon": "./assets/action.svg"
     },
     "alarm_offline": {
       "type": "boolean",
@@ -6414,7 +6415,7 @@
         {
           "id": "stop",
           "title": {
-            "en": "Stop"
+            "en": "Stop alarm"
           }
         },
         {
@@ -6426,13 +6427,13 @@
         {
           "id": "fire",
           "title": {
-            "en": "Fire"
+            "en": "Fire alarm"
           }
         },
         {
           "id": "burglar",
           "title": {
-            "en": "Burglar"
+            "en": "Burglar alarm"
           }
         }
       ],
@@ -7009,6 +7010,256 @@
       "insights": true,
       "icon": "./assets/link_quality.svg"
     },
+    "measure_voltage_mv": {
+      "type": "number",
+      "title": {
+        "en": "Voltage",
+        "nl": "Voltage",
+        "de": "Spannung",
+        "fr": "Voltage",
+        "it": "Voltaggio",
+        "sv": "Spänning",
+        "no": "Spenning",
+        "es": "Tensión",
+        "da": "Elektrisk spænding",
+        "ru": "Вольтаж",
+        "pl": "Napięcie",
+        "ko": "전압"
+      },
+      "units": {
+        "en": "mV",
+        "ru": "мВ",
+        "ko": "mV"
+      },
+      "desc": {
+        "en": "Voltage of the battery in millivolts (mV)",
+        "nl": "Spanning van de batterij in millivolt (mV)",
+        "de": "Spannung der Batterie in Millivolt (mV)",
+        "fr": "Tension de la batterie en millivolts (mV)",
+        "it": "Tensione della batteria in millivolt (mV)",
+        "sv": "Batterispänning i millivolt (mV)",
+        "no": "Batterispenning i millivolt (mV)",
+        "es": "Voltaje de la batería en milivoltios (mV)",
+        "da": "Batterispænding i millivolt (mV)",
+        "ru": "Напряжение аккумулятора в милливольтах (мВ)",
+        "pl": "Napięcie akumulatora w miliwoltach (mV)",
+        "ko": "배터리 전압 (밀리볼트, mV)"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "icon": "./assets/measure_voltage_mv.svg"
+    },
+    "meter_angle_x": {
+      "type": "number",
+      "title": {
+        "en": "Angle x",
+        "nl": "Hoek x",
+        "da": "Vinkel x",
+        "de": "Winkel x",
+        "es": "Ángulo x",
+        "fr": "Angle x",
+        "it": "Angolo x",
+        "no": "Vinkel x",
+        "sv": "Vinkel x",
+        "pl": "Kąt x",
+        "ru": "Угол x",
+        "ko": "각도 x"
+      },
+      "units": {
+        "en": "°",
+        "nl": "°",
+        "da": "°",
+        "de": "°",
+        "es": "°",
+        "fr": "°",
+        "it": "°",
+        "no": "°",
+        "sv": "°",
+        "pl": "°",
+        "ru": "°",
+        "ko": "°"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "icon": "./assets/anglex.svg"
+    },
+    "meter_angle_y": {
+      "type": "number",
+      "title": {
+        "en": "Angle y",
+        "nl": "Hoek y",
+        "da": "Vinkel y",
+        "de": "Winkel y",
+        "es": "Ángulo y",
+        "fr": "Angle y",
+        "it": "Angolo y",
+        "no": "Vinkel y",
+        "sv": "Vinkel y",
+        "pl": "Kąt y",
+        "ru": "Угол y",
+        "ko": "각도 y"
+      },
+      "units": {
+        "en": "°",
+        "nl": "°",
+        "da": "°",
+        "de": "°",
+        "es": "°",
+        "fr": "°",
+        "it": "°",
+        "no": "°",
+        "sv": "°",
+        "pl": "°",
+        "ru": "°",
+        "ko": "°"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "icon": "./assets/angley.svg"
+    },
+    "meter_angle_z": {
+      "type": "number",
+      "title": {
+        "en": "Angle z",
+        "nl": "Hoek z",
+        "da": "Vinkel z",
+        "de": "Winkel z",
+        "es": "Ángulo z",
+        "fr": "Angle z",
+        "it": "Angolo z",
+        "no": "Vinkel z",
+        "sv": "Vinkel z",
+        "pl": "Kąt z",
+        "ru": "Угол z",
+        "ko": "각도 z"
+      },
+      "units": {
+        "en": "°",
+        "nl": "°",
+        "da": "°",
+        "de": "°",
+        "es": "°",
+        "fr": "°",
+        "it": "°",
+        "no": "°",
+        "sv": "°",
+        "pl": "°",
+        "ru": "°",
+        "ko": "°"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "icon": "./assets/anglez.svg"
+    },
+    "meter_axis_x": {
+      "type": "number",
+      "title": {
+        "en": "X axis",
+        "nl": "X-as",
+        "da": "X-akse",
+        "de": "X-Achse",
+        "es": "Eje X",
+        "fr": "Axe des X",
+        "it": "Asse X",
+        "no": "X-akse",
+        "sv": "X-axel",
+        "pl": "Oś X",
+        "ru": "Ось X",
+        "ko": "X축"
+      },
+      "units": {
+        "en": "°",
+        "nl": "°",
+        "da": "°",
+        "de": "°",
+        "es": "°",
+        "fr": "°",
+        "it": "°",
+        "no": "°",
+        "sv": "°",
+        "pl": "°",
+        "ru": "°",
+        "ko": "°"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "icon": "./assets/axisx.svg"
+    },
+    "meter_axis_y": {
+      "type": "number",
+      "title": {
+        "en": "Y axis",
+        "nl": "Y-as",
+        "da": "Y-akse",
+        "de": "Y-Achse",
+        "es": "Eje Y",
+        "fr": "Axe des Y",
+        "it": "Asse Y",
+        "no": "Y-akse",
+        "sv": "Y-axel",
+        "pl": "Oś Y",
+        "ru": "Ось Y",
+        "ko": "Y축"
+      },
+      "units": {
+        "en": "°",
+        "nl": "°",
+        "da": "°",
+        "de": "°",
+        "es": "°",
+        "fr": "°",
+        "it": "°",
+        "no": "°",
+        "sv": "°",
+        "pl": "°",
+        "ru": "°",
+        "ko": "°"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "icon": "./assets/axisy.svg"
+    },
+    "meter_axis_z": {
+      "type": "number",
+      "title": {
+        "en": "Z axis",
+        "nl": "Z-as",
+        "da": "Z-akse",
+        "de": "Z-Achse",
+        "es": "Eje Z",
+        "fr": "Axe des Z",
+        "it": "Asse Z",
+        "no": "Z-akse",
+        "sv": "Z-axel",
+        "pl": "Oś Z",
+        "ru": "Ось Z",
+        "ko": "Z축"
+      },
+      "units": {
+        "en": "°",
+        "nl": "°",
+        "da": "°",
+        "de": "°",
+        "es": "°",
+        "fr": "°",
+        "it": "°",
+        "no": "°",
+        "sv": "°",
+        "pl": "°",
+        "ru": "°",
+        "ko": "°"
+      },
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "icon": "./assets/axisz.svg"
+    },
     "meter_joined_devices": {
       "type": "number",
       "title": {
@@ -7093,21 +7344,21 @@
       "insights": true,
       "icon": "./assets/meter_offline_devices.svg"
     },
-    "motion_state": {
-      "type": "string",
+    "meter_strength": {
+      "type": "number",
       "title": {
-        "en": "Motion state",
-        "nl": "Bewegingsstatus",
-        "da": "Bevægelsestilstand",
-        "de": "Bewegungszustand",
-        "es": "Estado de movimiento",
-        "fr": "État de mouvement",
-        "it": "Stato di movimento",
-        "no": "Bevegelsestilstand",
-        "sv": "Rörelsetillstånd",
-        "pl": "Stan ruchu",
-        "ru": "Состояние движения",
-        "ko": "움직임 상태"
+        "en": "Vibration strength",
+        "nl": "Trillingssterkte",
+        "da": "Vibrationsstyrke",
+        "de": "Vibrationsstärke",
+        "es": "Fuerza de vibración",
+        "fr": "Force de vibration",
+        "it": "Forza di vibrazione",
+        "no": "Vibrasjonsstyrke",
+        "sv": "Vibrationstyrka",
+        "pl": "Siła wibracji",
+        "ru": "Сила вибрации",
+        "ko": "진동 강도"
       },
       "units": {
         "en": "",
@@ -7125,7 +7376,82 @@
       },
       "getable": true,
       "setable": false,
-      "insights": true
+      "insights": true,
+      "icon": "./assets/vibrationstrength.svg"
+    },
+    "motion_state": {
+      "type": "enum",
+      "title": {
+        "en": "Motion Sensitivity",
+        "nl": "Gevoeligheid",
+        "da": "Følsomhed",
+        "de": "Empfindlichkeit",
+        "es": "Sensibilidad",
+        "fr": "Sensibilité",
+        "it": "Sensibilità",
+        "no": "Sensitivitet",
+        "sv": "Känslighet",
+        "pl": "Czułość",
+        "ru": "Чувствительность",
+        "ko": "민감도"
+      },
+      "values": [
+        {
+          "id": "low",
+          "title": {
+            "en": "Low sensitivity",
+            "nl": "Laag",
+            "da": "Lav",
+            "de": "Niedrig",
+            "es": "Bajo",
+            "fr": "Bas",
+            "it": "Basso",
+            "no": "Lav",
+            "sv": "Låg",
+            "pl": "Niski",
+            "ru": "Низкий",
+            "ko": "낮은"
+          }
+        },
+        {
+          "id": "medium",
+          "title": {
+            "en": "Medium sensitivity",
+            "nl": "Gemiddeld",
+            "da": "Mellem",
+            "de": "Mittel",
+            "es": "Medio",
+            "fr": "Moyen",
+            "it": "Medio",
+            "no": "Middels",
+            "sv": "Medium",
+            "pl": "Średni",
+            "ru": "Средний",
+            "ko": "중간"
+          }
+        },
+        {
+          "id": "high",
+          "title": {
+            "en": "High sensitivity",
+            "nl": "Hoog",
+            "da": "Høj",
+            "de": "Hoch",
+            "es": "Alto",
+            "fr": "Élevé",
+            "it": "Alto",
+            "no": "Høy",
+            "sv": "Hög",
+            "pl": "Wysoki",
+            "ru": "Высокий",
+            "ko": "높은"
+          }
+        }
+      ],
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "insights": false
     },
     "power_on_behavior": {
       "type": "enum",
@@ -7421,36 +7747,6 @@
       "insights": true
     },
     "sensitivity": {
-      "type": "enum",
-      "title": {
-        "en": "Sensitivity"
-      },
-      "values": [
-        {
-          "id": "low",
-          "title": {
-            "en": "Low"
-          }
-        },
-        {
-          "id": "medium",
-          "title": {
-            "en": "Medium"
-          }
-        },
-        {
-          "id": "high",
-          "title": {
-            "en": "High"
-          }
-        }
-      ],
-      "uiComponent": "picker",
-      "getable": true,
-      "setable": true,
-      "insights": false
-    },
-    "sensitivity_enum": {
       "type": "enum",
       "title": {
         "en": "Sensitivity",

@@ -18,7 +18,7 @@
     {
       "type": "device",
       "name": "device",
-      "filter": "driver_id=device|group&capabilities=measure_linkquality"
+      "filter": "driver_id=device&capabilities=measure_linkquality"
     }
   ],
   "tokens": [

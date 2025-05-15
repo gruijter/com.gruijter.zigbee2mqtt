@@ -29,5 +29,6 @@
   },
   "getable": true,
   "setable": false,
-  "insights": true
+  "insights": true,
+  "icon": "./assets/action.svg"
 }

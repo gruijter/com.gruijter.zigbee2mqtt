@@ -22,12 +22,12 @@
 		{
 				"type": "device",
 				"name": "device",
-				"filter": "driver_id=device|group&capabilities=sensitivity_enum"
+				"filter": "driver_id=device|group&capabilities=sensitivity"
 		}
 	],
 	"tokens": [
 		{
-			"name": "sensitivity_enum",
+			"name": "sensitivity",
 			"type": "string",
 			"title": { 
 				"en": "Sensitivity",

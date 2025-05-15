@@ -1,0 +1,40 @@
+{
+    "type": "number",
+    "title": {
+        "en": "Voltage",
+        "nl": "Voltage",
+        "de": "Spannung",
+        "fr": "Voltage",
+        "it": "Voltaggio",
+        "sv": "Spänning",
+        "no": "Spenning",
+        "es": "Tensión",
+        "da": "Elektrisk spænding",
+        "ru": "Вольтаж",
+        "pl": "Napięcie",
+        "ko": "전압"
+    },
+    "units": {
+      "en": "mV",
+      "ru": "мВ",
+      "ko": "mV"
+    },
+    "desc": {
+        "en": "Voltage of the battery in millivolts (mV)",
+        "nl": "Spanning van de batterij in millivolt (mV)",
+        "de": "Spannung der Batterie in Millivolt (mV)",
+        "fr": "Tension de la batterie en millivolts (mV)",
+        "it": "Tensione della batteria in millivolt (mV)",
+        "sv": "Batterispänning i millivolt (mV)",
+        "no": "Batterispenning i millivolt (mV)",
+        "es": "Voltaje de la batería en milivoltios (mV)",
+        "da": "Batterispænding i millivolt (mV)",
+        "ru": "Напряжение аккумулятора в милливольтах (мВ)",
+        "pl": "Napięcie akumulatora w miliwoltach (mV)",
+        "ko": "배터리 전압 (밀리볼트, mV)"
+    },
+    "getable": true,
+    "setable": false,
+    "insights": true,
+    "icon": "./assets/measure_voltage_mv.svg"
+  }
