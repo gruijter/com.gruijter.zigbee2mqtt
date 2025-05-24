@@ -1107,7 +1107,7 @@
       },
       {
         "title": {
-          "en": "The number of unavailable devices changed",
+          "en": "The number of offline devices changed",
           "nl": "Het aantal niet-beschikbare apparaten is gewijzigd",
           "da": "Antallet af utilgængelige enheder er ændret",
           "de": "Die Anzahl der nicht verfügbaren Geräte hat sich geändert",
@@ -1130,10 +1130,10 @@
         ],
         "tokens": [
           {
-            "name": "meter_unavailable_devices",
+            "name": "meter_offline_devices",
             "type": "number",
             "title": {
-              "en": "Unavailable devices",
+              "en": "Offline devices",
               "nl": "Niet-beschikbare apparaten",
               "da": "Utilgængelige enheder",
               "de": "Nicht verfügbare Geräte",
