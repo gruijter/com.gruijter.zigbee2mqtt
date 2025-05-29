@@ -1149,7 +1149,7 @@
             "example": 3
           }
         ],
-        "id": "meter_unavailable_devices_changed"
+        "id": "meter_offline_devices_changed"
       },
       {
         "title": {
