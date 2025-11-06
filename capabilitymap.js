@@ -66,11 +66,9 @@ const capabilityMap = {
   // : (val) => ['measure_gust_angle', Number(val)],
   battery: (val) => ['measure_battery', Number(val)],
   power: (val) => ['measure_power', Number(val)],
-  // For voltage we choose the conversion based on the presence of "power"
-  // If hasPower is true, we assume voltage is in V; otherwise, we assume it's in mV.
-  voltage: (val, hasPower) => {
-    if (hasPower) return ['measure_voltage', Number(val)];
-    return ['measure_voltage_mv', Number(val)];
+  voltage: (val, exp) => {
+    return (exp?.unit === 'V') ? ['measure_voltage', Number(val)]
+      : ['measure_voltage_mv', Number(val)];
   },
   current: (val) => ['measure_current', Number(val)],
   illuminance: (val) => ['measure_luminance', Number(val)],
@@ -307,13 +305,6 @@ const mapProperty = function mapProperty(Z2MDevice) {
   }
   exposes = exposes.concat(addProperties);
 
-  // Determine once if the device has a 'power' exposure.
-  const hasPower = exposes.some((exp) => {
-    if (exp.property === 'power') return true;
-    if (exp.features) return exp.features.some((feature) => feature.property === 'power');
-    return false;
-  });
-
   const mapExposure = (exp) => {
     if (exp.property === 'windowcoverings_set' || exp.property === 'position') {
       homeyCapabilities = homeyCapabilities.filter((cap) => cap !== 'onoff');
@@ -325,17 +316,10 @@ const mapProperty = function mapProperty(Z2MDevice) {
       capDetails.light_saturation = exp;
       pushUniqueCapabilities('light_mode');
       capDetails.light_mode = exp;
-    } else if (exp.property === 'voltage') {
-      // Special handling for voltage: pass the 'hasPower' flag and the value.
-      const capVal = capabilityMap.voltage(exp.value, hasPower);
-      const capName = capVal[0];
-      if (skipProperties.includes(capName)) return;
-      pushUniqueCapabilities(capName);
-      capDetails[capName] = exp;
     } else {
       const mapFunc = capabilityMap[exp.property];
       if (mapFunc) {
-        const capVal = mapFunc();
+        const capVal = mapFunc(null, exp);
         const capName = capVal[0];
 
         // Skip linkquality for groups

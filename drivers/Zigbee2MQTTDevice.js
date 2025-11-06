@@ -373,7 +373,8 @@ module.exports = class Zigbee2MQTTDevice extends Device {
                 } else {
                   const mapFunc = capabilityMap[entry[0]];
                   if (mapFunc) { //  included in Homey mapping
-                    const capVal = mapFunc(entry[1]);
+                    const exp = Object.values(this.store.capDetails).find((item) => item.property === entry[0]);
+                    const capVal = mapFunc(entry[1], exp);
                     // Add extra triggers for ACTION
                     if (capVal[0] === 'action') {
                       // Action event received
