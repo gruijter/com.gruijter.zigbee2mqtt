@@ -1,6 +1,6 @@
 {
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "2.9.0",
+  "version": "2.9.1",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -121,6 +121,12 @@
       },
       {
         "name": "Tapio Heiskanen"
+      },
+      {
+        "name": "march5350"
+      },
+      {
+        "name": "Luc Verdier"
       }
     ]
   },

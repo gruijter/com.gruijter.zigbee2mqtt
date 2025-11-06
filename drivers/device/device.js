@@ -40,7 +40,7 @@ module.exports = class ZigbeeDevice extends Zigbee2MQTTDevice {
   // register homey event listeners
   async registerHomeyEventListeners() {
     if (this.eventListenerDeviceListUpdate) this.homey.removeListener('devicelistupdate', this.eventListenerDeviceListUpdate);
-    this.eventListenerDeviceListUpdate = async () => {
+    this.eventListenerDeviceListUpdate = () => {
       this.checkChangedOrDeleted().catch((error) => this.error(error));
     };
     this.homey.on('devicelistupdate', this.eventListenerDeviceListUpdate);
