@@ -1,16 +1,12 @@
 {
+  "extends": "@tsconfig/node12/tsconfig.json",
   "compilerOptions": {
     "outDir": "build/",
     "sourceMap": true,
-    "target": "es2018",
     "module": "commonjs",
-    "lib": ["es2018"],
-    "allowJs": true,
-    "checkJs": false,
     "strict": false,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
     "resolveJsonModule": true
   },
   "include": ["src/**/*.ts"],

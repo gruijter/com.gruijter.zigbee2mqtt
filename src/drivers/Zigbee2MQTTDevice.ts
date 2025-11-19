@@ -426,9 +426,8 @@ export default class Zigbee2MQTTDevice extends Homey.Device {
                 } else if (entry[0] === 'color' && this.getCapabilities().includes('light_mode')) {
                   // TODO: check if this is correct
                   // this.setCapabilityValue('light_mode', entry[1].hue).catch(this.error);
-                } else {
-                  this.setCapabilityValue(entry[0], entry[1]).catch(this.error);
                 }
+
 
                 const mapFunc = capabilityMap[entry[0]];
                 if (mapFunc) { //  included in Homey mapping
