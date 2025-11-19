@@ -1,16 +1,29 @@
 {
   "name": "com.gruijter.zigbee2mqtt",
   "version": "2.8.0",
-  "main": "app.js",
+  "main": "app.ts",
   "engines": {
     "node": ">=12.16.1"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "start": "homey app run --remote",
+    "install-homey": "homey app install",
+    "validate": "homey app validate",
+    "clean": "rm -rf build/",
+    "preinstall-homey": "npm run build"
+  },
   "dependencies": {
-    "async-mqtt": "^2.6.3"
+    "async-mqtt": "^2.6.3",
+    "source-map-support": "^0.5.21"
   },
   "devDependencies": {
+    "@types/homey": "npm:homey-apps-sdk-v3-types@^0.3.12",
+    "@types/node": "^24.10.1",
+    "@types/source-map-support": "^0.5.10",
     "eslint": "^7.32.0",
-    "eslint-config-athom": "^3.1.5"
+    "eslint-config-athom": "^3.1.5",
+    "typescript": "^5.9.3"
   }
 }

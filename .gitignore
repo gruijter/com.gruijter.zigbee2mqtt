@@ -1,6 +1,9 @@
+/build
 /env.json
 /.homeybuild/
 roadmap.txt
 /tmp
 tmp_*
 zzz*
+node_modules/
+.vscode/
