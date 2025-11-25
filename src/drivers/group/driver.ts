@@ -57,8 +57,7 @@ module.exports = class ZigbeeGroupDriver extends Zigbee2MQTTDriver {
                 description,
               };
               // get all caps and then remove linkquality
-              const { capDetails } = mapProperty(devices[0]);
-              let { caps } = mapProperty(devices[0]);
+              let { capDetails, caps } = mapProperty(devices[0]);
               caps = caps.filter((cap: any) => cap !== 'measure_linkquality');
               delete capDetails['measure_linkquality'];
 

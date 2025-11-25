@@ -46,7 +46,7 @@ module.exports = class MyApp extends Homey.App {
     // const setDimL1 = this.homey.flow.getActionCard('set_dim.l1');
     // setDimL1.registerRunListener((args) => args.device.setCommand({ brightness_l1: Number(args.dim) * 254 }, 'flow'));
 
-    const actionListeners: Record<string, any> = {};
+    const actionListeners: Record<string, Homey.FlowCardAction> = {};
     const actionList = this.manifest.flow.actions;
     const expMap = getExpMap();
     actionList.forEach((action: any) => {
@@ -54,7 +54,7 @@ module.exports = class MyApp extends Homey.App {
       if (action.args && action.args[0].filter && action.args[0].filter.includes('bridge')) {
         this.log('setting up Bridge action listener', action.id);
         actionListeners[action.id] = this.homey.flow.getActionCard(action.id);
-        actionListeners[action.id].registerRunListener(async (args: any) => {
+        actionListeners[action.id].registerRunListener(async (args) => {
           try {
             await args.device[action.id](args.val, 'flow');
           } catch (error) {
@@ -69,9 +69,8 @@ module.exports = class MyApp extends Homey.App {
       if (!mapFunc) return; // not included in Homey maping
       this.log('setting up action listener', action.id, mapFunc('val')[2]);
       actionListeners[action.id] = this.homey.flow.getActionCard(action.id);
-      actionListeners[action.id].registerRunListener(async (args: any) => {
+      actionListeners[action.id].registerRunListener(async (args) => {
         try {
-          // @ts-ignore
           await args.device.setCommand(mapFunc(args.val)[2], 'flow');
         } catch (error) {
           this.error(error);
@@ -82,9 +81,8 @@ module.exports = class MyApp extends Homey.App {
     // add custom payload action
     this.log('setting up action listener custom_payload_set');
     actionListeners.custom_payload_set = this.homey.flow.getActionCard('custom_payload_set');
-    actionListeners.custom_payload_set.registerRunListener(async (args: any) => {
+    actionListeners.custom_payload_set.registerRunListener(async (args) => {
       try {
-        // @ts-ignore
         await args.device.setCustomPayload(args.val, 'flow');
       } catch (error) {
         this.error(error);
@@ -95,7 +93,7 @@ module.exports = class MyApp extends Homey.App {
   registerFlowTriggers() {
     // custom trgger cards
     const actionEventReceived = this.homey.flow.getDeviceTriggerCard('action_event_received');
-    actionEventReceived.registerRunListener(async (args: any, state: any) => {
+    actionEventReceived.registerRunListener(async (args, state) => {
       if (args.event !== state.event) return false;
       return true;
     });

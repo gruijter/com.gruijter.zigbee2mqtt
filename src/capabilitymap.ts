@@ -43,7 +43,7 @@ function getDeviceModel(Z2MDevice: any) {
   return '';
 }
 
-export const capabilityMap: { [key: string]: (val?: any, exp?: any) => any[] } = {
+export const capabilityMap: { [key: string]: (val?: any, exp?: any) => [string, any, any?] } = {
   // Standard Homey Number capabilities
   current_heating_setpoint: (val) => ['target_temperature', Number(val), { current_heating_setpoint: Number(val) }],
   temperature: (val) => ['measure_temperature', Number(val)],

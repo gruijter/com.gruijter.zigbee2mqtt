@@ -92,7 +92,7 @@ const hsbToRgb = (hue: number, sat: number, dim: number) => {
   };
 };
 
-export default class Zigbee2MQTTDevice extends Homey.Device {
+export default abstract class Zigbee2MQTTDevice extends Homey.Device {
   store: any;
   settings: any;
   bridge: any;
@@ -105,6 +105,8 @@ export default class Zigbee2MQTTDevice extends Homey.Device {
   capabilityListeners: any;
   handleMessage: any;
   subscribeTopics: any;
+
+  abstract getDeviceInfo(): any;
 
   async onInit() {
     try {
@@ -177,7 +179,6 @@ export default class Zigbee2MQTTDevice extends Homey.Device {
       this.log(`checking device migration for ${this.getName()}`);
       // check and repair incorrect capability(order)
 
-      // @ts-ignore
       const [deviceInfo] = this.getDeviceInfo();
       if (!deviceInfo) return Promise.resolve(false);
 
@@ -233,20 +234,17 @@ export default class Zigbee2MQTTDevice extends Homey.Device {
       // console.log(this.getName(), capDetails);
 
       if (!capDetails) return;
-      const capDetailsArray = Object.entries(capDetails);
+      const capDetailsArray = Object.entries<any>(capDetails);
       // console.dir(capDetailsArray, { depth: null });
       for (let index = 0; index < capDetailsArray.length; index += 1) {
         if (capDetailsArray[index][1]) {
           // && capDetailsArray[index][1].unit) {
           const capOptions: any = {};
-          // @ts-ignore
+
           if (capDetailsArray[index][1].unit) {
-            // @ts-ignore
             capOptions.units = { en: capDetailsArray[index][1].unit };
           }
-          // @ts-ignore
           if (capDetailsArray[index][1].name && !capDetailsArray[index][0].includes('onoff')) {
-            // @ts-ignore
             const title = capDetailsArray[index][1].name.replace(/./, (c) => c.toUpperCase());
             capOptions.title = { en: title };
           }
@@ -257,27 +255,11 @@ export default class Zigbee2MQTTDevice extends Homey.Device {
             try {
               currentCapOptions = this.getCapabilityOptions(capDetailsArray[index][0]);
             } catch (error) {
-             if (!currentCapOptions) {
-            const capOptions = {
-              title: { en: (capDetailsArray[index][1] as any).description },
-              units: { en: (capDetailsArray[index][1] as any).unit },
-            };
-            // @ts-ignore
-            await this.setCapabilityOptions(capDetailsArray[index][0], capOptions).catch(this.error);
-          } else if (!currentCapOptions.title || !currentCapOptions.units) {
-            const capOptions = {
-              title: { en: (capDetailsArray[index][1] as any).description },
-              units: { en: (capDetailsArray[index][1] as any).unit },
-            };
-            // @ts-ignore
-            await this.setCapabilityOptions(capDetailsArray[index][0], capOptions).catch(this.error);
-          }    await setTimeoutPromise(2 * 1000).catch((error) => this.log(error));
+              this.log(`${this.getName()} has no capability options set for ${capDetailsArray[index][0]}`);
             }
             // console.log(this.getName(), capDetailsArray[index][0], currentCapOptions);
-            // @ts-ignore
             if (currentCapOptions.unit !== capOptions.unit || currentCapOptions.name !== capOptions.name) {
               unitsChanged = true;
-              // @ts-ignore
               this.log('Migrating unit and title for', capDetailsArray[index][0], capDetailsArray[index][1].unit, capDetailsArray[index][1].name);
               await this.setCapabilityOptions(capDetailsArray[index][0], capOptions).catch(this.error);
               await setTimeoutPromise(2 * 1000).catch((error) => this.log(error));
@@ -332,18 +314,15 @@ export default class Zigbee2MQTTDevice extends Homey.Device {
     if (!payload) throw Error('setCommand started without payload');
     // get the capDetails for this command
     const [payLoadArray] = Object.entries(payload);
-    const capDetail = Object.entries(this.store.capDetails).find((cap: any) => cap[1].property === payLoadArray[0]);
-    // @ts-ignore
+    const capDetail = Object.entries<any>(this.store.capDetails).find((cap: any) => cap[1].property === payLoadArray[0]);
     if (!capDetail || !capDetail[1]) throw Error(`${payLoadArray[0]} capability not supported`);
     // check if command is settable
     const mask = 0b00010;
-    // @ts-ignore
     const { access } = capDetail[1];
     // eslint-disable-next-line no-bitwise
     const settable = (access & mask) === mask;
     if (!settable) throw Error(`${payLoadArray[0]} capability is not settable`);
     // check if ENUM command is supported by this device
-    // @ts-ignore
     if (capDetail[1].values && !capDetail[1].values.includes(payLoadArray[1])) throw Error(`${payLoadArray[1]} command not supported`);
     await this.bridge.client.publish(`${this.deviceTopic}/set`, JSON.stringify(payload));
     this.log(`${JSON.stringify(payload)} sent by ${source}`);
@@ -381,7 +360,6 @@ export default class Zigbee2MQTTDevice extends Homey.Device {
   }
 
   async checkChangedOrDeleted() {
-    // @ts-ignore
     const [deviceInfo] = this.getDeviceInfo();
     if (!deviceInfo) return;
     // check deleted
@@ -416,36 +394,31 @@ export default class Zigbee2MQTTDevice extends Homey.Device {
             if (topic === this.deviceTopic) {
               // console.log(`${this.getName()} update:`, info);
               // this.setAvailable();
-              Object.entries(info).forEach((entry) => {
+              Object.entries<any>(info).forEach((entry) => {
                 // exception for color light
                 if (entry[0] === 'color' && this.getCapabilities().includes('light_hue')) {
-                  // @ts-ignore
                   if (entry[1].hue !== undefined) this.setCapabilityValue('light_hue', entry[1].hue).catch(this.error);
-                  // @ts-ignore
                   if (entry[1].saturation !== undefined) this.setCapabilityValue('light_saturation', entry[1].saturation).catch(this.error);
-                } else if (entry[0] === 'color' && this.getCapabilities().includes('light_mode')) {
-                  // TODO: check if this is correct
-                  // this.setCapabilityValue('light_mode', entry[1].hue).catch(this.error);
-                }
-
-
-                const mapFunc = capabilityMap[entry[0]];
-                if (mapFunc) { //  included in Homey mapping
-                  // @ts-ignore
-                  const exp = Object.values(this.store.capDetails).find((item: any) => item.property === entry[0]);
-                  const capVal = mapFunc(entry[1], exp);
-                  // Add extra triggers for ACTION
-                  if (capVal[0] === 'action') {
-                    // Action event received
-                    if (capVal[1] !== null && capVal[1] !== undefined && capVal[1] !== '') {
-                      const tokens = { action: capVal[1] };
-                      const state = { event: capVal[1] };
-                      this.homey.flow.getDeviceTriggerCard('action_event_received').trigger(this, tokens, state).catch(this.error);
+                } else {
+                  const mapFunc = capabilityMap[entry[0]];
+                  if (mapFunc) { //  included in Homey mapping
+                    const exp = Object.values(this.store.capDetails).find((item: any) => item.property === entry[0]);
+                    const capVal = mapFunc(entry[1], exp);
+                    // Add extra triggers for ACTION
+                    if (capVal[0] === 'action') {
+                      // Action event received
+                      if (capVal[1] !== null && capVal[1] !== undefined && capVal[1] !== '') {
+                        const tokens = { action: capVal[1] };
+                        const state = { event: capVal[1] };
+                        this.homey.flow.getDeviceTriggerCard('action_event_received').trigger(this, tokens, state).catch(this.error);
+                      }
+                      // Original extra action trigger
+                      this.setCapability(capVal[0], '---').catch((error) => this.error(error));
                     }
-                    // Original extra action trigger
-                    this.setCapability(capVal[0], '---').catch((error) => this.error(error));
+                    this.setCapability(capVal[0], capVal[1]).catch((error) => this.error(error));
+                  } else {
+                    this.log(`Capability ${entry[0]} not mapped`);
                   }
-                  this.setCapability(capVal[0], capVal[1]).catch((error) => this.error(error));
                 }
               });
             }
@@ -490,7 +463,6 @@ export default class Zigbee2MQTTDevice extends Homey.Device {
     if (this.eventListenerBridgeOffline) this.homey.on('bridgeoffline', this.eventListenerBridgeOffline); // Re-add listener if it was removed? Logic seems slightly off in original code or I misunderstood. Original: remove then define then add.
     // Actually, the original code checks if it exists, removes it, then redefines it and adds it.
     if (this.eventListenerBridgeOffline) {
-        // @ts-ignore
         this.homey.removeListener('bridgeoffline', this.eventListenerBridgeOffline);
     }
     this.eventListenerBridgeOffline = (offline: boolean) => {
@@ -514,14 +486,12 @@ export default class Zigbee2MQTTDevice extends Homey.Device {
       capArray.forEach((map) => {
         const mapFunc = map[1];
         const capabilityName = mapFunc()[0];
-        // @ts-ignore
         if (mapFunc().length > 2 && this.getCapabilities().includes(capabilityName)) {
           // capability setting is mapped and present in device
           if (!this.capabilityListeners[capabilityName]) {
             this.log(`${this.getName()} adding capability listener ${capabilityName}`);
             this.registerCapabilityListener(mapFunc()[0], (val: any) => {
               const command = mapFunc(val)[2];
-              // @ts-ignore
               this.setCommand(command, 'app').catch((error) => this.error(error));
               return Promise.resolve();
             });
@@ -530,10 +500,8 @@ export default class Zigbee2MQTTDevice extends Homey.Device {
         }
       });
       // add exception for color light
-      // @ts-ignore
       if (this.getCapabilities().includes('light_hue') && !this.capabilityListeners.multiLight) {
         this.log(`${this.getName()} adding multiple capability listener for Hue lights`);
-        // @ts-ignore
         this.registerMultipleCapabilityListener(
           ['light_hue', 'light_saturation', 'light_mode'],
           (values: any) => {
@@ -555,7 +523,6 @@ export default class Zigbee2MQTTDevice extends Homey.Device {
     this.log('removing listeners', this.getName());
     this.bridge.client.removeListener('connect', this.subscribeTopics);
     this.bridge.client.removeListener('message', this.handleMessage);
-    // @ts-ignore
     if (this.eventListenerBridgeOffline) this.homey.removeListener('bridgeoffline', this.eventListenerBridgeOffline);
   }
 
