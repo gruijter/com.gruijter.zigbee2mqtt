@@ -5,6 +5,7 @@
     "sourceMap": true,
     "module": "commonjs",
     "strict": false,
+    "strictNullChecks": false,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "resolveJsonModule": true

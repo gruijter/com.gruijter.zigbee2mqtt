@@ -22,6 +22,7 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 'use strict';
 
+import { Z2MDevice } from '../../types';
 import Zigbee2MQTTDevice from '../Zigbee2MQTTDevice';
 
 module.exports = class ZigbeeDevice extends Zigbee2MQTTDevice {
@@ -30,7 +31,19 @@ module.exports = class ZigbeeDevice extends Zigbee2MQTTDevice {
   getDeviceInfo() {
     if (!this.bridge) throw Error('No bridge, or bridge not ready');
     if (!this.bridge.devices) throw Error('No devices, or devices not ready');
-    return this.bridge.devices.filter((dev: any) => dev.ieee_address === this.settings.uid);
+
+    const allDevices = this.bridge.devices as Z2MDevice[];
+    const device = allDevices.filter((dev: any) => dev.ieee_address === this.settings.uid)[0];
+
+    if (!device) {
+      this.log('Could not find device with ieee_address', this.settings.uid, 'in bridge devices');
+      return null;
+    }
+
+    return {
+      type: 'device' as const,
+      device,
+    };
   }
 
   async onInit() {

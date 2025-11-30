@@ -22,6 +22,7 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 'use strict';
 
+import { Z2MDevice, Z2MGroup } from '../../types';
 import Zigbee2MQTTDevice from '../Zigbee2MQTTDevice';
 
 module.exports = class ZigbeeGroup extends Zigbee2MQTTDevice {
@@ -31,12 +32,15 @@ module.exports = class ZigbeeGroup extends Zigbee2MQTTDevice {
     if (!this.bridge) throw Error('No bridge, or bridge not ready');
     if (!this.bridge.devices) throw Error('No devices, or devices not ready');
     if (!this.bridge.groups) throw Error('No groups, or groups not ready');
-    const groups = this.bridge.groups.filter((group: any) => group.id.toString() === this.settings.uid);
+    const allGroups = this.bridge.groups as Z2MGroup[];
+    const allDevices = this.bridge.devices as Z2MDevice[];
+
+    const groups = allGroups.filter((group) => group.id.toString() === this.settings.uid);
     const group = groups[0];
     const members = group.members.map((member: any) => member.ieee_address);
-    const devices = this.bridge.devices.filter((dev: any) => dev.definition && dev.definition.exposes && members.includes(dev.ieee_address));
-    group.devices = devices;
-    return [group];
+    const devices = allDevices.filter((dev: Z2MDevice) => dev.definition && dev.definition.exposes && members.includes(dev.ieee_address));
+
+    return { type: 'group' as const, device: group, devices };
   }
 
   async onInit() {

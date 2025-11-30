@@ -21,7 +21,8 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 import sourceMapSupport from 'source-map-support';
 import Homey from 'homey';
-import { capabilityMap, getExpMap } from './capabilitymap';
+import Zigbee2MQTTDevice from './drivers/Zigbee2MQTTDevice';
+import { getCapabailityConverters } from './capabilityMap';
 
 sourceMapSupport.install();
 
@@ -49,7 +50,7 @@ module.exports = class MyApp extends Homey.App {
 
     const actionListeners: Record<string, Homey.FlowCardAction> = {};
     const actionList = this.manifest.flow.actions;
-    const expMap = getExpMap();
+
     actionList.forEach((action: any) => {
       // actions for bridge
       if (action.args && action.args[0].filter && action.args[0].filter.includes('bridge')) {
@@ -65,14 +66,19 @@ module.exports = class MyApp extends Homey.App {
       }
 
       // actions for device or group
-      const z2mExp = expMap[action.id];
-      const mapFunc = capabilityMap[z2mExp];
-      if (!mapFunc) return; // not included in Homey maping
-      this.log('setting up action listener', action.id, mapFunc('val')[2]);
+      this.log('setting up action listener', action.id);
       actionListeners[action.id] = this.homey.flow.getActionCard(action.id);
       actionListeners[action.id].registerRunListener(async (args) => {
         try {
-          await args.device.setCommand(mapFunc(args.val)[2], 'flow');
+          const device = args.device as Zigbee2MQTTDevice;
+          const mapping = device.store.capabilityMappings?.[action.id];
+          if (mapping) {
+            const converters = getCapabailityConverters(action.id, mapping.expose);
+            if (converters?.homeyToZ2m) {
+              const command = converters.homeyToZ2m(args.val);
+              await device.setCommand(command, 'flow');
+            }
+          }
         } catch (error) {
           this.error(error);
         }

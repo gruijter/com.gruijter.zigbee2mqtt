@@ -21,15 +21,10 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 'use strict';
 
 import Homey from 'homey';
-import { capabilityMap } from '../capabilitymap';
 
 export default class Zigbee2MQTTDriver extends Homey.Driver {
-  ds: any;
 
   async onInit() {
-    this.ds = {
-      capabilityMap,
-    };
     this.log('Device driver has been initialized');
   }
 

@@ -37,8 +37,8 @@ const capabilities = [
   'alarm_offline',
 ];
 
-module.exports = class Zigbee2MQTTBridgeDriver extends Homey.Driver {
-  ds: any;
+export default class Zigbee2MQTTBridgeDriver extends Homey.Driver {
+  ds: { deviceCapabilities: string[] };
 
   async onInit() {
     this.log('zigbee2mqtt bridge driver has been initialized');
@@ -142,4 +142,6 @@ module.exports = class Zigbee2MQTTBridgeDriver extends Homey.Driver {
     return info;
   }
 
-};
+}
+
+module.exports = Zigbee2MQTTBridgeDriver;

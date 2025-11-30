@@ -22,28 +22,28 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 import Homey from 'homey';
 import util from 'util';
+import { DeviceAvailability, Z2MDevice, Z2MGroup } from '../../types';
+import Zigbee2MQTTBridgeDriver from './driver';
 
 const setTimeoutPromise = util.promisify(setTimeout);
 
-module.exports = class Zigbee2MQTTBridge extends Homey.Device {
+export default class Zigbee2MQTTBridge extends Homey.Device {
   settings: any;
   baseTopic: string;
-  devices: any[];
-  deviceAvailability: any;
+  devices: (Z2MDevice & DeviceAvailability)[];
   msgCounter: number;
   lastMPMUpdate: number;
   restarting: boolean;
   client: any;
   endTime: any;
   listenersSet: boolean;
-  groups: any;
+  groups: Z2MGroup[];
 
   async onInit() {
     try {
       this.settings = this.getSettings();
       this.baseTopic = `${this.settings.topic}`; // default zigbee2mqtt
       this.devices = await this.getStoreValue('devices') || [];
-      this.deviceAvailability = {};
       this.msgCounter = 0;
       this.lastMPMUpdate = Date.now();
       await this.destroyListeners();
@@ -89,7 +89,7 @@ module.exports = class Zigbee2MQTTBridge extends Homey.Device {
       const state = sym ? (this as any)[sym] : {};
       // check and repair incorrect capability(order)
       let capsChanged = false;
-      const correctCaps = (this.driver as any).ds.deviceCapabilities;
+      const correctCaps = (this.driver as Zigbee2MQTTBridgeDriver).ds.deviceCapabilities;
       for (let index = 0; index < correctCaps.length; index += 1) {
         const caps = this.getCapabilities();
         const newCap = correctCaps[index];
@@ -243,16 +243,16 @@ module.exports = class Zigbee2MQTTBridge extends Homey.Device {
           // get device list
           if (topic.includes(`${this.baseTopic}/bridge/devices`)) {
             // console.log('device list was updated', info);
-            const devices = info.filter((device: any) => device.type === 'EndDevice'
+            const devicesInfo = info as (Z2MDevice & DeviceAvailability)[];
+            const devices = devicesInfo.filter((device) => device.type === 'EndDevice'
               || device.type === 'Router' || device.type === 'GreenPower');
             // add last known availability state
-            devices.forEach((dev: any) => {
+            devices.forEach((dev) => {
               dev.availability = this.devices.find((oldDev) => oldDev.ieee_address === dev.ieee_address)?.availability;
             });
             this.devices = devices;
             // console.dir(this.devices, { depth: null });
             this.homey.emit('devicelistupdate', true);
-            this.setStoreValue('devices', devices).catch((error) => this.error(error));
           }
 
           // check for devices online/offline
@@ -405,4 +405,6 @@ module.exports = class Zigbee2MQTTBridge extends Homey.Device {
     }
   }
 
-};
+}
+
+module.exports = Zigbee2MQTTBridge;
