@@ -37,4 +37,4 @@ export default class Zigbee2MQTTDriver extends Homey.Driver {
     this.log('driver onUninit');
   }
 
-};
+}

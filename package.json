@@ -12,7 +12,8 @@
     "install-homey": "homey app install",
     "validate": "homey app validate",
     "clean": "rm -rf build/",
-    "preinstall-homey": "npm run build"
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint 'src/**/*.{ts,tsx}' --fix"
   },
   "dependencies": {
     "async-mqtt": "^2.6.3",
@@ -23,8 +24,11 @@
     "@types/homey": "npm:homey-apps-sdk-v3-types@^0.3.12",
     "@types/node": "^24.10.1",
     "@types/source-map-support": "^0.5.10",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^7.32.0",
     "eslint-config-athom": "^3.1.5",
+    "eslint-plugin-homey-app": "^1.0.2",
     "typescript": "^5.9.3"
   }
 }

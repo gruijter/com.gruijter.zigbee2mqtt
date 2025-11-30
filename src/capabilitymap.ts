@@ -25,24 +25,6 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 // FOR CUSTOM AND SUB CAPABILITIES TRIGGER FLOWS NEED TO BE CREATED IN .homeycompose/flow/triggers
 // FOR SETTABLE CUSTOM AND SUB CAPABILITIES ACTION FLOWS NEED TO BE CREATED IN .homeycompose/flow/actions
 
-function getDeviceModel(Z2MDevice: any) {
-  // First, look in Z2MDevice.definition.model (as seen in your object)
-  if (Z2MDevice.definition && Z2MDevice.definition.model) {
-    return Z2MDevice.definition.model.trim().toUpperCase();
-  }
-  // Alternatively try other locations if needed
-  if (Z2MDevice.modelId) {
-    return Z2MDevice.modelId.trim().toUpperCase();
-  }
-  if (Z2MDevice.devices
-      && Z2MDevice.devices[0]
-      && Z2MDevice.devices[0].definition
-      && Z2MDevice.devices[0].definition.model) {
-    return Z2MDevice.devices[0].definition.model.trim().toUpperCase();
-  }
-  return '';
-}
-
 export const capabilityMap: { [key: string]: (val?: any, exp?: any) => [string, any, any?] } = {
   // Standard Homey Number capabilities
   current_heating_setpoint: (val) => ['target_temperature', Number(val), { current_heating_setpoint: Number(val) }],
@@ -206,48 +188,6 @@ export const capabilityMap: { [key: string]: (val?: any, exp?: any) => [string, 
 
 };
 
-// map Z2M device description to Homey class and icon. First hit is chosen. '(part of) description': ['homeyClass', 'iconName']
-export const classIconMap: { [key: string]: string[] } = {
-  'door sensor': ['sensor', 'contact.svg'],
-  'radiator valve': ['thermostat', 'radiator_valve.svg'],
-  thermostat: ['thermostat', 'thermostat.svg'],
-  'soil sensor': ['sensor', 'soil_sensor.svg'],
-  'vibration sensor': ['sensor', 'vibration_sensor.svg'],
-  'pressure sensor': ['sensor', 'vibration_sensor.svg'],
-  'wireless switch': ['sensor', 'wireless_switch.svg'],
-  'dimmer switch': ['sensor', 'wireless_switch.svg'],
-  'on/off switch': ['sensor', 'wireless_switch.svg'],
-  motion: ['sensor', 'motion.svg'],
-  presence: ['sensor', 'motion.svg'],
-  occupancy: ['sensor', 'motion.svg'],
-  'wall switch module': ['button', 'wireless_switch.svg'],
-  'smart button': ['button', 'wireless_switch.svg'],
-  '2 gang switch module': ['socket', '2gangswitch.svg'],
-  '2 channel dimmer': ['light', '2gangdimmer.svg'],
-  plug: ['socket', 'socket.svg'],
-  bulb: ['light', 'light.svg'],
-  gu10: ['light', 'light.svg'],
-  e27: ['light', 'light.svg'],
-  dimmer: ['light', 'light.svg'],
-  bloom: ['light', 'light.svg'],
-  lightstrip: ['light', 'light.svg'],
-  'led controller': ['light', 'light.svg'],
-  led: ['light', 'light.svg'],
-  'hue go': ['light', 'light.svg'],
-  fyrtur: ['windowcoverings', 'window_coverings.svg'],
-  kadrilj: ['windowcoverings', 'window_coverings.svg'],
-  praktlysing: ['windowcoverings', 'window_coverings.svg'],
-  tredansen: ['windowcoverings', 'window_coverings.svg'],
-  parasol: ['sensor', 'contact.svg'],
-  'tradfri shortcut': ['button', 'wireless_switch.svg'],
-  rodret: ['button', 'wireless_switch.svg'],
-  somrig: ['button', 'wireless_switch.svg'],
-  twinguard: ['smokealarm', 'smoke_detector.svg'],
-  smoke: ['smokealarm', 'smoke_detector.svg'],
-  'air quality': ['sensor', 'smoke_detector.svg'],
-  'remote control': ['remote', 'remote_control.svg'],
-};
-
 // map capabilities to Homey
 export const getExpMap = function mapExposure() {
   const expMap: { [key: string]: string } = {};
@@ -258,25 +198,6 @@ export const getExpMap = function mapExposure() {
     expMap[homeyCap] = z2mExp;
   });
   return expMap;
-};
-
-// Define the skip map for specific device models
-const propertySkipMap: { [key: string]: string[] } = {
-  DJT11LM: ['sensitivity'],
-  // 'OTHERDEVICE': ['some_property', 'another_property'],
-};
-
-// Define the add map for specific device models
-const propertyAddMap: { [key: string]: any[] } = {
-  'ICZB-RM11S': [
-    {
-      access: 1,
-      name: 'action group',
-      property: 'action_group',
-      type: 'numeric',
-      unit: '',
-    },
-  ],
 };
 
 export const mapProperty = function mapProperty(Z2MDevice: any) {
@@ -336,7 +257,6 @@ export const mapClassIcon = function mapClassIcon(Z2MDevice: any) {
   }
   return { homeyClass, icon };
 };
-
 
 /*
 https://www.zigbee2mqtt.io/supported-devices/

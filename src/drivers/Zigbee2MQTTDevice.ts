@@ -189,8 +189,6 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
       // store the capability states before migration
       const sym = Object.getOwnPropertySymbols(this).find((s) => String(s) === 'Symbol(state)');
       const state = sym ? (this as any)[sym] : {};
-      // check and repair incorrect capability(order)
-      let capsChanged = false;
       // check if we need to add capabilities
       let correctCaps: string[] = [];
       if (this.driver) {
@@ -463,7 +461,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     if (this.eventListenerBridgeOffline) this.homey.on('bridgeoffline', this.eventListenerBridgeOffline); // Re-add listener if it was removed? Logic seems slightly off in original code or I misunderstood. Original: remove then define then add.
     // Actually, the original code checks if it exists, removes it, then redefines it and adds it.
     if (this.eventListenerBridgeOffline) {
-        this.homey.removeListener('bridgeoffline', this.eventListenerBridgeOffline);
+      this.homey.removeListener('bridgeoffline', this.eventListenerBridgeOffline);
     }
     this.eventListenerBridgeOffline = (offline: boolean) => {
       // console.log('bridgeOffline event received');
@@ -526,4 +524,4 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     if (this.eventListenerBridgeOffline) this.homey.removeListener('bridgeoffline', this.eventListenerBridgeOffline);
   }
 
-};
+}

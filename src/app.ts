@@ -20,9 +20,10 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 'use strict';
 
 import sourceMapSupport from 'source-map-support';
-sourceMapSupport.install();
 import Homey from 'homey';
 import { capabilityMap, getExpMap } from './capabilitymap';
+
+sourceMapSupport.install();
 
 module.exports = class MyApp extends Homey.App {
 
@@ -99,6 +100,4 @@ module.exports = class MyApp extends Homey.App {
     });
   }
 
-}
-
-
+};
