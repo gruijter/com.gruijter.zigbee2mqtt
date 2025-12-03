@@ -22,51 +22,16 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 import {
   zigbeeHerdsmanConverter, Z2MDevice, CapabilityMappings,
+  CapabilityMapEntry,
+  CapabilityMapTuple,
+  Z2MToHomeyConverter,
+  HomeyToZ2MConverter,
 } from './types';
-
-// Define the skip map for specific device models (model name -> capabilities to skip)
-const propertySkipMap: { [model: string]: string[] } = {
-  DJT11LM: ['sensitivity'],
-  // 'OTHERDEVICE': ['some_property', 'another_property'],
-};
-
-// Define the add map for specific device models (model name -> exposes to add)
-const propertyAddMap: { [model: string]: zigbeeHerdsmanConverter.Expose[] } = {
-  'ICZB-RM11S': [
-    {
-      access: 1,
-      name: 'action group',
-      property: 'action_group',
-      type: 'numeric',
-      unit: '',
-    } as zigbeeHerdsmanConverter.Numeric,
-  ],
-};
-
-/**
- * Get the device model from a Z2MDevice
- */
-function getDeviceModel(device: Z2MDevice): string {
-  // Look in definition.model
-  if (device.definition?.model) {
-    return device.definition.model.trim().toUpperCase();
-  }
-  // Try model_id
-  if (device.model_id) {
-    return device.model_id.trim().toUpperCase();
-  }
-  return '';
-}
 
 // map Z2M exposes and its value to a Homey capability. See https://www.zigbee2mqtt.io/guide/usage/exposes.html
 // Z2M exp: [homey_capability, z2mToHomey, homeyToZ2m?] or (exp) => [homey_capability, z2mToHomey, homeyToZ2m?]
 // FOR CUSTOM AND SUB CAPABILITIES TRIGGER FLOWS NEED TO BE CREATED IN .homeycompose/flow/triggers
 // FOR SETTABLE CUSTOM AND SUB CAPABILITIES ACTION FLOWS NEED TO BE CREATED IN .homeycompose/flow/actions
-
-type Z2MToHomeyConverter<T = any, R = any> = (z2mVal: T) => R;
-type HomeyToZ2MConverter<T = any> = (homeyVal: T) => Record<string, any>;
-export type CapabilityMapTuple = [string, Z2MToHomeyConverter, HomeyToZ2MConverter?];
-export type CapabilityMapEntry = CapabilityMapTuple | ((exp: zigbeeHerdsmanConverter.Expose) => CapabilityMapTuple);
 
 const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   // Standard Homey Number capabilities
@@ -174,6 +139,41 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   sensitivity: ['sensitivity', (v) => v, (v) => ({ sensitivity: v })], // [low, medium, high]
   motion_sensitivity: ['sensitivity.motion', (v) => v, (v) => ({ motion_sensitivity: v })], // [low, medium, high]
 };
+
+// Define the skip map for specific device models (model name -> capabilities to skip)
+const propertySkipMap: { [model: string]: string[] } = {
+  DJT11LM: ['sensitivity'],
+  // 'OTHERDEVICE': ['some_property', 'another_property'],
+};
+
+// Define the add map for specific device models (model name -> exposes to add)
+const propertyAddMap: { [model: string]: zigbeeHerdsmanConverter.Expose[] } = {
+  'ICZB-RM11S': [
+    {
+      access: 1,
+      name: 'action group',
+      property: 'action_group',
+      type: 'numeric',
+      unit: '',
+    } as zigbeeHerdsmanConverter.Numeric,
+  ],
+};
+
+/*------------------------------------------------------------------------*/
+/* Helper functions
+/*------------------------------------------------------------------------*/
+
+function getDeviceModel(device: Z2MDevice): string {
+  // Look in definition.model
+  if (device.definition?.model) {
+    return device.definition.model.trim().toUpperCase();
+  }
+  // Try model_id
+  if (device.model_id) {
+    return device.model_id.trim().toUpperCase();
+  }
+  return '';
+}
 
 function resolveCapabilityEntry(entry: CapabilityMapEntry, expose: zigbeeHerdsmanConverter.Expose): CapabilityMapTuple {
   return typeof entry === 'function' ? entry(expose) : entry;

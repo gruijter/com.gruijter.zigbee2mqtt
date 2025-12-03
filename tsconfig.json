@@ -15,6 +15,6 @@
     "node_modules",
     "build",
     ".homeycompose",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
   ]
 }

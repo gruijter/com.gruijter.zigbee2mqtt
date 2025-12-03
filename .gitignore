@@ -5,5 +5,7 @@ roadmap.txt
 /tmp
 tmp_*
 zzz*
-node_modules/
-.vscode/
+.DS_Store
+
+/scripts
+capture.log

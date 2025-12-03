@@ -7,6 +7,11 @@ import type * as zigbeeHerdsmanConverter from 'zigbee-herdsman-converters';
 
 export { zigbeeHerdsmanConverter };
 
+export type Z2MToHomeyConverter<T = any, R = any> = (z2mVal: T) => R;
+export type HomeyToZ2MConverter<T = any> = (homeyVal: T) => Record<string, any>;
+export type CapabilityMapTuple = [string, Z2MToHomeyConverter, HomeyToZ2MConverter?];
+export type CapabilityMapEntry = CapabilityMapTuple | ((exp: zigbeeHerdsmanConverter.Expose) => CapabilityMapTuple);
+
 export interface CapabilityMapping {
     homeyCapability: string;
     expose: zigbeeHerdsmanConverter.Expose;
