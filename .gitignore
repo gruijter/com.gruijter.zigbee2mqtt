@@ -1,6 +1,7 @@
 /build
 /env.json
 /.homeybuild/
+/node_modules
 roadmap.txt
 /tmp
 tmp_*

@@ -22,7 +22,7 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 'use strict';
 
 import Zigbee2MQTTDriver from '../Zigbee2MQTTDriver';
-import { mapCapabilities, mapClassAndIcon } from '../../capabilityMap';
+import { mapCapabilities, mapClassAndIcon } from '../../capabilitymap';
 import Zigbee2MQTTBridgeDriver from '../bridge/driver';
 import Zigbee2MQTTBridge from '../bridge/device';
 

@@ -1,4 +1,7 @@
 {
+  "3.0.0": {
+    "en": "App refactoring to TypeScript. Stability and maintainability improvements."
+  },
   "2.9.1": {
     "en": "Fix voltage handling. Fix number of offline devices flow card. Minor stability improvements"
   },

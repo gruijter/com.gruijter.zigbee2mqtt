@@ -22,7 +22,7 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 import sourceMapSupport from 'source-map-support';
 import Homey from 'homey';
 import Zigbee2MQTTDevice from './drivers/Zigbee2MQTTDevice';
-import { getCapabailityConverters } from './capabilityMap';
+import { getCapabailityConverters } from './capabilitymap';
 
 sourceMapSupport.install();
 

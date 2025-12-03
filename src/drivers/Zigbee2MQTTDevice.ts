@@ -24,7 +24,7 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 import Homey from 'homey';
 import util from 'util';
-import { mapCapabilities, getCapabailityConverters } from '../capabilityMap';
+import { mapCapabilities, getCapabailityConverters } from '../capabilitymap';
 import {
   CapabilityMappings, DeviceAvailability, Z2MDevice, Z2MGroup,
 } from '../types';
