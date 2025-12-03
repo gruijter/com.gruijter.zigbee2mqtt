@@ -25,7 +25,9 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 import Homey from 'homey';
 import util from 'util';
 import { mapCapabilities, getCapabailityConverters } from '../capabilityMap';
-import { CapabilityMappings, DeviceAvailability, Z2MDevice, Z2MGroup } from '../types';
+import {
+  CapabilityMappings, DeviceAvailability, Z2MDevice, Z2MGroup,
+} from '../types';
 import { hsbToRgb } from '../utilities';
 
 const setTimeoutPromise = util.promisify(setTimeout);
