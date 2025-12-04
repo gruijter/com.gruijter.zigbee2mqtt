@@ -222,14 +222,9 @@ export function mapCapabilities(device: Z2MDevice, options: MapCapabilitiesOptio
       colorCapabilities.forEach((capName) => {
         if (!definedHomeyCapabilities.has(capName)) {
           definedHomeyCapabilities.add(capName);
-          mappings[`${expose.property}_${capName}`] = { homeyCapability: capName, expose };
+          mappings[expose.property] = { homeyCapability: capName, expose };
         }
       });
-
-      // Also map color_mode if it's not already mapped (implicit for color lights)
-      if (!mappings.color_mode) {
-        mappings.color_mode = { homeyCapability: 'light_mode', expose };
-      }
       return;
     }
 
