@@ -122,20 +122,24 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
         }
       }
 
-      // Add capabilityMappings if not present
-      if (!this.store?.capabilityMappings) {
-        this.log(`Adding capabilityMappings to store for ${this.getName()}`);
-        const deviceInfo = this.getDeviceInfo();
-        if (deviceInfo) {
-          const isGroup = deviceInfo.type === 'group';
-          const device = isGroup ? deviceInfo.devices[0] : deviceInfo.device;
-          const capabilityMappings = mapCapabilities(device, { isGroup });
+      // Update capabilityMappings
+      const deviceInfo = this.getDeviceInfo();
+      if (deviceInfo) {
+        const isGroup = deviceInfo.type === 'group';
+        const device = isGroup ? deviceInfo.devices[0] : deviceInfo.device;
+        const capabilityMappings = mapCapabilities(device, { isGroup });
+
+        if (
+          !this.store?.capabilityMappings
+          || !util.isDeepStrictEqual(this.store.capabilityMappings, capabilityMappings)
+        ) {
+          this.log(`Updating capabilityMappings in store for ${this.getName()}`);
           await this.setStoreValue('capabilityMappings', capabilityMappings);
           storeChanged = true;
-        } else {
-          this.error(`Cannot migrate store for ${this.getName()}: device info not available`);
-          return false;
         }
+      } else {
+        this.error(`Cannot migrate store for ${this.getName()}: device info not available`);
+        return false;
       }
 
       // Refresh store reference if changed
@@ -491,7 +495,14 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
       const { capabilityMappings } = this.store;
       if (!capabilityMappings) return Promise.resolve(false);
 
+      const lightCapabilities = ['light_hue', 'light_saturation', 'light_mode'];
+
       for (const [z2mProperty, mapping] of Object.entries(capabilityMappings)) {
+        if (lightCapabilities.includes(mapping.homeyCapability)) {
+          // skip color light capabilities, handled separately
+          continue;
+        }
+
         const converters = getCapabailityConverters(z2mProperty, mapping.expose);
         if (!converters) {
           this.log(`No converters found for ${z2mProperty}`);
@@ -513,11 +524,12 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
           }
         }
       }
+
       // add exception for color light
       if (this.getCapabilities().includes('light_hue') && !this.capabilityListeners.multiLight) {
         this.log(`${this.getName()} adding multiple capability listener for Hue lights`);
         this.registerMultipleCapabilityListener(
-          ['light_hue', 'light_saturation', 'light_mode'],
+          lightCapabilities,
           (values: any) => {
             this.dimHueSat(values, 'app').catch((error) => this.error(error));
             return Promise.resolve();
@@ -526,6 +538,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
         );
         this.capabilityListeners.multiLight = true;
       }
+
       return Promise.resolve(true);
     } catch (error) {
       return Promise.reject(error);
