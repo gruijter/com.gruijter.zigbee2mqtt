@@ -1,4 +1,7 @@
 {
+  "3.0.1": {
+    "en": "Fix custom Action flow cards not working. Fix color capability mapping. Optimize store. Minimum Homey version 12.9.0"
+  },
   "3.0.0": {
     "en": "App refactoring to TypeScript. Stability and maintainability improvements."
   },

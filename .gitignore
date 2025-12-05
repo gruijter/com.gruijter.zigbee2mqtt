@@ -2,6 +2,7 @@
 /env.json
 /.homeybuild/
 /node_modules
+/.vsccode
 roadmap.txt
 /tmp
 tmp_*
