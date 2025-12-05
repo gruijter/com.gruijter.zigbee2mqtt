@@ -22,7 +22,6 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 import sourceMapSupport from 'source-map-support';
 import Homey from 'homey';
 import Zigbee2MQTTDevice from './drivers/Zigbee2MQTTDevice';
-import { getCapabailityConverters } from './capabilitymap';
 
 sourceMapSupport.install();
 
@@ -63,6 +62,7 @@ module.exports = class MyApp extends Homey.App {
             this.error(error);
           }
         });
+        return; // Skip device/group registration for bridge actions
       }
 
       // actions for device or group
@@ -71,14 +71,7 @@ module.exports = class MyApp extends Homey.App {
       actionListeners[action.id].registerRunListener(async (args) => {
         try {
           const device = args.device as Zigbee2MQTTDevice;
-          const mapping = device.store.capabilityMappings?.[action.id];
-          if (mapping) {
-            const converters = getCapabailityConverters(action.id, mapping.expose);
-            if (converters?.homeyToZ2m) {
-              const command = converters.homeyToZ2m(args.val);
-              await device.setCommand(command, 'flow');
-            }
-          }
+          await device.setCapabilityCommand(action.id, args.val, 'flow');
         } catch (error) {
           this.error(error);
         }
