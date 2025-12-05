@@ -325,6 +325,24 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     return Promise.resolve(true);
   }
 
+  // Set command by Homey capability name (used by flow action cards)
+  async setCapabilityCommand(homeyCapability: string, value: any, source: string) {
+    if (!this.store?.capabilityMappings) throw Error('Store capabilities undefined');
+
+    // Find the Z2M property for this Homey capability
+    const z2mProperty = Object.keys(this.store.capabilityMappings).find(
+      (key) => this.store.capabilityMappings[key].homeyCapability === homeyCapability,
+    );
+    if (!z2mProperty) throw Error(`${homeyCapability} capability not mapped`);
+
+    const mapping = this.store.capabilityMappings[z2mProperty];
+    const converters = getCapabailityConverters(z2mProperty, mapping.expose);
+    if (!converters?.homeyToZ2m) throw Error(`${homeyCapability} is not settable`);
+
+    const command = converters.homeyToZ2m(value);
+    await this.setCommand(command, source);
+  }
+
   async setCustomPayload(payload: any, source: string) {
     if (!this.bridge?.client?.connected) throw Error('Bridge is not connected');
     if (!this.store?.capabilityMappings) throw Error('Store capabilities undefined');
