@@ -7,17 +7,9 @@ import type * as zigbeeHerdsmanConverter from 'zigbee-herdsman-converters';
 
 export { zigbeeHerdsmanConverter };
 
-export type Z2MToHomeyConverter<T = any, R = any> = (z2mVal: T) => R;
-export type HomeyToZ2MConverter<T = any> = (homeyVal: T) => Record<string, any>;
-export type CapabilityMapTuple = [string, Z2MToHomeyConverter, HomeyToZ2MConverter?];
-export type CapabilityMapEntry = CapabilityMapTuple | ((exp: zigbeeHerdsmanConverter.Expose) => CapabilityMapTuple);
-
-export interface CapabilityMapping {
-    homeyCapability: string;
-    expose: zigbeeHerdsmanConverter.Expose;
-}
-
-export type CapabilityMappings = { [z2mProperty: string]: CapabilityMapping };
+/*------------------------------------------------------------------------*/
+/* Zigbee2MQTT API types
+/*------------------------------------------------------------------------*/
 
 export interface Z2MDeviceDefinition {
     source: 'native' | 'generated' | 'external';
@@ -65,4 +57,60 @@ export interface Z2MGroup {
     description?: string;
     // scenes: Zigbee2MQTTScene[];
     members: Z2MGroupMember[];
+}
+
+/*------------------------------------------------------------------------*/
+/* Capability mapping types
+/*------------------------------------------------------------------------*/
+
+export type Z2MToHomeyConverter<T = any, R = any> = (z2mVal: T) => R;
+export type HomeyToZ2MConverter<T = any> = (homeyVal: T) => Record<string, any>;
+export type CapabilityMapTuple = [string, Z2MToHomeyConverter, HomeyToZ2MConverter?];
+export type CapabilityMapEntry = CapabilityMapTuple | ((exp: zigbeeHerdsmanConverter.Expose) => CapabilityMapTuple);
+
+export interface CapabilityMapping {
+    homeyCapability: string;
+    expose: zigbeeHerdsmanConverter.Expose;
+}
+
+export type CapabilityMappings = { [z2mProperty: string]: CapabilityMapping };
+
+export interface CapabilityOptions {
+    units?: { en: string };
+    title?: { en: string };
+}
+
+/*------------------------------------------------------------------------*/
+/* App settings types
+/*------------------------------------------------------------------------*/
+
+export interface MQTTSettings {
+    host: string;
+    port: number;
+    username?: string;
+    password?: string;
+    tls: boolean;
+    topic: string;
+}
+
+export interface BridgeSettings extends MQTTSettings {
+    version?: string;
+    uid?: string;
+    zigbee_channel?: string;
+    pan_id?: string;
+    force_info_log_level?: boolean;
+}
+
+export interface DeviceSettings {
+    uid: string;
+    friendly_name: string;
+    bridge_uid: string;
+    homeyclass: string;
+    model?: string;
+    description?: string;
+}
+
+export interface GroupSettings extends DeviceSettings {
+    members: Z2MGroupMember[];
+    models: string;
 }

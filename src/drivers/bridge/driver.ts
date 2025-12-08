@@ -20,8 +20,11 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 'use strict';
 
 import Homey from 'homey';
+import PairSession from 'homey/lib/PairSession';
 import * as MQTT from 'async-mqtt';
+import { AsyncMqttClient, IClientOptions } from 'async-mqtt';
 import util from 'util';
+import { MQTTSettings } from '../../types';
 
 const setTimeoutPromise = util.promisify(setTimeout);
 
@@ -49,12 +52,12 @@ export default class Zigbee2MQTTBridgeDriver extends Homey.Driver {
     this.log('driver onUninit');
   }
 
-  async onPair(session: any) {
-    let settings: any = null;
-    let mqttClient: any = null;
+  async onPair(session: PairSession) {
+    let settings: MQTTSettings & Record<string, any> | null = null;
+    let mqttClient: AsyncMqttClient | null = null;
     let discovered: any = null;
 
-    session.setHandler('mqtt', async (mqttSettings: any) => {
+    session.setHandler('mqtt', async (mqttSettings: MQTTSettings) => {
       try {
         this.log(mqttSettings);
         // Check MQTT settings
@@ -94,12 +97,12 @@ export default class Zigbee2MQTTBridgeDriver extends Homey.Driver {
   }
 
   // returns a connected MQTT client
-  async connectMQTT(mqttSettings: any) {
+  async connectMQTT(mqttSettings: MQTTSettings): Promise<AsyncMqttClient> {
     try {
       if (!mqttSettings) throw Error('mqttSettings are required');
       const protocol = mqttSettings.tls ? 'mqtts' : 'mqtt';
       const host = `${protocol}://${mqttSettings.host}:${mqttSettings.port}`;
-      const options: any = {
+      const options: IClientOptions = {
         clientId: `Homey_${Math.random().toString(16).substring(2, 8)}`,
         username: mqttSettings.username,
         password: mqttSettings.password,
@@ -120,7 +123,7 @@ export default class Zigbee2MQTTBridgeDriver extends Homey.Driver {
   }
 
   // returns bridge info on the MQTT broker
-  async discoverBridge(mqttClient: any, baseTopic: string) {
+  async discoverBridge(mqttClient: AsyncMqttClient, baseTopic: string) {
     const infoTopic = baseTopic === '' ? 'zigbee2mqtt/bridge/info' : `${baseTopic}/bridge/info`;
     let info = null;
     const messageListener = (topic: string, message: any) => {

@@ -22,20 +22,23 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 import Homey from 'homey';
 import util from 'util';
-import { DeviceAvailability, Z2MDevice, Z2MGroup } from '../../types';
+import { AsyncMqttClient } from 'async-mqtt';
+import {
+  DeviceAvailability, Z2MDevice, Z2MGroup, BridgeSettings,
+} from '../../types';
 import Zigbee2MQTTBridgeDriver from './driver';
 
 const setTimeoutPromise = util.promisify(setTimeout);
 
 export default class Zigbee2MQTTBridge extends Homey.Device {
-  settings: any;
+  settings: BridgeSettings;
   baseTopic: string;
   devices: (Z2MDevice & DeviceAvailability)[];
   msgCounter: number;
   lastMPMUpdate: number;
   restarting: boolean;
-  client: any;
-  endTime: any;
+  client: AsyncMqttClient;
+  endTime: number | null;
   listenersSet: boolean;
   groups: Z2MGroup[];
 
@@ -312,7 +315,7 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
       };
 
       this.log('connecting to MQTT', this.settings);
-      this.client = await (this.driver as any).connectMQTT(this.settings);
+      this.client = await (this.driver as Zigbee2MQTTBridgeDriver).connectMQTT(this.settings);
       this.client
         .on('error', this.error)
         .on('offline', () => handleDisconnect('offline'))
@@ -331,7 +334,7 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
     }
   }
 
-  async joiningTimer(endTime: any) {
+  async joiningTimer(endTime: number | null): Promise<boolean> {
     this.endTime = endTime;
     const timeout = Math.round((new Date(endTime).getTime() - Date.now()) / 1000) % (60 * 60);
     if (endTime && timeout > 0) {
@@ -359,7 +362,7 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
     return Promise.resolve(true);
   }
 
-  async restart(ignore: any, source: string) {
+  async restart(_ignore: unknown, source: string) {
     if (!this.client || !this.client.connected) return Promise.reject(Error('Bridge is not connected'));
     await this.client.publish(`${this.baseTopic}/bridge/request/restart`, '');
     this.log(`Restart Z2M command sent by ${source}`);

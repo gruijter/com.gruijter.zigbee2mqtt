@@ -21,21 +21,23 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 'use strict';
 
+import PairSession from 'homey/lib/PairSession';
 import Zigbee2MQTTDriver from '../Zigbee2MQTTDriver';
 import { mapCapabilities, mapClassAndIcon } from '../../capabilitymap';
 import Zigbee2MQTTBridgeDriver from '../bridge/driver';
 import Zigbee2MQTTBridge from '../bridge/device';
+import { GroupSettings } from '../../types';
 
 module.exports = class ZigbeeGroupDriver extends Zigbee2MQTTDriver {
 
-  async onPair(session: any) {
+  async onPair(session: PairSession) {
     session.setHandler('list_devices', async () => {
       // get all groups from all bridges
       try {
         this.log('Pairing of new Attached group started');
         const bridgeDriver = this.homey.drivers.getDriver('bridge') as Zigbee2MQTTBridgeDriver;
         await bridgeDriver.ready();
-        const bridges = bridgeDriver.getDevices() as Zigbee2MQTTBridge[];
+        const bridges = bridgeDriver.getDevices() as unknown as Zigbee2MQTTBridge[];
         if (!bridges || !bridges[0]) {
           throw Error('Cannot find bridge group in Homey. Bridge needs to be added first!');
         }
@@ -50,20 +52,19 @@ module.exports = class ZigbeeGroupDriver extends Zigbee2MQTTDriver {
               const models = [...new Set(devices.map((dev) => dev.definition.model).filter((n) => n))].join(', ');
               const description = [...new Set(devices.map((dev) => dev.definition.description).filter((n) => n))].join(', ');
 
-              const settings: any = {
+              // get all caps with isGroup option (skips linkquality automatically)
+              const capabilityMappings = mapCapabilities(devices[0], { isGroup: true });
+              const { homeyClass, icon } = mapClassAndIcon(devices[0]);
+
+              const settings: GroupSettings = {
                 uid: group.id.toString(),
                 friendly_name: group.friendly_name,
                 bridge_uid: bridge.getData().id,
+                homeyclass: homeyClass,
                 members: group.members,
                 models,
                 description,
               };
-
-              // get all caps with isGroup option (skips linkquality automatically)
-              const capabilityMappings = mapCapabilities(devices[0], { isGroup: true });
-
-              const { homeyClass, icon } = mapClassAndIcon(devices[0]);
-              settings.homeyclass = homeyClass;
 
               groups.push({
                 name: group.friendly_name,

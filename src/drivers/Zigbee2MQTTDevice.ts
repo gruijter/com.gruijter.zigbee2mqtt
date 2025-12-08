@@ -26,25 +26,26 @@ import Homey from 'homey';
 import util from 'util';
 import { mapCapabilities, getCapabailityConverters } from '../capabilitymap';
 import {
-  CapabilityMappings, DeviceAvailability, Z2MDevice, Z2MGroup,
+  CapabilityMappings, DeviceAvailability, Z2MDevice, Z2MGroup, DeviceSettings, CapabilityOptions,
 } from '../types';
 import { hsbToRgb } from '../utilities';
+import Zigbee2MQTTBridge from './bridge/device';
 
 const setTimeoutPromise = util.promisify(setTimeout);
 
 export default abstract class Zigbee2MQTTDevice extends Homey.Device {
   store: { capabilityMappings: CapabilityMappings };
-  settings: any;
-  bridge: any;
+  settings: DeviceSettings;
+  bridge: Zigbee2MQTTBridge;
   deviceTopic: string;
   restarting: boolean;
   availability: DeviceAvailability['availability'];
   zigbee2MqttType: string;
-  eventListenerBridgeOffline: any;
+  eventListenerBridgeOffline: ((offline: boolean) => void) | null;
   bridgeOffline: boolean;
-  capabilityListeners: any;
-  handleMessage: any;
-  subscribeTopics: any;
+  capabilityListeners: Record<string, boolean>;
+  handleMessage: (topic: string, message: Buffer) => void;
+  subscribeTopics: () => Promise<void>;
 
   abstract getDeviceInfo():
   { type: 'group', device: Z2MGroup, devices: Z2MDevice[] } |
@@ -236,7 +237,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
       if (!capabilityMappings) return;
 
       for (const { homeyCapability, expose } of Object.values(capabilityMappings)) {
-        const capOptions: any = {};
+        const capOptions: CapabilityOptions = {};
 
         if (expose.type === 'numeric' && expose.unit) {
           capOptions.units = { en: expose.unit };
@@ -255,7 +256,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
             this.log(`${this.getName()} has no capability options set for ${homeyCapability}`);
           }
           // console.log(this.getName(), capDetailsArray[index][0], currentCapOptions);
-          if (currentCapOptions.unit !== capOptions.unit || currentCapOptions.name !== capOptions.name) {
+          if (currentCapOptions.units?.en !== capOptions.units?.en || currentCapOptions.title?.en !== capOptions.title?.en) {
             unitsChanged = true;
             this.log('Migrating unit and title for', homeyCapability, (expose.type === 'numeric' ? expose.unit : 'no unit'), expose.name);
             await this.setCapabilityOptions(homeyCapability, capOptions).catch(this.error);
@@ -403,10 +404,10 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
 
   async connectBridge() {
     try {
-      const bridgeDriver = this.homey.drivers.getDriver('bridge') as any;
+      const bridgeDriver = this.homey.drivers.getDriver('bridge');
       await bridgeDriver.ready();
       if (bridgeDriver.getDevices().length < 1) throw Error('The source bridge device is missing in Homey.');
-      const bridge = bridgeDriver.getDevice({ id: this.settings.bridge_uid });
+      const bridge = bridgeDriver.getDevice({ id: this.settings.bridge_uid }) as unknown as Zigbee2MQTTBridge;
       if (!bridge || !bridge.client) throw Error('Cannot connect to source bridge device in Homey.');
       this.bridge = bridge;
 

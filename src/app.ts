@@ -25,6 +25,12 @@ import Zigbee2MQTTDevice from './drivers/Zigbee2MQTTDevice';
 
 sourceMapSupport.install();
 
+// Minimal type for manifest flow action entries
+interface ManifestFlowAction {
+  id: string;
+  args?: Array<{ filter?: string }>;
+}
+
 module.exports = class MyApp extends Homey.App {
 
   async onInit() {
@@ -48,9 +54,9 @@ module.exports = class MyApp extends Homey.App {
     // setDimL1.registerRunListener((args) => args.device.setCommand({ brightness_l1: Number(args.dim) * 254 }, 'flow'));
 
     const actionListeners: Record<string, Homey.FlowCardAction> = {};
-    const actionList = this.manifest.flow.actions;
+    const actionList = this.manifest.flow.actions as ManifestFlowAction[];
 
-    actionList.forEach((action: any) => {
+    actionList.forEach((action) => {
       // actions for bridge
       if (action.args && action.args[0].filter && action.args[0].filter.includes('bridge')) {
         this.log('setting up Bridge action listener', action.id);
