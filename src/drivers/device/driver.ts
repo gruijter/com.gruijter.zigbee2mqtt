@@ -20,21 +20,23 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 'use strict';
 
+import PairSession from 'homey/lib/PairSession';
 import Zigbee2MQTTDriver from '../Zigbee2MQTTDriver';
 import Zigbee2MQTTBridgeDriver from '../bridge/driver';
 import Zigbee2MQTTBridge from '../bridge/device';
 import { mapCapabilities, mapClassAndIcon } from '../../capabilitymap';
+import { DeviceSettings } from '../../types';
 
 module.exports = class ZigbeeDeviceDriver extends Zigbee2MQTTDriver {
 
-  async onPair(session: any) {
+  async onPair(session: PairSession) {
     session.setHandler('list_devices', async () => {
       // get all devices from all bridges
       try {
         this.log('Pairing of new Attached device started');
         const bridgeDriver = this.homey.drivers.getDriver('bridge') as Zigbee2MQTTBridgeDriver;
         await bridgeDriver.ready();
-        const bridges = bridgeDriver.getDevices() as Zigbee2MQTTBridge[];
+        const bridges = bridgeDriver.getDevices() as unknown as Zigbee2MQTTBridge[];
         if (!bridges || !bridges[0]) {
           throw Error('Cannot find bridge device in Homey. Bridge needs to be added first!');
         }
@@ -46,15 +48,13 @@ module.exports = class ZigbeeDeviceDriver extends Zigbee2MQTTDriver {
               const capabilityMappings = mapCapabilities(dev);
               const { homeyClass, icon } = mapClassAndIcon(dev);
 
-              const settings = {
+              const settings: DeviceSettings = {
                 homeyclass: homeyClass,
                 uid: dev.ieee_address,
                 friendly_name: dev.friendly_name,
                 bridge_uid: bridge.getData().id,
-                ...(dev.definition ? {
-                  model: dev.definition.model,
-                  description: dev.definition.description,
-                } : {}),
+                model: dev.definition?.model,
+                description: dev.definition?.description,
               };
 
               devices.push({
