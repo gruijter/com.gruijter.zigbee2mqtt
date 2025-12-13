@@ -135,9 +135,9 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
     this.onInit().catch((error) => this.error(error));
   }
 
-  setCapability(capability: string, value: any) {
+  async setCapability(capability: string, value: any) {
     if (this.hasCapability(capability) && value !== undefined) {
-      this.setCapabilityValue(capability, value)
+      await this.setCapabilityValue(capability, value)
         .catch((error) => {
           this.log(error, capability, value);
         });

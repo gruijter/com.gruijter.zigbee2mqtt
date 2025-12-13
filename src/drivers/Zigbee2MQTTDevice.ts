@@ -279,7 +279,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
 
   async setCapability(capability: string, value: any) {
     if (this.hasCapability(capability) && value !== undefined) {
-      this.setCapabilityValue(capability, value)
+      await this.setCapabilityValue(capability, value)
         .catch((error) => {
           this.log(error, capability, value);
         });
@@ -419,7 +419,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
       this.bridge = bridge;
 
       this.deviceTopic = `${bridge.settings.topic}/${this.settings.friendly_name}`;
-      const handleMessage = (topic: string, message: any) => {
+      const handleMessage = async (topic: string, message: any) => {
         try {
           if (message.toString() !== '') {
             const info = JSON.parse(message);
@@ -427,36 +427,36 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
             if (topic === this.deviceTopic) {
               // console.log(`${this.getName()} update:`, info);
               // this.setAvailable();
-              Object.entries<any>(info).forEach((entry) => {
+              for (const entry of Object.entries<any>(info)) {
                 // exception for color light
                 if (entry[0] === 'color' && this.getCapabilities().includes('light_hue')) {
-                  if (entry[1].hue !== undefined) this.setCapabilityValue('light_hue', entry[1].hue).catch(this.error);
-                  if (entry[1].saturation !== undefined) this.setCapabilityValue('light_saturation', entry[1].saturation).catch(this.error);
+                  if (entry[1].hue !== undefined) await this.setCapabilityValue('light_hue', entry[1].hue).catch(this.error);
+                  if (entry[1].saturation !== undefined) await this.setCapabilityValue('light_saturation', entry[1].saturation).catch(this.error);
                 } else {
                   const z2mProperty = entry[0];
-                  if (!this.store.capabilityMappings) return;
+                  if (!this.store.capabilityMappings) continue;
                   const mapping = this.store.capabilityMappings[z2mProperty];
                   if (mapping) { //  included in Homey mapping
                     const converters = getCapabailityConverters(z2mProperty, mapping.expose);
-                    if (!converters) return;
+                    if (!converters) continue;
                     const capVal = converters.z2mToHomey(entry[1]);
                     // Add extra triggers for ACTION
                     if (mapping.homeyCapability === 'action') {
                       // Action event received
-                      if (capVal[1] !== null && capVal[1] !== undefined && capVal[1] !== '') {
-                        const tokens = { action: capVal[1] };
-                        const state = { event: capVal[1] };
+                      if (capVal !== null && capVal !== undefined && capVal !== '') {
+                        const tokens = { action: capVal };
+                        const state = { event: capVal };
                         this.homey.flow.getDeviceTriggerCard('action_event_received').trigger(this, tokens, state).catch(this.error);
                       }
                       // Original extra action trigger
-                      this.setCapability(mapping.homeyCapability, '---').catch((error) => this.error(error));
+                      await this.setCapability(mapping.homeyCapability, '---').catch((error) => this.error(error));
                     }
-                    this.setCapability(mapping.homeyCapability, capVal).catch((error) => this.error(error));
+                    await this.setCapability(mapping.homeyCapability, capVal).catch((error) => this.error(error));
                   } else {
                     this.log(`Capability ${entry[0]} not mapped`);
                   }
                 }
-              });
+              }
             }
             // handle device availability, but not for groups
             if (this.zigbee2MqttType !== 'Group' && topic === `${this.deviceTopic}/availability`) {
