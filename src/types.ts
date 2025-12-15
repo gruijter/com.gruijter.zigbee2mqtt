@@ -63,13 +63,39 @@ export interface Z2MGroup {
 /* Capability mapping types
 /*------------------------------------------------------------------------*/
 
-export type Z2MToHomeyConverter<T = any, R = any> = (z2mVal: T) => R;
-export type HomeyToZ2MConverter<T = any> = (homeyVal: T) => Record<string, any>;
-export type CapabilityMapTuple = [string, Z2MToHomeyConverter, HomeyToZ2MConverter?];
-export type CapabilityMapEntry = CapabilityMapTuple | ((exp: zigbeeHerdsmanConverter.Expose) => CapabilityMapTuple);
+// Single-capability converters (used in capabilityMap for 1:1 mappings)
+export type SingleZ2MToHomeyConverter = (z2mVal: any) => any;
+export type SingleHomeyToZ2MConverter = (homeyVal: any) => Record<string, any>;
+
+// Multi-capability converters (used in capabilityMap for 1:N mappings)
+export type MultiZ2MToHomeyConverter = (z2mVal: any) => Record<string, any>;
+export type MultiHomeyToZ2MConverter = (values: Record<string, any>, getCapValue: (cap: string) => any) => Record<string, any> | null;
+
+// Single-capability tuple: [capability, z2mToHomey, homeyToZ2m?]
+export type SingleCapabilityMapTuple = [string, SingleZ2MToHomeyConverter, SingleHomeyToZ2MConverter?];
+
+// Multi-capability tuple: [capabilities[], z2mToHomey, homeyToZ2m?]
+export type MultiCapabilityMapTuple = [string[], MultiZ2MToHomeyConverter, MultiHomeyToZ2MConverter?];
+
+// Raw tuple (as stored in capabilityMap)
+export type RawCapabilityMapTuple = SingleCapabilityMapTuple | MultiCapabilityMapTuple;
+
+// Map entry (can be tuple or function returning tuple)
+export type CapabilityMapEntry = RawCapabilityMapTuple | ((exp: zigbeeHerdsmanConverter.Expose) => RawCapabilityMapTuple);
+
+// Normalized tuple (always multi-format, returned by resolveCapabilityEntry)
+export type CapabilityMapTuple = [string[], MultiZ2MToHomeyConverter, MultiHomeyToZ2MConverter?];
+
+// Converter result interface from getCapabilityConverters()
+export interface CapabilityConverters {
+    z2mProperty: string;
+    homeyCapabilities: string[];
+    z2mToHomey: MultiZ2MToHomeyConverter;
+    homeyToZ2m?: MultiHomeyToZ2MConverter;
+}
 
 export interface CapabilityMapping {
-    homeyCapability: string;
+    homeyCapabilities: string[];
     expose: zigbeeHerdsmanConverter.Expose;
 }
 

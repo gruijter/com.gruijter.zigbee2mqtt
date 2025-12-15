@@ -24,9 +24,10 @@ import {
   zigbeeHerdsmanConverter, Z2MDevice, CapabilityMappings,
   CapabilityMapEntry,
   CapabilityMapTuple,
-  Z2MToHomeyConverter,
-  HomeyToZ2MConverter,
+  RawCapabilityMapTuple,
+  CapabilityConverters,
 } from './types';
+import { hsbToRgb } from './utilities';
 
 // map Z2M exposes and its value to a Homey capability. See https://www.zigbee2mqtt.io/guide/usage/exposes.html
 // Z2M exp: [homey_capability, z2mToHomey, homeyToZ2m?] or (exp) => [homey_capability, z2mToHomey, homeyToZ2m?]
@@ -57,16 +58,38 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   water_flow: ['measure_water', (v) => Number(v)],
   energy: ['meter_power', (v) => Number(v)],
   water_consumed: ['meter_water', (v) => Number(v)],
-  position: ['windowcoverings_set', (v) => Number(v) / 100, (v) => ({ position: Number(v) * 100 })],
-  valve_state: ['valve_state', (v) => Number(v), (v) => ({ valve_state: Number(v) * 100 })],
+  position: ['windowcoverings_set', (v) => Number(v) / 100, (v) => ({ position: Math.round(Number(v) * 100) })],
+  valve_state: ['valve_state', (v) => Number(v), (v) => ({ valve_state: Math.round(Number(v) * 100) })],
   target_distance: ['target_distance', (v) => Number(v)],
 
   // color light related number capabilities
-  brightness: ['dim', (v) => Number(v) / 254, (v) => ({ brightness: Number(v) * 254 })],
-  brightness_l1: ['dim.l1', (v) => Number(v) / 254, (v) => ({ brightness_l1: Number(v) * 254 })],
-  brightness_l2: ['dim.l2', (v) => Number(v) / 254, (v) => ({ brightness_l2: Number(v) * 254 })],
-  color_temp: ['light_temperature', (v) => (Number(v) - 153) / 347, (v) => ({ color_temp: 153 + Number(v) * 347 })],
+  brightness: ['dim', (v) => Number(v) / 254, (v) => ({ brightness: Math.round(Number(v) * 254) })],
+  brightness_l1: ['dim.l1', (v) => Number(v) / 254, (v) => ({ brightness_l1: Math.round(Number(v) * 254) })],
+  brightness_l2: ['dim.l2', (v) => Number(v) / 254, (v) => ({ brightness_l2: Math.round(Number(v) * 254) })],
+  color_temp: ['light_temperature', (v) => (Number(v) - 153) / 347, (v) => ({ color_temp: Math.round(153 + Number(v) * 347) })],
   color_mode: ['light_mode', (v) => (v === 'xy' || v === 'hs' ? 'color' : 'temperature')],
+  color: (expose) => [
+    ['light_hue', 'light_saturation'],
+    // Z2M → Homey: extract hue/saturation from color object
+    (z2mVal) => ({
+      light_hue: z2mVal.hue !== undefined ? z2mVal.hue / 360 : undefined,
+      light_saturation: z2mVal.saturation !== undefined ? z2mVal.saturation / 100 : undefined,
+    }),
+    // Homey → Z2M: build color command based on expose type and current mode
+    (values, getCapValue) => {
+      // Skip color command when user switches to temperature mode
+      const lightMode = getCapValue('light_mode');
+      if (lightMode === 'temperature') return null;
+
+      if (expose.name === 'color_hs') {
+        return { color: { hue: Math.round(values.light_hue * 360), saturation: Math.round(values.light_saturation * 100) } };
+      }
+      // RGB mode - needs dim value for brightness (hsbToRgb already returns integers)
+      const dim = getCapValue('dim');
+      const { r, g, b } = hsbToRgb(values.light_hue, values.light_saturation, dim);
+      return { color: { r, g, b } };
+    },
+  ],
   voc: ['measure_tvoc', (v) => Number(v)],
   voc_index: ['measure_tvoc_index', (v) => Number(v)],
   aqi: ['measure_aqi', (v) => Number(v)],
@@ -176,22 +199,46 @@ function getDeviceModel(device: Z2MDevice): string {
   return '';
 }
 
-function resolveCapabilityEntry(entry: CapabilityMapEntry, expose: zigbeeHerdsmanConverter.Expose): CapabilityMapTuple {
-  return typeof entry === 'function' ? entry(expose) : entry;
+function resolveCapabilityEntry(
+  entry: CapabilityMapEntry,
+  expose: zigbeeHerdsmanConverter.Expose,
+): CapabilityMapTuple {
+  const raw: RawCapabilityMapTuple = typeof entry === 'function' ? entry(expose) : entry;
+
+  // Normalize single-cap tuple to multi-cap format
+  if (typeof raw[0] === 'string') {
+    const [cap, z2mToHomey, homeyToZ2m] = raw as [string, (v: any) => any, ((v: any) => Record<string, any>)?];
+    return [
+      [cap],
+      (z2mVal) => ({ [cap]: z2mToHomey(z2mVal) }),
+      homeyToZ2m ? (vals) => homeyToZ2m(vals[cap]) : undefined,
+    ];
+  }
+
+  // Already multi-cap format
+  return raw as CapabilityMapTuple;
 }
 
-export function getCapabailityConverters(z2mProperty: string, expose: zigbeeHerdsmanConverter.Expose): {
-  homeyCapability: string, z2mProperty: string,
-  z2mToHomey: Z2MToHomeyConverter; homeyToZ2m?: HomeyToZ2MConverter } | null {
+export function getCapabilityConverters(z2mProperty: string, expose: zigbeeHerdsmanConverter.Expose): CapabilityConverters | null {
   const entry = capabilityMap[z2mProperty];
   if (!entry) return null;
 
-  const [homeyCapability, z2mToHomey, homeyToZ2m] = resolveCapabilityEntry(entry, expose);
+  const [homeyCapabilities, z2mToHomey, homeyToZ2m] = resolveCapabilityEntry(entry, expose);
+
   return {
-    homeyCapability,
     z2mProperty,
+    homeyCapabilities,
     z2mToHomey,
-    homeyToZ2m,
+    homeyToZ2m: homeyToZ2m
+      ? (changedValues: Record<string, any>, getCapValue: (cap: string) => any) => {
+        // Merge current values with changed values for capabilities in this group
+        const mergedValues: Record<string, any> = {};
+        for (const cap of homeyCapabilities) {
+          mergedValues[cap] = changedValues[cap] ?? getCapValue(cap);
+        }
+        return homeyToZ2m(mergedValues, getCapValue);
+      }
+      : undefined,
   };
 }
 
@@ -217,48 +264,34 @@ export function mapCapabilities(device: Z2MDevice, options: MapCapabilitiesOptio
   const addCapability = (expose: zigbeeHerdsmanConverter.Expose) => {
     if (!expose.property) return;
 
-    // Handle color property specially (maps to multiple Homey capabilities)
-    if (expose.property === 'color') {
-      const colorCapabilities = ['light_hue', 'light_saturation', 'light_mode'];
-      colorCapabilities.forEach((capName) => {
-        if (!definedHomeyCapabilities.has(capName)) {
-          definedHomeyCapabilities.add(capName);
-          mappings[`${expose.property}_${capName}`] = { homeyCapability: capName, expose };
-        }
-      });
-
-      // Also map color_mode if it's not already mapped (implicit for color lights)
-      if (!mappings.color_mode) {
-        mappings.color_mode = { homeyCapability: 'light_mode', expose };
-      }
-      return;
-    }
-
     // Handle windowcoverings_set/position: remove onoff capability if present
     if (expose.property === 'windowcoverings_set' || expose.property === 'position') {
       definedHomeyCapabilities.delete('onoff');
-      delete mappings['state'];
+      delete mappings.state;
     }
 
     const entry = capabilityMap[expose.property];
-    if (entry) {
-      const [homeyCapability] = resolveCapabilityEntry(entry, expose);
+    if (!entry) return;
 
-      // Skip linkquality for groups
-      if (isGroup && homeyCapability === 'measure_linkquality') {
-        return;
-      }
+    const [homeyCapabilities] = resolveCapabilityEntry(entry, expose);
 
-      // Skip capabilities in the skip list for this device model
-      if (skipCapabilities.includes(homeyCapability)) {
-        return;
-      }
+    // Filter out already defined, skipped, or group-excluded capabilities
+    const capsToAdd = homeyCapabilities.filter((cap) => {
+      if (definedHomeyCapabilities.has(cap)) return false;
+      if (skipCapabilities.includes(cap)) return false;
+      if (isGroup && cap === 'measure_linkquality') return false;
+      return true;
+    });
 
-      if (!definedHomeyCapabilities.has(homeyCapability)) {
-        definedHomeyCapabilities.add(homeyCapability);
-        mappings[expose.property] = { homeyCapability, expose };
-      }
-    }
+    if (capsToAdd.length === 0) return;
+
+    // Mark capabilities as defined
+    capsToAdd.forEach((cap) => definedHomeyCapabilities.add(cap));
+
+    mappings[expose.property] = {
+      homeyCapabilities: capsToAdd,
+      expose,
+    };
   };
 
   // Collect all exposes from device definition
