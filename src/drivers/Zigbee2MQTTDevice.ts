@@ -36,7 +36,7 @@ const setTimeoutPromise = util.promisify(setTimeout);
 const STORE_VERSION = 2;
 
 export default abstract class Zigbee2MQTTDevice extends Homey.Device {
-  store: { capabilityMappings: CapabilityMappings; storeVersion?: number };
+  store: { capabilityMappings: CapabilityMappings; storeVersion: number };
   settings: DeviceSettings;
   bridge: Zigbee2MQTTBridge;
   deviceTopic: string;
@@ -110,53 +110,47 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
   }
 
   async migrateStore() {
-    try {
-      this.log(`checking store migration for ${this.getName()}`);
-      let storeChanged = false;
+    this.log(`checking store migration for ${this.getName()}`);
+    let storeChanged = false;
 
-      // Remove all store values except capabilityMappings
-      if (this.store) {
-        for (const key of Object.keys(this.store)) {
-          if (key !== 'capabilityMappings') {
-            this.log(`Removing deprecated ${key} from store for ${this.getName()}`);
-            await this.unsetStoreValue(key);
-            storeChanged = true;
-          }
-        }
-      }
-
-      // Update capabilityMappings
-      const deviceInfo = this.getDeviceInfo();
-      if (deviceInfo) {
-        const isGroup = deviceInfo.type === 'group';
-        const device = isGroup ? deviceInfo.devices[0] : deviceInfo.device;
-        const capabilityMappings = mapCapabilities(device, { isGroup });
-
-        const needsUpdate = !this.store?.capabilityMappings
-          || !util.isDeepStrictEqual(this.store.capabilityMappings, capabilityMappings)
-          || this.store.storeVersion !== STORE_VERSION;
-
-        if (needsUpdate) {
-          this.log(`Updating capabilityMappings in store for ${this.getName()}`);
-          await this.setStoreValue('capabilityMappings', capabilityMappings);
-          await this.setStoreValue('storeVersion', STORE_VERSION);
+    // Remove unexpected store values
+    if (this.store) {
+      const keysToKeep = ['capabilityMappings', 'storeVersion'];
+      for (const key of Object.keys(this.store)) {
+        if (!keysToKeep.includes(key)) {
+          this.log(`Removing deprecated ${key} from store for ${this.getName()}`);
+          await this.unsetStoreValue(key);
           storeChanged = true;
         }
-      } else {
-        this.error(`Cannot migrate store for ${this.getName()}: device info not available`);
-        return false;
       }
-
-      // Refresh store reference if changed
-      if (storeChanged) {
-        this.store = this.getStore();
-      }
-
-      return storeChanged;
-    } catch (error) {
-      this.error('Store migration failed:', error);
-      return Promise.reject(error);
     }
+
+    const deviceInfo = this.getDeviceInfo();
+    if (deviceInfo) {
+      const isGroup = deviceInfo.type === 'group';
+      const device = isGroup ? deviceInfo.devices[0] : deviceInfo.device;
+      const capabilityMappings = mapCapabilities(device, { isGroup });
+
+      const needsUpdate = !this.store?.capabilityMappings
+        || !util.isDeepStrictEqual(this.store.capabilityMappings, capabilityMappings)
+        || this.store.storeVersion !== STORE_VERSION;
+
+      if (needsUpdate) {
+        this.log(`Updating capabilityMappings in store for ${this.getName()}`);
+        await this.setStoreValue('capabilityMappings', capabilityMappings);
+        await this.setStoreValue('storeVersion', STORE_VERSION);
+        storeChanged = true;
+      }
+    } else {
+      this.error(`Cannot migrate store for ${this.getName()}: device info not available`);
+      return false;
+    }
+
+    if (storeChanged) {
+      this.store = this.getStore();
+    }
+
+    return storeChanged;
   }
 
   async restartDevice(delay: number) {
@@ -172,113 +166,105 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
   }
 
   async migrate() {
-    try {
-      this.log(`checking device migration for ${this.getName()}`);
+    this.log(`checking device migration for ${this.getName()}`);
 
-      if (!this.isStoreUpToDate()) {
-        this.log(`Store outdated for ${this.getName()}, waiting for device to be available`);
-        return false;
-      }
-      const { capabilityMappings } = this.store;
-
-      // Get capability sets for comparison
-      const currentCaps = new Set(this.getCapabilities());
-      const mappedCaps = new Set(Object.values(capabilityMappings).flatMap((m) => m.homeyCapabilities));
-
-      // Capabilities to ADD: in mappings but not on device
-      const capsToAdd = [...mappedCaps].filter((cap) => !currentCaps.has(cap));
-
-      // Capabilities to REMOVE: on device but not in mappings
-      const capsToRemove = [...currentCaps].filter((cap) => !mappedCaps.has(cap));
-
-      if (capsToAdd.length === 0 && capsToRemove.length === 0) {
-        this.log(`No migration needed for ${this.getName()}`);
-        await this.setCapabilityUnits();
-        return false;
-      }
-
-      // Store capability states before migration
-      const sym = Object.getOwnPropertySymbols(this).find((s) => String(s) === 'Symbol(state)');
-      const state = sym ? (this as any)[sym] : {};
-
-      this.setUnavailable(`${this.zigbee2MqttType} is migrating. Please wait!`).catch(this.error);
-      this.log(`${this.getName()} is migrating. Please wait!`);
-
-      // Remove capabilities no longer in mappings
-      for (const cap of capsToRemove) {
-        this.log(`removing capability ${cap} for ${this.getName()}`);
-        await this.removeCapability(cap).catch((error) => this.log(error));
-        await setTimeoutPromise(2 * 1000);
-      }
-
-      // Add missing capabilities
-      for (const cap of capsToAdd) {
-        this.log(`adding capability ${cap} for ${this.getName()}`);
-        await this.addCapability(cap).catch((error) => this.log(error));
-
-        // Restore capability state if available
-        if (state[cap] !== undefined) {
-          this.log(`${this.getName()} restoring value ${cap} to ${state[cap]}`);
-          this.setCapability(cap, state[cap]).catch((error) => this.error(error));
-        }
-        await setTimeoutPromise(2 * 1000);
-      }
-
-      await this.setCapabilityUnits();
-      return true;
-    } catch (error) {
-      return Promise.reject(error);
+    if (!this.isStoreUpToDate()) {
+      this.log(`Store outdated for ${this.getName()}, waiting for device to be available`);
+      return false;
     }
+    const { capabilityMappings } = this.store;
+
+    // Get capability sets for comparison
+    const currentCaps = new Set(this.getCapabilities());
+    const mappedCaps = new Set(Object.values(capabilityMappings).flatMap((m) => m.homeyCapabilities));
+
+    // Capabilities to ADD: in mappings but not on device
+    const capsToAdd = [...mappedCaps].filter((cap) => !currentCaps.has(cap));
+
+    // Capabilities to REMOVE: on device but not in mappings
+    const capsToRemove = [...currentCaps].filter((cap) => !mappedCaps.has(cap));
+
+    if (capsToAdd.length === 0 && capsToRemove.length === 0) {
+      this.log(`No migration needed for ${this.getName()}`);
+      await this.setCapabilityUnits();
+      return false;
+    }
+
+    // Store capability states before migration
+    const sym = Object.getOwnPropertySymbols(this).find((s) => String(s) === 'Symbol(state)');
+    const state = sym ? (this as any)[sym] : {};
+
+    this.setUnavailable(`${this.zigbee2MqttType} is migrating. Please wait!`).catch(this.error);
+    this.log(`${this.getName()} is migrating. Please wait!`);
+
+    // Remove capabilities no longer in mappings
+    for (const cap of capsToRemove) {
+      this.log(`removing capability ${cap} for ${this.getName()}`);
+      await this.removeCapability(cap).catch((error) => this.log(error));
+      await setTimeoutPromise(2 * 1000);
+    }
+
+    // Add missing capabilities
+    for (const cap of capsToAdd) {
+      this.log(`adding capability ${cap} for ${this.getName()}`);
+      await this.addCapability(cap).catch((error) => this.log(error));
+
+      // Restore capability state if available
+      if (state[cap] !== undefined) {
+        this.log(`${this.getName()} restoring value ${cap} to ${state[cap]}`);
+        this.setCapability(cap, state[cap]).catch((error) => this.error(error));
+      }
+      await setTimeoutPromise(2 * 1000);
+    }
+
+    await this.setCapabilityUnits();
+    return true;
   }
 
   async setCapabilityUnits() {
-    try {
-      this.log(`Checking Capability Units and Titles for ${this.getName()}`);
-      let unitsChanged = false;
-      const { capabilityMappings } = this.store;
-      if (!capabilityMappings) return;
+    this.log(`Checking Capability Units and Titles for ${this.getName()}`);
+    let unitsChanged = false;
+    const { capabilityMappings } = this.store;
+    if (!capabilityMappings) return;
 
-      // Flatten mappings to iterate over all capabilities
-      const allMappings = Object.values(capabilityMappings).flatMap(
-        ({ homeyCapabilities, expose }) => homeyCapabilities.map((cap) => ({ cap, expose })),
-      );
+    // Flatten mappings to iterate over all capabilities
+    const allMappings = Object.values(capabilityMappings).flatMap(
+      ({ homeyCapabilities, expose }) => homeyCapabilities.map((cap) => ({ cap, expose })),
+    );
 
-      for (const { cap: homeyCapability, expose } of allMappings) {
-        const capOptions: CapabilityOptions = {};
+    for (const { cap: homeyCapability, expose } of allMappings) {
+      const capOptions: CapabilityOptions = {};
 
-        if (expose.type === 'numeric' && expose.unit) {
-          capOptions.units = { en: expose.unit };
+      if (expose.type === 'numeric' && expose.unit) {
+        capOptions.units = { en: expose.unit };
+      }
+      if (expose.name && !homeyCapability.includes('onoff')) {
+        const title = expose.name.replace(/./, (c) => c.toUpperCase());
+        capOptions.title = { en: title };
+      }
+      // decimals: dec,
+      if (Object.keys(capOptions).length > 0) {
+        // check if the unit or name changed for this capability
+        let currentCapOptions: any = {};
+        try {
+          currentCapOptions = this.getCapabilityOptions(homeyCapability);
+        } catch (error) {
+          this.log(`${this.getName()} has no capability options set for ${homeyCapability}`);
         }
-        if (expose.name && !homeyCapability.includes('onoff')) {
-          const title = expose.name.replace(/./, (c) => c.toUpperCase());
-          capOptions.title = { en: title };
-        }
-        // decimals: dec,
-        if (Object.keys(capOptions).length > 0) {
-          // check if the unit or name changed for this capability
-          let currentCapOptions: any = {};
-          try {
-            currentCapOptions = this.getCapabilityOptions(homeyCapability);
-          } catch (error) {
-            this.log(`${this.getName()} has no capability options set for ${homeyCapability}`);
+        // console.log(this.getName(), capDetailsArray[index][0], currentCapOptions);
+        if (currentCapOptions.units?.en !== capOptions.units?.en || currentCapOptions.title?.en !== capOptions.title?.en) {
+          if (!unitsChanged) {
+            // Only show migrating message on first change
+            this.setUnavailable(`${this.zigbee2MqttType} is migrating. Please wait!`).catch(this.error);
           }
-          // console.log(this.getName(), capDetailsArray[index][0], currentCapOptions);
-          if (currentCapOptions.units?.en !== capOptions.units?.en || currentCapOptions.title?.en !== capOptions.title?.en) {
-            if (!unitsChanged) {
-              // Only show migrating message on first change
-              this.setUnavailable(`${this.zigbee2MqttType} is migrating. Please wait!`).catch(this.error);
-            }
-            unitsChanged = true;
-            this.log('Migrating unit and title for', homeyCapability, (expose.type === 'numeric' ? expose.unit : 'no unit'), expose.name);
-            await this.setCapabilityOptions(homeyCapability, capOptions).catch(this.error);
-            await setTimeoutPromise(2 * 1000).catch((error) => this.log(error));
-          }
+          unitsChanged = true;
+          this.log('Migrating unit and title for', homeyCapability, (expose.type === 'numeric' ? expose.unit : 'no unit'), expose.name);
+          await this.setCapabilityOptions(homeyCapability, capOptions).catch(this.error);
+          await setTimeoutPromise(2 * 1000).catch((error) => this.log(error));
         }
       }
-      if (unitsChanged) this.restartDevice(1000).catch((error) => this.error(error));
-    } catch (error) {
-      this.error(error);
     }
+    if (unitsChanged) this.restartDevice(1000).catch((error) => this.error(error));
   }
 
   async setCapability(capability: string, value: any) {
@@ -306,18 +292,21 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
   }
 
   async getStatus(payload: any, source: string) {
-    if (!this.bridge || !this.bridge.client || !this.bridge.client.connected) return Promise.reject(Error('Bridge is not connected'));
+    if (!this.bridge?.client?.connected) throw new Error('Bridge is not connected');
+
     const deviceInfo = this.getDeviceInfo();
-    if (deviceInfo?.type === 'device' && deviceInfo.device.power_source === 'Battery') return Promise.resolve(true); // skip battery devices
+
+    // skip battery devices
+    if (deviceInfo?.type === 'device' && deviceInfo.device.power_source === 'Battery') return; 
+
     const pl = payload || { state: '' };
     await this.bridge.client.publish(`${this.deviceTopic}/get`, JSON.stringify(pl));
     this.log(`${JSON.stringify(pl)} sent by ${source}`);
-    return Promise.resolve(true);
   }
 
   async setCommand(payload: any, source: string) {
-    if (!this.bridge || !this.bridge.client || !this.bridge.client.connected) throw Error('Bridge is not connected');
-    if (!this.store || !this.store.capabilityMappings) throw Error('Store capabilities undefined');
+    if (!this.bridge?.client?.connected) throw Error('Bridge is not connected');
+    if (!this.isStoreUpToDate()) throw Error('Store outdated');
     if (!payload) throw Error('setCommand started without payload');
 
     // get the capability mapping for this command
@@ -340,7 +329,6 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
 
     await this.bridge.client.publish(`${this.deviceTopic}/set`, JSON.stringify(payload));
     this.log(`${JSON.stringify(payload)} sent by ${source}`);
-    return Promise.resolve(true);
   }
 
   // Set command by Homey capability name (used by flow action cards)
@@ -374,7 +362,6 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
 
     await this.bridge.client.publish(`${this.deviceTopic}/set`, payload);
     this.log(`${payload} sent by ${source}`);
-    return Promise.resolve(true);
   }
 
   async checkChangedOrDeleted() {
@@ -419,6 +406,8 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
             const info = JSON.parse(message);
             // Map the incoming value to a capability or setting
             if (topic === this.deviceTopic) {
+              console.log('DEBUG: info', info);
+              console.log('DEBUG: topic', topic);
               // console.log(`${this.getName()} update:`, info);
               // this.setAvailable();
               for (const entry of Object.entries<any>(info)) {
@@ -490,15 +479,11 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     }
   }
 
-  // register homey event listeners
   async registerHomeyEventListeners() {
-    if (this.eventListenerBridgeOffline) this.homey.on('bridgeoffline', this.eventListenerBridgeOffline); // Re-add listener if it was removed? Logic seems slightly off in original code or I misunderstood. Original: remove then define then add.
-    // Actually, the original code checks if it exists, removes it, then redefines it and adds it.
     if (this.eventListenerBridgeOffline) {
       this.homey.removeListener('bridgeoffline', this.eventListenerBridgeOffline);
     }
     this.eventListenerBridgeOffline = (offline: boolean) => {
-      // console.log('bridgeOffline event received');
       if (offline) {
         this.setUnavailable('Bridge is offline').catch(this.error);
         this.bridgeOffline = true;
@@ -510,10 +495,9 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     this.homey.on('bridgeoffline', this.eventListenerBridgeOffline);
   }
 
-  // Register capability listeners for settable commands
   async registerListeners() {
     if (!this.capabilityListeners) this.capabilityListeners = {};
-    if (!this.isStoreUpToDate()) return false;
+    if (!this.isStoreUpToDate()) return;
 
     for (const [z2mProperty, mapping] of Object.entries(this.store.capabilityMappings)) {
       if (mapping.homeyCapabilities.length > 1) {
@@ -524,7 +508,6 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     }
   }
 
-  // Register a multi-capability listener
   private registerMultiCapListener(z2mProperty: string, mapping: CapabilityMapping) {
     const listenerKey = `multi_${z2mProperty}`;
     if (this.capabilityListeners[listenerKey]) return;
@@ -532,7 +515,6 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     const converters = getCapabilityConverters(z2mProperty, mapping.expose);
     if (!converters?.homeyToZ2m) return;
 
-    // Filter to only capabilities that exist on device
     const deviceCaps = mapping.homeyCapabilities.filter((cap) => this.getCapabilities().includes(cap));
     if (deviceCaps.length === 0) return;
 
@@ -541,17 +523,13 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
       deviceCaps,
       (changedValues: Record<string, any>) => {
         const command = converters.homeyToZ2m!(changedValues, (cap) => this.getCapabilityValue(cap));
-        if (command) {
-          this.setCommand(command, 'app').catch((error) => this.error(error));
-        }
-        return Promise.resolve();
+        if (command) this.setCommand(command, 'app').catch((error) => this.error(error));
       },
-      500, // debounce
+      500,
     );
     this.capabilityListeners[listenerKey] = true;
   }
 
-  // Register a single-capability listener
   private registerSingleCapListener(z2mProperty: string, mapping: CapabilityMapping) {
     const converters = getCapabilityConverters(z2mProperty, mapping.expose);
     if (!converters?.homeyToZ2m) return;
@@ -563,15 +541,11 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     this.log(`${this.getName()} adding capability listener ${homeyCapability}`);
     this.registerCapabilityListener(homeyCapability, (val: any) => {
       const command = converters.homeyToZ2m!({ [homeyCapability]: val }, (cap) => this.getCapabilityValue(cap));
-      if (command) {
-        this.setCommand(command, 'app').catch((error) => this.error(error));
-      }
-      return Promise.resolve();
+      if (command) this.setCommand(command, 'app').catch((error) => this.error(error));
     });
     this.capabilityListeners[homeyCapability] = true;
   }
 
-  // remove listeners
   destroyListeners() {
     this.log('removing listeners', this.getName());
     this.bridge.client.removeListener('connect', this.subscribeTopics);
