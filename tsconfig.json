@@ -1,6 +1,20 @@
 {
+  "extends": "@tsconfig/node18/tsconfig.json",
   "compilerOptions": {
-    "allowJs": true,
-    "outDir": ".homeybuild/"
-  }
+    "outDir": "build/",
+    "sourceMap": true,
+    "module": "commonjs",
+    "strict": false,
+    "strictNullChecks": false,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": [
+    "node_modules",
+    "build",
+    ".homeycompose",
+    "**/*.spec.ts",
+  ]
 }

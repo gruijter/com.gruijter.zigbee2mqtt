@@ -1,4 +1,13 @@
 {
+  "3.0.2" : {
+    "en": "Fix device migration. Fix flow triggers."
+  },
+  "3.0.1": {
+    "en": "Fix custom Action flow cards not working. Fix color capability mapping. Optimize store. Minimum Homey version 12.9.0"
+  },
+  "3.0.0": {
+    "en": "App refactoring to TypeScript. Stability and maintainability improvements."
+  },
   "2.9.1": {
     "en": "Fix voltage handling. Fix number of offline devices flow card. Minor stability improvements"
   },
