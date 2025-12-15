@@ -406,8 +406,6 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
             const info = JSON.parse(message);
             // Map the incoming value to a capability or setting
             if (topic === this.deviceTopic) {
-              console.log('DEBUG: info', info);
-              console.log('DEBUG: topic', topic);
               // console.log(`${this.getName()} update:`, info);
               // this.setAvailable();
               for (const entry of Object.entries<any>(info)) {
