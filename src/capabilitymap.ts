@@ -70,24 +70,24 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   color_mode: ['light_mode', (v) => (v === 'xy' || v === 'hs' ? 'color' : 'temperature')],
   color: (expose) => [
     ['light_hue', 'light_saturation'],
-    // Z2M → Homey: extract hue/saturation from color object
     (z2mVal) => ({
       light_hue: z2mVal.hue !== undefined ? z2mVal.hue / 360 : undefined,
       light_saturation: z2mVal.saturation !== undefined ? z2mVal.saturation / 100 : undefined,
     }),
-    // Homey → Z2M: build color command based on expose type and current mode
     (values, getCapValue) => {
-      // Skip color command when user switches to temperature mode
       const lightMode = getCapValue('light_mode');
       if (lightMode === 'temperature') return null;
 
       if (expose.name === 'color_hs') {
-        return { color: { hue: Math.round(values.light_hue * 360), saturation: Math.round(values.light_saturation * 100) } };
+        return { color: { 
+          hue: Math.round(values.light_hue * 360), 
+          saturation: Math.round(values.light_saturation * 100) 
+        } };
+      } else {
+        const dim = getCapValue('dim');
+        const { r, g, b } = hsbToRgb(values.light_hue, values.light_saturation, dim);
+        return { color: { r, g, b } };
       }
-      // RGB mode - needs dim value for brightness (hsbToRgb already returns integers)
-      const dim = getCapValue('dim');
-      const { r, g, b } = hsbToRgb(values.light_hue, values.light_saturation, dim);
-      return { color: { r, g, b } };
     },
   ],
   voc: ['measure_tvoc', (v) => Number(v)],
