@@ -138,6 +138,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   alarm: ['alarm_sound', (v) => v, (v) => ({ alarm: v })], // [stop, pre_alarm, fire, burglar]
   sensitivity: ['sensitivity', (v) => v, (v) => ({ sensitivity: v })], // [low, medium, high]
   motion_sensitivity: ['sensitivity.motion', (v) => v, (v) => ({ motion_sensitivity: v })], // [low, medium, high]
+  pilot_wire_mode: ['pilot_wire_mode', (v) => v, (v) => ({ pilot_wire_mode: v })], // [comfort, eco, frost_protection, off, comfort_-1, comfort_-2]
 };
 
 // Define the skip map for specific device models (model name -> capabilities to skip)

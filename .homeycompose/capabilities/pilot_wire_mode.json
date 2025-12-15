@@ -1,0 +1,126 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Pilot Wire Mode",
+    "nl": "Pilotdraadmodus",
+    "da": "Pilottrådtilstand",
+    "de": "Pilotdraht-Modus",
+    "es": "Modo de Cable Piloto",
+    "fr": "Mode Fil Pilote",
+    "it": "Modalità Filo Pilota",
+    "no": "Pilottrådmodus",
+    "sv": "Pilottrådsläge",
+    "pl": "Tryb przewodu pilotażowego",
+    "ru": "Режим пилотного провода",
+    "ko": "파일럿 와이어 모드"
+  },
+  "values": [
+    {
+      "id": "comfort",
+      "title": {
+        "en": "Comfort",
+        "nl": "Comfort",
+        "da": "Komfort",
+        "de": "Komfort",
+        "es": "Confort",
+        "fr": "Confort",
+        "it": "Comfort",
+        "no": "Komfort",
+        "sv": "Komfort",
+        "pl": "Komfort",
+        "ru": "Комфорт",
+        "ko": "편안함"
+      }
+    },
+    {
+      "id": "eco",
+      "title": {
+        "en": "Eco",
+        "nl": "Eco",
+        "da": "Eco",
+        "de": "Eco",
+        "es": "Eco",
+        "fr": "Éco",
+        "it": "Eco",
+        "no": "Eco",
+        "sv": "Eco",
+        "pl": "Eko",
+        "ru": "Эко",
+        "ko": "에코"
+      }
+    },
+    {
+      "id": "frost_protection",
+      "title": {
+        "en": "Frost Protection",
+        "nl": "Vorstbescherming",
+        "da": "Frostbeskyttelse",
+        "de": "Frostschutz",
+        "es": "Protección Antihielo",
+        "fr": "Protection Antigel",
+        "it": "Protezione Antigelo",
+        "no": "Frostbeskyttelse",
+        "sv": "Frostskydd",
+        "pl": "Ochrona przed mrozem",
+        "ru": "Защита от замерзания",
+        "ko": "서리 방지"
+      }
+    },
+    {
+      "id": "off",
+      "title": {
+        "en": "Off",
+        "nl": "Uit",
+        "da": "Slukket",
+        "de": "Aus",
+        "es": "Apagado",
+        "fr": "Éteint",
+        "it": "Spento",
+        "no": "Av",
+        "sv": "Av",
+        "pl": "Wyłączony",
+        "ru": "Выкл.",
+        "ko": "끄기"
+      }
+    },
+    {
+      "id": "comfort_-1",
+      "title": {
+        "en": "Comfort -1",
+        "nl": "Comfort -1",
+        "da": "Komfort -1",
+        "de": "Komfort -1",
+        "es": "Confort -1",
+        "fr": "Confort -1",
+        "it": "Comfort -1",
+        "no": "Komfort -1",
+        "sv": "Komfort -1",
+        "pl": "Komfort -1",
+        "ru": "Комфорт -1",
+        "ko": "편안함 -1"
+      }
+    },
+    {
+      "id": "comfort_-2",
+      "title": {
+        "en": "Comfort -2",
+        "nl": "Comfort -2",
+        "da": "Komfort -2",
+        "de": "Komfort -2",
+        "es": "Confort -2",
+        "fr": "Confort -2",
+        "it": "Comfort -2",
+        "no": "Komfort -2",
+        "sv": "Komfort -2",
+        "pl": "Komfort -2",
+        "ru": "Комфорт -2",
+        "ko": "편안함 -2"
+      }
+    }
+  ],
+  "uiComponent": "picker",
+  "getable": true,
+  "setable": true,
+  "insights": false
+}
+
