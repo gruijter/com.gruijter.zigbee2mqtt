@@ -31,10 +31,36 @@ import {
 } from './types';
 import { hsbToRgb, xyYToHueSat } from './utilities';
 
-// map Z2M exposes and its value to a Homey capability. See https://www.zigbee2mqtt.io/guide/usage/exposes.html
-// Z2M exp: [homey_capability, z2mToHomey, homeyToZ2m?] or (exp) => [homey_capability, z2mToHomey, homeyToZ2m?]
-// FOR CUSTOM AND SUB CAPABILITIES TRIGGER FLOWS NEED TO BE CREATED IN .homeycompose/flow/triggers
-// FOR SETTABLE CUSTOM AND SUB CAPABILITIES ACTION FLOWS NEED TO BE CREATED IN .homeycompose/flow/actions
+/*
+ * Capability Map
+ * ==============
+ * Maps Z2M exposes to Homey capabilities.
+ * See https://www.zigbee2mqtt.io/guide/usage/exposes.html
+ *
+ * SYNTAX
+ * ------
+ * Each entry can be:
+ *   - A static tuple/object
+ *   - A function (expose) => tuple/object for dynamic mapping
+ *
+ * Single Capability (tuple):
+ *   [homeyCapability, z2mToHomey, homeyToZ2m?]
+ *   Example: brightness: ['dim', (v) => v / 254, (v) => ({ brightness: v * 254 })]
+ *
+ * Multi-Capability (object):
+ *   {
+ *     caps: ['cap1', 'cap2', ...],
+ *     z2mToHomey: (z2mValue, z2mState) => ({ cap1: val1, cap2: val2, ... }),
+ *     homeyToZ2m?: (values, getCapValue) => z2mPayload
+ *   }
+ *   Example: color maps to light_hue, light_saturation, light_mode
+ *
+ * NOTES
+ * -----
+ * - For custom/sub capabilities, create trigger flows in .homeycompose/flow/triggers
+ * - For settable custom/sub capabilities, create action flows in .homeycompose/flow/actions
+ * - The only file to modify to add device support is this capabilitymap
+ */
 
 const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   // Standard Homey Number capabilities
