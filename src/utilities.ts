@@ -5,8 +5,7 @@
  * @param {number} dim Brightness [0 - 1]
  * @returns {object} RGB object. [0 - 255]
  */
-// eslint-disable-next-line import/prefer-default-export
-export const hsbToRgb = (hue: number, sat: number, dim: number) => {
+export const hsbToRgb = (hue: number, sat: number, dim: number = 1) => {
   let red;
   let green;
   let blue;
@@ -64,6 +63,53 @@ export const hsbToRgb = (hue: number, sat: number, dim: number) => {
 };
 
 /**
+ * Converts hue and saturation to CIE xy chromaticity coordinates
+ * @param {number} hue Hue [0 - 1]
+ * @param {number} sat Saturation [0 - 1]
+ * @returns {object} Object with x and y chromaticity coordinates [0-1]
+ */
+export const hsToXy = (hue: number, sat: number) => {
+  // Convert HS to RGB (using full brightness)
+  const { r, g, b } = hsbToRgb(hue, sat, 1);
+  
+  // Normalize to [0, 1]
+  const red = r / 255;
+  const green = g / 255;
+  const blue = b / 255;
+  
+  // Apply inverse gamma correction (sRGB to linear)
+  const inverseGamma = (c: number) => {
+    if (c <= 0.04045) return c / 12.92;
+    return Math.pow((c + 0.055) / 1.055, 2.4);
+  };
+  
+  const rLinear = inverseGamma(red);
+  const gLinear = inverseGamma(green);
+  const bLinear = inverseGamma(blue);
+  
+  // Convert linear RGB to XYZ (sRGB D65 matrix)
+  const X = rLinear * 0.4124 + gLinear * 0.3576 + bLinear * 0.1805;
+  const Y = rLinear * 0.2126 + gLinear * 0.7152 + bLinear * 0.0722;
+  const Z = rLinear * 0.0193 + gLinear * 0.1192 + bLinear * 0.9505;
+  
+  // Convert XYZ to xy chromaticity
+  const sum = X + Y + Z;
+  if (sum === 0) {
+    // Return D65 white point for black
+    return { x: 0.3127, y: 0.3290 };
+  }
+  
+  const x = X / sum;
+  const y = Y / sum;
+  
+  // Round to 4 decimal places for cleaner values
+  return {
+    x: Math.round(x * 10000) / 10000,
+    y: Math.round(y * 10000) / 10000,
+  };
+};
+
+/**
  * Converts CIE xyY color coordinates to hue and saturation
  * @param {number} x CIE x chromaticity coordinate [0-1]
  * @param {number} y CIE y chromaticity coordinate [0-1]
@@ -75,10 +121,25 @@ export const xyYToHueSat = (x: number, y: number, Y: number = 1.0) => {
   const X = (x * Y) / y;
   const Z = ((1 - x - y) * Y) / y;
   
-  // Convert XYZ to RGB (using sRGB D65 white point)
-  const r = X * 3.2406 + Y * -1.5372 + Z * -0.4986;
-  const g = X * -0.9689 + Y * 1.8758 + Z * 0.0415;
-  const b = X * 0.0557 + Y * -0.2040 + Z * 1.0570;
+  // Convert XYZ to linear RGB (using sRGB D65 white point)
+  let r = X * 3.2406 + Y * -1.5372 + Z * -0.4986;
+  let g = X * -0.9689 + Y * 1.8758 + Z * 0.0415;
+  let b = X * 0.0557 + Y * -0.2040 + Z * 1.0570;
+  
+  // Gamut mapping: if any component is negative, shift all towards white
+  // This preserves hue and saturation better than simple clamping
+  const minRgb = Math.min(r, g, b);
+  if (minRgb < 0) {
+    r -= minRgb;
+    g -= minRgb;
+    b -= minRgb;
+  }
+  
+  // Normalize to [0,1] range (preserves saturation info)
+  const maxRgb = Math.max(r, g, b, 0.0001);
+  r /= maxRgb;
+  g /= maxRgb;
+  b /= maxRgb;
   
   // Apply gamma correction
   const gammaCorrect = (c: number) => {
@@ -86,9 +147,9 @@ export const xyYToHueSat = (x: number, y: number, Y: number = 1.0) => {
     return 1.055 * Math.pow(c, 1/2.4) - 0.055;
   };
   
-  let red = Math.max(0, Math.min(1, gammaCorrect(r)));
-  let green = Math.max(0, Math.min(1, gammaCorrect(g)));
-  let blue = Math.max(0, Math.min(1, gammaCorrect(b)));
+  const red = gammaCorrect(r);
+  const green = gammaCorrect(g);
+  const blue = gammaCorrect(b);
   
   // Convert RGB to HSV
   const max = Math.max(red, green, blue);
@@ -98,57 +159,23 @@ export const xyYToHueSat = (x: number, y: number, Y: number = 1.0) => {
   let hue = 0;
   if (delta !== 0) {
     if (max === red) {
-      hue = 60 * (((green - blue) / delta) % 6);
+      // Use proper modulo that handles negative values
+      hue = 60 * (((((green - blue) / delta) % 6) + 6) % 6);
     } else if (max === green) {
       hue = 60 * ((blue - red) / delta + 2);
     } else {
       hue = 60 * ((red - green) / delta + 4);
     }
   }
-  if (hue < 0) hue += 360;
   
   const saturation = max === 0 ? 0 : (delta / max) * 100;
   
+  // Normalize hue to [0, 360) - ensure 360 becomes 0
+  let finalHue = Math.round(hue) % 360;
+  if (finalHue < 0) finalHue += 360;
+  
   return {
-    hue: Math.round(hue),
+    hue: finalHue,
     saturation: Math.round(saturation * 100) / 100
-  };
-};
-
-/**
- * Converts RGB to HSV
- * @param {number} r Red [0-255]
- * @param {number} g Green [0-255]
- * @param {number} b Blue [0-255]
- * @returns {object} Object with hue [0-360], saturation [0-100], value [0-100]
- */
-export const rgbToHsv = (r: number, g: number, b: number) => {
-  r = r / 255;
-  g = g / 255;
-  b = b / 255;
-  
-  const max = Math.max(r, g, b);
-  const min = Math.min(r, g, b);
-  const delta = max - min;
-  
-  let hue = 0;
-  if (delta !== 0) {
-    if (max === r) {
-      hue = 60 * (((g - b) / delta) % 6);
-    } else if (max === g) {
-      hue = 60 * ((b - r) / delta + 2);
-    } else {
-      hue = 60 * ((r - g) / delta + 4);
-    }
-  }
-  if (hue < 0) hue += 360;
-  
-  const saturation = max === 0 ? 0 : (delta / max) * 100;
-  const value = max * 100;
-  
-  return {
-    hue: Math.round(hue),
-    saturation: Math.round(saturation * 100) / 100,
-    value: Math.round(value * 100) / 100
   };
 };

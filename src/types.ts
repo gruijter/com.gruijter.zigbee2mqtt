@@ -71,20 +71,12 @@ export type SingleHomeyToZ2MConverter = (homeyVal: any, getCapValue: (cap: strin
 export type MultiZ2MToHomeyConverter = (z2mVal: any, z2mState: Z2MState) => Record<string, any> | null;
 export type MultiHomeyToZ2MConverter = (values: Record<string, any>, getCapValue: (cap: string) => any) => Record<string, any> | null;
 
-// Single-capability tuple: [capability, z2mToHomey, homeyToZ2m?]
-export type SingleCapabilityMapTuple = [string, SingleZ2MToHomeyConverter, SingleHomeyToZ2MConverter?];
-
-// Multi-capability tuple: [capabilities[], z2mToHomey, homeyToZ2m?]
-export type MultiCapabilityMapTuple = { caps: string[], z2mToHomey: MultiZ2MToHomeyConverter, homeyToZ2m?: MultiHomeyToZ2MConverter };
-
-// Raw tuple (as stored in capabilityMap)
-export type AnyCapabilityMapTuple = SingleCapabilityMapTuple | MultiCapabilityMapTuple;
+export type SingleCapabilityMap = [string, SingleZ2MToHomeyConverter, SingleHomeyToZ2MConverter?];
+export type CapabilityMap = { caps: string[], z2mToHomey: MultiZ2MToHomeyConverter, homeyToZ2m?: MultiHomeyToZ2MConverter };
+export type AnyCapabilityMap = SingleCapabilityMap | CapabilityMap;
 
 // Map entry (can be tuple or function returning tuple)
-export type CapabilityMapEntry = AnyCapabilityMapTuple | ((exp: zigbeeHerdsmanConverter.Expose) => AnyCapabilityMapTuple);
-
-// Normalized tuple (always multi-format, returned by resolveCapabilityEntry)
-export type CapabilityMapTuple = MultiCapabilityMapTuple;
+export type CapabilityMapEntry = AnyCapabilityMap | ((exp: zigbeeHerdsmanConverter.Expose) => AnyCapabilityMap);
 
 // Converter result interface from getCapabilityConverters()
 export interface CapabilityConverters {

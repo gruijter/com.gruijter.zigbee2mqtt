@@ -23,13 +23,12 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 import {
   zigbeeHerdsmanConverter, Z2MDevice, CapabilityMappings,
   CapabilityMapEntry,
-  CapabilityMapTuple,
-  AnyCapabilityMapTuple,
+  CapabilityMap,
+  AnyCapabilityMap,
   CapabilityConverters,
-  SingleCapabilityMapTuple,
-  MultiCapabilityMapTuple,
+  SingleCapabilityMap,
 } from './types';
-import { hsbToRgb, xyYToHueSat } from './utilities';
+import { hsToXy, xyYToHueSat } from './utilities';
 
 /*
  * Capability Map
@@ -116,7 +115,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
         light_mode: color_mode === 'color_temp' ? 'temperature' : 'color',
       };
     },
-   homeyToZ2m: (values, getCapValue) => {
+   homeyToZ2m: (values) => {
       const lightMode = values.light_mode;
       if (lightMode === 'temperature') return null;
 
@@ -126,9 +125,8 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
           saturation: values.light_saturation * 100
         } };
       } else {
-        const dim = getCapValue('dim');
-        const { r, g, b } = hsbToRgb(values.light_hue, values.light_saturation, dim);
-        return { color: { r, g, b } };
+        const { x, y } = hsToXy(values.light_hue, values.light_saturation);
+        return { color: { x, y } };
       }
     },
   }),
@@ -246,12 +244,12 @@ function getDeviceModel(device: Z2MDevice): string {
 function resolveCapabilityEntry(
   entry: CapabilityMapEntry,
   expose: zigbeeHerdsmanConverter.Expose,
-): CapabilityMapTuple {
-  const tuple: AnyCapabilityMapTuple = typeof entry === 'function' ? entry(expose) : entry;
+): CapabilityMap {
+  const tuple: AnyCapabilityMap = typeof entry === 'function' ? entry(expose) : entry;
   
   if (Array.isArray(tuple)) {
     // Normalize single-cap tuple to multi-cap format
-    const [cap, z2mToHomey, homeyToZ2m] = tuple as SingleCapabilityMapTuple;
+    const [cap, z2mToHomey, homeyToZ2m] = tuple as SingleCapabilityMap;
     return {
       caps: [cap],
       z2mToHomey: (z2mVal, z2mState) => {
