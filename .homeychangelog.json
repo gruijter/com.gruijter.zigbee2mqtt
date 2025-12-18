@@ -1,4 +1,7 @@
 {
+  "3.1.0" : {
+    "en": "Fixes light/color issues. Cleaner codebase. Easier dev contributions."
+  },
   "3.0.2" : {
     "en": "Fix device migration. Fix flow triggers."
   },
