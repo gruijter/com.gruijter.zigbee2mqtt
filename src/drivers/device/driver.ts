@@ -63,7 +63,7 @@ module.exports = class ZigbeeDeviceDriver extends Zigbee2MQTTDriver {
                   id: dev.ieee_address, // `zigbee2mqtt_${Math.random().toString(16).substring(2, 8)}`,
                 },
                 icon, // "/my_icon.svg", // relative to: /drivers/<driver_id>/assets/
-                capabilities: Object.values(capabilityMappings).map((m) => m.homeyCapability),
+                capabilities: Object.values(capabilityMappings).flatMap((m) => m.homeyCapabilities),
                 store: { capabilityMappings },
                 settings,
               });
