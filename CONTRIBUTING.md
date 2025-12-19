@@ -1,83 +1,82 @@
 # Contributing to Zigbee2MQTT for Homey
 
-Thank you for your interest in contributing! This guide covers the two main types of contributions.
+Thank you for your interest in contributing!
 
----
+## Quick Reference
 
-## 1. Adding Missing Properties (Most Common)
+| I want to... | Go to |
+|--------------|-------|
+| Request support for a device property | [Request Device Support](#1-request-device-support-non-developers) |
+| Add a property mapping myself | [Add a Property](#2-add-a-property-developers) |
+| Fix a bug or add a feature | [Code Changes](#3-code-changes) |
 
-This is the most requested type of contribution. New Zigbee devices often have properties that aren't yet mapped to Homey capabilities.
+## 1. Request Device Support (Non-Developers)
 
-### For Non-Developers
+If you don't code but want to request support for a device property, **open an issue** with the following information.
 
-If you don't code but want to request support for a device property, please **open an issue** with the following information:
+### Getting the Device Definition (Required)
 
-**Required: Device Definition**
 1. Open Zigbee2MQTT web app
 2. Go to your device page
-3. Click **Dev Console**
-4. Click **Show definition**
-5. Copy and paste the full JSON in your issue
+3. Click **Dev Console** → **Show definition**
+4. Copy the full JSON
 
-This definition contains the `exposes` array with all properties, their types, value ranges, and access permissions — everything a developer needs to add support.
+This contains the `exposes` array with all properties, their types, value ranges, and access permissions.
 
-**Helpful: Device State**
+### Getting the Device State (Helpful)
+
 1. Open Zigbee2MQTT web app
-2. Go to your device page
-3. Go to the **State** tab
-4. Copy the state values
+2. Go to your device page → **State** tab
+3. Copy the state values
 
-**Issue template:**
+### Issue Template
 
-```
-**Device:** [Manufacturer and model name]
-**Missing property:** [The Z2M property name you want supported]
-**Expected Homey capability:** [What you expect it to do in Homey]
+~~~
+Device: [Manufacturer and model name]
+Missing property: [The Z2M property name you want supported]
+Expected Homey capability: [What you expect it to do in Homey]
 
-**Device Definition:**
+Device Definition:
 ```json
 [Paste definition here]
 ```
 
-**Device State:**
+Device State:
 ```json
 [Paste state here]
 ```
-```
+~~~
 
----
+## 2. Add a Property (Developers)
 
-### For Developers
+To add support for a Z2M property, you'll map it to a Homey capability. Most properties only require editing one file — the more complex cases need custom capability definitions.
 
-**Files to edit:**
+### Files Overview
 
-1. **`src/capabilitymap.ts`** — The main file where Z2M properties are mapped to Homey capabilities. This is usually the only file you need to modify.
+| File | When to edit |
+|------|--------------|
+| `src/capabilitymap.ts` | Always — maps Z2M properties to Homey capabilities |
+| `.homeycompose/capabilities/*.json` | Only for custom capabilities not built into Homey |
+| `.homeycompose/flow/actions/*.json` | Only for settable custom capabilities |
+| `.homeycompose/flow/triggers/*.json` | Only for custom capabilities needing flow triggers |
 
-2. **`.homeycompose/capabilities/*.json`** — Only if you need to add a custom capability that doesn't exist in Homey.
-
-3. **`.homeycompose/flow/triggers/*.json`** — Only for custom capabilities that need flow triggers.
-
-4. **`.homeycompose/flow/actions/*.json`** — Only for settable custom capabilities that need flow actions.
-
-**Mapping syntax:**
+### Mapping Syntax
 
 ```typescript
 // Single capability (simple)
-property_name: ['homey_capability', (v) => transformedValue, (v) => ({ property_name: reverseTransform })],
+property_name: ['homey_capability', (v) => capValue, (v) => ({ property_name: z2mValue })],
 
-// Multi-capability (for properties that map to multiple Homey capabilities)
+// Multi-capability (maps to multiple Homey capabilities)
 property_name: (expose) => ({
   caps: ['cap1', 'cap2'],
   z2mToHomey: (z2mValue, z2mState) => ({ cap1: val1, cap2: val2 }),
-  homeyToZ2m: (values, getCapValue) => ({ property_name: payload }),
+  homeyToZ2m: (values) => ({ property_name: payload }),
 }),
 ```
 
 See the comment block at the top of `capabilitymap.ts` for detailed syntax documentation.
 
----
-
-**Real-world example: Adding an enum property (`pilot_wire_mode`)**
+### Example: Adding `pilot_wire_mode`
 
 Given this device definition expose:
 
@@ -96,7 +95,7 @@ Given this device definition expose:
 pilot_wire_mode: ['pilot_wire_mode', (v) => v, (v) => ({ pilot_wire_mode: v })],
 ```
 
-**Step 2:** Since `pilot_wire_mode` is a custom capability (not built-in to Homey), create `.homeycompose/capabilities/pilot_wire_mode.json`:
+**Step 2:** Create the custom capability `.homeycompose/capabilities/pilot_wire_mode.json`:
 
 ```json
 {
@@ -116,7 +115,7 @@ pilot_wire_mode: ['pilot_wire_mode', (v) => v, (v) => ({ pilot_wire_mode: v })],
 }
 ```
 
-**Step 3:** Since it's settable (`access: 3`), create a flow action in `.homeycompose/flow/actions/pilot_wire_mode.json`:
+**Step 3:** Since it's settable (`access: 3`), create `.homeycompose/flow/actions/pilot_wire_mode.json`:
 
 ```json
 {
@@ -133,74 +132,54 @@ pilot_wire_mode: ['pilot_wire_mode', (v) => v, (v) => ({ pilot_wire_mode: v })],
 }
 ```
 
-> **Tip:** For read-only properties (`access: 1`), you only need steps 1-2. For properties using existing Homey capabilities, you only need step 1.
+> **Tip:** For read-only properties (`access: 1`), skip step 3. For built-in Homey capabilities, only step 1 is needed.
 
-**Key resources to gather before coding:**
+### Understanding the Device Definition
 
-1. **Device Definition** — Found in Zigbee2MQTT web app:
-   - Go to your device page
-   - Open **Dev Console**
-   - Click **Show definition**
-   
-   This JSON contains everything you need to add a property:
-   - `exposes[]` — All available properties with their `property` name (the key for capabilityMap)
-   - `type` — Property type (numeric, binary, enum, composite...)
-   - `access` — Read/write permissions (1=read, 2=write, 7=read+write)
-   - `value_min`/`value_max` — Value ranges for numeric properties
-   - `values[]` — Possible values for enum properties
-   - `features[]` — Nested properties for composite types (like color with x/y)
+The device definition JSON (from Dev Console → Show definition) contains:
 
-2. **Device State** — Found in Zigbee2MQTT web app:
-   - Go to your device page
-   - Check the **State** tab
-   - This shows the actual property values your device exposes
+| Field | Description |
+|-------|-------------|
+| `exposes[].property` | The property name (key for capabilityMap) |
+| `exposes[].type` | Property type: `numeric`, `binary`, `enum`, `composite` |
+| `exposes[].access` | Permissions: `1`=read, `2`=write, `3` or `7`=read+write |
+| ... |  |
 
-3. **Zigbee2MQTT Exposes Documentation** — https://www.zigbee2mqtt.io/guide/usage/exposes.html
+📖 [Zigbee2MQTT Exposes Documentation](https://www.zigbee2mqtt.io/guide/usage/exposes.html)
 
-**Submitting your contribution:**
+### Submitting Your PR
 
 1. Fork the repository
 2. Create a branch for your changes
-3. Edit `src/capabilitymap.ts` (and other files if needed)
+3. Edit the necessary files
 4. Test with your device
 5. Open a Pull Request with:
-   - The device model/name
-   - The property you added
-   - The device definition JSON (for reference)
+   - Device model/name
+   - Property you added
+   - Device definition JSON (for reference)
 
----
+## 3. Code Changes
 
-## 2. Code Fixes, Improvements, or Features
-
-For bug fixes, code improvements, or new features:
+For bug fixes, improvements, or new features:
 
 1. **Open an issue first** to discuss your proposed change
 2. Fork the repository and create a feature branch
 3. Make your changes
-4. Ensure TypeScript compiles without errors: `npm run build`
-5. Test your changes thoroughly
-6. Submit a Pull Request with a clear description of:
+4. Ensure TypeScript compiles: `npm run build`
+5. Test thoroughly
+6. Submit a Pull Request describing:
    - What problem you're solving
    - How you solved it
    - Any breaking changes
 
----
-
 ## Development Setup
 
 ```bash
-# Install dependencies
-npm install
-
-# Build TypeScript
-npm run build
-
-# Run Homey app (requires Homey CLI)
-homey start
+npm install          # Install dependencies
+npm run build        # Build TypeScript
+homey app run        # Run app (requires Homey CLI)
 ```
-
----
 
 ## Questions?
 
-If you're unsure about anything, feel free to open an issue for discussion before starting work.
+Open an issue for discussion before starting work.
