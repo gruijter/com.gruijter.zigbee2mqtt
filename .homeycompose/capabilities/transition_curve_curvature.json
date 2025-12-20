@@ -1,0 +1,8 @@
+{
+  "type": "number",
+  "title": { "en": "Transition Curve" },
+  "getable": true,
+  "settable": true,
+  "uiComponent": "sensor",
+  "decimals": 2
+}

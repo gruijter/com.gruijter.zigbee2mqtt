@@ -22,6 +22,16 @@
       },
       "uiQuickAction": false
     },
+    "operation_mode_top": {
+      "title": {
+        "en": "Operation Mode (Top)"
+      }
+    },
+    "operation_mode_bottom": {
+      "title": {
+        "en": "Operation Mode (Bottom)"
+      }
+    },
     "onoff.backlight": {
       "title": {
         "en": "Backlight"
@@ -48,7 +58,7 @@
     },
     "onoff.l1": {
       "title": {
-        "en": "L1"
+        "en": "Bottom Switch"
       },
       "uiQuickAction": true
     },

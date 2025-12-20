@@ -1,0 +1,11 @@
+{
+  "type": "enum",
+  "title": { "en": "Time Format" },
+  "getable": true,
+  "settable": true,
+  "uiComponent": "picker",
+  "values": [
+    { "id": "12h", "title": { "en": "12h" } },
+    { "id": "24h", "title": { "en": "24h" } }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "enum",
+  "title": { "en": "Secondary Display" },
+  "getable": true,
+  "settable": true,
+  "uiComponent": "picker",
+  "values": [
+    { "id": "auto", "title": { "en": "Auto" } },
+    { "id": "setpoint", "title": { "en": "Setpoint" } },
+    { "id": "outdoor temp", "title": { "en": "Outdoor Temp" } }
+  ]
+}

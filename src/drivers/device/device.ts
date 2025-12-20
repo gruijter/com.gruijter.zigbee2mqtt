@@ -61,6 +61,56 @@ module.exports = class ZigbeeDevice extends Zigbee2MQTTDevice {
     await super.registerHomeyEventListeners();
   }
 
+  async migrateStore() {
+    let storeChanged = await super.migrateStore();
+    const deviceId = this.getData().id as string;
+    const mappings = this.getStore().capabilityMappings;
+
+    if (!mappings) return storeChanged; // Should not happen after super.migrateStore()
+
+    if (deviceId.endsWith('_top')) {
+      // Filter out bottom capabilities for Top device
+      if (mappings.state_bottom || mappings.operation_mode_bottom) {
+        this.log('Applying split-device filter for TOP device');
+        delete mappings.state_bottom;
+        delete mappings.operation_mode_bottom;
+        await this.setStoreValue('capabilityMappings', mappings);
+        storeChanged = true;
+      }
+    } else if (deviceId.endsWith('_bottom')) {
+      // Filter out top capabilities and shared stats for Bottom device
+      const needsMigration = mappings.state_top 
+        || mappings.operation_mode_top 
+        || mappings.power 
+        || mappings.energy
+        || mappings.state_bottom?.homeyCapabilities[0] !== 'onoff';
+
+      if (needsMigration) {
+        this.log('Applying split-device filter for BOTTOM device');
+        delete mappings.state_top;
+        delete mappings.operation_mode_top;
+        delete mappings.power;
+        delete mappings.energy;
+        delete mappings.voltage;
+        delete mappings.current;
+        
+        // Remap state_bottom to main 'onoff' capability
+        if (mappings.state_bottom) {
+          mappings.state_bottom.homeyCapabilities = ['onoff'];
+        }
+
+        await this.setStoreValue('capabilityMappings', mappings);
+        storeChanged = true;
+      }
+    }
+
+    if (storeChanged) {
+      this.store = this.getStore();
+    }
+
+    return storeChanged;
+  }
+
   destroyListeners() {
     super.destroyListeners();
     if (this.eventListenerDeviceListUpdate) this.homey.removeListener('devicelistupdate', this.eventListenerDeviceListUpdate);

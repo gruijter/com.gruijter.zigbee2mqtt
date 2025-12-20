@@ -1,0 +1,11 @@
+{
+  "type": "enum",
+  "title": { "en": "Backlight Auto Dim" },
+  "getable": true,
+  "settable": true,
+  "uiComponent": "picker",
+  "values": [
+    { "id": "on_demand", "title": { "en": "On Demand" } },
+    { "id": "sensing", "title": { "en": "Sensing" } }
+  ]
+}

@@ -11,3 +11,6 @@ zzz*
 
 /scripts
 capture.log
+
+*.js.map
+state.json

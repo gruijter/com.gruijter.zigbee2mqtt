@@ -1,0 +1,9 @@
+{
+  "type": "number",
+  "title": { "en": "Outdoor Temperature" },
+  "getable": true,
+  "settable": true,
+  "uiComponent": "sensor",
+  "units": { "en": "°C" },
+  "decimals": 1
+}

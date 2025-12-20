@@ -1,0 +1,11 @@
+{
+  "type": "number",
+  "title": { "en": "Dimming Range Max" },
+  "getable": true,
+  "settable": true,
+  "uiComponent": "sensor",
+  "units": { "en": "%" },
+  "decimals": 0,
+  "min": 2,
+  "max": 100
+}

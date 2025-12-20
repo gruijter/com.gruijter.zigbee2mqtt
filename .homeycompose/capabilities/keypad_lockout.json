@@ -1,0 +1,11 @@
+{
+  "type": "enum",
+  "title": { "en": "Keypad Lockout" },
+  "getable": true,
+  "settable": true,
+  "uiComponent": "picker",
+  "values": [
+    { "id": "unlock", "title": { "en": "Unlock" } },
+    { "id": "lock1", "title": { "en": "Lock" } }
+  ]
+}

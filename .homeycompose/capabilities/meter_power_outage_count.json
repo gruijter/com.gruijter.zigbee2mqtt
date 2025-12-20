@@ -1,0 +1,10 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Power Outage Count"
+  },
+  "getable": true,
+  "settable": false,
+  "uiComponent": "sensor",
+  "decimals": 0
+}

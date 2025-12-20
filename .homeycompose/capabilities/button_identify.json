@@ -1,0 +1,7 @@
+{
+  "type": "boolean",
+  "title": { "en": "Identify" },
+  "getable": false,
+  "settable": true,
+  "uiComponent": "button"
+}

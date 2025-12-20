@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "AC Frequency"
+  },
+  "getable": true,
+  "settable": false,
+  "uiComponent": "sensor",
+  "decimals": 0,
+  "units": {
+    "en": "Hz"
+  }
+}

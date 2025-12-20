@@ -1,0 +1,11 @@
+{
+  "type": "enum",
+  "title": { "en": "Main Cycle Output" },
+  "getable": true,
+  "settable": true,
+  "uiComponent": "picker",
+  "values": [
+    { "id": "15_sec", "title": { "en": "15 Seconds" } },
+    { "id": "15_min", "title": { "en": "15 Minutes" } }
+  ]
+}

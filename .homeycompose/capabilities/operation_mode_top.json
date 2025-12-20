@@ -1,0 +1,23 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Operation Mode (Top)"
+  },
+  "getable": true,
+  "settable": true,
+  "values": [
+    {
+      "id": "control_relay",
+      "title": {
+        "en": "Control Relay"
+      }
+    },
+    {
+      "id": "decoupled",
+      "title": {
+        "en": "Decoupled"
+      }
+    }
+  ],
+  "uiComponent": "picker"
+}
