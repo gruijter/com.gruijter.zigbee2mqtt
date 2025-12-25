@@ -5263,6 +5263,32 @@
         "id": "target_temperature.local"
       },
       {
+        "id": "thermostat_outdoor_temperature",
+        "title": {
+          "en": "Set Outdoor Temperature"
+        },
+        "titleFormatted": {
+          "en": "Set outdoor temperature to [[val]] °C"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=device&capabilities=thermostat_outdoor_temperature"
+          },
+          {
+            "name": "val",
+            "type": "number",
+            "title": {
+              "en": "Temperature"
+            },
+            "min": -40,
+            "max": 50,
+            "step": 0.5
+          }
+        ]
+      },
+      {
         "title": {
           "en": "Set valve state",
           "nl": "Stel klepstand in",
@@ -5681,6 +5707,16 @@
           },
           "uiQuickAction": false
         },
+        "operation_mode_top": {
+          "title": {
+            "en": "Operation Mode (Top)"
+          }
+        },
+        "operation_mode_bottom": {
+          "title": {
+            "en": "Operation Mode (Bottom)"
+          }
+        },
         "onoff.backlight": {
           "title": {
             "en": "Backlight"
@@ -5707,7 +5743,7 @@
         },
         "onoff.l1": {
           "title": {
-            "en": "L1"
+            "en": "Bottom Switch"
           },
           "uiQuickAction": true
         },
@@ -6704,6 +6740,38 @@
       "insights": false,
       "icon": "./assets/allow_joining_timeout.svg"
     },
+    "backlight_auto_dim": {
+      "type": "enum",
+      "title": {
+        "en": "Backlight Auto Dim"
+      },
+      "getable": true,
+      "settable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "on_demand",
+          "title": {
+            "en": "On Demand"
+          }
+        },
+        {
+          "id": "sensing",
+          "title": {
+            "en": "Sensing"
+          }
+        }
+      ]
+    },
+    "button_identify": {
+      "type": "boolean",
+      "title": {
+        "en": "Identify"
+      },
+      "getable": false,
+      "settable": true,
+      "uiComponent": "button"
+    },
     "color_power_on_behavior": {
       "type": "enum",
       "title": {
@@ -6915,6 +6983,36 @@
       "setable": false,
       "insights": false
     },
+    "dimming_range_maximum": {
+      "type": "number",
+      "title": {
+        "en": "Dimming Range Max"
+      },
+      "getable": true,
+      "settable": true,
+      "uiComponent": "sensor",
+      "units": {
+        "en": "%"
+      },
+      "decimals": 0,
+      "min": 2,
+      "max": 100
+    },
+    "dimming_range_minimum": {
+      "type": "number",
+      "title": {
+        "en": "Dimming Range Min"
+      },
+      "getable": true,
+      "settable": true,
+      "uiComponent": "sensor",
+      "units": {
+        "en": "%"
+      },
+      "decimals": 0,
+      "min": 1,
+      "max": 99
+    },
     "effect": {
       "type": "enum",
       "title": {
@@ -7074,6 +7172,16 @@
       "setable": true,
       "insights": false
     },
+    "flip_indicator_light": {
+      "type": "boolean",
+      "title": {
+        "en": "Flip Indicator Light"
+      },
+      "getable": true,
+      "settable": true,
+      "uiComponent": "toggle",
+      "uiQuickAction": false
+    },
     "indicator_mode": {
       "type": "enum",
       "title": {
@@ -7165,6 +7273,78 @@
       "setable": true,
       "insights": false
     },
+    "keypad_lockout": {
+      "type": "enum",
+      "title": {
+        "en": "Keypad Lockout"
+      },
+      "getable": true,
+      "settable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "unlock",
+          "title": {
+            "en": "Unlock"
+          }
+        },
+        {
+          "id": "lock1",
+          "title": {
+            "en": "Lock"
+          }
+        }
+      ]
+    },
+    "main_cycle_output": {
+      "type": "enum",
+      "title": {
+        "en": "Main Cycle Output"
+      },
+      "getable": true,
+      "settable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "15_sec",
+          "title": {
+            "en": "15 Seconds"
+          }
+        },
+        {
+          "id": "15_min",
+          "title": {
+            "en": "15 Minutes"
+          }
+        }
+      ]
+    },
+    "measure_device_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Device Temperature"
+      },
+      "getable": true,
+      "settable": false,
+      "uiComponent": "sensor",
+      "decimals": 1,
+      "units": {
+        "en": "°C"
+      }
+    },
+    "measure_frequency": {
+      "type": "number",
+      "title": {
+        "en": "AC Frequency"
+      },
+      "getable": true,
+      "settable": false,
+      "uiComponent": "sensor",
+      "decimals": 0,
+      "units": {
+        "en": "Hz"
+      }
+    },
     "measure_linkquality": {
       "type": "number",
       "title": {
@@ -7199,6 +7379,18 @@
       "setable": false,
       "insights": true,
       "icon": "./assets/link_quality.svg"
+    },
+    "measure_power_factor": {
+      "type": "number",
+      "title": {
+        "en": "Power Factor"
+      },
+      "getable": true,
+      "settable": false,
+      "uiComponent": "sensor",
+      "decimals": 2,
+      "min": -1,
+      "max": 1
     },
     "measure_voltage_mv": {
       "type": "number",
@@ -7534,6 +7726,16 @@
       "insights": true,
       "icon": "./assets/meter_offline_devices.svg"
     },
+    "meter_power_outage_count": {
+      "type": "number",
+      "title": {
+        "en": "Power Outage Count"
+      },
+      "getable": true,
+      "settable": false,
+      "uiComponent": "sensor",
+      "decimals": 0
+    },
     "meter_strength": {
       "type": "number",
       "title": {
@@ -7569,6 +7771,29 @@
       "insights": true,
       "icon": "./assets/vibrationstrength.svg"
     },
+    "mode_switch": {
+      "type": "enum",
+      "title": {
+        "en": "Mode Switch"
+      },
+      "getable": true,
+      "settable": true,
+      "values": [
+        {
+          "id": "anti_flicker_mode",
+          "title": {
+            "en": "Anti-Flicker Mode"
+          }
+        },
+        {
+          "id": "quick_mode",
+          "title": {
+            "en": "Quick Mode"
+          }
+        }
+      ],
+      "uiComponent": "picker"
+    },
     "motion_state": {
       "type": "string",
       "title": {
@@ -7588,6 +7813,104 @@
       "getable": true,
       "setable": false,
       "insights": true
+    },
+    "off_on_duration": {
+      "type": "number",
+      "title": {
+        "en": "Off-On Duration"
+      },
+      "getable": true,
+      "settable": true,
+      "uiComponent": "sensor",
+      "units": {
+        "en": "s"
+      },
+      "decimals": 1
+    },
+    "on_off_duration": {
+      "type": "number",
+      "title": {
+        "en": "On-Off Duration"
+      },
+      "getable": true,
+      "settable": true,
+      "uiComponent": "sensor",
+      "units": {
+        "en": "s"
+      },
+      "decimals": 1
+    },
+    "operation_mode_bottom": {
+      "type": "enum",
+      "title": {
+        "en": "Operation Mode (Bottom)"
+      },
+      "getable": true,
+      "settable": true,
+      "values": [
+        {
+          "id": "control_relay",
+          "title": {
+            "en": "Control Relay"
+          }
+        },
+        {
+          "id": "decoupled",
+          "title": {
+            "en": "Decoupled"
+          }
+        }
+      ],
+      "uiComponent": "picker"
+    },
+    "operation_mode_top": {
+      "type": "enum",
+      "title": {
+        "en": "Operation Mode (Top)"
+      },
+      "getable": true,
+      "settable": true,
+      "values": [
+        {
+          "id": "control_relay",
+          "title": {
+            "en": "Control Relay"
+          }
+        },
+        {
+          "id": "decoupled",
+          "title": {
+            "en": "Decoupled"
+          }
+        }
+      ],
+      "uiComponent": "picker"
+    },
+    "outdoor_temperature_timeout": {
+      "type": "number",
+      "title": {
+        "en": "Outdoor Temp Timeout"
+      },
+      "getable": true,
+      "settable": true,
+      "uiComponent": "sensor",
+      "units": {
+        "en": "s"
+      },
+      "decimals": 0
+    },
+    "pi_heating_demand": {
+      "type": "number",
+      "title": {
+        "en": "Heating Demand"
+      },
+      "getable": true,
+      "settable": false,
+      "uiComponent": "sensor",
+      "units": {
+        "en": "%"
+      },
+      "decimals": 0
     },
     "pilot_wire_mode": {
       "type": "enum",
@@ -8006,6 +8329,35 @@
       "getable": true,
       "setable": false,
       "insights": true
+    },
+    "second_display_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Secondary Display"
+      },
+      "getable": true,
+      "settable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto"
+          }
+        },
+        {
+          "id": "setpoint",
+          "title": {
+            "en": "Setpoint"
+          }
+        },
+        {
+          "id": "outdoor temp",
+          "title": {
+            "en": "Outdoor Temp"
+          }
+        }
+      ]
     },
     "sensitivity": {
       "type": "enum",
@@ -8672,6 +9024,111 @@
       "setable": false,
       "insights": true,
       "icon": "./assets/meter_mpm.svg"
+    },
+    "temperature_display_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Temperature Format"
+      },
+      "getable": true,
+      "settable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "celsius",
+          "title": {
+            "en": "Celsius"
+          }
+        },
+        {
+          "id": "fahrenheit",
+          "title": {
+            "en": "Fahrenheit"
+          }
+        }
+      ]
+    },
+    "thermostat_occupancy": {
+      "type": "enum",
+      "title": {
+        "en": "Thermostat Occupancy"
+      },
+      "getable": true,
+      "settable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "unoccupied",
+          "title": {
+            "en": "Unoccupied"
+          }
+        },
+        {
+          "id": "occupied",
+          "title": {
+            "en": "Occupied"
+          }
+        }
+      ]
+    },
+    "thermostat_outdoor_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Outdoor Temperature"
+      },
+      "getable": true,
+      "settable": true,
+      "uiComponent": "sensor",
+      "units": {
+        "en": "°C"
+      },
+      "decimals": 1
+    },
+    "time_format": {
+      "type": "enum",
+      "title": {
+        "en": "Time Format"
+      },
+      "getable": true,
+      "settable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "12h",
+          "title": {
+            "en": "12h"
+          }
+        },
+        {
+          "id": "24h",
+          "title": {
+            "en": "24h"
+          }
+        }
+      ]
+    },
+    "transition_curve_curvature": {
+      "type": "number",
+      "title": {
+        "en": "Transition Curve"
+      },
+      "getable": true,
+      "settable": true,
+      "uiComponent": "sensor",
+      "decimals": 2
+    },
+    "transition_initial_brightness": {
+      "type": "number",
+      "title": {
+        "en": "Transition Init Brightness"
+      },
+      "getable": true,
+      "settable": true,
+      "uiComponent": "sensor",
+      "units": {
+        "en": "%"
+      },
+      "decimals": 0
     },
     "valve_state": {
       "type": "number",

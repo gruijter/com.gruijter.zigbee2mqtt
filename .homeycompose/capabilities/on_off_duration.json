@@ -1,0 +1,9 @@
+{
+  "type": "number",
+  "title": { "en": "On-Off Duration" },
+  "getable": true,
+  "settable": true,
+  "uiComponent": "sensor",
+  "units": { "en": "s" },
+  "decimals": 1
+}

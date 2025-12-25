@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Device Temperature"
+  },
+  "getable": true,
+  "settable": false,
+  "uiComponent": "sensor",
+  "decimals": 1,
+  "units": {
+    "en": "°C"
+  }
+}

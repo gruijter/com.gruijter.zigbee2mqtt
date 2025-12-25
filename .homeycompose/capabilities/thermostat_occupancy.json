@@ -1,0 +1,11 @@
+{
+  "type": "enum",
+  "title": { "en": "Thermostat Occupancy" },
+  "getable": true,
+  "settable": true,
+  "uiComponent": "picker",
+  "values": [
+    { "id": "unoccupied", "title": { "en": "Unoccupied" } },
+    { "id": "occupied", "title": { "en": "Occupied" } }
+  ]
+}

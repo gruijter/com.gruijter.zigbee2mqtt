@@ -1,0 +1,10 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Flip Indicator Light"
+  },
+  "getable": true,
+  "settable": true,
+  "uiComponent": "toggle",
+  "uiQuickAction": false
+}

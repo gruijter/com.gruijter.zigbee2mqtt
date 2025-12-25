@@ -1,0 +1,9 @@
+{
+  "type": "number",
+  "title": { "en": "Outdoor Temp Timeout" },
+  "getable": true,
+  "settable": true,
+  "uiComponent": "sensor",
+  "units": { "en": "s" },
+  "decimals": 0
+}

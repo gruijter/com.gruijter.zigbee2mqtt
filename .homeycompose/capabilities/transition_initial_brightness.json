@@ -1,0 +1,9 @@
+{
+  "type": "number",
+  "title": { "en": "Transition Init Brightness" },
+  "getable": true,
+  "settable": true,
+  "uiComponent": "sensor",
+  "units": { "en": "%" },
+  "decimals": 0
+}

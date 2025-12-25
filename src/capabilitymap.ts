@@ -67,7 +67,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   temperature: ['measure_temperature', (v) => Number(v)],
   occupied_heating_setpoint: ['target_temperature.local', (v) => Number(v), (v) => ({ occupied_heating_setpoint: Number(v) })],
   local_temperature: ['measure_temperature.local', (v) => Number(v)],
-  device_temperature: ['measure_temperature.device', (v) => Number(v)],
+  device_temperature: ['measure_device_temperature', (v) => Number(v)],
   co: ['measure_co', (v) => Number(v)],
   co2: ['measure_co2', (v) => Number(v)],
   smoke_concentration: ['measure_pm1', (v) => Number(v)],
@@ -88,6 +88,8 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   position: ['windowcoverings_set', (v) => Number(v) / 100, (v) => ({ position: Number(v) * 100 })],
   valve_state: ['valve_state', (v) => Number(v), (v) => ({ valve_state: Number(v) * 100 })],
   target_distance: ['target_distance', (v) => Number(v)],
+  ac_frequency: ['measure_frequency', (v) => Number(v)],
+  power_factor: ['measure_power_factor', (v) => Number(v)],
 
   // Color light related number capabilities
   brightness: ['dim', (v) => Number(v) / 254, (v) => ({ brightness: Number(v) * 254 })],
@@ -138,6 +140,16 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
 
   // Standard Homey Boolean capabilities
   state: ['onoff', (v) => v === 'ON', (v) => ({ state: v ? 'ON' : 'OFF' })],
+  state_top: ['onoff', (v) => v === 'ON', (v) => ({ state_top: v ? 'ON' : 'OFF' })],
+  state_bottom: {
+    caps: ['onoff', 'onoff.l1'],
+    z2mToHomey: (v) => ({ onoff: v === 'ON', 'onoff.l1': v === 'ON' }),
+    homeyToZ2m: (values) => {
+      const val = values.onoff !== undefined ? values.onoff : values['onoff.l1'];
+      if (val === undefined) return null;
+      return { state_bottom: val ? 'ON' : 'OFF' };
+    },
+  },
   state_l1: ['onoff.l1', (v) => v === 'ON', (v) => ({ state_l1: v ? 'ON' : 'OFF' })],
   state_l2: ['onoff.l2', (v) => v === 'ON', (v) => ({ state_l2: v ? 'ON' : 'OFF' })],
   state_l3: ['onoff.l3', (v) => v === 'ON', (v) => ({ state_l3: v ? 'ON' : 'OFF' })],
@@ -204,7 +216,34 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   sensitivity: ['sensitivity', (v) => v, (v) => ({ sensitivity: v })], // [low, medium, high]
   motion_sensitivity: ['sensitivity.motion', (v) => v, (v) => ({ motion_sensitivity: v })], // [low, medium, high]
   pilot_wire_mode: ['pilot_wire_mode', (v) => v, (v) => ({ pilot_wire_mode: v })], // [comfort, eco, frost_protection, off, comfort_-1, comfort_-2]
+  operation_mode_top: ['operation_mode_top', (v) => v, (v) => ({ operation_mode_top: v })],
+  operation_mode_bottom: ['operation_mode_bottom', (v) => v, (v) => ({ operation_mode_bottom: v })],
+  flip_indicator_light: ['flip_indicator_light', (v) => v === 'ON', (v) => ({ flip_indicator_light: v ? 'ON' : 'OFF' })], // Setting
+  mode_switch: ['mode_switch', (v) => v, (v) => ({ mode_switch: v })], // Setting
+  power_outage_count: ['meter_power_outage_count', (v) => Number(v)],
+
+  // Thermostat custom mappings
+  thermostat_occupancy: ['thermostat_occupancy', (v) => v, (v) => ({ thermostat_occupancy: v })], 
+  pi_heating_demand: ['pi_heating_demand', (v) => Number(v)],
+  second_display_mode: ['second_display_mode', (v) => v, (v) => ({ second_display_mode: v })],
+  thermostat_outdoor_temperature: ['thermostat_outdoor_temperature', (v) => Number(v), (v) => ({ thermostat_outdoor_temperature: Number(v) })],
+  outdoor_temperature_timeout: ['outdoor_temperature_timeout', (v) => Number(v), (v) => ({ outdoor_temperature_timeout: Number(v) })],
+  temperature_display_mode: ['temperature_display_mode', (v) => v, (v) => ({ temperature_display_mode: v })],
+  time_format: ['time_format', (v) => v, (v) => ({ time_format: v })],
+  backlight_auto_dim: ['backlight_auto_dim', (v) => v, (v) => ({ backlight_auto_dim: v })],
+  keypad_lockout: ['keypad_lockout', (v) => v, (v) => ({ keypad_lockout: v })],
+  main_cycle_output: ['main_cycle_output', (v) => v, (v) => ({ main_cycle_output: v })],
+
+  // Bulb custom mappings
+  identify: ['button_identify', (v) => v === 'identify', () => ({ identify: 'identify' })],
+  dimming_range_minimum: ['dimming_range_minimum', (v) => Number(v), (v) => ({ dimming_range_minimum: Number(v) })],
+  dimming_range_maximum: ['dimming_range_maximum', (v) => Number(v), (v) => ({ dimming_range_maximum: Number(v) })],
+  off_on_duration: ['off_on_duration', (v) => Number(v), (v) => ({ off_on_duration: Number(v) })],
+  on_off_duration: ['on_off_duration', (v) => Number(v), (v) => ({ on_off_duration: Number(v) })],
+  transition_curve_curvature: ['transition_curve_curvature', (v) => Number(v), (v) => ({ transition_curve_curvature: Number(v) })],
+  transition_initial_brightness: ['transition_initial_brightness', (v) => Number(v), (v) => ({ transition_initial_brightness: Number(v) })],
 };
+
 
 // Define the skip map for specific device models (model name -> capabilities to skip)
 const propertySkipMap: { [model: string]: string[] } = {
@@ -359,26 +398,50 @@ export function mapCapabilities(device: Z2MDevice, options: MapCapabilitiesOptio
 export function mapClassAndIcon(device: Z2MDevice) {
   let homeyClass = 'other';
   let icon = '/icons/zigbee.svg';
+
   if (device.definition?.description) {
     const description = device.definition.description.toLowerCase();
     if (description.includes('switch') || description.includes('plug') || description.includes('outlet')) {
       homeyClass = 'socket';
-      icon = '/icons/socket.svg';
+      icon = 'socket.svg';
     } else if (description.includes('light') || description.includes('lamp') || description.includes('bulb') || description.includes('spot')) {
       homeyClass = 'light';
-      icon = '/icons/light.svg';
+      icon = 'light.svg';
     } else if (description.includes('motion') || description.includes('presence')) {
       homeyClass = 'sensor';
-      icon = '/icons/motion.svg';
+      icon = 'motion.svg';
     } else if (description.includes('contact') || description.includes('door') || description.includes('window')) {
       homeyClass = 'sensor';
-      icon = '/icons/contact.svg';
+      icon = 'contact.svg';
     } else if (description.includes('temperature') || description.includes('humidity') || description.includes('pressure')) {
       homeyClass = 'sensor';
-      icon = '/icons/climate.svg';
+      icon = 'climate.svg'; // Check if climate.svg exists, wait. 2164 says it DOES NOT. 2164 says: thermostat.svg, soil_sensor.svg...
+      // Re-checking list from Step 2164:
+      // contact.svg, light.svg, motion.svg, socket.svg, thermostat.svg, vibration_sensor.svg, window_coverings.svg, wireless_switch.svg, smoke_detector.svg
+      // No climate.svg. Usage of climate.svg was wrong too.
+      // I should map temp/hum/pressure to 'thermostat.svg' or something generic? Or just leave default?
+      // "thermostat.svg" is probably best for climate.
+      icon = 'thermostat.svg'; 
     } else if (description.includes('button') || description.includes('remote') || description.includes('click')) {
       homeyClass = 'button';
-      icon = '/icons/button.svg';
+      icon = 'remote_control.svg'; // Corrected from button.svg which does not exist in 2164 list. 2164 has remote_control.svg.
+    }
+  }
+
+  // Check for specific model icons (Overrides generic icon)
+  if (device.definition?.model) {
+    const model = device.definition.model;
+    const specificIcons: Record<string, string> = {
+      'TH1124ZB': 'thermostat.svg',
+      '75564': 'light.svg',
+      'WS-USC04': '2gangswitch.svg',
+      'WS-USC02': '2gangswitch.svg', 
+      '3RSP02028BZ': 'socket.svg',
+      'T2_E26': 'light.svg',
+    };
+
+    if (specificIcons[model]) {
+      icon = specificIcons[model];
     }
   }
   return { homeyClass, icon };

@@ -1,0 +1,9 @@
+{
+  "type": "number",
+  "title": { "en": "Heating Demand" },
+  "getable": true,
+  "settable": false,
+  "uiComponent": "sensor",
+  "units": { "en": "%" },
+  "decimals": 0
+}

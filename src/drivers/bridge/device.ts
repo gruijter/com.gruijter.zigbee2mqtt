@@ -254,6 +254,16 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
               dev.availability = this.devices.find((oldDev) => oldDev.ieee_address === dev.ieee_address)?.availability;
             });
             this.devices = devices;
+            // DEBUG: Log first device to check structure
+            if (devices.length > 0) {
+              this.log('First device from MQTT:', JSON.stringify({
+                ieee: devices[0].ieee_address,
+                friendly_name: devices[0].friendly_name,
+                hasDefinition: !!devices[0].definition,
+                hasExposes: !!devices[0].definition?.exposes,
+                exposesCount: devices[0].definition?.exposes?.length || 0
+              }));
+            }
             // console.dir(this.devices, { depth: null });
             this.homey.emit('devicelistupdate', true);
           }

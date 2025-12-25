@@ -43,30 +43,103 @@ module.exports = class ZigbeeDeviceDriver extends Zigbee2MQTTDriver {
         const devices: any[] = [];
         bridges.forEach((bridge) => {
           bridge.devices
-            .filter((dev) => dev.definition && dev.definition.exposes)
+             // TEMPORARILY DISABLED: Filter devices by definition.exposes
+             // .filter((dev) => dev.definition && dev.definition.exposes)
             .forEach((dev) => {
               const capabilityMappings = mapCapabilities(dev);
               const { homeyClass, icon } = mapClassAndIcon(dev);
+              const model = dev.definition?.model;
 
-              const settings: DeviceSettings = {
-                homeyclass: homeyClass,
-                uid: dev.ieee_address,
-                friendly_name: dev.friendly_name,
-                bridge_uid: bridge.getData().id,
-                model: dev.definition?.model,
-                description: dev.definition?.description,
-              };
+              const SPLIT_DEVICE_MODELS = ['WS-USC04', 'WS-USC02'];
 
-              devices.push({
-                name: dev.friendly_name,
-                data: {
-                  id: dev.ieee_address, // `zigbee2mqtt_${Math.random().toString(16).substring(2, 8)}`,
-                },
-                icon, // "/my_icon.svg", // relative to: /drivers/<driver_id>/assets/
-                capabilities: Object.values(capabilityMappings).flatMap((m) => m.homeyCapabilities),
-                store: { capabilityMappings },
-                settings,
-              });
+              if (model && SPLIT_DEVICE_MODELS.includes(model)) {
+                // --- TOP DEVICE ---
+                // Clone mappings
+                const mappingsTop = JSON.parse(JSON.stringify(capabilityMappings));
+                // Remove Bottom controls
+                delete mappingsTop.state_bottom;
+                delete mappingsTop.operation_mode_bottom;
+                
+                // Use distinct ID for Top to allow split
+                const idTop = `${dev.ieee_address}_top`;
+
+                const settingsTop: DeviceSettings = {
+                  homeyclass: homeyClass,
+                  uid: dev.ieee_address, // Shared UID for Z2M lookup
+                  friendly_name: dev.friendly_name, // Shared friendly_name for Z2M topic
+                  bridge_uid: bridge.getData().id,
+                  model: dev.definition?.model,
+                  description: dev.definition?.description,
+                };
+
+                devices.push({
+                  name: `${dev.friendly_name} - TOP`,
+                  data: { id: idTop },
+                  icon,
+                  capabilities: Object.values(mappingsTop).flatMap((m: any) => m.homeyCapabilities),
+                  store: { capabilityMappings: mappingsTop },
+                  settings: settingsTop,
+                });
+
+                // --- BOTTOM DEVICE ---
+                const mappingsBottom = JSON.parse(JSON.stringify(capabilityMappings));
+                
+                // Remove Top controls
+                delete mappingsBottom.state_top;
+                delete mappingsBottom.operation_mode_top;
+                // Remove shared/global stats from Bottom to keep it clean
+                delete mappingsBottom.power; 
+                delete mappingsBottom.energy;
+                delete mappingsBottom.voltage;
+                delete mappingsBottom.current;
+
+                // Remap state_bottom to main 'onoff'
+                if (mappingsBottom.state_bottom) {
+                  mappingsBottom.state_bottom.homeyCapabilities = ['onoff'];
+                }
+
+                const idBottom = `${dev.ieee_address}_bottom`;
+                
+                const settingsBottom: DeviceSettings = {
+                    homeyclass: homeyClass,
+                    uid: dev.ieee_address,
+                    friendly_name: dev.friendly_name,
+                    bridge_uid: bridge.getData().id,
+                    model: dev.definition?.model,
+                    description: dev.definition?.description,
+                };
+
+                devices.push({
+                  name: `${dev.friendly_name} - BOTTOM`,
+                  data: { id: idBottom },
+                  icon,
+                  capabilities: Object.values(mappingsBottom).flatMap((m: any) => m.homeyCapabilities),
+                  store: { capabilityMappings: mappingsBottom },
+                  settings: settingsBottom,
+                });
+
+              } else {
+                // --- STANDARD DEVICE ---
+                const settings: DeviceSettings = {
+                  homeyclass: homeyClass,
+                  uid: dev.ieee_address,
+                  friendly_name: dev.friendly_name,
+                  bridge_uid: bridge.getData().id,
+                  model: dev.definition?.model,
+                  description: dev.definition?.description,
+                };
+
+                devices.push({
+                  name: dev.friendly_name,
+                  data: {
+                    id: dev.ieee_address, 
+                  },
+                  icon, 
+                  capabilities: Object.values(capabilityMappings).flatMap((m) => m.homeyCapabilities),
+                  store: { capabilityMappings },
+                  settings,
+                });
+              }
             });
         });
         return Promise.all(devices);

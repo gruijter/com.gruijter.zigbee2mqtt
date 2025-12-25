@@ -1,0 +1,23 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Mode Switch"
+  },
+  "getable": true,
+  "settable": true,
+  "values": [
+    {
+      "id": "anti_flicker_mode",
+      "title": {
+        "en": "Anti-Flicker Mode"
+      }
+    },
+    {
+      "id": "quick_mode",
+      "title": {
+        "en": "Quick Mode"
+      }
+    }
+  ],
+  "uiComponent": "picker"
+}

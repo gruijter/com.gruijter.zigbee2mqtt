@@ -1,0 +1,20 @@
+{
+  "id": "thermostat_outdoor_temperature",
+  "title": { "en": "Set Outdoor Temperature" },
+  "titleFormatted": { "en": "Set outdoor temperature to [[val]] °C" },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=device&capabilities=thermostat_outdoor_temperature"
+    },
+    {
+      "name": "val",
+      "type": "number",
+      "title": { "en": "Temperature" },
+      "min": -40,
+      "max": 50,
+      "step": 0.5
+    }
+  ]
+}
