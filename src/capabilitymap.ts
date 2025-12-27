@@ -356,30 +356,61 @@ export function mapCapabilities(device: Z2MDevice, options: MapCapabilitiesOptio
   return mappings;
 }
 
+// Map Z2M device description to Homey class and icon. First hit is chosen.
+// Format: '(part of) description': ['homeyClass', 'iconName']
+const classIconMap: { [key: string]: [string, string] } = {
+  'door sensor': ['sensor', 'contact.svg'],
+  'radiator valve': ['thermostat', 'radiator_valve.svg'],
+  thermostat: ['thermostat', 'thermostat.svg'],
+  'soil sensor': ['sensor', 'soil_sensor.svg'],
+  'vibration sensor': ['sensor', 'vibration_sensor.svg'],
+  'pressure sensor': ['sensor', 'vibration_sensor.svg'],
+  'wireless switch': ['sensor', 'wireless_switch.svg'],
+  'dimmer switch': ['sensor', 'wireless_switch.svg'],
+  'on/off switch': ['sensor', 'wireless_switch.svg'],
+  motion: ['sensor', 'motion.svg'],
+  presence: ['sensor', 'motion.svg'],
+  occupancy: ['sensor', 'motion.svg'],
+  'wall switch module': ['button', 'wireless_switch.svg'],
+  'smart button': ['button', 'wireless_switch.svg'],
+  '2 gang switch module': ['socket', '2gangswitch.svg'],
+  '2 channel dimmer': ['light', '2gangdimmer.svg'],
+  plug: ['socket', 'socket.svg'],
+  bulb: ['light', 'light.svg'],
+  gu10: ['light', 'light.svg'],
+  e27: ['light', 'light.svg'],
+  dimmer: ['light', 'light.svg'],
+  bloom: ['light', 'light.svg'],
+  lightstrip: ['light', 'light.svg'],
+  'led controller': ['light', 'light.svg'],
+  led: ['light', 'light.svg'],
+  'hue go': ['light', 'light.svg'],
+  fyrtur: ['windowcoverings', 'window_coverings.svg'],
+  kadrilj: ['windowcoverings', 'window_coverings.svg'],
+  praktlysing: ['windowcoverings', 'window_coverings.svg'],
+  tredansen: ['windowcoverings', 'window_coverings.svg'],
+  parasol: ['sensor', 'contact.svg'],
+  'tradfri shortcut': ['button', 'wireless_switch.svg'],
+  rodret: ['button', 'wireless_switch.svg'],
+  somrig: ['button', 'wireless_switch.svg'],
+  twinguard: ['smokealarm', 'smoke_detector.svg'],
+  smoke: ['smokealarm', 'smoke_detector.svg'],
+  'air quality': ['sensor', 'smoke_detector.svg'],
+  'remote control': ['remote', 'remote_control.svg'],
+};
+
 export function mapClassAndIcon(device: Z2MDevice) {
+  let icon = 'icon.svg';
   let homeyClass = 'other';
-  let icon = '/icons/zigbee.svg';
   if (device.definition?.description) {
-    const description = device.definition.description.toLowerCase();
-    if (description.includes('switch') || description.includes('plug') || description.includes('outlet')) {
-      homeyClass = 'socket';
-      icon = '/icons/socket.svg';
-    } else if (description.includes('light') || description.includes('lamp') || description.includes('bulb') || description.includes('spot')) {
-      homeyClass = 'light';
-      icon = '/icons/light.svg';
-    } else if (description.includes('motion') || description.includes('presence')) {
-      homeyClass = 'sensor';
-      icon = '/icons/motion.svg';
-    } else if (description.includes('contact') || description.includes('door') || description.includes('window')) {
-      homeyClass = 'sensor';
-      icon = '/icons/contact.svg';
-    } else if (description.includes('temperature') || description.includes('humidity') || description.includes('pressure')) {
-      homeyClass = 'sensor';
-      icon = '/icons/climate.svg';
-    } else if (description.includes('button') || description.includes('remote') || description.includes('click')) {
-      homeyClass = 'button';
-      icon = '/icons/button.svg';
-    }
+    const d = device.definition.description.toLowerCase();
+    // Iterate in reverse order so that more specific matches (earlier in the map) take precedence
+    Object.entries(classIconMap).reverse().forEach(([key, value]) => {
+      if (d.includes(key.toLowerCase())) {
+        icon = value[1];
+        homeyClass = value[0];
+      }
+    });
   }
   return { homeyClass, icon };
 }
