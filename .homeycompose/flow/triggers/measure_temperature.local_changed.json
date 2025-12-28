@@ -18,12 +18,12 @@
     {
       "type": "device",
       "name": "device",
-      "filter": "driver_id=device|group&capabilities=measure_temperature.sensor"
+      "filter": "driver_id=device|group&capabilities=measure_temperature.local"
     }
   ],
   "tokens": [
     {
-      "name": "measure_temperature.sensor",
+      "name": "measure_temperature.local",
       "type": "number",
       "title": {
         "en": "Temperature",

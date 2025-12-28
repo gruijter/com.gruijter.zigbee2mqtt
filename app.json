@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "compatibility": ">=12.9.0",
   "sdk": 3,
   "platforms": [
@@ -993,12 +993,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device|group&capabilities=measure_temperature.sensor"
+            "filter": "driver_id=device|group&capabilities=measure_temperature.local"
           }
         ],
         "tokens": [
           {
-            "name": "measure_temperature.sensor",
+            "name": "measure_temperature.local",
             "type": "number",
             "title": {
               "en": "Temperature",
@@ -1017,7 +1017,7 @@
             "example": 53
           }
         ],
-        "id": "measure_temperature.sensor_changed"
+        "id": "measure_temperature.local_changed"
       },
       {
         "title": {
@@ -2184,8 +2184,53 @@
       },
       {
         "title": {
+          "en": "The frost protection temperature changed",
+          "nl": "De vorstbeveiligingstemperatuur is veranderd",
+          "da": "Frostbeskyttelsestemperaturen er ændret",
+          "de": "Die Frostschutztemperatur hat sich geändert",
+          "es": "La temperatura de protección contra heladas ha cambiado",
+          "fr": "La température de protection contre le gel a changé",
+          "it": "La temperatura di protezione dal gelo è cambiata",
+          "no": "Frostbeskyttelsestemperaturen har endret seg",
+          "sv": "Frostskyddstemperaturen har ändrats",
+          "pl": "Temperatura ochrony przed mrozem została zmieniona",
+          "ru": "Температура защиты от замерзания изменилась",
+          "ko": "서리 방지 온도가 변경되었습니다"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=target_temperature.frost_protection"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "target_temperature.frost_protection",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur",
+              "da": "Temperatur",
+              "de": "Temperatur",
+              "es": "Temperatura",
+              "fr": "Température",
+              "it": "Temperatura",
+              "no": "Temperatur",
+              "sv": "Temperatur",
+              "pl": "Temperatura",
+              "ru": "Температура",
+              "ko": "온도"
+            },
+            "example": 6
+          }
+        ],
+        "id": "target_temperature.frost_protection_changed"
+      },
+      {
+        "title": {
           "en": "The target temperature changed",
-          "nl": "De doeldtemperatuur is veranderd",
+          "nl": "De doeltemperatuur is veranderd",
           "da": "Måltemperaturen er ændret",
           "de": "Die Zieltemperatur hat sich geändert",
           "es": "La temperatura objetivo ha cambiado",
@@ -5218,6 +5263,48 @@
           }
         ],
         "id": "switch_type.right"
+      },
+      {
+        "title": {
+          "en": "Set frost protection temperature",
+          "nl": "Stel vorstbeveiligingstemperatuur in",
+          "da": "Indstil frostbeskyttelsestemperatur",
+          "de": "Frostschutztemperatur festlegen",
+          "es": "Establecer temperatura de protección contra heladas",
+          "fr": "Définir la température de protection contre le gel",
+          "it": "Imposta temperatura di protezione dal gelo",
+          "no": "Angi frostbeskyttelsestemperatur",
+          "sv": "Ställ in frostskyddstemperatur",
+          "pl": "Ustaw temperaturę ochrony przed mrozem",
+          "ru": "Установить температуру защиты от замерзания",
+          "ko": "서리 방지 온도 설정"
+        },
+        "titleFormatted": {
+          "en": "Set frost protection temperature to [[val]]",
+          "nl": "Stel vorstbeveiligingstemperatuur in op [[val]]",
+          "da": "Indstil frostbeskyttelsestemperaturen til [[val]]",
+          "de": "Frostschutztemperatur auf [[val]] festlegen",
+          "es": "Establecer temperatura de protección contra heladas a [[val]]",
+          "fr": "Définir la température de protection contre le gel à [[val]]",
+          "it": "Imposta temperatura di protezione dal gelo su [[val]]",
+          "no": "Angi frostbeskyttelsestemperatur til [[val]]",
+          "sv": "Ställ in frostskyddstemperatur till [[val]]",
+          "pl": "Ustaw temperaturę ochrony przed mrozem na [[val]]",
+          "ru": "Установить температуру защиты от замерзания на [[val]]",
+          "ko": "[[val]]의 서리 방지 온도를 설정"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=target_temperature.frost_protection"
+          },
+          {
+            "name": "val",
+            "type": "range"
+          }
+        ],
+        "id": "target_temperature.frost_protection"
       },
       {
         "title": {

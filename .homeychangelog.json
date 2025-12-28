@@ -1,4 +1,7 @@
 {
+  "3.1.1" : {
+    "en": "Fix classes and icons during pair. Added frost_protection_temperature capability for thermostats."
+  },
   "3.1.0" : {
     "en": "Fixes light/color issues. Cleaner codebase. Easier dev contributions."
   },

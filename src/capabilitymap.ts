@@ -67,6 +67,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   temperature: ['measure_temperature', (v) => Number(v)],
   occupied_heating_setpoint: ['target_temperature.local', (v) => Number(v), (v) => ({ occupied_heating_setpoint: Number(v) })],
   local_temperature: ['measure_temperature.local', (v) => Number(v)],
+  frost_protection_temperature: ['target_temperature.frost_protection', (v) => Number(v), (v) => ({ frost_protection_temperature: Number(v) })],
   device_temperature: ['measure_temperature.device', (v) => Number(v)],
   co: ['measure_co', (v) => Number(v)],
   co2: ['measure_co2', (v) => Number(v)],
@@ -96,7 +97,9 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   color_temp: ['light_temperature', (v) => (Number(v) - 153) / 347, (v) => ({ color_temp: 153 + Number(v) * 347 })],
   color: (expose) => ({
     caps: ['light_hue', 'light_saturation', 'light_mode'],
-    z2mToHomey: ({ hue, saturation, x, y }, { color_mode }) => {
+    z2mToHomey: ({
+      hue, saturation, x, y,
+    }, { color_mode: colorMode }) => {
       let lightHue: number | undefined;
       let lightSaturation: number | undefined;
 
@@ -112,22 +115,23 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
       return {
         light_hue: lightHue,
         light_saturation: lightSaturation,
-        light_mode: color_mode === 'color_temp' ? 'temperature' : 'color',
+        light_mode: colorMode === 'color_temp' ? 'temperature' : 'color',
       };
     },
-   homeyToZ2m: (values) => {
+    homeyToZ2m: (values) => {
       const lightMode = values.light_mode;
       if (lightMode === 'temperature') return null;
 
       if (expose.name === 'color_hs') {
-        return { color: { 
-          hue: values.light_hue * 360,
-          saturation: values.light_saturation * 100
-        } };
-      } else {
-        const { x, y } = hsToXy(values.light_hue, values.light_saturation);
-        return { color: { x, y } };
+        return {
+          color: {
+            hue: values.light_hue * 360,
+            saturation: values.light_saturation * 100,
+          },
+        };
       }
+      const { x, y } = hsToXy(values.light_hue, values.light_saturation);
+      return { color: { x, y } };
     },
   }),
 
@@ -246,7 +250,7 @@ function resolveCapabilityEntry(
   expose: zigbeeHerdsmanConverter.Expose,
 ): CapabilityMap {
   const tuple: AnyCapabilityMap = typeof entry === 'function' ? entry(expose) : entry;
-  
+
   if (Array.isArray(tuple)) {
     // Normalize single-cap tuple to multi-cap format
     const [cap, z2mToHomey, homeyToZ2m] = tuple as SingleCapabilityMap;
@@ -259,9 +263,8 @@ function resolveCapabilityEntry(
       },
       homeyToZ2m: homeyToZ2m ? (vals, getCapValue) => homeyToZ2m(vals[cap], getCapValue) : undefined,
     };
-  } else {
-    return tuple;
-  } 
+  }
+  return tuple;
 }
 
 export function getCapabilityConverters(z2mProperty: string, expose: zigbeeHerdsmanConverter.Expose): CapabilityConverters | null {
