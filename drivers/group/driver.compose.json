@@ -15,6 +15,32 @@
   },
   "class": "socket",
   "capabilities": [],
+  "capabilitiesOptions": {
+    "onoff.top": {
+      "title": {
+        "en": "Top"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.bottom": {
+      "title": {
+        "en": "Bottom"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.center_left": {
+      "title": {
+        "en": "Center Left"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.center_right": {
+      "title": {
+        "en": "Center Right"
+      },
+      "uiQuickAction": false
+    }
+  },
   "platforms": [
     "local"
   ],

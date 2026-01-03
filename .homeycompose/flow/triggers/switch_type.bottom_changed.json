@@ -1,0 +1,45 @@
+{
+  "title": {
+    "en": "The switch type Bottom changed",
+    "nl": "Het schakeltype Onder is gewijzigd",
+    "da": "Kontaktbundtype blev ændret",
+    "de": "Der Schalttyp Unten wurde geändert",
+    "es": "El tipo de interruptor cambió abajo",
+    "fr": "Le type de commutateur Bas a changé",
+    "it": "Il tipo di interruttore Basso è cambiato",
+    "no": "Brytertypen Bunn endret",
+    "sv": "Brytartyp Botten ändras",
+    "pl": "Zmieniono typ przełącznika Dolny",
+    "ru": "Тип переключателя Низ изменился",
+    "ko": "스위치 유형 아래쪽이 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=switch_type.bottom"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "switch_type.bottom",
+      "type": "string",
+      "title": {
+        "en": "Switch type bottom",
+        "nl": "Schakeltype onder",
+        "da": "Kontaktbundtype",
+        "de": "Schalttyp Unten",
+        "es": "Tipo de interruptor abajo",
+        "fr": "Type de commutateur bas",
+        "it": "Tipo di interruttore basso",
+        "no": "Brytertype bunn",
+        "sv": "Brytartypbotten",
+        "pl": "Typ przełącznika dolny",
+        "ru": "Тип переключателя Низ",
+        "ko": "스위치 유형 아래쪽"
+      },
+      "example": "toggle"
+    }
+  ]
+}

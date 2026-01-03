@@ -1,0 +1,56 @@
+{
+  "title": {
+    "en": "Switch Center Left On or Off",
+    "nl": "Zet midden links aan of uit",
+    "da": "Tænd eller sluk for center venstre",
+    "de": "Schalten Sie Mitte links ein oder aus",
+    "es": "Activar o desactivar centro izquierda",
+    "fr": "Activer ou désactiver le centre gauche",
+    "it": "Accendi o spegni il centro sinistra",
+    "no": "Slå senter venstre på eller av",
+    "sv": "Slå på eller av centrum vänster",
+    "pl": "Włącz lub wyłącz środek lewy",
+    "ru": "Включить или выключить центр лево",
+    "ko": "중앙 왼쪽 켜기 또는 끄기"
+  },
+  "titleFormatted": {
+    "en": "Switch Center Left [[val]]",
+    "nl": "Schakel midden links [[val]]",
+    "da": "Skift center venstre [[val]]",
+    "de": "Mitte links schalten [[val]]",
+    "es": "Cambiar centro izquierda [[val]]",
+    "fr": "Centre gauche de commutation [[val]]",
+    "it": "Centro sinistra di commutazione [[val]]",
+    "no": "Bytt senter venstre [[val]]",
+    "sv": "Växla centrum vänster [[val]]",
+    "pl": "Przełącz środek lewy [[val]]",
+    "ru": "Переключить центр лево [[val]]",
+    "ko": "중앙 왼쪽 전환 [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.center_left"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "På",
+        "de": "Ein",
+        "es": "Encendido",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączone",
+        "ru": "Включено",
+        "ko": "켬"
+      }
+    }
+  ]
+}

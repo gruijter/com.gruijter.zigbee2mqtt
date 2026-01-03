@@ -1,0 +1,45 @@
+{
+  "title": {
+    "en": "The switch type Center Left changed",
+    "nl": "Het schakeltype Midden Links is gewijzigd",
+    "da": "Kontakttype Center Venstre blev ændret",
+    "de": "Der Schalttyp Mitte Links wurde geändert",
+    "es": "El tipo de interruptor cambió centro izquierda",
+    "fr": "Le type de commutateur Centre Gauche a changé",
+    "it": "Il tipo di interruttore Centro Sinistra è cambiato",
+    "no": "Brytertypen Senter Venstre endret",
+    "sv": "Brytartyp Centrum Vänster ändras",
+    "pl": "Zmieniono typ przełącznika Środek Lewy",
+    "ru": "Тип переключателя Центр Лево изменился",
+    "ko": "스위치 유형 중앙 왼쪽이 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=switch_type.center_left"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "switch_type.center_left",
+      "type": "string",
+      "title": {
+        "en": "Switch type center left",
+        "nl": "Schakeltype midden links",
+        "da": "Kontakttype center venstre",
+        "de": "Schalttyp Mitte links",
+        "es": "Tipo de interruptor centro izquierda",
+        "fr": "Type de commutateur centre gauche",
+        "it": "Tipo di interruttore centro sinistra",
+        "no": "Brytertype senter venstre",
+        "sv": "Brytartyp centrum vänster",
+        "pl": "Typ przełącznika środek lewy",
+        "ru": "Тип переключателя Центр Лево",
+        "ko": "스위치 유형 중앙 왼쪽"
+      },
+      "example": "toggle"
+    }
+  ]
+}

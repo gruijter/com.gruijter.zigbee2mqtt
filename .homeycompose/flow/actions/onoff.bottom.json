@@ -1,0 +1,56 @@
+{
+  "title": {
+    "en": "Switch Bottom On or Off",
+    "nl": "Zet onder aan of uit",
+    "da": "Tænd eller sluk for bund",
+    "de": "Schalten Sie unten ein oder aus",
+    "es": "Activar o desactivar abajo",
+    "fr": "Activer ou désactiver le bas",
+    "it": "Accendi o spegni il basso",
+    "no": "Slå bunnen på eller av",
+    "sv": "Slå på eller av botten",
+    "pl": "Włącz lub wyłącz dolny",
+    "ru": "Включить или выключить низ",
+    "ko": "아래쪽 켜기 또는 끄기"
+  },
+  "titleFormatted": {
+    "en": "Switch Bottom [[val]]",
+    "nl": "Schakel onder [[val]]",
+    "da": "Skift bund [[val]]",
+    "de": "Unten schalten [[val]]",
+    "es": "Cambiar abajo [[val]]",
+    "fr": "Bas de commutation [[val]]",
+    "it": "Basso di commutazione [[val]]",
+    "no": "Bytt bunn [[val]]",
+    "sv": "Växla botten [[val]]",
+    "pl": "Przełącz dolny [[val]]",
+    "ru": "Переключить низ [[val]]",
+    "ko": "아래쪽 전환 [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.bottom"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "På",
+        "de": "Ein",
+        "es": "Encendido",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączone",
+        "ru": "Включено",
+        "ko": "켬"
+      }
+    }
+  ]
+}

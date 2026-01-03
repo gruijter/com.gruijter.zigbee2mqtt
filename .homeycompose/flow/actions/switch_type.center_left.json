@@ -1,0 +1,95 @@
+{
+  "title": {
+    "en": "Set Switch Type Center Left",
+    "nl": "Stel Schakelaar Type Midden Links In",
+    "da": "Indstil Kontakttype Center Venstre",
+    "de": "Stelle Schaltertyp Mitte Links ein",
+    "es": "Establecer Tipo de Interruptor Centro Izquierda",
+    "fr": "Définir le Type de Commutateur Centre Gauche",
+    "it": "Imposta Tipo Interruttore Centro Sinistra",
+    "no": "Sett Brytertype Senter Venstre",
+    "sv": "Ställ in Strömbrytartyp Centrum Vänster",
+    "pl": "Ustaw Typ Przełącznika Środek Lewy",
+    "ru": "Установить Тип Выключателя Центр Лево",
+    "ko": "스위치 유형 중앙 왼쪽 설정"
+  },
+  "titleFormatted": {
+    "en": "Set Center Left Switch Type to [[val]]",
+    "nl": "Stel Midden Links Schakelaar Type In op [[val]]",
+    "da": "Indstil Center Venstre Kontakttype til [[val]]",
+    "de": "Stelle Mitte Links-Schaltertyp auf [[val]] ein",
+    "es": "Establecer Tipo de Interruptor Centro Izquierda a [[val]]",
+    "fr": "Définir le Type de Commutateur Centre Gauche sur [[val]]",
+    "it": "Imposta Tipo Interruttore Centro Sinistra su [[val]]",
+    "no": "Sett Senter Venstre Brytertype til [[val]]",
+    "sv": "Ställ in Centrum Vänster Brytartyp till [[val]]",
+    "pl": "Ustaw Typ Przełącznika Środek Lewy na [[val]]",
+    "ru": "Установить Тип Выключателя Центр Лево на [[val]]",
+    "ko": "중앙 왼쪽 스위치 유형을 [[val]]로 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=switch_type.center_left"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "toggle",
+          "title": {
+            "en": "toggle",
+            "nl": "schakelaar",
+            "da": "skifte",
+            "de": "umschalten",
+            "es": "alternar",
+            "fr": "basculer",
+            "it": "alternare",
+            "no": "veksle",
+            "sv": "växla",
+            "pl": "przełącz",
+            "ru": "переключатель",
+            "ko": "토글"
+          }
+        },
+        {
+          "id": "state",
+          "title": {
+            "en": "State",
+            "nl": "Staat",
+            "da": "Tilstand",
+            "de": "Status",
+            "es": "Estado",
+            "fr": "État",
+            "it": "Stato",
+            "no": "Tilstand",
+            "sv": "Tillstånd",
+            "pl": "Stan",
+            "ru": "Состояние",
+            "ko": "상태"
+          }
+        },
+        {
+          "id": "momentary",
+          "title": {
+            "en": "Momentary",
+            "nl": "Momentopname",
+            "da": "Momentær",
+            "de": "Momentan",
+            "es": "Momentáneo",
+            "fr": "Momentané",
+            "it": "Momento",
+            "no": "Øyeblikkelig",
+            "sv": "Ögonblicklig",
+            "pl": "Chwilowy",
+            "ru": "Мгновенный",
+            "ko": "순간적"
+          }
+        }
+      ]
+    }
+  ]
+}

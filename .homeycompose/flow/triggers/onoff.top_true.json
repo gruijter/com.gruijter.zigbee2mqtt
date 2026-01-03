@@ -1,0 +1,24 @@
+{
+  "title": {
+    "en": "Top Turned On",
+    "nl": "Boven Ingeschakeld",
+    "da": "Top Tændt",
+    "de": "Oben Eingeschaltet",
+    "es": "Arriba Activado",
+    "fr": "Haut Activé",
+    "it": "Alto Acceso",
+    "no": "Topp Slått På",
+    "sv": "Topp Påslagen",
+    "pl": "Górny Włączony",
+    "ru": "Верх Включен",
+    "ko": "위쪽 켜짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.top"
+    }
+  ]
+}

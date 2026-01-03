@@ -1,0 +1,95 @@
+{
+  "title": {
+    "en": "Set Switch Type Top",
+    "nl": "Stel Schakelaar Type Boven In",
+    "da": "Indstil Kontakttype Top",
+    "de": "Stelle Schaltertyp Oben ein",
+    "es": "Establecer Tipo de Interruptor Arriba",
+    "fr": "Définir le Type de Commutateur Haut",
+    "it": "Imposta Tipo Interruttore Alto",
+    "no": "Sett Brytertype Topp",
+    "sv": "Ställ in Strömbrytartyp Topp",
+    "pl": "Ustaw Typ Przełącznika Górny",
+    "ru": "Установить Тип Выключателя Верхний",
+    "ko": "스위치 유형 위쪽 설정"
+  },
+  "titleFormatted": {
+    "en": "Set Top Switch Type to [[val]]",
+    "nl": "Stel Bovenschakelaar Type In op [[val]]",
+    "da": "Indstil Top Kontakttype til [[val]]",
+    "de": "Stelle Oben-Schaltertyp auf [[val]] ein",
+    "es": "Establecer Tipo de Interruptor Arriba a [[val]]",
+    "fr": "Définir le Type de Commutateur Haut sur [[val]]",
+    "it": "Imposta Tipo Interruttore Alto su [[val]]",
+    "no": "Sett Toppbrytertype til [[val]]",
+    "sv": "Ställ in Toppbrytartyp till [[val]]",
+    "pl": "Ustaw Typ Przełącznika Górny na [[val]]",
+    "ru": "Установить Тип Верхнего Выключателя на [[val]]",
+    "ko": "위쪽 스위치 유형을 [[val]]로 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=switch_type.top"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "toggle",
+          "title": {
+            "en": "toggle",
+            "nl": "schakelaar",
+            "da": "skifte",
+            "de": "umschalten",
+            "es": "alternar",
+            "fr": "basculer",
+            "it": "alternare",
+            "no": "veksle",
+            "sv": "växla",
+            "pl": "przełącz",
+            "ru": "переключатель",
+            "ko": "토글"
+          }
+        },
+        {
+          "id": "state",
+          "title": {
+            "en": "State",
+            "nl": "Staat",
+            "da": "Tilstand",
+            "de": "Status",
+            "es": "Estado",
+            "fr": "État",
+            "it": "Stato",
+            "no": "Tilstand",
+            "sv": "Tillstånd",
+            "pl": "Stan",
+            "ru": "Состояние",
+            "ko": "상태"
+          }
+        },
+        {
+          "id": "momentary",
+          "title": {
+            "en": "Momentary",
+            "nl": "Momentopname",
+            "da": "Momentær",
+            "de": "Momentan",
+            "es": "Momentáneo",
+            "fr": "Momentané",
+            "it": "Momento",
+            "no": "Øyeblikkelig",
+            "sv": "Ögonblicklig",
+            "pl": "Chwilowy",
+            "ru": "Мгновенный",
+            "ko": "순간적"
+          }
+        }
+      ]
+    }
+  ]
+}
