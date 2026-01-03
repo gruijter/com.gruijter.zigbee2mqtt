@@ -1,0 +1,24 @@
+{
+  "title": {
+    "en": "Bottom Turned Off",
+    "nl": "Onder Uitgeschakeld",
+    "da": "Bund Slukket",
+    "de": "Unten Ausgeschaltet",
+    "es": "Abajo Apagado",
+    "fr": "Bas Éteint",
+    "it": "Basso Spento",
+    "no": "Bunn Slått Av",
+    "sv": "Botten Avstängd",
+    "pl": "Dolny Wyłączony",
+    "ru": "Низ Выключен",
+    "ko": "아래쪽 꺼짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.bottom"
+    }
+  ]
+}

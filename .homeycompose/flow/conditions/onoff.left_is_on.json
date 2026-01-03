@@ -1,0 +1,23 @@
+{
+  "title": {
+    "en": "Left is !{{on|off}}",
+    "nl": "Links is !{{aan|uit}}",
+    "da": "Venstre er !{{tændt|slukket}}",
+    "de": "Links ist !{{ein|aus}}",
+    "es": "Izquierda está !{{encendido|apagado}}",
+    "fr": "Gauche est !{{allumé|éteint}}",
+    "it": "Sinistra è !{{acceso|spento}}",
+    "no": "Venstre er !{{på|av}}",
+    "sv": "Vänster är !{{på|av}}",
+    "pl": "Lewy jest !{{włączony|wyłączony}}",
+    "ru": "Левый !{{включен|выключен}}",
+    "ko": "왼쪽이 !{{켜짐|꺼짐}}"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.left"
+    }
+  ]
+}

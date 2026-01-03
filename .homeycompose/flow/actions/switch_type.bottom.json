@@ -1,0 +1,95 @@
+{
+  "title": {
+    "en": "Set Switch Type Bottom",
+    "nl": "Stel Schakelaar Type Onder In",
+    "da": "Indstil Kontakttype Bund",
+    "de": "Stelle Schaltertyp Unten ein",
+    "es": "Establecer Tipo de Interruptor Abajo",
+    "fr": "Définir le Type de Commutateur Bas",
+    "it": "Imposta Tipo Interruttore Basso",
+    "no": "Sett Brytertype Bunn",
+    "sv": "Ställ in Strömbrytartyp Botten",
+    "pl": "Ustaw Typ Przełącznika Dolny",
+    "ru": "Установить Тип Выключателя Нижний",
+    "ko": "스위치 유형 아래쪽 설정"
+  },
+  "titleFormatted": {
+    "en": "Set Bottom Switch Type to [[val]]",
+    "nl": "Stel Onderschakelaar Type In op [[val]]",
+    "da": "Indstil Bund Kontakttype til [[val]]",
+    "de": "Stelle Unten-Schaltertyp auf [[val]] ein",
+    "es": "Establecer Tipo de Interruptor Abajo a [[val]]",
+    "fr": "Définir le Type de Commutateur Bas sur [[val]]",
+    "it": "Imposta Tipo Interruttore Basso su [[val]]",
+    "no": "Sett Bunnbrytertype til [[val]]",
+    "sv": "Ställ in Bottenbrytartyp till [[val]]",
+    "pl": "Ustaw Typ Przełącznika Dolny na [[val]]",
+    "ru": "Установить Тип Нижнего Выключателя на [[val]]",
+    "ko": "아래쪽 스위치 유형을 [[val]]로 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=switch_type.bottom"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "toggle",
+          "title": {
+            "en": "toggle",
+            "nl": "schakelaar",
+            "da": "skifte",
+            "de": "umschalten",
+            "es": "alternar",
+            "fr": "basculer",
+            "it": "alternare",
+            "no": "veksle",
+            "sv": "växla",
+            "pl": "przełącz",
+            "ru": "переключатель",
+            "ko": "토글"
+          }
+        },
+        {
+          "id": "state",
+          "title": {
+            "en": "State",
+            "nl": "Staat",
+            "da": "Tilstand",
+            "de": "Status",
+            "es": "Estado",
+            "fr": "État",
+            "it": "Stato",
+            "no": "Tilstand",
+            "sv": "Tillstånd",
+            "pl": "Stan",
+            "ru": "Состояние",
+            "ko": "상태"
+          }
+        },
+        {
+          "id": "momentary",
+          "title": {
+            "en": "Momentary",
+            "nl": "Momentopname",
+            "da": "Momentær",
+            "de": "Momentan",
+            "es": "Momentáneo",
+            "fr": "Momentané",
+            "it": "Momento",
+            "no": "Øyeblikkelig",
+            "sv": "Ögonblicklig",
+            "pl": "Chwilowy",
+            "ru": "Мгновенный",
+            "ko": "순간적"
+          }
+        }
+      ]
+    }
+  ]
+}

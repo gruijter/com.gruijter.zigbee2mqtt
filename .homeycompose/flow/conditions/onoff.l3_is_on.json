@@ -1,0 +1,23 @@
+{
+  "title": {
+    "en": "L3 is !{{on|off}}",
+    "nl": "L3 is !{{aan|uit}}",
+    "da": "L3 er !{{tændt|slukket}}",
+    "de": "L3 ist !{{ein|aus}}",
+    "es": "L3 está !{{encendido|apagado}}",
+    "fr": "L3 est !{{allumé|éteint}}",
+    "it": "L3 è !{{acceso|spento}}",
+    "no": "L3 er !{{på|av}}",
+    "sv": "L3 är !{{på|av}}",
+    "pl": "L3 jest !{{włączony|wyłączony}}",
+    "ru": "L3 !{{включен|выключен}}",
+    "ko": "L3이 !{{켜짐|꺼짐}}"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.l3"
+    }
+  ]
+}

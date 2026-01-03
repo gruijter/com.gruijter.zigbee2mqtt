@@ -1255,6 +1255,56 @@
       },
       {
         "title": {
+          "en": "Bottom Turned Off",
+          "nl": "Onder Uitgeschakeld",
+          "da": "Bund Slukket",
+          "de": "Unten Ausgeschaltet",
+          "es": "Abajo Apagado",
+          "fr": "Bas Éteint",
+          "it": "Basso Spento",
+          "no": "Bunn Slått Av",
+          "sv": "Botten Avstängd",
+          "pl": "Dolny Wyłączony",
+          "ru": "Низ Выключен",
+          "ko": "아래쪽 꺼짐"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.bottom"
+          }
+        ],
+        "id": "onoff.bottom_false"
+      },
+      {
+        "title": {
+          "en": "Bottom Turned On",
+          "nl": "Onder Ingeschakeld",
+          "da": "Bund Tændt",
+          "de": "Unten Eingeschaltet",
+          "es": "Abajo Activado",
+          "fr": "Bas Activé",
+          "it": "Basso Acceso",
+          "no": "Bunn Slått På",
+          "sv": "Botten Påslagen",
+          "pl": "Dolny Włączony",
+          "ru": "Низ Включен",
+          "ko": "아래쪽 켜짐"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.bottom"
+          }
+        ],
+        "id": "onoff.bottom_true"
+      },
+      {
+        "title": {
           "en": "Center Turned Off",
           "nl": "Midden Uitgeschakeld",
           "da": "Center Slukket",
@@ -1277,6 +1327,106 @@
           }
         ],
         "id": "onoff.center_false"
+      },
+      {
+        "title": {
+          "en": "Center Left Turned Off",
+          "nl": "Midden Links Uitgeschakeld",
+          "da": "Center Venstre Slukket",
+          "de": "Mitte Links Ausgeschaltet",
+          "es": "Centro Izquierda Apagado",
+          "fr": "Centre Gauche Éteint",
+          "it": "Centro Sinistra Spento",
+          "no": "Senter Venstre Slått Av",
+          "sv": "Centrum Vänster Avstängd",
+          "pl": "Środek Lewy Wyłączony",
+          "ru": "Центр Лево Выключен",
+          "ko": "중앙 왼쪽 꺼짐"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.center_left"
+          }
+        ],
+        "id": "onoff.center_left_false"
+      },
+      {
+        "title": {
+          "en": "Center Left Turned On",
+          "nl": "Midden Links Ingeschakeld",
+          "da": "Center Venstre Tændt",
+          "de": "Mitte Links Eingeschaltet",
+          "es": "Centro Izquierda Activado",
+          "fr": "Centre Gauche Activé",
+          "it": "Centro Sinistra Acceso",
+          "no": "Senter Venstre Slått På",
+          "sv": "Centrum Vänster Påslagen",
+          "pl": "Środek Lewy Włączony",
+          "ru": "Центр Лево Включен",
+          "ko": "중앙 왼쪽 켜짐"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.center_left"
+          }
+        ],
+        "id": "onoff.center_left_true"
+      },
+      {
+        "title": {
+          "en": "Center Right Turned Off",
+          "nl": "Midden Rechts Uitgeschakeld",
+          "da": "Center Højre Slukket",
+          "de": "Mitte Rechts Ausgeschaltet",
+          "es": "Centro Derecha Apagado",
+          "fr": "Centre Droite Éteint",
+          "it": "Centro Destra Spento",
+          "no": "Senter Høyre Slått Av",
+          "sv": "Centrum Höger Avstängd",
+          "pl": "Środek Prawy Wyłączony",
+          "ru": "Центр Право Выключен",
+          "ko": "중앙 오른쪽 꺼짐"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.center_right"
+          }
+        ],
+        "id": "onoff.center_right_false"
+      },
+      {
+        "title": {
+          "en": "Center Right Turned On",
+          "nl": "Midden Rechts Ingeschakeld",
+          "da": "Center Højre Tændt",
+          "de": "Mitte Rechts Eingeschaltet",
+          "es": "Centro Derecha Activado",
+          "fr": "Centre Droite Activé",
+          "it": "Centro Destra Acceso",
+          "no": "Senter Høyre Slått På",
+          "sv": "Centrum Höger Påslagen",
+          "pl": "Środek Prawy Włączony",
+          "ru": "Центр Право Включен",
+          "ko": "중앙 오른쪽 켜짐"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.center_right"
+          }
+        ],
+        "id": "onoff.center_right_true"
       },
       {
         "title": {
@@ -1605,6 +1755,56 @@
       },
       {
         "title": {
+          "en": "Top Turned Off",
+          "nl": "Boven Uitgeschakeld",
+          "da": "Top Slukket",
+          "de": "Oben Ausgeschaltet",
+          "es": "Arriba Apagado",
+          "fr": "Haut Éteint",
+          "it": "Alto Spento",
+          "no": "Topp Slått Av",
+          "sv": "Topp Avstängd",
+          "pl": "Górny Wyłączony",
+          "ru": "Верх Выключен",
+          "ko": "위쪽 꺼짐"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.top"
+          }
+        ],
+        "id": "onoff.top_false"
+      },
+      {
+        "title": {
+          "en": "Top Turned On",
+          "nl": "Boven Ingeschakeld",
+          "da": "Top Tændt",
+          "de": "Oben Eingeschaltet",
+          "es": "Arriba Activado",
+          "fr": "Haut Activé",
+          "it": "Alto Acceso",
+          "no": "Topp Slått På",
+          "sv": "Topp Påslagen",
+          "pl": "Górny Włączony",
+          "ru": "Верх Включен",
+          "ko": "위쪽 켜짐"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.top"
+          }
+        ],
+        "id": "onoff.top_true"
+      },
+      {
+        "title": {
           "en": "The Power On Behavior changed",
           "nl": "Het gedrag bij inschakelen is gewijzigd",
           "da": "Tændingsadfærden er ændret",
@@ -1913,6 +2113,52 @@
       },
       {
         "title": {
+          "en": "The switch type Bottom changed",
+          "nl": "Het schakeltype Onder is gewijzigd",
+          "da": "Kontaktbundtype blev ændret",
+          "de": "Der Schalttyp Unten wurde geändert",
+          "es": "El tipo de interruptor cambió abajo",
+          "fr": "Le type de commutateur Bas a changé",
+          "it": "Il tipo di interruttore Basso è cambiato",
+          "no": "Brytertypen Bunn endret",
+          "sv": "Brytartyp Botten ändras",
+          "pl": "Zmieniono typ przełącznika Dolny",
+          "ru": "Тип переключателя Низ изменился",
+          "ko": "스위치 유형 아래쪽이 변경되었습니다"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=switch_type.bottom"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "switch_type.bottom",
+            "type": "string",
+            "title": {
+              "en": "Switch type bottom",
+              "nl": "Schakeltype onder",
+              "da": "Kontaktbundtype",
+              "de": "Schalttyp Unten",
+              "es": "Tipo de interruptor abajo",
+              "fr": "Type de commutateur bas",
+              "it": "Tipo di interruttore basso",
+              "no": "Brytertype bunn",
+              "sv": "Brytartypbotten",
+              "pl": "Typ przełącznika dolny",
+              "ru": "Тип переключателя Низ",
+              "ko": "스위치 유형 아래쪽"
+            },
+            "example": "toggle"
+          }
+        ],
+        "id": "switch_type.bottom_changed"
+      },
+      {
+        "title": {
           "en": "The switch type Center changed",
           "nl": "Het schakeltype Center is gewijzigd",
           "da": "Kontaktcentertypen blev ændret",
@@ -1956,6 +2202,98 @@
           }
         ],
         "id": "switch_type.center_changed"
+      },
+      {
+        "title": {
+          "en": "The switch type Center Left changed",
+          "nl": "Het schakeltype Midden Links is gewijzigd",
+          "da": "Kontakttype Center Venstre blev ændret",
+          "de": "Der Schalttyp Mitte Links wurde geändert",
+          "es": "El tipo de interruptor cambió centro izquierda",
+          "fr": "Le type de commutateur Centre Gauche a changé",
+          "it": "Il tipo di interruttore Centro Sinistra è cambiato",
+          "no": "Brytertypen Senter Venstre endret",
+          "sv": "Brytartyp Centrum Vänster ändras",
+          "pl": "Zmieniono typ przełącznika Środek Lewy",
+          "ru": "Тип переключателя Центр Лево изменился",
+          "ko": "스위치 유형 중앙 왼쪽이 변경되었습니다"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=switch_type.center_left"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "switch_type.center_left",
+            "type": "string",
+            "title": {
+              "en": "Switch type center left",
+              "nl": "Schakeltype midden links",
+              "da": "Kontakttype center venstre",
+              "de": "Schalttyp Mitte links",
+              "es": "Tipo de interruptor centro izquierda",
+              "fr": "Type de commutateur centre gauche",
+              "it": "Tipo di interruttore centro sinistra",
+              "no": "Brytertype senter venstre",
+              "sv": "Brytartyp centrum vänster",
+              "pl": "Typ przełącznika środek lewy",
+              "ru": "Тип переключателя Центр Лево",
+              "ko": "스위치 유형 중앙 왼쪽"
+            },
+            "example": "toggle"
+          }
+        ],
+        "id": "switch_type.center_left_changed"
+      },
+      {
+        "title": {
+          "en": "The switch type Center Right changed",
+          "nl": "Het schakeltype Midden Rechts is gewijzigd",
+          "da": "Kontakttype Center Højre blev ændret",
+          "de": "Der Schalttyp Mitte Rechts wurde geändert",
+          "es": "El tipo de interruptor cambió centro derecha",
+          "fr": "Le type de commutateur Centre Droite a changé",
+          "it": "Il tipo di interruttore Centro Destra è cambiato",
+          "no": "Brytertypen Senter Høyre endret",
+          "sv": "Brytartyp Centrum Höger ändras",
+          "pl": "Zmieniono typ przełącznika Środek Prawy",
+          "ru": "Тип переключателя Центр Право изменился",
+          "ko": "스위치 유형 중앙 오른쪽이 변경되었습니다"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=switch_type.center_right"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "switch_type.center_right",
+            "type": "string",
+            "title": {
+              "en": "Switch type center right",
+              "nl": "Schakeltype midden rechts",
+              "da": "Kontakttype center højre",
+              "de": "Schalttyp Mitte rechts",
+              "es": "Tipo de interruptor centro derecha",
+              "fr": "Type de commutateur centre droite",
+              "it": "Tipo di interruttore centro destra",
+              "no": "Brytertype senter høyre",
+              "sv": "Brytartyp centrum höger",
+              "pl": "Typ przełącznika środek prawy",
+              "ru": "Тип переключателя Центр Право",
+              "ko": "스위치 유형 중앙 오른쪽"
+            },
+            "example": "toggle"
+          }
+        ],
+        "id": "switch_type.center_right_changed"
       },
       {
         "title": {
@@ -2135,6 +2473,52 @@
           }
         ],
         "id": "switch_type.right_changed"
+      },
+      {
+        "title": {
+          "en": "The switch type Top changed",
+          "nl": "Het schakeltype Boven is gewijzigd",
+          "da": "Kontakttoptype blev ændret",
+          "de": "Der Schalttyp Oben wurde geändert",
+          "es": "El tipo de interruptor cambió arriba",
+          "fr": "Le type de commutateur Haut a changé",
+          "it": "Il tipo di interruttore Alto è cambiato",
+          "no": "Brytertypen Topp endret",
+          "sv": "Brytartyp Topp ändras",
+          "pl": "Zmieniono typ przełącznika Górny",
+          "ru": "Тип переключателя Верх изменился",
+          "ko": "스위치 유형 위쪽이 변경되었습니다"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=switch_type.top"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "switch_type.top",
+            "type": "string",
+            "title": {
+              "en": "Switch type top",
+              "nl": "Schakeltype boven",
+              "da": "Kontakttoptype",
+              "de": "Schalttyp Oben",
+              "es": "Tipo de interruptor arriba",
+              "fr": "Type de commutateur haut",
+              "it": "Tipo di interruttore alto",
+              "no": "Brytertype topp",
+              "sv": "Brytartyptopp",
+              "pl": "Typ przełącznika górny",
+              "ru": "Тип переключателя Верх",
+              "ko": "스위치 유형 위쪽"
+            },
+            "example": "toggle"
+          }
+        ],
+        "id": "switch_type.top_changed"
       },
       {
         "title": {
@@ -3129,6 +3513,63 @@
       },
       {
         "title": {
+          "en": "Switch Bottom On or Off",
+          "nl": "Zet onder aan of uit",
+          "da": "Tænd eller sluk for bund",
+          "de": "Schalten Sie unten ein oder aus",
+          "es": "Activar o desactivar abajo",
+          "fr": "Activer ou désactiver le bas",
+          "it": "Accendi o spegni il basso",
+          "no": "Slå bunnen på eller av",
+          "sv": "Slå på eller av botten",
+          "pl": "Włącz lub wyłącz dolny",
+          "ru": "Включить или выключить низ",
+          "ko": "아래쪽 켜기 또는 끄기"
+        },
+        "titleFormatted": {
+          "en": "Switch Bottom [[val]]",
+          "nl": "Schakel onder [[val]]",
+          "da": "Skift bund [[val]]",
+          "de": "Unten schalten [[val]]",
+          "es": "Cambiar abajo [[val]]",
+          "fr": "Bas de commutation [[val]]",
+          "it": "Basso di commutazione [[val]]",
+          "no": "Bytt bunn [[val]]",
+          "sv": "Växla botten [[val]]",
+          "pl": "Przełącz dolny [[val]]",
+          "ru": "Переключить низ [[val]]",
+          "ko": "아래쪽 전환 [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.bottom"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On",
+              "nl": "Aan",
+              "da": "På",
+              "de": "Ein",
+              "es": "Encendido",
+              "fr": "Allumé",
+              "it": "Acceso",
+              "no": "På",
+              "sv": "På",
+              "pl": "Włączone",
+              "ru": "Включено",
+              "ko": "켬"
+            }
+          }
+        ],
+        "id": "onoff.bottom"
+      },
+      {
+        "title": {
           "en": "Switch Center On or Off",
           "nl": "Zet het centrum aan of uit",
           "da": "Tænd eller sluk for center",
@@ -3183,6 +3624,120 @@
           }
         ],
         "id": "onoff.center"
+      },
+      {
+        "title": {
+          "en": "Switch Center Left On or Off",
+          "nl": "Zet midden links aan of uit",
+          "da": "Tænd eller sluk for center venstre",
+          "de": "Schalten Sie Mitte links ein oder aus",
+          "es": "Activar o desactivar centro izquierda",
+          "fr": "Activer ou désactiver le centre gauche",
+          "it": "Accendi o spegni il centro sinistra",
+          "no": "Slå senter venstre på eller av",
+          "sv": "Slå på eller av centrum vänster",
+          "pl": "Włącz lub wyłącz środek lewy",
+          "ru": "Включить или выключить центр лево",
+          "ko": "중앙 왼쪽 켜기 또는 끄기"
+        },
+        "titleFormatted": {
+          "en": "Switch Center Left [[val]]",
+          "nl": "Schakel midden links [[val]]",
+          "da": "Skift center venstre [[val]]",
+          "de": "Mitte links schalten [[val]]",
+          "es": "Cambiar centro izquierda [[val]]",
+          "fr": "Centre gauche de commutation [[val]]",
+          "it": "Centro sinistra di commutazione [[val]]",
+          "no": "Bytt senter venstre [[val]]",
+          "sv": "Växla centrum vänster [[val]]",
+          "pl": "Przełącz środek lewy [[val]]",
+          "ru": "Переключить центр лево [[val]]",
+          "ko": "중앙 왼쪽 전환 [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.center_left"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On",
+              "nl": "Aan",
+              "da": "På",
+              "de": "Ein",
+              "es": "Encendido",
+              "fr": "Allumé",
+              "it": "Acceso",
+              "no": "På",
+              "sv": "På",
+              "pl": "Włączone",
+              "ru": "Включено",
+              "ko": "켬"
+            }
+          }
+        ],
+        "id": "onoff.center_left"
+      },
+      {
+        "title": {
+          "en": "Switch Center Right On or Off",
+          "nl": "Zet midden rechts aan of uit",
+          "da": "Tænd eller sluk for center højre",
+          "de": "Schalten Sie Mitte rechts ein oder aus",
+          "es": "Activar o desactivar centro derecha",
+          "fr": "Activer ou désactiver le centre droite",
+          "it": "Accendi o spegni il centro destra",
+          "no": "Slå senter høyre på eller av",
+          "sv": "Slå på eller av centrum höger",
+          "pl": "Włącz lub wyłącz środek prawy",
+          "ru": "Включить или выключить центр право",
+          "ko": "중앙 오른쪽 켜기 또는 끄기"
+        },
+        "titleFormatted": {
+          "en": "Switch Center Right [[val]]",
+          "nl": "Schakel midden rechts [[val]]",
+          "da": "Skift center højre [[val]]",
+          "de": "Mitte rechts schalten [[val]]",
+          "es": "Cambiar centro derecha [[val]]",
+          "fr": "Centre droite de commutation [[val]]",
+          "it": "Centro destra di commutazione [[val]]",
+          "no": "Bytt senter høyre [[val]]",
+          "sv": "Växla centrum höger [[val]]",
+          "pl": "Przełącz środek prawy [[val]]",
+          "ru": "Переключить центр право [[val]]",
+          "ko": "중앙 오른쪽 전환 [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.center_right"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On",
+              "nl": "Aan",
+              "da": "På",
+              "de": "Ein",
+              "es": "Encendido",
+              "fr": "Allumé",
+              "it": "Acceso",
+              "no": "På",
+              "sv": "På",
+              "pl": "Włączone",
+              "ru": "Включено",
+              "ko": "켬"
+            }
+          }
+        ],
+        "id": "onoff.center_right"
       },
       {
         "title": {
@@ -3711,6 +4266,63 @@
           }
         ],
         "id": "onoff.system_mode"
+      },
+      {
+        "title": {
+          "en": "Switch Top On or Off",
+          "nl": "Zet boven aan of uit",
+          "da": "Tænd eller sluk for top",
+          "de": "Schalten Sie oben ein oder aus",
+          "es": "Activar o desactivar arriba",
+          "fr": "Activer ou désactiver le haut",
+          "it": "Accendi o spegni l'alto",
+          "no": "Slå toppen på eller av",
+          "sv": "Slå på eller av toppen",
+          "pl": "Włącz lub wyłącz górny",
+          "ru": "Включить или выключить верх",
+          "ko": "위쪽 켜기 또는 끄기"
+        },
+        "titleFormatted": {
+          "en": "Switch Top [[val]]",
+          "nl": "Schakel boven [[val]]",
+          "da": "Skift top [[val]]",
+          "de": "Oben schalten [[val]]",
+          "es": "Cambiar arriba [[val]]",
+          "fr": "Haut de commutation [[val]]",
+          "it": "Alto di commutazione [[val]]",
+          "no": "Bytt topp [[val]]",
+          "sv": "Växla topp [[val]]",
+          "pl": "Przełącz górny [[val]]",
+          "ru": "Переключить верх [[val]]",
+          "ko": "위쪽 전환 [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.top"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On",
+              "nl": "Aan",
+              "da": "På",
+              "de": "Ein",
+              "es": "Encendido",
+              "fr": "Allumé",
+              "it": "Acceso",
+              "no": "På",
+              "sv": "På",
+              "pl": "Włączone",
+              "ru": "Включено",
+              "ko": "켬"
+            }
+          }
+        ],
+        "id": "onoff.top"
       },
       {
         "title": {
@@ -4786,6 +5398,102 @@
       },
       {
         "title": {
+          "en": "Set Switch Type Bottom",
+          "nl": "Stel Schakelaar Type Onder In",
+          "da": "Indstil Kontakttype Bund",
+          "de": "Stelle Schaltertyp Unten ein",
+          "es": "Establecer Tipo de Interruptor Abajo",
+          "fr": "Définir le Type de Commutateur Bas",
+          "it": "Imposta Tipo Interruttore Basso",
+          "no": "Sett Brytertype Bunn",
+          "sv": "Ställ in Strömbrytartyp Botten",
+          "pl": "Ustaw Typ Przełącznika Dolny",
+          "ru": "Установить Тип Выключателя Нижний",
+          "ko": "스위치 유형 아래쪽 설정"
+        },
+        "titleFormatted": {
+          "en": "Set Bottom Switch Type to [[val]]",
+          "nl": "Stel Onderschakelaar Type In op [[val]]",
+          "da": "Indstil Bund Kontakttype til [[val]]",
+          "de": "Stelle Unten-Schaltertyp auf [[val]] ein",
+          "es": "Establecer Tipo de Interruptor Abajo a [[val]]",
+          "fr": "Définir le Type de Commutateur Bas sur [[val]]",
+          "it": "Imposta Tipo Interruttore Basso su [[val]]",
+          "no": "Sett Bunnbrytertype til [[val]]",
+          "sv": "Ställ in Bottenbrytartyp till [[val]]",
+          "pl": "Ustaw Typ Przełącznika Dolny na [[val]]",
+          "ru": "Установить Тип Нижнего Выключателя на [[val]]",
+          "ko": "아래쪽 스위치 유형을 [[val]]로 설정"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=switch_type.bottom"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "toggle",
+                "title": {
+                  "en": "toggle",
+                  "nl": "schakelaar",
+                  "da": "skifte",
+                  "de": "umschalten",
+                  "es": "alternar",
+                  "fr": "basculer",
+                  "it": "alternare",
+                  "no": "veksle",
+                  "sv": "växla",
+                  "pl": "przełącz",
+                  "ru": "переключатель",
+                  "ko": "토글"
+                }
+              },
+              {
+                "id": "state",
+                "title": {
+                  "en": "State",
+                  "nl": "Staat",
+                  "da": "Tilstand",
+                  "de": "Status",
+                  "es": "Estado",
+                  "fr": "État",
+                  "it": "Stato",
+                  "no": "Tilstand",
+                  "sv": "Tillstånd",
+                  "pl": "Stan",
+                  "ru": "Состояние",
+                  "ko": "상태"
+                }
+              },
+              {
+                "id": "momentary",
+                "title": {
+                  "en": "Momentary",
+                  "nl": "Momentopname",
+                  "da": "Momentær",
+                  "de": "Momentan",
+                  "es": "Momentáneo",
+                  "fr": "Momentané",
+                  "it": "Momento",
+                  "no": "Øyeblikkelig",
+                  "sv": "Ögonblicklig",
+                  "pl": "Chwilowy",
+                  "ru": "Мгновенный",
+                  "ko": "순간적"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "switch_type.bottom"
+      },
+      {
+        "title": {
           "en": "Set Switch Type Center",
           "nl": "Stel Schakelaar Type Midden In",
           "da": "Indstil Kontakttype Center",
@@ -4879,6 +5587,198 @@
           }
         ],
         "id": "switch_type.center"
+      },
+      {
+        "title": {
+          "en": "Set Switch Type Center Left",
+          "nl": "Stel Schakelaar Type Midden Links In",
+          "da": "Indstil Kontakttype Center Venstre",
+          "de": "Stelle Schaltertyp Mitte Links ein",
+          "es": "Establecer Tipo de Interruptor Centro Izquierda",
+          "fr": "Définir le Type de Commutateur Centre Gauche",
+          "it": "Imposta Tipo Interruttore Centro Sinistra",
+          "no": "Sett Brytertype Senter Venstre",
+          "sv": "Ställ in Strömbrytartyp Centrum Vänster",
+          "pl": "Ustaw Typ Przełącznika Środek Lewy",
+          "ru": "Установить Тип Выключателя Центр Лево",
+          "ko": "스위치 유형 중앙 왼쪽 설정"
+        },
+        "titleFormatted": {
+          "en": "Set Center Left Switch Type to [[val]]",
+          "nl": "Stel Midden Links Schakelaar Type In op [[val]]",
+          "da": "Indstil Center Venstre Kontakttype til [[val]]",
+          "de": "Stelle Mitte Links-Schaltertyp auf [[val]] ein",
+          "es": "Establecer Tipo de Interruptor Centro Izquierda a [[val]]",
+          "fr": "Définir le Type de Commutateur Centre Gauche sur [[val]]",
+          "it": "Imposta Tipo Interruttore Centro Sinistra su [[val]]",
+          "no": "Sett Senter Venstre Brytertype til [[val]]",
+          "sv": "Ställ in Centrum Vänster Brytartyp till [[val]]",
+          "pl": "Ustaw Typ Przełącznika Środek Lewy na [[val]]",
+          "ru": "Установить Тип Выключателя Центр Лево на [[val]]",
+          "ko": "중앙 왼쪽 스위치 유형을 [[val]]로 설정"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=switch_type.center_left"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "toggle",
+                "title": {
+                  "en": "toggle",
+                  "nl": "schakelaar",
+                  "da": "skifte",
+                  "de": "umschalten",
+                  "es": "alternar",
+                  "fr": "basculer",
+                  "it": "alternare",
+                  "no": "veksle",
+                  "sv": "växla",
+                  "pl": "przełącz",
+                  "ru": "переключатель",
+                  "ko": "토글"
+                }
+              },
+              {
+                "id": "state",
+                "title": {
+                  "en": "State",
+                  "nl": "Staat",
+                  "da": "Tilstand",
+                  "de": "Status",
+                  "es": "Estado",
+                  "fr": "État",
+                  "it": "Stato",
+                  "no": "Tilstand",
+                  "sv": "Tillstånd",
+                  "pl": "Stan",
+                  "ru": "Состояние",
+                  "ko": "상태"
+                }
+              },
+              {
+                "id": "momentary",
+                "title": {
+                  "en": "Momentary",
+                  "nl": "Momentopname",
+                  "da": "Momentær",
+                  "de": "Momentan",
+                  "es": "Momentáneo",
+                  "fr": "Momentané",
+                  "it": "Momento",
+                  "no": "Øyeblikkelig",
+                  "sv": "Ögonblicklig",
+                  "pl": "Chwilowy",
+                  "ru": "Мгновенный",
+                  "ko": "순간적"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "switch_type.center_left"
+      },
+      {
+        "title": {
+          "en": "Set Switch Type Center Right",
+          "nl": "Stel Schakelaar Type Midden Rechts In",
+          "da": "Indstil Kontakttype Center Højre",
+          "de": "Stelle Schaltertyp Mitte Rechts ein",
+          "es": "Establecer Tipo de Interruptor Centro Derecha",
+          "fr": "Définir le Type de Commutateur Centre Droite",
+          "it": "Imposta Tipo Interruttore Centro Destra",
+          "no": "Sett Brytertype Senter Høyre",
+          "sv": "Ställ in Strömbrytartyp Centrum Höger",
+          "pl": "Ustaw Typ Przełącznika Środek Prawy",
+          "ru": "Установить Тип Выключателя Центр Право",
+          "ko": "스위치 유형 중앙 오른쪽 설정"
+        },
+        "titleFormatted": {
+          "en": "Set Center Right Switch Type to [[val]]",
+          "nl": "Stel Midden Rechts Schakelaar Type In op [[val]]",
+          "da": "Indstil Center Højre Kontakttype til [[val]]",
+          "de": "Stelle Mitte Rechts-Schaltertyp auf [[val]] ein",
+          "es": "Establecer Tipo de Interruptor Centro Derecha a [[val]]",
+          "fr": "Définir le Type de Commutateur Centre Droite sur [[val]]",
+          "it": "Imposta Tipo Interruttore Centro Destra su [[val]]",
+          "no": "Sett Senter Høyre Brytertype til [[val]]",
+          "sv": "Ställ in Centrum Höger Brytartyp till [[val]]",
+          "pl": "Ustaw Typ Przełącznika Środek Prawy na [[val]]",
+          "ru": "Установить Тип Выключателя Центр Право на [[val]]",
+          "ko": "중앙 오른쪽 스위치 유형을 [[val]]로 설정"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=switch_type.center_right"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "toggle",
+                "title": {
+                  "en": "toggle",
+                  "nl": "schakelaar",
+                  "da": "skifte",
+                  "de": "umschalten",
+                  "es": "alternar",
+                  "fr": "basculer",
+                  "it": "alternare",
+                  "no": "veksle",
+                  "sv": "växla",
+                  "pl": "przełącz",
+                  "ru": "переключатель",
+                  "ko": "토글"
+                }
+              },
+              {
+                "id": "state",
+                "title": {
+                  "en": "State",
+                  "nl": "Staat",
+                  "da": "Tilstand",
+                  "de": "Status",
+                  "es": "Estado",
+                  "fr": "État",
+                  "it": "Stato",
+                  "no": "Tilstand",
+                  "sv": "Tillstånd",
+                  "pl": "Stan",
+                  "ru": "Состояние",
+                  "ko": "상태"
+                }
+              },
+              {
+                "id": "momentary",
+                "title": {
+                  "en": "Momentary",
+                  "nl": "Momentopname",
+                  "da": "Momentær",
+                  "de": "Momentan",
+                  "es": "Momentáneo",
+                  "fr": "Momentané",
+                  "it": "Momento",
+                  "no": "Øyeblikkelig",
+                  "sv": "Ögonblicklig",
+                  "pl": "Chwilowy",
+                  "ru": "Мгновенный",
+                  "ko": "순간적"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "switch_type.center_right"
       },
       {
         "title": {
@@ -5263,6 +6163,102 @@
           }
         ],
         "id": "switch_type.right"
+      },
+      {
+        "title": {
+          "en": "Set Switch Type Top",
+          "nl": "Stel Schakelaar Type Boven In",
+          "da": "Indstil Kontakttype Top",
+          "de": "Stelle Schaltertyp Oben ein",
+          "es": "Establecer Tipo de Interruptor Arriba",
+          "fr": "Définir le Type de Commutateur Haut",
+          "it": "Imposta Tipo Interruttore Alto",
+          "no": "Sett Brytertype Topp",
+          "sv": "Ställ in Strömbrytartyp Topp",
+          "pl": "Ustaw Typ Przełącznika Górny",
+          "ru": "Установить Тип Выключателя Верхний",
+          "ko": "스위치 유형 위쪽 설정"
+        },
+        "titleFormatted": {
+          "en": "Set Top Switch Type to [[val]]",
+          "nl": "Stel Bovenschakelaar Type In op [[val]]",
+          "da": "Indstil Top Kontakttype til [[val]]",
+          "de": "Stelle Oben-Schaltertyp auf [[val]] ein",
+          "es": "Establecer Tipo de Interruptor Arriba a [[val]]",
+          "fr": "Définir le Type de Commutateur Haut sur [[val]]",
+          "it": "Imposta Tipo Interruttore Alto su [[val]]",
+          "no": "Sett Toppbrytertype til [[val]]",
+          "sv": "Ställ in Toppbrytartyp till [[val]]",
+          "pl": "Ustaw Typ Przełącznika Górny na [[val]]",
+          "ru": "Установить Тип Верхнего Выключателя на [[val]]",
+          "ko": "위쪽 스위치 유형을 [[val]]로 설정"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=switch_type.top"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "toggle",
+                "title": {
+                  "en": "toggle",
+                  "nl": "schakelaar",
+                  "da": "skifte",
+                  "de": "umschalten",
+                  "es": "alternar",
+                  "fr": "basculer",
+                  "it": "alternare",
+                  "no": "veksle",
+                  "sv": "växla",
+                  "pl": "przełącz",
+                  "ru": "переключатель",
+                  "ko": "토글"
+                }
+              },
+              {
+                "id": "state",
+                "title": {
+                  "en": "State",
+                  "nl": "Staat",
+                  "da": "Tilstand",
+                  "de": "Status",
+                  "es": "Estado",
+                  "fr": "État",
+                  "it": "Stato",
+                  "no": "Tilstand",
+                  "sv": "Tillstånd",
+                  "pl": "Stan",
+                  "ru": "Состояние",
+                  "ko": "상태"
+                }
+              },
+              {
+                "id": "momentary",
+                "title": {
+                  "en": "Momentary",
+                  "nl": "Momentopname",
+                  "da": "Momentær",
+                  "de": "Momentan",
+                  "es": "Momentáneo",
+                  "fr": "Momentané",
+                  "it": "Momento",
+                  "no": "Øyeblikkelig",
+                  "sv": "Ögonblicklig",
+                  "pl": "Chwilowy",
+                  "ru": "Мгновенный",
+                  "ko": "순간적"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "switch_type.top"
       },
       {
         "title": {
@@ -5834,6 +6830,30 @@
           },
           "uiQuickAction": false
         },
+        "onoff.top": {
+          "title": {
+            "en": "Top"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.bottom": {
+          "title": {
+            "en": "Bottom"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.center_left": {
+          "title": {
+            "en": "Center Left"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.center_right": {
+          "title": {
+            "en": "Center Right"
+          },
+          "uiQuickAction": false
+        },
         "onoff.self_test": {
           "title": {
             "en": "Self test"
@@ -6235,6 +7255,32 @@
       },
       "class": "socket",
       "capabilities": [],
+      "capabilitiesOptions": {
+        "onoff.top": {
+          "title": {
+            "en": "Top"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.bottom": {
+          "title": {
+            "en": "Bottom"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.center_left": {
+          "title": {
+            "en": "Center Left"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.center_right": {
+          "title": {
+            "en": "Center Right"
+          },
+          "uiQuickAction": false
+        }
+      },
       "platforms": [
         "local"
       ],
