@@ -1,0 +1,23 @@
+{
+  "title": {
+    "en": "Right is !{{on|off}}",
+    "nl": "Rechts is !{{aan|uit}}",
+    "da": "Højre er !{{tændt|slukket}}",
+    "de": "Rechts ist !{{ein|aus}}",
+    "es": "Derecha está !{{encendido|apagado}}",
+    "fr": "Droite est !{{allumé|éteint}}",
+    "it": "Destra è !{{acceso|spento}}",
+    "no": "Høyre er !{{på|av}}",
+    "sv": "Höger är !{{på|av}}",
+    "pl": "Prawy jest !{{włączony|wyłączony}}",
+    "ru": "Правый !{{включен|выключен}}",
+    "ko": "오른쪽이 !{{켜짐|꺼짐}}"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.right"
+    }
+  ]
+}

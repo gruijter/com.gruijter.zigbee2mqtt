@@ -1,0 +1,23 @@
+{
+  "title": {
+    "en": "Center is !{{on|off}}",
+    "nl": "Midden is !{{aan|uit}}",
+    "da": "Center er !{{tændt|slukket}}",
+    "de": "Mitte ist !{{ein|aus}}",
+    "es": "Centro está !{{encendido|apagado}}",
+    "fr": "Centre est !{{allumé|éteint}}",
+    "it": "Centro è !{{acceso|spento}}",
+    "no": "Senter er !{{på|av}}",
+    "sv": "Centrum är !{{på|av}}",
+    "pl": "Środek jest !{{włączony|wyłączony}}",
+    "ru": "Центр !{{включен|выключен}}",
+    "ko": "센터가 !{{켜짐|꺼짐}}"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.center"
+    }
+  ]
+}
