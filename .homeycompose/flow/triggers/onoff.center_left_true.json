@@ -1,0 +1,24 @@
+{
+  "title": {
+    "en": "Center Left Turned On",
+    "nl": "Midden Links Ingeschakeld",
+    "da": "Center Venstre Tændt",
+    "de": "Mitte Links Eingeschaltet",
+    "es": "Centro Izquierda Activado",
+    "fr": "Centre Gauche Activé",
+    "it": "Centro Sinistra Acceso",
+    "no": "Senter Venstre Slått På",
+    "sv": "Centrum Vänster Påslagen",
+    "pl": "Środek Lewy Włączony",
+    "ru": "Центр Лево Включен",
+    "ko": "중앙 왼쪽 켜짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.center_left"
+    }
+  ]
+}

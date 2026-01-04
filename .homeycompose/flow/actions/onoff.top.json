@@ -1,0 +1,56 @@
+{
+  "title": {
+    "en": "Switch Top On or Off",
+    "nl": "Zet boven aan of uit",
+    "da": "Tænd eller sluk for top",
+    "de": "Schalten Sie oben ein oder aus",
+    "es": "Activar o desactivar arriba",
+    "fr": "Activer ou désactiver le haut",
+    "it": "Accendi o spegni l'alto",
+    "no": "Slå toppen på eller av",
+    "sv": "Slå på eller av toppen",
+    "pl": "Włącz lub wyłącz górny",
+    "ru": "Включить или выключить верх",
+    "ko": "위쪽 켜기 또는 끄기"
+  },
+  "titleFormatted": {
+    "en": "Switch Top [[val]]",
+    "nl": "Schakel boven [[val]]",
+    "da": "Skift top [[val]]",
+    "de": "Oben schalten [[val]]",
+    "es": "Cambiar arriba [[val]]",
+    "fr": "Haut de commutation [[val]]",
+    "it": "Alto di commutazione [[val]]",
+    "no": "Bytt topp [[val]]",
+    "sv": "Växla topp [[val]]",
+    "pl": "Przełącz górny [[val]]",
+    "ru": "Переключить верх [[val]]",
+    "ko": "위쪽 전환 [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.top"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "På",
+        "de": "Ein",
+        "es": "Encendido",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączone",
+        "ru": "Включено",
+        "ko": "켬"
+      }
+    }
+  ]
+}

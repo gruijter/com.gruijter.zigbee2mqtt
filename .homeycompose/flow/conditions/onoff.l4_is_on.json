@@ -1,0 +1,23 @@
+{
+  "title": {
+    "en": "L4 is !{{on|off}}",
+    "nl": "L4 is !{{aan|uit}}",
+    "da": "L4 er !{{tændt|slukket}}",
+    "de": "L4 ist !{{ein|aus}}",
+    "es": "L4 está !{{encendido|apagado}}",
+    "fr": "L4 est !{{allumé|éteint}}",
+    "it": "L4 è !{{acceso|spento}}",
+    "no": "L4 er !{{på|av}}",
+    "sv": "L4 är !{{på|av}}",
+    "pl": "L4 jest !{{włączony|wyłączony}}",
+    "ru": "L4 !{{включен|выключен}}",
+    "ko": "L4가 !{{켜짐|꺼짐}}"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.l4"
+    }
+  ]
+}

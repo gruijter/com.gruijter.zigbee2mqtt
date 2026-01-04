@@ -31,6 +31,12 @@ interface ManifestFlowAction {
   args?: Array<{ filter?: string }>;
 }
 
+// Minimal type for manifest flow condition entries
+interface ManifestFlowCondition {
+  id: string;
+  args?: Array<{ filter?: string }>;
+}
+
 module.exports = class MyApp extends Homey.App {
 
   async onInit() {
@@ -93,6 +99,33 @@ module.exports = class MyApp extends Homey.App {
       } catch (error) {
         this.error(error);
       }
+    });
+
+    // Register condition cards
+    this.registerFlowConditions();
+  }
+
+  registerFlowConditions() {
+    const conditionListeners: Record<string, Homey.FlowCardCondition> = {};
+    const conditionList = this.manifest.flow.conditions as ManifestFlowCondition[] | undefined;
+
+    if (!conditionList) return;
+
+    conditionList.forEach((condition) => {
+      this.log('setting up condition listener', condition.id);
+      conditionListeners[condition.id] = this.homey.flow.getConditionCard(condition.id);
+      conditionListeners[condition.id].registerRunListener(async (args) => {
+        try {
+          const device = args.device as Zigbee2MQTTDevice;
+          // Extract capability name from condition id (e.g., "onoff.l1_is_on" -> "onoff.l1")
+          const capabilityName = condition.id.replace('_is_on', '');
+          const capabilityValue = await device.getCapabilityValue(capabilityName);
+          return capabilityValue === true;
+        } catch (error) {
+          this.error(error);
+          return false;
+        }
+      });
     });
   }
 

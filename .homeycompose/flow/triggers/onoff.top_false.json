@@ -1,0 +1,24 @@
+{
+  "title": {
+    "en": "Top Turned Off",
+    "nl": "Boven Uitgeschakeld",
+    "da": "Top Slukket",
+    "de": "Oben Ausgeschaltet",
+    "es": "Arriba Apagado",
+    "fr": "Haut Éteint",
+    "it": "Alto Spento",
+    "no": "Topp Slått Av",
+    "sv": "Topp Avstängd",
+    "pl": "Górny Wyłączony",
+    "ru": "Верх Выключен",
+    "ko": "위쪽 꺼짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.top"
+    }
+  ]
+}
