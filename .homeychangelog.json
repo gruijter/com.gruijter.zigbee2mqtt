@@ -1,4 +1,7 @@
 {
+  "3.1.2" : {
+    "en": "Added pir_detection mapping."
+  },
   "3.1.1" : {
     "en": "Fix classes and icons during pair. Added frost_protection_temperature capability for thermostats."
   },

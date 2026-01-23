@@ -162,6 +162,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   gas: ['alarm_gas', (v) => v],
   occupancy: ['alarm_occupancy', (v) => v],
   presence: ['alarm_presence', (v) => v],
+  pir_detection: ['alarm_motion', (v) => v],
   contact: ['alarm_contact', (v) => !v],
   carbon_monoxide: ['alarm_co', (v) => v],
   tamper: ['alarm_tamper', (v) => v],
