@@ -149,6 +149,10 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   state_left: ['onoff.left', (v) => v === 'ON', (v) => ({ state_left: v ? 'ON' : 'OFF' })],
   state_center: ['onoff.center', (v) => v === 'ON', (v) => ({ state_center: v ? 'ON' : 'OFF' })],
   state_right: ['onoff.right', (v) => v === 'ON', (v) => ({ state_right: v ? 'ON' : 'OFF' })],
+  state_top: ['onoff.top', (v) => v === 'ON', (v) => ({ state_top: v ? 'ON' : 'OFF' })],
+  state_bottom: ['onoff.bottom', (v) => v === 'ON', (v) => ({ state_bottom: v ? 'ON' : 'OFF' })],
+  state_center_left: ['onoff.center_left', (v) => v === 'ON', (v) => ({ state_center_left: v ? 'ON' : 'OFF' })],
+  state_center_right: ['onoff.center_right', (v) => v === 'ON', (v) => ({ state_center_right: v ? 'ON' : 'OFF' })],
   backlight_mode: ['onoff.backlight', (v) => v === 'ON', (v) => ({ backlight_mode: v ? 'ON' : 'OFF' })],
   system_mode: ['onoff.system_mode', (v) => v === 'heat', (v) => ({ system_mode: v ? 'heat' : 'off' })], // MOES BHT series thermostat
   indicator: ['onoff.indicator', (v) => v === 'ON', (v) => ({ indicator: v ? 'ON' : 'OFF' })], // TuYa ZG-204ZM presence sensor
@@ -203,6 +207,10 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   switch_type_left: ['switch_type.left', (v) => v, (v) => ({ switch_type_left: v })], // [toggle, state, momentary]
   switch_type_center: ['switch_type.center', (v) => v, (v) => ({ switch_type_center: v })], // [toggle, state, momentary]
   switch_type_right: ['switch_type.right', (v) => v, (v) => ({ switch_type_right: v })], // [toggle, state, momentary]
+  switch_type_top: ['switch_type.top', (v) => v, (v) => ({ switch_type_top: v })], // [toggle, state, momentary]
+  switch_type_bottom: ['switch_type.bottom', (v) => v, (v) => ({ switch_type_bottom: v })], // [toggle, state, momentary]
+  switch_type_center_left: ['switch_type.center_left', (v) => v, (v) => ({ switch_type_center_left: v })], // [toggle, state, momentary]
+  switch_type_center_right: ['switch_type.center_right', (v) => v, (v) => ({ switch_type_center_right: v })], // [toggle, state, momentary]
   sensor: ['sensor', (v) => v, (v) => ({ sensor: v })], // ["IN", "AL", "OU"]  // thermostats and mmWave presence
   effect: ['effect', (v) => v, (v) => ({ effect: v })], // [blink, breathe, okay, channel_change, finish_effect, stop_effect]
   alarm: ['alarm_sound', (v) => v, (v) => ({ alarm: v })], // [stop, pre_alarm, fire, burglar]

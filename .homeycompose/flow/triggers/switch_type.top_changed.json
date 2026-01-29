@@ -1,0 +1,45 @@
+{
+  "title": {
+    "en": "The switch type Top changed",
+    "nl": "Het schakeltype Boven is gewijzigd",
+    "da": "Kontakttoptype blev ændret",
+    "de": "Der Schalttyp Oben wurde geändert",
+    "es": "El tipo de interruptor cambió arriba",
+    "fr": "Le type de commutateur Haut a changé",
+    "it": "Il tipo di interruttore Alto è cambiato",
+    "no": "Brytertypen Topp endret",
+    "sv": "Brytartyp Topp ändras",
+    "pl": "Zmieniono typ przełącznika Górny",
+    "ru": "Тип переключателя Верх изменился",
+    "ko": "스위치 유형 위쪽이 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=switch_type.top"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "switch_type.top",
+      "type": "string",
+      "title": {
+        "en": "Switch type top",
+        "nl": "Schakeltype boven",
+        "da": "Kontakttoptype",
+        "de": "Schalttyp Oben",
+        "es": "Tipo de interruptor arriba",
+        "fr": "Type de commutateur haut",
+        "it": "Tipo di interruttore alto",
+        "no": "Brytertype topp",
+        "sv": "Brytartyptopp",
+        "pl": "Typ przełącznika górny",
+        "ru": "Тип переключателя Верх",
+        "ko": "스위치 유형 위쪽"
+      },
+      "example": "toggle"
+    }
+  ]
+}

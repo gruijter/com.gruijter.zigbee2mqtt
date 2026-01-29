@@ -1,0 +1,23 @@
+{
+  "title": {
+    "en": "Center Left is !{{on|off}}",
+    "nl": "Midden Links is !{{aan|uit}}",
+    "da": "Center Venstre er !{{tændt|slukket}}",
+    "de": "Mitte Links ist !{{ein|aus}}",
+    "es": "Centro Izquierda está !{{encendido|apagado}}",
+    "fr": "Centre Gauche est !{{allumé|éteint}}",
+    "it": "Centro Sinistra è !{{acceso|spento}}",
+    "no": "Senter Venstre er !{{på|av}}",
+    "sv": "Centrum Vänster är !{{på|av}}",
+    "pl": "Środek Lewy jest !{{włączony|wyłączony}}",
+    "ru": "Центр Лево !{{включен|выключен}}",
+    "ko": "중앙 왼쪽이 !{{켜짐|꺼짐}}"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.center_left"
+    }
+  ]
+}
