@@ -156,6 +156,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   self_test: ['onoff.self_test', (v) => v === 'ON', (v) => ({ self_test: v ? 'ON' : 'OFF' })], // Bosch TwinGuard
   open_window: ['alarm_generic.open_window', (v) => v === 'ON'],
   identify: ['button.identify', (v) => v === 'NEVER_PUBLISHED', (v) => ({ identify: v ? 'identify' : 'identify' })],
+  thermostat_mode: ['onoff.thermostat_mode', (v) => v === 'ON', (v) => ({ thermostat_mode: v ? 'ON' : 'OFF' })],
 
   device_fault: ['alarm_problem', (v) => v],
   vibration: ['alarm_vibration', (v) => v],

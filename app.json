@@ -6170,6 +6170,12 @@
       "class": "socket",
       "capabilities": [],
       "capabilitiesOptions": {
+        "onoff.thermostat_mode": {
+          "getable": true,
+          "setable": true,
+          "uiComponent": "button",
+          "uiQuickAction": false
+        },
         "locked.child": {
           "title": {
             "en": "Child lock"

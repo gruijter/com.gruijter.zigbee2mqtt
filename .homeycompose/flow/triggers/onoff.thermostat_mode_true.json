@@ -1,0 +1,24 @@
+{
+  "title": {
+    "en": "Thermostat mode turned On",
+    "nl": "Thermostaatmodus ingeschakeld",
+    "da": "Termostattilstand tændt",
+    "de": "Thermostatmodus eingeschaltet",
+    "es": "Modo termostato encendido",
+    "fr": "Mode thermostat allumé",
+    "it": "Modalità termostato accesa",
+    "no": "Termostatmodus slått på",
+    "sv": "Termostatläge påslaget",
+    "pl": "Tryb termostatu włączony",
+    "ru": "Режим термостата включен",
+    "ko": "온도 조절기 모드 켜짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.thermostat_mode"
+    }
+  ]
+}

@@ -16,6 +16,13 @@
   "class": "socket",
   "capabilities": [],
   "capabilitiesOptions": {
+    "onoff.thermostat_mode": {
+      "title": {
+        "en": "Thermostat mode"
+      },
+      "uiComponent": "button",
+      "uiQuickAction": false
+    },
     "locked.child": {
       "title": {
         "en": "Child lock"
