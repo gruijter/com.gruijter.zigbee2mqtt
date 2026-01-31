@@ -203,6 +203,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   switch_type_center: ['switch_type.center', (v) => v, (v) => ({ switch_type_center: v })], // [toggle, state, momentary]
   switch_type_right: ['switch_type.right', (v) => v, (v) => ({ switch_type_right: v })], // [toggle, state, momentary]
   system_mode: ['system_mode', (v) => v, (v) => ({ system_mode: v })], // thermostats
+  fan_mode: ['fan_mode', (v) => v, (v) => ({ fan_mode: v })],
   sensor: ['sensor', (v) => v, (v) => ({ sensor: v })], // ["IN", "AL", "OU"]  // thermostats and mmWave presence
   effect: ['effect', (v) => v, (v) => ({ effect: v })], // [blink, breathe, okay, channel_change, finish_effect, stop_effect]
   alarm: ['alarm_sound', (v) => v, (v) => ({ alarm: v })], // [stop, pre_alarm, fire, burglar]
@@ -366,6 +367,7 @@ const classIconMap: { [key: string]: [string, string] } = {
   'door sensor': ['sensor', 'contact.svg'],
   'radiator valve': ['thermostat', 'radiator_valve.svg'],
   thermostat: ['thermostat', 'thermostat.svg'],
+  w100: ['thermostat', 'thermostat.svg'],
   'soil sensor': ['sensor', 'soil_sensor.svg'],
   'vibration sensor': ['sensor', 'vibration_sensor.svg'],
   'pressure sensor': ['sensor', 'vibration_sensor.svg'],

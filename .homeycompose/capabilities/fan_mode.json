@@ -1,0 +1,142 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Fan mode",
+    "nl": "Ventilatormodus",
+    "da": "Ventilatortilstand",
+    "de": "Ventilatormodus",
+    "es": "Modo del ventilador",
+    "fr": "Mode du ventilateur",
+    "it": "Modalità ventilatore",
+    "no": "Ventilatormodus",
+    "sv": "Fläktläge",
+    "pl": "Tryb wentylatora",
+    "ru": "Режим вентилятора",
+    "ko": "팬 모드"
+  },
+  "values": [
+    {
+      "id": "off",
+      "title": {
+        "en": "Off",
+        "nl": "Uit",
+        "da": "Slukket",
+        "de": "Aus",
+        "es": "Apagado",
+        "fr": "Éteint",
+        "it": "Spento",
+        "no": "Av",
+        "sv": "Av",
+        "pl": "Wyłączony",
+        "ru": "Выкл",
+        "ko": "꺼짐"
+      }
+    },
+    {
+      "id": "low",
+      "title": {
+        "en": "Low",
+        "nl": "Laag",
+        "da": "Lav",
+        "de": "Niedrig",
+        "es": "Bajo",
+        "fr": "Bas",
+        "it": "Basso",
+        "no": "Lav",
+        "sv": "Låg",
+        "pl": "Niski",
+        "ru": "Низкий",
+        "ko": "낮은"
+      }
+    },
+    {
+      "id": "medium",
+      "title": {
+        "en": "Medium",
+        "nl": "Gemiddeld",
+        "da": "Mellem",
+        "de": "Mittel",
+        "es": "Medio",
+        "fr": "Moyen",
+        "it": "Medio",
+        "no": "Middels",
+        "sv": "Medium",
+        "pl": "Średni",
+        "ru": "Средний",
+        "ko": "중간"
+      }
+    },
+    {
+      "id": "high",
+      "title": {
+        "en": "High",
+        "nl": "Hoog",
+        "da": "Høj",
+        "de": "Hoch",
+        "es": "Alto",
+        "fr": "Élevé",
+        "it": "Alto",
+        "no": "Høy",
+        "sv": "Hög",
+        "pl": "Wysoki",
+        "ru": "Высокий",
+        "ko": "높은"
+      }
+    },
+    {
+      "id": "on",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "Til",
+        "de": "An",
+        "es": "Encendido",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączony",
+        "ru": "Вкл",
+        "ko": "켬"
+      }
+    },
+    {
+      "id": "auto",
+      "title": {
+        "en": "Auto",
+        "nl": "Automatisch",
+        "da": "Auto",
+        "de": "Auto",
+        "es": "Automático",
+        "fr": "Auto",
+        "it": "Auto",
+        "no": "Auto",
+        "sv": "Automatisk",
+        "pl": "Auto",
+        "ru": "Авто",
+        "ko": "자동"
+      }
+    },
+    {
+      "id": "smart",
+      "title": {
+        "en": "Smart",
+        "nl": "Slim",
+        "da": "Smart",
+        "de": "Smart",
+        "es": "Inteligente",
+        "fr": "Intelligent",
+        "it": "Smart",
+        "no": "Smart",
+        "sv": "Smart",
+        "pl": "Inteligentny",
+        "ru": "Умный",
+        "ko": "스마트"
+      }
+    }
+  ],
+  "uiComponent": "picker",
+  "getable": true,
+  "setable": true,
+  "insights": false
+}

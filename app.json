@@ -745,6 +745,52 @@
       },
       {
         "title": {
+          "en": "The fan mode changed",
+          "nl": "De ventilatormodus veranderde",
+          "da": "Ventilatortilstand ændret",
+          "de": "Der Ventilatormodus hat sich geändert",
+          "es": "El modo del ventilador cambió",
+          "fr": "Le mode du ventilateur a changé",
+          "it": "La modalità ventilatore è cambiata",
+          "no": "Ventilatormodus endret",
+          "sv": "Fläktläge ändrat",
+          "pl": "Tryb wentylatora zmieniony",
+          "ru": "Режим вентилятора изменен",
+          "ko": "팬 모드가 변경되었습니다"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=fan_mode"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "fan_mode",
+            "type": "string",
+            "title": {
+              "en": "Fan mode",
+              "nl": "Ventilatormodus",
+              "da": "Ventilatortilstand",
+              "de": "Ventilatormodus",
+              "es": "Modo del ventilador",
+              "fr": "Mode du ventilateur",
+              "it": "Modalità ventilatore",
+              "no": "Ventilatormodus",
+              "sv": "Fläktläge",
+              "pl": "Tryb wentylatora",
+              "ru": "Режим вентилятора",
+              "ko": "팬 모드"
+            },
+            "example": "auto"
+          }
+        ],
+        "id": "fan_mode_changed"
+      },
+      {
+        "title": {
           "en": "The Indicator Mode changed",
           "nl": "De Indicator Modus veranderde",
           "da": "Indikatortilstand ændret",
@@ -2138,7 +2184,7 @@
       },
       {
         "title": {
-          "en": "The system Mode changed",
+          "en": "The system mode changed",
           "nl": "De systeemmodus veranderde",
           "da": "Systemtilstand ændret",
           "de": "Der Systemmodus hat sich geändert",
@@ -2164,7 +2210,7 @@
             "name": "system_mode",
             "type": "string",
             "title": {
-              "en": "System Mode",
+              "en": "System mode",
               "nl": "Systeemmodus",
               "da": "Systemtilstand",
               "de": "Systemmodus",
@@ -2828,6 +2874,170 @@
           }
         ],
         "id": "effect"
+      },
+      {
+        "title": {
+          "en": "Set fan mode",
+          "nl": "Zet ventilatormodus",
+          "da": "Sæt ventilatortilstand",
+          "de": "Ventilatormodus setzen",
+          "es": "Establecer modo del ventilador",
+          "fr": "Définir le mode du ventilateur",
+          "it": "Imposta modalità ventilatore",
+          "no": "Sett ventilatormodus",
+          "sv": "Sätt fläktläge",
+          "pl": "Ustaw tryb wentylatora",
+          "ru": "Установить режим вентилятора",
+          "ko": "팬 모드 설정"
+        },
+        "titleFormatted": {
+          "en": "Set fan mode to [[val]]",
+          "nl": "Zet ventilatormodus op [[val]]",
+          "da": "Sæt ventilatortilstand til [[val]]",
+          "de": "Setze Ventilatormodus auf [[val]]",
+          "es": "Establecer modo del ventilador en [[val]]",
+          "fr": "Définir le mode du ventilateur sur [[val]]",
+          "it": "Imposta modalità ventilatore su [[val]]",
+          "no": "Sett ventilatormodus til [[val]]",
+          "sv": "Sätt fläktläge till [[val]]",
+          "pl": "Ustaw tryb wentylatora na [[val]]",
+          "ru": "Установить режим вентилятора на [[val]]",
+          "ko": "팬 모드를 [[val]]으로 설정"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=fan_mode"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "off",
+                "title": {
+                  "en": "Off",
+                  "nl": "Uit",
+                  "da": "Slukket",
+                  "de": "Aus",
+                  "es": "Apagado",
+                  "fr": "Éteint",
+                  "it": "Spento",
+                  "no": "Av",
+                  "sv": "Av",
+                  "pl": "Wyłączony",
+                  "ru": "Выкл",
+                  "ko": "꺼짐"
+                }
+              },
+              {
+                "id": "low",
+                "title": {
+                  "en": "Low",
+                  "nl": "Laag",
+                  "da": "Lav",
+                  "de": "Niedrig",
+                  "es": "Bajo",
+                  "fr": "Bas",
+                  "it": "Basso",
+                  "no": "Lav",
+                  "sv": "Låg",
+                  "pl": "Niski",
+                  "ru": "Низкий",
+                  "ko": "낮은"
+                }
+              },
+              {
+                "id": "medium",
+                "title": {
+                  "en": "Medium",
+                  "nl": "Gemiddeld",
+                  "da": "Mellem",
+                  "de": "Mittel",
+                  "es": "Medio",
+                  "fr": "Moyen",
+                  "it": "Medio",
+                  "no": "Middels",
+                  "sv": "Medium",
+                  "pl": "Średni",
+                  "ru": "Средний",
+                  "ko": "중간"
+                }
+              },
+              {
+                "id": "high",
+                "title": {
+                  "en": "High",
+                  "nl": "Hoog",
+                  "da": "Høj",
+                  "de": "Hoch",
+                  "es": "Alto",
+                  "fr": "Élevé",
+                  "it": "Alto",
+                  "no": "Høy",
+                  "sv": "Hög",
+                  "pl": "Wysoki",
+                  "ru": "Высокий",
+                  "ko": "높은"
+                }
+              },
+              {
+                "id": "on",
+                "title": {
+                  "en": "On",
+                  "nl": "Aan",
+                  "da": "Til",
+                  "de": "An",
+                  "es": "Encendido",
+                  "fr": "Allumé",
+                  "it": "Acceso",
+                  "no": "På",
+                  "sv": "På",
+                  "pl": "Włączony",
+                  "ru": "Вкл",
+                  "ko": "켬"
+                }
+              },
+              {
+                "id": "auto",
+                "title": {
+                  "en": "Auto",
+                  "nl": "Automatisch",
+                  "da": "Auto",
+                  "de": "Auto",
+                  "es": "Automático",
+                  "fr": "Auto",
+                  "it": "Auto",
+                  "no": "Auto",
+                  "sv": "Automatisk",
+                  "pl": "Auto",
+                  "ru": "Авто",
+                  "ko": "자동"
+                }
+              },
+              {
+                "id": "smart",
+                "title": {
+                  "en": "Smart",
+                  "nl": "Slim",
+                  "da": "Smart",
+                  "de": "Smart",
+                  "es": "Inteligente",
+                  "fr": "Intelligent",
+                  "it": "Smart",
+                  "no": "Smart",
+                  "sv": "Smart",
+                  "pl": "Inteligentny",
+                  "ru": "Умный",
+                  "ko": "스마트"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "fan_mode"
       },
       {
         "title": {
@@ -7351,6 +7561,148 @@
             "pl": "Zatrzymaj pętlę kolorów",
             "ru": "Остановить цветовую петлю",
             "ko": "컬러 루프 중지"
+          }
+        }
+      ],
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "insights": false
+    },
+    "fan_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Fan mode",
+        "nl": "Ventilatormodus",
+        "da": "Ventilatortilstand",
+        "de": "Ventilatormodus",
+        "es": "Modo del ventilador",
+        "fr": "Mode du ventilateur",
+        "it": "Modalità ventilatore",
+        "no": "Ventilatormodus",
+        "sv": "Fläktläge",
+        "pl": "Tryb wentylatora",
+        "ru": "Режим вентилятора",
+        "ko": "팬 모드"
+      },
+      "values": [
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "nl": "Uit",
+            "da": "Slukket",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "Éteint",
+            "it": "Spento",
+            "no": "Av",
+            "sv": "Av",
+            "pl": "Wyłączony",
+            "ru": "Выкл",
+            "ko": "꺼짐"
+          }
+        },
+        {
+          "id": "low",
+          "title": {
+            "en": "Low",
+            "nl": "Laag",
+            "da": "Lav",
+            "de": "Niedrig",
+            "es": "Bajo",
+            "fr": "Bas",
+            "it": "Basso",
+            "no": "Lav",
+            "sv": "Låg",
+            "pl": "Niski",
+            "ru": "Низкий",
+            "ko": "낮은"
+          }
+        },
+        {
+          "id": "medium",
+          "title": {
+            "en": "Medium",
+            "nl": "Gemiddeld",
+            "da": "Mellem",
+            "de": "Mittel",
+            "es": "Medio",
+            "fr": "Moyen",
+            "it": "Medio",
+            "no": "Middels",
+            "sv": "Medium",
+            "pl": "Średni",
+            "ru": "Средний",
+            "ko": "중간"
+          }
+        },
+        {
+          "id": "high",
+          "title": {
+            "en": "High",
+            "nl": "Hoog",
+            "da": "Høj",
+            "de": "Hoch",
+            "es": "Alto",
+            "fr": "Élevé",
+            "it": "Alto",
+            "no": "Høy",
+            "sv": "Hög",
+            "pl": "Wysoki",
+            "ru": "Высокий",
+            "ko": "높은"
+          }
+        },
+        {
+          "id": "on",
+          "title": {
+            "en": "On",
+            "nl": "Aan",
+            "da": "Til",
+            "de": "An",
+            "es": "Encendido",
+            "fr": "Allumé",
+            "it": "Acceso",
+            "no": "På",
+            "sv": "På",
+            "pl": "Włączony",
+            "ru": "Вкл",
+            "ko": "켬"
+          }
+        },
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto",
+            "nl": "Automatisch",
+            "da": "Auto",
+            "de": "Auto",
+            "es": "Automático",
+            "fr": "Auto",
+            "it": "Auto",
+            "no": "Auto",
+            "sv": "Automatisk",
+            "pl": "Auto",
+            "ru": "Авто",
+            "ko": "자동"
+          }
+        },
+        {
+          "id": "smart",
+          "title": {
+            "en": "Smart",
+            "nl": "Slim",
+            "da": "Smart",
+            "de": "Smart",
+            "es": "Inteligente",
+            "fr": "Intelligent",
+            "it": "Smart",
+            "no": "Smart",
+            "sv": "Smart",
+            "pl": "Inteligentny",
+            "ru": "Умный",
+            "ko": "스마트"
           }
         }
       ],
