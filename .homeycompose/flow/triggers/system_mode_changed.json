@@ -1,17 +1,17 @@
 {
   "title": {
-    "en": "The preset changed",
-    "nl": "De preset is veranderd",
-    "da": "Forudindstillingen er ændret",
-    "de": "Das Preset wurde geändert",
-    "es": "El preset ha cambiado",
-    "fr": "Le préréglage a changé",
-    "it": "Il preset è cambiato",
-    "no": "Forhåndsinnstillingen ble endret",
-    "sv": "Förinställningen har ändrats",
-    "pl": "Zmieniono ustawienie wstępne",
-    "ru": "Предустановка изменена",
-    "ko": "프리셋이 변경되었습니다"
+    "en": "The system mode changed",
+    "nl": "De systeemmodus veranderde",
+    "da": "Systemtilstand ændret",
+    "de": "Der Systemmodus hat sich geändert",
+    "es": "El modo del sistema cambió",
+    "fr": "Le mode système a changé",
+    "it": "La modalità sistema è cambiata",
+    "no": "Systemmodus endret",
+    "sv": "Systemläge ändrat",
+    "pl": "Tryb systemu zmieniony",
+    "ru": "Режим системы изменен",
+    "ko": "시스템 모드가 변경되었습니다"
   },
   "highlight": true,
   "args": [
@@ -32,14 +32,14 @@
         "de": "Systemmodus",
         "es": "Modo del sistema",
         "fr": "Mode système",
-        "it": "Modalità di sistema",
+        "it": "Modalità sistema",
         "no": "Systemmodus",
         "sv": "Systemläge",
         "pl": "Tryb systemu",
         "ru": "Режим системы",
         "ko": "시스템 모드"
       },
-      "example": "auto"
+      "example": "off"
     }
   ]
 }

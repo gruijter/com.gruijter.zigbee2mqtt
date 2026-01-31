@@ -2138,18 +2138,18 @@
       },
       {
         "title": {
-          "en": "The preset changed",
-          "nl": "De preset is veranderd",
-          "da": "Forudindstillingen er ændret",
-          "de": "Das Preset wurde geändert",
-          "es": "El preset ha cambiado",
-          "fr": "Le préréglage a changé",
-          "it": "Il preset è cambiato",
-          "no": "Forhåndsinnstillingen ble endret",
-          "sv": "Förinställningen har ändrats",
-          "pl": "Zmieniono ustawienie wstępne",
-          "ru": "Предустановка изменена",
-          "ko": "프리셋이 변경되었습니다"
+          "en": "The system Mode changed",
+          "nl": "De systeemmodus veranderde",
+          "da": "Systemtilstand ændret",
+          "de": "Der Systemmodus hat sich geändert",
+          "es": "El modo del sistema cambió",
+          "fr": "Le mode système a changé",
+          "it": "La modalità sistema è cambiata",
+          "no": "Systemmodus endret",
+          "sv": "Systemläge ändrat",
+          "pl": "Tryb systemu zmieniony",
+          "ru": "Режим системы изменен",
+          "ko": "시스템 모드가 변경되었습니다"
         },
         "highlight": true,
         "args": [
@@ -2164,20 +2164,20 @@
             "name": "system_mode",
             "type": "string",
             "title": {
-              "en": "System mode",
+              "en": "System Mode",
               "nl": "Systeemmodus",
               "da": "Systemtilstand",
               "de": "Systemmodus",
               "es": "Modo del sistema",
               "fr": "Mode système",
-              "it": "Modalità di sistema",
+              "it": "Modalità sistema",
               "no": "Systemmodus",
               "sv": "Systemläge",
               "pl": "Tryb systemu",
               "ru": "Режим системы",
               "ko": "시스템 모드"
             },
-            "example": "auto"
+            "example": "off"
           }
         ],
         "id": "system_mode_changed"
@@ -5263,6 +5263,204 @@
           }
         ],
         "id": "switch_type.right"
+      },
+      {
+        "title": {
+          "en": "Set system mode",
+          "nl": "Zet systeemmodus",
+          "da": "Sæt systemtilstand",
+          "de": "Systemmodus setzen",
+          "es": "Establecer modo del sistema",
+          "fr": "Définir le mode système",
+          "it": "Imposta modalità sistema",
+          "no": "Sett systemmodus",
+          "sv": "Sätt systemläge",
+          "pl": "Ustaw tryb systemu",
+          "ru": "Установить режим системы",
+          "ko": "시스템 모드 설정"
+        },
+        "titleFormatted": {
+          "en": "Set system mode to [[val]]",
+          "nl": "Zet systeemmodus op [[val]]",
+          "da": "Sæt systemtilstand til [[val]]",
+          "de": "Setze Systemmodus auf [[val]]",
+          "es": "Establecer modo del sistema en [[val]]",
+          "fr": "Définir le mode système sur [[val]]",
+          "it": "Imposta modalità sistema su [[val]]",
+          "no": "Sett systemmodus til [[val]]",
+          "sv": "Sätt systemläge till [[val]]",
+          "pl": "Ustaw tryb systemu na [[val]]",
+          "ru": "Установить режим системы на [[val]]",
+          "ko": "시스템 모드를 [[val]]으로 설정"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=system_mode"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "auto",
+                "title": {
+                  "en": "Auto",
+                  "nl": "Automatisch",
+                  "da": "Auto",
+                  "de": "Auto",
+                  "es": "Automático",
+                  "fr": "Auto",
+                  "it": "Auto",
+                  "no": "Auto",
+                  "sv": "Automatisk",
+                  "pl": "Auto",
+                  "ru": "Авто",
+                  "ko": "자동"
+                }
+              },
+              {
+                "id": "heat",
+                "title": {
+                  "en": "Heat",
+                  "nl": "Verwarming",
+                  "da": "Varme",
+                  "de": "Heizen",
+                  "es": "Calor",
+                  "fr": "Chaleur",
+                  "it": "Riscaldamento",
+                  "no": "Varme",
+                  "sv": "Värme",
+                  "pl": "Ciepło",
+                  "ru": "Тепло",
+                  "ko": "난방"
+                }
+              },
+              {
+                "id": "off",
+                "title": {
+                  "en": "Off",
+                  "nl": "Uit",
+                  "da": "Slukket",
+                  "de": "Aus",
+                  "es": "Apagado",
+                  "fr": "Éteint",
+                  "it": "Spento",
+                  "no": "Av",
+                  "sv": "Av",
+                  "pl": "Wyłączony",
+                  "ru": "Выкл",
+                  "ko": "꺼짐"
+                }
+              },
+              {
+                "id": "cool",
+                "title": {
+                  "en": "Cool",
+                  "nl": "Koel",
+                  "da": "Kølig",
+                  "de": "Kühlen",
+                  "es": "Fresco",
+                  "fr": "Frais",
+                  "it": "Raffreddamento",
+                  "no": "Kjølig",
+                  "sv": "Cool",
+                  "pl": "Chłodzenie",
+                  "ru": "Охлаждение",
+                  "ko": "냉방"
+                }
+              },
+              {
+                "id": "emergency_heating",
+                "title": {
+                  "en": "Emergency Heat",
+                  "nl": "Noodverwarming",
+                  "da": "Nødvarme",
+                  "de": "Notheizung",
+                  "es": "Calor de emergencia",
+                  "fr": "Chauffage d'urgence",
+                  "it": "Riscaldamento di emergenza",
+                  "no": "Nødvarme",
+                  "sv": "Nöduppvärmning",
+                  "pl": "Ogrzewanie awaryjne",
+                  "ru": "Аварийное отопление",
+                  "ko": "긴급 난방"
+                }
+              },
+              {
+                "id": "precooling",
+                "title": {
+                  "en": "Precool",
+                  "nl": "Vooraf koelen",
+                  "da": "Forkøl",
+                  "de": "Vorkühlen",
+                  "es": "Preenfriamiento",
+                  "fr": "Précooling",
+                  "it": "Pre-raffreddamento",
+                  "no": "Forkjøl",
+                  "sv": "Förkylning",
+                  "pl": "Wstępne chłodzenie",
+                  "ru": "Предварительное охлаждение",
+                  "ko": "사전 냉각"
+                }
+              },
+              {
+                "id": "fan_only",
+                "title": {
+                  "en": "Fan only",
+                  "nl": "Alleen ventilator",
+                  "da": "Kun ventilator",
+                  "de": "Nur Lüfter",
+                  "es": "Solo ventilador",
+                  "fr": "Ventilateur uniquement",
+                  "it": "Solo ventilatore",
+                  "no": "Kun vifte",
+                  "sv": "Endast fläkt",
+                  "pl": "Tylko wentylator",
+                  "ru": "Только вентилятор",
+                  "ko": "팬만 작동"
+                }
+              },
+              {
+                "id": "dry",
+                "title": {
+                  "en": "Dry",
+                  "nl": "Droog",
+                  "da": "Tør",
+                  "de": "Trocken",
+                  "es": "Seco",
+                  "fr": "Sèche",
+                  "it": "Asciutto",
+                  "no": "Tørr",
+                  "sv": "Torr",
+                  "pl": "Tryb osuszania",
+                  "ru": "Сухой",
+                  "ko": "제습"
+                }
+              },
+              {
+                "id": "sleep",
+                "title": {
+                  "en": "Sleep",
+                  "nl": "Slapen",
+                  "da": "Sov",
+                  "de": "Schlaf",
+                  "es": "Dormir",
+                  "fr": "Dormir",
+                  "it": "Sonno",
+                  "no": "Sov",
+                  "sv": "Sömn",
+                  "pl": "Sen",
+                  "ru": "Сон",
+                  "ko": "슬립"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "system_mode"
       },
       {
         "title": {
@@ -8552,7 +8750,7 @@
     "system_mode": {
       "type": "enum",
       "title": {
-        "en": "System Mode",
+        "en": "System mode",
         "nl": "Systeemmodus",
         "da": "Systemtilstand",
         "de": "Systemmodus",

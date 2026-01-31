@@ -150,7 +150,6 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   state_center: ['onoff.center', (v) => v === 'ON', (v) => ({ state_center: v ? 'ON' : 'OFF' })],
   state_right: ['onoff.right', (v) => v === 'ON', (v) => ({ state_right: v ? 'ON' : 'OFF' })],
   backlight_mode: ['onoff.backlight', (v) => v === 'ON', (v) => ({ backlight_mode: v ? 'ON' : 'OFF' })],
-  system_mode: ['onoff.system_mode', (v) => v === 'heat', (v) => ({ system_mode: v ? 'heat' : 'off' })], // MOES BHT series thermostat
   indicator: ['onoff.indicator', (v) => v === 'ON', (v) => ({ indicator: v ? 'ON' : 'OFF' })], // TuYa ZG-204ZM presence sensor
   heartbeat: ['onoff.heartbeat', (v) => v === 'ON', (v) => ({ heartbeat: v ? 'ON' : 'OFF' })], // Bosch TwinGuard
   pre_alarm: ['onoff.pre_alarm', (v) => v === 'ON', (v) => ({ pre_alarm: v ? 'ON' : 'OFF' })], // Bosch TwinGuard
@@ -203,6 +202,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   switch_type_left: ['switch_type.left', (v) => v, (v) => ({ switch_type_left: v })], // [toggle, state, momentary]
   switch_type_center: ['switch_type.center', (v) => v, (v) => ({ switch_type_center: v })], // [toggle, state, momentary]
   switch_type_right: ['switch_type.right', (v) => v, (v) => ({ switch_type_right: v })], // [toggle, state, momentary]
+  system_mode: ['system_mode', (v) => v, (v) => ({ system_mode: v })], // thermostats
   sensor: ['sensor', (v) => v, (v) => ({ sensor: v })], // ["IN", "AL", "OU"]  // thermostats and mmWave presence
   effect: ['effect', (v) => v, (v) => ({ effect: v })], // [blink, breathe, okay, channel_change, finish_effect, stop_effect]
   alarm: ['alarm_sound', (v) => v, (v) => ({ alarm: v })], // [stop, pre_alarm, fire, burglar]
