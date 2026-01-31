@@ -6466,12 +6466,14 @@
           "title": {
             "en": "Child lock"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.backlight": {
           "title": {
             "en": "Backlight"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.center": {
@@ -6484,12 +6486,14 @@
           "title": {
             "en": "Heartbeat"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.indicator": {
           "title": {
             "en": "Indicator"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.l1": {
@@ -6526,6 +6530,7 @@
           "title": {
             "en": "Pre alarm"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.right": {
@@ -6538,18 +6543,15 @@
           "title": {
             "en": "Self test"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.system_mode": {
           "title": {
             "en": "System mode"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
-        },
-        "target_temperature.local": {
-          "title": {
-            "en": "Target temperature local"
-          }
         }
       },
       "platforms": [
@@ -6947,12 +6949,14 @@
           "title": {
             "en": "Child lock"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.backlight": {
           "title": {
             "en": "Backlight"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.center": {
@@ -6965,12 +6969,14 @@
           "title": {
             "en": "Heartbeat"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.indicator": {
           "title": {
             "en": "Indicator"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.l1": {
@@ -7007,6 +7013,7 @@
           "title": {
             "en": "Pre alarm"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.right": {
@@ -7019,18 +7026,15 @@
           "title": {
             "en": "Self test"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.system_mode": {
           "title": {
             "en": "System mode"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
-        },
-        "target_temperature.local": {
-          "title": {
-            "en": "Target temperature local"
-          }
         }
       },
       "platforms": [
