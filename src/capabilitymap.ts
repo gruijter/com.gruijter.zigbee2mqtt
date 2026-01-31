@@ -155,6 +155,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   pre_alarm: ['onoff.pre_alarm', (v) => v === 'ON', (v) => ({ pre_alarm: v ? 'ON' : 'OFF' })], // Bosch TwinGuard
   self_test: ['onoff.self_test', (v) => v === 'ON', (v) => ({ self_test: v ? 'ON' : 'OFF' })], // Bosch TwinGuard
   open_window: ['alarm_generic.open_window', (v) => v === 'ON'],
+  identify: ['button.identify', (v) => v === 'NEVER_PUBLISHED', (v) => ({ identify: v ? 'identify' : 'identify' })],
 
   device_fault: ['alarm_problem', (v) => v],
   vibration: ['alarm_vibration', (v) => v],
