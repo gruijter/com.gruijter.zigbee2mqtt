@@ -89,6 +89,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   energy: ['meter_power', (v) => Number(v)],
   water_consumed: ['meter_water', (v) => Number(v)],
   position: ['windowcoverings_set', (v) => Number(v) / 100, (v) => ({ position: Number(v) * 100 })],
+  tilt: ['windowcoverings_tilt_set', (v) => Number(v) / 100, (v) => ({ tilt: Number(v) * 100 })],
   valve_state: ['valve_state', (v) => Number(v), (v) => ({ valve_state: Number(v) * 100 })],
   target_distance: ['target_distance', (v) => Number(v)],
 
@@ -143,7 +144,25 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   aqi: ['measure_aqi', (v) => Number(v)],
 
   // Standard Homey Boolean capabilities
-  state: ['onoff', (v) => v === 'ON', (v) => ({ state: v ? 'ON' : 'OFF' })],
+  // handle different Z2M state scenario's
+  state: (expose) => {
+    if (expose.type === 'enum' && expose.values?.includes('OPEN')) {
+      return ['windowcoverings_state',
+        (v) => {
+          if (v === 'OPEN') return 'up';
+          if (v === 'CLOSE') return 'down';
+          return 'idle';
+        },
+        (v) => {
+          let state = 'STOP';
+          if (v === 'up') state = 'OPEN';
+          if (v === 'down') state = 'CLOSE';
+          return { state };
+        },
+      ];
+    }
+    return ['onoff', (v) => v === 'ON', (v) => ({ state: v ? 'ON' : 'OFF' })];
+  },
   state_l1: ['onoff.l1', (v) => v === 'ON', (v) => ({ state_l1: v ? 'ON' : 'OFF' })],
   state_l2: ['onoff.l2', (v) => v === 'ON', (v) => ({ state_l2: v ? 'ON' : 'OFF' })],
   state_l3: ['onoff.l3', (v) => v === 'ON', (v) => ({ state_l3: v ? 'ON' : 'OFF' })],
@@ -318,8 +337,10 @@ export function mapCapabilities(device: Z2MDevice, options: MapCapabilitiesOptio
 
     // Handle windowcoverings_set/position: remove onoff capability if present
     if (expose.property === 'windowcoverings_set' || expose.property === 'position') {
-      definedHomeyCapabilities.delete('onoff');
-      delete mappings.state;
+      if (mappings.state && mappings.state.homeyCapabilities.includes('onoff')) {
+        definedHomeyCapabilities.delete('onoff');
+        delete mappings.state;
+      }
     }
 
     const entry = capabilityMap[expose.property];
@@ -399,6 +420,7 @@ const classIconMap: { [key: string]: [string, string] } = {
   kadrilj: ['windowcoverings', 'window_coverings.svg'],
   praktlysing: ['windowcoverings', 'window_coverings.svg'],
   tredansen: ['windowcoverings', 'window_coverings.svg'],
+  'cover mode': ['windowcoverings', 'window_coverings.svg'],
   parasol: ['sensor', 'contact.svg'],
   'tradfri shortcut': ['button', 'wireless_switch.svg'],
   rodret: ['button', 'wireless_switch.svg'],
