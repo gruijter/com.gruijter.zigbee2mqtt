@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "3.1.4",
+  "version": "3.1.5",
   "compatibility": ">=12.9.0",
   "sdk": 3,
   "platforms": [
@@ -420,6 +420,52 @@
           }
         ],
         "id": "allow_joining_true"
+      },
+      {
+        "title": {
+          "en": "The battery state changed",
+          "nl": "De batterijstatus veranderde",
+          "da": "Batteritilstand ændret",
+          "de": "Der Batteriestatus hat sich geändert",
+          "es": "El estado de la batería cambió",
+          "fr": "L'état de la batterie a changé",
+          "it": "Lo stato della batteria è cambiato",
+          "no": "Batteritilstand endret",
+          "sv": "Batteristatus ändrat",
+          "pl": "Stan baterii zmieniony",
+          "ru": "Состояние батареи изменено",
+          "ko": "배터리 상태가 변경되었습니다"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=battery_state"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "battery_state",
+            "type": "string",
+            "title": {
+              "en": "Battery state",
+              "nl": "Batterijstatus",
+              "da": "Batteritilstand",
+              "de": "Batteriestatus",
+              "es": "Estado de la batería",
+              "fr": "État de la batterie",
+              "it": "Stato della batteria",
+              "no": "Batteritilstand",
+              "sv": "Batteristatus",
+              "pl": "Stan baterii",
+              "ru": "Состояние батареи",
+              "ko": "배터리 상태"
+            },
+            "example": "low"
+          }
+        ],
+        "id": "battery_state_changed"
       },
       {
         "title": {
@@ -7592,6 +7638,80 @@
       "setable": false,
       "insights": false,
       "icon": "./assets/allow_joining_timeout.svg"
+    },
+    "battery_state": {
+      "type": "enum",
+      "title": {
+        "en": "Battery state",
+        "nl": "Batterijstatus",
+        "da": "Batteritilstand",
+        "de": "Batteriestatus",
+        "es": "Estado de la batería",
+        "fr": "État de la batterie",
+        "it": "Stato della batteria",
+        "no": "Batteritilstand",
+        "sv": "Batteristatus",
+        "pl": "Stan baterii",
+        "ru": "Состояние батареи",
+        "ko": "배터리 상태"
+      },
+      "values": [
+        {
+          "id": "low",
+          "title": {
+            "en": "Low",
+            "nl": "Laag",
+            "da": "Lav",
+            "de": "Niedrig",
+            "es": "Bajo",
+            "fr": "Bas",
+            "it": "Basso",
+            "no": "Lav",
+            "sv": "Låg",
+            "pl": "Niski",
+            "ru": "Низкий",
+            "ko": "낮은"
+          }
+        },
+        {
+          "id": "medium",
+          "title": {
+            "en": "Medium",
+            "nl": "Gemiddeld",
+            "da": "Mellem",
+            "de": "Mittel",
+            "es": "Medio",
+            "fr": "Moyen",
+            "it": "Medio",
+            "no": "Middels",
+            "sv": "Medium",
+            "pl": "Średni",
+            "ru": "Средний",
+            "ko": "중간"
+          }
+        },
+        {
+          "id": "high",
+          "title": {
+            "en": "High",
+            "nl": "Hoog",
+            "da": "Høj",
+            "de": "Hoch",
+            "es": "Alto",
+            "fr": "Élevé",
+            "it": "Alto",
+            "no": "Høy",
+            "sv": "Hög",
+            "pl": "Wysoki",
+            "ru": "Высокий",
+            "ko": "높은"
+          }
+        }
+      ],
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "insights": false
     },
     "color_power_on_behavior": {
       "type": "enum",
