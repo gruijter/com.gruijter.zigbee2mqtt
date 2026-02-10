@@ -191,6 +191,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   smoke: ['alarm_smoke', (v) => v],
   water_leak: ['alarm_water', (v) => v],
   rain: ['alarm_water.rain', (v) => v],
+  water_warning: ['alarm_water.warning', (v) => v === 'alarm'],
   battery_low: ['alarm_battery', (v) => v],
   lock: ['locked', (v) => v, (v) => ({ lock: v ? 'LOCK' : 'UNLOCK' })],
   child_lock: ['locked.child', (v) => v === 'LOCK', (v) => ({ child_lock: v ? 'LOCK' : 'UNLOCK' })],
@@ -214,6 +215,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   siren_state: ['siren_state', (v) => (v || '').toString()],
 
   // Custom settable ENUM capabilities
+  battery_state: ['battery_state', (v) => v],
   preset: ['preset', (v) => v, (v) => ({ preset: v })], // ["auto", "manual", "holiday"]
   power_on_behavior: ['power_on_behavior', (v) => v, (v) => ({ power_on_behavior: v })], // [off, on, toggle, previous]
   color_power_on_behavior: ['color_power_on_behavior', (v) => v, (v) => ({ color_power_on_behavior: v })], // [initial, previous, cutomized]

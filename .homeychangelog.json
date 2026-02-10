@@ -1,4 +1,7 @@
 {
+  "3.1.5" : {
+    "en": "Added water_warning mapping. Added custom battery_state mapping."
+  },
   "3.1.4" : {
     "en": "Added tilt and state support for window coverings."
   },
