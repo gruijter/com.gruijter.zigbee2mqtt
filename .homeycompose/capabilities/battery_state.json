@@ -68,6 +68,7 @@
     }
   ],
   "uiComponent": "sensor",
+  "icon": "./assets/battery_state.svg",
   "getable": true,
   "setable": false,
   "insights": false

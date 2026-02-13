@@ -396,6 +396,7 @@ const classIconMap: { [key: string]: [string, string] } = {
   thermostat: ['thermostat', 'thermostat.svg'],
   w100: ['thermostat', 'thermostat.svg'],
   'soil sensor': ['sensor', 'soil_sensor.svg'],
+  'soil moisture': ['sensor', 'soil_sensor.svg'],
   'vibration sensor': ['sensor', 'vibration_sensor.svg'],
   'pressure sensor': ['sensor', 'vibration_sensor.svg'],
   'wireless switch': ['sensor', 'wireless_switch.svg'],
