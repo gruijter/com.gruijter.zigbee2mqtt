@@ -1,4 +1,7 @@
 {
+  "3.1.6" : {
+    "en": "Added custom battery_state icon. Added soil moisture device class and icon mapping."
+  },
   "3.1.5" : {
     "en": "Added water_warning mapping. Added custom battery_state mapping."
   },
