@@ -94,6 +94,7 @@ export type CapabilityMappings = { [z2mProperty: string]: CapabilityMapping };
 export interface CapabilityOptions {
     units?: { en: string };
     title?: { en: string };
+    duration?: boolean;
 }
 
 /*------------------------------------------------------------------------*/
