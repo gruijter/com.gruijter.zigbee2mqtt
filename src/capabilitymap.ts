@@ -69,12 +69,14 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   local_temperature: ['measure_temperature.local', (v) => Number(v)],
   frost_protection_temperature: ['target_temperature.frost_protection', (v) => Number(v), (v) => ({ frost_protection_temperature: Number(v) })],
   device_temperature: ['measure_temperature.device', (v) => Number(v)],
+  external_temperature: ['measure_temperature.external', (v) => Number(v), (v) => ({ external_temperature: Number(v) })],
   co: ['measure_co', (v) => Number(v)],
   co2: ['measure_co2', (v) => Number(v)],
   smoke_concentration: ['measure_pm1', (v) => Number(v)],
   pm10: ['measure_pm10', (v) => Number(v)],
   pm25: ['measure_pm25', (v) => Number(v)],
   humidity: ['measure_humidity', (v) => Number(v)],
+  external_humidity: ['measure_humidity.external', (v) => Number(v), (v) => ({ external_humidity: Number(v) })],
   soil_moisture: ['measure_humidity.soil', (v) => Number(v)],
   pressure: ['measure_pressure', (v) => Number(v)],
   battery: ['measure_battery', (v) => Number(v)],
@@ -87,6 +89,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   energy: ['meter_power', (v) => Number(v)],
   water_consumed: ['meter_water', (v) => Number(v)],
   position: ['windowcoverings_set', (v) => Number(v) / 100, (v) => ({ position: Number(v) * 100 })],
+  tilt: ['windowcoverings_tilt_set', (v) => Number(v) / 100, (v) => ({ tilt: Number(v) * 100 })],
   valve_state: ['valve_state', (v) => Number(v), (v) => ({ valve_state: Number(v) * 100 })],
   target_distance: ['target_distance', (v) => Number(v)],
 
@@ -141,7 +144,25 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   aqi: ['measure_aqi', (v) => Number(v)],
 
   // Standard Homey Boolean capabilities
-  state: ['onoff', (v) => v === 'ON', (v) => ({ state: v ? 'ON' : 'OFF' })],
+  // handle different Z2M state scenario's
+  state: (expose) => {
+    if (expose.type === 'enum' && expose.values?.includes('OPEN')) {
+      return ['windowcoverings_state',
+        (v) => {
+          if (v === 'OPEN') return 'up';
+          if (v === 'CLOSE') return 'down';
+          return 'idle';
+        },
+        (v) => {
+          let state = 'STOP';
+          if (v === 'up') state = 'OPEN';
+          if (v === 'down') state = 'CLOSE';
+          return { state };
+        },
+      ];
+    }
+    return ['onoff', (v) => v === 'ON', (v) => ({ state: v ? 'ON' : 'OFF' })];
+  },
   state_l1: ['onoff.l1', (v) => v === 'ON', (v) => ({ state_l1: v ? 'ON' : 'OFF' })],
   state_l2: ['onoff.l2', (v) => v === 'ON', (v) => ({ state_l2: v ? 'ON' : 'OFF' })],
   state_l3: ['onoff.l3', (v) => v === 'ON', (v) => ({ state_l3: v ? 'ON' : 'OFF' })],
@@ -154,24 +175,27 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   state_center_left: ['onoff.center_left', (v) => v === 'ON', (v) => ({ state_center_left: v ? 'ON' : 'OFF' })],
   state_center_right: ['onoff.center_right', (v) => v === 'ON', (v) => ({ state_center_right: v ? 'ON' : 'OFF' })],
   backlight_mode: ['onoff.backlight', (v) => v === 'ON', (v) => ({ backlight_mode: v ? 'ON' : 'OFF' })],
-  system_mode: ['onoff.system_mode', (v) => v === 'heat', (v) => ({ system_mode: v ? 'heat' : 'off' })], // MOES BHT series thermostat
   indicator: ['onoff.indicator', (v) => v === 'ON', (v) => ({ indicator: v ? 'ON' : 'OFF' })], // TuYa ZG-204ZM presence sensor
   heartbeat: ['onoff.heartbeat', (v) => v === 'ON', (v) => ({ heartbeat: v ? 'ON' : 'OFF' })], // Bosch TwinGuard
   pre_alarm: ['onoff.pre_alarm', (v) => v === 'ON', (v) => ({ pre_alarm: v ? 'ON' : 'OFF' })], // Bosch TwinGuard
   self_test: ['onoff.self_test', (v) => v === 'ON', (v) => ({ self_test: v ? 'ON' : 'OFF' })], // Bosch TwinGuard
   open_window: ['alarm_generic.open_window', (v) => v === 'ON'],
+  identify: ['button.identify', (v) => v === 'NEVER_PUBLISHED', (v) => ({ identify: v ? 'identify' : 'identify' })],
+  thermostat_mode: ['onoff.thermostat_mode', (v) => v === 'ON', (v) => ({ thermostat_mode: v ? 'ON' : 'OFF' })],
 
   device_fault: ['alarm_problem', (v) => v],
   vibration: ['alarm_vibration', (v) => v],
   gas: ['alarm_gas', (v) => v],
   occupancy: ['alarm_occupancy', (v) => v],
   presence: ['alarm_presence', (v) => v],
+  pir_detection: ['alarm_motion', (v) => v],
   contact: ['alarm_contact', (v) => !v],
   carbon_monoxide: ['alarm_co', (v) => v],
   tamper: ['alarm_tamper', (v) => v],
   smoke: ['alarm_smoke', (v) => v],
   water_leak: ['alarm_water', (v) => v],
   rain: ['alarm_water.rain', (v) => v],
+  water_warning: ['alarm_water.warning', (v) => v === 'alarm'],
   battery_low: ['alarm_battery', (v) => v],
   lock: ['locked', (v) => v, (v) => ({ lock: v ? 'LOCK' : 'UNLOCK' })],
   child_lock: ['locked.child', (v) => v === 'LOCK', (v) => ({ child_lock: v ? 'LOCK' : 'UNLOCK' })],
@@ -195,6 +219,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   siren_state: ['siren_state', (v) => (v || '').toString()],
 
   // Custom settable ENUM capabilities
+  battery_state: ['battery_state', (v) => v],
   preset: ['preset', (v) => v, (v) => ({ preset: v })], // ["auto", "manual", "holiday"]
   power_on_behavior: ['power_on_behavior', (v) => v, (v) => ({ power_on_behavior: v })], // [off, on, toggle, previous]
   color_power_on_behavior: ['color_power_on_behavior', (v) => v, (v) => ({ color_power_on_behavior: v })], // [initial, previous, cutomized]
@@ -210,6 +235,8 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   switch_type_bottom: ['switch_type.bottom', (v) => v, (v) => ({ switch_type_bottom: v })], // [toggle, state, momentary]
   switch_type_center_left: ['switch_type.center_left', (v) => v, (v) => ({ switch_type_center_left: v })], // [toggle, state, momentary]
   switch_type_center_right: ['switch_type.center_right', (v) => v, (v) => ({ switch_type_center_right: v })], // [toggle, state, momentary]
+  system_mode: ['system_mode', (v) => v, (v) => ({ system_mode: v })], // thermostats
+  fan_mode: ['fan_mode', (v) => v, (v) => ({ fan_mode: v })],
   sensor: ['sensor', (v) => v, (v) => ({ sensor: v })], // ["IN", "AL", "OU"]  // thermostats and mmWave presence
   effect: ['effect', (v) => v, (v) => ({ effect: v })], // [blink, breathe, okay, channel_change, finish_effect, stop_effect]
   alarm: ['alarm_sound', (v) => v, (v) => ({ alarm: v })], // [stop, pre_alarm, fire, burglar]
@@ -320,8 +347,10 @@ export function mapCapabilities(device: Z2MDevice, options: MapCapabilitiesOptio
 
     // Handle windowcoverings_set/position: remove onoff capability if present
     if (expose.property === 'windowcoverings_set' || expose.property === 'position') {
-      definedHomeyCapabilities.delete('onoff');
-      delete mappings.state;
+      if (mappings.state && mappings.state.homeyCapabilities.includes('onoff')) {
+        definedHomeyCapabilities.delete('onoff');
+        delete mappings.state;
+      }
     }
 
     const entry = capabilityMap[expose.property];
@@ -373,7 +402,9 @@ const classIconMap: { [key: string]: [string, string] } = {
   'door sensor': ['sensor', 'contact.svg'],
   'radiator valve': ['thermostat', 'radiator_valve.svg'],
   thermostat: ['thermostat', 'thermostat.svg'],
+  w100: ['thermostat', 'thermostat.svg'],
   'soil sensor': ['sensor', 'soil_sensor.svg'],
+  'soil moisture': ['sensor', 'soil_sensor.svg'],
   'vibration sensor': ['sensor', 'vibration_sensor.svg'],
   'pressure sensor': ['sensor', 'vibration_sensor.svg'],
   'wireless switch': ['sensor', 'wireless_switch.svg'],
@@ -400,6 +431,7 @@ const classIconMap: { [key: string]: [string, string] } = {
   kadrilj: ['windowcoverings', 'window_coverings.svg'],
   praktlysing: ['windowcoverings', 'window_coverings.svg'],
   tredansen: ['windowcoverings', 'window_coverings.svg'],
+  'cover mode': ['windowcoverings', 'window_coverings.svg'],
   parasol: ['sensor', 'contact.svg'],
   'tradfri shortcut': ['button', 'wireless_switch.svg'],
   rodret: ['button', 'wireless_switch.svg'],

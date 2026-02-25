@@ -1,0 +1,56 @@
+{
+  "title": {
+    "en": "Switch thermostat mode On or Off",
+    "nl": "Schakel thermostaatmodus Aan of Uit",
+    "da": "Skift termostattilstand Til eller Fra",
+    "de": "Schalten Sie den Thermostatmodus Ein oder Aus",
+    "es": "Cambiar el modo del termostato Encendido o Apagado",
+    "fr": "Changer le mode thermostat Marche ou Arrêt",
+    "it": "Cambia la modalità termostato Acceso o Spento",
+    "no": "Bytt termostatmodus På eller Av",
+    "sv": "Byt termostatläge På eller Av",
+    "pl": "Przełącz tryb termostatu Włączony lub Wyłączony",
+    "ru": "Переключите режим термостата Вкл или Выкл",
+    "ko": "온도 조절기 모드를 켜짐 또는 끄기로 전환"
+  },
+  "titleFormatted": {
+    "en": "Set thermostat mode to on [[val]]",
+    "nl": "Stel thermostaatmodus in op aan [[val]]",
+    "da": "Indstil termostattilstand til til [[val]]",
+    "de": "Thermostatmodus auf Ein einstellen [[val]]",
+    "es": "Poner el modo del termostato en encendido [[val]]",
+    "fr": "Réglez le mode thermostat sur marche [[val]]",
+    "it": "Imposta la modalità termostato su acceso [[val]]",
+    "no": "Sett termostatmodus til på [[val]]",
+    "sv": "Ställ in termostatläge till på [[val]]",
+    "pl": "Ustaw tryb termostatu na włączony [[val]]",
+    "ru": "Установите режим термостата на вкл [[val]]",
+    "ko": "온도 조절기 모드를 켜짐으로 설정 [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.thermostat_mode"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "Til",
+        "de": "An",
+        "es": "Encendido",
+        "fr": "Marche",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączony",
+        "ru": "Вкл",
+        "ko": "켜짐"
+      }
+    }
+  ]
+}

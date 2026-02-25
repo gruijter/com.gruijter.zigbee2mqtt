@@ -1,4 +1,19 @@
 {
+  "3.1.6" : {
+    "en": "Added custom battery_state icon. Added soil moisture device class and icon mapping."
+  },
+  "3.1.5" : {
+    "en": "Added water_warning mapping. Added custom battery_state mapping."
+  },
+  "3.1.4" : {
+    "en": "Added tilt and state support for window coverings."
+  },
+  "3.1.3" : {
+    "en": "Changed system_mode mapping to ENUM. Added fan_mode, identify, thermostat_mode, temperature_external, humidity_external capability mapping and flows. Changed onoff uiComponent to button where applicable."
+  },
+  "3.1.2" : {
+    "en": "Added pir_detection mapping."
+  },
   "3.1.1" : {
     "en": "Fix classes and icons during pair. Added frost_protection_temperature capability for thermostats."
   },

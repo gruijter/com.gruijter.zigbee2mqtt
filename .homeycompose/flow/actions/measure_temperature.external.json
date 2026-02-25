@@ -1,0 +1,42 @@
+{
+  "title": {
+    "en": "Set external temperature",
+    "nl": "Stel externe temperatuur in",
+    "da": "Indstil ekstern temperatur",
+    "de": "Externe Temperatur einstellen",
+    "es": "Establecer temperatura externa",
+    "fr": "Définir la température externe",
+    "it": "Imposta temperatura esterna",
+    "no": "Angi ekstern temperatur",
+    "sv": "Ställ in extern temperatur",
+    "pl": "Ustaw temperaturę zewnętrzną",
+    "ru": "Установить внешнюю температуру",
+    "ko": "외부 온도 설정"
+  },
+  "titleFormatted": {
+    "en": "Set external temperature to [[val]]",
+    "nl": "Stel externe temperatuur in op [[val]]",
+    "da": "Indstil ekstern temperatur til [[val]]",
+    "de": "Externe Temperatur auf [[val]] einstellen",
+    "es": "Establecer temperatura externa a [[val]]",
+    "fr": "Définir la température externe à [[val]]",
+    "it": "Imposta temperatura esterna su [[val]]",
+    "no": "Angi ekstern temperatur til [[val]]",
+    "sv": "Ställ in extern temperatur till [[val]]",
+    "pl": "Ustaw temperaturę zewnętrzną na [[val]]",
+    "ru": "Установить внешнюю температуру на [[val]]",
+    "ko": "외부 온도를 [[val]]로 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=measure_temperature.external"
+    },
+    {
+      "name": "val",
+      "type": "range"
+    }
+  ]
+}

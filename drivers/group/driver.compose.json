@@ -16,6 +16,77 @@
   "class": "socket",
   "capabilities": [],
   "capabilitiesOptions": {
+    "onoff.thermostat_mode": {
+      "title": {
+        "en": "Thermostat mode"
+      },
+      "uiComponent": "button",
+      "uiQuickAction": false
+    },
+    "locked.child": {
+      "title": {
+        "en": "Child lock"
+      },
+      "uiComponent": "button",
+      "uiQuickAction": false
+    },
+    "onoff.backlight": {
+      "title": {
+        "en": "Backlight"
+      },
+      "uiComponent": "button",
+      "uiQuickAction": false
+    },
+    "onoff.center": {
+      "title": {
+        "en": "Center"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.heartbeat": {
+      "title": {
+        "en": "Heartbeat"
+      },
+      "uiComponent": "button",
+      "uiQuickAction": false
+    },
+    "onoff.indicator": {
+      "title": {
+        "en": "Indicator"
+      },
+      "uiComponent": "button",
+      "uiQuickAction": false
+    },
+    "onoff.l1": {
+      "title": {
+        "en": "L1"
+      },
+      "uiQuickAction": true
+    },
+    "onoff.l2": {
+      "title": {
+        "en": "L2"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.l3": {
+      "title": {
+        "en": "L3"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.l4": {
+      "title": {
+        "en": "L4"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.left": {
+      "title": {
+        "en": "Left"
+      },
+      "uiQuickAction": false
+    },
     "onoff.top": {
       "title": {
         "en": "Top"
@@ -38,6 +109,33 @@
       "title": {
         "en": "Center Right"
       },
+      "uiQuickAction": false
+    },
+    "onoff.pre_alarm": {
+      "title": {
+        "en": "Pre alarm"
+      },
+      "uiComponent": "button",
+      "uiQuickAction": false
+    },
+    "onoff.right": {
+      "title": {
+        "en": "Right"
+      },
+      "uiQuickAction": false
+    },
+    "onoff.self_test": {
+      "title": {
+        "en": "Self test"
+      },
+      "uiComponent": "button",
+      "uiQuickAction": false
+    },
+    "onoff.system_mode": {
+      "title": {
+        "en": "System mode"
+      },
+      "uiComponent": "button",
       "uiQuickAction": false
     }
   },

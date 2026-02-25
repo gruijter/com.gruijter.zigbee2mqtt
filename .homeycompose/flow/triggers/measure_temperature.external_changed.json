@@ -1,0 +1,45 @@
+{
+  "title": {
+    "en": "The external temperature changed",
+    "nl": "De externe temperatuur is gewijzigd",
+    "da": "Den eksterne temperatur ændrede sig",
+    "de": "Die externe Temperatur hat sich geändert",
+    "es": "La temperatura externa cambió",
+    "fr": "La température externe a changé",
+    "it": "La temperatura esterna è cambiata",
+    "no": "Den eksterne temperaturen endret seg",
+    "sv": "Den externa temperaturen har ändrats",
+    "pl": "Temperatura zewnętrzna uległa zmianie",
+    "ru": "Внешняя температура изменилась",
+    "ko": "외부 온도가 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=measure_temperature.external"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_temperature.external",
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur",
+        "da": "Temperatur",
+        "de": "Temperatur",
+        "es": "Temperatura",
+        "fr": "Température",
+        "it": "Temperatura",
+        "no": "Temperatur",
+        "sv": "Temperatur",
+        "pl": "Temperatura",
+        "ru": "Температура",
+        "ko": "온도"
+      },
+      "example": 53
+    }
+  ]
+}

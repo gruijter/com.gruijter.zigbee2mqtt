@@ -1,0 +1,45 @@
+{
+  "title": {
+    "en": "The external humidity changed",
+    "nl": "De externe luchtvochtigheid is gewijzigd",
+    "da": "Den eksterne luftfugtighed ændrede sig",
+    "de": "Die externe Luftfeuchtigkeit hat sich geändert",
+    "es": "La humedad externa ha cambiado",
+    "fr": "L'humidité externe a changé",
+    "it": "L'umidità esterna è cambiata",
+    "no": "Den eksterne luftfuktigheten endret seg",
+    "sv": "Den externa luftfuktigheten har ändrats",
+    "pl": "Wilgotność zewnętrzna uległa zmianie",
+    "ru": "Внешняя влажность изменилась",
+    "ko": "외부 습도가 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=measure_humidity.external"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_humidity.external",
+      "type": "number",
+      "title": {
+        "en": "Humidity",
+        "nl": "Vochtigheid",
+        "da": "Fugtighed",
+        "de": "Feuchtigkeit",
+        "es": "Humedad",
+        "fr": "Humidité",
+        "it": "Umidità",
+        "no": "Fuktighet",
+        "sv": "Fuktighet",
+        "pl": "Wilgotność",
+        "ru": "Влажность",
+        "ko": "습도"
+      },
+      "example": 53
+    }
+  ]
+}

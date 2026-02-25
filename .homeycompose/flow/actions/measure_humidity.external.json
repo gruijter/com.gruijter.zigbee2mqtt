@@ -1,0 +1,42 @@
+{
+  "title": {
+    "en": "Set external humidity",
+    "nl": "Stel externe luchtvochtigheid in",
+    "da": "Indstil ekstern luftfugtighed",
+    "de": "Externe Luftfeuchtigkeit einstellen",
+    "es": "Establecer humedad externa",
+    "fr": "Définir l'humidité externe",
+    "it": "Imposta umidità esterna",
+    "no": "Angi ekstern luftfuktighet",
+    "sv": "Ställ in extern luftfuktighet",
+    "pl": "Ustaw wilgotność zewnętrzną",
+    "ru": "Установить внешнюю влажность",
+    "ko": "외부 습도 설정"
+  },
+  "titleFormatted": {
+    "en": "Set external humidity to [[val]]",
+    "nl": "Stel externe luchtvochtigheid in op [[val]]",
+    "da": "Indstil ekstern luftfugtighed til [[val]]",
+    "de": "Externe Luftfeuchtigkeit auf [[val]] einstellen",
+    "es": "Establecer humedad externa a [[val]]",
+    "fr": "Définir l'humidité externe à [[val]]",
+    "it": "Imposta umidità esterna su [[val]]",
+    "no": "Angi ekstern luftfuktighet til [[val]]",
+    "sv": "Ställ in extern luftfuktighet till [[val]]",
+    "pl": "Ustaw wilgotność zewnętrzną na [[val]]",
+    "ru": "Установить внешнюю влажность на [[val]]",
+    "ko": "외부 습도를 [[val]]로 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=measure_humidity.external"
+    },
+    {
+      "name": "val",
+      "type": "range"
+    }
+  ]
+}
