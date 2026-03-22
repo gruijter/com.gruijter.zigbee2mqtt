@@ -447,13 +447,11 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
 
     this.log('connecting to Bridge MQTT');
     this.bridge.client
+      .on('connect', this.subscribeBridgeTopics)
       .on('message', this.handleBridgeMessage);
 
     if (this.bridge.client.connected) {
       await this.subscribeBridgeTopics();
-    } else {
-      this.bridge.client
-        .on('connect', this.subscribeBridgeTopics)
     }
   }
 
