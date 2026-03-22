@@ -1,4 +1,7 @@
 {
+  "3.1.7" : {
+    "en": "Fix re-connect devices. Fix translations for Bridge."
+  },
   "3.1.6" : {
     "en": "Added custom battery_state icon. Added soil moisture device class and icon mapping."
   },
