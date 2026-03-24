@@ -1,6 +1,13 @@
+/build
 /env.json
 /.homeybuild/
+/node_modules
+/.vsccode
 roadmap.txt
 /tmp
 tmp_*
 zzz*
+.DS_Store
+
+/scripts
+capture.log

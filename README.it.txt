@@ -1,6 +1,6 @@
 Collega i dispositivi Zigbee a Homey tramite Zigbee2MQTT.
 
-Le capacità dei dispositivi vengono importate automaticamente in Homey. Questo ti permette di monitorare e controllare i dispositivi dall'app mobile Homey e dai flussi Homey. Questa applicazione supporta molti dispositivi e funzionalità, ma non tutti. I tipi di dispositivi supportati includono, tra gli altri, contatti porta/finestra, pulsanti, prese, sensori di umidità e altri, termostati e lampade.
+Le capacità dei dispositivi vengono importate automaticamente in Homey. Questo ti permette di monitorare e controllare i dispositivi dall'app mobile Homey e dai Homey Flows. Questa applicazione supporta molti dispositivi e funzionalità, ma non tutti. I tipi di dispositivi supportati includono, tra gli altri, contatti porta/finestra, pulsanti, prese, sensori di umidità e altri, termostati e lampade.
 
 Per informazioni e assistenza, visita: https://community.homey.app/t/83214
 

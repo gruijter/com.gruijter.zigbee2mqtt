@@ -1,8 +1,8 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "2.9.0",
-  "compatibility": ">=12.2.0",
+  "version": "3.1.7",
+  "compatibility": ">=12.9.0",
   "sdk": 3,
   "platforms": [
     "local"
@@ -122,6 +122,12 @@
       },
       {
         "name": "Tapio Heiskanen"
+      },
+      {
+        "name": "march5350"
+      },
+      {
+        "name": "Luc Verdier"
       }
     ]
   },
@@ -414,6 +420,52 @@
           }
         ],
         "id": "allow_joining_true"
+      },
+      {
+        "title": {
+          "en": "The battery state changed",
+          "nl": "De batterijstatus veranderde",
+          "da": "Batteritilstand ændret",
+          "de": "Der Batteriestatus hat sich geändert",
+          "es": "El estado de la batería cambió",
+          "fr": "L'état de la batterie a changé",
+          "it": "Lo stato della batteria è cambiato",
+          "no": "Batteritilstand endret",
+          "sv": "Batteristatus ändrat",
+          "pl": "Stan baterii zmieniony",
+          "ru": "Состояние батареи изменено",
+          "ko": "배터리 상태가 변경되었습니다"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=battery_state"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "battery_state",
+            "type": "string",
+            "title": {
+              "en": "Battery state",
+              "nl": "Batterijstatus",
+              "da": "Batteritilstand",
+              "de": "Batteriestatus",
+              "es": "Estado de la batería",
+              "fr": "État de la batterie",
+              "it": "Stato della batteria",
+              "no": "Batteritilstand",
+              "sv": "Batteristatus",
+              "pl": "Stan baterii",
+              "ru": "Состояние батареи",
+              "ko": "배터리 상태"
+            },
+            "example": "low"
+          }
+        ],
+        "id": "battery_state_changed"
       },
       {
         "title": {
@@ -739,6 +791,52 @@
       },
       {
         "title": {
+          "en": "The fan mode changed",
+          "nl": "De ventilatormodus veranderde",
+          "da": "Ventilatortilstand ændret",
+          "de": "Der Ventilatormodus hat sich geändert",
+          "es": "El modo del ventilador cambió",
+          "fr": "Le mode du ventilateur a changé",
+          "it": "La modalità ventilatore è cambiata",
+          "no": "Ventilatormodus endret",
+          "sv": "Fläktläge ändrat",
+          "pl": "Tryb wentylatora zmieniony",
+          "ru": "Режим вентилятора изменен",
+          "ko": "팬 모드가 변경되었습니다"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=fan_mode"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "fan_mode",
+            "type": "string",
+            "title": {
+              "en": "Fan mode",
+              "nl": "Ventilatormodus",
+              "da": "Ventilatortilstand",
+              "de": "Ventilatormodus",
+              "es": "Modo del ventilador",
+              "fr": "Mode du ventilateur",
+              "it": "Modalità ventilatore",
+              "no": "Ventilatormodus",
+              "sv": "Fläktläge",
+              "pl": "Tryb wentylatora",
+              "ru": "Режим вентилятора",
+              "ko": "팬 모드"
+            },
+            "example": "auto"
+          }
+        ],
+        "id": "fan_mode_changed"
+      },
+      {
+        "title": {
           "en": "The Indicator Mode changed",
           "nl": "De Indicator Modus veranderde",
           "da": "Indikatortilstand ændret",
@@ -782,6 +880,52 @@
           }
         ],
         "id": "indicator_mode_changed"
+      },
+      {
+        "title": {
+          "en": "The external humidity changed",
+          "nl": "De externe luchtvochtigheid is gewijzigd",
+          "da": "Den eksterne luftfugtighed ændrede sig",
+          "de": "Die externe Luftfeuchtigkeit hat sich geändert",
+          "es": "La humedad externa ha cambiado",
+          "fr": "L'humidité externe a changé",
+          "it": "L'umidità esterna è cambiata",
+          "no": "Den eksterne luftfuktigheten endret seg",
+          "sv": "Den externa luftfuktigheten har ändrats",
+          "pl": "Wilgotność zewnętrzna uległa zmianie",
+          "ru": "Внешняя влажность изменилась",
+          "ko": "외부 습도가 변경되었습니다"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=measure_humidity.external"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_humidity.external",
+            "type": "number",
+            "title": {
+              "en": "Humidity",
+              "nl": "Vochtigheid",
+              "da": "Fugtighed",
+              "de": "Feuchtigkeit",
+              "es": "Humedad",
+              "fr": "Humidité",
+              "it": "Umidità",
+              "no": "Fuktighet",
+              "sv": "Fuktighet",
+              "pl": "Wilgotność",
+              "ru": "Влажность",
+              "ko": "습도"
+            },
+            "example": 53
+          }
+        ],
+        "id": "measure_humidity.external_changed"
       },
       {
         "title": {
@@ -969,30 +1113,30 @@
       },
       {
         "title": {
-          "en": "The sensor temperature changed",
-          "nl": "De temperatuur van de sensor is gewijzigd",
-          "da": "Sensorens temperatur ændrede sig",
-          "de": "Die Sensortemperatur hat sich geändert",
-          "es": "La temperatura del sensor cambió",
-          "fr": "La température du capteur a changé",
-          "it": "La temperatura del sensore è cambiata",
-          "no": "Sensorens temperatur har endret seg",
-          "sv": "Sensorns temperatur har ändrats",
-          "pl": "Temperatura czujnika zmieniła się",
-          "ru": "Температура датчика изменилась",
-          "ko": "센서 온도가 변경되었습니다"
+          "en": "The external temperature changed",
+          "nl": "De externe temperatuur is gewijzigd",
+          "da": "Den eksterne temperatur ændrede sig",
+          "de": "Die externe Temperatur hat sich geändert",
+          "es": "La temperatura externa cambió",
+          "fr": "La température externe a changé",
+          "it": "La temperatura esterna è cambiata",
+          "no": "Den eksterne temperaturen endret seg",
+          "sv": "Den externa temperaturen har ändrats",
+          "pl": "Temperatura zewnętrzna uległa zmianie",
+          "ru": "Внешняя температура изменилась",
+          "ko": "외부 온도가 변경되었습니다"
         },
         "highlight": true,
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=device|group&capabilities=measure_temperature.sensor"
+            "filter": "driver_id=device|group&capabilities=measure_temperature.external"
           }
         ],
         "tokens": [
           {
-            "name": "measure_temperature.sensor",
+            "name": "measure_temperature.external",
             "type": "number",
             "title": {
               "en": "Temperature",
@@ -1011,7 +1155,53 @@
             "example": 53
           }
         ],
-        "id": "measure_temperature.sensor_changed"
+        "id": "measure_temperature.external_changed"
+      },
+      {
+        "title": {
+          "en": "The sensor temperature changed",
+          "nl": "De temperatuur van de sensor is gewijzigd",
+          "da": "Sensorens temperatur ændrede sig",
+          "de": "Die Sensortemperatur hat sich geändert",
+          "es": "La temperatura del sensor cambió",
+          "fr": "La température du capteur a changé",
+          "it": "La temperatura del sensore è cambiata",
+          "no": "Sensorens temperatur har endret seg",
+          "sv": "Sensorns temperatur har ändrats",
+          "pl": "Temperatura czujnika zmieniła się",
+          "ru": "Температура датчика изменилась",
+          "ko": "센서 온도가 변경되었습니다"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=measure_temperature.local"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_temperature.local",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur",
+              "da": "Temperatur",
+              "de": "Temperatur",
+              "es": "Temperatura",
+              "fr": "Température",
+              "it": "Temperatura",
+              "no": "Temperatur",
+              "sv": "Temperatur",
+              "pl": "Temperatura",
+              "ru": "Температура",
+              "ko": "온도"
+            },
+            "example": 53
+          }
+        ],
+        "id": "measure_temperature.local_changed"
       },
       {
         "title": {
@@ -1599,6 +1789,56 @@
       },
       {
         "title": {
+          "en": "Thermostat mode turned Off",
+          "nl": "Thermostaatmodus uitgeschakeld",
+          "da": "Termostattilstand slukket",
+          "de": "Thermostatmodus ausgeschaltet",
+          "es": "Modo termostato apagado",
+          "fr": "Mode thermostat éteint",
+          "it": "Modalità termostato spenta",
+          "no": "Termostatmodus slått av",
+          "sv": "Termostatläge avstängt",
+          "pl": "Tryb termostatu wyłączony",
+          "ru": "Режим термостата выключен",
+          "ko": "온도 조절기 모드 꺼짐"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.thermostat_mode"
+          }
+        ],
+        "id": "onoff.thermostat_mode_false"
+      },
+      {
+        "title": {
+          "en": "Thermostat mode turned On",
+          "nl": "Thermostaatmodus ingeschakeld",
+          "da": "Termostattilstand tændt",
+          "de": "Thermostatmodus eingeschaltet",
+          "es": "Modo termostato encendido",
+          "fr": "Mode thermostat allumé",
+          "it": "Modalità termostato accesa",
+          "no": "Termostatmodus slått på",
+          "sv": "Termostatläge påslaget",
+          "pl": "Tryb termostatu włączony",
+          "ru": "Режим термостата включен",
+          "ko": "온도 조절기 모드 켜짐"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.thermostat_mode"
+          }
+        ],
+        "id": "onoff.thermostat_mode_true"
+      },
+      {
+        "title": {
           "en": "The Power On Behavior changed",
           "nl": "Het gedrag bij inschakelen is gewijzigd",
           "da": "Tændingsadfærden er ændret",
@@ -2132,18 +2372,18 @@
       },
       {
         "title": {
-          "en": "The preset changed",
-          "nl": "De preset is veranderd",
-          "da": "Forudindstillingen er ændret",
-          "de": "Das Preset wurde geändert",
-          "es": "El preset ha cambiado",
-          "fr": "Le préréglage a changé",
-          "it": "Il preset è cambiato",
-          "no": "Forhåndsinnstillingen ble endret",
-          "sv": "Förinställningen har ändrats",
-          "pl": "Zmieniono ustawienie wstępne",
-          "ru": "Предустановка изменена",
-          "ko": "프리셋이 변경되었습니다"
+          "en": "The system mode changed",
+          "nl": "De systeemmodus veranderde",
+          "da": "Systemtilstand ændret",
+          "de": "Der Systemmodus hat sich geändert",
+          "es": "El modo del sistema cambió",
+          "fr": "Le mode système a changé",
+          "it": "La modalità sistema è cambiata",
+          "no": "Systemmodus endret",
+          "sv": "Systemläge ändrat",
+          "pl": "Tryb systemu zmieniony",
+          "ru": "Режим системы изменен",
+          "ko": "시스템 모드가 변경되었습니다"
         },
         "highlight": true,
         "args": [
@@ -2164,22 +2404,67 @@
               "de": "Systemmodus",
               "es": "Modo del sistema",
               "fr": "Mode système",
-              "it": "Modalità di sistema",
+              "it": "Modalità sistema",
               "no": "Systemmodus",
               "sv": "Systemläge",
               "pl": "Tryb systemu",
               "ru": "Режим системы",
               "ko": "시스템 모드"
             },
-            "example": "auto"
+            "example": "off"
           }
         ],
         "id": "system_mode_changed"
       },
       {
         "title": {
+          "en": "The frost protection temperature changed",
+          "nl": "De vorstbeveiligingstemperatuur is veranderd",
+          "da": "Frostbeskyttelsestemperaturen er ændret",
+          "de": "Die Frostschutztemperatur hat sich geändert",
+          "es": "La temperatura de protección contra heladas ha cambiado",
+          "fr": "La température de protection contre le gel a changé",
+          "it": "La temperatura di protezione dal gelo è cambiata",
+          "no": "Frostbeskyttelsestemperaturen har endret seg",
+          "sv": "Frostskyddstemperaturen har ändrats",
+          "pl": "Temperatura ochrony przed mrozem została zmieniona",
+          "ru": "Температура защиты от замерзания изменилась",
+          "ko": "서리 방지 온도가 변경되었습니다"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=target_temperature.frost_protection"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "target_temperature.frost_protection",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur",
+              "da": "Temperatur",
+              "de": "Temperatur",
+              "es": "Temperatura",
+              "fr": "Température",
+              "it": "Temperatura",
+              "no": "Temperatur",
+              "sv": "Temperatur",
+              "pl": "Temperatura",
+              "ru": "Температура",
+              "ko": "온도"
+            },
+            "example": 6
+          }
+        ],
+        "id": "target_temperature.frost_protection_changed"
+      },
+      {
+        "title": {
           "en": "The target temperature changed",
-          "nl": "De doeldtemperatuur is veranderd",
+          "nl": "De doeltemperatuur is veranderd",
           "da": "Måltemperaturen er ændret",
           "de": "Die Zieltemperatur hat sich geändert",
           "es": "La temperatura objetivo ha cambiado",
@@ -2467,15 +2752,15 @@
             "type": "text",
             "title": {
               "en": "Payload",
-              "nl": "Belasting",
+              "nl": "Payload",
               "da": "Payload",
-              "de": "Nutzlast",
+              "de": "Payload",
               "es": "Carga útil",
               "fr": "Charge utile",
               "it": "Carico utile",
-              "no": "Nyttelast",
-              "sv": "Nyttolast",
-              "pl": "Ładunek",
+              "no": "Payload",
+              "sv": "Payload",
+              "pl": "Payload",
               "ru": "Нагрузка",
               "ko": "페이로드"
             },
@@ -2780,6 +3065,170 @@
       },
       {
         "title": {
+          "en": "Set fan mode",
+          "nl": "Zet ventilatormodus",
+          "da": "Sæt ventilatortilstand",
+          "de": "Ventilatormodus setzen",
+          "es": "Establecer modo del ventilador",
+          "fr": "Définir le mode du ventilateur",
+          "it": "Imposta modalità ventilatore",
+          "no": "Sett ventilatormodus",
+          "sv": "Sätt fläktläge",
+          "pl": "Ustaw tryb wentylatora",
+          "ru": "Установить режим вентилятора",
+          "ko": "팬 모드 설정"
+        },
+        "titleFormatted": {
+          "en": "Set fan mode to [[val]]",
+          "nl": "Zet ventilatormodus op [[val]]",
+          "da": "Sæt ventilatortilstand til [[val]]",
+          "de": "Setze Ventilatormodus auf [[val]]",
+          "es": "Establecer modo del ventilador en [[val]]",
+          "fr": "Définir le mode du ventilateur sur [[val]]",
+          "it": "Imposta modalità ventilatore su [[val]]",
+          "no": "Sett ventilatormodus til [[val]]",
+          "sv": "Sätt fläktläge till [[val]]",
+          "pl": "Ustaw tryb wentylatora na [[val]]",
+          "ru": "Установить режим вентилятора на [[val]]",
+          "ko": "팬 모드를 [[val]]으로 설정"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=fan_mode"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "off",
+                "title": {
+                  "en": "Off",
+                  "nl": "Uit",
+                  "da": "Slukket",
+                  "de": "Aus",
+                  "es": "Apagado",
+                  "fr": "Éteint",
+                  "it": "Spento",
+                  "no": "Av",
+                  "sv": "Av",
+                  "pl": "Wyłączony",
+                  "ru": "Выкл",
+                  "ko": "꺼짐"
+                }
+              },
+              {
+                "id": "low",
+                "title": {
+                  "en": "Low",
+                  "nl": "Laag",
+                  "da": "Lav",
+                  "de": "Niedrig",
+                  "es": "Bajo",
+                  "fr": "Bas",
+                  "it": "Basso",
+                  "no": "Lav",
+                  "sv": "Låg",
+                  "pl": "Niski",
+                  "ru": "Низкий",
+                  "ko": "낮은"
+                }
+              },
+              {
+                "id": "medium",
+                "title": {
+                  "en": "Medium",
+                  "nl": "Gemiddeld",
+                  "da": "Mellem",
+                  "de": "Mittel",
+                  "es": "Medio",
+                  "fr": "Moyen",
+                  "it": "Medio",
+                  "no": "Middels",
+                  "sv": "Medium",
+                  "pl": "Średni",
+                  "ru": "Средний",
+                  "ko": "중간"
+                }
+              },
+              {
+                "id": "high",
+                "title": {
+                  "en": "High",
+                  "nl": "Hoog",
+                  "da": "Høj",
+                  "de": "Hoch",
+                  "es": "Alto",
+                  "fr": "Élevé",
+                  "it": "Alto",
+                  "no": "Høy",
+                  "sv": "Hög",
+                  "pl": "Wysoki",
+                  "ru": "Высокий",
+                  "ko": "높은"
+                }
+              },
+              {
+                "id": "on",
+                "title": {
+                  "en": "On",
+                  "nl": "Aan",
+                  "da": "Til",
+                  "de": "An",
+                  "es": "Encendido",
+                  "fr": "Allumé",
+                  "it": "Acceso",
+                  "no": "På",
+                  "sv": "På",
+                  "pl": "Włączony",
+                  "ru": "Вкл",
+                  "ko": "켬"
+                }
+              },
+              {
+                "id": "auto",
+                "title": {
+                  "en": "Auto",
+                  "nl": "Automatisch",
+                  "da": "Auto",
+                  "de": "Auto",
+                  "es": "Automático",
+                  "fr": "Auto",
+                  "it": "Auto",
+                  "no": "Auto",
+                  "sv": "Automatisk",
+                  "pl": "Auto",
+                  "ru": "Авто",
+                  "ko": "자동"
+                }
+              },
+              {
+                "id": "smart",
+                "title": {
+                  "en": "Smart",
+                  "nl": "Slim",
+                  "da": "Smart",
+                  "de": "Smart",
+                  "es": "Inteligente",
+                  "fr": "Intelligent",
+                  "it": "Smart",
+                  "no": "Smart",
+                  "sv": "Smart",
+                  "pl": "Inteligentny",
+                  "ru": "Умный",
+                  "ko": "스마트"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "fan_mode"
+      },
+      {
+        "title": {
           "en": "Set Indicator Mode",
           "nl": "Stel de Indicator Modus in",
           "da": "Indstil indikator tilstand",
@@ -2922,15 +3371,15 @@
         },
         "hint": {
           "en": "When On, the Zigbee2MQTT bridge will allow joining for 5 minutes.",
-          "nl": "Wanneer Aan, zal de Zigbee2MQTT-brug 5 minuten toetreding toestaan.",
-          "da": "Når den er tændt, vil Zigbee2MQTT-broen tillade tilslutning i 5 minutter.",
-          "de": "Wenn eingeschaltet, erlaubt die Zigbee2MQTT-Brücke das Beitreten für 5 Minuten.",
-          "es": "Cuando está activado, el puente Zigbee2MQTT permitirá unirse durante 5 minutos.",
-          "fr": "Lorsqu'il est activé, le pont Zigbee2MQTT permettra la jonction pendant 5 minutes.",
-          "it": "Quando è attivo, il ponte Zigbee2MQTT consentirà l'accesso per 5 minuti.",
-          "no": "Når den er på, vil Zigbee2MQTT-broen tillate tilkobling i 5 minutter.",
-          "sv": "När det är på, kommer Zigbee2MQTT-bryggan att tillåta anslutning i 5 minuter.",
-          "pl": "Gdy jest włączone, mostek Zigbee2MQTT pozwoli na dołączanie przez 5 minut.",
+          "nl": "Wanneer Aan, zal de Zigbee2MQTT bridge 5 minuten toetreding toestaan.",
+          "da": "Når den er tændt, vil Zigbee2MQTT bridge tillade tilslutning i 5 minutter.",
+          "de": "Wenn eingeschaltet, erlaubt die Zigbee2MQTT Bridge das Beitreten für 5 Minuten.",
+          "es": "Cuando está activado, el bridge Zigbee2MQTT permitirá unirse durante 5 minutos.",
+          "fr": "Lorsqu'il est activé, le bridge Zigbee2MQTT permettra la jonction pendant 5 minutes.",
+          "it": "Quando è attivo, il bridge Zigbee2MQTT consentirà l'accesso per 5 minuti.",
+          "no": "Når den er på, vil Zigbee2MQTT bridge tillate tilkobling i 5 minutter.",
+          "sv": "När det är på, kommer Zigbee2MQTT bridge att tillåta anslutning i 5 minuter.",
+          "pl": "Gdy jest włączone, bridge Zigbee2MQTT pozwoli na dołączanie przez 5 minut.",
           "ru": "Когда включен, мост Zigbee2MQTT разрешит подключение на 5 минут.",
           "ko": "켜져 있을 때, Zigbee2MQTT 브리지는 5분 동안 가입을 허용합니다."
         },
@@ -3018,6 +3467,92 @@
           }
         ],
         "id": "locked.child"
+      },
+      {
+        "title": {
+          "en": "Set external humidity",
+          "nl": "Stel externe luchtvochtigheid in",
+          "da": "Indstil ekstern luftfugtighed",
+          "de": "Externe Luftfeuchtigkeit einstellen",
+          "es": "Establecer humedad externa",
+          "fr": "Définir l'humidité externe",
+          "it": "Imposta umidità esterna",
+          "no": "Angi ekstern luftfuktighet",
+          "sv": "Ställ in extern luftfuktighet",
+          "pl": "Ustaw wilgotność zewnętrzną",
+          "ru": "Установить внешнюю влажность",
+          "ko": "외부 습도 설정"
+        },
+        "titleFormatted": {
+          "en": "Set external humidity to [[val]]",
+          "nl": "Stel externe luchtvochtigheid in op [[val]]",
+          "da": "Indstil ekstern luftfugtighed til [[val]]",
+          "de": "Externe Luftfeuchtigkeit auf [[val]] einstellen",
+          "es": "Establecer humedad externa a [[val]]",
+          "fr": "Définir l'humidité externe à [[val]]",
+          "it": "Imposta umidità esterna su [[val]]",
+          "no": "Angi ekstern luftfuktighet til [[val]]",
+          "sv": "Ställ in extern luftfuktighet till [[val]]",
+          "pl": "Ustaw wilgotność zewnętrzną na [[val]]",
+          "ru": "Установить внешнюю влажность на [[val]]",
+          "ko": "외부 습도를 [[val]]로 설정"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=measure_humidity.external"
+          },
+          {
+            "name": "val",
+            "type": "range"
+          }
+        ],
+        "id": "measure_humidity.external"
+      },
+      {
+        "title": {
+          "en": "Set external temperature",
+          "nl": "Stel externe temperatuur in",
+          "da": "Indstil ekstern temperatur",
+          "de": "Externe Temperatur einstellen",
+          "es": "Establecer temperatura externa",
+          "fr": "Définir la température externe",
+          "it": "Imposta temperatura esterna",
+          "no": "Angi ekstern temperatur",
+          "sv": "Ställ in extern temperatur",
+          "pl": "Ustaw temperaturę zewnętrzną",
+          "ru": "Установить внешнюю температуру",
+          "ko": "외부 온도 설정"
+        },
+        "titleFormatted": {
+          "en": "Set external temperature to [[val]]",
+          "nl": "Stel externe temperatuur in op [[val]]",
+          "da": "Indstil ekstern temperatur til [[val]]",
+          "de": "Externe Temperatur auf [[val]] einstellen",
+          "es": "Establecer temperatura externa a [[val]]",
+          "fr": "Définir la température externe à [[val]]",
+          "it": "Imposta temperatura esterna su [[val]]",
+          "no": "Angi ekstern temperatur til [[val]]",
+          "sv": "Ställ in extern temperatur till [[val]]",
+          "pl": "Ustaw temperaturę zewnętrzną na [[val]]",
+          "ru": "Установить внешнюю температуру на [[val]]",
+          "ko": "외부 온도를 [[val]]로 설정"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=measure_temperature.external"
+          },
+          {
+            "name": "val",
+            "type": "range"
+          }
+        ],
+        "id": "measure_temperature.external"
       },
       {
         "title": {
@@ -3663,6 +4198,210 @@
       },
       {
         "title": {
+          "en": "Switch thermostat mode On or Off",
+          "nl": "Schakel thermostaatmodus Aan of Uit",
+          "da": "Skift termostattilstand Til eller Fra",
+          "de": "Schalten Sie den Thermostatmodus Ein oder Aus",
+          "es": "Cambiar el modo del termostato Encendido o Apagado",
+          "fr": "Changer le mode thermostat Marche ou Arrêt",
+          "it": "Cambia la modalità termostato Acceso o Spento",
+          "no": "Bytt termostatmodus På eller Av",
+          "sv": "Byt termostatläge På eller Av",
+          "pl": "Przełącz tryb termostatu Włączony lub Wyłączony",
+          "ru": "Переключите режим термостата Вкл или Выкл",
+          "ko": "온도 조절기 모드를 켜짐 또는 끄기로 전환"
+        },
+        "titleFormatted": {
+          "en": "Set thermostat mode to on [[val]]",
+          "nl": "Stel thermostaatmodus in op aan [[val]]",
+          "da": "Indstil termostattilstand til til [[val]]",
+          "de": "Thermostatmodus auf Ein einstellen [[val]]",
+          "es": "Poner el modo del termostato en encendido [[val]]",
+          "fr": "Réglez le mode thermostat sur marche [[val]]",
+          "it": "Imposta la modalità termostato su acceso [[val]]",
+          "no": "Sett termostatmodus til på [[val]]",
+          "sv": "Ställ in termostatläge till på [[val]]",
+          "pl": "Ustaw tryb termostatu na włączony [[val]]",
+          "ru": "Установите режим термостата на вкл [[val]]",
+          "ko": "온도 조절기 모드를 켜짐으로 설정 [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.thermostat_mode"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On",
+              "nl": "Aan",
+              "da": "Til",
+              "de": "An",
+              "es": "Encendido",
+              "fr": "Marche",
+              "it": "Acceso",
+              "no": "På",
+              "sv": "På",
+              "pl": "Włączony",
+              "ru": "Вкл",
+              "ko": "켜짐"
+            }
+          }
+        ],
+        "id": "onoff.thermostat_mode"
+      },
+      {
+        "title": {
+          "en": "Set Pilot Wire Mode",
+          "nl": "Stel Pilotdraadmodus in",
+          "da": "Indstil Pilottrådtilstand",
+          "de": "Pilotdraht-Modus festlegen",
+          "es": "Configurar Modo de Cable Piloto",
+          "fr": "Définir le Mode Fil Pilote",
+          "it": "Imposta Modalità Filo Pilota",
+          "no": "Sett Pilottrådmodus",
+          "sv": "Ställ in Pilottrådsläge",
+          "pl": "Ustaw Tryb Przewodu Pilotażowego",
+          "ru": "Установить Режим Пилотного Провода",
+          "ko": "파일럿 와이어 모드 설정"
+        },
+        "titleFormatted": {
+          "en": "Set Pilot Wire Mode to [[val]]",
+          "nl": "Stel Pilotdraadmodus in op [[val]]",
+          "da": "Indstil Pilottrådtilstand til [[val]]",
+          "de": "Pilotdraht-Modus auf [[val]] setzen",
+          "es": "Configurar Modo de Cable Piloto a [[val]]",
+          "fr": "Définir le Mode Fil Pilote sur [[val]]",
+          "it": "Imposta Modalità Filo Pilota su [[val]]",
+          "no": "Sett Pilottrådmodus til [[val]]",
+          "sv": "Ställ in Pilottrådsläge till [[val]]",
+          "pl": "Ustaw Tryb Przewodu Pilotażowego na [[val]]",
+          "ru": "Установить Режим Пилотного Провода на [[val]]",
+          "ko": "파일럿 와이어 모드를 [[val]]로 설정"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=pilot_wire_mode"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "comfort",
+                "title": {
+                  "en": "Comfort",
+                  "nl": "Comfort",
+                  "da": "Komfort",
+                  "de": "Komfort",
+                  "es": "Confort",
+                  "fr": "Confort",
+                  "it": "Comfort",
+                  "no": "Komfort",
+                  "sv": "Komfort",
+                  "pl": "Komfort",
+                  "ru": "Комфорт",
+                  "ko": "편안함"
+                }
+              },
+              {
+                "id": "eco",
+                "title": {
+                  "en": "Eco",
+                  "nl": "Eco",
+                  "da": "Eco",
+                  "de": "Eco",
+                  "es": "Eco",
+                  "fr": "Éco",
+                  "it": "Eco",
+                  "no": "Eco",
+                  "sv": "Eco",
+                  "pl": "Eko",
+                  "ru": "Эко",
+                  "ko": "에코"
+                }
+              },
+              {
+                "id": "frost_protection",
+                "title": {
+                  "en": "Frost Protection",
+                  "nl": "Vorstbescherming",
+                  "da": "Frostbeskyttelse",
+                  "de": "Frostschutz",
+                  "es": "Protección Antihielo",
+                  "fr": "Protection Antigel",
+                  "it": "Protezione Antigelo",
+                  "no": "Frostbeskyttelse",
+                  "sv": "Frostskydd",
+                  "pl": "Ochrona przed mrozem",
+                  "ru": "Защита от замерзания",
+                  "ko": "서리 방지"
+                }
+              },
+              {
+                "id": "off",
+                "title": {
+                  "en": "Off",
+                  "nl": "Uit",
+                  "da": "Slukket",
+                  "de": "Aus",
+                  "es": "Apagado",
+                  "fr": "Éteint",
+                  "it": "Spento",
+                  "no": "Av",
+                  "sv": "Av",
+                  "pl": "Wyłączony",
+                  "ru": "Выкл",
+                  "ko": "꺼짐"
+                }
+              },
+              {
+                "id": "comfort_-1",
+                "title": {
+                  "en": "Comfort -1",
+                  "nl": "Comfort -1",
+                  "da": "Komfort -1",
+                  "de": "Komfort -1",
+                  "es": "Confort -1",
+                  "fr": "Confort -1",
+                  "it": "Comfort -1",
+                  "no": "Komfort -1",
+                  "sv": "Komfort -1",
+                  "pl": "Komfort -1",
+                  "ru": "Комфорт -1",
+                  "ko": "편안함 -1"
+                }
+              },
+              {
+                "id": "comfort_-2",
+                "title": {
+                  "en": "Comfort -2",
+                  "nl": "Comfort -2",
+                  "da": "Komfort -2",
+                  "de": "Komfort -2",
+                  "es": "Confort -2",
+                  "fr": "Confort -2",
+                  "it": "Comfort -2",
+                  "no": "Komfort -2",
+                  "sv": "Komfort -2",
+                  "pl": "Komfort -2",
+                  "ru": "Комфорт -2",
+                  "ko": "편안함 -2"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "pilot_wire_mode"
+      },
+      {
+        "title": {
           "en": "Set Power On Behavior",
           "nl": "Zet Stroom Aanzet Gedrag",
           "da": "Indstil Tændingsadfærd",
@@ -3983,15 +4722,15 @@
         },
         "hint": {
           "en": "Restart the Zigbee2MQTT bridge",
-          "nl": "Herstart de Zigbee2MQTT-brug",
-          "da": "Genstart Zigbee2MQTT-broen",
-          "de": "Zigbee2MQTT-Brücke neu starten",
-          "es": "Reiniciar el puente Zigbee2MQTT",
-          "fr": "Redémarrer le pont Zigbee2MQTT",
+          "nl": "Herstart de Zigbee2MQTT bridge",
+          "da": "Genstart Zigbee2MQTT bridge",
+          "de": "Zigbee2MQTT Bridge neu starten",
+          "es": "Reiniciar el bridge Zigbee2MQTT",
+          "fr": "Redémarrer le bridge Zigbee2MQTT",
           "it": "Riavvia il bridge Zigbee2MQTT",
-          "no": "Start Zigbee2MQTT-broen på nytt",
-          "sv": "Starta om Zigbee2MQTT-bryggan",
-          "pl": "Zrestartuj mostek Zigbee2MQTT",
+          "no": "Start Zigbee2MQTT bridge på nytt",
+          "sv": "Starta om Zigbee2MQTT bridge",
+          "pl": "Zrestartuj bridge Zigbee2MQTT",
           "ru": "Перезапустить мост Zigbee2MQTT",
           "ko": "Zigbee2MQTT 브리지 다시 시작"
         },
@@ -4569,7 +5308,7 @@
                 "title": {
                   "en": "Momentary",
                   "nl": "Momentaan",
-                  "da": "Øjeblikkelig",
+                  "da": "Momentant",
                   "de": "Momentan",
                   "es": "Momentáneo",
                   "fr": "Momentané",
@@ -4647,7 +5386,7 @@
                 "id": "state",
                 "title": {
                   "en": "State",
-                  "nl": "Staat",
+                  "nl": "Toestand",
                   "da": "Tilstand",
                   "de": "Status",
                   "es": "Estado",
@@ -4664,14 +5403,14 @@
                 "id": "momentary",
                 "title": {
                   "en": "Momentary",
-                  "nl": "Momentopname",
-                  "da": "Momentær",
+                  "nl": "Momentaan",
+                  "da": "Momentant",
                   "de": "Momentan",
                   "es": "Momentáneo",
                   "fr": "Momentané",
-                  "it": "Momento",
-                  "no": "Øyeblikkelig",
-                  "sv": "Ögonblicklig",
+                  "it": "Momentaneo",
+                  "no": "Momentant",
+                  "sv": "Momentant",
                   "pl": "Chwilowy",
                   "ru": "Мгновенный",
                   "ko": "순간적"
@@ -4761,12 +5500,12 @@
                 "title": {
                   "en": "Momentary",
                   "nl": "Momentaan",
-                  "da": "Øjeblikkelig",
+                  "da": "Momentant",
                   "de": "Momentan",
                   "es": "Momentáneo",
                   "fr": "Momentané",
-                  "it": "Momento",
-                  "no": "Øyeblikkelig",
+                  "it": "Momentaneo",
+                  "no": "Momentant",
                   "sv": "Tillfällig",
                   "pl": "Chwilowy",
                   "ru": "Моментальный",
@@ -4839,7 +5578,7 @@
                 "id": "state",
                 "title": {
                   "en": "State",
-                  "nl": "Status",
+                  "nl": "Toestand",
                   "da": "Tilstand",
                   "de": "Status",
                   "es": "Estado",
@@ -4857,12 +5596,12 @@
                 "title": {
                   "en": "Momentary",
                   "nl": "Momentaan",
-                  "da": "Øjeblikkelig",
+                  "da": "Momentant",
                   "de": "Momentan",
                   "es": "Momentáneo",
                   "fr": "Momentané",
-                  "it": "Istantaneo",
-                  "no": "Kortvarig",
+                  "it": "Momentaneo",
+                  "no": "Momentant",
                   "sv": "Momentant",
                   "pl": "Chwilowy",
                   "ru": "Моментальный",
@@ -4935,7 +5674,7 @@
                 "id": "state",
                 "title": {
                   "en": "State",
-                  "nl": "Staat",
+                  "nl": "Toestand",
                   "da": "Tilstand",
                   "de": "Zustand",
                   "es": "Estado",
@@ -4953,13 +5692,13 @@
                 "title": {
                   "en": "Momentary",
                   "nl": "Momentaan",
-                  "da": "Øjeblikkelig",
+                  "da": "Momentant",
                   "de": "Momentan",
                   "es": "Momentáneo",
                   "fr": "Momentané",
                   "it": "Momentaneo",
-                  "no": "Kortvarig",
-                  "sv": "Tillfällig",
+                  "no": "Momentant",
+                  "sv": "Momentant",
                   "pl": "Chwilowy",
                   "ru": "Кратковременный",
                   "ko": "순간적인"
@@ -5049,13 +5788,13 @@
                 "title": {
                   "en": "Momentary",
                   "nl": "Momentaan",
-                  "da": "Øjeblikkelig",
+                  "da": "Momentant",
                   "de": "Momentan",
                   "es": "Momentáneo",
                   "fr": "Momentané",
-                  "it": "Momento",
-                  "no": "Øyeblikkelig",
-                  "sv": "Ögonblicklig",
+                  "it": "Momentaneo",
+                  "no": "Momentant",
+                  "sv": "Momentant",
                   "pl": "Chwilowy",
                   "ru": "Мгновенный",
                   "ko": "순간적인"
@@ -5065,6 +5804,246 @@
           }
         ],
         "id": "switch_type.right"
+      },
+      {
+        "title": {
+          "en": "Set system mode",
+          "nl": "Zet systeemmodus",
+          "da": "Sæt systemtilstand",
+          "de": "Systemmodus setzen",
+          "es": "Establecer modo del sistema",
+          "fr": "Définir le mode système",
+          "it": "Imposta modalità sistema",
+          "no": "Sett systemmodus",
+          "sv": "Sätt systemläge",
+          "pl": "Ustaw tryb systemu",
+          "ru": "Установить режим системы",
+          "ko": "시스템 모드 설정"
+        },
+        "titleFormatted": {
+          "en": "Set system mode to [[val]]",
+          "nl": "Zet systeemmodus op [[val]]",
+          "da": "Sæt systemtilstand til [[val]]",
+          "de": "Setze Systemmodus auf [[val]]",
+          "es": "Establecer modo del sistema en [[val]]",
+          "fr": "Définir le mode système sur [[val]]",
+          "it": "Imposta modalità sistema su [[val]]",
+          "no": "Sett systemmodus til [[val]]",
+          "sv": "Sätt systemläge till [[val]]",
+          "pl": "Ustaw tryb systemu na [[val]]",
+          "ru": "Установить режим системы на [[val]]",
+          "ko": "시스템 모드를 [[val]]으로 설정"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=system_mode"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "auto",
+                "title": {
+                  "en": "Auto",
+                  "nl": "Automatisch",
+                  "da": "Auto",
+                  "de": "Auto",
+                  "es": "Automático",
+                  "fr": "Auto",
+                  "it": "Auto",
+                  "no": "Auto",
+                  "sv": "Automatisk",
+                  "pl": "Auto",
+                  "ru": "Авто",
+                  "ko": "자동"
+                }
+              },
+              {
+                "id": "heat",
+                "title": {
+                  "en": "Heat",
+                  "nl": "Verwarming",
+                  "da": "Varme",
+                  "de": "Heizen",
+                  "es": "Calor",
+                  "fr": "Chaleur",
+                  "it": "Riscaldamento",
+                  "no": "Varme",
+                  "sv": "Värme",
+                  "pl": "Ciepło",
+                  "ru": "Тепло",
+                  "ko": "난방"
+                }
+              },
+              {
+                "id": "off",
+                "title": {
+                  "en": "Off",
+                  "nl": "Uit",
+                  "da": "Slukket",
+                  "de": "Aus",
+                  "es": "Apagado",
+                  "fr": "Éteint",
+                  "it": "Spento",
+                  "no": "Av",
+                  "sv": "Av",
+                  "pl": "Wyłączony",
+                  "ru": "Выкл",
+                  "ko": "꺼짐"
+                }
+              },
+              {
+                "id": "cool",
+                "title": {
+                  "en": "Cool",
+                  "nl": "Koel",
+                  "da": "Kølig",
+                  "de": "Kühlen",
+                  "es": "Fresco",
+                  "fr": "Frais",
+                  "it": "Raffreddamento",
+                  "no": "Kjølig",
+                  "sv": "Cool",
+                  "pl": "Chłodzenie",
+                  "ru": "Охлаждение",
+                  "ko": "냉방"
+                }
+              },
+              {
+                "id": "emergency_heating",
+                "title": {
+                  "en": "Emergency Heat",
+                  "nl": "Noodverwarming",
+                  "da": "Nødvarme",
+                  "de": "Notheizung",
+                  "es": "Calor de emergencia",
+                  "fr": "Chauffage d'urgence",
+                  "it": "Riscaldamento di emergenza",
+                  "no": "Nødvarme",
+                  "sv": "Nöduppvärmning",
+                  "pl": "Ogrzewanie awaryjne",
+                  "ru": "Аварийное отопление",
+                  "ko": "긴급 난방"
+                }
+              },
+              {
+                "id": "precooling",
+                "title": {
+                  "en": "Precool",
+                  "nl": "Vooraf koelen",
+                  "da": "Forkøl",
+                  "de": "Vorkühlen",
+                  "es": "Preenfriamiento",
+                  "fr": "Précooling",
+                  "it": "Pre-raffreddamento",
+                  "no": "Forkjøl",
+                  "sv": "Förkylning",
+                  "pl": "Wstępne chłodzenie",
+                  "ru": "Предварительное охлаждение",
+                  "ko": "사전 냉각"
+                }
+              },
+              {
+                "id": "fan_only",
+                "title": {
+                  "en": "Fan only",
+                  "nl": "Alleen ventilator",
+                  "da": "Kun ventilator",
+                  "de": "Nur Lüfter",
+                  "es": "Solo ventilador",
+                  "fr": "Ventilateur uniquement",
+                  "it": "Solo ventilatore",
+                  "no": "Kun vifte",
+                  "sv": "Endast fläkt",
+                  "pl": "Tylko wentylator",
+                  "ru": "Только вентилятор",
+                  "ko": "팬만 작동"
+                }
+              },
+              {
+                "id": "dry",
+                "title": {
+                  "en": "Dry",
+                  "nl": "Droog",
+                  "da": "Tør",
+                  "de": "Trocken",
+                  "es": "Seco",
+                  "fr": "Sèche",
+                  "it": "Asciutto",
+                  "no": "Tørr",
+                  "sv": "Torr",
+                  "pl": "Tryb osuszania",
+                  "ru": "Сухой",
+                  "ko": "제습"
+                }
+              },
+              {
+                "id": "sleep",
+                "title": {
+                  "en": "Sleep",
+                  "nl": "Slapen",
+                  "da": "Sov",
+                  "de": "Schlaf",
+                  "es": "Dormir",
+                  "fr": "Dormir",
+                  "it": "Sonno",
+                  "no": "Sov",
+                  "sv": "Sömn",
+                  "pl": "Sen",
+                  "ru": "Сон",
+                  "ko": "슬립"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "system_mode"
+      },
+      {
+        "title": {
+          "en": "Set frost protection temperature",
+          "nl": "Stel vorstbeveiligingstemperatuur in",
+          "da": "Indstil frostbeskyttelsestemperatur",
+          "de": "Frostschutztemperatur festlegen",
+          "es": "Establecer temperatura de protección contra heladas",
+          "fr": "Définir la température de protection contre le gel",
+          "it": "Imposta temperatura di protezione dal gelo",
+          "no": "Angi frostbeskyttelsestemperatur",
+          "sv": "Ställ in frostskyddstemperatur",
+          "pl": "Ustaw temperaturę ochrony przed mrozem",
+          "ru": "Установить температуру защиты от замерзания",
+          "ko": "서리 방지 온도 설정"
+        },
+        "titleFormatted": {
+          "en": "Set frost protection temperature to [[val]]",
+          "nl": "Stel vorstbeveiligingstemperatuur in op [[val]]",
+          "da": "Indstil frostbeskyttelsestemperaturen til [[val]]",
+          "de": "Frostschutztemperatur auf [[val]] festlegen",
+          "es": "Establecer temperatura de protección contra heladas a [[val]]",
+          "fr": "Définir la température de protection contre le gel à [[val]]",
+          "it": "Imposta temperatura di protezione dal gelo su [[val]]",
+          "no": "Angi frostbeskyttelsestemperatur til [[val]]",
+          "sv": "Ställ in frostskyddstemperatur till [[val]]",
+          "pl": "Ustaw temperaturę ochrony przed mrozem na [[val]]",
+          "ru": "Установить температуру защиты от замерзания на [[val]]",
+          "ko": "[[val]]의 서리 방지 온도를 설정"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=target_temperature.frost_protection"
+          },
+          {
+            "name": "val",
+            "type": "range"
+          }
+        ],
+        "id": "target_temperature.frost_protection"
       },
       {
         "title": {
@@ -5175,7 +6154,7 @@
         "sv": "Bro",
         "pl": "Most",
         "ru": "Мост",
-        "ko": "교량"
+        "ko": "브릿지"
       },
       "class": "other",
       "capabilities": [],
@@ -5212,15 +6191,15 @@
           "type": "group",
           "label": {
             "en": "Bridge information",
-            "nl": "Bruginformatie",
-            "da": "Bro information",
-            "de": "Brückeninformationen",
-            "es": "Información del puente",
-            "fr": "Informations sur le pont",
+            "nl": "Bridge-informatie",
+            "da": "Bridge information",
+            "de": "Bridge-Informationen",
+            "es": "Información del bridge",
+            "fr": "Informations sur le bridge",
             "it": "Informazioni sul bridge",
-            "no": "Bro informasjon",
-            "sv": "Brygginformation",
-            "pl": "Informacje o mostku",
+            "no": "Bridge informasjon",
+            "sv": "Bridgeinformation",
+            "pl": "Informacje o bridge'u",
             "ru": "Информация о мосте",
             "ko": "브리지 정보"
           },
@@ -5454,15 +6433,15 @@
           "type": "group",
           "label": {
             "en": "Bridge settings",
-            "nl": "Bruginstellingen",
-            "da": "Broindstillinger",
-            "de": "Brückeneinstellungen",
-            "es": "Configuraciones del puente",
-            "fr": "Paramètres du pont",
+            "nl": "Bridge-instellingen",
+            "da": "Bridge-indstillinger",
+            "de": "Bridge-Einstellungen",
+            "es": "Configuraciones del bridge",
+            "fr": "Paramètres du bridge",
             "it": "Impostazioni del bridge",
-            "no": "Broinnstillinger",
-            "sv": "Brygginställningar",
-            "pl": "Ustawienia mostka",
+            "no": "Bridge-innstillinger",
+            "sv": "Bridgeinställningar",
+            "pl": "Ustawienia bridge'a",
             "ru": "Настройки моста",
             "ko": "브리지 설정"
           },
@@ -5522,16 +6501,25 @@
       "class": "socket",
       "capabilities": [],
       "capabilitiesOptions": {
+        "onoff.thermostat_mode": {
+          "title": {
+            "en": "Thermostat mode"
+          },
+          "uiComponent": "button",
+          "uiQuickAction": false
+        },
         "locked.child": {
           "title": {
             "en": "Child lock"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.backlight": {
           "title": {
             "en": "Backlight"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.center": {
@@ -5544,12 +6532,14 @@
           "title": {
             "en": "Heartbeat"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.indicator": {
           "title": {
             "en": "Indicator"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.l1": {
@@ -5586,6 +6576,7 @@
           "title": {
             "en": "Pre alarm"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.right": {
@@ -5598,18 +6589,15 @@
           "title": {
             "en": "Self test"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.system_mode": {
           "title": {
             "en": "System mode"
           },
+          "uiComponent": "button",
           "uiQuickAction": false
-        },
-        "target_temperature.local": {
-          "title": {
-            "en": "Target temperature local"
-          }
         }
       },
       "platforms": [
@@ -5995,6 +6983,106 @@
       },
       "class": "socket",
       "capabilities": [],
+      "capabilitiesOptions": {
+        "onoff.thermostat_mode": {
+          "title": {
+            "en": "Thermostat mode"
+          },
+          "uiComponent": "button",
+          "uiQuickAction": false
+        },
+        "locked.child": {
+          "title": {
+            "en": "Child lock"
+          },
+          "uiComponent": "button",
+          "uiQuickAction": false
+        },
+        "onoff.backlight": {
+          "title": {
+            "en": "Backlight"
+          },
+          "uiComponent": "button",
+          "uiQuickAction": false
+        },
+        "onoff.center": {
+          "title": {
+            "en": "Center"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.heartbeat": {
+          "title": {
+            "en": "Heartbeat"
+          },
+          "uiComponent": "button",
+          "uiQuickAction": false
+        },
+        "onoff.indicator": {
+          "title": {
+            "en": "Indicator"
+          },
+          "uiComponent": "button",
+          "uiQuickAction": false
+        },
+        "onoff.l1": {
+          "title": {
+            "en": "L1"
+          },
+          "uiQuickAction": true
+        },
+        "onoff.l2": {
+          "title": {
+            "en": "L2"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.l3": {
+          "title": {
+            "en": "L3"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.l4": {
+          "title": {
+            "en": "L4"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.left": {
+          "title": {
+            "en": "Left"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.pre_alarm": {
+          "title": {
+            "en": "Pre alarm"
+          },
+          "uiComponent": "button",
+          "uiQuickAction": false
+        },
+        "onoff.right": {
+          "title": {
+            "en": "Right"
+          },
+          "uiQuickAction": false
+        },
+        "onoff.self_test": {
+          "title": {
+            "en": "Self test"
+          },
+          "uiComponent": "button",
+          "uiQuickAction": false
+        },
+        "onoff.system_mode": {
+          "title": {
+            "en": "System mode"
+          },
+          "uiComponent": "button",
+          "uiQuickAction": false
+        }
+      },
       "platforms": [
         "local"
       ],
@@ -6397,15 +7485,15 @@
       "type": "boolean",
       "title": {
         "en": "Bridge offline",
-        "nl": "Brug offline",
-        "da": "Bro offline",
-        "de": "Brücke offline",
-        "es": "Puente fuera de línea",
-        "fr": "Pont hors ligne",
-        "it": "Ponte offline",
-        "no": "Bro offline",
-        "sv": "Bro offline",
-        "pl": "Most offline",
+        "nl": "Bridge offline",
+        "da": "Bridge offline",
+        "de": "Bridge offline",
+        "es": "Bridge fuera de línea",
+        "fr": "Bridge hors ligne",
+        "it": "Bridge offline",
+        "no": "Bridge offline",
+        "sv": "Bridge offline",
+        "pl": "Bridge offline",
         "ru": "Мост офлайн",
         "ko": "브릿지 오프라인"
       },
@@ -6550,6 +7638,81 @@
       "setable": false,
       "insights": false,
       "icon": "./assets/allow_joining_timeout.svg"
+    },
+    "battery_state": {
+      "type": "enum",
+      "title": {
+        "en": "Battery state",
+        "nl": "Batterijstatus",
+        "da": "Batteritilstand",
+        "de": "Batteriestatus",
+        "es": "Estado de la batería",
+        "fr": "État de la batterie",
+        "it": "Stato della batteria",
+        "no": "Batteritilstand",
+        "sv": "Batteristatus",
+        "pl": "Stan baterii",
+        "ru": "Состояние батареи",
+        "ko": "배터리 상태"
+      },
+      "values": [
+        {
+          "id": "low",
+          "title": {
+            "en": "Low",
+            "nl": "Laag",
+            "da": "Lav",
+            "de": "Niedrig",
+            "es": "Bajo",
+            "fr": "Bas",
+            "it": "Basso",
+            "no": "Lav",
+            "sv": "Låg",
+            "pl": "Niski",
+            "ru": "Низкий",
+            "ko": "낮은"
+          }
+        },
+        {
+          "id": "medium",
+          "title": {
+            "en": "Medium",
+            "nl": "Gemiddeld",
+            "da": "Mellem",
+            "de": "Mittel",
+            "es": "Medio",
+            "fr": "Moyen",
+            "it": "Medio",
+            "no": "Middels",
+            "sv": "Medium",
+            "pl": "Średni",
+            "ru": "Средний",
+            "ko": "중간"
+          }
+        },
+        {
+          "id": "high",
+          "title": {
+            "en": "High",
+            "nl": "Hoog",
+            "da": "Høj",
+            "de": "Hoch",
+            "es": "Alto",
+            "fr": "Élevé",
+            "it": "Alto",
+            "no": "Høy",
+            "sv": "Hög",
+            "pl": "Wysoki",
+            "ru": "Высокий",
+            "ko": "높은"
+          }
+        }
+      ],
+      "uiComponent": "sensor",
+      "icon": "./assets/battery_state.svg",
+      "getable": true,
+      "setable": false,
+      "insights": false
     },
     "color_power_on_behavior": {
       "type": "enum",
@@ -6913,6 +8076,148 @@
             "pl": "Zatrzymaj pętlę kolorów",
             "ru": "Остановить цветовую петлю",
             "ko": "컬러 루프 중지"
+          }
+        }
+      ],
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "insights": false
+    },
+    "fan_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Fan mode",
+        "nl": "Ventilatormodus",
+        "da": "Ventilatortilstand",
+        "de": "Ventilatormodus",
+        "es": "Modo del ventilador",
+        "fr": "Mode du ventilateur",
+        "it": "Modalità ventilatore",
+        "no": "Ventilatormodus",
+        "sv": "Fläktläge",
+        "pl": "Tryb wentylatora",
+        "ru": "Режим вентилятора",
+        "ko": "팬 모드"
+      },
+      "values": [
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "nl": "Uit",
+            "da": "Slukket",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "Éteint",
+            "it": "Spento",
+            "no": "Av",
+            "sv": "Av",
+            "pl": "Wyłączony",
+            "ru": "Выкл",
+            "ko": "꺼짐"
+          }
+        },
+        {
+          "id": "low",
+          "title": {
+            "en": "Low",
+            "nl": "Laag",
+            "da": "Lav",
+            "de": "Niedrig",
+            "es": "Bajo",
+            "fr": "Bas",
+            "it": "Basso",
+            "no": "Lav",
+            "sv": "Låg",
+            "pl": "Niski",
+            "ru": "Низкий",
+            "ko": "낮은"
+          }
+        },
+        {
+          "id": "medium",
+          "title": {
+            "en": "Medium",
+            "nl": "Gemiddeld",
+            "da": "Mellem",
+            "de": "Mittel",
+            "es": "Medio",
+            "fr": "Moyen",
+            "it": "Medio",
+            "no": "Middels",
+            "sv": "Medium",
+            "pl": "Średni",
+            "ru": "Средний",
+            "ko": "중간"
+          }
+        },
+        {
+          "id": "high",
+          "title": {
+            "en": "High",
+            "nl": "Hoog",
+            "da": "Høj",
+            "de": "Hoch",
+            "es": "Alto",
+            "fr": "Élevé",
+            "it": "Alto",
+            "no": "Høy",
+            "sv": "Hög",
+            "pl": "Wysoki",
+            "ru": "Высокий",
+            "ko": "높은"
+          }
+        },
+        {
+          "id": "on",
+          "title": {
+            "en": "On",
+            "nl": "Aan",
+            "da": "Til",
+            "de": "An",
+            "es": "Encendido",
+            "fr": "Allumé",
+            "it": "Acceso",
+            "no": "På",
+            "sv": "På",
+            "pl": "Włączony",
+            "ru": "Вкл",
+            "ko": "켬"
+          }
+        },
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto",
+            "nl": "Automatisch",
+            "da": "Auto",
+            "de": "Auto",
+            "es": "Automático",
+            "fr": "Auto",
+            "it": "Auto",
+            "no": "Auto",
+            "sv": "Automatisk",
+            "pl": "Auto",
+            "ru": "Авто",
+            "ko": "자동"
+          }
+        },
+        {
+          "id": "smart",
+          "title": {
+            "en": "Smart",
+            "nl": "Slim",
+            "da": "Smart",
+            "de": "Smart",
+            "es": "Inteligente",
+            "fr": "Intelligent",
+            "it": "Smart",
+            "no": "Smart",
+            "sv": "Smart",
+            "pl": "Inteligentny",
+            "ru": "Умный",
+            "ko": "스마트"
           }
         }
       ],
@@ -7436,6 +8741,131 @@
       "setable": false,
       "insights": true
     },
+    "pilot_wire_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Pilot Wire Mode",
+        "nl": "Pilotdraadmodus",
+        "da": "Pilottrådtilstand",
+        "de": "Pilotdraht-Modus",
+        "es": "Modo de Cable Piloto",
+        "fr": "Mode Fil Pilote",
+        "it": "Modalità Filo Pilota",
+        "no": "Pilottrådmodus",
+        "sv": "Pilottrådsläge",
+        "pl": "Tryb przewodu pilotażowego",
+        "ru": "Режим пилотного провода",
+        "ko": "파일럿 와이어 모드"
+      },
+      "values": [
+        {
+          "id": "comfort",
+          "title": {
+            "en": "Comfort",
+            "nl": "Comfort",
+            "da": "Komfort",
+            "de": "Komfort",
+            "es": "Confort",
+            "fr": "Confort",
+            "it": "Comfort",
+            "no": "Komfort",
+            "sv": "Komfort",
+            "pl": "Komfort",
+            "ru": "Комфорт",
+            "ko": "편안함"
+          }
+        },
+        {
+          "id": "eco",
+          "title": {
+            "en": "Eco",
+            "nl": "Eco",
+            "da": "Eco",
+            "de": "Eco",
+            "es": "Eco",
+            "fr": "Éco",
+            "it": "Eco",
+            "no": "Eco",
+            "sv": "Eco",
+            "pl": "Eko",
+            "ru": "Эко",
+            "ko": "에코"
+          }
+        },
+        {
+          "id": "frost_protection",
+          "title": {
+            "en": "Frost Protection",
+            "nl": "Vorstbescherming",
+            "da": "Frostbeskyttelse",
+            "de": "Frostschutz",
+            "es": "Protección Antihielo",
+            "fr": "Protection Antigel",
+            "it": "Protezione Antigelo",
+            "no": "Frostbeskyttelse",
+            "sv": "Frostskydd",
+            "pl": "Ochrona przed mrozem",
+            "ru": "Защита от замерзания",
+            "ko": "서리 방지"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "nl": "Uit",
+            "da": "Slukket",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "Éteint",
+            "it": "Spento",
+            "no": "Av",
+            "sv": "Av",
+            "pl": "Wyłączony",
+            "ru": "Выкл.",
+            "ko": "끄기"
+          }
+        },
+        {
+          "id": "comfort_-1",
+          "title": {
+            "en": "Comfort -1",
+            "nl": "Comfort -1",
+            "da": "Komfort -1",
+            "de": "Komfort -1",
+            "es": "Confort -1",
+            "fr": "Confort -1",
+            "it": "Comfort -1",
+            "no": "Komfort -1",
+            "sv": "Komfort -1",
+            "pl": "Komfort -1",
+            "ru": "Комфорт -1",
+            "ko": "편안함 -1"
+          }
+        },
+        {
+          "id": "comfort_-2",
+          "title": {
+            "en": "Comfort -2",
+            "nl": "Comfort -2",
+            "da": "Komfort -2",
+            "de": "Komfort -2",
+            "es": "Confort -2",
+            "fr": "Confort -2",
+            "it": "Comfort -2",
+            "no": "Komfort -2",
+            "sv": "Komfort -2",
+            "pl": "Komfort -2",
+            "ru": "Комфорт -2",
+            "ko": "편안함 -2"
+          }
+        }
+      ],
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "insights": false
+    },
     "power_on_behavior": {
       "type": "enum",
       "title": {
@@ -7680,14 +9110,14 @@
       "title": {
         "en": "Restart bridge",
         "nl": "Bridge herstarten",
-        "da": "Genstart bro",
-        "de": "Brücke neu starten",
-        "es": "Reiniciar puente",
-        "fr": "Redémarrer le pont",
-        "it": "Riavvia il ponte",
-        "no": "Start broen på nytt",
-        "sv": "Starta om bron",
-        "pl": "Zrestartuj most",
+        "da": "Genstart bridge",
+        "de": "Bridge neu starten",
+        "es": "Reiniciar bridge",
+        "fr": "Redémarrer le bridge",
+        "it": "Riavvia il bridge",
+        "no": "Start bridge på nytt",
+        "sv": "Starta om bridge",
+        "pl": "Zrestartuj bridge",
         "ru": "Перезапустить мост",
         "ko": "브리지 재시작"
       },
@@ -8187,7 +9617,7 @@
     "system_mode": {
       "type": "enum",
       "title": {
-        "en": "System Mode",
+        "en": "System mode",
         "nl": "Systeemmodus",
         "da": "Systemtilstand",
         "de": "Systemmodus",

@@ -1,0 +1,42 @@
+{
+  "title": {
+    "en": "Set frost protection temperature",
+    "nl": "Stel vorstbeveiligingstemperatuur in",
+    "da": "Indstil frostbeskyttelsestemperatur",
+    "de": "Frostschutztemperatur festlegen",
+    "es": "Establecer temperatura de protección contra heladas",
+    "fr": "Définir la température de protection contre le gel",
+    "it": "Imposta temperatura di protezione dal gelo",
+    "no": "Angi frostbeskyttelsestemperatur",
+    "sv": "Ställ in frostskyddstemperatur",
+    "pl": "Ustaw temperaturę ochrony przed mrozem",
+    "ru": "Установить температуру защиты от замерзания",
+    "ko": "서리 방지 온도 설정"
+
+  },
+  "titleFormatted": {
+    "en": "Set frost protection temperature to [[val]]",
+    "nl": "Stel vorstbeveiligingstemperatuur in op [[val]]",
+    "da": "Indstil frostbeskyttelsestemperaturen til [[val]]",
+    "de": "Frostschutztemperatur auf [[val]] festlegen",
+    "es": "Establecer temperatura de protección contra heladas a [[val]]",
+    "fr": "Définir la température de protection contre le gel à [[val]]",
+    "it": "Imposta temperatura di protezione dal gelo su [[val]]",
+    "no": "Angi frostbeskyttelsestemperatur til [[val]]",
+    "sv": "Ställ in frostskyddstemperatur till [[val]]",
+    "pl": "Ustaw temperaturę ochrony przed mrozem na [[val]]",
+    "ru": "Установить температуру защиты от замерзания на [[val]]",
+    "ko": "[[val]]의 서리 방지 온도를 설정"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=target_temperature.frost_protection"
+    },
+    {
+      "name": "val",
+      "type": "range"
+    }
+  ]
+}

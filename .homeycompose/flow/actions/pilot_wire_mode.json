@@ -1,0 +1,147 @@
+{
+  "title": {
+    "en": "Set Pilot Wire Mode",
+    "nl": "Stel Pilotdraadmodus in",
+    "da": "Indstil Pilottrådtilstand",
+    "de": "Pilotdraht-Modus festlegen",
+    "es": "Configurar Modo de Cable Piloto",
+    "fr": "Définir le Mode Fil Pilote",
+    "it": "Imposta Modalità Filo Pilota",
+    "no": "Sett Pilottrådmodus",
+    "sv": "Ställ in Pilottrådsläge",
+    "pl": "Ustaw Tryb Przewodu Pilotażowego",
+    "ru": "Установить Режим Пилотного Провода",
+    "ko": "파일럿 와이어 모드 설정"
+  },
+  "titleFormatted": {
+    "en": "Set Pilot Wire Mode to [[val]]",
+    "nl": "Stel Pilotdraadmodus in op [[val]]",
+    "da": "Indstil Pilottrådtilstand til [[val]]",
+    "de": "Pilotdraht-Modus auf [[val]] setzen",
+    "es": "Configurar Modo de Cable Piloto a [[val]]",
+    "fr": "Définir le Mode Fil Pilote sur [[val]]",
+    "it": "Imposta Modalità Filo Pilota su [[val]]",
+    "no": "Sett Pilottrådmodus til [[val]]",
+    "sv": "Ställ in Pilottrådsläge till [[val]]",
+    "pl": "Ustaw Tryb Przewodu Pilotażowego na [[val]]",
+    "ru": "Установить Режим Пилотного Провода на [[val]]",
+    "ko": "파일럿 와이어 모드를 [[val]]로 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=pilot_wire_mode"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "comfort",
+          "title": {
+            "en": "Comfort",
+            "nl": "Comfort",
+            "da": "Komfort",
+            "de": "Komfort",
+            "es": "Confort",
+            "fr": "Confort",
+            "it": "Comfort",
+            "no": "Komfort",
+            "sv": "Komfort",
+            "pl": "Komfort",
+            "ru": "Комфорт",
+            "ko": "편안함"
+          }
+        },
+        {
+          "id": "eco",
+          "title": {
+            "en": "Eco",
+            "nl": "Eco",
+            "da": "Eco",
+            "de": "Eco",
+            "es": "Eco",
+            "fr": "Éco",
+            "it": "Eco",
+            "no": "Eco",
+            "sv": "Eco",
+            "pl": "Eko",
+            "ru": "Эко",
+            "ko": "에코"
+          }
+        },
+        {
+          "id": "frost_protection",
+          "title": {
+            "en": "Frost Protection",
+            "nl": "Vorstbescherming",
+            "da": "Frostbeskyttelse",
+            "de": "Frostschutz",
+            "es": "Protección Antihielo",
+            "fr": "Protection Antigel",
+            "it": "Protezione Antigelo",
+            "no": "Frostbeskyttelse",
+            "sv": "Frostskydd",
+            "pl": "Ochrona przed mrozem",
+            "ru": "Защита от замерзания",
+            "ko": "서리 방지"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "nl": "Uit",
+            "da": "Slukket",
+            "de": "Aus",
+            "es": "Apagado",
+            "fr": "Éteint",
+            "it": "Spento",
+            "no": "Av",
+            "sv": "Av",
+            "pl": "Wyłączony",
+            "ru": "Выкл",
+            "ko": "꺼짐"
+          }
+        },
+        {
+          "id": "comfort_-1",
+          "title": {
+            "en": "Comfort -1",
+            "nl": "Comfort -1",
+            "da": "Komfort -1",
+            "de": "Komfort -1",
+            "es": "Confort -1",
+            "fr": "Confort -1",
+            "it": "Comfort -1",
+            "no": "Komfort -1",
+            "sv": "Komfort -1",
+            "pl": "Komfort -1",
+            "ru": "Комфорт -1",
+            "ko": "편안함 -1"
+          }
+        },
+        {
+          "id": "comfort_-2",
+          "title": {
+            "en": "Comfort -2",
+            "nl": "Comfort -2",
+            "da": "Komfort -2",
+            "de": "Komfort -2",
+            "es": "Confort -2",
+            "fr": "Confort -2",
+            "it": "Comfort -2",
+            "no": "Komfort -2",
+            "sv": "Komfort -2",
+            "pl": "Komfort -2",
+            "ru": "Комфорт -2",
+            "ko": "편안함 -2"
+          }
+        }
+      ]
+    }
+  ]
+}
+

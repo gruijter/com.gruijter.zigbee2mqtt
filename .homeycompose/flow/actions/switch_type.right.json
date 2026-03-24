@@ -77,13 +77,13 @@
           "title": {
             "en": "Momentary",
             "nl": "Momentaan",
-            "da": "Øjeblikkelig",
+          "da": "Momentant",
             "de": "Momentan",
             "es": "Momentáneo",
             "fr": "Momentané",
-            "it": "Momento",
-            "no": "Øyeblikkelig",
-            "sv": "Ögonblicklig",
+          "it": "Momentaneo",
+          "no": "Momentant",
+          "sv": "Momentant",
             "pl": "Chwilowy",
             "ru": "Мгновенный",
             "ko": "순간적인"

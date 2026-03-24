@@ -1,7 +1,7 @@
 {
   "type": "enum",
   "title": {
-    "en": "System Mode",
+    "en": "System mode",
     "nl": "Systeemmodus",
     "da": "Systemtilstand",
     "de": "Systemmodus",

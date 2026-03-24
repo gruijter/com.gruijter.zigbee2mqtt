@@ -59,7 +59,7 @@
           "id": "state",
           "title": {
             "en": "State",
-            "nl": "Staat",
+          "nl": "Toestand",
             "da": "Tilstand",
             "de": "Status",
             "es": "Estado",
@@ -76,14 +76,14 @@
           "id": "momentary",
           "title": {
             "en": "Momentary",
-            "nl": "Momentopname",
-            "da": "Momentær",
+          "nl": "Momentaan",
+          "da": "Momentant",
             "de": "Momentan",
             "es": "Momentáneo",
             "fr": "Momentané",
-            "it": "Momento",
-            "no": "Øyeblikkelig",
-            "sv": "Ögonblicklig",
+          "it": "Momentaneo",
+          "no": "Momentant",
+          "sv": "Momentant",
             "pl": "Chwilowy",
             "ru": "Мгновенный",
             "ko": "순간적"

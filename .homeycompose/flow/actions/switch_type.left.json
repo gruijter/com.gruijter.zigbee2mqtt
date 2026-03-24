@@ -59,7 +59,7 @@
           "id": "state",
           "title": {
             "en": "State",
-            "nl": "Staat",
+          "nl": "Toestand",
             "da": "Tilstand",
             "de": "Zustand",
             "es": "Estado",
@@ -77,13 +77,13 @@
           "title": {
             "en": "Momentary",
             "nl": "Momentaan",
-            "da": "Øjeblikkelig",
+          "da": "Momentant",
             "de": "Momentan",
             "es": "Momentáneo",
             "fr": "Momentané",
             "it": "Momentaneo",
-            "no": "Kortvarig",
-            "sv": "Tillfällig",
+          "no": "Momentant",
+          "sv": "Momentant",
             "pl": "Chwilowy",
             "ru": "Кратковременный",
             "ko": "순간적인"
