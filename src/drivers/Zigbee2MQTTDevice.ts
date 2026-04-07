@@ -46,6 +46,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
   eventListenerBridgeOffline: ((offline: boolean) => void) | null;
   bridgeOffline: boolean;
   capabilityListeners: Record<string, boolean>;
+  unmappedLogged: Set<string> = new Set();
 
   abstract getDeviceInfo():
   { type: 'group', device: Z2MGroup, devices: Z2MDevice[] } |
@@ -465,7 +466,10 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     for (const [z2mProperty, z2mValue] of Object.entries(z2mState)) {
       const mapping = this.store.capabilityMappings?.[z2mProperty];
       if (!mapping) {
-        this.log(`Capability ${z2mProperty} not mapped`);
+        if (!this.unmappedLogged.has(z2mProperty)) {
+          this.log(`Capability ${z2mProperty} not mapped`);
+          this.unmappedLogged.add(z2mProperty);
+        }
         continue;
       }
 
