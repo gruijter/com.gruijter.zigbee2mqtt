@@ -35,6 +35,9 @@ const setTimeoutPromise = util.promisify(setTimeout);
 // Store version - increment when CapabilityMappings format changes
 const STORE_VERSION = 2;
 
+// Capabilities that support transition duration (when the Z2M device has the transition option)
+const DURATION_CAPABILITIES = ['dim', 'dim.l1', 'dim.l2', 'light_temperature', 'light_hue', 'light_saturation', 'onoff'];
+
 export default abstract class Zigbee2MQTTDevice extends Homey.Device {
   store: { capabilityMappings: CapabilityMappings; storeVersion: number };
   settings: DeviceSettings;
@@ -237,9 +240,11 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
 
   async setCapabilityUnits() {
     this.log(`Checking Capability Units and Titles for ${this.getName()}`);
-    let unitsChanged = false;
+    let optionsChanged = false;
     const { capabilityMappings } = this.store;
     if (!capabilityMappings) return;
+
+    const supportsTransition = this.deviceSupportsTransition();
 
     // Flatten mappings to iterate over all capabilities
     const allMappings = Object.values(capabilityMappings).flatMap(
@@ -256,29 +261,34 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
         const title = expose.name.replace(/./, (c) => c.toUpperCase());
         capOptions.title = { en: title };
       }
-      // decimals: dec,
+      // Add duration support for eligible capabilities on devices that support transition
+      if (supportsTransition && DURATION_CAPABILITIES.includes(homeyCapability)) {
+        capOptions.duration = true;
+      }
+
       if (Object.keys(capOptions).length > 0) {
-        // check if the unit or name changed for this capability
+        // check if the options changed for this capability
         let currentCapOptions: any = {};
         try {
           currentCapOptions = this.getCapabilityOptions(homeyCapability);
         } catch (error) {
           this.log(`${this.getName()} has no capability options set for ${homeyCapability}`);
         }
-        // console.log(this.getName(), capDetailsArray[index][0], currentCapOptions);
-        if (currentCapOptions.units?.en !== capOptions.units?.en || currentCapOptions.title?.en !== capOptions.title?.en) {
-          if (!unitsChanged) {
+        if (currentCapOptions.units?.en !== capOptions.units?.en
+          || currentCapOptions.title?.en !== capOptions.title?.en
+          || currentCapOptions.duration !== capOptions.duration) {
+          if (!optionsChanged) {
             // Only show migrating message on first change
             this.setUnavailable(`${this.zigbee2MqttType} is migrating. Please wait!`).catch(this.error);
           }
-          unitsChanged = true;
-          this.log('Migrating unit and title for', homeyCapability, (expose.type === 'numeric' ? expose.unit : 'no unit'), expose.name);
+          optionsChanged = true;
+          this.log('Migrating capability options for', homeyCapability, (expose.type === 'numeric' ? expose.unit : 'no unit'), expose.name);
           await this.setCapabilityOptions(homeyCapability, capOptions).catch(this.error);
           await setTimeoutPromise(2 * 1000).catch((error) => this.log(error));
         }
       }
     }
-    if (unitsChanged) this.restartDevice(1000).catch((error) => this.error(error));
+    if (optionsChanged) this.restartDevice(1000).catch((error) => this.error(error));
   }
 
   async setCapability(capability: string, value: any) {
@@ -293,6 +303,18 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
   // ============================================================================
   // Utility Methods
   // ============================================================================
+
+  private deviceSupportsTransition(): boolean {
+    const deviceInfo = this.getDeviceInfo();
+    if (!deviceInfo) return false;
+    const device = deviceInfo.type === 'group' ? deviceInfo.devices[0] : deviceInfo.device;
+    return device?.definition?.options?.some((opt) => opt.name === 'transition') ?? false;
+  }
+
+  private static durationToTransition(durationMs: unknown): number | undefined {
+    if (typeof durationMs !== 'number' || durationMs <= 0) return undefined;
+    return Math.round(durationMs / 100) / 10; // round to 0.1s precision
+  }
 
   async restartDevice(delay: number = 1000 * 5) {
     if (this.restarting) return;
@@ -579,9 +601,14 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     this.log(`${this.getName()} adding multi-capability listener for ${z2mProperty}: ${deviceCaps.join(', ')}`);
     this.registerMultipleCapabilityListener(
       deviceCaps,
-      (changedValues: Record<string, any>) => {
+      (changedValues: Record<string, any>, capabilityOptions: Record<string, any>) => {
         const command = converters.homeyToZ2m!(changedValues, (cap) => this.getCapabilityValue(cap));
-        if (command) this.setCommand(command, 'app').catch((error) => this.error(error));
+        if (command) {
+          const durationMs = Object.values(capabilityOptions).find((opt) => typeof opt?.duration === 'number')?.duration;
+          const transition = Zigbee2MQTTDevice.durationToTransition(durationMs);
+          if (transition !== undefined) command.transition = transition;
+          this.setCommand(command, 'app').catch((error) => this.error(error));
+        }
       },
       500,
     );
@@ -597,9 +624,12 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     if (this.capabilityListeners[homeyCapability]) return;
 
     this.log(`${this.getName()} adding capability listener ${homeyCapability}`);
-    this.registerCapabilityListener(homeyCapability, (val: any) => {
+    this.registerCapabilityListener(homeyCapability, (val: any, opts: any) => {
       const command = converters.homeyToZ2m!({ [homeyCapability]: val }, (cap) => this.getCapabilityValue(cap));
-      if (command) this.setCommand(command, 'app').catch((error) => this.error(error));
+      if (command) {
+        command.transition = Zigbee2MQTTDevice.durationToTransition(opts?.duration);
+        this.setCommand(command, 'app').catch((error) => this.error(error));
+      }
     });
     this.capabilityListeners[homeyCapability] = true;
   }
