@@ -318,14 +318,24 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
       this.client = await (this.driver as Zigbee2MQTTBridgeDriver).connectMQTT(this.settings);
       this.client
         .on('error', this.error)
-        .on('offline', () => { void handleDisconnect('offline'); })
-        .on('close', () => { void handleDisconnect('close'); })
-        .on('end', () => { void handleDisconnect('end'); })
+        .on('offline', () => {
+          handleDisconnect('offline').catch((error) => this.error(error));
+        })
+        .on('close', () => {
+          handleDisconnect('close').catch((error) => this.error(error));
+        })
+        .on('end', () => {
+          handleDisconnect('end').catch((error) => this.error(error));
+        })
         .on('reconnect', () => {
           this.log('mqtt is trying to reconnect');
         })
-        .on('connect', () => { void subscribeTopics(); })
-        .on('message', (topic: string, message: any) => { void handleMessage(topic, message); });
+        .on('connect', () => {
+          subscribeTopics().catch((error) => this.error(error));
+        })
+        .on('message', (topic: string, message: any) => {
+          handleMessage(topic, message).catch((error) => this.error(error));
+        });
       this.client.setMaxListeners(100); // INCREASE LISTENERS
       if (this.client.connected) await subscribeTopics();
       return Promise.resolve(true);

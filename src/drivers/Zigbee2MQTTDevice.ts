@@ -85,8 +85,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
 
       if (this.availability === 'offline') {
         await this.setUnavailable('Device is offline').catch(this.error);
-      }
-      else {
+      } else {
         await this.setAvailable();
       }
 
@@ -436,36 +435,40 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     this.bridge = bridge;
     this.deviceTopic = `${bridge.settings.topic}/${this.settings.friendly_name}`;
 
-    this.handleBridgeMessage = async (topic: string, message: any) => {
-      try {
-        if (message.toString() !== '' && topic.startsWith(this.deviceTopic)) {
-          const info = JSON.parse(message);
+    this.handleBridgeMessage = (topic: string, message: any) => {
+      (async () => {
+        try {
+          if (message.toString() !== '' && topic.startsWith(this.deviceTopic)) {
+            const info = JSON.parse(message);
 
-          if (topic === this.deviceTopic) {
-            const state = info as Z2MState;
-            await this.handleDeviceStateMessage(state);
-          }
+            if (topic === this.deviceTopic) {
+              const state = info as Z2MState;
+              await this.handleDeviceStateMessage(state);
+            }
 
-          if (this.zigbee2MqttType !== 'Group' && topic === `${this.deviceTopic}/availability`) {
-            this.availability = info && info.state;
-            if (this.availability === 'online') this.setAvailable().catch(this.error);
-            else if (this.availability === 'offline') this.setUnavailable('Device is offline').catch(this.error);
+            if (this.zigbee2MqttType !== 'Group' && topic === `${this.deviceTopic}/availability`) {
+              this.availability = info && info.state;
+              if (this.availability === 'online') this.setAvailable().catch(this.error);
+              else if (this.availability === 'offline') this.setUnavailable('Device is offline').catch(this.error);
+            }
           }
+        } catch (error) {
+          this.error(error);
         }
-      } catch (error) {
-        this.error(error);
-      }
+      })().catch((error) => this.error(error));
     };
 
-    this.subscribeBridgeTopics = async () => {
-      try {
-        this.log(`Subscribing to ${this.deviceTopic}`);
-        await this.bridge.client.subscribe([`${this.deviceTopic}`]); // device state updates
-        await this.bridge.client.subscribe([`${this.deviceTopic}/availability`]); // device availability updates
-        this.log(`${this.getName()} mqtt subscriptions ok`);
-      } catch (error) {
-        this.error(error);
-      }
+    this.subscribeBridgeTopics = () => {
+      (async () => {
+        try {
+          this.log(`Subscribing to ${this.deviceTopic}`);
+          await this.bridge.client.subscribe([`${this.deviceTopic}`]); // device state updates
+          await this.bridge.client.subscribe([`${this.deviceTopic}/availability`]); // device availability updates
+          this.log(`${this.getName()} mqtt subscriptions ok`);
+        } catch (error) {
+          this.error(error);
+        }
+      })().catch((error) => this.error(error));
     };
 
     this.log('connecting to Bridge MQTT');
@@ -602,7 +605,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     this.registerMultipleCapabilityListener(
       deviceCaps,
       (changedValues: Record<string, any>, capabilityOptions: Record<string, any>) => {
-        const command = converters.homeyToZ2m!(changedValues, (cap) => this.getCapabilityValue(cap));
+        const command = converters.homeyToZ2m?.(changedValues, (cap) => this.getCapabilityValue(cap));
         if (command) {
           const durationMs = Object.values(capabilityOptions).find((opt) => typeof opt?.duration === 'number')?.duration;
           const transition = Zigbee2MQTTDevice.durationToTransition(durationMs);
@@ -625,7 +628,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
 
     this.log(`${this.getName()} adding capability listener ${homeyCapability}`);
     this.registerCapabilityListener(homeyCapability, (val: any, opts: any) => {
-      const command = converters.homeyToZ2m!({ [homeyCapability]: val }, (cap) => this.getCapabilityValue(cap));
+      const command = converters.homeyToZ2m?.({ [homeyCapability]: val }, (cap) => this.getCapabilityValue(cap));
       if (command) {
         command.transition = Zigbee2MQTTDevice.durationToTransition(opts?.duration);
         this.setCommand(command, 'app').catch((error) => this.error(error));
