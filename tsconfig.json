@@ -2,12 +2,13 @@
   "extends": "@tsconfig/node18/tsconfig.json",
   "compilerOptions": {
     "outDir": ".homeybuild/",
+    "rootDir": "./src",
     "sourceMap": true,
-    "module": "commonjs",
+    "module": "node16",
     "strict": false,
     "strictNullChecks": false,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
+    "moduleResolution": "node16",
     "resolveJsonModule": true
   },
   "include": ["src/**/*.ts"],
