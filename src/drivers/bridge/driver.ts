@@ -69,7 +69,7 @@ export default class Zigbee2MQTTBridgeDriver extends Homey.Driver {
         return Promise.resolve(discovered);
       } catch (error) {
         this.error(error);
-        if (mqttClient) mqttClient.end();
+        if (mqttClient) await mqttClient.end();
         return Promise.reject(error);
       }
     });
