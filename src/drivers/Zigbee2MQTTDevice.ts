@@ -51,10 +51,9 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
   capabilityListeners: Record<string, boolean>;
   unmappedLogged: Set<string> = new Set();
 
-  abstract getDeviceInfo():
-  { type: 'group', device: Z2MGroup, devices: Z2MDevice[] } |
-  { type: 'device', device: Z2MDevice } |
-  null;
+  abstract getDeviceInfo(): { type: 'group', device: Z2MGroup, devices: Z2MDevice[] } |
+    { type: 'device', device: Z2MDevice } |
+    null;
 
   get isConnected(): boolean {
     return this.bridge?.client?.connected || false;
@@ -137,7 +136,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
   isStoreUpToDate(): boolean {
     return !!this.store?.capabilityMappings && this.store.storeVersion === STORE_VERSION;
   }
-  
+
   async migrateStore() {
     this.log(`checking store migration for ${this.getName()}`);
     let storeChanged = false;
@@ -350,7 +349,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     const deviceInfo = this.getDeviceInfo();
 
     // skip battery devices
-    if (deviceInfo?.type === 'device' && deviceInfo.device.power_source === 'Battery') return; 
+    if (deviceInfo?.type === 'device' && deviceInfo.device.power_source === 'Battery') return;
 
     const pl = payload || { state: '' };
     await this.bridge.client.publish(`${this.deviceTopic}/get`, JSON.stringify(pl));
@@ -441,12 +440,12 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
       try {
         if (message.toString() !== '' && topic.startsWith(this.deviceTopic)) {
           const info = JSON.parse(message);
-  
+
           if (topic === this.deviceTopic) {
             const state = info as Z2MState;
             await this.handleDeviceStateMessage(state);
           }
-  
+
           if (this.zigbee2MqttType !== 'Group' && topic === `${this.deviceTopic}/availability`) {
             this.availability = info && info.state;
             if (this.availability === 'online') this.setAvailable().catch(this.error);
@@ -466,7 +465,8 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
         this.log(`${this.getName()} mqtt subscriptions ok`);
       } catch (error) {
         this.error(error);
-    }};
+      }
+    };
 
     this.log('connecting to Bridge MQTT');
     this.bridge.client
