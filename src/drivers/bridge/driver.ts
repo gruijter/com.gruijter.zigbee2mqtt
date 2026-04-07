@@ -76,6 +76,7 @@ export default class Zigbee2MQTTBridgeDriver extends Homey.Driver {
 
     session.setHandler('list_devices', async () => {
       if (!discovered || !discovered.version || !discovered.coordinator) throw Error('Bridge information not available');
+      if (!settings) throw Error('MQTT Settings not initialized');
       const baseTopic = settings.topic === '' ? 'zigbee2mqtt' : `${settings.topic}`;
       const bridgeSettings = { ...settings };
       bridgeSettings.topic = baseTopic;

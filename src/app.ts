@@ -36,7 +36,7 @@ module.exports = class MyApp extends Homey.App {
   async onInit() {
     try {
       this.registerFlowListeners();
-      this.homey.setMaxListeners(100); // INCREASE LISTENERS
+      this.homey.setMaxListeners(1000); // Support large networks
       this.registerFlowTriggers();
       this.log('App has been initialized');
     } catch (error) {
@@ -63,7 +63,12 @@ module.exports = class MyApp extends Homey.App {
         actionListeners[action.id] = this.homey.flow.getActionCard(action.id);
         actionListeners[action.id].registerRunListener(async (args) => {
           try {
-            await args.device[action.id](args.val, 'flow');
+            const method = (args.device as any)[action.id];
+            if (typeof method === 'function') {
+              await method.call(args.device, args.val, 'flow');
+            } else {
+              throw new Error(`Action ${action.id} is not implemented on this device`);
+            }
           } catch (error) {
             this.error(error);
           }
@@ -100,8 +105,7 @@ module.exports = class MyApp extends Homey.App {
     // custom trgger cards
     const actionEventReceived = this.homey.flow.getDeviceTriggerCard('action_event_received');
     actionEventReceived.registerRunListener(async (args, state) => {
-      if (args.event !== state.event) return false;
-      return true;
+      return args.event === state.event;
     });
   }
 

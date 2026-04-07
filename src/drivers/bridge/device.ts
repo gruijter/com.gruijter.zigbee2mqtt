@@ -336,7 +336,7 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
         .on('message', (topic: string, message: any) => {
           handleMessage(topic, message).catch((error) => this.error(error));
         });
-      this.client.setMaxListeners(100); // INCREASE LISTENERS
+      this.client.setMaxListeners(1000); // Support large networks
       if (this.client.connected) await subscribeTopics();
       return Promise.resolve(true);
     } catch (error) {
@@ -346,7 +346,7 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
 
   async joiningTimer(endTime: number | null): Promise<boolean> {
     this.endTime = endTime;
-    const timeout = Math.round((new Date(endTime).getTime() - Date.now()) / 1000) % (60 * 60);
+    const timeout = endTime ? Math.round((new Date(endTime).getTime() - Date.now()) / 1000) % (60 * 60) : 0;
     if (endTime && timeout > 0) {
       await this.setCapability('allow_joining_timeout', timeout);
       await setTimeoutPromise(1000);
@@ -400,15 +400,12 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
 
       // capabilityListeners will be overwritten, so no need to unregister them
 
-      this.registerCapabilityListener('allow_joining', (onoff: boolean) => {
-        this.joinOnOff(onoff, 'app').catch((error) => this.error(error));
+      this.registerCapabilityListener('allow_joining', async (onoff: boolean) => {
+        await this.joinOnOff(onoff, 'app');
       });
 
       this.registerCapabilityListener('restart_bridge', async () => {
-        await this.restart(null, 'app').catch((error) => {
-          this.error(error);
-          throw error;
-        });
+        await this.restart(null, 'app');
       });
 
       this.listenersSet = true;
