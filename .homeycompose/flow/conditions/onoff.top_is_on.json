@@ -1,0 +1,23 @@
+{
+  "title": {
+    "en": "Top is !{{on|off}}",
+    "nl": "Boven is !{{aan|uit}}",
+    "da": "Top er !{{tændt|slukket}}",
+    "de": "Oben ist !{{ein|aus}}",
+    "es": "Arriba está !{{encendido|apagado}}",
+    "fr": "Haut est !{{allumé|éteint}}",
+    "it": "Alto è !{{acceso|spento}}",
+    "no": "Topp er !{{på|av}}",
+    "sv": "Topp är !{{på|av}}",
+    "pl": "Górny jest !{{włączony|wyłączony}}",
+    "ru": "Верх !{{включен|выключен}}",
+    "ko": "위쪽이 !{{켜짐|꺼짐}}"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.top"
+    }
+  ]
+}

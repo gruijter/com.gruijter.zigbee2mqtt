@@ -1,0 +1,23 @@
+{
+  "title": {
+    "en": "Bottom is !{{on|off}}",
+    "nl": "Onder is !{{aan|uit}}",
+    "da": "Bund er !{{tændt|slukket}}",
+    "de": "Unten ist !{{ein|aus}}",
+    "es": "Abajo está !{{encendido|apagado}}",
+    "fr": "Bas est !{{allumé|éteint}}",
+    "it": "Basso è !{{acceso|spento}}",
+    "no": "Bunn er !{{på|av}}",
+    "sv": "Botten är !{{på|av}}",
+    "pl": "Dolny jest !{{włączony|wyłączony}}",
+    "ru": "Низ !{{включен|выключен}}",
+    "ko": "아래쪽이 !{{켜짐|꺼짐}}"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.bottom"
+    }
+  ]
+}
