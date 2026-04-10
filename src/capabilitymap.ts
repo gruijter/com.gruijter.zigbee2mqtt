@@ -93,6 +93,13 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   valve_state: ['valve_state', (v) => Number(v), (v) => ({ valve_state: Number(v) * 100 })],
   target_distance: ['target_distance', (v) => Number(v)],
 
+  wind_speed: ['measure_wind_strength', (v) => Number(v) * 3.6, (v) => ({ wind_speed: Number(v) / 3.6 })], // convert m/s to km/h
+  wind_direction: ['measure_wind_angle', (v) => Number(v)],
+  gust_speed: ['measure_gust_strength', (v) => Number(v) * 3.6, (v) => ({ gust_speed: Number(v) / 3.6 })], // convert m/s to km/h
+  uv_index: ['measure_ultraviolet', (v) => Number(v)],
+  precipitation: ['measure_rain', (v) => Number(v)],
+  rain_rate: ['measure_rain_intensity', (v) => Number(v)],
+
   // Color light related number capabilities
   brightness: ['dim', (v) => Number(v) / 254, (v) => ({ brightness: Number(v) * 254 })],
   brightness_l1: ['dim.l1', (v) => Number(v) / 254, (v) => ({ brightness_l1: Number(v) * 254 })],
@@ -195,6 +202,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   smoke: ['alarm_smoke', (v) => v],
   water_leak: ['alarm_water', (v) => v],
   rain: ['alarm_water.rain', (v) => v],
+  rain_status: ['alarm_rain', (v) => v],
   water_warning: ['alarm_water.warning', (v) => v === 'alarm'],
   battery_low: ['alarm_battery', (v) => v],
   lock: ['locked', (v) => v, (v) => ({ lock: v ? 'LOCK' : 'UNLOCK' })],
