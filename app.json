@@ -2,7 +2,7 @@
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.zigbee2mqtt",
   "version": "3.1.8",
-  "compatibility": ">=12.9.0",
+  "compatibility": ">=12.11.0",
   "sdk": 3,
   "platforms": [
     "local"
@@ -11168,6 +11168,41 @@
       "getable": true,
       "setable": true,
       "insights": true
+    },
+    "weather_condition": {
+      "type": "string",
+      "title": {
+        "en": "Weather condition",
+        "nl": "Weerconditie",
+        "da": "Vejrforhold",
+        "de": "Wetterbedingungen",
+        "es": "Condición meteorológica",
+        "fr": "Condition météorologique",
+        "it": "Condizione meteorologica",
+        "no": "Værforhold",
+        "sv": "Väderförhållanden",
+        "pl": "Warunki pogodowe",
+        "ru": "Погодные условия",
+        "ko": "날씨 상태"
+      },
+      "units": {
+        "en": "",
+        "nl": "",
+        "da": "",
+        "de": "",
+        "es": "",
+        "fr": "",
+        "it": "",
+        "no": "",
+        "sv": "",
+        "pl": "",
+        "ru": "",
+        "ko": ""
+      },
+      "getable": true,
+      "setable": false,
+      "insights": false,
+      "icon": "./assets/weather_condition.svg"
     }
   }
 }
