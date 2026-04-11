@@ -92,7 +92,6 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   tilt: ['windowcoverings_tilt_set', (v) => Number(v) / 100, (v) => ({ tilt: Number(v) * 100 })],
   valve_state: ['valve_state', (v) => Number(v), (v) => ({ valve_state: Number(v) * 100 })],
   target_distance: ['target_distance', (v) => Number(v)],
-
   wind_speed: ['measure_wind_strength', (v) => Number(v)],
   wind_direction: ['measure_wind_angle', (v) => Number(v)],
   gust_speed: ['measure_gust_strength', (v) => Number(v)],
