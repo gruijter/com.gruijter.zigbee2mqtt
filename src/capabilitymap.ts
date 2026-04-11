@@ -448,6 +448,7 @@ const classIconMap: { [key: string]: [string, string] } = {
   smoke: ['smokealarm', 'smoke_detector.svg'],
   'air quality': ['sensor', 'smoke_detector.svg'],
   'remote control': ['remote', 'remote_control.svg'],
+  'weather station': ['sensor', 'weather_station.svg'],
 };
 
 export function mapClassAndIcon(device: Z2MDevice) {
