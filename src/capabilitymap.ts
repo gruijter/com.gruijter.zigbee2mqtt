@@ -224,6 +224,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   running_state: ['running_state', (v) => (v || '').toString()],
   motion_state: ['motion_state', (v) => (v || '').toString()],
   siren_state: ['siren_state', (v) => (v || '').toString()],
+  weather_condition: ['weather_condition', (v) => (v || '').toString()],
 
   // Custom settable ENUM capabilities
   battery_state: ['battery_state', (v) => v],
