@@ -93,9 +93,9 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   valve_state: ['valve_state', (v) => Number(v), (v) => ({ valve_state: Number(v) * 100 })],
   target_distance: ['target_distance', (v) => Number(v)],
 
-  wind_speed: ['measure_wind_strength', (v) => Number(v) * 3.6], // convert m/s to km/h
+  wind_speed: ['measure_wind_strength', (v) => Number(v)],
   wind_direction: ['measure_wind_angle', (v) => Number(v)],
-  gust_speed: ['measure_gust_strength', (v) => Number(v) * 3.6], // convert m/s to km/h
+  gust_speed: ['measure_gust_strength', (v) => Number(v)],
   uv_index: ['measure_ultraviolet', (v) => Number(v)],
   precipitation: ['measure_rain', (v) => Number(v)],
   rain_rate: ['measure_rain_intensity', (v) => Number(v)],
