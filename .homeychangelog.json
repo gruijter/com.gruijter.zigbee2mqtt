@@ -1,29 +1,32 @@
 {
-  "3.1.7" : {
+  "3.1.8": {
+    "en": "Add many flow cards for switches. Add light transition duration support. Log unmapped capabilities only once. Increase max devices to 1.000. Stability improvements."
+  },
+  "3.1.7": {
     "en": "Fix re-connect devices. Fix translations."
   },
-  "3.1.6" : {
+  "3.1.6": {
     "en": "Added custom battery_state icon. Added soil moisture device class and icon mapping."
   },
-  "3.1.5" : {
+  "3.1.5": {
     "en": "Added water_warning mapping. Added custom battery_state mapping."
   },
-  "3.1.4" : {
+  "3.1.4": {
     "en": "Added tilt and state support for window coverings."
   },
-  "3.1.3" : {
+  "3.1.3": {
     "en": "Changed system_mode mapping to ENUM. Added fan_mode, identify, thermostat_mode, temperature_external, humidity_external capability mapping and flows. Changed onoff uiComponent to button where applicable."
   },
-  "3.1.2" : {
+  "3.1.2": {
     "en": "Added pir_detection mapping."
   },
-  "3.1.1" : {
+  "3.1.1": {
     "en": "Fix classes and icons during pair. Added frost_protection_temperature capability for thermostats."
   },
-  "3.1.0" : {
+  "3.1.0": {
     "en": "Fixes light/color issues. Cleaner codebase. Easier dev contributions."
   },
-  "3.0.2" : {
+  "3.0.2": {
     "en": "Fix device migration. Fix flow triggers."
   },
   "3.0.1": {

@@ -1,0 +1,24 @@
+{
+  "title": {
+    "en": "Center Right Turned Off",
+    "nl": "Midden Rechts Uitgeschakeld",
+    "da": "Center Højre Slukket",
+    "de": "Mitte Rechts Ausgeschaltet",
+    "es": "Centro Derecha Apagado",
+    "fr": "Centre Droite Éteint",
+    "it": "Centro Destra Spento",
+    "no": "Senter Høyre Slått Av",
+    "sv": "Centrum Höger Avstängd",
+    "pl": "Środek Prawy Wyłączony",
+    "ru": "Центр Право Выключен",
+    "ko": "중앙 오른쪽 꺼짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.center_right"
+    }
+  ]
+}

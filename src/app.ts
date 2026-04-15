@@ -31,12 +31,18 @@ interface ManifestFlowAction {
   args?: Array<{ filter?: string }>;
 }
 
+// Minimal type for manifest flow condition entries
+interface ManifestFlowCondition {
+  id: string;
+  args?: Array<{ filter?: string }>;
+}
+
 module.exports = class MyApp extends Homey.App {
 
   async onInit() {
     try {
       this.registerFlowListeners();
-      this.homey.setMaxListeners(100); // INCREASE LISTENERS
+      this.homey.setMaxListeners(1000); // Support large networks
       this.registerFlowTriggers();
       this.log('App has been initialized');
     } catch (error) {
@@ -63,7 +69,12 @@ module.exports = class MyApp extends Homey.App {
         actionListeners[action.id] = this.homey.flow.getActionCard(action.id);
         actionListeners[action.id].registerRunListener(async (args) => {
           try {
-            await args.device[action.id](args.val, 'flow');
+            const method = (args.device as any)[action.id];
+            if (typeof method === 'function') {
+              await method.call(args.device, args.val, 'flow');
+            } else {
+              throw new Error(`Action ${action.id} is not implemented on this device`);
+            }
           } catch (error) {
             this.error(error);
           }
@@ -94,14 +105,40 @@ module.exports = class MyApp extends Homey.App {
         this.error(error);
       }
     });
+
+    // Register condition cards
+    this.registerFlowConditions();
+  }
+
+  registerFlowConditions() {
+    const conditionListeners: Record<string, Homey.FlowCardCondition> = {};
+    const conditionList = this.manifest.flow.conditions as ManifestFlowCondition[] | undefined;
+
+    if (!conditionList) return;
+
+    conditionList.forEach((condition) => {
+      this.log('setting up condition listener', condition.id);
+      conditionListeners[condition.id] = this.homey.flow.getConditionCard(condition.id);
+      conditionListeners[condition.id].registerRunListener(async (args) => {
+        try {
+          const device = args.device as Zigbee2MQTTDevice;
+          // Extract capability name from condition id (e.g., "onoff.l1_is_on" -> "onoff.l1")
+          const capabilityName = condition.id.replace('_is_on', '');
+          const capabilityValue = await device.getCapabilityValue(capabilityName);
+          return capabilityValue === true;
+        } catch (error) {
+          this.error(error);
+          return false;
+        }
+      });
+    });
   }
 
   registerFlowTriggers() {
     // custom trgger cards
     const actionEventReceived = this.homey.flow.getDeviceTriggerCard('action_event_received');
     actionEventReceived.registerRunListener(async (args, state) => {
-      if (args.event !== state.event) return false;
-      return true;
+      return args.event === state.event;
     });
   }
 

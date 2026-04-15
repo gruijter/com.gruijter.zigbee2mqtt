@@ -1,0 +1,23 @@
+{
+  "title": {
+    "en": "L1 is !{{on|off}}",
+    "nl": "L1 is !{{aan|uit}}",
+    "da": "L1 er !{{tændt|slukket}}",
+    "de": "L1 ist !{{ein|aus}}",
+    "es": "L1 está !{{encendido|apagado}}",
+    "fr": "L1 est !{{allumé|éteint}}",
+    "it": "L1 è !{{acceso|spento}}",
+    "no": "L1 er !{{på|av}}",
+    "sv": "L1 är !{{på|av}}",
+    "pl": "L1 jest !{{włączony|wyłączony}}",
+    "ru": "L1 !{{включен|выключен}}",
+    "ko": "L1이 !{{켜짐|꺼짐}}"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.l1"
+    }
+  ]
+}

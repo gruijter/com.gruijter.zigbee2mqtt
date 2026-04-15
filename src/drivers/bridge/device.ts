@@ -112,7 +112,7 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
           // restore capability state
           if (state[newCap]) this.log(`${this.getName()} restoring value ${newCap} to ${state[newCap]}`);
           // else this.log(`${this.getName()} has gotten a new capability ${newCap}!`);
-          if (state[newCap] !== undefined) this.setCapability(newCap, state[newCap]);
+          if (state[newCap] !== undefined) await this.setCapability(newCap, state[newCap]);
           await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
         }
       }
@@ -174,17 +174,17 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
 
             // check for joining status
             if (info.permit_join !== this.getCapabilityValue('allow_joining')) {
-              this.setCapability('allow_joining', info.permit_join);
+              await this.setCapability('allow_joining', info.permit_join);
               this.log('Allow joining:', info.permit_join);
             }
             // start / reset joining timer
             this.joiningTimer(info.permit_join_end).catch((error) => this.error(error));
 
             // check number of joined devices
-            if (info.config && info.config.devices) this.setCapability('meter_joined_devices', Object.keys(info.config.devices).length);
+            if (info.config && info.config.devices) await this.setCapability('meter_joined_devices', Object.keys(info.config.devices).length);
 
             // check number of joined groups
-            if (info.config && info.config.groups) this.setCapability('meter_joined_groups', Object.keys(info.config.groups).length);
+            if (info.config && info.config.groups) await this.setCapability('meter_joined_groups', Object.keys(info.config.groups).length);
 
             // check for channel, pan_id and version change
             if (info.version !== this.getSettings().version) {
@@ -215,14 +215,14 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
               this.log('Zigbee2MQTT bridge is connected');
               // INFORM ALL DEVICES UNAVAILABLE
               this.homey.emit('bridgeoffline', false);
-              this.setCapability('alarm_offline', false);
+              await this.setCapability('alarm_offline', false);
               // this.setAvailable();
             }
             if (message === 'offline' || info.state === 'offline') {
               this.error('Zigbee2MQTT bridge disconnected');
               // INFORM ALL DEVICES AVAILABLE
               this.homey.emit('bridgeoffline', true);
-              this.setCapability('alarm_offline', true);
+              await this.setCapability('alarm_offline', true);
               // this.setUnavailable('Zigbee2MQTT bridge is disconnected');
             }
           }
@@ -236,7 +236,7 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
               this.msgCounter += 1;
               const minutesPassed = (Date.now() - this.lastMPMUpdate) / (60 * 1000);
               if (minutesPassed > 1) {
-                this.setCapability('meter_mpm', Math.round((10 * this.msgCounter) / minutesPassed) / 10);
+                await this.setCapability('meter_mpm', Math.round((10 * this.msgCounter) / minutesPassed) / 10);
                 this.lastMPMUpdate = Date.now();
                 this.msgCounter = 0;
               }
@@ -265,7 +265,7 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
             if (idx !== -1) this.devices[idx].availability = info && info.state;
             // console.log(this.devices[idx]);
             const unavailables = this.devices.filter((dev) => dev.availability === 'offline');
-            this.setCapability('meter_offline_devices', unavailables.length);
+            await this.setCapability('meter_offline_devices', unavailables.length);
           }
 
           // get group list
@@ -308,7 +308,7 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
           if (event === 'end') this.log('mqtt client ended');
           // INFORM ALL DEVICES UNAVAILABLE
           this.homey.emit('bridgeoffline', true);
-          this.setCapability('alarm_offline', true);
+          await this.setCapability('alarm_offline', true);
         } catch (error) {
           this.error(error);
         }
@@ -318,15 +318,25 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
       this.client = await (this.driver as Zigbee2MQTTBridgeDriver).connectMQTT(this.settings);
       this.client
         .on('error', this.error)
-        .on('offline', () => handleDisconnect('offline'))
-        .on('close', () => handleDisconnect('close'))
-        .on('end', () => handleDisconnect('end'))
+        .on('offline', () => {
+          handleDisconnect('offline').catch((error) => this.error(error));
+        })
+        .on('close', () => {
+          handleDisconnect('close').catch((error) => this.error(error));
+        })
+        .on('end', () => {
+          handleDisconnect('end').catch((error) => this.error(error));
+        })
         .on('reconnect', () => {
           this.log('mqtt is trying to reconnect');
         })
-        .on('connect', subscribeTopics)
-        .on('message', handleMessage);
-      this.client.setMaxListeners(100); // INCREASE LISTENERS
+        .on('connect', () => {
+          subscribeTopics().catch((error) => this.error(error));
+        })
+        .on('message', (topic: string, message: any) => {
+          handleMessage(topic, message).catch((error) => this.error(error));
+        });
+      this.client.setMaxListeners(1000); // Support large networks
       if (this.client.connected) await subscribeTopics();
       return Promise.resolve(true);
     } catch (error) {
@@ -336,13 +346,13 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
 
   async joiningTimer(endTime: number | null): Promise<boolean> {
     this.endTime = endTime;
-    const timeout = Math.round((new Date(endTime).getTime() - Date.now()) / 1000) % (60 * 60);
+    const timeout = endTime ? Math.round((new Date(endTime).getTime() - Date.now()) / 1000) % (60 * 60) : 0;
     if (endTime && timeout > 0) {
-      this.setCapability('allow_joining_timeout', timeout);
+      await this.setCapability('allow_joining_timeout', timeout);
       await setTimeoutPromise(1000);
       if (this.endTime) return this.joiningTimer(endTime);
     }
-    this.setCapability('allow_joining_timeout', 0);
+    await this.setCapability('allow_joining_timeout', 0);
     return Promise.resolve(true);
   }
 
@@ -390,15 +400,12 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
 
       // capabilityListeners will be overwritten, so no need to unregister them
 
-      this.registerCapabilityListener('allow_joining', (onoff: boolean) => {
-        this.joinOnOff(onoff, 'app').catch((error) => this.error(error));
+      this.registerCapabilityListener('allow_joining', async (onoff: boolean) => {
+        await this.joinOnOff(onoff, 'app');
       });
 
       this.registerCapabilityListener('restart_bridge', async () => {
-        await this.restart(null, 'app').catch((error) => {
-          this.error(error);
-          throw error;
-        });
+        await this.restart(null, 'app');
       });
 
       this.listenersSet = true;
