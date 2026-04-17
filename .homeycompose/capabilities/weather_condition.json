@@ -1,0 +1,35 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Weather condition",
+    "nl": "Weerconditie",
+    "da": "Vejrforhold",
+    "de": "Wetterbedingungen",
+    "es": "Condición meteorológica",
+    "fr": "Condition météorologique",
+    "it": "Condizione meteorologica",
+    "no": "Værforhold",
+    "sv": "Väderförhållanden",
+    "pl": "Warunki pogodowe",
+    "ru": "Погодные условия",
+    "ko": "날씨 상태"
+  },
+  "units": {
+    "en": "",
+    "nl": "",
+    "da": "",
+    "de": "",
+    "es": "",
+    "fr": "",
+    "it": "",
+    "no": "",
+    "sv": "",
+    "pl": "",
+    "ru": "",
+    "ko": ""
+  },
+  "getable": true,
+  "setable": false,
+  "insights": false,
+  "icon": "./assets/weather_condition.svg"
+}

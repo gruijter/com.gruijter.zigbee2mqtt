@@ -92,6 +92,12 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   tilt: ['windowcoverings_tilt_set', (v) => Number(v) / 100, (v) => ({ tilt: Number(v) * 100 })],
   valve_state: ['valve_state', (v) => Number(v), (v) => ({ valve_state: Number(v) * 100 })],
   target_distance: ['target_distance', (v) => Number(v)],
+  wind_speed: ['measure_wind_strength', (v) => Number(v)],
+  wind_direction: ['measure_wind_angle', (v) => Number(v)],
+  gust_speed: ['measure_gust_strength', (v) => Number(v)],
+  uv_index: ['measure_ultraviolet', (v) => Number(v)],
+  precipitation: ['measure_rain', (v) => Number(v)],
+  rain_rate: ['measure_rain_intensity', (v) => Number(v)],
 
   // Color light related number capabilities
   brightness: ['dim', (v) => Number(v) / 254, (v) => ({ brightness: Number(v) * 254 })],
@@ -198,6 +204,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   smoke: ['alarm_smoke', (v) => v],
   water_leak: ['alarm_water', (v) => v],
   rain: ['alarm_water.rain', (v) => v],
+  rain_status: ['alarm_rain', (v) => v],
   water_warning: ['alarm_water.warning', (v) => v === 'alarm'],
   battery_low: ['alarm_battery', (v) => v],
   lock: ['locked', (v) => v, (v) => ({ lock: v ? 'LOCK' : 'UNLOCK' })],
@@ -220,6 +227,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   running_state: ['running_state', (v) => (v || '').toString()],
   motion_state: ['motion_state', (v) => (v || '').toString()],
   siren_state: ['siren_state', (v) => (v || '').toString()],
+  weather_condition: ['weather_condition', (v) => (v || '').toString()],
 
   // Custom settable ENUM capabilities
   battery_state: ['battery_state', (v) => v],
@@ -446,6 +454,7 @@ const classIconMap: { [key: string]: [string, string] } = {
   smoke: ['smokealarm', 'smoke_detector.svg'],
   'air quality': ['sensor', 'smoke_detector.svg'],
   'remote control': ['remote', 'remote_control.svg'],
+  'weather station': ['sensor', 'weather_station.svg'],
 };
 
 export function mapClassAndIcon(device: Z2MDevice) {
