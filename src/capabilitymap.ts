@@ -95,9 +95,11 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
 
   // Color light related number capabilities
   brightness: ['dim', (v) => Number(v) / 254, (v) => ({ brightness: Number(v) * 254 })],
+  brightness_11: ['dim.11', (v) => Number(v) / 254, (v) => ({ brightness_11: Number(v) * 254 })],
   brightness_l1: ['dim.l1', (v) => Number(v) / 254, (v) => ({ brightness_l1: Number(v) * 254 })],
   brightness_l2: ['dim.l2', (v) => Number(v) / 254, (v) => ({ brightness_l2: Number(v) * 254 })],
   color_temp: ['light_temperature', (v) => (Number(v) - 153) / 347, (v) => ({ color_temp: 153 + Number(v) * 347 })],
+  color_temp_11: ['light_temperature.11', (v) => (Number(v) - 153) / 347, (v) => ({ color_temp_11: 153 + Number(v) * 347 })],
   color: (expose) => ({
     caps: ['light_hue', 'light_saturation', 'light_mode'],
     z2mToHomey: ({
@@ -163,6 +165,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
     }
     return ['onoff', (v) => v === 'ON', (v) => ({ state: v ? 'ON' : 'OFF' })];
   },
+  state_11: ['onoff.11', (v) => v === 'ON', (v) => ({ state_11: v ? 'ON' : 'OFF' })],
   state_l1: ['onoff.l1', (v) => v === 'ON', (v) => ({ state_l1: v ? 'ON' : 'OFF' })],
   state_l2: ['onoff.l2', (v) => v === 'ON', (v) => ({ state_l2: v ? 'ON' : 'OFF' })],
   state_l3: ['onoff.l3', (v) => v === 'ON', (v) => ({ state_l3: v ? 'ON' : 'OFF' })],
@@ -222,6 +225,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   battery_state: ['battery_state', (v) => v],
   preset: ['preset', (v) => v, (v) => ({ preset: v })], // ["auto", "manual", "holiday"]
   power_on_behavior: ['power_on_behavior', (v) => v, (v) => ({ power_on_behavior: v })], // [off, on, toggle, previous]
+  power_on_behavior_11: ['power_on_behavior.11', (v) => v, (v) => ({ power_on_behavior_11: v })], // [off, on, toggle, previous]
   color_power_on_behavior: ['color_power_on_behavior', (v) => v, (v) => ({ color_power_on_behavior: v })], // [initial, previous, cutomized]
   power_outage_memory: ['power_outage_memory', (v) => v, (v) => ({ power_outage_memory: v })], // [off, on, restore]
   indicator_mode: ['indicator_mode', (v) => v, (v) => ({ indicator_mode: v })], // [off, off/on, on/off, on]
@@ -239,6 +243,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   fan_mode: ['fan_mode', (v) => v, (v) => ({ fan_mode: v })],
   sensor: ['sensor', (v) => v, (v) => ({ sensor: v })], // ["IN", "AL", "OU"]  // thermostats and mmWave presence
   effect: ['effect', (v) => v, (v) => ({ effect: v })], // [blink, breathe, okay, channel_change, finish_effect, stop_effect]
+  effect_11: ['effect.11', (v) => v, (v) => ({ effect_11: v })], // [blink, breathe, okay, channel_change, finish_effect, stop_effect]
   alarm: ['alarm_sound', (v) => v, (v) => ({ alarm: v })], // [stop, pre_alarm, fire, burglar]
   sensitivity: ['sensitivity', (v) => v, (v) => ({ sensitivity: v })], // [low, medium, high]
   motion_sensitivity: ['sensitivity.motion', (v) => v, (v) => ({ motion_sensitivity: v })], // [low, medium, high]
@@ -427,6 +432,7 @@ const classIconMap: { [key: string]: [string, string] } = {
   'led controller': ['light', 'light.svg'],
   led: ['light', 'light.svg'],
   'hue go': ['light', 'light.svg'],
+  'mec driver': ['light', 'light.svg'],
   fyrtur: ['windowcoverings', 'window_coverings.svg'],
   kadrilj: ['windowcoverings', 'window_coverings.svg'],
   praktlysing: ['windowcoverings', 'window_coverings.svg'],
