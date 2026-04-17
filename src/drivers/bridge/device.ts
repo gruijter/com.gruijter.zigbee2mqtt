@@ -331,6 +331,9 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
           this.log('mqtt is trying to reconnect');
         })
         .on('connect', () => {
+          this.log('MQTT client connected to broker');
+          this.homey.emit('bridgeoffline', false);
+          this.setCapability('alarm_offline', false).catch(this.error);
           subscribeTopics().catch((error) => this.error(error));
         })
         .on('message', (topic: string, message: any) => {

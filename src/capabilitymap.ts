@@ -446,6 +446,7 @@ const classIconMap: { [key: string]: [string, string] } = {
   praktlysing: ['windowcoverings', 'window_coverings.svg'],
   tredansen: ['windowcoverings', 'window_coverings.svg'],
   'cover mode': ['windowcoverings', 'window_coverings.svg'],
+  curtain: ['windowcoverings', 'curtain.svg'],
   parasol: ['sensor', 'contact.svg'],
   'tradfri shortcut': ['button', 'wireless_switch.svg'],
   rodret: ['button', 'wireless_switch.svg'],

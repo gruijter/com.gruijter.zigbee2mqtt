@@ -24,7 +24,7 @@ import PairSession from 'homey/lib/PairSession';
 import * as MQTT from 'async-mqtt';
 import { AsyncMqttClient, IClientOptions } from 'async-mqtt';
 import util from 'util';
-import { MQTTSettings } from '../../types';
+import { BridgeSettings, MQTTSettings } from '../../types';
 
 const setTimeoutPromise = util.promisify(setTimeout);
 
@@ -103,8 +103,9 @@ export default class Zigbee2MQTTBridgeDriver extends Homey.Driver {
       if (!mqttSettings) throw Error('mqttSettings are required');
       const protocol = mqttSettings.tls ? 'mqtts' : 'mqtt';
       const host = `${protocol}://${mqttSettings.host}:${mqttSettings.port}`;
+      const bridgeUid = (mqttSettings as BridgeSettings).uid;
       const options: IClientOptions = {
-        clientId: `Homey_${Math.random().toString(16).substring(2, 8)}`,
+        clientId: bridgeUid ? `Homey_z2m_${bridgeUid}` : `Homey_z2m_${Math.random().toString(16).substring(2, 8)}`,
         username: mqttSettings.username,
         password: mqttSettings.password,
         // protocolId: 'MQTT',
