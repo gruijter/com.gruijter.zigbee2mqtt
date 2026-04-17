@@ -7,12 +7,12 @@
 		try {
 			Homey.showLoadingOverlay();
 			const settings = {
-				host: document.getElementById('host').value,
+				host: document.getElementById('host').value.trim(),
 				port: Number(document.getElementById('port').value) || 1883,
 				tls: document.getElementById('tls').checked,
-				username: document.getElementById('username').value,
+				username: document.getElementById('username').value.trim(),
 				password: document.getElementById('password').value,
-				topic: document.getElementById('topic').value,
+				topic: document.getElementById('topic').value.trim(),
 			};
 			const result = await Homey.emit('mqtt', settings);
 			Homey.hideLoadingOverlay();

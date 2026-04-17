@@ -62,6 +62,10 @@ export default class Zigbee2MQTTBridgeDriver extends Homey.Driver {
         this.log(mqttSettings);
         // Check MQTT settings
         settings = { ...mqttSettings };
+        if (settings.topic) {
+          settings.topic = settings.topic.trim();
+          if (settings.topic.endsWith('/')) settings.topic = settings.topic.slice(0, -1);
+        }
         mqttClient = await this.connectMQTT(settings);
         discovered = await this.discoverBridge(mqttClient, settings.topic);
         await mqttClient.end();
@@ -139,11 +143,21 @@ export default class Zigbee2MQTTBridgeDriver extends Homey.Driver {
       this.log(info);
     };
     mqttClient.on('message', messageListener);
-    await mqttClient.subscribe(infoTopic);
-    await setTimeoutPromise(3000); // wait 3 secs for message
+
+    const granted = await mqttClient.subscribe(infoTopic).catch((err: any) => {
+      this.error('Subscribe error:', err);
+      return null;
+    }) as any[] | null;
+
+    if (granted && granted.length > 0 && granted[0].qos === 128) {
+      await mqttClient.removeListener('message', messageListener);
+      throw new Error(`Broker denied subscription. Check ACL/permissions for ${infoTopic}`);
+    }
+
+    await setTimeoutPromise(5000); // wait 5 secs for message
     await mqttClient.unsubscribe(infoTopic);
     await mqttClient.removeListener('message', messageListener);
-    if (!info) throw Error('MQTT settings OK, but no Zigbee2MQTT bridge info found.');
+    if (!info) throw Error(`MQTT settings OK, but no Zigbee2MQTT bridge info found on topic: ${infoTopic}`);
     return info;
   }
 

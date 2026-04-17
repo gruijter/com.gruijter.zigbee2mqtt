@@ -188,7 +188,6 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   heartbeat: ['onoff.heartbeat', (v) => v === 'ON', (v) => ({ heartbeat: v ? 'ON' : 'OFF' })], // Bosch TwinGuard
   pre_alarm: ['onoff.pre_alarm', (v) => v === 'ON', (v) => ({ pre_alarm: v ? 'ON' : 'OFF' })], // Bosch TwinGuard
   self_test: ['onoff.self_test', (v) => v === 'ON', (v) => ({ self_test: v ? 'ON' : 'OFF' })], // Bosch TwinGuard
-  hand_open: ['onoff.hand_open', (v) => v === 'ON', (v) => ({ hand_open: v ? 'ON' : 'OFF' })], // Aqara Curtain driver E1
   open_window: ['alarm_generic.open_window', (v) => v === 'ON'],
   identify: ['button.identify', (v) => v === 'NEVER_PUBLISHED', (v) => ({ identify: v ? 'identify' : 'identify' })],
   thermostat_mode: ['onoff.thermostat_mode', (v) => v === 'ON', (v) => ({ thermostat_mode: v ? 'ON' : 'OFF' })],
@@ -211,6 +210,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   lock: ['locked', (v) => v, (v) => ({ lock: v ? 'LOCK' : 'UNLOCK' })],
   child_lock: ['locked.child', (v) => v === 'LOCK', (v) => ({ child_lock: v ? 'LOCK' : 'UNLOCK' })],
   hooks_lock: ['locked.hooks', (v) => v === 'LOCK', (v) => ({ hooks_lock: v ? 'LOCK' : 'UNLOCK' })],
+  hand_open: ['locked.hand_open', (v) => v === 'OFF', (v) => ({ hand_open: v ? 'OFF' : 'ON' })], // Aqara Curtain driver E1
   garage_door_contact: ['garagedoor_closed', (v) => v],
 
   // Custom number capabilities
