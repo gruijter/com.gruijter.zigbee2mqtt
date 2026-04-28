@@ -67,9 +67,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     try {
       this.store = this.getStore();
       this.settings = this.getSettings();
-
       await this.connectBridge();
-
       await this.migrateStore();
       await this.registerHomeyEventListeners();
       await this.checkChangedOrDeleted();

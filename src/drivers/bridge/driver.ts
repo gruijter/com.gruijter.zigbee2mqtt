@@ -109,7 +109,7 @@ export default class Zigbee2MQTTBridgeDriver extends Homey.Driver {
       const host = `${protocol}://${mqttSettings.host}:${mqttSettings.port}`;
       const bridgeUid = (mqttSettings as BridgeSettings).uid;
       const options: IClientOptions = {
-        clientId: bridgeUid ? `Homey_z2m_${bridgeUid}` : `Homey_z2m_${Math.random().toString(16).substring(2, 8)}`,
+        clientId: bridgeUid ? `Homey_z2m_${bridgeUid}_${Math.random().toString(16).substring(2, 8)}` : `Homey_z2m_${Math.random().toString(16).substring(2, 8)}`,
         username: mqttSettings.username,
         password: mqttSettings.password,
         // protocolId: 'MQTT',
