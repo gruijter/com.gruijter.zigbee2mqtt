@@ -439,7 +439,15 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
       (async () => {
         try {
           if (message.toString() !== '' && topic.startsWith(this.deviceTopic)) {
-            const info = JSON.parse(message);
+            let info: any = {};
+            try {
+              info = JSON.parse(message);
+            } catch (e) {
+              // fallback for plain text availability payloads
+              if (topic === `${this.deviceTopic}/availability`) {
+                info = { state: message.toString() };
+              }
+            }
 
             if (topic === this.deviceTopic) {
               const state = info as Z2MState;
