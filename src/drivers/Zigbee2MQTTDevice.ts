@@ -68,18 +68,18 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
       this.store = this.getStore();
       this.settings = this.getSettings();
 
-      await setTimeoutPromise(2000);
-
       await this.connectBridge();
-
-      await setTimeoutPromise(2000);
 
       await this.migrateStore();
       await this.registerHomeyEventListeners();
       await this.checkChangedOrDeleted();
       await this.migrate();
       await this.registerListeners();
-      await this.getStatus({ state: '' }, 'appInit');
+      try {
+        await this.getStatus({ state: '' }, 'appInit');
+      } catch (err: any) {
+        this.log('getStatus during appInit failed:', err.message);
+      }
 
       this.restarting = false;
 

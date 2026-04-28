@@ -120,7 +120,7 @@ export default class Zigbee2MQTTBridgeDriver extends Homey.Driver {
         clean: true,
         queueQoSZero: false,
       };
-      const mqttClient = await MQTT.connectAsync(host, options);
+      const mqttClient = MQTT.connect(host, options);
       return Promise.resolve(mqttClient);
     } catch (error) {
       this.error(error);
