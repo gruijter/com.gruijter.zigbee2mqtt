@@ -430,7 +430,9 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     if (bridgeDriver.getDevices().length < 1) throw Error('The source bridge device is missing in Homey.');
 
     const bridge = bridgeDriver.getDevice({ id: this.settings.bridge_uid }) as Zigbee2MQTTBridge;
-    if (!bridge?.client) throw Error('Cannot connect to source bridge device in Homey.');
+    if (!bridge) throw Error('The source bridge device is missing in Homey.');
+    await bridge.ready();
+    if (!bridge.client) throw Error('Cannot connect to source bridge device in Homey.');
 
     this.bridge = bridge;
     this.deviceTopic = `${bridge.settings.topic}/${this.settings.friendly_name}`;
