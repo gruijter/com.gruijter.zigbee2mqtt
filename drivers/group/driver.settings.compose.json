@@ -167,119 +167,54 @@
             "id": "other",
             "label": {
               "en": "Other",
-              "nl": "Andere",
-              "da": "Andet",
+              "nl": "Overig",
               "de": "Andere",
-              "es": "Otro",
               "fr": "Autre",
               "it": "Altro",
+              "sv": "Övrigt",
               "no": "Annet",
-              "sv": "Annat",
-              "pl": "Inny",
+              "es": "Otro",
+              "da": "Andet",
               "ru": "Другое",
-              "ko": "기타"
+              "pl": "Inne",
+              "ko": "기타",
+              "ar": "أخرى"
             }
           },
           {
-            "id": "sensor",
+            "id": "amplifier",
             "label": {
-              "en": "Sensor",
-              "nl": "Sensor",
-              "da": "Sensor",
-              "de": "Sensor",
-              "es": "Sensor",
-              "fr": "Capteur",
-              "it": "Sensore",
-              "no": "Sensor",
-              "sv": "Sensor",
-              "pl": "Czujnik",
-              "ru": "Датчик",
-              "ko": "센서"
+              "en": "Amplifier",
+              "nl": "Versterker",
+              "de": "Verstärker",
+              "fr": "Amplificateur",
+              "it": "Amplificatore",
+              "sv": "Förstärkare",
+              "no": "Forsterker",
+              "es": "Amplificador",
+              "da": "Forstærker",
+              "ru": "Усилитель",
+              "pl": "Wzmacniacz",
+              "ko": "앰프",
+              "ar": "مضخم صوت"
             }
           },
           {
-            "id": "socket",
+            "id": "blinds",
             "label": {
-              "en": "Socket",
-              "nl": "Stopcontact",
-              "da": "Stik",
-              "de": "Steckdose",
-              "es": "Enchufe",
-              "fr": "Prise",
-              "it": "Presa",
-              "no": "Stikkontakt",
-              "sv": "Uttag",
-              "pl": "Gniazdo",
-              "ru": "Розетка",
-              "ko": "소켓"
-            }
-          },
-          {
-            "id": "light",
-            "label": {
-              "en": "Light",
-              "nl": "Licht",
-              "da": "Lys",
-              "de": "Licht",
-              "es": "Luz",
-              "fr": "Lumière",
-              "it": "Luce",
-              "no": "Lys",
-              "sv": "Ljus",
-              "pl": "Światło",
-              "ru": "Свет",
-              "ko": "조명"
-            }
-          },
-          {
-            "id": "heater",
-            "label": {
-              "en": "Heater",
-              "nl": "Verwarming",
-              "da": "Varmelegeme",
-              "de": "Heizung",
-              "es": "Calefactor",
-              "fr": "Chauffage",
-              "it": "Riscaldatore",
-              "no": "Varmeapparat",
-              "sv": "Värmare",
-              "pl": "Grzejnik",
-              "ru": "Обогреватель",
-              "ko": "히터"
-            }
-          },
-          {
-            "id": "thermostat",
-            "label": {
-              "en": "Thermostat",
-              "nl": "Thermostaat",
-              "da": "Termostat",
-              "de": "Thermostat",
-              "es": "Termostato",
-              "fr": "Thermostat",
-              "it": "Termostato",
-              "no": "Termostat",
-              "sv": "Termostat",
-              "pl": "Termostat",
-              "ru": "Термостат",
-              "ko": "온도 조절기"
-            }
-          },
-          {
-            "id": "lock",
-            "label": {
-              "en": "Lock",
-              "nl": "Slot",
-              "da": "Lås",
-              "de": "Schloss",
-              "es": "Cerradura",
-              "fr": "Verrou",
-              "it": "Serratura",
-              "no": "Lås",
-              "sv": "Lås",
-              "pl": "Zamek",
-              "ru": "Замок",
-              "ko": "잠금"
+              "en": "Blinds",
+              "nl": "Jaloezieën",
+              "de": "Jalousien",
+              "fr": "Stores",
+              "it": "Tende",
+              "sv": "Persienner",
+              "no": "Persienner",
+              "es": "Persianas",
+              "da": "Persienner",
+              "ru": "Жалюзи",
+              "pl": "Żaluzje",
+              "ko": "블라인드",
+              "ar": "ستائر"
             }
           },
           {
@@ -287,16 +222,377 @@
             "label": {
               "en": "Button",
               "nl": "Knop",
-              "da": "Knap",
               "de": "Taste",
-              "es": "Botón",
               "fr": "Bouton",
               "it": "Pulsante",
-              "no": "Knapp",
               "sv": "Knapp",
-              "pl": "Przycisk",
+              "no": "Knapp",
+              "es": "Botón",
+              "da": "Knap",
               "ru": "Кнопка",
-              "ko": "버튼"
+              "pl": "Przycisk",
+              "ko": "버튼",
+              "ar": "زر"
+            }
+          },
+          {
+            "id": "camera",
+            "label": {
+              "en": "Camera",
+              "nl": "Camera",
+              "de": "Kamera",
+              "fr": "Caméra",
+              "it": "Telecamera",
+              "sv": "Kamera",
+              "no": "Kamera",
+              "es": "Cámara",
+              "da": "Kamera",
+              "ru": "Камера",
+              "pl": "Kamera",
+              "ko": "카메라",
+              "ar": "كاميرا"
+            }
+          },
+          {
+            "id": "coffeemachine",
+            "label": {
+              "en": "Coffee Machine",
+              "nl": "Koffiezetapparaat",
+              "de": "Kaffeemaschine",
+              "fr": "Machine à café",
+              "it": "Macchina da caffè",
+              "sv": "Kaffemaskin",
+              "no": "Kaffemaskin",
+              "es": "Cafetera",
+              "da": "Kaffemaskine",
+              "ru": "Кофемашина",
+              "pl": "Ekspres do kawy",
+              "ko": "커피 머신",
+              "ar": "آلة القهوة"
+            }
+          },
+          {
+            "id": "curtain",
+            "label": {
+              "en": "Curtain",
+              "nl": "Gordijn",
+              "de": "Vorhang",
+              "fr": "Rideau",
+              "it": "Tenda",
+              "sv": "Gardin",
+              "no": "Gardin",
+              "es": "Cortina",
+              "da": "Gardin",
+              "ru": "Штора",
+              "pl": "Zasłona",
+              "ko": "커튼",
+              "ar": "ستارة"
+            }
+          },
+          {
+            "id": "fan",
+            "label": {
+              "en": "Fan",
+              "nl": "Ventilator",
+              "de": "Ventilator",
+              "fr": "Ventilateur",
+              "it": "Ventilatore",
+              "sv": "Fläkt",
+              "no": "Vifte",
+              "es": "Ventilador",
+              "da": "Ventilator",
+              "ru": "Вентилятор",
+              "pl": "Wentylator",
+              "ko": "선풍기",
+              "ar": "مروحة"
+            }
+          },
+          {
+            "id": "heater",
+            "label": {
+              "en": "Heater",
+              "nl": "Kachel",
+              "de": "Heizung",
+              "fr": "Chauffage",
+              "it": "Riscaldatore",
+              "sv": "Värmare",
+              "no": "Varmeapparat",
+              "es": "Calentador",
+              "da": "Varmelegeme",
+              "ru": "Обогреватель",
+              "pl": "Grzejnik",
+              "ko": "히터",
+              "ar": "سخان"
+            }
+          },
+          {
+            "id": "homealarm",
+            "label": {
+              "en": "Home Alarm",
+              "nl": "Huisalarm",
+              "de": "Hausalarm",
+              "fr": "Alarme domestique",
+              "it": "Allarme di casa",
+              "sv": "Hemlarm",
+              "no": "Hjemmealarm",
+              "es": "Alarma para el hogar",
+              "da": "Hjemmealarm",
+              "ru": "Домашняя сигнализация",
+              "pl": "Alarm domowy",
+              "ko": "홈 알람",
+              "ar": "إنذار المنزل"
+            }
+          },
+          {
+            "id": "kettle",
+            "label": {
+              "en": "Kettle",
+              "nl": "Waterkoker",
+              "de": "Wasserkocher",
+              "fr": "Bouilloire",
+              "it": "Bollitore",
+              "sv": "Vattenkokare",
+              "no": "Vannkoker",
+              "es": "Hervidor",
+              "da": "Kedel",
+              "ru": "Чайник",
+              "pl": "Czajnik",
+              "ko": "주전자",
+              "ar": "غلاية"
+            }
+          },
+          {
+            "id": "light",
+            "label": {
+              "en": "Light",
+              "nl": "Lamp",
+              "de": "Lampe",
+              "fr": "Lumière",
+              "it": "Luce",
+              "sv": "Lampa",
+              "no": "Lys",
+              "es": "Luz",
+              "da": "Lys",
+              "ru": "Свет",
+              "pl": "Światło",
+              "ko": "조명",
+              "ar": "ضوء"
+            }
+          },
+          {
+            "id": "lock",
+            "label": {
+              "en": "Lock",
+              "nl": "Slot",
+              "de": "Schloss",
+              "fr": "Serrure",
+              "it": "Serratura",
+              "sv": "Lås",
+              "no": "Lås",
+              "es": "Cerradura",
+              "da": "Lås",
+              "ru": "Замок",
+              "pl": "Zamek",
+              "ko": "잠금장치",
+              "ar": "قفل"
+            }
+          },
+          {
+            "id": "microwave",
+            "label": {
+              "en": "Microwave",
+              "nl": "Magnetron",
+              "de": "Mikrowelle",
+              "fr": "Micro-ondes",
+              "it": "Microonde",
+              "sv": "Mikrovågsugn",
+              "no": "Mikrobølgeovn",
+              "es": "Microondas",
+              "da": "Mikrobølgeovn",
+              "ru": "Микроволновая печь",
+              "pl": "Kuchenka mikrofalowa",
+              "ko": "전자레인지",
+              "ar": "ميكروويف"
+            }
+          },
+          {
+            "id": "remote",
+            "label": {
+              "en": "Remote",
+              "nl": "Afstandsbediening",
+              "de": "Fernbedienung",
+              "fr": "Télécommande",
+              "it": "Telecomando",
+              "sv": "Fjärrkontroll",
+              "no": "Fjernkontroll",
+              "es": "Mando a distancia",
+              "da": "Fjernbetjening",
+              "ru": "Пульт ДУ",
+              "pl": "Pilot",
+              "ko": "리모컨",
+              "ar": "ريموت"
+            }
+          },
+          {
+            "id": "sensor",
+            "label": {
+              "en": "Sensor",
+              "nl": "Sensor",
+              "de": "Sensor",
+              "fr": "Capteur",
+              "it": "Sensore",
+              "sv": "Sensor",
+              "no": "Sensor",
+              "es": "Sensor",
+              "da": "Sensor",
+              "ru": "Датчик",
+              "pl": "Czujnik",
+              "ko": "센서",
+              "ar": "حساس"
+            }
+          },
+          {
+            "id": "smokealarm",
+            "label": {
+              "en": "Smoke Alarm",
+              "nl": "Rookmelder",
+              "de": "Rauchmelder",
+              "fr": "Détecteur de fumée",
+              "it": "Rilevatore di fumo",
+              "sv": "Brandvarnare",
+              "no": "Røykvarsler",
+              "es": "Detector de humo",
+              "da": "Røgalarm",
+              "ru": "Дымовая сигнализация",
+              "pl": "Alarm przeciwdymny",
+              "ko": "화재 경보기",
+              "ar": "إنذار الدخان"
+            }
+          },
+          {
+            "id": "socket",
+            "label": {
+              "en": "Socket",
+              "nl": "Stopcontact",
+              "de": "Steckdose",
+              "fr": "Prise",
+              "it": "Presa",
+              "sv": "Uttag",
+              "no": "Stikkontakt",
+              "es": "Enchufe",
+              "da": "Stikkontakt",
+              "ru": "Розетка",
+              "pl": "Gniazdo",
+              "ko": "소켓",
+              "ar": "مقبس"
+            }
+          },
+          {
+            "id": "speaker",
+            "label": {
+              "en": "Speaker",
+              "nl": "Luidspreker",
+              "de": "Lautsprecher",
+              "fr": "Haut-parleur",
+              "it": "Altoparlante",
+              "sv": "Högtalare",
+              "no": "Høyttaler",
+              "es": "Altavoz",
+              "da": "Højttaler",
+              "ru": "Динамик",
+              "pl": "Głośnik",
+              "ko": "스피커",
+              "ar": "مكبر صوت"
+            }
+          },
+          {
+            "id": "sunshade",
+            "label": {
+              "en": "Sunshade",
+              "nl": "Zonnescherm",
+              "de": "Sonnenschutz",
+              "fr": "Pare-soleil",
+              "it": "Tenda da sole",
+              "sv": "Solskydd",
+              "no": "Solskjerming",
+              "es": "Toldo",
+              "da": "Solafskærmning",
+              "ru": "Навес от солнца",
+              "pl": "Markiza",
+              "ko": "차양",
+              "ar": "مظلة شمسية"
+            }
+          },
+          {
+            "id": "thermostat",
+            "label": {
+              "en": "Thermostat",
+              "nl": "Thermostaat",
+              "de": "Thermostat",
+              "fr": "Thermostat",
+              "it": "Termostato",
+              "sv": "Termostat",
+              "no": "Termostat",
+              "es": "Termostato",
+              "da": "Termostat",
+              "ru": "Термостат",
+              "pl": "Termostat",
+              "ko": "온도 조절기",
+              "ar": "ترموستات"
+            }
+          },
+          {
+            "id": "tv",
+            "label": {
+              "en": "TV",
+              "nl": "Tv",
+              "de": "TV",
+              "fr": "TV",
+              "it": "TV",
+              "sv": "TV",
+              "no": "TV",
+              "es": "TV",
+              "da": "TV",
+              "ru": "ТВ",
+              "pl": "TV",
+              "ko": "TV",
+              "ar": "تلفزيون"
+            }
+          },
+          {
+            "id": "vacuumcleaner",
+            "label": {
+              "en": "Vacuum Cleaner",
+              "nl": "Stofzuiger",
+              "de": "Staubsauger",
+              "fr": "Aspirateur",
+              "it": "Aspirapolvere",
+              "sv": "Dammsugare",
+              "no": "Støvsuger",
+              "es": "Aspiradora",
+              "da": "Støvsuger",
+              "ru": "Пылесос",
+              "pl": "Odkurzacz",
+              "ko": "진공 청소기",
+              "ar": "مكنسة كهربائية"
+            }
+          },
+          {
+            "id": "waterheater",
+            "label": {
+              "en": "Water Heater",
+              "nl": "Boiler",
+              "de": "Warmwasserbereiter",
+              "fr": "Chauffe-eau",
+              "it": "Scaldabagno",
+              "sv": "Varmvattenberedare",
+              "no": "Varmtvannsbereder",
+              "es": "Calentador de agua",
+              "da": "Vandvarmer",
+              "ru": "Водонагреватель",
+              "pl": "Podgrzewacz wody",
+              "ko": "온수기",
+              "ar": "سخان مياه"
             }
           },
           {
@@ -304,16 +600,17 @@
             "label": {
               "en": "Window Coverings",
               "nl": "Raambekleding",
-              "da": "Vinduesbeklædning",
               "de": "Fensterabdeckungen",
-              "es": "Cortinas",
               "fr": "Couvre-fenêtres",
               "it": "Tende",
-              "no": "Vindusdekker",
-              "sv": "Fönsterbeklädnader",
+              "sv": "Fönsterbeklädnad",
+              "no": "Vindusdekking",
+              "es": "Revestimientos de ventanas",
+              "da": "Vinduesbeklædning",
+              "ru": "Оконные покрытия",
               "pl": "Osłony okienne",
-              "ru": "Шторы",
-              "ko": "창문 커버링"
+              "ko": "창문 덮개",
+              "ar": "أغطية النوافذ"
             }
           }
         ]
