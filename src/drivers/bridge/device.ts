@@ -53,7 +53,6 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
       await this.migrate();
       await this.connectBridge();
       await this.registerListeners();
-      if (this.settings.force_info_log_level) await this.setLogLevel('info', 'onInit');
       this.restarting = false;
       this.setAvailable().catch(this.error);
       this.log(this.getName(), 'bridge device has been initialized');
@@ -344,6 +343,9 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
           this.homey.emit('bridgeoffline', false);
           this.setCapability('alarm_offline', false).catch(this.error);
           subscribeTopics().catch((error) => this.error(error));
+          if (this.settings.force_info_log_level) {
+            this.setLogLevel('info', 'onInit').catch((error) => this.error(error));
+          }
         })
         .on('message', (topic: string, message: any) => {
           handleMessage(topic, message).catch((error) => this.error(error));
