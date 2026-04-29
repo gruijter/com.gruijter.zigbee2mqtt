@@ -11,7 +11,8 @@
     "sv": "Ställ in ventilens tillstånd",
     "pl": "Ustaw stan zaworu",
     "ru": "Установить состояние клапана",
-    "ko": "밸브 상태 설정"
+    "ko": "밸브 상태 설정",
+    "ar": "تعيين حالة الصمام"
   },
   "titleFormatted": {
     "en": "Set valve state to [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ in ventilens tillstånd till [[val]]",
     "pl": "Ustaw stan zaworu na [[val]]",
     "ru": "Установить состояние клапана на [[val]]",
-    "ko": "밸브 상태를 [[val]]로 설정"
+    "ko": "밸브 상태를 [[val]]로 설정",
+    "ar": "تعيين حالة الصمام إلى [[val]]"
   },
   "highlight": true,
   "args": [

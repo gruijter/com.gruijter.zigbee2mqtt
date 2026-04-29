@@ -11,7 +11,8 @@
     "sv": "Antalet anslutna enheter har ändrats",
     "pl": "Liczba podłączonych urządzeń uległa zmianie",
     "ru": "Количество подключенных устройств изменилось",
-    "ko": "연결된 장치 수가 변경되었습니다"
+    "ko": "연결된 장치 수가 변경되었습니다",
+    "ar": "تغير عدد الأجهزة المتصلة"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "Anslutna enheter",
         "pl": "Podłączone urządzenia",
         "ru": "Подключенные устройства",
-        "ko": "연결된 장치"
+        "ko": "연결된 장치",
+        "ar": "الأجهزة المتصلة"
       },
       "example": 53
     }

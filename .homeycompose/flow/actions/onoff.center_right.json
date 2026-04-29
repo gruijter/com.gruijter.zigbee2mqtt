@@ -11,7 +11,8 @@
     "sv": "Slå på eller av centrum höger",
     "pl": "Włącz lub wyłącz środek prawy",
     "ru": "Включить или выключить центр право",
-    "ko": "중앙 오른쪽 켜기 또는 끄기"
+    "ko": "중앙 오른쪽 켜기 또는 끄기",
+    "ar": "تشغيل أو إيقاف الوسط الأيمن"
   },
   "titleFormatted": {
     "en": "Switch Center Right [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Växla centrum höger [[val]]",
     "pl": "Przełącz środek prawy [[val]]",
     "ru": "Переключить центр право [[val]]",
-    "ko": "중앙 오른쪽 전환 [[val]]"
+    "ko": "중앙 오른쪽 전환 [[val]]",
+    "ar": "تبديل الوسط الأيمن [[val]]"
   },
   "highlight": true,
   "args": [
@@ -49,7 +51,8 @@
         "sv": "På",
         "pl": "Włączone",
         "ru": "Включено",
-        "ko": "켬"
+        "ko": "켬",
+        "ar": "تشغيل"
       }
     }
   ]

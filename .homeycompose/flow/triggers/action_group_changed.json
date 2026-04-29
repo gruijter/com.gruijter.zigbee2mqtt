@@ -1,6 +1,7 @@
 {
   "title": {
-    "en": "The action group changed"
+    "en": "The action group changed",
+    "ar": "تغيرت مجموعة الإجراءات"
   },
   "highlight": true,
   "args": [
@@ -15,7 +16,8 @@
       "name": "action_group",
       "type": "number",
       "title": {
-        "en": "Action group"
+        "en": "Action group",
+        "ar": "مجموعة الإجراءات"
       },
       "example": 12456
     }

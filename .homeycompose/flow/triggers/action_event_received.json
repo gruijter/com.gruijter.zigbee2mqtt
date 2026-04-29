@@ -11,7 +11,8 @@
     "sv": "Åtgärdshändelse mottagen",
     "pl": "Otrzymano zdarzenie akcji",
     "ru": "Получено событие действия",
-    "ko": "작동 이벤트 수신됨"
+    "ko": "작동 이벤트 수신됨",
+    "ar": "تم استلام حدث الإجراء"
   },
   "titleFormatted": {
     "en": "Action [[event]] received.",
@@ -25,7 +26,8 @@
     "sv": "Åtgärd [[event]] mottagen.",
     "pl": "Otrzymano zdarzenie [[event]].",
     "ru": "Получено событие [[event]].",
-    "ko": "작동 [[event]] 수신됨."
+    "ko": "작동 [[event]] 수신됨.",
+    "ar": "تم استلام الإجراء [[event]]."
   },
   "hint": {
     "en": "An action event matching given string was received.",
@@ -39,7 +41,8 @@
     "sv": "En åtgärdshändelse som matchar den angivna strängen mottogs.",
     "pl": "Otrzymano zdarzenie akcji pasujące do podanego ciągu.",
     "ru": "Получено событие действия, совпадающее с заданной строкой.",
-    "ko": "지정된 문자열과 일치하는 작동 이벤트가 수신되었습니다."
+    "ko": "지정된 문자열과 일치하는 작동 이벤트가 수신되었습니다.",
+    "ar": "تم استلام حدث إجراء يطابق السلسلة المحددة."
   },
   "highlight": true,
   "args": [
@@ -63,7 +66,8 @@
         "sv": "händelse",
         "pl": "wydarzenie",
         "ru": "событие",
-        "ko": "이벤트"
+        "ko": "이벤트",
+        "ar": "حدث"
       },
       "placeholder": {
         "en": "event_name",
@@ -77,7 +81,8 @@
         "sv": "händelse_namn",
         "pl": "nazwa_wydarzenia",
         "ru": "имя_события",
-        "ko": "이벤트_이름"
+        "ko": "이벤트_이름",
+        "ar": "اسم_الحدث"
       }
     }
   ],
@@ -97,7 +102,8 @@
         "sv": "Åtgärd",
         "pl": "Akcja",
         "ru": "Действие",
-        "ko": "작동"
+        "ko": "작동",
+        "ar": "إجراء"
       },
       "example": "off"
     }

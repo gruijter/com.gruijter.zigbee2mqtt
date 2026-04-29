@@ -11,7 +11,8 @@
     "sv": "Ställ in Strömbrytartyp Centrum Vänster",
     "pl": "Ustaw Typ Przełącznika Środek Lewy",
     "ru": "Установить Тип Выключателя Центр Лево",
-    "ko": "스위치 유형 중앙 왼쪽 설정"
+    "ko": "스위치 유형 중앙 왼쪽 설정",
+    "ar": "تعيين نوع مفتاح المركز الأيسر"
   },
   "titleFormatted": {
     "en": "Set Center Left Switch Type to [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ in Centrum Vänster Brytartyp till [[val]]",
     "pl": "Ustaw Typ Przełącznika Środek Lewy na [[val]]",
     "ru": "Установить Тип Выключателя Центр Лево на [[val]]",
-    "ko": "중앙 왼쪽 스위치 유형을 [[val]]로 설정"
+    "ko": "중앙 왼쪽 스위치 유형을 [[val]]로 설정",
+    "ar": "تعيين نوع مفتاح المركز الأيسر إلى [[val]]"
   },
   "highlight": true,
   "args": [
@@ -52,7 +54,8 @@
             "sv": "växla",
             "pl": "przełącz",
             "ru": "переключатель",
-            "ko": "토글"
+            "ko": "토글",
+            "ar": "تبديل"
           }
         },
         {
@@ -69,7 +72,8 @@
             "sv": "Tillstånd",
             "pl": "Stan",
             "ru": "Состояние",
-            "ko": "상태"
+            "ko": "상태",
+            "ar": "حالة"
           }
         },
         {
@@ -86,7 +90,8 @@
             "sv": "Ögonblicklig",
             "pl": "Chwilowy",
             "ru": "Мгновенный",
-            "ko": "순간적"
+            "ko": "순간적",
+            "ar": "لحظي"
           }
         }
       ]

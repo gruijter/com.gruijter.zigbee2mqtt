@@ -11,7 +11,8 @@
     "sv": "Ställ in en anpassad payload",
     "pl": "Ustaw niestandardowy ładunek",
     "ru": "Установить пользовательскую нагрузку",
-    "ko": "사용자 지정 페이로드 설정"
+    "ko": "사용자 지정 페이로드 설정",
+    "ar": "تعيين حمولة مخصصة"
   },
   "titleFormatted": {
     "en": "Set payload to [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ in nyttolast till [[val]]",
     "pl": "Ustaw ładunek na [[val]]",
     "ru": "Установить нагрузку на [[val]]",
-    "ko": "[[val]]로 페이로드 설정"
+    "ko": "[[val]]로 페이로드 설정",
+    "ar": "تعيين الحمولة إلى [[val]]"
   },
   "hint": {
     "en": "Place text in quotation marks:\n{\"child_lock\": \"LOCK\"}.\nUse numbers without quotation marks:\n{ \"current_heating_setpoint\": 21 }",
@@ -39,7 +41,8 @@
     "sv": "Placera texten i citattecken:\n{\"child_lock\": \"LOCK\"}.\nAnvänd siffror utan citattecken:\n{ \"current_heating_setpoint\": 21 }",
     "pl": "Umieść tekst w cudzysłowie:\n{\"child_lock\": \"LOCK\"}.\nUżywaj liczb bez cudzysłowu:\n{ \"current_heating_setpoint\": 21 }",
     "ru": "Поместите текст в кавычки:\n{\"child_lock\": \"LOCK\"}.\nИспользуйте числа без кавычек:\n{ \"current_heating_setpoint\": 21 }",
-    "ko": "텍스트를 큰따옴표로 묶으세요:\n{\"child_lock\": \"LOCK\"}.\n숫자는 따옴표 없이 사용하세요:\n{ \"current_heating_setpoint\": 21 }"
+    "ko": "텍스트를 큰따옴표로 묶으세요:\n{\"child_lock\": \"LOCK\"}.\n숫자는 따옴표 없이 사용하세요:\n{ \"current_heating_setpoint\": 21 }",
+    "ar": "ضع النص بين علامتي اقتباس:\n{\"child_lock\": \"LOCK\"}.\nاستخدم الأرقام بدون علامات اقتباس:\n{ \"current_heating_setpoint\": 21 }"
   },
   "args": [
     {
@@ -62,7 +65,8 @@
         "sv": "Payload",
         "pl": "Payload",
         "ru": "Нагрузка",
-        "ko": "페이로드"
+        "ko": "페이로드",
+        "ar": "حمولة"
       },
       "placeholder": {
         "en": "e.g. { \"current_heating_setpoint\": 21 }",
@@ -76,7 +80,8 @@
         "sv": "t.ex. { \"current_heating_setpoint\": 21 }",
         "pl": "np. { \"current_heating_setpoint\": 21 }",
         "ru": "напр. { \"current_heating_setpoint\": 21 }",
-        "ko": "예: { \"current_heating_setpoint\": 21 }"
+        "ko": "예: { \"current_heating_setpoint\": 21 }",
+        "ar": "على سبيل المثال { \"current_heating_setpoint\": 21 }"
       }
     }
   ]

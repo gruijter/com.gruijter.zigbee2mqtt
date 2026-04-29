@@ -4,14 +4,15 @@
     "nl": "Onder Ingeschakeld",
     "da": "Bund Tændt",
     "de": "Unten Eingeschaltet",
-    "es": "Abajo Activado",
-    "fr": "Bas Activé",
+    "es": "Abajo Encendido",
+    "fr": "Bas Allumé",
     "it": "Basso Acceso",
-    "no": "Bunn Slått På",
-    "sv": "Botten Påslagen",
+    "no": "Bunn På",
+    "sv": "Botten På",
     "pl": "Dolny Włączony",
     "ru": "Низ Включен",
-    "ko": "아래쪽 켜짐"
+    "ko": "아래쪽 켜짐",
+    "ar": "تم تشغيل الجزء السفلي"
   },
   "highlight": true,
   "args": [

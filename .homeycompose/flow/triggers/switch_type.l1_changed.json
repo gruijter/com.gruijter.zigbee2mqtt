@@ -7,11 +7,12 @@
     "es": "El tipo de interruptor L1 cambió",
     "fr": "Le type de commutateur L1 a changé",
     "it": "Il tipo di interruttore L1 è stato modificato",
-    "no": "Byttetype L1 endret",
+    "no": "Brytertype L1 endret",
     "sv": "Strömbrytartyp L1 ändrades",
     "pl": "Typ przełącznika L1 został zmieniony",
     "ru": "Тип переключателя L1 изменился",
-    "ko": "스위치 타입 L1 변경됨"
+    "ko": "스위치 유형 L1이 변경되었습니다",
+    "ar": "تغير نوع المفتاح L1"
   },
   "highlight": true,
   "args": [
@@ -33,11 +34,12 @@
         "es": "Tipo de interruptor L1",
         "fr": "Type de commutateur L1",
         "it": "Tipo di interruttore L1",
-        "no": "Byttetype L1",
+        "no": "Brytertype L1",
         "sv": "Strömbrytartyp L1",
         "pl": "Typ przełącznika L1",
         "ru": "Тип переключателя L1",
-        "ko": "스위치 타입 L1"
+        "ko": "스위치 유형 L1",
+        "ar": "نوع المفتاح L1"
       },
       "example": "toggle"
     }

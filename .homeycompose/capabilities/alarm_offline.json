@@ -12,7 +12,8 @@
     "sv": "Bridge offline",
     "pl": "Bridge offline",
     "ru": "Мост офлайн",
-    "ko": "브릿지 오프라인"
+    "ko": "브릿지 오프라인",
+    "ar": "الجسر غير متصل"
   },
   "insightsTitleTrue": {
     "en": "Offline",
@@ -26,7 +27,8 @@
     "sv": "Offline",
     "pl": "Offline",
     "ru": "Офлайн",
-    "ko": "오프라인"
+    "ko": "오프라인",
+    "ar": "غير متصل"
   },
   "insightsTitleFalse": {
     "en": "Online",
@@ -40,7 +42,8 @@
     "sv": "Online",
     "pl": "Online",
     "ru": "Онлайн",
-    "ko": "온라인"
+    "ko": "온라인",
+    "ar": "متصل"
   },
   "uiComponent": "sensor",
   "getable": true,

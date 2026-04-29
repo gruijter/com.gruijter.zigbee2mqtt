@@ -2,16 +2,17 @@
   "title": {
     "en": "Right Turned Off",
     "nl": "Rechts Uitgeschakeld",
-    "da": "Slukket til højre",
-    "de": "Rechts ausgeschaltet",
-    "es": "Apagado a la derecha",
-    "fr": "Éteint à droite",
-    "it": "Spento a destra",
-    "no": "Høyre slått av",
-    "sv": "Höger avstängd",
-    "pl": "Wyłączono po prawej",
-    "ru": "Выключено вправо",
-    "ko": "오른쪽 꺼짐"
+    "da": "Højre Slukket",
+    "de": "Rechts Ausgeschaltet",
+    "es": "Derecha Apagada",
+    "fr": "Droite Éteinte",
+    "it": "Destra Spenta",
+    "no": "Høyre Av",
+    "sv": "Höger Av",
+    "pl": "Prawy Wyłączony",
+    "ru": "Право Выключено",
+    "ko": "오른쪽 꺼짐",
+    "ar": "تم إيقاف اليمين"
   },
   "highlight": true,
   "args": [

@@ -11,7 +11,8 @@
     "sv": "Ställ in Strömbrytartyp",
     "pl": "Ustaw Typ Przełącznika",
     "ru": "Установить Тип Переключателя",
-    "ko": "스위치 유형 설정"
+    "ko": "스위치 유형 설정",
+    "ar": "تعيين نوع المفتاح"
   },
   "titleFormatted": {
     "en": "Set Switch Type to [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ in Strömbrytartyp till [[val]]",
     "pl": "Ustaw Typ Przełącznika na [[val]]",
     "ru": "Установить Тип Переключателя на [[val]]",
-    "ko": "스위치 유형을 [[val]]로 설정"
+    "ko": "스위치 유형을 [[val]]로 설정",
+    "ar": "تعيين نوع المفتاح إلى [[val]]"
   },
   "highlight": true,
   "args": [
@@ -52,7 +54,8 @@
             "sv": "växla",
             "pl": "przełącz",
             "ru": "переключить",
-            "ko": "토글"
+            "ko": "토글",
+            "ar": "تبديل"
           }
         },
         {
@@ -69,7 +72,8 @@
             "sv": "Tillstånd",
             "pl": "Stan",
             "ru": "Состояние",
-            "ko": "상태"
+            "ko": "상태",
+            "ar": "حالة"
           }
         },
         {
@@ -86,7 +90,8 @@
             "sv": "Tillfällig",
             "pl": "Chwilowy",
             "ru": "Моментальный",
-            "ko": "순간적인"
+            "ko": "순간적인",
+            "ar": "لحظي"
           }
         }
       ]

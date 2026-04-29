@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "The Y-angle changed",
-    "nl": "De Y-hoek is veranderd",
+    "nl": "De Y-hoek is gewijzigd",
     "da": "Y-vinklen ændrede sig",
     "de": "Der Y-Winkel hat sich geändert",
     "es": "El ángulo Y cambió",
@@ -11,7 +11,8 @@
     "sv": "Y-vinkeln ändrades",
     "pl": "Kąt Y zmienił się",
     "ru": "Угол Y изменился",
-    "ko": "Y-각이 변했습니다"
+    "ko": "Y-각이 변했습니다",
+    "ar": "تغيرت زاوية Y"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "vinkel_y",
         "pl": "kąt_y",
         "ru": "угол_y",
-        "ko": "각도_y"
+        "ko": "각도_y",
+        "ar": "زاوية_y"
       },
       "example": 48
     }

@@ -12,21 +12,11 @@
     "sv": "Väderförhållanden",
     "pl": "Warunki pogodowe",
     "ru": "Погодные условия",
-    "ko": "날씨 상태"
+    "ko": "날씨 상태",
+    "ar": "حالة الطقس"
   },
   "units": {
-    "en": "",
-    "nl": "",
-    "da": "",
-    "de": "",
-    "es": "",
-    "fr": "",
-    "it": "",
-    "no": "",
-    "sv": "",
-    "pl": "",
-    "ru": "",
-    "ko": ""
+    "en": ""
   },
   "getable": true,
   "setable": false,

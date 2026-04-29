@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "The Power On Behavior changed",
-    "nl": "Het gedrag bij inschakelen is gewijzigd",
+    "nl": "Het inschakelgedrag is gewijzigd",
     "da": "Tændingsadfærden er ændret",
     "de": "Das Einschaltverhalten hat sich geändert",
     "es": "El comportamiento al encender ha cambiado",
@@ -11,7 +11,8 @@
     "sv": "Ström på beteende har ändrats",
     "pl": "Zmieniono zachowanie przy włączaniu",
     "ru": "Изменено поведение при включении",
-    "ko": "전원 켜기 동작이 변경되었습니다"
+    "ko": "전원 켜기 동작이 변경되었습니다",
+    "ar": "تغير سلوك التشغيل"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "Ström på beteende",
         "pl": "Zachowanie przy włączaniu",
         "ru": "Поведение при включении",
-        "ko": "전원 켜기 동작"
+        "ko": "전원 켜기 동작",
+        "ar": "سلوك التشغيل"
       },
       "example": "off"
     }

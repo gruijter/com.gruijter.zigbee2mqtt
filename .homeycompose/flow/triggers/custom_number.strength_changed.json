@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "The strength changed",
-    "nl": "De sterkte veranderde",
+    "nl": "De sterkte is gewijzigd",
     "da": "Styrken ændrede sig",
     "de": "Die Stärke hat sich verändert",
     "es": "La fuerza cambió",
@@ -11,7 +11,8 @@
     "sv": "Styrkan ändrades",
     "pl": "Siła się zmieniła",
     "ru": "Сила изменилась",
-    "ko": "강도가 변경되었습니다"
+    "ko": "강도가 변경되었습니다",
+    "ar": "تغيرت القوة"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "Styrka",
         "pl": "Siła",
         "ru": "Сила",
-        "ko": "강도"
+        "ko": "강도",
+        "ar": "القوة"
       },
       "example": 48
     }

@@ -11,7 +11,8 @@
     "sv": "Jordfuktigheten har förändrats",
     "pl": "Wilgotność gleby uległa zmianie",
     "ru": "Влажность почвы изменилась",
-    "ko": "토양 습도가 변경되었습니다"
+    "ko": "토양 습도가 변경되었습니다",
+    "ar": "تغيرت رطوبة التربة"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "Fuktighet",
         "pl": "Wilgotność",
         "ru": "Влажность",
-        "ko": "습도"
+        "ko": "습도",
+        "ar": "الرطوبة"
       },
       "example": 53
     }

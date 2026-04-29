@@ -5,13 +5,14 @@
     "da": "Venstre Slukket",
     "de": "Links Ausgeschaltet",
     "es": "Izquierda Apagada",
-    "fr": "Gauche Éteint",
+    "fr": "Gauche Éteinte",
     "it": "Sinistra Spenta",
-    "no": "Venstre Avslått",
-    "sv": "Vänster Avstängd",
-    "pl": "Lewa Wyłączona",
+    "no": "Venstre Av",
+    "sv": "Vänster Av",
+    "pl": "Lewy Wyłączony",
     "ru": "Лево Выключено",
-    "ko": "왼쪽 꺼짐"
+    "ko": "왼쪽 꺼짐",
+    "ar": "تم إيقاف اليسار"
   },
   "highlight": true,
   "args": [

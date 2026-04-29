@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "The switch type Top changed",
-    "nl": "Het schakeltype Boven is gewijzigd",
+    "nl": "Het schakelaartype Boven is gewijzigd",
     "da": "Kontakttoptype blev ændret",
     "de": "Der Schalttyp Oben wurde geändert",
     "es": "El tipo de interruptor cambió arriba",
@@ -11,7 +11,8 @@
     "sv": "Brytartyp Topp ändras",
     "pl": "Zmieniono typ przełącznika Górny",
     "ru": "Тип переключателя Верх изменился",
-    "ko": "스위치 유형 위쪽이 변경되었습니다"
+    "ko": "스위치 유형 위쪽이 변경되었습니다",
+    "ar": "تغير نوع المفتاح العلوي"
   },
   "highlight": true,
   "args": [
@@ -26,18 +27,19 @@
       "name": "switch_type.top",
       "type": "string",
       "title": {
-        "en": "Switch type top",
-        "nl": "Schakeltype boven",
+        "en": "Switch type Top",
+        "nl": "Schakelaartype Boven",
         "da": "Kontakttoptype",
         "de": "Schalttyp Oben",
         "es": "Tipo de interruptor arriba",
         "fr": "Type de commutateur haut",
         "it": "Tipo di interruttore alto",
-        "no": "Brytertype topp",
-        "sv": "Brytartyptopp",
+        "no": "Brytertype Topp",
+        "sv": "Strömbrytartyp Topp",
         "pl": "Typ przełącznika górny",
         "ru": "Тип переключателя Верх",
-        "ko": "스위치 유형 위쪽"
+        "ko": "스위치 유형 위쪽",
+        "ar": "نوع المفتاح العلوي"
       },
       "example": "toggle"
     }

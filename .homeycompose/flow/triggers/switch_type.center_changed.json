@@ -1,17 +1,18 @@
 {
   "title": {
     "en": "The switch type Center changed",
-    "nl": "Het schakeltype Center is gewijzigd",
-    "da": "Kontaktcentertypen blev ændret",
-    "de": "Der Schalttyp Center wurde geändert",
-    "es": "El tipo de interruptor cambió el centro",
-    "fr": "Le type de commutateur Centre a changé",
+    "nl": "Het schakelaartype Midden is gewijzigd",
+    "da": "Kontakttypen Center er ændret",
+    "de": "Der Schaltertyp Mitte hat sich geändert",
+    "es": "El tipo de interruptor Centro ha cambiado",
+    "fr": "Le type d'interrupteur Centre a changé",
     "it": "Il tipo di interruttore Centro è cambiato",
-    "no": "Brytertypen Senter endret",
-    "sv": "Brytartyp Centrum ändras",
-    "pl": "Zmieniono typ przełącznika Centrum",
+    "no": "Brytertypen Senter har endret seg",
+    "sv": "Strömbrytartypen Centrum har ändrats",
+    "pl": "Typ przełącznika Środek został zmieniony",
     "ru": "Тип переключателя Центр изменился",
-    "ko": "스위치 유형 센터가 변경되었습니다"
+    "ko": "스위치 유형 센터가 변경되었습니다",
+    "ar": "تغير نوع المفتاح الأوسط"
   },
   "highlight": true,
   "args": [
@@ -26,18 +27,19 @@
       "name": "switch_type.center",
       "type": "string",
       "title": {
-        "en": "Switch type center",
-        "nl": "Schakeltype midden",
-        "da": "Kontaktcentertype",
-        "de": "Schalttyp Mitte",
-        "es": "Tipo de interruptor centro",
-        "fr": "Type de commutateur centre",
-        "it": "Tipo di interruttore centro",
-        "no": "Brytertype senter",
-        "sv": "Brytartypcentrum",
-        "pl": "Typ przełącznika centrum",
+        "en": "Switch type Center",
+        "nl": "Schakelaartype Midden",
+        "da": "Kontakttype Center",
+        "de": "Schaltertyp Mitte",
+        "es": "Tipo de interruptor Centro",
+        "fr": "Type d'interrupteur Centre",
+        "it": "Tipo di interruttore Centro",
+        "no": "Brytertype Senter",
+        "sv": "Strömbrytartyp Centrum",
+        "pl": "Typ przełącznika Środek",
         "ru": "Тип переключателя Центр",
-        "ko": "스위치 유형 센터"
+        "ko": "스위치 유형 센터",
+        "ar": "نوع المفتاح الأوسط"
       },
       "example": "toggle"
     }

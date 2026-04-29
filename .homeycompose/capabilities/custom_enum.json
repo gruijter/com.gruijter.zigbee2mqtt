@@ -12,7 +12,8 @@
     "sv": "URVAL",
     "pl": "WYBÓR",
     "ru": "ВЫБОР",
-    "ko": "선택"
+    "ko": "선택",
+    "ar": "اختيار"
   },
   "values": [
     {
@@ -29,7 +30,8 @@
         "sv": "Första alternativet",
         "pl": "Pierwsza opcja",
         "ru": "Первый вариант",
-        "ko": "첫 번째 옵션"
+        "ko": "첫 번째 옵션",
+        "ar": "الخيار الأول"
       }
     },
     {
@@ -46,7 +48,8 @@
         "sv": "Andra alternativet",
         "pl": "Druga opcja",
         "ru": "Второй вариант",
-        "ko": "두 번째 옵션"
+        "ko": "두 번째 옵션",
+        "ar": "الخيار الثاني"
       }
     },
     {
@@ -63,7 +66,8 @@
         "sv": "Tredje alternativet",
         "pl": "Trzecia opcja",
         "ru": "Третий вариант",
-        "ko": "세 번째 옵션"
+        "ko": "세 번째 옵션",
+        "ar": "الخيار الثالث"
       }
     },
     {
@@ -80,7 +84,8 @@
         "sv": "Fjärde alternativet",
         "pl": "Czwarta opcja",
         "ru": "Четвертый вариант",
-        "ko": "네 번째 옵션"
+        "ko": "네 번째 옵션",
+        "ar": "الخيار الرابع"
       }
     }
   ],

@@ -1,9 +1,33 @@
 {
   "title": {
-    "en": "Switch Pre alarm On or Off"
+    "en": "Switch Pre alarm On or Off",
+    "nl": "Schakel voor-alarm in of uit",
+    "da": "Tænd eller sluk forudgående alarm",
+    "de": "Voralarm ein- oder ausschalten",
+    "es": "Activar o desactivar prealarma",
+    "fr": "Activer ou désactiver la pré-alarme",
+    "it": "Attiva o disattiva pre-allarme",
+    "no": "Slå forhåndsalarm på eller av",
+    "sv": "Slå på eller av förlarm",
+    "pl": "Włącz lub wyłącz pre-alarm",
+    "ru": "Включить или выключить предварительную тревогу",
+    "ko": "사전 알람 켜기 또는 끄기",
+    "ar": "تشغيل أو إيقاف الإنذار المسبق"
   },
   "titleFormatted": {
-    "en": "Switch Pre alarm [[val]]"
+    "en": "Switch Pre alarm [[val]]",
+    "nl": "Schakel voor-alarm [[val]]",
+    "da": "Skift forudgående alarm [[val]]",
+    "de": "Voralarm schalten [[val]]",
+    "es": "Cambiar prealarma [[val]]",
+    "fr": "Basculer la pré-alarme [[val]]",
+    "it": "Cambia pre-allarme [[val]]",
+    "no": "Bytt forhåndsalarm [[val]]",
+    "sv": "Växla förlarm [[val]]",
+    "pl": "Przełącz pre-alarm [[val]]",
+    "ru": "Переключить предварительную тревогу [[val]]",
+    "ko": "사전 알람 전환 [[val]]",
+    "ar": "تبديل الإنذار المسبق [[val]]"
   },
   "highlight": true,
   "args": [
@@ -16,7 +40,19 @@
       "type": "checkbox",
       "name": "val",
       "title": {
-        "en": "On"
+        "en": "On",
+        "nl": "Aan",
+        "da": "Til",
+        "de": "Ein",
+        "es": "Encendido",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączone",
+        "ru": "Включено",
+        "ko": "켜짐",
+        "ar": "تشغيل"
       }
     }
   ]

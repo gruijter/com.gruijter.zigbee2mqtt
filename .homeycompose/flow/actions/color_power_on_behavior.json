@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "Set Color Power On Behavior",
-    "nl": "Stel Kleuren Aan Gedrag in",
+    "nl": "Stel inschakelgedrag (kleur) in",
     "da": "Indstil farvetændingsadfærd",
     "de": "Farb-Einschaltverhalten festlegen",
     "es": "Establecer el comportamiento de encendido del color",
@@ -11,11 +11,12 @@
     "sv": "Ställ in färgstartbeteende",
     "pl": "Ustaw zachowanie przy włączaniu koloru",
     "ru": "Установить цветовое поведение при включении",
-    "ko": "색상 전원 켜기 동작 설정"
+    "ko": "색상 전원 켜기 동작 설정",
+    "ar": "تعيين سلوك تشغيل اللون"
   },
   "titleFormatted": {
     "en": "Set Color Power On Behavior to [[val]]",
-    "nl": "Stel Kleuren Aan Gedrag in op [[val]]",
+    "nl": "Stel inschakelgedrag (kleur) in op [[val]]",
     "da": "Indstil farvetændingsadfærd til [[val]]",
     "de": "Farb-Einschaltverhalten auf [[val]] festlegen",
     "es": "Establecer el comportamiento de encendido del color en [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ in färgstartbeteende till [[val]]",
     "pl": "Ustaw zachowanie przy włączaniu koloru jako [[val]]",
     "ru": "Установить цветовое поведение при включении на [[val]]",
-    "ko": "[[val]] 색상 전원 켜기 동작 설정"
+    "ko": "[[val]] 색상 전원 켜기 동작 설정",
+    "ar": "تعيين سلوك تشغيل اللون إلى [[val]]"
   },
   "highlight": true,
   "args": [
@@ -52,7 +54,8 @@
             "sv": "Initial",
             "pl": "Początkowy",
             "ru": "Начальный",
-            "ko": "초기"
+            "ko": "초기",
+            "ar": "أولي"
           }
         },
         {
@@ -69,7 +72,8 @@
             "sv": "Anpassad",
             "pl": "Dostosowany",
             "ru": "Настроенный",
-            "ko": "사용자 지정"
+            "ko": "사용자 지정",
+            "ar": "مخصص"
           }
         },
         {
@@ -86,7 +90,8 @@
             "sv": "Föregående",
             "pl": "Poprzedni",
             "ru": "Предыдущий",
-            "ko": "이전"
+            "ko": "이전",
+            "ar": "سابق"
           }
         }
       ]

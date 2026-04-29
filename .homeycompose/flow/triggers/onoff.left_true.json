@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "Left Turned On",
-    "nl": "Links Aangezet",
+    "nl": "Links Ingeschakeld",
     "da": "Venstre Tændt",
     "de": "Links Eingeschaltet",
     "es": "Izquierda Encendida",
@@ -9,9 +9,10 @@
     "it": "Sinistra Accesa",
     "no": "Venstre På",
     "sv": "Vänster På",
-    "pl": "Lewo Włączone",
-    "ru": "Включено Слева",
-    "ko": "왼쪽 켜짐"
+    "pl": "Lewy Włączony",
+    "ru": "Лево Включено",
+    "ko": "왼쪽 켜짐",
+    "ar": "تم تشغيل اليسار"
   },
   "highlight": true,
   "args": [

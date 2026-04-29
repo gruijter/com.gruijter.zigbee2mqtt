@@ -1,7 +1,7 @@
 {
   "title": {
-    "en": "Joining turned On",
-    "nl": "Deelnemen ingeschakeld",
+    "en": "Joining Turned On",
+    "nl": "Deelnemen Ingeschakeld",
     "da": "Deltagelse aktiveret",
     "de": "Beitritt eingeschaltet",
     "es": "Participación activada",
@@ -11,7 +11,8 @@
     "sv": "Deltagande aktiverat",
     "pl": "Dołączenie włączone",
     "ru": "Присоединение включено",
-    "ko": "참여 켜짐"
+    "ko": "참여 켜짐",
+    "ar": "تم تشغيل الانضمام"
   },
   "highlight": true,
   "args": [

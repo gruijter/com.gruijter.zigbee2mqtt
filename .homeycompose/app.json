@@ -18,7 +18,8 @@
     "sv": "Zigbee2MQTT",
     "pl": "Zigbee2MQTT",
     "ru": "Zigbee2MQTT",
-    "ko": "Zigbee2MQTT"
+    "ko": "Zigbee2MQTT",
+    "ar": "Zigbee2MQTT"
   },
   "description": {
     "en": "Use Zigbee devices via MQTT",
@@ -32,7 +33,8 @@
     "sv": "Använd Zigbee-enheter via MQTT",
     "pl": "Użyj urządzeń Zigbee przez MQTT",
     "ru": "Используйте устройства Zigbee через MQTT",
-    "ko": "MQTT를 통해 Zigbee 장치 사용"
+    "ko": "MQTT를 통해 Zigbee 장치 사용",
+    "ar": "استخدم أجهزة Zigbee عبر MQTT"
   },
   "category": [
     "tools"
@@ -83,6 +85,10 @@
       "MQTT"
     ],
     "ko": [
+      "Zigbee",
+      "MQTT"
+    ],
+    "ar": [
       "Zigbee",
       "MQTT"
     ]

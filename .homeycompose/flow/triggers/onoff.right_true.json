@@ -1,17 +1,18 @@
 {
   "title": {
     "en": "Right Turned On",
-    "nl": "Rechts Aan",
+    "nl": "Rechts Ingeschakeld",
     "da": "Højre Tændt",
     "de": "Rechts Eingeschaltet",
-    "es": "Encendido a la Derecha",
-    "fr": "Allumé à Droite",
-    "it": "Acceso a Destra",
-    "no": "Høyre Påslått",
-    "sv": "Höger Påslagen",
-    "pl": "Włączono Prawy",
-    "ru": "Включено Право",
-    "ko": "오른쪽 켜짐"
+    "es": "Derecha Encendida",
+    "fr": "Droite Allumée",
+    "it": "Destra Accesa",
+    "no": "Høyre På",
+    "sv": "Höger På",
+    "pl": "Prawy Włączony",
+    "ru": "Право Включено",
+    "ko": "오른쪽 켜짐",
+    "ar": "تم تشغيل اليمين"
   },
   "highlight": true,
   "args": [

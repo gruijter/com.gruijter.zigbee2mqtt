@@ -1,20 +1,21 @@
 {
-    "type": "boolean",
-    "title": {
-      "en": "Restart bridge",
-      "nl": "Bridge herstarten",
-      "da": "Genstart bridge",
-      "de": "Bridge neu starten",
-      "es": "Reiniciar bridge",
-      "fr": "Redémarrer le bridge",
-      "it": "Riavvia il bridge",
-      "no": "Start bridge på nytt",
-      "sv": "Starta om bridge",
-      "pl": "Zrestartuj bridge",
-      "ru": "Перезапустить мост",
-      "ko": "브리지 재시작"
-    },
-    "getable": false,
-    "setable": true,
-    "uiComponent": "button"
-  }
+  "type": "boolean",
+  "title": {
+    "en": "Restart bridge",
+    "nl": "Bridge herstarten",
+    "da": "Genstart bridge",
+    "de": "Bridge neu starten",
+    "es": "Reiniciar bridge",
+    "fr": "Redémarrer le bridge",
+    "it": "Riavvia il bridge",
+    "no": "Start bridge på nytt",
+    "sv": "Starta om bridge",
+    "pl": "Zrestartuj bridge",
+    "ru": "Перезапустить мост",
+    "ko": "브리지 재시작",
+    "ar": "إعادة تشغيل الجسر"
+  },
+  "getable": false,
+  "setable": true,
+  "uiComponent": "button"
+}

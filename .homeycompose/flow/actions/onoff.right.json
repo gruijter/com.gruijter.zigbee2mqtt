@@ -11,7 +11,8 @@
     "sv": "Slå Höger Av eller På",
     "pl": "Włącz lub Wyłącz Prawy",
     "ru": "Включить или Выключить Правый",
-    "ko": "오른쪽 켜기 또는 끄기"
+    "ko": "오른쪽 켜기 또는 끄기",
+    "ar": "تشغيل أو إيقاف اليمين"
   },
   "titleFormatted": {
     "en": "Switch Right [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Byt Höger [[val]]",
     "pl": "Przełącz Prawy [[val]]",
     "ru": "Переключить Правый [[val]]",
-    "ko": "우회 전환 [[val]]"
+    "ko": "우회 전환 [[val]]",
+    "ar": "تبديل اليمين [[val]]"
   },
   "highlight": true,
   "args": [
@@ -49,7 +51,8 @@
         "sv": "På",
         "pl": "Włączony",
         "ru": "Вкл",
-        "ko": "켜기"
+        "ko": "켜기",
+        "ar": "تشغيل"
       }
     }
   ]

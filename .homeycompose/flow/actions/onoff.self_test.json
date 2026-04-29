@@ -1,9 +1,33 @@
 {
   "title": {
-    "en": "Switch Selftest On or Off"
+    "en": "Switch Selftest On or Off",
+    "nl": "Schakel zelftest in of uit",
+    "da": "Tænd eller sluk selvtest",
+    "de": "Selbsttest ein- oder ausschalten",
+    "es": "Activar o desactivar autocomprobación",
+    "fr": "Activer ou désactiver l'auto-test",
+    "it": "Attiva o disattiva autotest",
+    "no": "Slå selvtest på eller av",
+    "sv": "Slå på eller av självtest",
+    "pl": "Włącz lub wyłącz autotest",
+    "ru": "Включить или выключить самопроверку",
+    "ko": "자체 테스트 켜기 또는 끄기",
+    "ar": "تشغيل أو إيقاف الاختبار الذاتي"
   },
   "titleFormatted": {
-    "en": "Switch Selftest [[val]]"
+    "en": "Switch Selftest [[val]]",
+    "nl": "Schakel zelftest [[val]]",
+    "da": "Skift selvtest [[val]]",
+    "de": "Selbsttest schalten [[val]]",
+    "es": "Cambiar autocomprobación [[val]]",
+    "fr": "Basculer l'auto-test [[val]]",
+    "it": "Cambia autotest [[val]]",
+    "no": "Bytt selvtest [[val]]",
+    "sv": "Växla självtest [[val]]",
+    "pl": "Przełącz autotest [[val]]",
+    "ru": "Переключить самопроверку [[val]]",
+    "ko": "자체 테스트 전환 [[val]]",
+    "ar": "تبديل الاختبار الذاتي [[val]]"
   },
   "highlight": true,
   "args": [
@@ -16,7 +40,19 @@
       "type": "checkbox",
       "name": "val",
       "title": {
-        "en": "On"
+        "en": "On",
+        "nl": "Aan",
+        "da": "Til",
+        "de": "Ein",
+        "es": "Encendido",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączone",
+        "ru": "Включено",
+        "ko": "켜짐",
+        "ar": "تشغيل"
       }
     }
   ]

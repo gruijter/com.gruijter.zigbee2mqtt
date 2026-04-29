@@ -1,7 +1,7 @@
 {
   "title": {
-    "en": "L1 turned Off",
-    "nl": "L1 uitgeschakeld",
+    "en": "L1 Turned Off",
+    "nl": "L1 Uitgeschakeld",
     "da": "L1 slukket",
     "de": "L1 ausgeschaltet",
     "es": "L1 apagado",
@@ -11,7 +11,8 @@
     "sv": "L1 avstängd",
     "pl": "L1 wyłączony",
     "ru": "L1 выключен",
-    "ko": "L1 꺼짐"
+    "ko": "L1 꺼짐",
+    "ar": "تم إيقاف L1"
   },
   "highlight": true,
   "args": [

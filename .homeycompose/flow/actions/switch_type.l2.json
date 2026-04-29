@@ -11,7 +11,8 @@
     "sv": "Ställ in L2-brytartyp",
     "pl": "Ustaw typ przełącznika L2",
     "ru": "Установить тип переключателя L2",
-    "ko": "L2 스위치 유형 설정"
+    "ko": "L2 스위치 유형 설정",
+    "ar": "تعيين نوع مفتاح L2"
   },
   "titleFormatted": {
     "en": "Set L2 Switch Type to [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ in L2-brytartyp till [[val]]",
     "pl": "Ustaw typ przełącznika L2 na [[val]]",
     "ru": "Установить тип переключателя L2 на [[val]]",
-    "ko": "L2 스위치 유형을 [[val]]로 설정"
+    "ko": "L2 스위치 유형을 [[val]]로 설정",
+    "ar": "تعيين نوع مفتاح L2 إلى [[val]]"
   },
   "highlight": true,
   "args": [
@@ -52,7 +54,8 @@
             "sv": "växla",
             "pl": "przełącz",
             "ru": "переключить",
-            "ko": "전환"
+            "ko": "전환",
+            "ar": "تبديل"
           }
         },
         {
@@ -69,7 +72,8 @@
             "sv": "Tillstånd",
             "pl": "Stan",
             "ru": "Состояние",
-            "ko": "상태"
+            "ko": "상태",
+            "ar": "حالة"
           }
         },
         {
@@ -86,7 +90,8 @@
             "sv": "Momentant",
             "pl": "Chwilowy",
             "ru": "Моментальный",
-            "ko": "순간적인"
+            "ko": "순간적인",
+            "ar": "لحظي"
           }
         }
       ]

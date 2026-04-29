@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "The preset changed",
-    "nl": "Het preset is gewijzigd",
+    "nl": "De preset is gewijzigd",
     "da": "Forudindstillingen blev ændret",
     "de": "Das Preset wurde geändert",
     "es": "El ajuste preestablecido cambió",
@@ -11,7 +11,8 @@
     "sv": "Förinställningen ändrades",
     "pl": "Ustawienie wstępne zostało zmienione",
     "ru": "Предустановка изменена",
-    "ko": "사전 설정이 변경되었습니다"
+    "ko": "사전 설정이 변경되었습니다",
+    "ar": "تغير الإعداد المسبق"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "Förinställning",
         "pl": "Ustawienie wstępne",
         "ru": "Предустановка",
-        "ko": "사전 설정"
+        "ko": "사전 설정",
+        "ar": "الإعداد المسبق"
       },
       "example": "auto"
     }

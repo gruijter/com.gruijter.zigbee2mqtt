@@ -11,7 +11,8 @@
     "sv": "Ställ in Förinställning",
     "pl": "Ustawienie Presetu",
     "ru": "Установить Пресет",
-    "ko": "프리셋 설정"
+    "ko": "프리셋 설정",
+    "ar": "تعيين الإعداد المسبق"
   },
   "titleFormatted": {
     "en": "Set Preset to [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ in Förinställning till [[val]]",
     "pl": "Ustawienie Presetu na [[val]]",
     "ru": "Установить Пресет на [[val]]",
-    "ko": "프리셋을 [[val]]로 설정"
+    "ko": "프리셋을 [[val]]로 설정",
+    "ar": "تعيين الإعداد المسبق إلى [[val]]"
   },
   "highlight": true,
   "args": [
@@ -52,7 +54,8 @@
             "sv": "Automatisk",
             "pl": "Automatyczny",
             "ru": "Автоматический",
-            "ko": "자동"
+            "ko": "자동",
+            "ar": "تلقائي"
           }
         },
         {
@@ -69,7 +72,8 @@
             "sv": "Manuell",
             "pl": "Ręczny",
             "ru": "Ручной",
-            "ko": "수동"
+            "ko": "수동",
+            "ar": "يدوي"
           }
         },
         {
@@ -86,7 +90,8 @@
             "sv": "Helgdag",
             "pl": "Wakacje",
             "ru": "Праздник",
-            "ko": "휴가"
+            "ko": "휴가",
+            "ar": "عطلة"
           }
         }
       ]

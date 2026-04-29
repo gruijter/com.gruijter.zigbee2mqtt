@@ -12,21 +12,11 @@
     "sv": "Text",
     "pl": "Tekst",
     "ru": "Текст",
-    "ko": "텍스트"
+    "ko": "텍스트",
+    "ar": "نص"
   },
   "units": {
-    "en": "",
-    "nl": "",
-    "da": "",
-    "de": "",
-    "es": "",
-    "fr": "",
-    "it": "",
-    "no": "",
-    "sv": "",
-    "pl": "",
-    "ru": "",
-    "ko": ""
+    "en": ""
   },
   "getable": true,
   "setable": false,

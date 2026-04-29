@@ -19,7 +19,8 @@
     "sv": "Zigbee2MQTT",
     "pl": "Zigbee2MQTT",
     "ru": "Zigbee2MQTT",
-    "ko": "Zigbee2MQTT"
+    "ko": "Zigbee2MQTT",
+    "ar": "Zigbee2MQTT"
   },
   "description": {
     "en": "Use Zigbee devices via MQTT",
@@ -33,7 +34,8 @@
     "sv": "Använd Zigbee-enheter via MQTT",
     "pl": "Użyj urządzeń Zigbee przez MQTT",
     "ru": "Используйте устройства Zigbee через MQTT",
-    "ko": "MQTT를 통해 Zigbee 장치 사용"
+    "ko": "MQTT를 통해 Zigbee 장치 사용",
+    "ar": "استخدم أجهزة Zigbee عبر MQTT"
   },
   "category": [
     "tools"
@@ -84,6 +86,10 @@
       "MQTT"
     ],
     "ko": [
+      "Zigbee",
+      "MQTT"
+    ],
+    "ar": [
       "Zigbee",
       "MQTT"
     ]
@@ -156,9 +162,9 @@
           "it": "L'azione è cambiata",
           "no": "Handlingen endret",
           "sv": "Åtgärden ändrades",
-          "pl": "Działanie zostało zmienione",
+          "pl": "Akcja została zmieniona",
           "ru": "Действие изменилось",
-          "ko": "동작이 변경되었습니다"
+          "ko": "작업이 변경되었습니다"
         },
         "highlight": true,
         "args": [
@@ -182,9 +188,9 @@
               "it": "Azione",
               "no": "Handling",
               "sv": "Åtgärd",
-              "pl": "Działanie",
+              "pl": "Akcja",
               "ru": "Действие",
-              "ko": "동작"
+              "ko": "작업"
             },
             "example": "off"
           }
@@ -3207,10 +3213,34 @@
     "actions": [
       {
         "title": {
-          "en": "Set alarm sound"
+          "en": "Set alarm sound",
+          "nl": "Stel alarmgeluid in",
+          "da": "Indstil alarmlyd",
+          "de": "Alarmton einstellen",
+          "es": "Configurar sonido de alarma",
+          "fr": "Définir le son d'alarme",
+          "it": "Imposta suono di allarme",
+          "no": "Angi alarmlyd",
+          "sv": "Ställ in larmljud",
+          "pl": "Ustaw dźwięk alarmu",
+          "ru": "Установить звук сигнализации",
+          "ko": "알람 소리 설정",
+          "ar": "ضبط صوت الإنذار"
         },
         "titleFormatted": {
-          "en": "Set alarm sound to [[val]]"
+          "en": "Set alarm sound to [[val]]",
+          "nl": "Stel alarmgeluid in op [[val]]",
+          "da": "Indstil alarmlyd til [[val]]",
+          "de": "Alarmton auf [[val]] einstellen",
+          "es": "Configurar sonido de alarma en [[val]]",
+          "fr": "Définir le son d'alarme sur [[val]]",
+          "it": "Imposta suono di allarme su [[val]]",
+          "no": "Angi alarmlyd til [[val]]",
+          "sv": "Ställ in larmljud till [[val]]",
+          "pl": "Ustaw dźwięk alarmu na [[val]]",
+          "ru": "Установить звук сигнализации на [[val]]",
+          "ko": "알람 소리를 [[val]]로 설정",
+          "ar": "ضبط صوت الإنذار إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -3226,25 +3256,73 @@
               {
                 "id": "stop",
                 "title": {
-                  "en": "Stop"
+                  "en": "Stop",
+                  "nl": "Stop",
+                  "da": "Stop",
+                  "de": "Stopp",
+                  "es": "Detener",
+                  "fr": "Arrêter",
+                  "it": "Ferma",
+                  "no": "Stopp",
+                  "sv": "Stoppa",
+                  "pl": "Zatrzymaj",
+                  "ru": "Стоп",
+                  "ko": "중지",
+                  "ar": "إيقاف"
                 }
               },
               {
                 "id": "pre_alarm",
                 "title": {
-                  "en": "Pre alarm"
+                  "en": "Pre alarm",
+                  "nl": "Voor-alarm",
+                  "da": "Præ-alarm",
+                  "de": "Voralarm",
+                  "es": "Prealarma",
+                  "fr": "Pré-alarme",
+                  "it": "Pre-allarme",
+                  "no": "Forhåndsalarm",
+                  "sv": "Förlarm",
+                  "pl": "Pre-alarm",
+                  "ru": "Предварительная тревога",
+                  "ko": "사전 알람",
+                  "ar": "إنذار مسبق"
                 }
               },
               {
                 "id": "fire",
                 "title": {
-                  "en": "Fire"
+                  "en": "Fire",
+                  "nl": "Brand",
+                  "da": "Brand",
+                  "de": "Feuer",
+                  "es": "Incendio",
+                  "fr": "Incendie",
+                  "it": "Fuoco",
+                  "no": "Brann",
+                  "sv": "Brand",
+                  "pl": "Pożar",
+                  "ru": "Пожар",
+                  "ko": "화재",
+                  "ar": "حريق"
                 }
               },
               {
                 "id": "burglar",
                 "title": {
-                  "en": "Burglar"
+                  "en": "Burglar",
+                  "nl": "Inbraak",
+                  "da": "Indbrud",
+                  "de": "Einbruch",
+                  "es": "Robo",
+                  "fr": "Intrusion",
+                  "it": "Furto",
+                  "no": "Innbrudd",
+                  "sv": "Inbrott",
+                  "pl": "Włamanie",
+                  "ru": "Взлом",
+                  "ko": "도난",
+                  "ar": "سطو"
                 }
               }
             ]
@@ -3265,7 +3343,8 @@
           "sv": "Ställ in färgstartbeteende",
           "pl": "Ustaw zachowanie przy włączaniu koloru",
           "ru": "Установить цветовое поведение при включении",
-          "ko": "색상 전원 켜기 동작 설정"
+          "ko": "색상 전원 켜기 동작 설정",
+          "ar": "تعيين سلوك تشغيل اللون"
         },
         "titleFormatted": {
           "en": "Set Color Power On Behavior to [[val]]",
@@ -3279,7 +3358,8 @@
           "sv": "Ställ in färgstartbeteende till [[val]]",
           "pl": "Ustaw zachowanie przy włączaniu koloru jako [[val]]",
           "ru": "Установить цветовое поведение при включении на [[val]]",
-          "ko": "[[val]] 색상 전원 켜기 동작 설정"
+          "ko": "[[val]] 색상 전원 켜기 동작 설정",
+          "ar": "تعيين سلوك تشغيل اللون إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -3306,7 +3386,8 @@
                   "sv": "Initial",
                   "pl": "Początkowy",
                   "ru": "Начальный",
-                  "ko": "초기"
+                  "ko": "초기",
+                  "ar": "أولي"
                 }
               },
               {
@@ -3323,7 +3404,8 @@
                   "sv": "Anpassad",
                   "pl": "Dostosowany",
                   "ru": "Настроенный",
-                  "ko": "사용자 지정"
+                  "ko": "사용자 지정",
+                  "ar": "مخصص"
                 }
               },
               {
@@ -3340,7 +3422,8 @@
                   "sv": "Föregående",
                   "pl": "Poprzedni",
                   "ru": "Предыдущий",
-                  "ko": "이전"
+                  "ko": "이전",
+                  "ar": "سابق"
                 }
               }
             ]
@@ -3361,7 +3444,8 @@
           "sv": "Ställ in en anpassad payload",
           "pl": "Ustaw niestandardowy ładunek",
           "ru": "Установить пользовательскую нагрузку",
-          "ko": "사용자 지정 페이로드 설정"
+          "ko": "사용자 지정 페이로드 설정",
+          "ar": "تعيين حمولة مخصصة"
         },
         "titleFormatted": {
           "en": "Set payload to [[val]]",
@@ -3375,7 +3459,8 @@
           "sv": "Ställ in nyttolast till [[val]]",
           "pl": "Ustaw ładunek na [[val]]",
           "ru": "Установить нагрузку на [[val]]",
-          "ko": "[[val]]로 페이로드 설정"
+          "ko": "[[val]]로 페이로드 설정",
+          "ar": "تعيين الحمولة إلى [[val]]"
         },
         "hint": {
           "en": "Place text in quotation marks:\n{\"child_lock\": \"LOCK\"}.\nUse numbers without quotation marks:\n{ \"current_heating_setpoint\": 21 }",
@@ -3389,7 +3474,8 @@
           "sv": "Placera texten i citattecken:\n{\"child_lock\": \"LOCK\"}.\nAnvänd siffror utan citattecken:\n{ \"current_heating_setpoint\": 21 }",
           "pl": "Umieść tekst w cudzysłowie:\n{\"child_lock\": \"LOCK\"}.\nUżywaj liczb bez cudzysłowu:\n{ \"current_heating_setpoint\": 21 }",
           "ru": "Поместите текст в кавычки:\n{\"child_lock\": \"LOCK\"}.\nИспользуйте числа без кавычек:\n{ \"current_heating_setpoint\": 21 }",
-          "ko": "텍스트를 큰따옴표로 묶으세요:\n{\"child_lock\": \"LOCK\"}.\n숫자는 따옴표 없이 사용하세요:\n{ \"current_heating_setpoint\": 21 }"
+          "ko": "텍스트를 큰따옴표로 묶으세요:\n{\"child_lock\": \"LOCK\"}.\n숫자는 따옴표 없이 사용하세요:\n{ \"current_heating_setpoint\": 21 }",
+          "ar": "ضع النص بين علامتي اقتباس:\n{\"child_lock\": \"LOCK\"}.\nاستخدم الأرقام بدون علامات اقتباس:\n{ \"current_heating_setpoint\": 21 }"
         },
         "args": [
           {
@@ -3412,7 +3498,8 @@
               "sv": "Payload",
               "pl": "Payload",
               "ru": "Нагрузка",
-              "ko": "페이로드"
+              "ko": "페이로드",
+              "ar": "حمولة"
             },
             "placeholder": {
               "en": "e.g. { \"current_heating_setpoint\": 21 }",
@@ -3426,7 +3513,8 @@
               "sv": "t.ex. { \"current_heating_setpoint\": 21 }",
               "pl": "np. { \"current_heating_setpoint\": 21 }",
               "ru": "напр. { \"current_heating_setpoint\": 21 }",
-              "ko": "예: { \"current_heating_setpoint\": 21 }"
+              "ko": "예: { \"current_heating_setpoint\": 21 }",
+              "ar": "على سبيل المثال { \"current_heating_setpoint\": 21 }"
             }
           }
         ],
@@ -3445,7 +3533,8 @@
           "sv": "Dimma L1",
           "pl": "Ściemnij L1",
           "ru": "Затемнить L1",
-          "ko": "디밍 L1"
+          "ko": "디밍 L1",
+          "ar": "تعتيم L1"
         },
         "titleFormatted": {
           "en": "Dim L1 to [[val]]",
@@ -3459,7 +3548,8 @@
           "sv": "Dimma L1 till [[val]]",
           "pl": "Ściemnij L1 do [[val]]",
           "ru": "Затемнить L1 до [[val]]",
-          "ko": "디밍 L1 [[val]]로"
+          "ko": "디밍 L1 [[val]]로",
+          "ar": "تعتيم L1 إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -3495,7 +3585,8 @@
           "sv": "Dämpa L2",
           "pl": "Przyciemnij L2",
           "ru": "Затемнить L2",
-          "ko": "디밍 L2"
+          "ko": "디밍 L2",
+          "ar": "تعتيم L2"
         },
         "titleFormatted": {
           "en": "Dim L2 to [[val]]",
@@ -3509,7 +3600,8 @@
           "sv": "Dämpa L2 till [[val]]",
           "pl": "Przyciemnij L2 do [[val]]",
           "ru": "Затемнить L2 до [[val]]",
-          "ko": "디밍 L2 [[val]]로"
+          "ko": "디밍 L2 [[val]]로",
+          "ar": "تعتيم L2 إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -3545,7 +3637,8 @@
           "sv": "Ställ in effekt",
           "pl": "Ustaw efekt",
           "ru": "Установить эффект",
-          "ko": "효과 설정"
+          "ko": "효과 설정",
+          "ar": "تعيين التأثير"
         },
         "titleFormatted": {
           "en": "Set Effect to [[val]]",
@@ -3559,7 +3652,8 @@
           "sv": "Sätt Effekt till [[val]]",
           "pl": "Ustaw Efekt na [[val]]",
           "ru": "Установить Эффект на [[val]]",
-          "ko": "효과를 [[val]]로 설정"
+          "ko": "효과를 [[val]]로 설정",
+          "ar": "تعيين التأثير إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -3586,7 +3680,8 @@
                   "sv": "Blinka",
                   "pl": "Miganie",
                   "ru": "Мигание",
-                  "ko": "깜박임"
+                  "ko": "깜박임",
+                  "ar": "وميض"
                 }
               },
               {
@@ -3603,7 +3698,8 @@
                   "sv": "Andas",
                   "pl": "Oddychać",
                   "ru": "Дышать",
-                  "ko": "호흡하다"
+                  "ko": "호흡하다",
+                  "ar": "تنفس"
                 }
               },
               {
@@ -3620,7 +3716,8 @@
                   "sv": "Okej",
                   "pl": "Okej",
                   "ru": "Окей",
-                  "ko": "확인"
+                  "ko": "확인",
+                  "ar": "حسنا"
                 }
               },
               {
@@ -3637,7 +3734,8 @@
                   "sv": "Kanaländring",
                   "pl": "Zmiana kanału",
                   "ru": "Смена канала",
-                  "ko": "채널 변경"
+                  "ko": "채널 변경",
+                  "ar": "تغيير القناة"
                 }
               },
               {
@@ -3654,7 +3752,8 @@
                   "sv": "Avsluta effekt",
                   "pl": "Zakończ efekt",
                   "ru": "Завершить эффект",
-                  "ko": "효과 종료"
+                  "ko": "효과 종료",
+                  "ar": "إنهاء التأثير"
                 }
               },
               {
@@ -3671,7 +3770,8 @@
                   "sv": "Stoppa effekt",
                   "pl": "Zatrzymaj efekt",
                   "ru": "Остановить эффект",
-                  "ko": "효과 중지"
+                  "ko": "효과 중지",
+                  "ar": "إيقاف التأثير"
                 }
               },
               {
@@ -3688,7 +3788,8 @@
                   "sv": "Färgslinga",
                   "pl": "Pętla kolorów",
                   "ru": "Цветовой цикл",
-                  "ko": "색상 루프"
+                  "ko": "색상 루프",
+                  "ar": "دورة الألوان"
                 }
               },
               {
@@ -3705,7 +3806,8 @@
                   "sv": "Stoppa färgslinga",
                   "pl": "Zatrzymaj pętlę kolorów",
                   "ru": "Остановить цветовой цикл",
-                  "ko": "색상 루프 중지"
+                  "ko": "색상 루프 중지",
+                  "ar": "إيقاف دورة الألوان"
                 }
               }
             ]
@@ -3726,7 +3828,8 @@
           "sv": "Sätt fläktläge",
           "pl": "Ustaw tryb wentylatora",
           "ru": "Установить режим вентилятора",
-          "ko": "팬 모드 설정"
+          "ko": "팬 모드 설정",
+          "ar": "ضبط وضع المروحة"
         },
         "titleFormatted": {
           "en": "Set fan mode to [[val]]",
@@ -3740,7 +3843,8 @@
           "sv": "Sätt fläktläge till [[val]]",
           "pl": "Ustaw tryb wentylatora na [[val]]",
           "ru": "Установить режим вентилятора на [[val]]",
-          "ko": "팬 모드를 [[val]]으로 설정"
+          "ko": "팬 모드를 [[val]]으로 설정",
+          "ar": "ضبط وضع المروحة على [[val]]"
         },
         "highlight": true,
         "args": [
@@ -3767,7 +3871,8 @@
                   "sv": "Av",
                   "pl": "Wyłączony",
                   "ru": "Выкл",
-                  "ko": "꺼짐"
+                  "ko": "꺼짐",
+                  "ar": "إيقاف"
                 }
               },
               {
@@ -3784,7 +3889,8 @@
                   "sv": "Låg",
                   "pl": "Niski",
                   "ru": "Низкий",
-                  "ko": "낮은"
+                  "ko": "낮은",
+                  "ar": "منخفض"
                 }
               },
               {
@@ -3801,7 +3907,8 @@
                   "sv": "Medium",
                   "pl": "Średni",
                   "ru": "Средний",
-                  "ko": "중간"
+                  "ko": "중간",
+                  "ar": "متوسط"
                 }
               },
               {
@@ -3818,7 +3925,8 @@
                   "sv": "Hög",
                   "pl": "Wysoki",
                   "ru": "Высокий",
-                  "ko": "높은"
+                  "ko": "높은",
+                  "ar": "عالي"
                 }
               },
               {
@@ -3835,7 +3943,8 @@
                   "sv": "På",
                   "pl": "Włączony",
                   "ru": "Вкл",
-                  "ko": "켬"
+                  "ko": "켬",
+                  "ar": "تشغيل"
                 }
               },
               {
@@ -3852,7 +3961,8 @@
                   "sv": "Automatisk",
                   "pl": "Auto",
                   "ru": "Авто",
-                  "ko": "자동"
+                  "ko": "자동",
+                  "ar": "تلقائي"
                 }
               },
               {
@@ -3869,7 +3979,8 @@
                   "sv": "Smart",
                   "pl": "Inteligentny",
                   "ru": "Умный",
-                  "ko": "스마트"
+                  "ko": "스마트",
+                  "ar": "ذكي"
                 }
               }
             ]
@@ -3890,7 +4001,8 @@
           "sv": "Ställ in indikatormodus",
           "pl": "Ustaw tryb wskaźnika",
           "ru": "Установить режим индикатора",
-          "ko": "지시자 모드 설정"
+          "ko": "지시자 모드 설정",
+          "ar": "ضبط وضع المؤشر"
         },
         "titleFormatted": {
           "en": "Set Indicator Mode to [[val]]",
@@ -3904,7 +4016,8 @@
           "sv": "Ställ in indikatormodus till [[val]]",
           "pl": "Ustaw tryb wskaźnika na [[val]]",
           "ru": "Установить режим индикатора на [[val]]",
-          "ko": "[[val]]로 지시자 모드 설정"
+          "ko": "[[val]]로 지시자 모드 설정",
+          "ar": "ضبط وضع المؤشر على [[val]]"
         },
         "highlight": true,
         "args": [
@@ -3931,7 +4044,8 @@
                   "sv": "Av",
                   "pl": "Wyłączony",
                   "ru": "Выкл",
-                  "ko": "끔"
+                  "ko": "끔",
+                  "ar": "إيقاف"
                 }
               },
               {
@@ -3948,7 +4062,8 @@
                   "sv": "Av/På",
                   "pl": "Wyłączony/Włączony",
                   "ru": "Выкл/Вкл",
-                  "ko": "끔/켬"
+                  "ko": "끔/켬",
+                  "ar": "إيقاف/تشغيل"
                 }
               },
               {
@@ -3965,7 +4080,8 @@
                   "sv": "På/Av",
                   "pl": "Włączony/Wyłączony",
                   "ru": "Вкл/Выкл",
-                  "ko": "켬/끔"
+                  "ko": "켬/끔",
+                  "ar": "تشغيل/إيقاف"
                 }
               },
               {
@@ -3982,7 +4098,8 @@
                   "sv": "På",
                   "pl": "Włączony",
                   "ru": "Вкл",
-                  "ko": "켬"
+                  "ko": "켬",
+                  "ar": "تشغيل"
                 }
               }
             ]
@@ -4003,7 +4120,8 @@
           "sv": "Tillåt anslutning på eller av",
           "pl": "Zezwól na dołączanie włączone lub wyłączone",
           "ru": "Разрешить подключение Вкл или Выкл",
-          "ko": "가입 허용 켬 또는 끔"
+          "ko": "가입 허용 켬 또는 끔",
+          "ar": "السماح بالانضمام تشغيل أو إيقاف"
         },
         "titleFormatted": {
           "en": "Allow device joining [[val]]",
@@ -4017,7 +4135,8 @@
           "sv": "Tillåt enhetsanslutning [[val]]",
           "pl": "Zezwól na dołączanie urządzenia [[val]]",
           "ru": "Разрешить подключение устройства [[val]]",
-          "ko": "장치 가입 허용 [[val]]"
+          "ko": "장치 가입 허용 [[val]]",
+          "ar": "السماح بانضمام الجهاز [[val]]"
         },
         "hint": {
           "en": "When On, the Zigbee2MQTT bridge will allow joining for 5 minutes.",
@@ -4031,7 +4150,8 @@
           "sv": "När det är på, kommer Zigbee2MQTT bridge att tillåta anslutning i 5 minuter.",
           "pl": "Gdy jest włączone, bridge Zigbee2MQTT pozwoli na dołączanie przez 5 minut.",
           "ru": "Когда включен, мост Zigbee2MQTT разрешит подключение на 5 минут.",
-          "ko": "켜져 있을 때, Zigbee2MQTT 브리지는 5분 동안 가입을 허용합니다."
+          "ko": "켜져 있을 때, Zigbee2MQTT 브리지는 5분 동안 가입을 허용합니다.",
+          "ar": "عند التشغيل، سيسمح جسر Zigbee2MQTT بالانضمام لمدة 5 دقائق."
         },
         "highlight": true,
         "args": [
@@ -4055,7 +4175,8 @@
               "sv": "På",
               "pl": "Włączone",
               "ru": "Вкл",
-              "ko": "켜기"
+              "ko": "켜기",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -4074,7 +4195,8 @@
           "sv": "Slå på eller av barnlåset",
           "pl": "Włącz lub wyłącz blokadę rodzicielską",
           "ru": "Включить или выключить детский замок",
-          "ko": "아동 잠금 장치를 켜거나 끄세요"
+          "ko": "아동 잠금 장치를 켜거나 끄세요",
+          "ar": "تشغيل أو إيقاف قفل الأطفال"
         },
         "titleFormatted": {
           "en": "Turn Child Lock on: [[val]]",
@@ -4088,7 +4210,8 @@
           "sv": "Slå på barnlås: [[val]]",
           "pl": "Włącz blokadę rodzicielską: [[val]]",
           "ru": "Включить детский замок: [[val]]",
-          "ko": "아동 잠금 장치 켜기: [[val]]"
+          "ko": "아동 잠금 장치 켜기: [[val]]",
+          "ar": "تشغيل قفل الأطفال: [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4112,7 +4235,8 @@
               "sv": "På",
               "pl": "Włączone",
               "ru": "Включено",
-              "ko": "켜짐"
+              "ko": "켜짐",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -4131,7 +4255,8 @@
           "sv": "Ställ in extern luftfuktighet",
           "pl": "Ustaw wilgotność zewnętrzną",
           "ru": "Установить внешнюю влажность",
-          "ko": "외부 습도 설정"
+          "ko": "외부 습도 설정",
+          "ar": "تعيين الرطوبة الخارجية"
         },
         "titleFormatted": {
           "en": "Set external humidity to [[val]]",
@@ -4145,7 +4270,8 @@
           "sv": "Ställ in extern luftfuktighet till [[val]]",
           "pl": "Ustaw wilgotność zewnętrzną na [[val]]",
           "ru": "Установить внешнюю влажность на [[val]]",
-          "ko": "외부 습도를 [[val]]로 설정"
+          "ko": "외부 습도를 [[val]]로 설정",
+          "ar": "تعيين الرطوبة الخارجية إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4174,7 +4300,8 @@
           "sv": "Ställ in extern temperatur",
           "pl": "Ustaw temperaturę zewnętrzną",
           "ru": "Установить внешнюю температуру",
-          "ko": "외부 온도 설정"
+          "ko": "외부 온도 설정",
+          "ar": "تعيين الحرارة الخارجية"
         },
         "titleFormatted": {
           "en": "Set external temperature to [[val]]",
@@ -4188,7 +4315,8 @@
           "sv": "Ställ in extern temperatur till [[val]]",
           "pl": "Ustaw temperaturę zewnętrzną na [[val]]",
           "ru": "Установить внешнюю температуру на [[val]]",
-          "ko": "외부 온도를 [[val]]로 설정"
+          "ko": "외부 온도를 [[val]]로 설정",
+          "ar": "تعيين الحرارة الخارجية إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4217,7 +4345,8 @@
           "sv": "Slå på eller av bakgrundsbelysning",
           "pl": "Włącz lub wyłącz podświetlenie",
           "ru": "Включить или выключить подсветку",
-          "ko": "백라이트 켜기 또는 끄기"
+          "ko": "백라이트 켜기 또는 끄기",
+          "ar": "تشغيل أو إيقاف الإضاءة الخلفية"
         },
         "titleFormatted": {
           "en": "Backlight [[val]]",
@@ -4231,7 +4360,8 @@
           "sv": "Bakgrundsbelysning [[val]]",
           "pl": "Podświetlenie [[val]]",
           "ru": "Подсветка [[val]]",
-          "ko": "백라이트 [[val]]"
+          "ko": "백라이트 [[val]]",
+          "ar": "الإضاءة الخلفية [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4255,7 +4385,8 @@
               "sv": "På",
               "pl": "Włączone",
               "ru": "Включено",
-              "ko": "켜짐"
+              "ko": "켜짐",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -4274,7 +4405,8 @@
           "sv": "Slå på eller av botten",
           "pl": "Włącz lub wyłącz dolny",
           "ru": "Включить или выключить низ",
-          "ko": "아래쪽 켜기 또는 끄기"
+          "ko": "아래쪽 켜기 또는 끄기",
+          "ar": "تشغيل أو إيقاف الجزء السفلي"
         },
         "titleFormatted": {
           "en": "Switch Bottom [[val]]",
@@ -4288,7 +4420,8 @@
           "sv": "Växla botten [[val]]",
           "pl": "Przełącz dolny [[val]]",
           "ru": "Переключить низ [[val]]",
-          "ko": "아래쪽 전환 [[val]]"
+          "ko": "아래쪽 전환 [[val]]",
+          "ar": "التبديل السفلي [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4312,7 +4445,8 @@
               "sv": "På",
               "pl": "Włączone",
               "ru": "Включено",
-              "ko": "켬"
+              "ko": "켬",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -4331,7 +4465,8 @@
           "sv": "Slå på eller av centrumet",
           "pl": "Włącz lub wyłącz centrum",
           "ru": "Включить или выключить центр",
-          "ko": "센터 켜기 또는 끄기"
+          "ko": "센터 켜기 또는 끄기",
+          "ar": "تشغيل أو إيقاف المركز"
         },
         "titleFormatted": {
           "en": "Switch Center [[val]]",
@@ -4345,7 +4480,8 @@
           "sv": "Växla centrum [[val]]",
           "pl": "Przełącz centrum [[val]]",
           "ru": "Переключить центр [[val]]",
-          "ko": "센터 전환 [[val]]"
+          "ko": "센터 전환 [[val]]",
+          "ar": "تبديل المركز [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4369,7 +4505,8 @@
               "sv": "På",
               "pl": "Włączone",
               "ru": "Включено",
-              "ko": "켬"
+              "ko": "켬",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -4388,7 +4525,8 @@
           "sv": "Slå på eller av centrum vänster",
           "pl": "Włącz lub wyłącz środek lewy",
           "ru": "Включить или выключить центр лево",
-          "ko": "중앙 왼쪽 켜기 또는 끄기"
+          "ko": "중앙 왼쪽 켜기 또는 끄기",
+          "ar": "تشغيل أو إيقاف الوسط الأيسر"
         },
         "titleFormatted": {
           "en": "Switch Center Left [[val]]",
@@ -4402,7 +4540,8 @@
           "sv": "Växla centrum vänster [[val]]",
           "pl": "Przełącz środek lewy [[val]]",
           "ru": "Переключить центр лево [[val]]",
-          "ko": "중앙 왼쪽 전환 [[val]]"
+          "ko": "중앙 왼쪽 전환 [[val]]",
+          "ar": "تبديل الوسط الأيسر [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4426,7 +4565,8 @@
               "sv": "På",
               "pl": "Włączone",
               "ru": "Включено",
-              "ko": "켬"
+              "ko": "켬",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -4445,7 +4585,8 @@
           "sv": "Slå på eller av centrum höger",
           "pl": "Włącz lub wyłącz środek prawy",
           "ru": "Включить или выключить центр право",
-          "ko": "중앙 오른쪽 켜기 또는 끄기"
+          "ko": "중앙 오른쪽 켜기 또는 끄기",
+          "ar": "تشغيل أو إيقاف الوسط الأيمن"
         },
         "titleFormatted": {
           "en": "Switch Center Right [[val]]",
@@ -4459,7 +4600,8 @@
           "sv": "Växla centrum höger [[val]]",
           "pl": "Przełącz środek prawy [[val]]",
           "ru": "Переключить центр право [[val]]",
-          "ko": "중앙 오른쪽 전환 [[val]]"
+          "ko": "중앙 오른쪽 전환 [[val]]",
+          "ar": "تبديل الوسط الأيمن [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4483,7 +4625,8 @@
               "sv": "På",
               "pl": "Włączone",
               "ru": "Включено",
-              "ko": "켬"
+              "ko": "켬",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -4491,10 +4634,34 @@
       },
       {
         "title": {
-          "en": "Switch Heartbeat On or Off"
+          "en": "Switch Heartbeat On or Off",
+          "nl": "Schakel hartslag in of uit",
+          "da": "Tænd eller sluk hjerteslag",
+          "de": "Herzschlag ein- oder ausschalten",
+          "es": "Activar o desactivar latido",
+          "fr": "Activer ou désactiver le battement de cœur",
+          "it": "Attiva o disattiva battito cardiaco",
+          "no": "Slå hjerteslag på eller av",
+          "sv": "Slå på eller av hjärtslag",
+          "pl": "Włącz lub wyłącz puls",
+          "ru": "Включить или выключить сердцебиение",
+          "ko": "하트비트 켜기 또는 끄기",
+          "ar": "تشغيل أو إيقاف نبضات القلب"
         },
         "titleFormatted": {
-          "en": "Switch Heartbeat [[val]]"
+          "en": "Switch Heartbeat [[val]]",
+          "nl": "Schakel hartslag [[val]]",
+          "da": "Skift hjerteslag [[val]]",
+          "de": "Herzschlag schalten [[val]]",
+          "es": "Cambiar latido [[val]]",
+          "fr": "Basculer le battement de cœur [[val]]",
+          "it": "Cambia battito cardiaco [[val]]",
+          "no": "Bytt hjerteslag [[val]]",
+          "sv": "Växla hjärtslag [[val]]",
+          "pl": "Przełącz puls [[val]]",
+          "ru": "Переключить сердцебиение [[val]]",
+          "ko": "하트비트 [[val]]",
+          "ar": "تبديل نبضات القلب [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4507,7 +4674,19 @@
             "type": "checkbox",
             "name": "val",
             "title": {
-              "en": "On"
+              "en": "On",
+              "nl": "Aan",
+              "da": "Til",
+              "de": "Ein",
+              "es": "Encendido",
+              "fr": "Allumé",
+              "it": "Acceso",
+              "no": "På",
+              "sv": "På",
+              "pl": "Włączone",
+              "ru": "Включено",
+              "ko": "켜짐",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -4526,7 +4705,8 @@
           "sv": "Slå på eller av indikator",
           "pl": "Przełącz wskaźnik Włącz lub Wyłącz",
           "ru": "Включить или выключить индикатор",
-          "ko": "표시기 켜기 또는 끄기"
+          "ko": "표시기 켜기 또는 끄기",
+          "ar": "تشغيل أو إيقاف المؤشر"
         },
         "titleFormatted": {
           "en": "Switch indicator [[val]]",
@@ -4540,7 +4720,8 @@
           "sv": "Slå på indikator [[val]]",
           "pl": "Przełącz wskaźnik [[val]]",
           "ru": "Переключить индикатор [[val]]",
-          "ko": "표시기 [[val]]"
+          "ko": "표시기 [[val]]",
+          "ar": "تبديل المؤشر [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4564,7 +4745,8 @@
               "sv": "På",
               "pl": "Włączony",
               "ru": "Вкл.",
-              "ko": "켜기"
+              "ko": "켜기",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -4583,7 +4765,8 @@
           "sv": "Slå på eller av L1",
           "pl": "Włącz lub wyłącz L1",
           "ru": "Включить или выключить L1",
-          "ko": "L1 켜기 또는 끄기"
+          "ko": "L1 켜기 또는 끄기",
+          "ar": "تشغيل أو إيقاف L1"
         },
         "titleFormatted": {
           "en": "Switch L1 [[val]]",
@@ -4597,7 +4780,8 @@
           "sv": "Byt L1 [[val]]",
           "pl": "Przełącz L1 [[val]]",
           "ru": "Переключить L1 [[val]]",
-          "ko": "L1 [[val]] 전환"
+          "ko": "L1 [[val]] 전환",
+          "ar": "تبديل L1 [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4621,7 +4805,8 @@
               "sv": "På",
               "pl": "Włączony",
               "ru": "Вкл",
-              "ko": "켜짐"
+              "ko": "켜짐",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -4640,7 +4825,8 @@
           "sv": "Slå på eller av L2",
           "pl": "Włącz lub wyłącz L2",
           "ru": "Включить или выключить L2",
-          "ko": "L2 켜기 또는 끄기"
+          "ko": "L2 켜기 또는 끄기",
+          "ar": "تشغيل أو إيقاف L2"
         },
         "titleFormatted": {
           "en": "Switch L2 [[val]]",
@@ -4654,7 +4840,8 @@
           "sv": "Ändra L2 [[val]]",
           "pl": "Przełącz L2 [[val]]",
           "ru": "Переключить L2 [[val]]",
-          "ko": "L2 [[val]] 전환"
+          "ko": "L2 [[val]] 전환",
+          "ar": "تبديل L2 [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4678,7 +4865,8 @@
               "sv": "På",
               "pl": "Włączony",
               "ru": "Вкл.",
-              "ko": "켜짐"
+              "ko": "켜짐",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -4697,7 +4885,8 @@
           "sv": "Slå på eller stänga av L3",
           "pl": "Włącz lub wyłącz L3",
           "ru": "Включить или выключить L3",
-          "ko": "L3 켜기 또는 끄기"
+          "ko": "L3 켜기 또는 끄기",
+          "ar": "تشغيل أو إيقاف L3"
         },
         "titleFormatted": {
           "en": "Switch L3 [[val]]",
@@ -4711,7 +4900,8 @@
           "sv": "Byt L3 [[val]]",
           "pl": "Przełącz L3 [[val]]",
           "ru": "Переключить L3 [[val]]",
-          "ko": "L3 [[val]] 전환"
+          "ko": "L3 [[val]] 전환",
+          "ar": "تبديل L3 [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4735,7 +4925,8 @@
               "sv": "På",
               "pl": "Włączone",
               "ru": "Вкл",
-              "ko": "켜기"
+              "ko": "켜기",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -4754,7 +4945,8 @@
           "sv": "Slå på eller av L4",
           "pl": "Włącz lub wyłącz L4",
           "ru": "Включить или выключить L4",
-          "ko": "L4 켜기 또는 끄기"
+          "ko": "L4 켜기 또는 끄기",
+          "ar": "تشغيل أو إيقاف L4"
         },
         "titleFormatted": {
           "en": "Switch L4 [[val]]",
@@ -4768,7 +4960,8 @@
           "sv": "Växla L4 [[val]]",
           "pl": "Przełącz L4 [[val]]",
           "ru": "Переключить L4 [[val]]",
-          "ko": "L4 [[val]] 전환"
+          "ko": "L4 [[val]] 전환",
+          "ar": "تبديل L4 [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4792,7 +4985,8 @@
               "sv": "På",
               "pl": "Włączony",
               "ru": "Включено",
-              "ko": "켜짐"
+              "ko": "켜짐",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -4811,7 +5005,8 @@
           "sv": "Slå på eller av vänster",
           "pl": "Włącz lub wyłącz lewą stronę",
           "ru": "Включить или выключить левый",
-          "ko": "왼쪽을 켜거나 끄기"
+          "ko": "왼쪽을 켜거나 끄기",
+          "ar": "تشغيل أو إيقاف اليسار"
         },
         "titleFormatted": {
           "en": "Switch Left [[val]]",
@@ -4825,7 +5020,8 @@
           "sv": "Vänster brytare [[val]]",
           "pl": "Przełącznik lewa [[val]]",
           "ru": "Переключить налево [[val]]",
-          "ko": "왼쪽 스위치 [[val]]"
+          "ko": "왼쪽 스위치 [[val]]",
+          "ar": "تبديل اليسار [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4849,7 +5045,8 @@
               "sv": "På",
               "pl": "Włączony",
               "ru": "Вкл",
-              "ko": "켜기"
+              "ko": "켜기",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -4857,10 +5054,34 @@
       },
       {
         "title": {
-          "en": "Switch Pre alarm On or Off"
+          "en": "Switch Pre alarm On or Off",
+          "nl": "Schakel voor-alarm in of uit",
+          "da": "Tænd eller sluk forudgående alarm",
+          "de": "Voralarm ein- oder ausschalten",
+          "es": "Activar o desactivar prealarma",
+          "fr": "Activer ou désactiver la pré-alarme",
+          "it": "Attiva o disattiva pre-allarme",
+          "no": "Slå forhåndsalarm på eller av",
+          "sv": "Slå på eller av förlarm",
+          "pl": "Włącz lub wyłącz pre-alarm",
+          "ru": "Включить или выключить предварительную тревогу",
+          "ko": "사전 알람 켜기 또는 끄기",
+          "ar": "تشغيل أو إيقاف الإنذار المسبق"
         },
         "titleFormatted": {
-          "en": "Switch Pre alarm [[val]]"
+          "en": "Switch Pre alarm [[val]]",
+          "nl": "Schakel voor-alarm [[val]]",
+          "da": "Skift forudgående alarm [[val]]",
+          "de": "Voralarm schalten [[val]]",
+          "es": "Cambiar prealarma [[val]]",
+          "fr": "Basculer la pré-alarme [[val]]",
+          "it": "Cambia pre-allarme [[val]]",
+          "no": "Bytt forhåndsalarm [[val]]",
+          "sv": "Växla förlarm [[val]]",
+          "pl": "Przełącz pre-alarm [[val]]",
+          "ru": "Переключить предварительную тревогу [[val]]",
+          "ko": "사전 알람 전환 [[val]]",
+          "ar": "تبديل الإنذار المسبق [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4873,7 +5094,19 @@
             "type": "checkbox",
             "name": "val",
             "title": {
-              "en": "On"
+              "en": "On",
+              "nl": "Aan",
+              "da": "Til",
+              "de": "Ein",
+              "es": "Encendido",
+              "fr": "Allumé",
+              "it": "Acceso",
+              "no": "På",
+              "sv": "På",
+              "pl": "Włączone",
+              "ru": "Включено",
+              "ko": "켜짐",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -4892,7 +5125,8 @@
           "sv": "Slå Höger Av eller På",
           "pl": "Włącz lub Wyłącz Prawy",
           "ru": "Включить или Выключить Правый",
-          "ko": "오른쪽 켜기 또는 끄기"
+          "ko": "오른쪽 켜기 또는 끄기",
+          "ar": "تشغيل أو إيقاف اليمين"
         },
         "titleFormatted": {
           "en": "Switch Right [[val]]",
@@ -4906,7 +5140,8 @@
           "sv": "Byt Höger [[val]]",
           "pl": "Przełącz Prawy [[val]]",
           "ru": "Переключить Правый [[val]]",
-          "ko": "우회 전환 [[val]]"
+          "ko": "우회 전환 [[val]]",
+          "ar": "تبديل اليمين [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4930,7 +5165,8 @@
               "sv": "På",
               "pl": "Włączony",
               "ru": "Вкл",
-              "ko": "켜기"
+              "ko": "켜기",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -4938,10 +5174,34 @@
       },
       {
         "title": {
-          "en": "Switch Selftest On or Off"
+          "en": "Switch Selftest On or Off",
+          "nl": "Schakel zelftest in of uit",
+          "da": "Tænd eller sluk selvtest",
+          "de": "Selbsttest ein- oder ausschalten",
+          "es": "Activar o desactivar autocomprobación",
+          "fr": "Activer ou désactiver l'auto-test",
+          "it": "Attiva o disattiva autotest",
+          "no": "Slå selvtest på eller av",
+          "sv": "Slå på eller av självtest",
+          "pl": "Włącz lub wyłącz autotest",
+          "ru": "Включить или выключить самопроверку",
+          "ko": "자체 테스트 켜기 또는 끄기",
+          "ar": "تشغيل أو إيقاف الاختبار الذاتي"
         },
         "titleFormatted": {
-          "en": "Switch Selftest [[val]]"
+          "en": "Switch Selftest [[val]]",
+          "nl": "Schakel zelftest [[val]]",
+          "da": "Skift selvtest [[val]]",
+          "de": "Selbsttest schalten [[val]]",
+          "es": "Cambiar autocomprobación [[val]]",
+          "fr": "Basculer l'auto-test [[val]]",
+          "it": "Cambia autotest [[val]]",
+          "no": "Bytt selvtest [[val]]",
+          "sv": "Växla självtest [[val]]",
+          "pl": "Przełącz autotest [[val]]",
+          "ru": "Переключить самопроверку [[val]]",
+          "ko": "자체 테스트 전환 [[val]]",
+          "ar": "تبديل الاختبار الذاتي [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4954,7 +5214,19 @@
             "type": "checkbox",
             "name": "val",
             "title": {
-              "en": "On"
+              "en": "On",
+              "nl": "Aan",
+              "da": "Til",
+              "de": "Ein",
+              "es": "Encendido",
+              "fr": "Allumé",
+              "it": "Acceso",
+              "no": "På",
+              "sv": "På",
+              "pl": "Włączone",
+              "ru": "Включено",
+              "ko": "켜짐",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -4973,7 +5245,8 @@
           "sv": "Byt systemläge Värme eller Av",
           "pl": "Przełącz tryb systemu Grzanie lub Wyłączony",
           "ru": "Переключите режим системы Обогрев или Выкл",
-          "ko": "시스템 모드를 난방 또는 끄기로 전환"
+          "ko": "시스템 모드를 난방 또는 끄기로 전환",
+          "ar": "تبديل وضع النظام إلى تدفئة أو إيقاف"
         },
         "titleFormatted": {
           "en": "Set system mode to heat [[val]]",
@@ -4987,7 +5260,8 @@
           "sv": "Ställ in systemläge till värme [[val]]",
           "pl": "Ustaw tryb systemu na ogrzewanie [[val]]",
           "ru": "Установите режим системы на обогрев [[val]]",
-          "ko": "시스템 모드를 난방으로 설정 [[val]]"
+          "ko": "시스템 모드를 난방으로 설정 [[val]]",
+          "ar": "تعيين وضع النظام إلى تدفئة [[val]]"
         },
         "highlight": true,
         "args": [
@@ -5011,7 +5285,8 @@
               "sv": "Värme",
               "pl": "Ogrzewanie",
               "ru": "Обогрев",
-              "ko": "난방"
+              "ko": "난방",
+              "ar": "تدفئة"
             }
           }
         ],
@@ -5030,7 +5305,8 @@
           "sv": "Byt termostatläge På eller Av",
           "pl": "Przełącz tryb termostatu Włączony lub Wyłączony",
           "ru": "Переключите режим термостата Вкл или Выкл",
-          "ko": "온도 조절기 모드를 켜짐 또는 끄기로 전환"
+          "ko": "온도 조절기 모드를 켜짐 또는 끄기로 전환",
+          "ar": "تشغيل أو إيقاف وضع منظم الحرارة"
         },
         "titleFormatted": {
           "en": "Set thermostat mode to on [[val]]",
@@ -5044,7 +5320,8 @@
           "sv": "Ställ in termostatläge till på [[val]]",
           "pl": "Ustaw tryb termostatu na włączony [[val]]",
           "ru": "Установите режим термостата на вкл [[val]]",
-          "ko": "온도 조절기 모드를 켜짐으로 설정 [[val]]"
+          "ko": "온도 조절기 모드를 켜짐으로 설정 [[val]]",
+          "ar": "تعيين وضع منظم الحرارة إلى تشغيل [[val]]"
         },
         "highlight": true,
         "args": [
@@ -5068,7 +5345,8 @@
               "sv": "På",
               "pl": "Włączony",
               "ru": "Вкл",
-              "ko": "켜짐"
+              "ko": "켜짐",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -5087,7 +5365,8 @@
           "sv": "Slå på eller av toppen",
           "pl": "Włącz lub wyłącz górny",
           "ru": "Включить или выключить верх",
-          "ko": "위쪽 켜기 또는 끄기"
+          "ko": "위쪽 켜기 또는 끄기",
+          "ar": "تشغيل أو إيقاف الجزء العلوي"
         },
         "titleFormatted": {
           "en": "Switch Top [[val]]",
@@ -5101,7 +5380,8 @@
           "sv": "Växla topp [[val]]",
           "pl": "Przełącz górny [[val]]",
           "ru": "Переключить верх [[val]]",
-          "ko": "위쪽 전환 [[val]]"
+          "ko": "위쪽 전환 [[val]]",
+          "ar": "تبديل الجزء العلوي [[val]]"
         },
         "highlight": true,
         "args": [
@@ -5125,7 +5405,8 @@
               "sv": "På",
               "pl": "Włączone",
               "ru": "Включено",
-              "ko": "켬"
+              "ko": "켬",
+              "ar": "تشغيل"
             }
           }
         ],
@@ -5144,7 +5425,8 @@
           "sv": "Ställ in Pilottrådsläge",
           "pl": "Ustaw Tryb Przewodu Pilotażowego",
           "ru": "Установить Режим Пилотного Провода",
-          "ko": "파일럿 와이어 모드 설정"
+          "ko": "파일럿 와이어 모드 설정",
+          "ar": "تعيين وضع سلك الدليل"
         },
         "titleFormatted": {
           "en": "Set Pilot Wire Mode to [[val]]",
@@ -5158,7 +5440,8 @@
           "sv": "Ställ in Pilottrådsläge till [[val]]",
           "pl": "Ustaw Tryb Przewodu Pilotażowego na [[val]]",
           "ru": "Установить Режим Пилотного Провода на [[val]]",
-          "ko": "파일럿 와이어 모드를 [[val]]로 설정"
+          "ko": "파일럿 와이어 모드를 [[val]]로 설정",
+          "ar": "تعيين وضع سلك الدليل إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -5185,7 +5468,8 @@
                   "sv": "Komfort",
                   "pl": "Komfort",
                   "ru": "Комфорт",
-                  "ko": "편안함"
+                  "ko": "편안함",
+                  "ar": "راحة"
                 }
               },
               {
@@ -5202,7 +5486,8 @@
                   "sv": "Eco",
                   "pl": "Eko",
                   "ru": "Эко",
-                  "ko": "에코"
+                  "ko": "에코",
+                  "ar": "اقتصادي"
                 }
               },
               {
@@ -5219,7 +5504,8 @@
                   "sv": "Frostskydd",
                   "pl": "Ochrona przed mrozem",
                   "ru": "Защита от замерзания",
-                  "ko": "서리 방지"
+                  "ko": "서리 방지",
+                  "ar": "حماية من الصقيع"
                 }
               },
               {
@@ -5236,7 +5522,8 @@
                   "sv": "Av",
                   "pl": "Wyłączony",
                   "ru": "Выкл",
-                  "ko": "꺼짐"
+                  "ko": "꺼짐",
+                  "ar": "إيقاف"
                 }
               },
               {
@@ -5253,7 +5540,8 @@
                   "sv": "Komfort -1",
                   "pl": "Komfort -1",
                   "ru": "Комфорт -1",
-                  "ko": "편안함 -1"
+                  "ko": "편안함 -1",
+                  "ar": "راحة -1"
                 }
               },
               {
@@ -5270,7 +5558,8 @@
                   "sv": "Komfort -2",
                   "pl": "Komfort -2",
                   "ru": "Комфорт -2",
-                  "ko": "편안함 -2"
+                  "ko": "편안함 -2",
+                  "ar": "راحة -2"
                 }
               }
             ]
@@ -5291,7 +5580,8 @@
           "sv": "Ställ in Uppstartsbeteende",
           "pl": "Ustaw Zachowanie Po Włączeniu",
           "ru": "Установить Поведение Включения",
-          "ko": "전원 켜짐 동작 설정"
+          "ko": "전원 켜짐 동작 설정",
+          "ar": "تعيين سلوك التشغيل"
         },
         "titleFormatted": {
           "en": "Set Power On Behavior to [[val]]",
@@ -5305,7 +5595,8 @@
           "sv": "Ställ in Uppstartsbeteende till [[val]]",
           "pl": "Ustaw Zachowanie Po Włączeniu na [[val]]",
           "ru": "Установить Поведение Включения на [[val]]",
-          "ko": "[[val]]의 전원 켜짐 동작 설정"
+          "ko": "[[val]]의 전원 켜짐 동작 설정",
+          "ar": "تعيين سلوك التشغيل إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -5332,7 +5623,8 @@
                   "sv": "Av",
                   "pl": "Wyłączony",
                   "ru": "Выкл",
-                  "ko": "꺼짐"
+                  "ko": "꺼짐",
+                  "ar": "إيقاف"
                 }
               },
               {
@@ -5349,7 +5641,8 @@
                   "sv": "På",
                   "pl": "Włączony",
                   "ru": "Вкл",
-                  "ko": "켜짐"
+                  "ko": "켜짐",
+                  "ar": "تشغيل"
                 }
               },
               {
@@ -5366,7 +5659,8 @@
                   "sv": "Växla",
                   "pl": "Przełącz",
                   "ru": "Переключить",
-                  "ko": "전환"
+                  "ko": "전환",
+                  "ar": "تبديل"
                 }
               },
               {
@@ -5383,7 +5677,8 @@
                   "sv": "Föregående",
                   "pl": "Poprzedni",
                   "ru": "Предыдущий",
-                  "ko": "이전"
+                  "ko": "이전",
+                  "ar": "سابق"
                 }
               }
             ]
@@ -5404,7 +5699,8 @@
           "sv": "Ställ in strömavbrottsminne",
           "pl": "Ustaw pamięć przerwy w zasilaniu",
           "ru": "Установить память отключения электроэнергии",
-          "ko": "정전 메모리 설정"
+          "ko": "정전 메모리 설정",
+          "ar": "تعيين ذاكرة انقطاع التيار الكهربائي"
         },
         "titleFormatted": {
           "en": "Set Power Outage Memory to [[val]]",
@@ -5418,7 +5714,8 @@
           "sv": "Ställ in strömavbrottsminne till [[val]]",
           "pl": "Ustaw pamięć przerwy w zasilaniu na [[val]]",
           "ru": "Установить память отключения электроэнергии на [[val]]",
-          "ko": "[[val]]으로 정전 메모리 설정"
+          "ko": "[[val]]으로 정전 메모리 설정",
+          "ar": "تعيين ذاكرة انقطاع التيار الكهربائي إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -5445,7 +5742,8 @@
                   "sv": "Av",
                   "pl": "Wyłączone",
                   "ru": "Выкл",
-                  "ko": "꺼짐"
+                  "ko": "꺼짐",
+                  "ar": "إيقاف"
                 }
               },
               {
@@ -5462,7 +5760,8 @@
                   "sv": "På",
                   "pl": "Włączone",
                   "ru": "Вкл",
-                  "ko": "켜짐"
+                  "ko": "켜짐",
+                  "ar": "تشغيل"
                 }
               },
               {
@@ -5479,7 +5778,8 @@
                   "sv": "Återställ",
                   "pl": "Przywróć",
                   "ru": "Восстановить",
-                  "ko": "복원"
+                  "ko": "복원",
+                  "ar": "استعادة"
                 }
               }
             ]
@@ -5500,7 +5800,8 @@
           "sv": "Ställ in Förinställning",
           "pl": "Ustawienie Presetu",
           "ru": "Установить Пресет",
-          "ko": "프리셋 설정"
+          "ko": "프리셋 설정",
+          "ar": "تعيين الإعداد المسبق"
         },
         "titleFormatted": {
           "en": "Set Preset to [[val]]",
@@ -5514,7 +5815,8 @@
           "sv": "Ställ in Förinställning till [[val]]",
           "pl": "Ustawienie Presetu na [[val]]",
           "ru": "Установить Пресет на [[val]]",
-          "ko": "프리셋을 [[val]]로 설정"
+          "ko": "프리셋을 [[val]]로 설정",
+          "ar": "تعيين الإعداد المسبق إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -5541,7 +5843,8 @@
                   "sv": "Automatisk",
                   "pl": "Automatyczny",
                   "ru": "Автоматический",
-                  "ko": "자동"
+                  "ko": "자동",
+                  "ar": "تلقائي"
                 }
               },
               {
@@ -5558,7 +5861,8 @@
                   "sv": "Manuell",
                   "pl": "Ręczny",
                   "ru": "Ручной",
-                  "ko": "수동"
+                  "ko": "수동",
+                  "ar": "يدوي"
                 }
               },
               {
@@ -5575,7 +5879,8 @@
                   "sv": "Helgdag",
                   "pl": "Wakacje",
                   "ru": "Праздник",
-                  "ko": "휴가"
+                  "ko": "휴가",
+                  "ar": "عطلة"
                 }
               }
             ]
@@ -5596,7 +5901,8 @@
           "sv": "Starta om Z2M",
           "pl": "Zrestartuj Z2M",
           "ru": "Перезапустить Z2M",
-          "ko": "Z2M 다시 시작"
+          "ko": "Z2M 다시 시작",
+          "ar": "إعادة تشغيل Z2M"
         },
         "hint": {
           "en": "Restart the Zigbee2MQTT bridge",
@@ -5610,7 +5916,8 @@
           "sv": "Starta om Zigbee2MQTT bridge",
           "pl": "Zrestartuj bridge Zigbee2MQTT",
           "ru": "Перезапустить мост Zigbee2MQTT",
-          "ko": "Zigbee2MQTT 브리지 다시 시작"
+          "ko": "Zigbee2MQTT 브리지 다시 시작",
+          "ar": "إعادة تشغيل جسر Zigbee2MQTT"
         },
         "highlight": true,
         "args": [
@@ -5624,10 +5931,34 @@
       },
       {
         "title": {
-          "en": "Set sensitivity"
+          "en": "Set sensitivity",
+          "nl": "Stel gevoeligheid in",
+          "da": "Indstil følsomhed",
+          "de": "Empfindlichkeit einstellen",
+          "es": "Establecer sensibilidad",
+          "fr": "Régler la sensibilité",
+          "it": "Imposta sensibilità",
+          "no": "Angi følsomhet",
+          "sv": "Ställ in känslighet",
+          "pl": "Ustaw czułość",
+          "ru": "Установить чувствительность",
+          "ko": "민감도 설정",
+          "ar": "تعيين الحساسية"
         },
         "titleFormatted": {
-          "en": "Set sensitivity to [[val]]"
+          "en": "Set sensitivity to [[val]]",
+          "nl": "Stel gevoeligheid in op [[val]]",
+          "da": "Indstil følsomhed til [[val]]",
+          "de": "Empfindlichkeit auf [[val]] einstellen",
+          "es": "Establecer sensibilidad en [[val]]",
+          "fr": "Régler la sensibilité sur [[val]]",
+          "it": "Imposta sensibilità su [[val]]",
+          "no": "Angi følsomhet til [[val]]",
+          "sv": "Ställ in känslighet till [[val]]",
+          "pl": "Ustaw czułość na [[val]]",
+          "ru": "Установить чувствительность на [[val]]",
+          "ko": "민감도를 [[val]]로 설정",
+          "ar": "تعيين الحساسية إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -5643,19 +5974,55 @@
               {
                 "id": "low",
                 "title": {
-                  "en": "Low"
+                  "en": "Low",
+                  "nl": "Laag",
+                  "da": "Lav",
+                  "de": "Niedrig",
+                  "es": "Bajo",
+                  "fr": "Bas",
+                  "it": "Basso",
+                  "no": "Lav",
+                  "sv": "Låg",
+                  "pl": "Niska",
+                  "ru": "Низкая",
+                  "ko": "낮음",
+                  "ar": "منخفض"
                 }
               },
               {
                 "id": "medium",
                 "title": {
-                  "en": "Medium"
+                  "en": "Medium",
+                  "nl": "Gemiddeld",
+                  "da": "Mellem",
+                  "de": "Mittel",
+                  "es": "Medio",
+                  "fr": "Moyen",
+                  "it": "Medio",
+                  "no": "Medium",
+                  "sv": "Medium",
+                  "pl": "Średnia",
+                  "ru": "Средняя",
+                  "ko": "중간",
+                  "ar": "متوسط"
                 }
               },
               {
                 "id": "high",
                 "title": {
-                  "en": "High"
+                  "en": "High",
+                  "nl": "Hoog",
+                  "da": "Høj",
+                  "de": "Hoch",
+                  "es": "Alto",
+                  "fr": "Élevé",
+                  "it": "Alto",
+                  "no": "Høy",
+                  "sv": "Hög",
+                  "pl": "Wysoka",
+                  "ru": "Высокая",
+                  "ko": "높음",
+                  "ar": "عالي"
                 }
               }
             ]
@@ -5676,7 +6043,8 @@
           "sv": "Ställ in Sensor",
           "pl": "Ustaw Sensor",
           "ru": "Установить Датчик",
-          "ko": "센서 설정"
+          "ko": "센서 설정",
+          "ar": "تعيين مستشعر"
         },
         "titleFormatted": {
           "en": "Set Sensor to [[val]]",
@@ -5690,7 +6058,8 @@
           "sv": "Ställ in Sensor till [[val]]",
           "pl": "Ustaw Sensor na [[val]]",
           "ru": "Установить Датчик на [[val]]",
-          "ko": "센서를 [[val]]로 설정"
+          "ko": "센서를 [[val]]로 설정",
+          "ar": "تعيين مستشعر إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -5717,7 +6086,8 @@
                   "sv": "Intern (IN)",
                   "pl": "Wewnętrzny (IN)",
                   "ru": "Внутренний (IN)",
-                  "ko": "내부 (IN)"
+                  "ko": "내부 (IN)",
+                  "ar": "داخلي (IN)"
                 }
               },
               {
@@ -5734,7 +6104,8 @@
                   "sv": "Extern (OU)",
                   "pl": "Zewnętrzny (OU)",
                   "ru": "Внешний (OU)",
-                  "ko": "외부 (OU)"
+                  "ko": "외부 (OU)",
+                  "ar": "خارجي (OU)"
                 }
               },
               {
@@ -5751,7 +6122,8 @@
                   "sv": "Alla (AL)",
                   "pl": "Wszystkie (AL)",
                   "ru": "Все (AL)",
-                  "ko": "모두 (AL)"
+                  "ko": "모두 (AL)",
+                  "ar": "الكل (AL)"
                 }
               },
               {
@@ -5768,7 +6140,8 @@
                   "sv": "Intern",
                   "pl": "Wewnętrzny",
                   "ru": "Внутренний",
-                  "ko": "내부"
+                  "ko": "내부",
+                  "ar": "داخلي"
                 }
               },
               {
@@ -5785,7 +6158,8 @@
                   "sv": "Extern",
                   "pl": "Zewnętrzny",
                   "ru": "Внешний",
-                  "ko": "외부"
+                  "ko": "외부",
+                  "ar": "خارجي"
                 }
               },
               {
@@ -5802,7 +6176,8 @@
                   "sv": "Både",
                   "pl": "Oba",
                   "ru": "Оба",
-                  "ko": "둘 다"
+                  "ko": "둘 다",
+                  "ar": "كلاهما"
                 }
               },
               {
@@ -5819,7 +6194,8 @@
                   "sv": "Luft",
                   "pl": "Powietrze",
                   "ru": "Воздух",
-                  "ko": "공기"
+                  "ko": "공기",
+                  "ar": "هواء"
                 }
               },
               {
@@ -5836,7 +6212,8 @@
                   "sv": "Golv",
                   "pl": "Podłoga",
                   "ru": "Пол",
-                  "ko": "바닥"
+                  "ko": "바닥",
+                  "ar": "أرضية"
                 }
               },
               {
@@ -5853,7 +6230,8 @@
                   "sv": "Tillsynsman_golv",
                   "pl": "Nadzorca_podłoga",
                   "ru": "Супервайзор_пол",
-                  "ko": "감독자_바닥"
+                  "ko": "감독자_바닥",
+                  "ar": "مشرف_أرضية"
                 }
               },
               {
@@ -5870,7 +6248,8 @@
                   "sv": "Luft_sensor",
                   "pl": "Powietrze_sensor",
                   "ru": "Воздух_датчик",
-                  "ko": "공기_센서"
+                  "ko": "공기_센서",
+                  "ar": "مستشعر_هواء"
                 }
               },
               {
@@ -5887,7 +6266,8 @@
                   "sv": "Golv_sensor",
                   "pl": "Podłoga_sensor",
                   "ru": "Пол_датчик",
-                  "ko": "바닥_센서"
+                  "ko": "바닥_센서",
+                  "ar": "مستشعر_أرضية"
                 }
               },
               {
@@ -5904,7 +6284,8 @@
                   "sv": "Max_skärm",
                   "pl": "Maks_ochrona",
                   "ru": "Макс_охрана",
-                  "ko": "최대_보호"
+                  "ko": "최대_보호",
+                  "ar": "أقصى_حماية"
                 }
               },
               {
@@ -5921,7 +6302,8 @@
                   "sv": "På",
                   "pl": "Włączony",
                   "ru": "Вкл",
-                  "ko": "켜짐"
+                  "ko": "켜짐",
+                  "ar": "تشغيل"
                 }
               },
               {
@@ -5938,7 +6320,8 @@
                   "sv": "Av",
                   "pl": "Wyłączony",
                   "ru": "Выкл",
-                  "ko": "꺼짐"
+                  "ko": "꺼짐",
+                  "ar": "إيقاف"
                 }
               },
               {
@@ -5955,7 +6338,8 @@
                   "sv": "Upptagen",
                   "pl": "Zajęty",
                   "ru": "Занято",
-                  "ko": "사용 중"
+                  "ko": "사용 중",
+                  "ar": "مشغول"
                 }
               },
               {
@@ -5972,7 +6356,8 @@
                   "sv": "Ledig",
                   "pl": "Niezajęty",
                   "ru": "Свободно",
-                  "ko": "비어 있음"
+                  "ko": "비어 있음",
+                  "ar": "غير مشغول"
                 }
               }
             ]
@@ -5993,7 +6378,8 @@
           "sv": "Ställ in loggnivå",
           "pl": "Ustaw poziom logowania",
           "ru": "Установить уровень логирования",
-          "ko": "로그 레벨 설정"
+          "ko": "로그 레벨 설정",
+          "ar": "تعيين مستوى السجل"
         },
         "titleFormatted": {
           "en": "Set log level to [[val]]",
@@ -6007,7 +6393,8 @@
           "sv": "Ställ in loggnivå till [[val]]",
           "pl": "Ustaw poziom logowania na [[val]]",
           "ru": "Установить уровень логирования на [[val]]",
-          "ko": "[[val]]로 로그 레벨 설정"
+          "ko": "[[val]]로 로그 레벨 설정",
+          "ar": "تعيين مستوى السجل إلى [[val]]"
         },
         "hint": {
           "en": "INFO or DEBUG level is required for the Msgs/minute counter.",
@@ -6021,7 +6408,8 @@
           "sv": "INFO eller DEBUG-nivå krävs för meddelanden/minut räknaren.",
           "pl": "Wymagany jest poziom INFO lub DEBUG dla licznika Msgs/minutę.",
           "ru": "Для счетчика сообщений в минуту требуется уровень INFO или DEBUG.",
-          "ko": "분당 메세지 카운터에는 INFO 또는 DEBUG 레벨이 필요합니다."
+          "ko": "분당 메세지 카운터에는 INFO 또는 DEBUG 레벨이 필요합니다.",
+          "ar": "مطلوب مستوى INFO أو DEBUG لعداد الرسائل/الدقيقة."
         },
         "highlight": true,
         "args": [
@@ -6048,7 +6436,8 @@
                   "sv": "Felsök",
                   "pl": "Debugowanie",
                   "ru": "Отладка",
-                  "ko": "디버그"
+                  "ko": "디버그",
+                  "ar": "تصحيح"
                 }
               },
               {
@@ -6065,7 +6454,8 @@
                   "sv": "Info",
                   "pl": "Info",
                   "ru": "Инфо",
-                  "ko": "정보"
+                  "ko": "정보",
+                  "ar": "معلومات"
                 }
               },
               {
@@ -6082,7 +6472,8 @@
                   "sv": "Varning",
                   "pl": "Ostrzeżenie",
                   "ru": "Предупреждение",
-                  "ko": "경고"
+                  "ko": "경고",
+                  "ar": "تحذير"
                 }
               },
               {
@@ -6099,7 +6490,8 @@
                   "sv": "Fel",
                   "pl": "Błąd",
                   "ru": "Ошибка",
-                  "ko": "오류"
+                  "ko": "오류",
+                  "ar": "خطأ"
                 }
               }
             ]
@@ -7320,7 +7712,8 @@
           "sv": "Ställ in måltemperatur",
           "pl": "Ustaw docelową temperaturę",
           "ru": "Установить целевую температуру",
-          "ko": "목표 온도 설정"
+          "ko": "목표 온도 설정",
+          "ar": "تعيين درجة الحرارة المستهدفة"
         },
         "titleFormatted": {
           "en": "Set target temperature to [[val]]",
@@ -7334,7 +7727,8 @@
           "sv": "Ställ in måltemperatur till [[val]]",
           "pl": "Ustaw docelową temperaturę na [[val]]",
           "ru": "Установить целевую температуру на [[val]]",
-          "ko": "[[val]]의 목표 온도를 설정"
+          "ko": "[[val]]의 목표 온도를 설정",
+          "ar": "تعيين درجة الحرارة المستهدفة إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -7363,7 +7757,8 @@
           "sv": "Ställ in ventilens tillstånd",
           "pl": "Ustaw stan zaworu",
           "ru": "Установить состояние клапана",
-          "ko": "밸브 상태 설정"
+          "ko": "밸브 상태 설정",
+          "ar": "تعيين حالة الصمام"
         },
         "titleFormatted": {
           "en": "Set valve state to [[val]]",
@@ -7377,7 +7772,8 @@
           "sv": "Ställ in ventilens tillstånd till [[val]]",
           "pl": "Ustaw stan zaworu na [[val]]",
           "ru": "Установить состояние клапана на [[val]]",
-          "ko": "밸브 상태를 [[val]]로 설정"
+          "ko": "밸브 상태를 [[val]]로 설정",
+          "ar": "تعيين حالة الصمام إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -7765,122 +8161,331 @@
       "capabilitiesOptions": {
         "onoff.thermostat_mode": {
           "title": {
-            "en": "Thermostat mode"
+            "en": "Thermostat mode",
+            "nl": "Thermostaatmodus",
+            "da": "Termostattilstand",
+            "de": "Thermostatmodus",
+            "es": "Modo de termostato",
+            "fr": "Mode thermostat",
+            "it": "Modalità termostato",
+            "no": "Termostatmodus",
+            "sv": "Termostatläge",
+            "pl": "Tryb termostatu",
+            "ru": "Режим термостата",
+            "ko": "온도 조절기 모드"
           },
           "uiComponent": "button",
           "uiQuickAction": false
         },
         "locked.child": {
           "title": {
-            "en": "Child lock"
+            "en": "Child lock",
+            "nl": "Kinderslot",
+            "da": "Børnesikring",
+            "de": "Kindersicherung",
+            "es": "Bloqueo infantil",
+            "fr": "Verrouillage enfant",
+            "it": "Blocco bambini",
+            "no": "Barnelås",
+            "sv": "Barnlås",
+            "pl": "Blokada rodzicielska",
+            "ru": "Детский замок",
+            "ko": "아동 잠금"
           },
           "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.backlight": {
           "title": {
-            "en": "Backlight"
+            "en": "Backlight",
+            "nl": "Achtergrondverlichting",
+            "da": "Baggrundsbelysning",
+            "de": "Hintergrundbeleuchtung",
+            "es": "Retroiluminación",
+            "fr": "Rétroéclairage",
+            "it": "Retroilluminazione",
+            "no": "Bakgrunnsbelysning",
+            "sv": "Bakgrundsbelysning",
+            "pl": "Podświetlenie",
+            "ru": "Подсветка",
+            "ko": "백라이트"
           },
           "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.center": {
           "title": {
-            "en": "Center"
+            "en": "Center",
+            "nl": "Midden",
+            "da": "Center",
+            "de": "Mitte",
+            "es": "Centro",
+            "fr": "Centre",
+            "it": "Centro",
+            "no": "Senter",
+            "sv": "Centrum",
+            "pl": "Środek",
+            "ru": "Центр",
+            "ko": "센터"
           },
           "uiQuickAction": false
         },
         "onoff.heartbeat": {
           "title": {
-            "en": "Heartbeat"
+            "en": "Heartbeat",
+            "nl": "Hartslag",
+            "da": "Hjerteslag",
+            "de": "Herzschlag",
+            "es": "Latido",
+            "fr": "Battement de cœur",
+            "it": "Battito cardiaco",
+            "no": "Hjerteslag",
+            "sv": "Hjärtslag",
+            "pl": "Puls",
+            "ru": "Сердцебиение",
+            "ko": "하트비트"
           },
           "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.indicator": {
           "title": {
-            "en": "Indicator"
+            "en": "Indicator",
+            "nl": "Indicator",
+            "da": "Indikator",
+            "de": "Indikator",
+            "es": "Indicador",
+            "fr": "Indicateur",
+            "it": "Indicatore",
+            "no": "Indikator",
+            "sv": "Indikator",
+            "pl": "Wskaźnik",
+            "ru": "Индикатор",
+            "ko": "표시기"
           },
           "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.l1": {
           "title": {
-            "en": "L1"
+            "en": "L1",
+            "nl": "L1",
+            "da": "L1",
+            "de": "L1",
+            "es": "L1",
+            "fr": "L1",
+            "it": "L1",
+            "no": "L1",
+            "sv": "L1",
+            "pl": "L1",
+            "ru": "L1",
+            "ko": "L1"
           },
           "uiQuickAction": true
         },
         "onoff.l2": {
           "title": {
-            "en": "L2"
+            "en": "L2",
+            "nl": "L2",
+            "da": "L2",
+            "de": "L2",
+            "es": "L2",
+            "fr": "L2",
+            "it": "L2",
+            "no": "L2",
+            "sv": "L2",
+            "pl": "L2",
+            "ru": "L2",
+            "ko": "L2"
           },
           "uiQuickAction": false
         },
         "onoff.l3": {
           "title": {
-            "en": "L3"
+            "en": "L3",
+            "nl": "L3",
+            "da": "L3",
+            "de": "L3",
+            "es": "L3",
+            "fr": "L3",
+            "it": "L3",
+            "no": "L3",
+            "sv": "L3",
+            "pl": "L3",
+            "ru": "L3",
+            "ko": "L3"
           },
           "uiQuickAction": false
         },
         "onoff.l4": {
           "title": {
-            "en": "L4"
+            "en": "L4",
+            "nl": "L4",
+            "da": "L4",
+            "de": "L4",
+            "es": "L4",
+            "fr": "L4",
+            "it": "L4",
+            "no": "L4",
+            "sv": "L4",
+            "pl": "L4",
+            "ru": "L4",
+            "ko": "L4"
           },
           "uiQuickAction": false
         },
         "onoff.left": {
           "title": {
-            "en": "Left"
+            "en": "Left",
+            "nl": "Links",
+            "da": "Venstre",
+            "de": "Links",
+            "es": "Izquierda",
+            "fr": "Gauche",
+            "it": "Sinistra",
+            "no": "Venstre",
+            "sv": "Vänster",
+            "pl": "Lewo",
+            "ru": "Левый",
+            "ko": "왼쪽"
           },
           "uiQuickAction": false
         },
         "onoff.pre_alarm": {
           "title": {
-            "en": "Pre alarm"
+            "en": "Pre alarm",
+            "nl": "Voor-alarm",
+            "da": "Præ-alarm",
+            "de": "Voralarm",
+            "es": "Prealarma",
+            "fr": "Pré-alarme",
+            "it": "Pre-allarme",
+            "no": "Forhåndsalarm",
+            "sv": "Förlarm",
+            "pl": "Pre-alarm",
+            "ru": "Предварительная тревога",
+            "ko": "사전 알람"
           },
           "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.right": {
           "title": {
-            "en": "Right"
+            "en": "Right",
+            "nl": "Rechts",
+            "da": "Højre",
+            "de": "Rechts",
+            "es": "Derecha",
+            "fr": "Droite",
+            "it": "Destra",
+            "no": "Høyre",
+            "sv": "Höger",
+            "pl": "Prawo",
+            "ru": "Правый",
+            "ko": "오른쪽"
           },
           "uiQuickAction": false
         },
         "onoff.top": {
           "title": {
-            "en": "Top"
+            "en": "Top",
+            "nl": "Boven",
+            "da": "Top",
+            "de": "Oben",
+            "es": "Arriba",
+            "fr": "Haut",
+            "it": "Alto",
+            "no": "Topp",
+            "sv": "Topp",
+            "pl": "Góra",
+            "ru": "Верх",
+            "ko": "위쪽"
           },
           "uiQuickAction": false
         },
         "onoff.bottom": {
           "title": {
-            "en": "Bottom"
+            "en": "Bottom",
+            "nl": "Onder",
+            "da": "Bund",
+            "de": "Unten",
+            "es": "Abajo",
+            "fr": "Bas",
+            "it": "Basso",
+            "no": "Bunn",
+            "sv": "Botten",
+            "pl": "Dół",
+            "ru": "Низ",
+            "ko": "아래쪽"
           },
           "uiQuickAction": false
         },
         "onoff.center_left": {
           "title": {
-            "en": "Center Left"
+            "en": "Center Left",
+            "nl": "Midden links",
+            "da": "Center venstre",
+            "de": "Mitte links",
+            "es": "Centro izquierda",
+            "fr": "Centre gauche",
+            "it": "Centro sinistra",
+            "no": "Senter venstre",
+            "sv": "Centrum vänster",
+            "pl": "Środek lewo",
+            "ru": "Центр лево",
+            "ko": "중앙 왼쪽"
           },
           "uiQuickAction": false
         },
         "onoff.center_right": {
           "title": {
-            "en": "Center Right"
+            "en": "Center Right",
+            "nl": "Midden rechts",
+            "da": "Center højre",
+            "de": "Mitte rechts",
+            "es": "Centro derecha",
+            "fr": "Centre droite",
+            "it": "Centro destra",
+            "no": "Senter høyre",
+            "sv": "Centrum höger",
+            "pl": "Środek prawo",
+            "ru": "Центр право",
+            "ko": "중앙 오른쪽"
           },
           "uiQuickAction": false
         },
         "onoff.self_test": {
           "title": {
-            "en": "Self test"
+            "en": "Self test",
+            "nl": "Zelftest",
+            "da": "Selvtest",
+            "de": "Selbsttest",
+            "es": "Autocomprobación",
+            "fr": "Auto-test",
+            "it": "Autotest",
+            "no": "Selvtest",
+            "sv": "Självtest",
+            "pl": "Autotest",
+            "ru": "Самопроверка",
+            "ko": "자체 테스트"
           },
           "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.system_mode": {
           "title": {
-            "en": "System mode"
+            "en": "System mode",
+            "nl": "Systeemmodus",
+            "da": "Systemtilstand",
+            "de": "Systemmodus",
+            "es": "Modo del sistema",
+            "fr": "Mode du système",
+            "it": "Modalità sistema",
+            "no": "Systemmodus",
+            "sv": "Systemläge",
+            "pl": "Tryb systemu",
+            "ru": "Режим системы",
+            "ko": "시스템 모드"
           },
           "uiComponent": "button",
           "uiQuickAction": false
@@ -8080,119 +8685,54 @@
                   "id": "other",
                   "label": {
                     "en": "Other",
-                    "nl": "Andere",
-                    "da": "Anden",
+                    "nl": "Overig",
                     "de": "Andere",
-                    "es": "Otro",
                     "fr": "Autre",
                     "it": "Altro",
-                    "no": "Annen",
-                    "sv": "Annat",
-                    "pl": "Inny",
+                    "sv": "Övrigt",
+                    "no": "Annet",
+                    "es": "Otro",
+                    "da": "Andet",
                     "ru": "Другое",
-                    "ko": "기타"
+                    "pl": "Inne",
+                    "ko": "기타",
+                    "ar": "أخرى"
                   }
                 },
                 {
-                  "id": "sensor",
+                  "id": "amplifier",
                   "label": {
-                    "en": "Sensor",
-                    "nl": "Sensor",
-                    "da": "Sensor",
-                    "de": "Sensor",
-                    "es": "Sensor",
-                    "fr": "Capteur",
-                    "it": "Sensore",
-                    "no": "Sensor",
-                    "sv": "Sensor",
-                    "pl": "Czujnik",
-                    "ru": "Датчик",
-                    "ko": "센서"
+                    "en": "Amplifier",
+                    "nl": "Versterker",
+                    "de": "Verstärker",
+                    "fr": "Amplificateur",
+                    "it": "Amplificatore",
+                    "sv": "Förstärkare",
+                    "no": "Forsterker",
+                    "es": "Amplificador",
+                    "da": "Forstærker",
+                    "ru": "Усилитель",
+                    "pl": "Wzmacniacz",
+                    "ko": "앰프",
+                    "ar": "مضخم صوت"
                   }
                 },
                 {
-                  "id": "socket",
+                  "id": "blinds",
                   "label": {
-                    "en": "Socket",
-                    "nl": "Stopcontact",
-                    "da": "Stik",
-                    "de": "Steckdose",
-                    "es": "Enchufe",
-                    "fr": "Prise",
-                    "it": "Presa",
-                    "no": "Stikkontakt",
-                    "sv": "Uttag",
-                    "pl": "Gniazdo",
-                    "ru": "Розетка",
-                    "ko": "소켓"
-                  }
-                },
-                {
-                  "id": "light",
-                  "label": {
-                    "en": "Light",
-                    "nl": "Licht",
-                    "da": "Lys",
-                    "de": "Licht",
-                    "es": "Luz",
-                    "fr": "Lumière",
-                    "it": "Luce",
-                    "no": "Lys",
-                    "sv": "Ljus",
-                    "pl": "Światło",
-                    "ru": "Свет",
-                    "ko": "조명"
-                  }
-                },
-                {
-                  "id": "heater",
-                  "label": {
-                    "en": "Heater",
-                    "nl": "Verwarming",
-                    "da": "Varmeapparat",
-                    "de": "Heizung",
-                    "es": "Calefactor",
-                    "fr": "Chauffage",
-                    "it": "Riscaldatore",
-                    "no": "Varmeovn",
-                    "sv": "Värmare",
-                    "pl": "Grzejnik",
-                    "ru": "Обогреватель",
-                    "ko": "히터"
-                  }
-                },
-                {
-                  "id": "thermostat",
-                  "label": {
-                    "en": "Thermostat",
-                    "nl": "Thermostaat",
-                    "da": "Termostat",
-                    "de": "Thermostat",
-                    "es": "Termostato",
-                    "fr": "Thermostat",
-                    "it": "Termostato",
-                    "no": "Termostat",
-                    "sv": "Termostat",
-                    "pl": "Termostat",
-                    "ru": "Термостат",
-                    "ko": "온도 조절기"
-                  }
-                },
-                {
-                  "id": "lock",
-                  "label": {
-                    "en": "Lock",
-                    "nl": "Slot",
-                    "da": "Lås",
-                    "de": "Schloss",
-                    "es": "Cerradura",
-                    "fr": "Serrure",
-                    "it": "Serratura",
-                    "no": "Lås",
-                    "sv": "Lås",
-                    "pl": "Zamek",
-                    "ru": "Замок",
-                    "ko": "잠금"
+                    "en": "Blinds",
+                    "nl": "Jaloezieën",
+                    "de": "Jalousien",
+                    "fr": "Stores",
+                    "it": "Tende",
+                    "sv": "Persienner",
+                    "no": "Persienner",
+                    "es": "Persianas",
+                    "da": "Persienner",
+                    "ru": "Жалюзи",
+                    "pl": "Żaluzje",
+                    "ko": "블라인드",
+                    "ar": "ستائر"
                   }
                 },
                 {
@@ -8200,16 +8740,377 @@
                   "label": {
                     "en": "Button",
                     "nl": "Knop",
-                    "da": "Knap",
-                    "de": "Knopf",
-                    "es": "Botón",
+                    "de": "Taste",
                     "fr": "Bouton",
                     "it": "Pulsante",
-                    "no": "Knappe",
                     "sv": "Knapp",
-                    "pl": "Przycisk",
+                    "no": "Knapp",
+                    "es": "Botón",
+                    "da": "Knap",
                     "ru": "Кнопка",
-                    "ko": "버튼"
+                    "pl": "Przycisk",
+                    "ko": "버튼",
+                    "ar": "زر"
+                  }
+                },
+                {
+                  "id": "camera",
+                  "label": {
+                    "en": "Camera",
+                    "nl": "Camera",
+                    "de": "Kamera",
+                    "fr": "Caméra",
+                    "it": "Telecamera",
+                    "sv": "Kamera",
+                    "no": "Kamera",
+                    "es": "Cámara",
+                    "da": "Kamera",
+                    "ru": "Камера",
+                    "pl": "Kamera",
+                    "ko": "카메라",
+                    "ar": "كاميرا"
+                  }
+                },
+                {
+                  "id": "coffeemachine",
+                  "label": {
+                    "en": "Coffee Machine",
+                    "nl": "Koffiezetapparaat",
+                    "de": "Kaffeemaschine",
+                    "fr": "Machine à café",
+                    "it": "Macchina da caffè",
+                    "sv": "Kaffemaskin",
+                    "no": "Kaffemaskin",
+                    "es": "Cafetera",
+                    "da": "Kaffemaskine",
+                    "ru": "Кофемашина",
+                    "pl": "Ekspres do kawy",
+                    "ko": "커피 머신",
+                    "ar": "آلة القهوة"
+                  }
+                },
+                {
+                  "id": "curtain",
+                  "label": {
+                    "en": "Curtain",
+                    "nl": "Gordijn",
+                    "de": "Vorhang",
+                    "fr": "Rideau",
+                    "it": "Tenda",
+                    "sv": "Gardin",
+                    "no": "Gardin",
+                    "es": "Cortina",
+                    "da": "Gardin",
+                    "ru": "Штора",
+                    "pl": "Zasłona",
+                    "ko": "커튼",
+                    "ar": "ستارة"
+                  }
+                },
+                {
+                  "id": "fan",
+                  "label": {
+                    "en": "Fan",
+                    "nl": "Ventilator",
+                    "de": "Ventilator",
+                    "fr": "Ventilateur",
+                    "it": "Ventilatore",
+                    "sv": "Fläkt",
+                    "no": "Vifte",
+                    "es": "Ventilador",
+                    "da": "Ventilator",
+                    "ru": "Вентилятор",
+                    "pl": "Wentylator",
+                    "ko": "선풍기",
+                    "ar": "مروحة"
+                  }
+                },
+                {
+                  "id": "heater",
+                  "label": {
+                    "en": "Heater",
+                    "nl": "Kachel",
+                    "de": "Heizung",
+                    "fr": "Chauffage",
+                    "it": "Riscaldatore",
+                    "sv": "Värmare",
+                    "no": "Varmeapparat",
+                    "es": "Calentador",
+                    "da": "Varmelegeme",
+                    "ru": "Обогреватель",
+                    "pl": "Grzejnik",
+                    "ko": "히터",
+                    "ar": "سخان"
+                  }
+                },
+                {
+                  "id": "homealarm",
+                  "label": {
+                    "en": "Home Alarm",
+                    "nl": "Huisalarm",
+                    "de": "Hausalarm",
+                    "fr": "Alarme domestique",
+                    "it": "Allarme di casa",
+                    "sv": "Hemlarm",
+                    "no": "Hjemmealarm",
+                    "es": "Alarma para el hogar",
+                    "da": "Hjemmealarm",
+                    "ru": "Домашняя сигнализация",
+                    "pl": "Alarm domowy",
+                    "ko": "홈 알람",
+                    "ar": "إنذار المنزل"
+                  }
+                },
+                {
+                  "id": "kettle",
+                  "label": {
+                    "en": "Kettle",
+                    "nl": "Waterkoker",
+                    "de": "Wasserkocher",
+                    "fr": "Bouilloire",
+                    "it": "Bollitore",
+                    "sv": "Vattenkokare",
+                    "no": "Vannkoker",
+                    "es": "Hervidor",
+                    "da": "Kedel",
+                    "ru": "Чайник",
+                    "pl": "Czajnik",
+                    "ko": "주전자",
+                    "ar": "غلاية"
+                  }
+                },
+                {
+                  "id": "light",
+                  "label": {
+                    "en": "Light",
+                    "nl": "Lamp",
+                    "de": "Lampe",
+                    "fr": "Lumière",
+                    "it": "Luce",
+                    "sv": "Lampa",
+                    "no": "Lys",
+                    "es": "Luz",
+                    "da": "Lys",
+                    "ru": "Свет",
+                    "pl": "Światło",
+                    "ko": "조명",
+                    "ar": "ضوء"
+                  }
+                },
+                {
+                  "id": "lock",
+                  "label": {
+                    "en": "Lock",
+                    "nl": "Slot",
+                    "de": "Schloss",
+                    "fr": "Serrure",
+                    "it": "Serratura",
+                    "sv": "Lås",
+                    "no": "Lås",
+                    "es": "Cerradura",
+                    "da": "Lås",
+                    "ru": "Замок",
+                    "pl": "Zamek",
+                    "ko": "잠금장치",
+                    "ar": "قفل"
+                  }
+                },
+                {
+                  "id": "microwave",
+                  "label": {
+                    "en": "Microwave",
+                    "nl": "Magnetron",
+                    "de": "Mikrowelle",
+                    "fr": "Micro-ondes",
+                    "it": "Microonde",
+                    "sv": "Mikrovågsugn",
+                    "no": "Mikrobølgeovn",
+                    "es": "Microondas",
+                    "da": "Mikrobølgeovn",
+                    "ru": "Микроволновая печь",
+                    "pl": "Kuchenka mikrofalowa",
+                    "ko": "전자레인지",
+                    "ar": "ميكروويف"
+                  }
+                },
+                {
+                  "id": "remote",
+                  "label": {
+                    "en": "Remote",
+                    "nl": "Afstandsbediening",
+                    "de": "Fernbedienung",
+                    "fr": "Télécommande",
+                    "it": "Telecomando",
+                    "sv": "Fjärrkontroll",
+                    "no": "Fjernkontroll",
+                    "es": "Mando a distancia",
+                    "da": "Fjernbetjening",
+                    "ru": "Пульт ДУ",
+                    "pl": "Pilot",
+                    "ko": "리모컨",
+                    "ar": "ريموت"
+                  }
+                },
+                {
+                  "id": "sensor",
+                  "label": {
+                    "en": "Sensor",
+                    "nl": "Sensor",
+                    "de": "Sensor",
+                    "fr": "Capteur",
+                    "it": "Sensore",
+                    "sv": "Sensor",
+                    "no": "Sensor",
+                    "es": "Sensor",
+                    "da": "Sensor",
+                    "ru": "Датчик",
+                    "pl": "Czujnik",
+                    "ko": "센서",
+                    "ar": "حساس"
+                  }
+                },
+                {
+                  "id": "smokealarm",
+                  "label": {
+                    "en": "Smoke Alarm",
+                    "nl": "Rookmelder",
+                    "de": "Rauchmelder",
+                    "fr": "Détecteur de fumée",
+                    "it": "Rilevatore di fumo",
+                    "sv": "Brandvarnare",
+                    "no": "Røykvarsler",
+                    "es": "Detector de humo",
+                    "da": "Røgalarm",
+                    "ru": "Дымовая сигнализация",
+                    "pl": "Alarm przeciwdymny",
+                    "ko": "화재 경보기",
+                    "ar": "إنذار الدخان"
+                  }
+                },
+                {
+                  "id": "socket",
+                  "label": {
+                    "en": "Socket",
+                    "nl": "Stopcontact",
+                    "de": "Steckdose",
+                    "fr": "Prise",
+                    "it": "Presa",
+                    "sv": "Uttag",
+                    "no": "Stikkontakt",
+                    "es": "Enchufe",
+                    "da": "Stikkontakt",
+                    "ru": "Розетка",
+                    "pl": "Gniazdo",
+                    "ko": "소켓",
+                    "ar": "مقبس"
+                  }
+                },
+                {
+                  "id": "speaker",
+                  "label": {
+                    "en": "Speaker",
+                    "nl": "Luidspreker",
+                    "de": "Lautsprecher",
+                    "fr": "Haut-parleur",
+                    "it": "Altoparlante",
+                    "sv": "Högtalare",
+                    "no": "Høyttaler",
+                    "es": "Altavoz",
+                    "da": "Højttaler",
+                    "ru": "Динамик",
+                    "pl": "Głośnik",
+                    "ko": "스피커",
+                    "ar": "مكبر صوت"
+                  }
+                },
+                {
+                  "id": "sunshade",
+                  "label": {
+                    "en": "Sunshade",
+                    "nl": "Zonnescherm",
+                    "de": "Sonnenschutz",
+                    "fr": "Pare-soleil",
+                    "it": "Tenda da sole",
+                    "sv": "Solskydd",
+                    "no": "Solskjerming",
+                    "es": "Toldo",
+                    "da": "Solafskærmning",
+                    "ru": "Навес от солнца",
+                    "pl": "Markiza",
+                    "ko": "차양",
+                    "ar": "مظلة شمسية"
+                  }
+                },
+                {
+                  "id": "thermostat",
+                  "label": {
+                    "en": "Thermostat",
+                    "nl": "Thermostaat",
+                    "de": "Thermostat",
+                    "fr": "Thermostat",
+                    "it": "Termostato",
+                    "sv": "Termostat",
+                    "no": "Termostat",
+                    "es": "Termostato",
+                    "da": "Termostat",
+                    "ru": "Термостат",
+                    "pl": "Termostat",
+                    "ko": "온도 조절기",
+                    "ar": "ترموستات"
+                  }
+                },
+                {
+                  "id": "tv",
+                  "label": {
+                    "en": "TV",
+                    "nl": "Tv",
+                    "de": "TV",
+                    "fr": "TV",
+                    "it": "TV",
+                    "sv": "TV",
+                    "no": "TV",
+                    "es": "TV",
+                    "da": "TV",
+                    "ru": "ТВ",
+                    "pl": "TV",
+                    "ko": "TV",
+                    "ar": "تلفزيون"
+                  }
+                },
+                {
+                  "id": "vacuumcleaner",
+                  "label": {
+                    "en": "Vacuum Cleaner",
+                    "nl": "Stofzuiger",
+                    "de": "Staubsauger",
+                    "fr": "Aspirateur",
+                    "it": "Aspirapolvere",
+                    "sv": "Dammsugare",
+                    "no": "Støvsuger",
+                    "es": "Aspiradora",
+                    "da": "Støvsuger",
+                    "ru": "Пылесос",
+                    "pl": "Odkurzacz",
+                    "ko": "진공 청소기",
+                    "ar": "مكنسة كهربائية"
+                  }
+                },
+                {
+                  "id": "waterheater",
+                  "label": {
+                    "en": "Water Heater",
+                    "nl": "Boiler",
+                    "de": "Warmwasserbereiter",
+                    "fr": "Chauffe-eau",
+                    "it": "Scaldabagno",
+                    "sv": "Varmvattenberedare",
+                    "no": "Varmtvannsbereder",
+                    "es": "Calentador de agua",
+                    "da": "Vandvarmer",
+                    "ru": "Водонагреватель",
+                    "pl": "Podgrzewacz wody",
+                    "ko": "온수기",
+                    "ar": "سخان مياه"
                   }
                 },
                 {
@@ -8217,33 +9118,17 @@
                   "label": {
                     "en": "Window Coverings",
                     "nl": "Raambekleding",
+                    "de": "Fensterabdeckungen",
+                    "fr": "Couvre-fenêtres",
+                    "it": "Tende",
+                    "sv": "Fönsterbeklädnad",
+                    "no": "Vindusdekking",
+                    "es": "Revestimientos de ventanas",
                     "da": "Vinduesbeklædning",
-                    "de": "Fensterverkleidungen",
-                    "es": "Cubiertas de ventanas",
-                    "fr": "Habillages de fenêtre",
-                    "it": "Coperture per finestre",
-                    "no": "Vindusdekorasjoner",
-                    "sv": "Fönsterbeklädnader",
-                    "pl": "Osłony okienne",
                     "ru": "Оконные покрытия",
-                    "ko": "창문 덮개"
-                  }
-                },
-                {
-                  "id": "smokealarm",
-                  "label": {
-                    "en": "Smoke Alarm",
-                    "da": "Røgalarm",
-                    "de": "Rauchmelder",
-                    "es": "Detector de humo",
-                    "fr": "Détecteur de fumée",
-                    "it": "Rilevatore di fumo",
-                    "ko": "연기 감지기",
-                    "nl": "Rookmelder",
-                    "no": "Røykvarsler",
-                    "pl": "Alarm przeciwdymny",
-                    "ru": "Датчик дыма",
-                    "sv": "Rökalarm"
+                    "pl": "Osłony okienne",
+                    "ko": "창문 덮개",
+                    "ar": "أغطية النوافذ"
                   }
                 }
               ]
@@ -8272,122 +9157,331 @@
       "capabilitiesOptions": {
         "onoff.thermostat_mode": {
           "title": {
-            "en": "Thermostat mode"
+            "en": "Thermostat mode",
+            "nl": "Thermostaatmodus",
+            "da": "Termostattilstand",
+            "de": "Thermostatmodus",
+            "es": "Modo de termostato",
+            "fr": "Mode thermostat",
+            "it": "Modalità termostato",
+            "no": "Termostatmodus",
+            "sv": "Termostatläge",
+            "pl": "Tryb termostatu",
+            "ru": "Режим термостата",
+            "ko": "온도 조절기 모드"
           },
           "uiComponent": "button",
           "uiQuickAction": false
         },
         "locked.child": {
           "title": {
-            "en": "Child lock"
+            "en": "Child lock",
+            "nl": "Kinderslot",
+            "da": "Børnesikring",
+            "de": "Kindersicherung",
+            "es": "Bloqueo infantil",
+            "fr": "Verrouillage enfant",
+            "it": "Blocco bambini",
+            "no": "Barnelås",
+            "sv": "Barnlås",
+            "pl": "Blokada rodzicielska",
+            "ru": "Детский замок",
+            "ko": "아동 잠금"
           },
           "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.backlight": {
           "title": {
-            "en": "Backlight"
+            "en": "Backlight",
+            "nl": "Achtergrondverlichting",
+            "da": "Baggrundsbelysning",
+            "de": "Hintergrundbeleuchtung",
+            "es": "Retroiluminación",
+            "fr": "Rétroéclairage",
+            "it": "Retroilluminazione",
+            "no": "Bakgrunnsbelysning",
+            "sv": "Bakgrundsbelysning",
+            "pl": "Podświetlenie",
+            "ru": "Подсветка",
+            "ko": "백라이트"
           },
           "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.center": {
           "title": {
-            "en": "Center"
+            "en": "Center",
+            "nl": "Midden",
+            "da": "Center",
+            "de": "Mitte",
+            "es": "Centro",
+            "fr": "Centre",
+            "it": "Centro",
+            "no": "Senter",
+            "sv": "Centrum",
+            "pl": "Środek",
+            "ru": "Центр",
+            "ko": "센터"
           },
           "uiQuickAction": false
         },
         "onoff.heartbeat": {
           "title": {
-            "en": "Heartbeat"
+            "en": "Heartbeat",
+            "nl": "Hartslag",
+            "da": "Hjerteslag",
+            "de": "Herzschlag",
+            "es": "Latido",
+            "fr": "Battement de cœur",
+            "it": "Battito cardiaco",
+            "no": "Hjerteslag",
+            "sv": "Hjärtslag",
+            "pl": "Puls",
+            "ru": "Сердцебиение",
+            "ko": "하트비트"
           },
           "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.indicator": {
           "title": {
-            "en": "Indicator"
+            "en": "Indicator",
+            "nl": "Indicator",
+            "da": "Indikator",
+            "de": "Indikator",
+            "es": "Indicador",
+            "fr": "Indicateur",
+            "it": "Indicatore",
+            "no": "Indikator",
+            "sv": "Indikator",
+            "pl": "Wskaźnik",
+            "ru": "Индикатор",
+            "ko": "표시기"
           },
           "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.l1": {
           "title": {
-            "en": "L1"
+            "en": "L1",
+            "nl": "L1",
+            "da": "L1",
+            "de": "L1",
+            "es": "L1",
+            "fr": "L1",
+            "it": "L1",
+            "no": "L1",
+            "sv": "L1",
+            "pl": "L1",
+            "ru": "L1",
+            "ko": "L1"
           },
           "uiQuickAction": true
         },
         "onoff.l2": {
           "title": {
-            "en": "L2"
+            "en": "L2",
+            "nl": "L2",
+            "da": "L2",
+            "de": "L2",
+            "es": "L2",
+            "fr": "L2",
+            "it": "L2",
+            "no": "L2",
+            "sv": "L2",
+            "pl": "L2",
+            "ru": "L2",
+            "ko": "L2"
           },
           "uiQuickAction": false
         },
         "onoff.l3": {
           "title": {
-            "en": "L3"
+            "en": "L3",
+            "nl": "L3",
+            "da": "L3",
+            "de": "L3",
+            "es": "L3",
+            "fr": "L3",
+            "it": "L3",
+            "no": "L3",
+            "sv": "L3",
+            "pl": "L3",
+            "ru": "L3",
+            "ko": "L3"
           },
           "uiQuickAction": false
         },
         "onoff.l4": {
           "title": {
-            "en": "L4"
+            "en": "L4",
+            "nl": "L4",
+            "da": "L4",
+            "de": "L4",
+            "es": "L4",
+            "fr": "L4",
+            "it": "L4",
+            "no": "L4",
+            "sv": "L4",
+            "pl": "L4",
+            "ru": "L4",
+            "ko": "L4"
           },
           "uiQuickAction": false
         },
         "onoff.left": {
           "title": {
-            "en": "Left"
+            "en": "Left",
+            "nl": "Links",
+            "da": "Venstre",
+            "de": "Links",
+            "es": "Izquierda",
+            "fr": "Gauche",
+            "it": "Sinistra",
+            "no": "Venstre",
+            "sv": "Vänster",
+            "pl": "Lewo",
+            "ru": "Левый",
+            "ko": "왼쪽"
           },
           "uiQuickAction": false
         },
         "onoff.top": {
           "title": {
-            "en": "Top"
+            "en": "Top",
+            "nl": "Boven",
+            "da": "Top",
+            "de": "Oben",
+            "es": "Arriba",
+            "fr": "Haut",
+            "it": "Alto",
+            "no": "Topp",
+            "sv": "Topp",
+            "pl": "Góra",
+            "ru": "Верх",
+            "ko": "위쪽"
           },
           "uiQuickAction": false
         },
         "onoff.bottom": {
           "title": {
-            "en": "Bottom"
+            "en": "Bottom",
+            "nl": "Onder",
+            "da": "Bund",
+            "de": "Unten",
+            "es": "Abajo",
+            "fr": "Bas",
+            "it": "Basso",
+            "no": "Bunn",
+            "sv": "Botten",
+            "pl": "Dół",
+            "ru": "Низ",
+            "ko": "아래쪽"
           },
           "uiQuickAction": false
         },
         "onoff.center_left": {
           "title": {
-            "en": "Center Left"
+            "en": "Center Left",
+            "nl": "Midden links",
+            "da": "Center venstre",
+            "de": "Mitte links",
+            "es": "Centro izquierda",
+            "fr": "Centre gauche",
+            "it": "Centro sinistra",
+            "no": "Senter venstre",
+            "sv": "Centrum vänster",
+            "pl": "Środek lewo",
+            "ru": "Центр лево",
+            "ko": "중앙 왼쪽"
           },
           "uiQuickAction": false
         },
         "onoff.center_right": {
           "title": {
-            "en": "Center Right"
+            "en": "Center Right",
+            "nl": "Midden rechts",
+            "da": "Center højre",
+            "de": "Mitte rechts",
+            "es": "Centro derecha",
+            "fr": "Centre droite",
+            "it": "Centro destra",
+            "no": "Senter høyre",
+            "sv": "Centrum höger",
+            "pl": "Środek prawo",
+            "ru": "Центр право",
+            "ko": "중앙 오른쪽"
           },
           "uiQuickAction": false
         },
         "onoff.pre_alarm": {
           "title": {
-            "en": "Pre alarm"
+            "en": "Pre alarm",
+            "nl": "Voor-alarm",
+            "da": "Præ-alarm",
+            "de": "Voralarm",
+            "es": "Prealarma",
+            "fr": "Pré-alarme",
+            "it": "Pre-allarme",
+            "no": "Forhåndsalarm",
+            "sv": "Förlarm",
+            "pl": "Pre-alarm",
+            "ru": "Предварительная тревога",
+            "ko": "사전 알람"
           },
           "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.right": {
           "title": {
-            "en": "Right"
+            "en": "Right",
+            "nl": "Rechts",
+            "da": "Højre",
+            "de": "Rechts",
+            "es": "Derecha",
+            "fr": "Droite",
+            "it": "Destra",
+            "no": "Høyre",
+            "sv": "Höger",
+            "pl": "Prawo",
+            "ru": "Правый",
+            "ko": "오른쪽"
           },
           "uiQuickAction": false
         },
         "onoff.self_test": {
           "title": {
-            "en": "Self test"
+            "en": "Self test",
+            "nl": "Zelftest",
+            "da": "Selvtest",
+            "de": "Selbsttest",
+            "es": "Autocomprobación",
+            "fr": "Auto-test",
+            "it": "Autotest",
+            "no": "Selvtest",
+            "sv": "Självtest",
+            "pl": "Autotest",
+            "ru": "Самопроверка",
+            "ko": "자체 테스트"
           },
           "uiComponent": "button",
           "uiQuickAction": false
         },
         "onoff.system_mode": {
           "title": {
-            "en": "System mode"
+            "en": "System mode",
+            "nl": "Systeemmodus",
+            "da": "Systemtilstand",
+            "de": "Systemmodus",
+            "es": "Modo del sistema",
+            "fr": "Mode du système",
+            "it": "Modalità sistema",
+            "no": "Systemmodus",
+            "sv": "Systemläge",
+            "pl": "Tryb systemu",
+            "ru": "Режим системы",
+            "ko": "시스템 모드"
           },
           "uiComponent": "button",
           "uiQuickAction": false
@@ -8587,119 +9681,54 @@
                   "id": "other",
                   "label": {
                     "en": "Other",
-                    "nl": "Andere",
-                    "da": "Andet",
+                    "nl": "Overig",
                     "de": "Andere",
-                    "es": "Otro",
                     "fr": "Autre",
                     "it": "Altro",
+                    "sv": "Övrigt",
                     "no": "Annet",
-                    "sv": "Annat",
-                    "pl": "Inny",
+                    "es": "Otro",
+                    "da": "Andet",
                     "ru": "Другое",
-                    "ko": "기타"
+                    "pl": "Inne",
+                    "ko": "기타",
+                    "ar": "أخرى"
                   }
                 },
                 {
-                  "id": "sensor",
+                  "id": "amplifier",
                   "label": {
-                    "en": "Sensor",
-                    "nl": "Sensor",
-                    "da": "Sensor",
-                    "de": "Sensor",
-                    "es": "Sensor",
-                    "fr": "Capteur",
-                    "it": "Sensore",
-                    "no": "Sensor",
-                    "sv": "Sensor",
-                    "pl": "Czujnik",
-                    "ru": "Датчик",
-                    "ko": "센서"
+                    "en": "Amplifier",
+                    "nl": "Versterker",
+                    "de": "Verstärker",
+                    "fr": "Amplificateur",
+                    "it": "Amplificatore",
+                    "sv": "Förstärkare",
+                    "no": "Forsterker",
+                    "es": "Amplificador",
+                    "da": "Forstærker",
+                    "ru": "Усилитель",
+                    "pl": "Wzmacniacz",
+                    "ko": "앰프",
+                    "ar": "مضخم صوت"
                   }
                 },
                 {
-                  "id": "socket",
+                  "id": "blinds",
                   "label": {
-                    "en": "Socket",
-                    "nl": "Stopcontact",
-                    "da": "Stik",
-                    "de": "Steckdose",
-                    "es": "Enchufe",
-                    "fr": "Prise",
-                    "it": "Presa",
-                    "no": "Stikkontakt",
-                    "sv": "Uttag",
-                    "pl": "Gniazdo",
-                    "ru": "Розетка",
-                    "ko": "소켓"
-                  }
-                },
-                {
-                  "id": "light",
-                  "label": {
-                    "en": "Light",
-                    "nl": "Licht",
-                    "da": "Lys",
-                    "de": "Licht",
-                    "es": "Luz",
-                    "fr": "Lumière",
-                    "it": "Luce",
-                    "no": "Lys",
-                    "sv": "Ljus",
-                    "pl": "Światło",
-                    "ru": "Свет",
-                    "ko": "조명"
-                  }
-                },
-                {
-                  "id": "heater",
-                  "label": {
-                    "en": "Heater",
-                    "nl": "Verwarming",
-                    "da": "Varmelegeme",
-                    "de": "Heizung",
-                    "es": "Calefactor",
-                    "fr": "Chauffage",
-                    "it": "Riscaldatore",
-                    "no": "Varmeapparat",
-                    "sv": "Värmare",
-                    "pl": "Grzejnik",
-                    "ru": "Обогреватель",
-                    "ko": "히터"
-                  }
-                },
-                {
-                  "id": "thermostat",
-                  "label": {
-                    "en": "Thermostat",
-                    "nl": "Thermostaat",
-                    "da": "Termostat",
-                    "de": "Thermostat",
-                    "es": "Termostato",
-                    "fr": "Thermostat",
-                    "it": "Termostato",
-                    "no": "Termostat",
-                    "sv": "Termostat",
-                    "pl": "Termostat",
-                    "ru": "Термостат",
-                    "ko": "온도 조절기"
-                  }
-                },
-                {
-                  "id": "lock",
-                  "label": {
-                    "en": "Lock",
-                    "nl": "Slot",
-                    "da": "Lås",
-                    "de": "Schloss",
-                    "es": "Cerradura",
-                    "fr": "Verrou",
-                    "it": "Serratura",
-                    "no": "Lås",
-                    "sv": "Lås",
-                    "pl": "Zamek",
-                    "ru": "Замок",
-                    "ko": "잠금"
+                    "en": "Blinds",
+                    "nl": "Jaloezieën",
+                    "de": "Jalousien",
+                    "fr": "Stores",
+                    "it": "Tende",
+                    "sv": "Persienner",
+                    "no": "Persienner",
+                    "es": "Persianas",
+                    "da": "Persienner",
+                    "ru": "Жалюзи",
+                    "pl": "Żaluzje",
+                    "ko": "블라인드",
+                    "ar": "ستائر"
                   }
                 },
                 {
@@ -8707,16 +9736,377 @@
                   "label": {
                     "en": "Button",
                     "nl": "Knop",
-                    "da": "Knap",
                     "de": "Taste",
-                    "es": "Botón",
                     "fr": "Bouton",
                     "it": "Pulsante",
-                    "no": "Knapp",
                     "sv": "Knapp",
-                    "pl": "Przycisk",
+                    "no": "Knapp",
+                    "es": "Botón",
+                    "da": "Knap",
                     "ru": "Кнопка",
-                    "ko": "버튼"
+                    "pl": "Przycisk",
+                    "ko": "버튼",
+                    "ar": "زر"
+                  }
+                },
+                {
+                  "id": "camera",
+                  "label": {
+                    "en": "Camera",
+                    "nl": "Camera",
+                    "de": "Kamera",
+                    "fr": "Caméra",
+                    "it": "Telecamera",
+                    "sv": "Kamera",
+                    "no": "Kamera",
+                    "es": "Cámara",
+                    "da": "Kamera",
+                    "ru": "Камера",
+                    "pl": "Kamera",
+                    "ko": "카메라",
+                    "ar": "كاميرا"
+                  }
+                },
+                {
+                  "id": "coffeemachine",
+                  "label": {
+                    "en": "Coffee Machine",
+                    "nl": "Koffiezetapparaat",
+                    "de": "Kaffeemaschine",
+                    "fr": "Machine à café",
+                    "it": "Macchina da caffè",
+                    "sv": "Kaffemaskin",
+                    "no": "Kaffemaskin",
+                    "es": "Cafetera",
+                    "da": "Kaffemaskine",
+                    "ru": "Кофемашина",
+                    "pl": "Ekspres do kawy",
+                    "ko": "커피 머신",
+                    "ar": "آلة القهوة"
+                  }
+                },
+                {
+                  "id": "curtain",
+                  "label": {
+                    "en": "Curtain",
+                    "nl": "Gordijn",
+                    "de": "Vorhang",
+                    "fr": "Rideau",
+                    "it": "Tenda",
+                    "sv": "Gardin",
+                    "no": "Gardin",
+                    "es": "Cortina",
+                    "da": "Gardin",
+                    "ru": "Штора",
+                    "pl": "Zasłona",
+                    "ko": "커튼",
+                    "ar": "ستارة"
+                  }
+                },
+                {
+                  "id": "fan",
+                  "label": {
+                    "en": "Fan",
+                    "nl": "Ventilator",
+                    "de": "Ventilator",
+                    "fr": "Ventilateur",
+                    "it": "Ventilatore",
+                    "sv": "Fläkt",
+                    "no": "Vifte",
+                    "es": "Ventilador",
+                    "da": "Ventilator",
+                    "ru": "Вентилятор",
+                    "pl": "Wentylator",
+                    "ko": "선풍기",
+                    "ar": "مروحة"
+                  }
+                },
+                {
+                  "id": "heater",
+                  "label": {
+                    "en": "Heater",
+                    "nl": "Kachel",
+                    "de": "Heizung",
+                    "fr": "Chauffage",
+                    "it": "Riscaldatore",
+                    "sv": "Värmare",
+                    "no": "Varmeapparat",
+                    "es": "Calentador",
+                    "da": "Varmelegeme",
+                    "ru": "Обогреватель",
+                    "pl": "Grzejnik",
+                    "ko": "히터",
+                    "ar": "سخان"
+                  }
+                },
+                {
+                  "id": "homealarm",
+                  "label": {
+                    "en": "Home Alarm",
+                    "nl": "Huisalarm",
+                    "de": "Hausalarm",
+                    "fr": "Alarme domestique",
+                    "it": "Allarme di casa",
+                    "sv": "Hemlarm",
+                    "no": "Hjemmealarm",
+                    "es": "Alarma para el hogar",
+                    "da": "Hjemmealarm",
+                    "ru": "Домашняя сигнализация",
+                    "pl": "Alarm domowy",
+                    "ko": "홈 알람",
+                    "ar": "إنذار المنزل"
+                  }
+                },
+                {
+                  "id": "kettle",
+                  "label": {
+                    "en": "Kettle",
+                    "nl": "Waterkoker",
+                    "de": "Wasserkocher",
+                    "fr": "Bouilloire",
+                    "it": "Bollitore",
+                    "sv": "Vattenkokare",
+                    "no": "Vannkoker",
+                    "es": "Hervidor",
+                    "da": "Kedel",
+                    "ru": "Чайник",
+                    "pl": "Czajnik",
+                    "ko": "주전자",
+                    "ar": "غلاية"
+                  }
+                },
+                {
+                  "id": "light",
+                  "label": {
+                    "en": "Light",
+                    "nl": "Lamp",
+                    "de": "Lampe",
+                    "fr": "Lumière",
+                    "it": "Luce",
+                    "sv": "Lampa",
+                    "no": "Lys",
+                    "es": "Luz",
+                    "da": "Lys",
+                    "ru": "Свет",
+                    "pl": "Światło",
+                    "ko": "조명",
+                    "ar": "ضوء"
+                  }
+                },
+                {
+                  "id": "lock",
+                  "label": {
+                    "en": "Lock",
+                    "nl": "Slot",
+                    "de": "Schloss",
+                    "fr": "Serrure",
+                    "it": "Serratura",
+                    "sv": "Lås",
+                    "no": "Lås",
+                    "es": "Cerradura",
+                    "da": "Lås",
+                    "ru": "Замок",
+                    "pl": "Zamek",
+                    "ko": "잠금장치",
+                    "ar": "قفل"
+                  }
+                },
+                {
+                  "id": "microwave",
+                  "label": {
+                    "en": "Microwave",
+                    "nl": "Magnetron",
+                    "de": "Mikrowelle",
+                    "fr": "Micro-ondes",
+                    "it": "Microonde",
+                    "sv": "Mikrovågsugn",
+                    "no": "Mikrobølgeovn",
+                    "es": "Microondas",
+                    "da": "Mikrobølgeovn",
+                    "ru": "Микроволновая печь",
+                    "pl": "Kuchenka mikrofalowa",
+                    "ko": "전자레인지",
+                    "ar": "ميكروويف"
+                  }
+                },
+                {
+                  "id": "remote",
+                  "label": {
+                    "en": "Remote",
+                    "nl": "Afstandsbediening",
+                    "de": "Fernbedienung",
+                    "fr": "Télécommande",
+                    "it": "Telecomando",
+                    "sv": "Fjärrkontroll",
+                    "no": "Fjernkontroll",
+                    "es": "Mando a distancia",
+                    "da": "Fjernbetjening",
+                    "ru": "Пульт ДУ",
+                    "pl": "Pilot",
+                    "ko": "리모컨",
+                    "ar": "ريموت"
+                  }
+                },
+                {
+                  "id": "sensor",
+                  "label": {
+                    "en": "Sensor",
+                    "nl": "Sensor",
+                    "de": "Sensor",
+                    "fr": "Capteur",
+                    "it": "Sensore",
+                    "sv": "Sensor",
+                    "no": "Sensor",
+                    "es": "Sensor",
+                    "da": "Sensor",
+                    "ru": "Датчик",
+                    "pl": "Czujnik",
+                    "ko": "센서",
+                    "ar": "حساس"
+                  }
+                },
+                {
+                  "id": "smokealarm",
+                  "label": {
+                    "en": "Smoke Alarm",
+                    "nl": "Rookmelder",
+                    "de": "Rauchmelder",
+                    "fr": "Détecteur de fumée",
+                    "it": "Rilevatore di fumo",
+                    "sv": "Brandvarnare",
+                    "no": "Røykvarsler",
+                    "es": "Detector de humo",
+                    "da": "Røgalarm",
+                    "ru": "Дымовая сигнализация",
+                    "pl": "Alarm przeciwdymny",
+                    "ko": "화재 경보기",
+                    "ar": "إنذار الدخان"
+                  }
+                },
+                {
+                  "id": "socket",
+                  "label": {
+                    "en": "Socket",
+                    "nl": "Stopcontact",
+                    "de": "Steckdose",
+                    "fr": "Prise",
+                    "it": "Presa",
+                    "sv": "Uttag",
+                    "no": "Stikkontakt",
+                    "es": "Enchufe",
+                    "da": "Stikkontakt",
+                    "ru": "Розетка",
+                    "pl": "Gniazdo",
+                    "ko": "소켓",
+                    "ar": "مقبس"
+                  }
+                },
+                {
+                  "id": "speaker",
+                  "label": {
+                    "en": "Speaker",
+                    "nl": "Luidspreker",
+                    "de": "Lautsprecher",
+                    "fr": "Haut-parleur",
+                    "it": "Altoparlante",
+                    "sv": "Högtalare",
+                    "no": "Høyttaler",
+                    "es": "Altavoz",
+                    "da": "Højttaler",
+                    "ru": "Динамик",
+                    "pl": "Głośnik",
+                    "ko": "스피커",
+                    "ar": "مكبر صوت"
+                  }
+                },
+                {
+                  "id": "sunshade",
+                  "label": {
+                    "en": "Sunshade",
+                    "nl": "Zonnescherm",
+                    "de": "Sonnenschutz",
+                    "fr": "Pare-soleil",
+                    "it": "Tenda da sole",
+                    "sv": "Solskydd",
+                    "no": "Solskjerming",
+                    "es": "Toldo",
+                    "da": "Solafskærmning",
+                    "ru": "Навес от солнца",
+                    "pl": "Markiza",
+                    "ko": "차양",
+                    "ar": "مظلة شمسية"
+                  }
+                },
+                {
+                  "id": "thermostat",
+                  "label": {
+                    "en": "Thermostat",
+                    "nl": "Thermostaat",
+                    "de": "Thermostat",
+                    "fr": "Thermostat",
+                    "it": "Termostato",
+                    "sv": "Termostat",
+                    "no": "Termostat",
+                    "es": "Termostato",
+                    "da": "Termostat",
+                    "ru": "Термостат",
+                    "pl": "Termostat",
+                    "ko": "온도 조절기",
+                    "ar": "ترموستات"
+                  }
+                },
+                {
+                  "id": "tv",
+                  "label": {
+                    "en": "TV",
+                    "nl": "Tv",
+                    "de": "TV",
+                    "fr": "TV",
+                    "it": "TV",
+                    "sv": "TV",
+                    "no": "TV",
+                    "es": "TV",
+                    "da": "TV",
+                    "ru": "ТВ",
+                    "pl": "TV",
+                    "ko": "TV",
+                    "ar": "تلفزيون"
+                  }
+                },
+                {
+                  "id": "vacuumcleaner",
+                  "label": {
+                    "en": "Vacuum Cleaner",
+                    "nl": "Stofzuiger",
+                    "de": "Staubsauger",
+                    "fr": "Aspirateur",
+                    "it": "Aspirapolvere",
+                    "sv": "Dammsugare",
+                    "no": "Støvsuger",
+                    "es": "Aspiradora",
+                    "da": "Støvsuger",
+                    "ru": "Пылесос",
+                    "pl": "Odkurzacz",
+                    "ko": "진공 청소기",
+                    "ar": "مكنسة كهربائية"
+                  }
+                },
+                {
+                  "id": "waterheater",
+                  "label": {
+                    "en": "Water Heater",
+                    "nl": "Boiler",
+                    "de": "Warmwasserbereiter",
+                    "fr": "Chauffe-eau",
+                    "it": "Scaldabagno",
+                    "sv": "Varmvattenberedare",
+                    "no": "Varmtvannsbereder",
+                    "es": "Calentador de agua",
+                    "da": "Vandvarmer",
+                    "ru": "Водонагреватель",
+                    "pl": "Podgrzewacz wody",
+                    "ko": "온수기",
+                    "ar": "سخان مياه"
                   }
                 },
                 {
@@ -8724,16 +10114,17 @@
                   "label": {
                     "en": "Window Coverings",
                     "nl": "Raambekleding",
-                    "da": "Vinduesbeklædning",
                     "de": "Fensterabdeckungen",
-                    "es": "Cortinas",
                     "fr": "Couvre-fenêtres",
                     "it": "Tende",
-                    "no": "Vindusdekker",
-                    "sv": "Fönsterbeklädnader",
+                    "sv": "Fönsterbeklädnad",
+                    "no": "Vindusdekking",
+                    "es": "Revestimientos de ventanas",
+                    "da": "Vinduesbeklædning",
+                    "ru": "Оконные покрытия",
                     "pl": "Osłony okienne",
-                    "ru": "Шторы",
-                    "ko": "창문 커버링"
+                    "ko": "창문 덮개",
+                    "ar": "أغطية النوافذ"
                   }
                 }
               ]
@@ -8758,20 +10149,11 @@
         "sv": "Åtgärd",
         "pl": "Akcja",
         "ru": "Действие",
-        "ko": "작업"
+        "ko": "작업",
+        "ar": "إجراء"
       },
       "units": {
-        "en": "",
-        "da": "",
-        "de": "",
-        "es": "",
-        "fr": "",
-        "it": "",
-        "no": "",
-        "sv": "",
-        "pl": "",
-        "ru": "",
-        "ko": ""
+        "en": ""
       },
       "getable": true,
       "setable": false,
@@ -8781,7 +10163,19 @@
     "action_group": {
       "type": "number",
       "title": {
-        "en": "Action group"
+        "en": "Action group",
+        "nl": "Actiegroep",
+        "da": "Handlingsgruppe",
+        "de": "Aktionsgruppe",
+        "es": "Grupo de acción",
+        "fr": "Groupe d'action",
+        "it": "Gruppo di azione",
+        "no": "Handlingsgruppe",
+        "sv": "Åtgärdsgrupp",
+        "pl": "Grupa akcji",
+        "ru": "Группа действий",
+        "ko": "작업 그룹",
+        "ar": "مجموعة الإجراءات"
       },
       "units": {
         "en": ""
@@ -8805,7 +10199,8 @@
         "sv": "Bridge offline",
         "pl": "Bridge offline",
         "ru": "Мост офлайн",
-        "ko": "브릿지 오프라인"
+        "ko": "브릿지 오프라인",
+        "ar": "الجسر غير متصل"
       },
       "insightsTitleTrue": {
         "en": "Offline",
@@ -8819,7 +10214,8 @@
         "sv": "Offline",
         "pl": "Offline",
         "ru": "Офлайн",
-        "ko": "오프라인"
+        "ko": "오프라인",
+        "ar": "غير متصل"
       },
       "insightsTitleFalse": {
         "en": "Online",
@@ -8833,7 +10229,8 @@
         "sv": "Online",
         "pl": "Online",
         "ru": "Онлайн",
-        "ko": "온라인"
+        "ko": "온라인",
+        "ar": "متصل"
       },
       "uiComponent": "sensor",
       "getable": true,
@@ -8844,31 +10241,91 @@
     "alarm_sound": {
       "type": "enum",
       "title": {
-        "en": "Alarm sound"
+        "en": "Alarm sound",
+        "nl": "Alarmgeluid",
+        "da": "Alarmlyd",
+        "de": "Alarmton",
+        "es": "Sonido de alarma",
+        "fr": "Son d'alarme",
+        "it": "Suono di allarme",
+        "no": "Alarmlyd",
+        "sv": "Larmljud",
+        "pl": "Dźwięk alarmu",
+        "ru": "Звук сигнализации",
+        "ko": "알람 소리",
+        "ar": "صوت الإنذار"
       },
       "values": [
         {
           "id": "stop",
           "title": {
-            "en": "Stop alarm"
+            "en": "Stop alarm",
+            "nl": "Stop alarm",
+            "da": "Stop alarm",
+            "de": "Alarm stoppen",
+            "es": "Detener alarma",
+            "fr": "Arrêter l'alarme",
+            "it": "Ferma allarme",
+            "no": "Stopp alarm",
+            "sv": "Stoppa larm",
+            "pl": "Zatrzymaj alarm",
+            "ru": "Остановить тревогу",
+            "ko": "알람 중지",
+            "ar": "إيقاف الإنذار"
           }
         },
         {
           "id": "pre_alarm",
           "title": {
-            "en": "Pre alarm"
+            "en": "Pre alarm",
+            "nl": "Voor-alarm",
+            "da": "Præ-alarm",
+            "de": "Voralarm",
+            "es": "Prealarma",
+            "fr": "Pré-alarme",
+            "it": "Pre-allarme",
+            "no": "Forhåndsalarm",
+            "sv": "Förlarm",
+            "pl": "Pre-alarm",
+            "ru": "Предварительная тревога",
+            "ko": "사전 알람",
+            "ar": "إنذار مسبق"
           }
         },
         {
           "id": "fire",
           "title": {
-            "en": "Fire alarm"
+            "en": "Fire alarm",
+            "nl": "Brandalarm",
+            "da": "Brandalarmer",
+            "de": "Feueralarm",
+            "es": "Alarma de incendio",
+            "fr": "Alarme incendie",
+            "it": "Allarme antincendio",
+            "no": "Brannalarm",
+            "sv": "Brandlarm",
+            "pl": "Alarm przeciwpożarowy",
+            "ru": "Пожарная сигнализация",
+            "ko": "화재 알람",
+            "ar": "إنذار حريق"
           }
         },
         {
           "id": "burglar",
           "title": {
-            "en": "Burglar alarm"
+            "en": "Burglar alarm",
+            "nl": "Inbraakalarm",
+            "da": "Indbrudsalarm",
+            "de": "Einbruchalarm",
+            "es": "Alarma antirrobo",
+            "fr": "Alarme anti-intrusion",
+            "it": "Allarme antifurto",
+            "no": "Innbruddsalarm",
+            "sv": "Inbrottslarm",
+            "pl": "Alarm antywłamaniowy",
+            "ru": "Охранная сигнализация",
+            "ko": "도난 알람",
+            "ar": "إنذار ضد السرقة"
           }
         }
       ],
@@ -8891,7 +10348,8 @@
         "sv": "Tillåt att gå med",
         "pl": "Zezwól na dołączenie",
         "ru": "Разрешить присоединение",
-        "ko": "가입 허용"
+        "ko": "가입 허용",
+        "ar": "السماح بالانضمام"
       },
       "getable": true,
       "setable": true,
@@ -8909,7 +10367,8 @@
         "sv": "Gå med på",
         "pl": "Dołączanie włączone",
         "ru": "Присоединение включено",
-        "ko": "가입 켜짐"
+        "ko": "가입 켜짐",
+        "ar": "الانضمام مفعل"
       },
       "insightsTitleFalse": {
         "en": "Joining off",
@@ -8923,7 +10382,8 @@
         "sv": "Gå med av",
         "pl": "Dołączanie wyłączone",
         "ru": "Присоединение выключено",
-        "ko": "가입 꺼짐"
+        "ko": "가입 꺼짐",
+        "ar": "الانضمام معطل"
       },
       "uiComponent": "toggle",
       "uiQuickAction": false
@@ -8942,7 +10402,8 @@
         "sv": "Anspråks timeout",
         "pl": "Limit czasu połączenia",
         "ru": "Тайм-аут подключения",
-        "ko": "가입 시간 초과"
+        "ko": "가입 시간 초과",
+        "ar": "مهلة الانضمام"
       },
       "getable": true,
       "setable": false,
@@ -8963,7 +10424,8 @@
         "sv": "Batteristatus",
         "pl": "Stan baterii",
         "ru": "Состояние батареи",
-        "ko": "배터리 상태"
+        "ko": "배터리 상태",
+        "ar": "حالة البطارية"
       },
       "values": [
         {
@@ -8980,7 +10442,8 @@
             "sv": "Låg",
             "pl": "Niski",
             "ru": "Низкий",
-            "ko": "낮은"
+            "ko": "낮은",
+            "ar": "منخفض"
           }
         },
         {
@@ -8997,7 +10460,8 @@
             "sv": "Medium",
             "pl": "Średni",
             "ru": "Средний",
-            "ko": "중간"
+            "ko": "중간",
+            "ar": "متوسط"
           }
         },
         {
@@ -9014,7 +10478,8 @@
             "sv": "Hög",
             "pl": "Wysoki",
             "ru": "Высокий",
-            "ko": "높은"
+            "ko": "높은",
+            "ar": "مرتفع"
           }
         }
       ],
@@ -9038,7 +10503,8 @@
         "sv": "Färg På Slå Beteende",
         "pl": "Zachowanie Przy Włączeniu Koloru",
         "ru": "Поведение При Включении Цвета",
-        "ko": "색상 전원 켜기 동작"
+        "ko": "색상 전원 켜기 동작",
+        "ar": "سلوك تشغيل الألوان"
       },
       "values": [
         {
@@ -9055,7 +10521,8 @@
             "sv": "Initial",
             "pl": "Początkowy",
             "ru": "Начальный",
-            "ko": "초기"
+            "ko": "초기",
+            "ar": "أولي"
           }
         },
         {
@@ -9072,7 +10539,8 @@
             "sv": "Anpassad",
             "pl": "Dostosowany",
             "ru": "Настроенный",
-            "ko": "사용자 지정"
+            "ko": "사용자 지정",
+            "ar": "مخصص"
           }
         },
         {
@@ -9089,7 +10557,8 @@
             "sv": "Tidigare",
             "pl": "Poprzedni",
             "ru": "Предыдущий",
-            "ko": "이전"
+            "ko": "이전",
+            "ar": "السابق"
           }
         }
       ],
@@ -9112,7 +10581,8 @@
         "sv": "URVAL",
         "pl": "WYBÓR",
         "ru": "ВЫБОР",
-        "ko": "선택"
+        "ko": "선택",
+        "ar": "اختيار"
       },
       "values": [
         {
@@ -9129,7 +10599,8 @@
             "sv": "Första alternativet",
             "pl": "Pierwsza opcja",
             "ru": "Первый вариант",
-            "ko": "첫 번째 옵션"
+            "ko": "첫 번째 옵션",
+            "ar": "الخيار الأول"
           }
         },
         {
@@ -9146,7 +10617,8 @@
             "sv": "Andra alternativet",
             "pl": "Druga opcja",
             "ru": "Второй вариант",
-            "ko": "두 번째 옵션"
+            "ko": "두 번째 옵션",
+            "ar": "الخيار الثاني"
           }
         },
         {
@@ -9163,7 +10635,8 @@
             "sv": "Tredje alternativet",
             "pl": "Trzecia opcja",
             "ru": "Третий вариант",
-            "ko": "세 번째 옵션"
+            "ko": "세 번째 옵션",
+            "ar": "الخيار الثالث"
           }
         },
         {
@@ -9180,7 +10653,8 @@
             "sv": "Fjärde alternativet",
             "pl": "Czwarta opcja",
             "ru": "Четвертый вариант",
-            "ko": "네 번째 옵션"
+            "ko": "네 번째 옵션",
+            "ar": "الخيار الرابع"
           }
         }
       ],
@@ -9215,21 +10689,11 @@
         "sv": "Text",
         "pl": "Tekst",
         "ru": "Текст",
-        "ko": "텍스트"
+        "ko": "텍스트",
+        "ar": "نص"
       },
       "units": {
-        "en": "",
-        "nl": "",
-        "da": "",
-        "de": "",
-        "es": "",
-        "fr": "",
-        "it": "",
-        "no": "",
-        "sv": "",
-        "pl": "",
-        "ru": "",
-        "ko": ""
+        "en": ""
       },
       "getable": true,
       "setable": false,
@@ -9249,7 +10713,8 @@
         "sv": "Effekt",
         "pl": "Efekt",
         "ru": "Эффект",
-        "ko": "효과"
+        "ko": "효과",
+        "ar": "تأثير"
       },
       "values": [
         {
@@ -9266,7 +10731,8 @@
             "sv": "Blinka",
             "pl": "Migać",
             "ru": "Мигание",
-            "ko": "깜박임"
+            "ko": "깜박임",
+            "ar": "وميض"
           }
         },
         {
@@ -9283,7 +10749,8 @@
             "sv": "Andas",
             "pl": "Oddychać",
             "ru": "Дыхание",
-            "ko": "숨쉬기"
+            "ko": "숨쉬기",
+            "ar": "تنفس"
           }
         },
         {
@@ -9300,7 +10767,8 @@
             "sv": "Okej",
             "pl": "Ok",
             "ru": "Окей",
-            "ko": "괜찮아요"
+            "ko": "괜찮아요",
+            "ar": "حسنا"
           }
         },
         {
@@ -9317,7 +10785,8 @@
             "sv": "Kanalförändring",
             "pl": "Zmiana kanału",
             "ru": "Смена канала",
-            "ko": "채널 변경"
+            "ko": "채널 변경",
+            "ar": "تغيير القناة"
           }
         },
         {
@@ -9334,7 +10803,8 @@
             "sv": "Avsluta effekt",
             "pl": "Zakończ efekt",
             "ru": "Завершить эффект",
-            "ko": "효과 완료"
+            "ko": "효과 완료",
+            "ar": "إنهاء التأثير"
           }
         },
         {
@@ -9351,7 +10821,8 @@
             "sv": "Stoppa effekt",
             "pl": "Zatrzymaj efekt",
             "ru": "Остановить эффект",
-            "ko": "효과 중지"
+            "ko": "효과 중지",
+            "ar": "إيقاف التأثير"
           }
         },
         {
@@ -9368,7 +10839,8 @@
             "sv": "Färgslinga",
             "pl": "Pętla kolorów",
             "ru": "Цветовая петля",
-            "ko": "컬러 루프"
+            "ko": "컬러 루프",
+            "ar": "حلقة الألوان"
           }
         },
         {
@@ -9385,7 +10857,8 @@
             "sv": "Stoppa färgslinga",
             "pl": "Zatrzymaj pętlę kolorów",
             "ru": "Остановить цветовую петлю",
-            "ko": "컬러 루프 중지"
+            "ko": "컬러 루프 중지",
+            "ar": "إيقاف حلقة الألوان"
           }
         }
       ],
@@ -9408,7 +10881,8 @@
         "sv": "Fläktläge",
         "pl": "Tryb wentylatora",
         "ru": "Режим вентилятора",
-        "ko": "팬 모드"
+        "ko": "팬 모드",
+        "ar": "وضع المروحة"
       },
       "values": [
         {
@@ -9425,7 +10899,8 @@
             "sv": "Av",
             "pl": "Wyłączony",
             "ru": "Выкл",
-            "ko": "꺼짐"
+            "ko": "꺼짐",
+            "ar": "إيقاف"
           }
         },
         {
@@ -9442,7 +10917,8 @@
             "sv": "Låg",
             "pl": "Niski",
             "ru": "Низкий",
-            "ko": "낮은"
+            "ko": "낮은",
+            "ar": "منخفض"
           }
         },
         {
@@ -9459,7 +10935,8 @@
             "sv": "Medium",
             "pl": "Średni",
             "ru": "Средний",
-            "ko": "중간"
+            "ko": "중간",
+            "ar": "متوسط"
           }
         },
         {
@@ -9476,7 +10953,8 @@
             "sv": "Hög",
             "pl": "Wysoki",
             "ru": "Высокий",
-            "ko": "높은"
+            "ko": "높은",
+            "ar": "مرتفع"
           }
         },
         {
@@ -9493,7 +10971,8 @@
             "sv": "På",
             "pl": "Włączony",
             "ru": "Вкл",
-            "ko": "켬"
+            "ko": "켬",
+            "ar": "تشغيل"
           }
         },
         {
@@ -9510,7 +10989,8 @@
             "sv": "Automatisk",
             "pl": "Auto",
             "ru": "Авто",
-            "ko": "자동"
+            "ko": "자동",
+            "ar": "تلقائي"
           }
         },
         {
@@ -9527,7 +11007,8 @@
             "sv": "Smart",
             "pl": "Inteligentny",
             "ru": "Умный",
-            "ko": "스마트"
+            "ko": "스마트",
+            "ar": "ذكي"
           }
         }
       ],
@@ -9550,7 +11031,8 @@
         "sv": "Indikatormodus",
         "pl": "Tryb wskaźnika",
         "ru": "Режим индикатора",
-        "ko": "표시기 모드"
+        "ko": "표시기 모드",
+        "ar": "وضع المؤشر"
       },
       "values": [
         {
@@ -9567,7 +11049,8 @@
             "sv": "Av",
             "pl": "Wyłączony",
             "ru": "Выкл.",
-            "ko": "끔"
+            "ko": "끔",
+            "ar": "إيقاف"
           }
         },
         {
@@ -9584,7 +11067,8 @@
             "sv": "På",
             "pl": "Włączony",
             "ru": "Вкл.",
-            "ko": "켬"
+            "ko": "켬",
+            "ar": "تشغيل"
           }
         },
         {
@@ -9601,7 +11085,8 @@
             "sv": "Av/På",
             "pl": "Wyłączony/Włączony",
             "ru": "Выкл./Вкл.",
-            "ko": "끔/켬"
+            "ko": "끔/켬",
+            "ar": "إيقاف/تشغيل"
           }
         },
         {
@@ -9618,7 +11103,8 @@
             "sv": "På/Av",
             "pl": "Włączony/Wyłączony",
             "ru": "Вкл./Выкл.",
-            "ko": "켬/끔"
+            "ko": "켬/끔",
+            "ar": "تشغيل/إيقاف"
           }
         }
       ],
@@ -9641,21 +11127,11 @@
         "sv": "Länk kvalitet",
         "pl": "Jakość połączenia",
         "ru": "Качество связи",
-        "ko": "링크 품질"
+        "ko": "링크 품질",
+        "ar": "جودة الاتصال"
       },
       "units": {
-        "en": "lqi",
-        "nl": "lqi",
-        "da": "lqi",
-        "de": "lqi",
-        "es": "lqi",
-        "fr": "lqi",
-        "it": "lqi",
-        "no": "lqi",
-        "sv": "lqi",
-        "pl": "lqi",
-        "ru": "lqi",
-        "ko": "lqi"
+        "en": "lqi"
       },
       "getable": true,
       "setable": false,
@@ -9695,7 +11171,8 @@
         "da": "Batterispænding i millivolt (mV)",
         "ru": "Напряжение аккумулятора в милливольтах (мВ)",
         "pl": "Napięcie akumulatora w miliwoltach (mV)",
-        "ko": "배터리 전압 (밀리볼트, mV)"
+        "ko": "배터리 전압 (밀리볼트, mV)",
+        "ar": "جهد البطارية بالملي فولت (mV)"
       },
       "getable": true,
       "setable": false,
@@ -9716,21 +11193,11 @@
         "sv": "Vinkel x",
         "pl": "Kąt x",
         "ru": "Угол x",
-        "ko": "각도 x"
+        "ko": "각도 x",
+        "ar": "الزاوية x"
       },
       "units": {
-        "en": "°",
-        "nl": "°",
-        "da": "°",
-        "de": "°",
-        "es": "°",
-        "fr": "°",
-        "it": "°",
-        "no": "°",
-        "sv": "°",
-        "pl": "°",
-        "ru": "°",
-        "ko": "°"
+        "en": "°"
       },
       "getable": true,
       "setable": false,
@@ -9751,21 +11218,11 @@
         "sv": "Vinkel y",
         "pl": "Kąt y",
         "ru": "Угол y",
-        "ko": "각도 y"
+        "ko": "각도 y",
+        "ar": "الزاوية y"
       },
       "units": {
-        "en": "°",
-        "nl": "°",
-        "da": "°",
-        "de": "°",
-        "es": "°",
-        "fr": "°",
-        "it": "°",
-        "no": "°",
-        "sv": "°",
-        "pl": "°",
-        "ru": "°",
-        "ko": "°"
+        "en": "°"
       },
       "getable": true,
       "setable": false,
@@ -9786,21 +11243,11 @@
         "sv": "Vinkel z",
         "pl": "Kąt z",
         "ru": "Угол z",
-        "ko": "각도 z"
+        "ko": "각도 z",
+        "ar": "الزاوية z"
       },
       "units": {
-        "en": "°",
-        "nl": "°",
-        "da": "°",
-        "de": "°",
-        "es": "°",
-        "fr": "°",
-        "it": "°",
-        "no": "°",
-        "sv": "°",
-        "pl": "°",
-        "ru": "°",
-        "ko": "°"
+        "en": "°"
       },
       "getable": true,
       "setable": false,
@@ -9821,21 +11268,11 @@
         "sv": "X-axel",
         "pl": "Oś X",
         "ru": "Ось X",
-        "ko": "X축"
+        "ko": "X축",
+        "ar": "المحور X"
       },
       "units": {
-        "en": "°",
-        "nl": "°",
-        "da": "°",
-        "de": "°",
-        "es": "°",
-        "fr": "°",
-        "it": "°",
-        "no": "°",
-        "sv": "°",
-        "pl": "°",
-        "ru": "°",
-        "ko": "°"
+        "en": "°"
       },
       "getable": true,
       "setable": false,
@@ -9856,21 +11293,11 @@
         "sv": "Y-axel",
         "pl": "Oś Y",
         "ru": "Ось Y",
-        "ko": "Y축"
+        "ko": "Y축",
+        "ar": "المحور Y"
       },
       "units": {
-        "en": "°",
-        "nl": "°",
-        "da": "°",
-        "de": "°",
-        "es": "°",
-        "fr": "°",
-        "it": "°",
-        "no": "°",
-        "sv": "°",
-        "pl": "°",
-        "ru": "°",
-        "ko": "°"
+        "en": "°"
       },
       "getable": true,
       "setable": false,
@@ -9891,21 +11318,11 @@
         "sv": "Z-axel",
         "pl": "Oś Z",
         "ru": "Ось Z",
-        "ko": "Z축"
+        "ko": "Z축",
+        "ar": "المحور Z"
       },
       "units": {
-        "en": "°",
-        "nl": "°",
-        "da": "°",
-        "de": "°",
-        "es": "°",
-        "fr": "°",
-        "it": "°",
-        "no": "°",
-        "sv": "°",
-        "pl": "°",
-        "ru": "°",
-        "ko": "°"
+        "en": "°"
       },
       "getable": true,
       "setable": false,
@@ -9926,7 +11343,8 @@
         "sv": "Anslutna enheter",
         "pl": "Podłączone urządzenia",
         "ru": "Подключенные устройства",
-        "ko": "연결된 장치"
+        "ko": "연결된 장치",
+        "ar": "الأجهزة المتصلة"
       },
       "getable": true,
       "setable": false,
@@ -9947,7 +11365,8 @@
         "sv": "Gick med i grupper",
         "pl": "Dołączone grupy",
         "ru": "Присоединившиеся группы",
-        "ko": "가입한 그룹들"
+        "ko": "가입한 그룹들",
+        "ar": "المجموعات المنضمة"
       },
       "getable": true,
       "setable": false,
@@ -9968,7 +11387,8 @@
         "sv": "Meddelanden/minut",
         "pl": "Wiadomości/minuta",
         "ru": "Сообщения/минута",
-        "ko": "메시지/분"
+        "ko": "메시지/분",
+        "ar": "رسالة/دقيقة"
       },
       "getable": true,
       "setable": false,
@@ -9989,7 +11409,8 @@
         "sv": "Offline-enheter",
         "pl": "Urządzenia offline",
         "ru": "Офлайн устройства",
-        "ko": "오프라인 장치"
+        "ko": "오프라인 장치",
+        "ar": "الأجهزة غير المتصلة"
       },
       "getable": true,
       "setable": false,
@@ -10010,21 +11431,11 @@
         "sv": "Vibrationstyrka",
         "pl": "Siła wibracji",
         "ru": "Сила вибрации",
-        "ko": "진동 강도"
+        "ko": "진동 강도",
+        "ar": "قوة الاهتزاز"
       },
       "units": {
-        "en": "",
-        "nl": "",
-        "da": "",
-        "de": "",
-        "es": "",
-        "fr": "",
-        "it": "",
-        "no": "",
-        "sv": "",
-        "pl": "",
-        "ru": "",
-        "ko": ""
+        "en": ""
       },
       "getable": true,
       "setable": false,
@@ -10045,7 +11456,8 @@
         "sv": "Rörelsetillstånd",
         "pl": "Stan ruchu",
         "ru": "Состояние движения",
-        "ko": "움직임 상태"
+        "ko": "움직임 상태",
+        "ar": "حالة الحركة"
       },
       "getable": true,
       "setable": false,
@@ -10065,7 +11477,8 @@
         "sv": "Pilottrådsläge",
         "pl": "Tryb przewodu pilotażowego",
         "ru": "Режим пилотного провода",
-        "ko": "파일럿 와이어 모드"
+        "ko": "파일럿 와이어 모드",
+        "ar": "وضع السلك الدليلي"
       },
       "values": [
         {
@@ -10082,7 +11495,8 @@
             "sv": "Komfort",
             "pl": "Komfort",
             "ru": "Комфорт",
-            "ko": "편안함"
+            "ko": "편안함",
+            "ar": "راحة"
           }
         },
         {
@@ -10099,7 +11513,8 @@
             "sv": "Eco",
             "pl": "Eko",
             "ru": "Эко",
-            "ko": "에코"
+            "ko": "에코",
+            "ar": "اقتصادي"
           }
         },
         {
@@ -10116,7 +11531,8 @@
             "sv": "Frostskydd",
             "pl": "Ochrona przed mrozem",
             "ru": "Защита от замерзания",
-            "ko": "서리 방지"
+            "ko": "서리 방지",
+            "ar": "حماية من الصقيع"
           }
         },
         {
@@ -10133,7 +11549,8 @@
             "sv": "Av",
             "pl": "Wyłączony",
             "ru": "Выкл.",
-            "ko": "끄기"
+            "ko": "끄기",
+            "ar": "إيقاف"
           }
         },
         {
@@ -10150,7 +11567,8 @@
             "sv": "Komfort -1",
             "pl": "Komfort -1",
             "ru": "Комфорт -1",
-            "ko": "편안함 -1"
+            "ko": "편안함 -1",
+            "ar": "راحة -1"
           }
         },
         {
@@ -10167,7 +11585,8 @@
             "sv": "Komfort -2",
             "pl": "Komfort -2",
             "ru": "Комфорт -2",
-            "ko": "편안함 -2"
+            "ko": "편안함 -2",
+            "ar": "راحة -2"
           }
         }
       ],
@@ -10190,7 +11609,8 @@
         "sv": "Strömpåslagningsbeteende",
         "pl": "Zachowanie przy włączaniu",
         "ru": "Поведение при включении",
-        "ko": "전원 켜기 동작"
+        "ko": "전원 켜기 동작",
+        "ar": "سلوك التشغيل"
       },
       "values": [
         {
@@ -10207,7 +11627,8 @@
             "sv": "Av",
             "pl": "Wyłączony",
             "ru": "Выкл.",
-            "ko": "끄기"
+            "ko": "끄기",
+            "ar": "إيقاف"
           }
         },
         {
@@ -10224,7 +11645,8 @@
             "sv": "På",
             "pl": "Włączony",
             "ru": "Вкл.",
-            "ko": "켜기"
+            "ko": "켜기",
+            "ar": "تشغيل"
           }
         },
         {
@@ -10241,7 +11663,8 @@
             "sv": "Växla",
             "pl": "Przełącz",
             "ru": "Переключить",
-            "ko": "전환"
+            "ko": "전환",
+            "ar": "تبديل"
           }
         },
         {
@@ -10258,7 +11681,8 @@
             "sv": "Föregående",
             "pl": "Poprzedni",
             "ru": "Предыдущий",
-            "ko": "이전"
+            "ko": "이전",
+            "ar": "السابق"
           }
         }
       ],
@@ -10281,7 +11705,8 @@
         "sv": "Minnesstängning",
         "pl": "Pamięć przerwy w zasilaniu",
         "ru": "Память об отключении электроэнергии",
-        "ko": "전원 장애 메모리"
+        "ko": "전원 장애 메모리",
+        "ar": "ذاكرة انقطاع التيار"
       },
       "values": [
         {
@@ -10298,7 +11723,8 @@
             "sv": "Av",
             "pl": "Wyłączone",
             "ru": "Выкл.",
-            "ko": "끄기"
+            "ko": "끄기",
+            "ar": "إيقاف"
           }
         },
         {
@@ -10315,7 +11741,8 @@
             "sv": "På",
             "pl": "Włączone",
             "ru": "Вкл.",
-            "ko": "켜기"
+            "ko": "켜기",
+            "ar": "تشغيل"
           }
         },
         {
@@ -10332,7 +11759,8 @@
             "sv": "Återställ",
             "pl": "Przywróć",
             "ru": "Восстановить",
-            "ko": "복원"
+            "ko": "복원",
+            "ar": "استعادة"
           }
         }
       ],
@@ -10355,7 +11783,8 @@
         "sv": "Förvalt",
         "pl": "Ustawienie wstępne",
         "ru": "Предустановка",
-        "ko": "프리셋"
+        "ko": "프리셋",
+        "ar": "الإعداد المسبق"
       },
       "values": [
         {
@@ -10372,7 +11801,8 @@
             "sv": "Auto",
             "pl": "Auto",
             "ru": "Авто",
-            "ko": "자동"
+            "ko": "자동",
+            "ar": "تلقائي"
           }
         },
         {
@@ -10389,7 +11819,8 @@
             "sv": "Manuell",
             "pl": "Ręczny",
             "ru": "Ручной",
-            "ko": "수동"
+            "ko": "수동",
+            "ar": "يدوي"
           }
         },
         {
@@ -10406,7 +11837,8 @@
             "sv": "Semester",
             "pl": "Urlop",
             "ru": "Отпуск",
-            "ko": "휴일"
+            "ko": "휴일",
+            "ar": "عطلة"
           }
         }
       ],
@@ -10429,7 +11861,8 @@
         "sv": "Starta om bridge",
         "pl": "Zrestartuj bridge",
         "ru": "Перезапустить мост",
-        "ko": "브리지 재시작"
+        "ko": "브리지 재시작",
+        "ar": "إعادة تشغيل الجسر"
       },
       "getable": false,
       "setable": true,
@@ -10449,21 +11882,11 @@
         "sv": "Körtillstånd",
         "pl": "Stan biegu",
         "ru": "Состояние выполнения",
-        "ko": "실행 상태"
+        "ko": "실행 상태",
+        "ar": "حالة التشغيل"
       },
       "units": {
-        "en": "",
-        "nl": "",
-        "da": "",
-        "de": "",
-        "es": "",
-        "fr": "",
-        "it": "",
-        "no": "",
-        "sv": "",
-        "pl": "",
-        "ru": "",
-        "ko": ""
+        "en": ""
       },
       "getable": true,
       "setable": false,
@@ -10483,7 +11906,8 @@
         "sv": "Känslighet",
         "pl": "Czułość",
         "ru": "Чувствительность",
-        "ko": "민감도"
+        "ko": "민감도",
+        "ar": "الحساسية"
       },
       "values": [
         {
@@ -10500,7 +11924,8 @@
             "sv": "Låg",
             "pl": "Niski",
             "ru": "Низкий",
-            "ko": "낮은"
+            "ko": "낮은",
+            "ar": "منخفض"
           }
         },
         {
@@ -10517,7 +11942,8 @@
             "sv": "Medium",
             "pl": "Średni",
             "ru": "Средний",
-            "ko": "중간"
+            "ko": "중간",
+            "ar": "متوسط"
           }
         },
         {
@@ -10534,7 +11960,8 @@
             "sv": "Hög",
             "pl": "Wysoki",
             "ru": "Высокий",
-            "ko": "높은"
+            "ko": "높은",
+            "ar": "عالي"
           }
         }
       ],
@@ -10557,7 +11984,8 @@
         "sv": "Sensor",
         "pl": "Czujnik",
         "ru": "Датчик",
-        "ko": "센서"
+        "ko": "센서",
+        "ar": "مستشعر"
       },
       "values": [
         {
@@ -10574,7 +12002,8 @@
             "sv": "Intern (IN)",
             "pl": "Wewnętrzny (IN)",
             "ru": "Внутренний (IN)",
-            "ko": "내부 (IN)"
+            "ko": "내부 (IN)",
+            "ar": "داخلي (IN)"
           }
         },
         {
@@ -10591,7 +12020,8 @@
             "sv": "Extern (OU)",
             "pl": "Zewnętrzny (OU)",
             "ru": "Внешний (OU)",
-            "ko": "외부 (OU)"
+            "ko": "외부 (OU)",
+            "ar": "خارجي (OU)"
           }
         },
         {
@@ -10608,7 +12038,8 @@
             "sv": "Alla (AL)",
             "pl": "Wszystko (AL)",
             "ru": "Все (AL)",
-            "ko": "모두 (AL)"
+            "ko": "모두 (AL)",
+            "ar": "الكل (AL)"
           }
         },
         {
@@ -10625,7 +12056,8 @@
             "sv": "Intern",
             "pl": "Wewnętrzny",
             "ru": "Внутренний",
-            "ko": "내부"
+            "ko": "내부",
+            "ar": "داخلي"
           }
         },
         {
@@ -10642,7 +12074,8 @@
             "sv": "Extern",
             "pl": "Zewnętrzny",
             "ru": "Внешний",
-            "ko": "외부"
+            "ko": "외부",
+            "ar": "خارجي"
           }
         },
         {
@@ -10659,7 +12092,8 @@
             "sv": "Båda",
             "pl": "Oba",
             "ru": "Оба",
-            "ko": "둘 다"
+            "ko": "둘 다",
+            "ar": "كلاهما"
           }
         },
         {
@@ -10676,7 +12110,8 @@
             "sv": "Luft",
             "pl": "Powietrze",
             "ru": "Воздух",
-            "ko": "공기"
+            "ko": "공기",
+            "ar": "هواء"
           }
         },
         {
@@ -10693,7 +12128,8 @@
             "sv": "Golv",
             "pl": "Podłoga",
             "ru": "Пол",
-            "ko": "바닥"
+            "ko": "바닥",
+            "ar": "أرضية"
           }
         },
         {
@@ -10710,7 +12146,8 @@
             "sv": "Övervakargolv",
             "pl": "Piętro_nadzorcy",
             "ru": "Этаж_супервайзора",
-            "ko": "관리자층"
+            "ko": "관리자층",
+            "ar": "أرضية_المشرف"
           }
         },
         {
@@ -10727,7 +12164,8 @@
             "sv": "Luftsensor",
             "pl": "Czujnik_powietrza",
             "ru": "Датчик_воздуха",
-            "ko": "공기센서"
+            "ko": "공기센서",
+            "ar": "مستشعر_الهواء"
           }
         },
         {
@@ -10744,7 +12182,8 @@
             "sv": "Golvensor",
             "pl": "Czujnik_podłogi",
             "ru": "Датчик_пола",
-            "ko": "바닥센서"
+            "ko": "바닥센서",
+            "ar": "مستشعر_الأرضية"
           }
         },
         {
@@ -10761,7 +12200,8 @@
             "sv": "Max_skydd",
             "pl": "Max_ochrona",
             "ru": "Max_защита",
-            "ko": "최대보호"
+            "ko": "최대보호",
+            "ar": "حماية_قصوى"
           }
         },
         {
@@ -10778,7 +12218,8 @@
             "sv": "På",
             "pl": "Włączony",
             "ru": "Вкл",
-            "ko": "켜짐"
+            "ko": "켜짐",
+            "ar": "تشغيل"
           }
         },
         {
@@ -10795,7 +12236,8 @@
             "sv": "Av",
             "pl": "Wyłączony",
             "ru": "Выкл",
-            "ko": "끔"
+            "ko": "끔",
+            "ar": "إيقاف"
           }
         },
         {
@@ -10812,7 +12254,8 @@
             "sv": "Upptagen",
             "pl": "Zajęty",
             "ru": "Занятый",
-            "ko": "사용 중"
+            "ko": "사용 중",
+            "ar": "مشغول"
           }
         },
         {
@@ -10829,7 +12272,8 @@
             "sv": "Ledig",
             "pl": "Niezajęty",
             "ru": "Свободный",
-            "ko": "비어 있음"
+            "ko": "비어 있음",
+            "ar": "غير مشغول"
           }
         }
       ],
@@ -10841,7 +12285,19 @@
     "siren_state": {
       "type": "string",
       "title": {
-        "en": "Siren state"
+        "en": "Siren state",
+        "nl": "Sirene status",
+        "da": "Sirenetilstand",
+        "de": "Sirenenstatus",
+        "es": "Estado de la sirena",
+        "fr": "État de la sirène",
+        "it": "Stato della sirena",
+        "no": "Sirenetilstand",
+        "sv": "Sirénstatus",
+        "pl": "Stan syreny",
+        "ru": "Состояние сирены",
+        "ko": "사이렌 상태",
+        "ar": "حالة صفارة الإنذار"
       },
       "units": {
         "en": ""
@@ -10864,7 +12320,8 @@
         "sv": "Strömbrytartyp",
         "pl": "Typ przełącznika",
         "ru": "Тип переключателя",
-        "ko": "스위치 유형"
+        "ko": "스위치 유형",
+        "ar": "نوع المفتاح"
       },
       "values": [
         {
@@ -10881,7 +12338,8 @@
             "sv": "Växla",
             "pl": "Przełącz",
             "ru": "Переключить",
-            "ko": "토글"
+            "ko": "토글",
+            "ar": "تبديل"
           }
         },
         {
@@ -10898,7 +12356,8 @@
             "sv": "Tillstånd",
             "pl": "Stan",
             "ru": "Состояние",
-            "ko": "상태"
+            "ko": "상태",
+            "ar": "حالة"
           }
         },
         {
@@ -10915,7 +12374,8 @@
             "sv": "Tillfällig",
             "pl": "Chwilowy",
             "ru": "Мгновенный",
-            "ko": "순간적"
+            "ko": "순간적",
+            "ar": "لحظي"
           }
         }
       ],
@@ -10938,7 +12398,8 @@
         "sv": "Systemläge",
         "pl": "Tryb systemu",
         "ru": "Режим системы",
-        "ko": "시스템 모드"
+        "ko": "시스템 모드",
+        "ar": "وضع النظام"
       },
       "values": [
         {
@@ -10955,7 +12416,8 @@
             "sv": "Automatisk",
             "pl": "Auto",
             "ru": "Авто",
-            "ko": "자동"
+            "ko": "자동",
+            "ar": "تلقائي"
           }
         },
         {
@@ -10972,7 +12434,8 @@
             "sv": "Värme",
             "pl": "Ciepło",
             "ru": "Тепло",
-            "ko": "난방"
+            "ko": "난방",
+            "ar": "تدفئة"
           }
         },
         {
@@ -10989,7 +12452,8 @@
             "sv": "Av",
             "pl": "Wyłączony",
             "ru": "Выкл",
-            "ko": "꺼짐"
+            "ko": "꺼짐",
+            "ar": "إيقاف"
           }
         },
         {
@@ -11006,7 +12470,8 @@
             "sv": "Cool",
             "pl": "Chłodzenie",
             "ru": "Охлаждение",
-            "ko": "냉방"
+            "ko": "냉방",
+            "ar": "تبريد"
           }
         },
         {
@@ -11023,7 +12488,8 @@
             "sv": "Nöduppvärmning",
             "pl": "Ogrzewanie awaryjne",
             "ru": "Аварийное отопление",
-            "ko": "긴급 난방"
+            "ko": "긴급 난방",
+            "ar": "تدفئة طوارئ"
           }
         },
         {
@@ -11040,7 +12506,8 @@
             "sv": "Förkylning",
             "pl": "Wstępne chłodzenie",
             "ru": "Предварительное охлаждение",
-            "ko": "사전 냉각"
+            "ko": "사전 냉각",
+            "ar": "تبريد مسبق"
           }
         },
         {
@@ -11057,7 +12524,8 @@
             "sv": "Endast fläkt",
             "pl": "Tylko wentylator",
             "ru": "Только вентилятор",
-            "ko": "팬만 작동"
+            "ko": "팬만 작동",
+            "ar": "مروحة فقط"
           }
         },
         {
@@ -11074,7 +12542,8 @@
             "sv": "Torr",
             "pl": "Tryb osuszania",
             "ru": "Сухой",
-            "ko": "제습"
+            "ko": "제습",
+            "ar": "جاف"
           }
         },
         {
@@ -11091,7 +12560,8 @@
             "sv": "Sömn",
             "pl": "Sen",
             "ru": "Сон",
-            "ko": "슬립"
+            "ko": "슬립",
+            "ar": "نوم"
           }
         }
       ],
@@ -11114,21 +12584,12 @@
         "sv": "Målavstånd",
         "pl": "Odległość docelowa",
         "ru": "Целевая дистанция",
-        "ko": "목표 거리"
+        "ko": "목표 거리",
+        "ar": "المسافة المستهدفة"
       },
       "units": {
         "en": "m",
-        "nl": "m",
-        "da": "m",
-        "de": "m",
-        "es": "m",
-        "fr": "m",
-        "it": "m",
-        "no": "m",
-        "sv": "m",
-        "pl": "m",
-        "ru": "м",
-        "ko": "m"
+        "ru": "м"
       },
       "getable": true,
       "setable": false,
@@ -11149,21 +12610,11 @@
         "sv": "Ventilläge",
         "pl": "Stan zaworu",
         "ru": "Состояние клапана",
-        "ko": "밸브 상태"
+        "ko": "밸브 상태",
+        "ar": "حالة الصمام"
       },
       "units": {
-        "en": "%",
-        "nl": "%",
-        "da": "%",
-        "de": "%",
-        "es": "%",
-        "fr": "%",
-        "it": "%",
-        "no": "%",
-        "sv": "%",
-        "pl": "%",
-        "ru": "%",
-        "ko": "%"
+        "en": "%"
       },
       "getable": true,
       "setable": true,
@@ -11183,21 +12634,11 @@
         "sv": "Väderförhållanden",
         "pl": "Warunki pogodowe",
         "ru": "Погодные условия",
-        "ko": "날씨 상태"
+        "ko": "날씨 상태",
+        "ar": "حالة الطقس"
       },
       "units": {
-        "en": "",
-        "nl": "",
-        "da": "",
-        "de": "",
-        "es": "",
-        "fr": "",
-        "it": "",
-        "no": "",
-        "sv": "",
-        "pl": "",
-        "ru": "",
-        "ko": ""
+        "en": ""
       },
       "getable": true,
       "setable": false,

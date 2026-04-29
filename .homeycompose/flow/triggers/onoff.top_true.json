@@ -4,14 +4,15 @@
     "nl": "Boven Ingeschakeld",
     "da": "Top Tændt",
     "de": "Oben Eingeschaltet",
-    "es": "Arriba Activado",
-    "fr": "Haut Activé",
+    "es": "Arriba Encendido",
+    "fr": "Haut Allumé",
     "it": "Alto Acceso",
-    "no": "Topp Slått På",
-    "sv": "Topp Påslagen",
+    "no": "Topp På",
+    "sv": "Topp På",
     "pl": "Górny Włączony",
     "ru": "Верх Включен",
-    "ko": "위쪽 켜짐"
+    "ko": "위쪽 켜짐",
+    "ar": "تم تشغيل الأعلى"
   },
   "highlight": true,
   "args": [

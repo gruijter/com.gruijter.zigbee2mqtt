@@ -11,7 +11,8 @@
     "sv": "Ställ in extern temperatur",
     "pl": "Ustaw temperaturę zewnętrzną",
     "ru": "Установить внешнюю температуру",
-    "ko": "외부 온도 설정"
+    "ko": "외부 온도 설정",
+    "ar": "تعيين الحرارة الخارجية"
   },
   "titleFormatted": {
     "en": "Set external temperature to [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ in extern temperatur till [[val]]",
     "pl": "Ustaw temperaturę zewnętrzną na [[val]]",
     "ru": "Установить внешнюю температуру на [[val]]",
-    "ko": "외부 온도를 [[val]]로 설정"
+    "ko": "외부 온도를 [[val]]로 설정",
+    "ar": "تعيين الحرارة الخارجية إلى [[val]]"
   },
   "highlight": true,
   "args": [

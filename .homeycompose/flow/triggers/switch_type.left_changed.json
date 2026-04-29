@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "The switch type Left changed",
-    "nl": "Het schakelaartype links is gewijzigd",
+    "nl": "Het schakelaartype Links is gewijzigd",
     "da": "Kontakttypen til venstre blev ændret",
     "de": "Der Schaltertyp Links wurde geändert",
     "es": "El tipo de interruptor izquierdo ha cambiado",
@@ -11,7 +11,8 @@
     "sv": "Strömbrytartypen vänster har ändrats",
     "pl": "Typ przełącznika lewy został zmieniony",
     "ru": "Тип переключателя слева изменился",
-    "ko": "왼쪽 스위치 유형이 변경됨"
+    "ko": "왼쪽 스위치 유형이 변경됨",
+    "ar": "تغير نوع المفتاح الأيسر"
   },
   "highlight": true,
   "args": [
@@ -26,17 +27,18 @@
       "name": "switch_type.left",
       "type": "string",
       "title": {
-        "en": "Switch type left",
-        "nl": "Schakelaartype links",
-        "de": "Schaltertyp links",
-        "fr": "Type d'interrupteur gauche",
-        "es": "Tipo de interruptor izquierdo",
-        "it": "Tipo di interruttore sinistro",
+        "en": "Switch type Left",
+        "nl": "Schakelaartype Links",
+        "de": "Schaltertyp Links",
+        "fr": "Type d'interrupteur Gauche",
+        "es": "Tipo de interruptor Izquierdo",
+        "it": "Tipo di interruttore Sinistro",
         "sv": "Strömbrytartyp vänster",
         "no": "Brytertype venstre",
         "da": "Kontakttype venstre",
         "fi": "Kytkimen tyyppi vasemmalla",
-        "ru": "Тип переключателя слева"
+        "ru": "Тип переключателя слева",
+        "ar": "نوع المفتاح الأيسر"
       },
       "example": "toggle"
     }

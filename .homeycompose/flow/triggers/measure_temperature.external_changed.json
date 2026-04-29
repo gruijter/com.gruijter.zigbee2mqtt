@@ -11,7 +11,8 @@
     "sv": "Den externa temperaturen har ändrats",
     "pl": "Temperatura zewnętrzna uległa zmianie",
     "ru": "Внешняя температура изменилась",
-    "ko": "외부 온도가 변경되었습니다"
+    "ko": "외부 온도가 변경되었습니다",
+    "ar": "تغيرت درجة الحرارة الخارجية"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "Temperatur",
         "pl": "Temperatura",
         "ru": "Температура",
-        "ko": "온도"
+        "ko": "온도",
+        "ar": "درجة الحرارة"
       },
       "example": 53
     }

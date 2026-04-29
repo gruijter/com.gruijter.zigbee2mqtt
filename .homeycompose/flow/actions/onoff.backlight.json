@@ -11,7 +11,8 @@
     "sv": "Slå på eller av bakgrundsbelysning",
     "pl": "Włącz lub wyłącz podświetlenie",
     "ru": "Включить или выключить подсветку",
-    "ko": "백라이트 켜기 또는 끄기"
+    "ko": "백라이트 켜기 또는 끄기",
+    "ar": "تشغيل أو إيقاف الإضاءة الخلفية"
   },
   "titleFormatted": {
     "en": "Backlight [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Bakgrundsbelysning [[val]]",
     "pl": "Podświetlenie [[val]]",
     "ru": "Подсветка [[val]]",
-    "ko": "백라이트 [[val]]"
+    "ko": "백라이트 [[val]]",
+    "ar": "الإضاءة الخلفية [[val]]"
   },
   "highlight": true,
   "args": [
@@ -49,7 +51,8 @@
         "sv": "På",
         "pl": "Włączone",
         "ru": "Включено",
-        "ko": "켜짐"
+        "ko": "켜짐",
+        "ar": "تشغيل"
       }
     }
   ]

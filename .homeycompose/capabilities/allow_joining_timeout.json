@@ -12,7 +12,8 @@
     "sv": "Anspråks timeout",
     "pl": "Limit czasu połączenia",
     "ru": "Тайм-аут подключения",
-    "ko": "가입 시간 초과"
+    "ko": "가입 시간 초과",
+    "ar": "مهلة الانضمام"
   },
   "getable": true,
   "setable": false,

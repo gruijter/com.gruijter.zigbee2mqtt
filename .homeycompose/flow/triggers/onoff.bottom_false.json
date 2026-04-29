@@ -7,11 +7,12 @@
     "es": "Abajo Apagado",
     "fr": "Bas Éteint",
     "it": "Basso Spento",
-    "no": "Bunn Slått Av",
-    "sv": "Botten Avstängd",
+    "no": "Bunn Av",
+    "sv": "Botten Av",
     "pl": "Dolny Wyłączony",
     "ru": "Низ Выключен",
-    "ko": "아래쪽 꺼짐"
+    "ko": "아래쪽 꺼짐",
+    "ar": "تم إيقاف الجزء السفلي"
   },
   "highlight": true,
   "args": [

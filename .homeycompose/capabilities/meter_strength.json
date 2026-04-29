@@ -12,21 +12,11 @@
         "sv": "Vibrationstyrka",
         "pl": "Siła wibracji",
         "ru": "Сила вибрации",
-        "ko": "진동 강도"
+        "ko": "진동 강도",
+        "ar": "قوة الاهتزاز"
     },
     "units": {
-      "en": "",
-      "nl": "",
-      "da": "",
-      "de": "",
-      "es": "",
-      "fr": "",
-      "it": "",
-      "no": "",
-      "sv": "",
-      "pl": "",
-      "ru": "",
-      "ko": ""
+      "en": ""
     },
     "getable": true,
     "setable": false,

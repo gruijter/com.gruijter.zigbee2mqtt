@@ -11,7 +11,8 @@
     "sv": "Slå på eller stänga av L3",
     "pl": "Włącz lub wyłącz L3",
     "ru": "Включить или выключить L3",
-    "ko": "L3 켜기 또는 끄기"
+    "ko": "L3 켜기 또는 끄기",
+    "ar": "تشغيل أو إيقاف L3"
   },
   "titleFormatted": {
     "en": "Switch L3 [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Byt L3 [[val]]",
     "pl": "Przełącz L3 [[val]]",
     "ru": "Переключить L3 [[val]]",
-    "ko": "L3 [[val]] 전환"
+    "ko": "L3 [[val]] 전환",
+    "ar": "تبديل L3 [[val]]"
   },
   "highlight": true,
   "args": [
@@ -49,7 +51,8 @@
         "sv": "På",
         "pl": "Włączone",
         "ru": "Вкл",
-        "ko": "켜기"
+        "ko": "켜기",
+        "ar": "تشغيل"
       }
     }
   ]

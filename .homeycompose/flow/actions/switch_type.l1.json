@@ -11,7 +11,8 @@
     "sv": "Ställ in L1 bryttyp",
     "pl": "Ustaw typ przełącznika L1",
     "ru": "Установить тип переключателя L1",
-    "ko": "스위치 유형 L1 설정"
+    "ko": "스위치 유형 L1 설정",
+    "ar": "تعيين نوع مفتاح L1"
   },
   "titleFormatted": {
     "en": "Set L1 Switch Type to [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ in L1 bryttyp till [[val]]",
     "pl": "Ustaw typ przełącznika L1 na [[val]]",
     "ru": "Установить тип переключателя L1 на [[val]]",
-    "ko": "스위치 유형 L1을 [[val]]로 설정"
+    "ko": "스위치 유형 L1을 [[val]]로 설정",
+    "ar": "تعيين نوع مفتاح L1 إلى [[val]]"
   },
   "highlight": true,
   "args": [
@@ -52,7 +54,8 @@
             "sv": "växla",
             "pl": "przełącz",
             "ru": "переключить",
-            "ko": "전환"
+            "ko": "전환",
+            "ar": "تبديل"
           }
         },
         {
@@ -69,7 +72,8 @@
             "sv": "Tillstånd",
             "pl": "Stan",
             "ru": "Состояние",
-            "ko": "상태"
+            "ko": "상태",
+            "ar": "حالة"
           }
         },
         {
@@ -86,7 +90,8 @@
             "sv": "Tillfällig",
             "pl": "Chwilowy",
             "ru": "Моментальный",
-            "ko": "순간적"
+            "ko": "순간적",
+            "ar": "لحظي"
           }
         }
       ]

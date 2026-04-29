@@ -11,7 +11,8 @@
     "sv": "Ställ in frostskyddstemperatur",
     "pl": "Ustaw temperaturę ochrony przed mrozem",
     "ru": "Установить температуру защиты от замерзания",
-    "ko": "서리 방지 온도 설정"
+    "ko": "서리 방지 온도 설정",
+    "ar": "تعيين درجة حرارة الحماية من الصقيع"
 
   },
   "titleFormatted": {
@@ -26,7 +27,8 @@
     "sv": "Ställ in frostskyddstemperatur till [[val]]",
     "pl": "Ustaw temperaturę ochrony przed mrozem na [[val]]",
     "ru": "Установить температуру защиты от замерзания на [[val]]",
-    "ko": "[[val]]의 서리 방지 온도를 설정"
+    "ko": "[[val]]의 서리 방지 온도를 설정",
+    "ar": "تعيين درجة حرارة الحماية من الصقيع إلى [[val]]"
   },
   "args": [
     {

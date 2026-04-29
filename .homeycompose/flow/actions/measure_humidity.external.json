@@ -11,7 +11,8 @@
     "sv": "Ställ in extern luftfuktighet",
     "pl": "Ustaw wilgotność zewnętrzną",
     "ru": "Установить внешнюю влажность",
-    "ko": "외부 습도 설정"
+    "ko": "외부 습도 설정",
+    "ar": "تعيين الرطوبة الخارجية"
   },
   "titleFormatted": {
     "en": "Set external humidity to [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ in extern luftfuktighet till [[val]]",
     "pl": "Ustaw wilgotność zewnętrzną na [[val]]",
     "ru": "Установить внешнюю влажность на [[val]]",
-    "ko": "외부 습도를 [[val]]로 설정"
+    "ko": "외부 습도를 [[val]]로 설정",
+    "ar": "تعيين الرطوبة الخارجية إلى [[val]]"
   },
   "highlight": true,
   "args": [

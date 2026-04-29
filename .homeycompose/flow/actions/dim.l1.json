@@ -11,7 +11,8 @@
     "sv": "Dimma L1",
     "pl": "Ściemnij L1",
     "ru": "Затемнить L1",
-    "ko": "디밍 L1"
+    "ko": "디밍 L1",
+    "ar": "تعتيم L1"
   },
   "titleFormatted": {
     "en": "Dim L1 to [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Dimma L1 till [[val]]",
     "pl": "Ściemnij L1 do [[val]]",
     "ru": "Затемнить L1 до [[val]]",
-    "ko": "디밍 L1 [[val]]로"
+    "ko": "디밍 L1 [[val]]로",
+    "ar": "تعتيم L1 إلى [[val]]"
   },
   "highlight": true,
   "args": [

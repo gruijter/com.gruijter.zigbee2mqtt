@@ -1,17 +1,18 @@
 {
   "title": {
-    "en": "Backlight turned On",
-    "nl": "Achtergrondverlichting ingeschakeld",
-    "da": "Baggrundslys tændt",
-    "de": "Beleuchtung eingeschaltet",
-    "es": "Retroiluminación activada",
-    "fr": "Rétroéclairage activé",
-    "it": "Retroilluminazione accesa",
-    "no": "Bakgrunnsbelysning slått på",
-    "sv": "Bakgrundsbelysning påslagen",
-    "pl": "Podświetlenie włączone",
-    "ru": "Подсветка включена",
-    "ko": "백라이트 켜짐"
+    "en": "Backlight Turned On",
+    "nl": "Achtergrondverlichting Ingeschakeld",
+    "da": "Baggrundsbelysning Tændt",
+    "de": "Hintergrundbeleuchtung Eingeschaltet",
+    "es": "Retroiluminación Encendida",
+    "fr": "Rétroéclairage Allumé",
+    "it": "Retroilluminazione Accesa",
+    "no": "Bakgrunnsbelysning På",
+    "sv": "Bakgrundsbelysning På",
+    "pl": "Podświetlenie Włączone",
+    "ru": "Подсветка Включена",
+    "ko": "백라이트 켜짐",
+    "ar": "تم تشغيل الإضاءة الخلفية"
   },
   "highlight": true,
   "args": [

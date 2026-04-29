@@ -1,17 +1,18 @@
 {
   "title": {
-    "en": "L4 turned On",
-    "nl": "L4 ingeschakeld",
+    "en": "L4 Turned On",
+    "nl": "L4 Ingeschakeld",
     "da": "L4 tændt",
     "de": "L4 eingeschaltet",
     "es": "L4 encendido",
-    "fr": "L4 activé",
+    "fr": "L4 allumé",
     "it": "L4 acceso",
     "no": "L4 slått på",
     "sv": "L4 påslagen",
     "pl": "L4 włączony",
     "ru": "L4 включен",
-    "ko": "L4 켜짐"
+    "ko": "L4 켜짐",
+    "ar": "تم تشغيل L4"
   },
   "highlight": true,
   "args": [

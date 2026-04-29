@@ -11,7 +11,8 @@
     "sv": "Ställ in loggnivå",
     "pl": "Ustaw poziom logowania",
     "ru": "Установить уровень логирования",
-    "ko": "로그 레벨 설정"
+    "ko": "로그 레벨 설정",
+    "ar": "تعيين مستوى السجل"
   },
   "titleFormatted": {
     "en": "Set log level to [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ in loggnivå till [[val]]",
     "pl": "Ustaw poziom logowania na [[val]]",
     "ru": "Установить уровень логирования на [[val]]",
-    "ko": "[[val]]로 로그 레벨 설정"
+    "ko": "[[val]]로 로그 레벨 설정",
+    "ar": "تعيين مستوى السجل إلى [[val]]"
   },
   "hint": {
     "en": "INFO or DEBUG level is required for the Msgs/minute counter.",
@@ -39,7 +41,8 @@
     "sv": "INFO eller DEBUG-nivå krävs för meddelanden/minut räknaren.",
     "pl": "Wymagany jest poziom INFO lub DEBUG dla licznika Msgs/minutę.",
     "ru": "Для счетчика сообщений в минуту требуется уровень INFO или DEBUG.",
-    "ko": "분당 메세지 카운터에는 INFO 또는 DEBUG 레벨이 필요합니다."
+    "ko": "분당 메세지 카운터에는 INFO 또는 DEBUG 레벨이 필요합니다.",
+    "ar": "مطلوب مستوى INFO أو DEBUG لعداد الرسائل/الدقيقة."
   },
   "highlight": true,
   "args": [
@@ -66,7 +69,8 @@
             "sv": "Felsök",
             "pl": "Debugowanie",
             "ru": "Отладка",
-            "ko": "디버그"
+            "ko": "디버그",
+            "ar": "تصحيح"
           }
         },
         {
@@ -83,7 +87,8 @@
             "sv": "Info",
             "pl": "Info",
             "ru": "Инфо",
-            "ko": "정보"
+            "ko": "정보",
+            "ar": "معلومات"
           }
         },
         {
@@ -100,7 +105,8 @@
             "sv": "Varning",
             "pl": "Ostrzeżenie",
             "ru": "Предупреждение",
-            "ko": "경고"
+            "ko": "경고",
+            "ar": "تحذير"
           }
         },
         {
@@ -117,7 +123,8 @@
             "sv": "Fel",
             "pl": "Błąd",
             "ru": "Ошибка",
-            "ko": "오류"
+            "ko": "오류",
+            "ar": "خطأ"
           }
         }
       ]

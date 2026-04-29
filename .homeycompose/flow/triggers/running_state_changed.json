@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "The running state changed",
-    "nl": "De draaiende status is veranderd",
+    "nl": "De bedrijfsstatus is gewijzigd",
     "da": "Den kørende tilstand ændret sig",
     "de": "Der Laufstatus hat sich geändert",
     "es": "El estado de funcionamiento ha cambiado",
@@ -11,7 +11,8 @@
     "sv": "Det körande läget har ändrats",
     "pl": "Stan pracy uległ zmianie",
     "ru": "Состояние работы изменилось",
-    "ko": "실행 상태가 변경되었습니다"
+    "ko": "실행 상태가 변경되었습니다",
+    "ar": "تغيرت حالة التشغيل"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "Tillstånd",
         "pl": "Stan",
         "ru": "Состояние",
-        "ko": "상태"
+        "ko": "상태",
+        "ar": "الحالة"
       },
       "example": "off"
     }

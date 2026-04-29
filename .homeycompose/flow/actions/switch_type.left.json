@@ -11,7 +11,8 @@
     "sv": "Ställ In Typ av Vänster Strömbrytare",
     "pl": "Ustaw Lewy Typ Przełącznika",
     "ru": "Установить Левый Тип Переключателя",
-    "ko": "왼쪽 스위치 유형 설정"
+    "ko": "왼쪽 스위치 유형 설정",
+    "ar": "تعيين نوع المفتاح الأيسر"
   },
   "titleFormatted": {
     "en": "Set Left Switch Type to [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ In Typ av Vänster Strömbrytare till [[val]]",
     "pl": "Ustaw Lewy Typ Przełącznika na [[val]]",
     "ru": "Установить Левый Тип Переключателя на [[val]]",
-    "ko": "왼쪽 스위치 유형을 [[val]](으)로 설정"
+    "ko": "왼쪽 스위치 유형을 [[val]](으)로 설정",
+    "ar": "تعيين نوع المفتاح الأيسر إلى [[val]]"
   },
   "highlight": true,
   "args": [
@@ -52,7 +54,8 @@
             "sv": "växla",
             "pl": "przełącz",
             "ru": "переключать",
-            "ko": "전환"
+            "ko": "전환",
+            "ar": "تبديل"
           }
         },
         {
@@ -69,7 +72,8 @@
             "sv": "Tillstånd",
             "pl": "Stan",
             "ru": "Состояние",
-            "ko": "상태"
+            "ko": "상태",
+            "ar": "حالة"
           }
         },
         {
@@ -86,7 +90,8 @@
           "sv": "Momentant",
             "pl": "Chwilowy",
             "ru": "Кратковременный",
-            "ko": "순간적인"
+            "ko": "순간적인",
+            "ar": "لحظي"
           }
         }
       ]

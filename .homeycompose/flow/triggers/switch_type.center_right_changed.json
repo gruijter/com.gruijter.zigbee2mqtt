@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "The switch type Center Right changed",
-    "nl": "Het schakeltype Midden Rechts is gewijzigd",
+    "nl": "Het schakelaartype Midden Rechts is gewijzigd",
     "da": "Kontakttype Center Højre blev ændret",
     "de": "Der Schalttyp Mitte Rechts wurde geändert",
     "es": "El tipo de interruptor cambió centro derecha",
@@ -11,7 +11,8 @@
     "sv": "Brytartyp Centrum Höger ändras",
     "pl": "Zmieniono typ przełącznika Środek Prawy",
     "ru": "Тип переключателя Центр Право изменился",
-    "ko": "스위치 유형 중앙 오른쪽이 변경되었습니다"
+    "ko": "스위치 유형 중앙 오른쪽이 변경되었습니다",
+    "ar": "تغير نوع المفتاح الأوسط الأيمن"
   },
   "highlight": true,
   "args": [
@@ -26,8 +27,8 @@
       "name": "switch_type.center_right",
       "type": "string",
       "title": {
-        "en": "Switch type center right",
-        "nl": "Schakeltype midden rechts",
+        "en": "Switch type Center Right",
+        "nl": "Schakelaartype Midden Rechts",
         "da": "Kontakttype center højre",
         "de": "Schalttyp Mitte rechts",
         "es": "Tipo de interruptor centro derecha",
@@ -37,7 +38,8 @@
         "sv": "Brytartyp centrum höger",
         "pl": "Typ przełącznika środek prawy",
         "ru": "Тип переключателя Центр Право",
-        "ko": "스위치 유형 중앙 오른쪽"
+        "ko": "스위치 유형 중앙 오른쪽",
+        "ar": "نوع المفتاح الأوسط الأيمن"
       },
       "example": "toggle"
     }

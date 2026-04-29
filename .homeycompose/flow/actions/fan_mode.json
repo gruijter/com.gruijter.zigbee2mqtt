@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "Set fan mode",
-    "nl": "Zet ventilatormodus",
+    "nl": "Stel ventilatormodus in",
     "da": "Sæt ventilatortilstand",
     "de": "Ventilatormodus setzen",
     "es": "Establecer modo del ventilador",
@@ -11,11 +11,12 @@
     "sv": "Sätt fläktläge",
     "pl": "Ustaw tryb wentylatora",
     "ru": "Установить режим вентилятора",
-    "ko": "팬 모드 설정"
+    "ko": "팬 모드 설정",
+    "ar": "ضبط وضع المروحة"
   },
   "titleFormatted": {
     "en": "Set fan mode to [[val]]",
-    "nl": "Zet ventilatormodus op [[val]]",
+    "nl": "Stel ventilatormodus in op [[val]]",
     "da": "Sæt ventilatortilstand til [[val]]",
     "de": "Setze Ventilatormodus auf [[val]]",
     "es": "Establecer modo del ventilador en [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Sätt fläktläge till [[val]]",
     "pl": "Ustaw tryb wentylatora na [[val]]",
     "ru": "Установить режим вентилятора на [[val]]",
-    "ko": "팬 모드를 [[val]]으로 설정"
+    "ko": "팬 모드를 [[val]]으로 설정",
+    "ar": "ضبط وضع المروحة على [[val]]"
   },
   "highlight": true,
   "args": [
@@ -52,7 +54,8 @@
             "sv": "Av",
             "pl": "Wyłączony",
             "ru": "Выкл",
-            "ko": "꺼짐"
+            "ko": "꺼짐",
+            "ar": "إيقاف"
           }
         },
         {
@@ -69,7 +72,8 @@
             "sv": "Låg",
             "pl": "Niski",
             "ru": "Низкий",
-            "ko": "낮은"
+            "ko": "낮은",
+            "ar": "منخفض"
           }
         },
         {
@@ -86,7 +90,8 @@
             "sv": "Medium",
             "pl": "Średni",
             "ru": "Средний",
-            "ko": "중간"
+            "ko": "중간",
+            "ar": "متوسط"
           }
         },
         {
@@ -103,7 +108,8 @@
             "sv": "Hög",
             "pl": "Wysoki",
             "ru": "Высокий",
-            "ko": "높은"
+            "ko": "높은",
+            "ar": "عالي"
           }
         },
         {
@@ -120,7 +126,8 @@
             "sv": "På",
             "pl": "Włączony",
             "ru": "Вкл",
-            "ko": "켬"
+            "ko": "켬",
+            "ar": "تشغيل"
           }
         },
         {
@@ -137,7 +144,8 @@
             "sv": "Automatisk",
             "pl": "Auto",
             "ru": "Авто",
-            "ko": "자동"
+            "ko": "자동",
+            "ar": "تلقائي"
           }
         },
         {
@@ -154,7 +162,8 @@
             "sv": "Smart",
             "pl": "Inteligentny",
             "ru": "Умный",
-            "ko": "스마트"
+            "ko": "스마트",
+            "ar": "ذكي"
           }
         }
       ]

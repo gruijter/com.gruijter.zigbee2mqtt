@@ -1,7 +1,7 @@
 {
   "title": {
-    "en": "Joining turned Off",
-    "nl": "Deelnemen uitgeschakeld",
+    "en": "Joining Turned Off",
+    "nl": "Deelnemen Uitgeschakeld",
     "da": "Deltagelse slukket",
     "de": "Beitritt ausgeschaltet",
     "es": "Unirse desactivado",
@@ -11,7 +11,8 @@
     "sv": "Anslutning avstängd",
     "pl": "Dołączanie wyłączone",
     "ru": "Присоединение отключено",
-    "ko": "참여 꺼짐"
+    "ko": "참여 꺼짐",
+    "ar": "تم إيقاف الانضمام"
   },
   "highlight": true,
   "args": [

@@ -12,7 +12,8 @@
     "sv": "Offline-enheter",
     "pl": "Urządzenia offline",
     "ru": "Офлайн устройства",
-    "ko": "오프라인 장치"
+    "ko": "오프라인 장치",
+    "ar": "الأجهزة غير المتصلة"
   },
   "getable": true,
   "setable": false,

@@ -11,129 +11,358 @@
     "sv": "Enhet",
     "pl": "Urządzenie",
     "ru": "Устройство",
-    "ko": "장치"
+    "ko": "장치",
+    "ar": "جهاز"
   },
   "class": "socket",
   "capabilities": [],
   "capabilitiesOptions": {
     "onoff.thermostat_mode": {
       "title": {
-        "en": "Thermostat mode"
+        "en": "Thermostat mode",
+        "nl": "Thermostaatmodus",
+        "da": "Termostattilstand",
+        "de": "Thermostatmodus",
+        "es": "Modo de termostato",
+        "fr": "Mode thermostat",
+        "it": "Modalità termostato",
+        "no": "Termostatmodus",
+        "sv": "Termostatläge",
+        "pl": "Tryb termostatu",
+        "ru": "Режим термостата",
+        "ko": "온도 조절기 모드",
+        "ar": "وضع الحرارة"
       },
       "uiComponent": "button",
       "uiQuickAction": false
     },
     "locked.child": {
       "title": {
-        "en": "Child lock"
+        "en": "Child lock",
+        "nl": "Kinderslot",
+        "da": "Børnesikring",
+        "de": "Kindersicherung",
+        "es": "Bloqueo infantil",
+        "fr": "Verrouillage enfant",
+        "it": "Blocco bambini",
+        "no": "Barnelås",
+        "sv": "Barnlås",
+        "pl": "Blokada rodzicielska",
+        "ru": "Детский замок",
+        "ko": "아동 잠금",
+        "ar": "قفل الأطفال"
       },
       "uiComponent": "button",
       "uiQuickAction": false
     },
     "onoff.backlight": {
       "title": {
-        "en": "Backlight"
+        "en": "Backlight",
+        "nl": "Achtergrondverlichting",
+        "da": "Baggrundsbelysning",
+        "de": "Hintergrundbeleuchtung",
+        "es": "Retroiluminación",
+        "fr": "Rétroéclairage",
+        "it": "Retroilluminazione",
+        "no": "Bakgrunnsbelysning",
+        "sv": "Bakgrundsbelysning",
+        "pl": "Podświetlenie",
+        "ru": "Подсветка",
+        "ko": "백라이트",
+        "ar": "الإضاءة الخلفية"
       },
       "uiComponent": "button",
       "uiQuickAction": false
     },
     "onoff.center": {
       "title": {
-        "en": "Center"
+        "en": "Center",
+        "nl": "Midden",
+        "da": "Center",
+        "de": "Mitte",
+        "es": "Centro",
+        "fr": "Centre",
+        "it": "Centro",
+        "no": "Senter",
+        "sv": "Centrum",
+        "pl": "Środek",
+        "ru": "Центр",
+        "ko": "센터",
+        "ar": "المركز"
       },
       "uiQuickAction": false
     },
     "onoff.heartbeat": {
       "title": {
-        "en": "Heartbeat"
+        "en": "Heartbeat",
+        "nl": "Hartslag",
+        "da": "Hjerteslag",
+        "de": "Herzschlag",
+        "es": "Latido",
+        "fr": "Battement de cœur",
+        "it": "Battito cardiaco",
+        "no": "Hjerteslag",
+        "sv": "Hjärtslag",
+        "pl": "Puls",
+        "ru": "Сердцебиение",
+        "ko": "하트비트",
+        "ar": "نبض القلب"
       },
       "uiComponent": "button",
       "uiQuickAction": false
     },
     "onoff.indicator": {
       "title": {
-        "en": "Indicator"
+        "en": "Indicator",
+        "nl": "Indicator",
+        "da": "Indikator",
+        "de": "Indikator",
+        "es": "Indicador",
+        "fr": "Indicateur",
+        "it": "Indicatore",
+        "no": "Indikator",
+        "sv": "Indikator",
+        "pl": "Wskaźnik",
+        "ru": "Индикатор",
+        "ko": "표시기",
+        "ar": "المؤشر"
       },
       "uiComponent": "button",
       "uiQuickAction": false
     },
     "onoff.l1": {
       "title": {
-        "en": "L1"
+        "en": "L1",
+        "nl": "L1",
+        "da": "L1",
+        "de": "L1",
+        "es": "L1",
+        "fr": "L1",
+        "it": "L1",
+        "no": "L1",
+        "sv": "L1",
+        "pl": "L1",
+        "ru": "L1",
+        "ko": "L1",
+        "ar": "L1"
       },
       "uiQuickAction": true
     },
     "onoff.l2": {
       "title": {
-        "en": "L2"
+        "en": "L2",
+        "nl": "L2",
+        "da": "L2",
+        "de": "L2",
+        "es": "L2",
+        "fr": "L2",
+        "it": "L2",
+        "no": "L2",
+        "sv": "L2",
+        "pl": "L2",
+        "ru": "L2",
+        "ko": "L2",
+        "ar": "L2"
       },
       "uiQuickAction": false
     },
     "onoff.l3": {
       "title": {
-        "en": "L3"
+        "en": "L3",
+        "nl": "L3",
+        "da": "L3",
+        "de": "L3",
+        "es": "L3",
+        "fr": "L3",
+        "it": "L3",
+        "no": "L3",
+        "sv": "L3",
+        "pl": "L3",
+        "ru": "L3",
+        "ko": "L3",
+        "ar": "L3"
       },
       "uiQuickAction": false
     },
     "onoff.l4": {
       "title": {
-        "en": "L4"
+        "en": "L4",
+        "nl": "L4",
+        "da": "L4",
+        "de": "L4",
+        "es": "L4",
+        "fr": "L4",
+        "it": "L4",
+        "no": "L4",
+        "sv": "L4",
+        "pl": "L4",
+        "ru": "L4",
+        "ko": "L4",
+        "ar": "L4"
       },
       "uiQuickAction": false
     },
     "onoff.left": {
       "title": {
-        "en": "Left"
+        "en": "Left",
+        "nl": "Links",
+        "da": "Venstre",
+        "de": "Links",
+        "es": "Izquierda",
+        "fr": "Gauche",
+        "it": "Sinistra",
+        "no": "Venstre",
+        "sv": "Vänster",
+        "pl": "Lewo",
+        "ru": "Левый",
+        "ko": "왼쪽",
+        "ar": "يسار"
       },
       "uiQuickAction": false
     },
     "onoff.pre_alarm": {
       "title": {
-        "en": "Pre alarm"
+        "en": "Pre alarm",
+        "nl": "Voor-alarm",
+        "da": "Præ-alarm",
+        "de": "Voralarm",
+        "es": "Prealarma",
+        "fr": "Pré-alarme",
+        "it": "Pre-allarme",
+        "no": "Forhåndsalarm",
+        "sv": "Förlarm",
+        "pl": "Pre-alarm",
+        "ru": "Предварительная тревога",
+        "ko": "사전 알람",
+        "ar": "إنذار مسبق"
       },
       "uiComponent": "button",
       "uiQuickAction": false
     },
     "onoff.right": {
       "title": {
-        "en": "Right"
+        "en": "Right",
+        "nl": "Rechts",
+        "da": "Højre",
+        "de": "Rechts",
+        "es": "Derecha",
+        "fr": "Droite",
+        "it": "Destra",
+        "no": "Høyre",
+        "sv": "Höger",
+        "pl": "Prawo",
+        "ru": "Правый",
+        "ko": "오른쪽",
+        "ar": "يمين"
       },
       "uiQuickAction": false
     },
     "onoff.top": {
       "title": {
-        "en": "Top"
+        "en": "Top",
+        "nl": "Boven",
+        "da": "Top",
+        "de": "Oben",
+        "es": "Arriba",
+        "fr": "Haut",
+        "it": "Alto",
+        "no": "Topp",
+        "sv": "Topp",
+        "pl": "Góra",
+        "ru": "Верх",
+        "ko": "위쪽",
+        "ar": "أعلى"
       },
       "uiQuickAction": false
     },
     "onoff.bottom": {
       "title": {
-        "en": "Bottom"
+        "en": "Bottom",
+        "nl": "Onder",
+        "da": "Bund",
+        "de": "Unten",
+        "es": "Abajo",
+        "fr": "Bas",
+        "it": "Basso",
+        "no": "Bunn",
+        "sv": "Botten",
+        "pl": "Dół",
+        "ru": "Низ",
+        "ko": "아래쪽",
+        "ar": "أسفل"
       },
       "uiQuickAction": false
     },
     "onoff.center_left": {
       "title": {
-        "en": "Center Left"
+        "en": "Center Left",
+        "nl": "Midden links",
+        "da": "Center venstre",
+        "de": "Mitte links",
+        "es": "Centro izquierda",
+        "fr": "Centre gauche",
+        "it": "Centro sinistra",
+        "no": "Senter venstre",
+        "sv": "Centrum vänster",
+        "pl": "Środek lewo",
+        "ru": "Центр лево",
+        "ko": "중앙 왼쪽",
+        "ar": "المركز اليسار"
       },
       "uiQuickAction": false
     },
     "onoff.center_right": {
       "title": {
-        "en": "Center Right"
+        "en": "Center Right",
+        "nl": "Midden rechts",
+        "da": "Center højre",
+        "de": "Mitte rechts",
+        "es": "Centro derecha",
+        "fr": "Centre droite",
+        "it": "Centro destra",
+        "no": "Senter høyre",
+        "sv": "Centrum höger",
+        "pl": "Środek prawo",
+        "ru": "Центр право",
+        "ko": "중앙 오른쪽",
+        "ar": "المركز اليمين"
       },
       "uiQuickAction": false
     },
     "onoff.self_test": {
       "title": {
-        "en": "Self test"
+        "en": "Self test",
+        "nl": "Zelftest",
+        "da": "Selvtest",
+        "de": "Selbsttest",
+        "es": "Autocomprobación",
+        "fr": "Auto-test",
+        "it": "Autotest",
+        "no": "Selvtest",
+        "sv": "Självtest",
+        "pl": "Autotest",
+        "ru": "Самопроверка",
+        "ko": "자체 테스트",
+        "ar": "اختبار ذاتي"
       },
       "uiComponent": "button",
       "uiQuickAction": false
     },
     "onoff.system_mode": {
       "title": {
-        "en": "System mode"
+        "en": "System mode",
+        "nl": "Systeemmodus",
+        "da": "Systemtilstand",
+        "de": "Systemmodus",
+        "es": "Modo del sistema",
+        "fr": "Mode du système",
+        "it": "Modalità sistema",
+        "no": "Systemmodus",
+        "sv": "Systemläge",
+        "pl": "Tryb systemu",
+        "ru": "Режим системы",
+        "ko": "시스템 모드",
+        "ar": "وضع النظام"
       },
       "uiComponent": "button",
       "uiQuickAction": false

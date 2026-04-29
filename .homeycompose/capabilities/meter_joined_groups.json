@@ -12,7 +12,8 @@
     "sv": "Gick med i grupper",
     "pl": "Dołączone grupy",
     "ru": "Присоединившиеся группы",
-    "ko": "가입한 그룹들"
+    "ko": "가입한 그룹들",
+    "ar": "المجموعات المنضمة"
   },
   "getable": true,
   "setable": false,

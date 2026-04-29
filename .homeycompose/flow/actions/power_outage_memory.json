@@ -11,7 +11,8 @@
     "sv": "Ställ in strömavbrottsminne",
     "pl": "Ustaw pamięć przerwy w zasilaniu",
     "ru": "Установить память отключения электроэнергии",
-    "ko": "정전 메모리 설정"
+    "ko": "정전 메모리 설정",
+    "ar": "تعيين ذاكرة انقطاع التيار الكهربائي"
   },
   "titleFormatted": {
     "en": "Set Power Outage Memory to [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ in strömavbrottsminne till [[val]]",
     "pl": "Ustaw pamięć przerwy w zasilaniu na [[val]]",
     "ru": "Установить память отключения электроэнергии на [[val]]",
-    "ko": "[[val]]으로 정전 메모리 설정"
+    "ko": "[[val]]으로 정전 메모리 설정",
+    "ar": "تعيين ذاكرة انقطاع التيار الكهربائي إلى [[val]]"
   },
   "highlight": true,
   "args": [
@@ -52,7 +54,8 @@
             "sv": "Av",
             "pl": "Wyłączone",
             "ru": "Выкл",
-            "ko": "꺼짐"
+            "ko": "꺼짐",
+            "ar": "إيقاف"
           }
         },
         {
@@ -69,7 +72,8 @@
             "sv": "På",
             "pl": "Włączone",
             "ru": "Вкл",
-            "ko": "켜짐"
+            "ko": "켜짐",
+            "ar": "تشغيل"
           }
         },
         {
@@ -86,7 +90,8 @@
             "sv": "Återställ",
             "pl": "Przywróć",
             "ru": "Восстановить",
-            "ko": "복원"
+            "ko": "복원",
+            "ar": "استعادة"
           }
         }
       ]

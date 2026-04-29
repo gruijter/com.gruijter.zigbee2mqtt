@@ -12,21 +12,12 @@
     "sv": "Målavstånd",
     "pl": "Odległość docelowa",
     "ru": "Целевая дистанция",
-    "ko": "목표 거리"
+    "ko": "목표 거리",
+    "ar": "المسافة المستهدفة"
   },
   "units": {
     "en": "m",
-    "nl": "m",
-    "da": "m",
-    "de": "m",
-    "es": "m",
-    "fr": "m",
-    "it": "m",
-    "no": "m",
-    "sv": "m",
-    "pl": "m",
-    "ru": "м",
-    "ko": "m"
+    "ru": "м"
   },
   "getable": true,
   "setable": false,

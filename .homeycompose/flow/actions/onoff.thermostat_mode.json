@@ -11,7 +11,8 @@
     "sv": "Byt termostatläge På eller Av",
     "pl": "Przełącz tryb termostatu Włączony lub Wyłączony",
     "ru": "Переключите режим термостата Вкл или Выкл",
-    "ko": "온도 조절기 모드를 켜짐 또는 끄기로 전환"
+    "ko": "온도 조절기 모드를 켜짐 또는 끄기로 전환",
+    "ar": "تشغيل أو إيقاف وضع منظم الحرارة"
   },
   "titleFormatted": {
     "en": "Set thermostat mode to on [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ in termostatläge till på [[val]]",
     "pl": "Ustaw tryb termostatu na włączony [[val]]",
     "ru": "Установите режим термостата на вкл [[val]]",
-    "ko": "온도 조절기 모드를 켜짐으로 설정 [[val]]"
+    "ko": "온도 조절기 모드를 켜짐으로 설정 [[val]]",
+    "ar": "تعيين وضع منظم الحرارة إلى تشغيل [[val]]"
   },
   "highlight": true,
   "args": [
@@ -49,7 +51,8 @@
         "sv": "På",
         "pl": "Włączony",
         "ru": "Вкл",
-        "ko": "켜짐"
+        "ko": "켜짐",
+        "ar": "تشغيل"
       }
     }
   ]

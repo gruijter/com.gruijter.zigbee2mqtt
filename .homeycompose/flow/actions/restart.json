@@ -11,7 +11,8 @@
     "sv": "Starta om Z2M",
     "pl": "Zrestartuj Z2M",
     "ru": "Перезапустить Z2M",
-    "ko": "Z2M 다시 시작"
+    "ko": "Z2M 다시 시작",
+    "ar": "إعادة تشغيل Z2M"
   },
   "hint": {
     "en": "Restart the Zigbee2MQTT bridge",
@@ -25,7 +26,8 @@
     "sv": "Starta om Zigbee2MQTT bridge",
     "pl": "Zrestartuj bridge Zigbee2MQTT",
     "ru": "Перезапустить мост Zigbee2MQTT",
-    "ko": "Zigbee2MQTT 브리지 다시 시작"
+    "ko": "Zigbee2MQTT 브리지 다시 시작",
+    "ar": "إعادة تشغيل جسر Zigbee2MQTT"
   },
   "highlight": true,
   "args": [

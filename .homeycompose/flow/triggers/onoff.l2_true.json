@@ -1,17 +1,18 @@
 {
   "title": {
-    "en": "L2 turned On",
-    "nl": "L2 ingeschakeld",
+    "en": "L2 Turned On",
+    "nl": "L2 Ingeschakeld",
     "da": "L2 tændt",
     "de": "L2 eingeschaltet",
     "es": "L2 encendido",
-    "fr": "L2 activé",
+    "fr": "L2 allumé",
     "it": "L2 acceso",
     "no": "L2 slått på",
     "sv": "L2 påslagen",
     "pl": "L2 włączone",
     "ru": "L2 включен",
-    "ko": "L2 켜짐"
+    "ko": "L2 켜짐",
+    "ar": "تم تشغيل L2"
   },
   "highlight": true,
   "args": [

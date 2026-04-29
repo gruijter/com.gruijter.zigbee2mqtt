@@ -11,7 +11,8 @@
     "sv": "Ställ in Pilottrådsläge",
     "pl": "Ustaw Tryb Przewodu Pilotażowego",
     "ru": "Установить Режим Пилотного Провода",
-    "ko": "파일럿 와이어 모드 설정"
+    "ko": "파일럿 와이어 모드 설정",
+    "ar": "تعيين وضع سلك الدليل"
   },
   "titleFormatted": {
     "en": "Set Pilot Wire Mode to [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ in Pilottrådsläge till [[val]]",
     "pl": "Ustaw Tryb Przewodu Pilotażowego na [[val]]",
     "ru": "Установить Режим Пилотного Провода на [[val]]",
-    "ko": "파일럿 와이어 모드를 [[val]]로 설정"
+    "ko": "파일럿 와이어 모드를 [[val]]로 설정",
+    "ar": "تعيين وضع سلك الدليل إلى [[val]]"
   },
   "highlight": true,
   "args": [
@@ -52,7 +54,8 @@
             "sv": "Komfort",
             "pl": "Komfort",
             "ru": "Комфорт",
-            "ko": "편안함"
+            "ko": "편안함",
+            "ar": "راحة"
           }
         },
         {
@@ -69,7 +72,8 @@
             "sv": "Eco",
             "pl": "Eko",
             "ru": "Эко",
-            "ko": "에코"
+            "ko": "에코",
+            "ar": "اقتصادي"
           }
         },
         {
@@ -86,7 +90,8 @@
             "sv": "Frostskydd",
             "pl": "Ochrona przed mrozem",
             "ru": "Защита от замерзания",
-            "ko": "서리 방지"
+            "ko": "서리 방지",
+            "ar": "حماية من الصقيع"
           }
         },
         {
@@ -103,7 +108,8 @@
             "sv": "Av",
             "pl": "Wyłączony",
             "ru": "Выкл",
-            "ko": "꺼짐"
+            "ko": "꺼짐",
+            "ar": "إيقاف"
           }
         },
         {
@@ -120,7 +126,8 @@
             "sv": "Komfort -1",
             "pl": "Komfort -1",
             "ru": "Комфорт -1",
-            "ko": "편안함 -1"
+            "ko": "편안함 -1",
+            "ar": "راحة -1"
           }
         },
         {
@@ -137,11 +144,11 @@
             "sv": "Komfort -2",
             "pl": "Komfort -2",
             "ru": "Комфорт -2",
-            "ko": "편안함 -2"
+            "ko": "편안함 -2",
+            "ar": "راحة -2"
           }
         }
       ]
     }
   ]
 }
-

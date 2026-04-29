@@ -1,6 +1,6 @@
 {
   "title": {
-    "en": "The Offline Alarm turned On",
+    "en": "The Offline Alarm Turned On",
     "da": "Offline-alarmen blev tændt",
     "de": "Der Offline-Alarm wurde eingeschaltet",
     "es": "La alarma fuera de línea se activó",
@@ -11,7 +11,8 @@
     "pl": "Alarm offline został włączony",
     "ru": "Оффлайн-сигнализация была включена",
     "ko": "오프라인 알람이 켜졌습니다",
-    "nl": "Het offline alarm is aangezet"
+    "nl": "Het offline alarm is ingeschakeld",
+    "ar": "تم تشغيل إنذار عدم الاتصال"
   },
   "highlight": true,
   "args": [

@@ -1,31 +1,91 @@
 {
   "type": "enum",
   "title": {
-    "en": "Alarm sound"
+    "en": "Alarm sound",
+    "nl": "Alarmgeluid",
+    "da": "Alarmlyd",
+    "de": "Alarmton",
+    "es": "Sonido de alarma",
+    "fr": "Son d'alarme",
+    "it": "Suono di allarme",
+    "no": "Alarmlyd",
+    "sv": "Larmljud",
+    "pl": "Dźwięk alarmu",
+    "ru": "Звук сигнализации",
+    "ko": "알람 소리",
+    "ar": "صوت الإنذار"
   },
   "values": [
     {
       "id": "stop",
       "title": {
-        "en": "Stop alarm"
+        "en": "Stop alarm",
+        "nl": "Stop alarm",
+        "da": "Stop alarm",
+        "de": "Alarm stoppen",
+        "es": "Detener alarma",
+        "fr": "Arrêter l'alarme",
+        "it": "Ferma allarme",
+        "no": "Stopp alarm",
+        "sv": "Stoppa larm",
+        "pl": "Zatrzymaj alarm",
+        "ru": "Остановить тревогу",
+        "ko": "알람 중지",
+        "ar": "إيقاف الإنذار"
       }
     },
     {
       "id": "pre_alarm",
       "title": {
-        "en": "Pre alarm"
+        "en": "Pre alarm",
+        "nl": "Voor-alarm",
+        "da": "Præ-alarm",
+        "de": "Voralarm",
+        "es": "Prealarma",
+        "fr": "Pré-alarme",
+        "it": "Pre-allarme",
+        "no": "Forhåndsalarm",
+        "sv": "Förlarm",
+        "pl": "Pre-alarm",
+        "ru": "Предварительная тревога",
+        "ko": "사전 알람",
+        "ar": "إنذار مسبق"
       }
     },
     {
       "id": "fire",
       "title": {
-        "en": "Fire alarm"
+        "en": "Fire alarm",
+        "nl": "Brandalarm",
+        "da": "Brandalarmer",
+        "de": "Feueralarm",
+        "es": "Alarma de incendio",
+        "fr": "Alarme incendie",
+        "it": "Allarme antincendio",
+        "no": "Brannalarm",
+        "sv": "Brandlarm",
+        "pl": "Alarm przeciwpożarowy",
+        "ru": "Пожарная сигнализация",
+        "ko": "화재 알람",
+        "ar": "إنذار حريق"
       }
     },
     {
       "id": "burglar",
       "title": {
-        "en": "Burglar alarm"
+        "en": "Burglar alarm",
+        "nl": "Inbraakalarm",
+        "da": "Indbrudsalarm",
+        "de": "Einbruchalarm",
+        "es": "Alarma antirrobo",
+        "fr": "Alarme anti-intrusion",
+        "it": "Allarme antifurto",
+        "no": "Innbruddsalarm",
+        "sv": "Inbrottslarm",
+        "pl": "Alarm antywłamaniowy",
+        "ru": "Охранная сигнализация",
+        "ko": "도난 알람",
+        "ar": "إنذار ضد السرقة"
       }
     }
   ],

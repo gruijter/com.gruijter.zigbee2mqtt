@@ -11,7 +11,8 @@
     "sv": "Meddelanden per minut har ändrats",
     "pl": "Wiadomości na minutę zmieniły się",
     "ru": "Сообщения в минуту изменились",
-    "ko": "분당 메시지가 변경되었습니다"
+    "ko": "분당 메시지가 변경되었습니다",
+    "ar": "تغيرت الرسائل في الدقيقة"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "Meddelanden per minut",
         "pl": "Wiadomości na minutę",
         "ru": "Сообщения в минуту",
-        "ko": "분당 메시지"
+        "ko": "분당 메시지",
+        "ar": "الرسائل في الدقيقة"
       },
       "example": 53
     }

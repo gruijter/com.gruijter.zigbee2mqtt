@@ -9,9 +9,9 @@
     "it": "L'azione è cambiata",
     "no": "Handlingen endret",
     "sv": "Åtgärden ändrades",
-    "pl": "Działanie zostało zmienione",
+    "pl": "Akcja została zmieniona",
     "ru": "Действие изменилось",
-    "ko": "동작이 변경되었습니다"
+    "ko": "작업이 변경되었습니다"
   },
   "highlight": true,
   "args": [
@@ -35,9 +35,9 @@
         "it": "Azione",
         "no": "Handling",
         "sv": "Åtgärd",
-        "pl": "Działanie",
+        "pl": "Akcja",
         "ru": "Действие",
-        "ko": "동작"
+        "ko": "작업"
       },
       "example": "off"
     }

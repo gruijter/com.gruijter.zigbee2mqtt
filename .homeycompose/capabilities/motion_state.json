@@ -12,7 +12,8 @@
     "sv": "Rörelsetillstånd",
     "pl": "Stan ruchu",
     "ru": "Состояние движения",
-    "ko": "움직임 상태"
+    "ko": "움직임 상태",
+    "ar": "حالة الحركة"
   },
   "getable": true,
   "setable": false,

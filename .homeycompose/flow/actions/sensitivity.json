@@ -1,9 +1,33 @@
 {
   "title": {
-    "en": "Set sensitivity"
+    "en": "Set sensitivity",
+    "nl": "Stel gevoeligheid in",
+    "da": "Indstil følsomhed",
+    "de": "Empfindlichkeit einstellen",
+    "es": "Establecer sensibilidad",
+    "fr": "Régler la sensibilité",
+    "it": "Imposta sensibilità",
+    "no": "Angi følsomhet",
+    "sv": "Ställ in känslighet",
+    "pl": "Ustaw czułość",
+    "ru": "Установить чувствительность",
+    "ko": "민감도 설정",
+    "ar": "تعيين الحساسية"
   },
   "titleFormatted": {
-    "en": "Set sensitivity to [[val]]"
+    "en": "Set sensitivity to [[val]]",
+    "nl": "Stel gevoeligheid in op [[val]]",
+    "da": "Indstil følsomhed til [[val]]",
+    "de": "Empfindlichkeit auf [[val]] einstellen",
+    "es": "Establecer sensibilidad en [[val]]",
+    "fr": "Régler la sensibilité sur [[val]]",
+    "it": "Imposta sensibilità su [[val]]",
+    "no": "Angi følsomhet til [[val]]",
+    "sv": "Ställ in känslighet till [[val]]",
+    "pl": "Ustaw czułość na [[val]]",
+    "ru": "Установить чувствительность на [[val]]",
+    "ko": "민감도를 [[val]]로 설정",
+    "ar": "تعيين الحساسية إلى [[val]]"
   },
   "highlight": true,
   "args": [
@@ -19,19 +43,55 @@
         {
           "id": "low",
           "title": {
-            "en": "Low"
+            "en": "Low",
+            "nl": "Laag",
+            "da": "Lav",
+            "de": "Niedrig",
+            "es": "Bajo",
+            "fr": "Bas",
+            "it": "Basso",
+            "no": "Lav",
+            "sv": "Låg",
+            "pl": "Niska",
+            "ru": "Низкая",
+            "ko": "낮음",
+            "ar": "منخفض"
           }
         },
         {
           "id": "medium",
           "title": {
-            "en": "Medium"
+            "en": "Medium",
+            "nl": "Gemiddeld",
+            "da": "Mellem",
+            "de": "Mittel",
+            "es": "Medio",
+            "fr": "Moyen",
+            "it": "Medio",
+            "no": "Medium",
+            "sv": "Medium",
+            "pl": "Średnia",
+            "ru": "Средняя",
+            "ko": "중간",
+            "ar": "متوسط"
           }
         },
         {
           "id": "high",
           "title": {
-            "en": "High"
+            "en": "High",
+            "nl": "Hoog",
+            "da": "Høj",
+            "de": "Hoch",
+            "es": "Alto",
+            "fr": "Élevé",
+            "it": "Alto",
+            "no": "Høy",
+            "sv": "Hög",
+            "pl": "Wysoka",
+            "ru": "Высокая",
+            "ko": "높음",
+            "ar": "عالي"
           }
         }
       ]

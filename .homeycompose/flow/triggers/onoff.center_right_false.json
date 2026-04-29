@@ -7,11 +7,12 @@
     "es": "Centro Derecha Apagado",
     "fr": "Centre Droite Éteint",
     "it": "Centro Destra Spento",
-    "no": "Senter Høyre Slått Av",
-    "sv": "Centrum Höger Avstängd",
+    "no": "Senter Høyre Av",
+    "sv": "Centrum Höger Av",
     "pl": "Środek Prawy Wyłączony",
     "ru": "Центр Право Выключен",
-    "ko": "중앙 오른쪽 꺼짐"
+    "ko": "중앙 오른쪽 꺼짐",
+    "ar": "تم إيقاف الأوسط الأيمن"
   },
   "highlight": true,
   "args": [

@@ -1,9 +1,33 @@
 {
   "title": {
-    "en": "Set alarm sound"
+    "en": "Set alarm sound",
+    "nl": "Stel alarmgeluid in",
+    "da": "Indstil alarmlyd",
+    "de": "Alarmton einstellen",
+    "es": "Configurar sonido de alarma",
+    "fr": "Définir le son d'alarme",
+    "it": "Imposta suono di allarme",
+    "no": "Angi alarmlyd",
+    "sv": "Ställ in larmljud",
+    "pl": "Ustaw dźwięk alarmu",
+    "ru": "Установить звук сигнализации",
+    "ko": "알람 소리 설정",
+    "ar": "ضبط صوت الإنذار"
   },
   "titleFormatted": {
-    "en": "Set alarm sound to [[val]]"
+    "en": "Set alarm sound to [[val]]",
+    "nl": "Stel alarmgeluid in op [[val]]",
+    "da": "Indstil alarmlyd til [[val]]",
+    "de": "Alarmton auf [[val]] einstellen",
+    "es": "Configurar sonido de alarma en [[val]]",
+    "fr": "Définir le son d'alarme sur [[val]]",
+    "it": "Imposta suono di allarme su [[val]]",
+    "no": "Angi alarmlyd til [[val]]",
+    "sv": "Ställ in larmljud till [[val]]",
+    "pl": "Ustaw dźwięk alarmu na [[val]]",
+    "ru": "Установить звук сигнализации на [[val]]",
+    "ko": "알람 소리를 [[val]]로 설정",
+    "ar": "ضبط صوت الإنذار إلى [[val]]"
   },
   "highlight": true,
   "args": [
@@ -19,25 +43,73 @@
         {
           "id": "stop",
           "title": {
-            "en": "Stop"
+            "en": "Stop",
+            "nl": "Stop",
+            "da": "Stop",
+            "de": "Stopp",
+            "es": "Detener",
+            "fr": "Arrêter",
+            "it": "Ferma",
+            "no": "Stopp",
+            "sv": "Stoppa",
+            "pl": "Zatrzymaj",
+            "ru": "Стоп",
+            "ko": "중지",
+            "ar": "إيقاف"
           }
         },
         {
           "id": "pre_alarm",
           "title": {
-            "en": "Pre alarm"
+            "en": "Pre alarm",
+            "nl": "Voor-alarm",
+            "da": "Præ-alarm",
+            "de": "Voralarm",
+            "es": "Prealarma",
+            "fr": "Pré-alarme",
+            "it": "Pre-allarme",
+            "no": "Forhåndsalarm",
+            "sv": "Förlarm",
+            "pl": "Pre-alarm",
+            "ru": "Предварительная тревога",
+            "ko": "사전 알람",
+            "ar": "إنذار مسبق"
           }
         },
         {
           "id": "fire",
           "title": {
-            "en": "Fire"
+            "en": "Fire",
+            "nl": "Brand",
+            "da": "Brand",
+            "de": "Feuer",
+            "es": "Incendio",
+            "fr": "Incendie",
+            "it": "Fuoco",
+            "no": "Brann",
+            "sv": "Brand",
+            "pl": "Pożar",
+            "ru": "Пожар",
+            "ko": "화재",
+            "ar": "حريق"
           }
         },
         {
           "id": "burglar",
           "title": {
-            "en": "Burglar"
+            "en": "Burglar",
+            "nl": "Inbraak",
+            "da": "Indbrud",
+            "de": "Einbruch",
+            "es": "Robo",
+            "fr": "Intrusion",
+            "it": "Furto",
+            "no": "Innbrudd",
+            "sv": "Inbrott",
+            "pl": "Włamanie",
+            "ru": "Взлом",
+            "ko": "도난",
+            "ar": "سطو"
           }
         }
       ]

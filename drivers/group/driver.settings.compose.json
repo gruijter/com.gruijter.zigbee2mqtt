@@ -13,7 +13,8 @@
       "sv": "Gruppinformation",
       "pl": "Informacje o grupie",
       "ru": "Информация о группе",
-      "ko": "그룹 정보"
+      "ko": "그룹 정보",
+      "ar": "معلومات المجموعة"
     },
     "children": [
       {
@@ -31,7 +32,8 @@
           "sv": "Zigbee2mqtt Namn",
           "pl": "Nazwa Zigbee2mqtt",
           "ru": "Имя Zigbee2mqtt",
-          "ko": "Zigbee2mqtt 이름"
+          "ko": "Zigbee2mqtt 이름",
+          "ar": "اسم Zigbee2mqtt"
         },
         "value": ""
       },
@@ -50,7 +52,8 @@
           "sv": "Bridge IEEE-adress",
           "pl": "Adres IEEE mostka",
           "ru": "IEEE адрес моста",
-          "ko": "브리지 IEEE 주소"
+          "ko": "브리지 IEEE 주소",
+          "ar": "عنوان IEEE للجسر"
         },
         "value": ""
       },
@@ -69,7 +72,8 @@
           "sv": "Grupp-ID",
           "pl": "ID grupy",
           "ru": "ID группы",
-          "ko": "그룹 ID"
+          "ko": "그룹 ID",
+          "ar": "معرف المجموعة"
         },
         "value": ""
       },
@@ -88,7 +92,8 @@
           "sv": "Modeller",
           "pl": "Modele",
           "ru": "Модели",
-          "ko": "모델"
+          "ko": "모델",
+          "ar": "النماذج"
         },
         "value": ""
       },
@@ -107,7 +112,8 @@
           "sv": "Beskrivning",
           "pl": "Opis",
           "ru": "Описание",
-          "ko": "설명"
+          "ko": "설명",
+          "ar": "الوصف"
         },
         "value": ""
       }
@@ -127,7 +133,8 @@
       "sv": "Gruppinställningar",
       "pl": "Ustawienia grupy",
       "ru": "Настройки группы",
-      "ko": "그룹 설정"
+      "ko": "그룹 설정",
+      "ar": "إعدادات المجموعة"
     },
     "children": [
       {
@@ -146,7 +153,8 @@
           "sv": "Gruppklass",
           "pl": "Klasa grupy",
           "ru": "Класс группы",
-          "ko": "그룹 클래스"
+          "ko": "그룹 클래스",
+          "ar": "فئة المجموعة"
         },
         "hint": {
           "en": "This setting will effect the behavior in Homey flows.",
@@ -160,7 +168,8 @@
           "sv": "Denna inställning påverkar beteendet i Homey-flöden.",
           "pl": "To ustawienie wpłynie na zachowanie w przepływach Homey.",
           "ru": "Эта настройка повлияет на поведение в потоках Homey.",
-          "ko": "이 설정은 Homey 플로우에서의 동작에 영향을 미칩니다."
+          "ko": "이 설정은 Homey 플로우에서의 동작에 영향을 미칩니다.",
+          "ar": "سيؤثر هذا الإعداد على السلوك في تدفقات Homey."
         },
         "values": [
           {

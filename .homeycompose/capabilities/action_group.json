@@ -1,7 +1,19 @@
 {
   "type": "number",
   "title": {
-    "en": "Action group"
+    "en": "Action group",
+    "nl": "Actiegroep",
+    "da": "Handlingsgruppe",
+    "de": "Aktionsgruppe",
+    "es": "Grupo de acción",
+    "fr": "Groupe d'action",
+    "it": "Gruppo di azione",
+    "no": "Handlingsgruppe",
+    "sv": "Åtgärdsgrupp",
+    "pl": "Grupa akcji",
+    "ru": "Группа действий",
+    "ko": "작업 그룹",
+    "ar": "مجموعة الإجراءات"
   },
   "units": {
     "en": ""

@@ -11,7 +11,8 @@
     "sv": "Enhetens temperatur har ändrats",
     "pl": "Temperatura urządzenia się zmieniła",
     "ru": "Температура устройства изменилась",
-    "ko": "장치 온도가 변경되었습니다"
+    "ko": "장치 온도가 변경되었습니다",
+    "ar": "تغيرت درجة حرارة الجهاز"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "Temperatur",
         "pl": "Temperatura",
         "ru": "Температура",
-        "ko": "온도"
+        "ko": "온도",
+        "ar": "درجة الحرارة"
       },
       "example": 53
     }

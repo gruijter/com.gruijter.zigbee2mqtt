@@ -11,7 +11,8 @@
     "sv": "Slå på eller av L1",
     "pl": "Włącz lub wyłącz L1",
     "ru": "Включить или выключить L1",
-    "ko": "L1 켜기 또는 끄기"
+    "ko": "L1 켜기 또는 끄기",
+    "ar": "تشغيل أو إيقاف L1"
   },
   "titleFormatted": {
     "en": "Switch L1 [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Byt L1 [[val]]",
     "pl": "Przełącz L1 [[val]]",
     "ru": "Переключить L1 [[val]]",
-    "ko": "L1 [[val]] 전환"
+    "ko": "L1 [[val]] 전환",
+    "ar": "تبديل L1 [[val]]"
   },
   "highlight": true,
   "args": [
@@ -49,7 +51,8 @@
         "sv": "På",
         "pl": "Włączony",
         "ru": "Вкл",
-        "ko": "켜짐"
+        "ko": "켜짐",
+        "ar": "تشغيل"
       }
     }
   ]

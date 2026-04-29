@@ -1,7 +1,19 @@
 {
   "type": "string",
   "title": {
-    "en": "Siren state"
+    "en": "Siren state",
+    "nl": "Sirene status",
+    "da": "Sirenetilstand",
+    "de": "Sirenenstatus",
+    "es": "Estado de la sirena",
+    "fr": "État de la sirène",
+    "it": "Stato della sirena",
+    "no": "Sirenetilstand",
+    "sv": "Sirénstatus",
+    "pl": "Stan syreny",
+    "ru": "Состояние сирены",
+    "ko": "사이렌 상태",
+    "ar": "حالة صفارة الإنذار"
   },
   "units": {
     "en": ""

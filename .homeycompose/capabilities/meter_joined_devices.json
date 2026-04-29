@@ -12,7 +12,8 @@
     "sv": "Anslutna enheter",
     "pl": "Podłączone urządzenia",
     "ru": "Подключенные устройства",
-    "ko": "연결된 장치"
+    "ko": "연결된 장치",
+    "ar": "الأجهزة المتصلة"
   },
   "getable": true,
   "setable": false,

@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "The valve state changed",
-    "nl": "De klepstatus is veranderd",
+    "nl": "De klepstatus is gewijzigd",
     "da": "Ventiltilstanden er ændret",
     "de": "Der Ventilstatus hat sich geändert",
     "es": "El estado de la válvula ha cambiado",
@@ -11,7 +11,8 @@
     "sv": "Ventilens tillstånd har ändrats",
     "pl": "Stan zaworu się zmienił",
     "ru": "Состояние клапана изменилось",
-    "ko": "밸브 상태가 변경되었습니다"
+    "ko": "밸브 상태가 변경되었습니다",
+    "ar": "تغيرت حالة الصمام"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "%",
         "pl": "%",
         "ru": "%",
-        "ko": "%"
+        "ko": "%",
+        "ar": "%"
       },
       "example": 53
     }

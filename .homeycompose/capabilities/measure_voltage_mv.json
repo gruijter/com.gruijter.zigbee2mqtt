@@ -31,7 +31,8 @@
         "da": "Batterispænding i millivolt (mV)",
         "ru": "Напряжение аккумулятора в милливольтах (мВ)",
         "pl": "Napięcie akumulatora w miliwoltach (mV)",
-        "ko": "배터리 전압 (밀리볼트, mV)"
+        "ko": "배터리 전압 (밀리볼트, mV)",
+        "ar": "جهد البطارية بالملي فولت (mV)"
     },
     "getable": true,
     "setable": false,

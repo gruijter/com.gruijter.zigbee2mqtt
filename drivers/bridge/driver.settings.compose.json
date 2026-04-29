@@ -13,7 +13,8 @@
       "sv": "Bridgeinformation",
       "pl": "Informacje o bridge'u",
       "ru": "Информация о мосте",
-      "ko": "브리지 정보"
+      "ko": "브리지 정보",
+      "ar": "معلومات الجسر"
     },
     "children": [
       {
@@ -31,7 +32,8 @@
           "sv": "IEEE-adress",
           "pl": "Adres IEEE",
           "ru": "IEEE адрес",
-          "ko": "IEEE 주소"
+          "ko": "IEEE 주소",
+          "ar": "عنوان IEEE"
         },
         "value": ""
       },
@@ -50,7 +52,8 @@
           "sv": "Version",
           "pl": "Wersja",
           "ru": "Версия",
-          "ko": "버전"
+          "ko": "버전",
+          "ar": "الإصدار"
         },
         "value": ""
       },
@@ -69,7 +72,8 @@
           "sv": "Kanal",
           "pl": "Kanał",
           "ru": "Канал",
-          "ko": "채널"
+          "ko": "채널",
+          "ar": "القناة"
         },
         "value": ""
       },
@@ -88,7 +92,8 @@
           "sv": "PAN ID",
           "pl": "Identyfikator PAN",
           "ru": "PAN ID",
-          "ko": "PAN ID"
+          "ko": "PAN ID",
+          "ar": "معرف PAN"
         },
         "value": ""
       }
@@ -108,7 +113,8 @@
       "sv": "MQTT-inställningar",
       "pl": "Ustawienia MQTT",
       "ru": "Настройки MQTT",
-      "ko": "MQTT 설정"
+      "ko": "MQTT 설정",
+      "ar": "إعدادات MQTT"
     },
     "children": [
       {
@@ -126,7 +132,8 @@
           "sv": "Värd",
           "pl": "Host",
           "ru": "Хост",
-          "ko": "호스트"
+          "ko": "호스트",
+          "ar": "المضيف"
         },
         "value": ""
       },
@@ -145,7 +152,8 @@
           "sv": "Port",
           "pl": "Port",
           "ru": "Порт",
-          "ko": "포트"
+          "ko": "포트",
+          "ar": "المنفذ"
         },
         "value": 1883
       },
@@ -164,7 +172,8 @@
           "sv": "Använd TLS",
           "pl": "Użyj TLS",
           "ru": "Использовать TLS",
-          "ko": "TLS 사용"
+          "ko": "TLS 사용",
+          "ar": "استخدام TLS"
         },
         "value": false
       },
@@ -183,7 +192,8 @@
           "sv": "Användarnamn",
           "pl": "Nazwa użytkownika",
           "ru": "Имя пользователя",
-          "ko": "사용자 이름"
+          "ko": "사용자 이름",
+          "ar": "اسم المستخدم"
         },
         "value": ""
       },
@@ -202,7 +212,8 @@
           "sv": "Lösenord",
           "pl": "Hasło",
           "ru": "Пароль",
-          "ko": "비밀번호"
+          "ko": "비밀번호",
+          "ar": "كلمة المرور"
         },
         "value": ""
       },
@@ -221,7 +232,8 @@
           "sv": "Basämne",
           "pl": "Temat bazowy",
           "ru": "Базовая тема",
-          "ko": "기본 주제"
+          "ko": "기본 주제",
+          "ar": "الموضوع الأساسي"
         },
         "hint": {
           "en": "Default is zigbee2mqtt",
@@ -235,7 +247,8 @@
           "sv": "Standard är zigbee2mqtt",
           "pl": "Domyślnie zigbee2mqtt",
           "ru": "По умолчанию zigbee2mqtt",
-          "ko": "기본값은 zigbee2mqtt"
+          "ko": "기본값은 zigbee2mqtt",
+          "ar": "الافتراضي هو zigbee2mqtt"
         },
         "value": ""
       }
@@ -255,7 +268,8 @@
       "sv": "Bridgeinställningar",
       "pl": "Ustawienia bridge'a",
       "ru": "Настройки моста",
-      "ko": "브리지 설정"
+      "ko": "브리지 설정",
+      "ar": "إعدادات الجسر"
     },
     "children": [
       {
@@ -273,7 +287,8 @@
           "sv": "Tvinga Info Loggar",
           "pl": "Wymuś dzienniki informacyjne",
           "ru": "Принудительные лог-файлы",
-          "ko": "정보 로그 강제 사용"
+          "ko": "정보 로그 강제 사용",
+          "ar": "فرض سجلات المعلومات"
         },
         "hint": {
           "en": "Force the log level to INFO on (re)start. INFO or DEBUG level is required for the Msgs/minute counter.",
@@ -287,7 +302,8 @@
           "sv": "Tvinga loggnivån till INFO vid (om)start. INFO eller DEBUG-nivå krävs för Msgs/minut-räknaren.",
           "pl": "Wymusz poziom logowania na INFO przy (ponownym) uruchomieniu. Wymagany jest poziom INFO lub DEBUG dla licznika wiadomości/minutę.",
           "ru": "Принудительное изменение уровня логирования на INFO при (пере)запуске. Для счетчика сообщений/минуту требуется уровень INFO или DEBUG.",
-          "ko": "(재)시작 시 로그 레벨을 INFO로 강제 설정합니다. Msgs/분 카운터에는 INFO 또는 DEBUG 레벨이 필요합니다."
+          "ko": "(재)시작 시 로그 레벨을 INFO로 강제 설정합니다. Msgs/분 카운터에는 INFO 또는 DEBUG 레벨이 필요합니다.",
+          "ar": "فرض مستوى السجل على INFO عند (إعادة) التشغيل. مطلوب مستوى INFO أو DEBUG لعداد الرسائل/دقيقة."
         },
         "value": true
       }

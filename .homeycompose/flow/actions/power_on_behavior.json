@@ -11,7 +11,8 @@
     "sv": "Ställ in Uppstartsbeteende",
     "pl": "Ustaw Zachowanie Po Włączeniu",
     "ru": "Установить Поведение Включения",
-    "ko": "전원 켜짐 동작 설정"
+    "ko": "전원 켜짐 동작 설정",
+    "ar": "تعيين سلوك التشغيل"
   },
   "titleFormatted": {
     "en": "Set Power On Behavior to [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ in Uppstartsbeteende till [[val]]",
     "pl": "Ustaw Zachowanie Po Włączeniu na [[val]]",
     "ru": "Установить Поведение Включения на [[val]]",
-    "ko": "[[val]]의 전원 켜짐 동작 설정"
+    "ko": "[[val]]의 전원 켜짐 동작 설정",
+    "ar": "تعيين سلوك التشغيل إلى [[val]]"
   },
   "highlight": true,
   "args": [
@@ -52,7 +54,8 @@
             "sv": "Av",
             "pl": "Wyłączony",
             "ru": "Выкл",
-            "ko": "꺼짐"
+            "ko": "꺼짐",
+            "ar": "إيقاف"
           }
         },
         {
@@ -69,7 +72,8 @@
             "sv": "På",
             "pl": "Włączony",
             "ru": "Вкл",
-            "ko": "켜짐"
+            "ko": "켜짐",
+            "ar": "تشغيل"
           }
         },
         {
@@ -86,7 +90,8 @@
             "sv": "Växla",
             "pl": "Przełącz",
             "ru": "Переключить",
-            "ko": "전환"
+            "ko": "전환",
+            "ar": "تبديل"
           }
         },
         {
@@ -103,7 +108,8 @@
             "sv": "Föregående",
             "pl": "Poprzedni",
             "ru": "Предыдущий",
-            "ko": "이전"
+            "ko": "이전",
+            "ar": "سابق"
           }
         }
       ]

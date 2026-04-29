@@ -11,7 +11,8 @@
     "sv": "Slå på eller av vänster",
     "pl": "Włącz lub wyłącz lewą stronę",
     "ru": "Включить или выключить левый",
-    "ko": "왼쪽을 켜거나 끄기"
+    "ko": "왼쪽을 켜거나 끄기",
+    "ar": "تشغيل أو إيقاف اليسار"
   },
   "titleFormatted": {
     "en": "Switch Left [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Vänster brytare [[val]]",
     "pl": "Przełącznik lewa [[val]]",
     "ru": "Переключить налево [[val]]",
-    "ko": "왼쪽 스위치 [[val]]"
+    "ko": "왼쪽 스위치 [[val]]",
+    "ar": "تبديل اليسار [[val]]"
   },
   "highlight": true,
   "args": [
@@ -49,7 +51,8 @@
         "sv": "På",
         "pl": "Włączony",
         "ru": "Вкл",
-        "ko": "켜기"
+        "ko": "켜기",
+        "ar": "تشغيل"
       }
     }
   ]

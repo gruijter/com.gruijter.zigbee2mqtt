@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "The target temperature changed",
-    "nl": "De doeltemperatuur is veranderd",
+    "nl": "De doeltemperatuur is gewijzigd",
     "da": "Måltemperaturen er ændret",
     "de": "Die Zieltemperatur hat sich geändert",
     "es": "La temperatura objetivo ha cambiado",
@@ -11,7 +11,8 @@
     "sv": "Måltemperaturen har ändrats",
     "pl": "Temperatura docelowa została zmieniona",
     "ru": "Целевая температура изменилась",
-    "ko": "목표 온도가 변경되었습니다"
+    "ko": "목표 온도가 변경되었습니다",
+    "ar": "تغيرت درجة الحرارة المستهدفة"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "Temperatur",
         "pl": "Temperatura",
         "ru": "Температура",
-        "ko": "온도"
+        "ko": "온도",
+        "ar": "درجة الحرارة"
       },
       "example": 23
     }

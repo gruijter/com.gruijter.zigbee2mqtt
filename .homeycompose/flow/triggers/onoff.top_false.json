@@ -7,11 +7,12 @@
     "es": "Arriba Apagado",
     "fr": "Haut Éteint",
     "it": "Alto Spento",
-    "no": "Topp Slått Av",
-    "sv": "Topp Avstängd",
+    "no": "Topp Av",
+    "sv": "Topp Av",
     "pl": "Górny Wyłączony",
     "ru": "Верх Выключен",
-    "ko": "위쪽 꺼짐"
+    "ko": "위쪽 꺼짐",
+    "ar": "تم إيقاف الأعلى"
   },
   "highlight": true,
   "args": [

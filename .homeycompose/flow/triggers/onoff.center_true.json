@@ -1,17 +1,18 @@
 {
   "title": {
     "en": "Center Turned On",
-    "nl": "Center Ingeschakeld",
+    "nl": "Midden Ingeschakeld",
     "da": "Center Tændt",
-    "de": "Zentrum Eingeschaltet",
-    "es": "Centro Activado",
-    "fr": "Centre Activé",
+    "de": "Mitte Eingeschaltet",
+    "es": "Centro Encendido",
+    "fr": "Centre Allumé",
     "it": "Centro Acceso",
-    "no": "Senter Slått På",
-    "sv": "Centrum Påslagen",
-    "pl": "Centrum Włączone",
+    "no": "Senter På",
+    "sv": "Centrum På",
+    "pl": "Środek Włączony",
     "ru": "Центр Включен",
-    "ko": "센터 켜짐"
+    "ko": "센터 켜짐",
+    "ar": "تم تشغيل الأوسط"
   },
   "highlight": true,
   "args": [

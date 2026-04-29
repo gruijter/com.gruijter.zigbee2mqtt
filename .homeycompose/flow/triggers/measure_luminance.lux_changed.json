@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "The luminance lux changed",
-    "nl": "De luminantie lux is veranderd",
+    "nl": "De luminantie lux is gewijzigd",
     "da": "Luminans lux ændret sig",
     "de": "Die Lichtstärke lux hat sich geändert",
     "es": "La luminancia lux cambió",
@@ -11,7 +11,8 @@
     "sv": "Luminans lux ändrades",
     "pl": "Jasność lux została zmieniona",
     "ru": "Освещенность люкс изменилась",
-    "ko": "조도 럭스가 변경되었습니다"
+    "ko": "조도 럭스가 변경되었습니다",
+    "ar": "تغيرت إضاءة اللوكس"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "Luminans",
         "pl": "Jasność",
         "ru": "Освещенность",
-        "ko": "조도"
+        "ko": "조도",
+        "ar": "الإضاءة"
       },
       "example": 53
     }

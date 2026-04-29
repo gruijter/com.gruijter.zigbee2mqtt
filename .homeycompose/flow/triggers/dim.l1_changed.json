@@ -11,7 +11,8 @@
     "sv": "Dämningsnivån L1 har ändrats",
     "pl": "Poziom ściemniania L1 został zmieniony",
     "ru": "Уровень затемнения L1 изменен",
-    "ko": "디밍 레벨 L1이 변경되었습니다"
+    "ko": "디밍 레벨 L1이 변경되었습니다",
+    "ar": "تغير مستوى التعتيم L1"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "Dämningsnivå",
         "pl": "Poziom ściemniania",
         "ru": "Уровень затемнения",
-        "ko": "디밍 레벨"
+        "ko": "디밍 레벨",
+        "ar": "مستوى التعتيم"
       },
       "example": 53
     }

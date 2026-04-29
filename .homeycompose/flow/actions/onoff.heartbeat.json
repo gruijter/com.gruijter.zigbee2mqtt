@@ -1,9 +1,33 @@
 {
   "title": {
-    "en": "Switch Heartbeat On or Off"
+    "en": "Switch Heartbeat On or Off",
+    "nl": "Schakel hartslag in of uit",
+    "da": "Tænd eller sluk hjerteslag",
+    "de": "Herzschlag ein- oder ausschalten",
+    "es": "Activar o desactivar latido",
+    "fr": "Activer ou désactiver le battement de cœur",
+    "it": "Attiva o disattiva battito cardiaco",
+    "no": "Slå hjerteslag på eller av",
+    "sv": "Slå på eller av hjärtslag",
+    "pl": "Włącz lub wyłącz puls",
+    "ru": "Включить или выключить сердцебиение",
+    "ko": "하트비트 켜기 또는 끄기",
+    "ar": "تشغيل أو إيقاف نبضات القلب"
   },
   "titleFormatted": {
-    "en": "Switch Heartbeat [[val]]"
+    "en": "Switch Heartbeat [[val]]",
+    "nl": "Schakel hartslag [[val]]",
+    "da": "Skift hjerteslag [[val]]",
+    "de": "Herzschlag schalten [[val]]",
+    "es": "Cambiar latido [[val]]",
+    "fr": "Basculer le battement de cœur [[val]]",
+    "it": "Cambia battito cardiaco [[val]]",
+    "no": "Bytt hjerteslag [[val]]",
+    "sv": "Växla hjärtslag [[val]]",
+    "pl": "Przełącz puls [[val]]",
+    "ru": "Переключить сердцебиение [[val]]",
+    "ko": "하트비트 [[val]]",
+    "ar": "تبديل نبضات القلب [[val]]"
   },
   "highlight": true,
   "args": [
@@ -16,7 +40,19 @@
       "type": "checkbox",
       "name": "val",
       "title": {
-        "en": "On"
+        "en": "On",
+        "nl": "Aan",
+        "da": "Til",
+        "de": "Ein",
+        "es": "Encendido",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączone",
+        "ru": "Включено",
+        "ko": "켜짐",
+        "ar": "تشغيل"
       }
     }
   ]

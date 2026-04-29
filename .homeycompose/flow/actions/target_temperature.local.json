@@ -11,7 +11,8 @@
     "sv": "Ställ in måltemperatur",
     "pl": "Ustaw docelową temperaturę",
     "ru": "Установить целевую температуру",
-    "ko": "목표 온도 설정"
+    "ko": "목표 온도 설정",
+    "ar": "تعيين درجة الحرارة المستهدفة"
   },
   "titleFormatted": {
     "en": "Set target temperature to [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ in måltemperatur till [[val]]",
     "pl": "Ustaw docelową temperaturę na [[val]]",
     "ru": "Установить целевую температуру на [[val]]",
-    "ko": "[[val]]의 목표 온도를 설정"
+    "ko": "[[val]]의 목표 온도를 설정",
+    "ar": "تعيين درجة الحرارة المستهدفة إلى [[val]]"
   },
   "highlight": true,
   "args": [

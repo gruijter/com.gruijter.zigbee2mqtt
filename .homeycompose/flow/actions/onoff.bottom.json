@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "Switch Bottom On or Off",
-    "nl": "Zet onder aan of uit",
+    "nl": "Schakel Onder in of uit",
     "da": "Tænd eller sluk for bund",
     "de": "Schalten Sie unten ein oder aus",
     "es": "Activar o desactivar abajo",
@@ -11,11 +11,12 @@
     "sv": "Slå på eller av botten",
     "pl": "Włącz lub wyłącz dolny",
     "ru": "Включить или выключить низ",
-    "ko": "아래쪽 켜기 또는 끄기"
+    "ko": "아래쪽 켜기 또는 끄기",
+    "ar": "تشغيل أو إيقاف الجزء السفلي"
   },
   "titleFormatted": {
     "en": "Switch Bottom [[val]]",
-    "nl": "Schakel onder [[val]]",
+    "nl": "Schakel Onder [[val]]",
     "da": "Skift bund [[val]]",
     "de": "Unten schalten [[val]]",
     "es": "Cambiar abajo [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Växla botten [[val]]",
     "pl": "Przełącz dolny [[val]]",
     "ru": "Переключить низ [[val]]",
-    "ko": "아래쪽 전환 [[val]]"
+    "ko": "아래쪽 전환 [[val]]",
+    "ar": "التبديل السفلي [[val]]"
   },
   "highlight": true,
   "args": [
@@ -49,7 +51,8 @@
         "sv": "På",
         "pl": "Włączone",
         "ru": "Включено",
-        "ko": "켬"
+        "ko": "켬",
+        "ar": "تشغيل"
       }
     }
   ]

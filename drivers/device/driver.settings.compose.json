@@ -13,7 +13,8 @@
       "sv": "Enhetsinformation",
       "pl": "Informacje o urządzeniu",
       "ru": "Информация об устройстве",
-      "ko": "장치 정보"
+      "ko": "장치 정보",
+      "ar": "معلومات الجهاز"
     },
     "children": [
       {
@@ -31,7 +32,8 @@
           "sv": "Zigbee2mqtt Namn",
           "pl": "Nazwa Zigbee2mqtt",
           "ru": "Имя Zigbee2mqtt",
-          "ko": "Zigbee2mqtt 이름"
+          "ko": "Zigbee2mqtt 이름",
+          "ar": "اسم Zigbee2mqtt"
         },
         "value": ""
       },
@@ -50,7 +52,8 @@
           "sv": "Brygga IEEE-adress",
           "pl": "Adres IEEE mostka",
           "ru": "Адрес IEEE моста",
-          "ko": "브리지 IEEE 주소"
+          "ko": "브리지 IEEE 주소",
+          "ar": "عنوان IEEE للجسر"
         },
         "value": ""
       },
@@ -69,7 +72,8 @@
           "sv": "Enhet IEEE-adress",
           "pl": "Adres IEEE urządzenia",
           "ru": "Адрес IEEE устройства",
-          "ko": "장치 IEEE 주소"
+          "ko": "장치 IEEE 주소",
+          "ar": "عنوان IEEE للجهاز"
         },
         "value": ""
       },
@@ -88,7 +92,8 @@
           "sv": "Modell",
           "pl": "Model",
           "ru": "Модель",
-          "ko": "모델"
+          "ko": "모델",
+          "ar": "الموديل"
         },
         "value": ""
       },
@@ -107,7 +112,8 @@
           "sv": "Beskrivning",
           "pl": "Opis",
           "ru": "Описание",
-          "ko": "설명"
+          "ko": "설명",
+          "ar": "الوصف"
         },
         "value": ""
       }
@@ -127,7 +133,8 @@
       "sv": "Enhetsinställningar",
       "pl": "Ustawienia urządzenia",
       "ru": "Настройки устройства",
-      "ko": "장치 설정"
+      "ko": "장치 설정",
+      "ar": "إعدادات الجهاز"
     },
     "children": [
       {
@@ -146,7 +153,8 @@
           "sv": "Enhetsklass",
           "pl": "Klasa urządzenia",
           "ru": "Класс устройства",
-          "ko": "장치 클래스"
+          "ko": "장치 클래스",
+          "ar": "فئة الجهاز"
         },
         "hint": {
           "en": "This setting will effect the behavior in Homey flows.",
@@ -160,7 +168,8 @@
           "sv": "Denna inställning kommer att påverka beteendet i Homey flöden.",
           "pl": "To ustawienie wpłynie na zachowanie w przepływach Homey.",
           "ru": "Эта настройка повлияет на поведение в потоках Homey.",
-          "ko": "이 설정은 Homey 흐름에서의 동작에 영향을 줍니다."
+          "ko": "이 설정은 Homey 흐름에서의 동작에 영향을 줍니다.",
+          "ar": "سيؤثر هذا الإعداد على السلوك في تدفقات Homey."
         },
         "values": [
           {

@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "Turn Child Lock On or Off",
-    "nl": "Zet kinderslot aan of uit",
+    "nl": "Zet kinderslot Aan of Uit",
     "da": "Tænd eller sluk børnesikringen",
     "de": "Kindersicherung ein- oder ausschalten",
     "es": "Activar o desactivar el bloqueo infantil",
@@ -11,11 +11,12 @@
     "sv": "Slå på eller av barnlåset",
     "pl": "Włącz lub wyłącz blokadę rodzicielską",
     "ru": "Включить или выключить детский замок",
-    "ko": "아동 잠금 장치를 켜거나 끄세요"
+    "ko": "아동 잠금 장치를 켜거나 끄세요",
+    "ar": "تشغيل أو إيقاف قفل الأطفال"
   },
   "titleFormatted": {
-    "en": "Turn Child Lock on: [[val]]",
-    "nl": "Zet kinderslot aan: [[val]]",
+    "en": "Turn Child Lock On: [[val]]",
+    "nl": "Zet kinderslot Aan: [[val]]",
     "da": "Tænd børnesikring: [[val]]",
     "de": "Kindersicherung einschalten: [[val]]",
     "es": "Activar bloqueo infantil: [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Slå på barnlås: [[val]]",
     "pl": "Włącz blokadę rodzicielską: [[val]]",
     "ru": "Включить детский замок: [[val]]",
-    "ko": "아동 잠금 장치 켜기: [[val]]"
+    "ko": "아동 잠금 장치 켜기: [[val]]",
+    "ar": "تشغيل قفل الأطفال: [[val]]"
   },
   "highlight": true,
   "args": [
@@ -49,7 +51,8 @@
         "sv": "På",
         "pl": "Włączone",
         "ru": "Включено",
-        "ko": "켜짐"
+        "ko": "켜짐",
+        "ar": "تشغيل"
       }
     }
   ]

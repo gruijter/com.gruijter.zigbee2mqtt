@@ -11,7 +11,8 @@
     "sv": "Byt systemläge Värme eller Av",
     "pl": "Przełącz tryb systemu Grzanie lub Wyłączony",
     "ru": "Переключите режим системы Обогрев или Выкл",
-    "ko": "시스템 모드를 난방 또는 끄기로 전환"
+    "ko": "시스템 모드를 난방 또는 끄기로 전환",
+    "ar": "تبديل وضع النظام إلى تدفئة أو إيقاف"
   },
   "titleFormatted": {
     "en": "Set system mode to heat [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ in systemläge till värme [[val]]",
     "pl": "Ustaw tryb systemu na ogrzewanie [[val]]",
     "ru": "Установите режим системы на обогрев [[val]]",
-    "ko": "시스템 모드를 난방으로 설정 [[val]]"
+    "ko": "시스템 모드를 난방으로 설정 [[val]]",
+    "ar": "تعيين وضع النظام إلى تدفئة [[val]]"
   },
   "highlight": true,
   "args": [
@@ -49,7 +51,8 @@
         "sv": "Värme",
         "pl": "Ogrzewanie",
         "ru": "Обогрев",
-        "ko": "난방"
+        "ko": "난방",
+        "ar": "تدفئة"
       }
     }
   ]

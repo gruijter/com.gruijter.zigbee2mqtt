@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "The dim level L2 changed",
-    "nl": "Het dimniveau L2 is veranderd",
+    "nl": "Het dimniveau L2 is gewijzigd",
     "da": "Dæmpningsniveau L2 er ændret",
     "de": "Das Dimmniveau L2 hat sich geändert",
     "es": "El nivel de atenuación L2 ha cambiado",
@@ -11,7 +11,8 @@
     "sv": "Dämningsnivå L2 har ändrats",
     "pl": "Poziom ściemniania L2 został zmieniony",
     "ru": "Уровень затемнения L2 изменился",
-    "ko": "디밍 수준 L2가 변경되었습니다"
+    "ko": "디밍 수준 L2가 변경되었습니다",
+    "ar": "تغير مستوى التعتيم L2"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "Dämningsnivå",
         "pl": "Poziom ściemniania",
         "ru": "Уровень затемнения",
-        "ko": "디밍 수준"
+        "ko": "디밍 수준",
+        "ar": "مستوى التعتيم"
       },
       "example": 53
     }

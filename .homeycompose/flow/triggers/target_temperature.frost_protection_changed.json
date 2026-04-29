@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "The frost protection temperature changed",
-    "nl": "De vorstbeveiligingstemperatuur is veranderd",
+    "nl": "De vorstbeveiligingstemperatuur is gewijzigd",
     "da": "Frostbeskyttelsestemperaturen er ændret",
     "de": "Die Frostschutztemperatur hat sich geändert",
     "es": "La temperatura de protección contra heladas ha cambiado",
@@ -11,7 +11,8 @@
     "sv": "Frostskyddstemperaturen har ändrats",
     "pl": "Temperatura ochrony przed mrozem została zmieniona",
     "ru": "Температура защиты от замерзания изменилась",
-    "ko": "서리 방지 온도가 변경되었습니다"
+    "ko": "서리 방지 온도가 변경되었습니다",
+    "ar": "تغيرت درجة حرارة الحماية من الصقيع"
   },
   "args": [
     {
@@ -36,7 +37,8 @@
         "sv": "Temperatur",
         "pl": "Temperatura",
         "ru": "Температура",
-        "ko": "온도"
+        "ko": "온도",
+        "ar": "درجة الحرارة"
       },
       "example": 6
     }

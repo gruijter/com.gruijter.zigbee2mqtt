@@ -12,21 +12,11 @@
     "sv": "Länk kvalitet",
     "pl": "Jakość połączenia",
     "ru": "Качество связи",
-    "ko": "링크 품질"
+    "ko": "링크 품질",
+    "ar": "جودة الاتصال"
   },
   "units": {
-    "en": "lqi",
-    "nl": "lqi",
-    "da": "lqi",
-    "de": "lqi",
-    "es": "lqi",
-    "fr": "lqi",
-    "it": "lqi",
-    "no": "lqi",
-    "sv": "lqi",
-    "pl": "lqi",
-    "ru": "lqi",
-    "ko": "lqi"
+    "en": "lqi"
   },
   "getable": true,
   "setable": false,

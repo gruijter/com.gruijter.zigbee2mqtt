@@ -11,7 +11,8 @@
     "sv": "Slå på eller av indikator",
     "pl": "Przełącz wskaźnik Włącz lub Wyłącz",
     "ru": "Включить или выключить индикатор",
-    "ko": "표시기 켜기 또는 끄기"
+    "ko": "표시기 켜기 또는 끄기",
+    "ar": "تشغيل أو إيقاف المؤشر"
   },
   "titleFormatted": {
     "en": "Switch indicator [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Slå på indikator [[val]]",
     "pl": "Przełącz wskaźnik [[val]]",
     "ru": "Переключить индикатор [[val]]",
-    "ko": "표시기 [[val]]"
+    "ko": "표시기 [[val]]",
+    "ar": "تبديل المؤشر [[val]]"
   },
   "highlight": true,
   "args": [
@@ -49,7 +51,8 @@
         "sv": "På",
         "pl": "Włączony",
         "ru": "Вкл.",
-        "ko": "켜기"
+        "ko": "켜기",
+        "ar": "تشغيل"
       }
     }
   ]

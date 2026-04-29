@@ -12,7 +12,8 @@
     "sv": "Meddelanden/minut",
     "pl": "Wiadomości/minuta",
     "ru": "Сообщения/минута",
-    "ko": "메시지/분"
+    "ko": "메시지/분",
+    "ar": "رسالة/دقيقة"
   },
   "getable": true,
   "setable": false,

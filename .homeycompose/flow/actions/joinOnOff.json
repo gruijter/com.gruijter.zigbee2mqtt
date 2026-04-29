@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "Allow Joining On or Off",
-    "nl": "Sta deelname aan of uit toe",
+    "nl": "Sta deelnemen toe (Aan/Uit)",
     "da": "Tillad tilslutning til eller fra",
     "de": "Beitritt erlauben An oder Aus",
     "es": "Permitir unión activada o desactivada",
@@ -11,11 +11,12 @@
     "sv": "Tillåt anslutning på eller av",
     "pl": "Zezwól na dołączanie włączone lub wyłączone",
     "ru": "Разрешить подключение Вкл или Выкл",
-    "ko": "가입 허용 켬 또는 끔"
+    "ko": "가입 허용 켬 또는 끔",
+    "ar": "السماح بالانضمام تشغيل أو إيقاف"
   },
   "titleFormatted": {
     "en": "Allow device joining [[val]]",
-    "nl": "Sta apparaat [[val]] deelname toe",
+    "nl": "Sta apparaat deelnemen toe: [[val]]",
     "da": "Tillad enhed tilslutning [[val]]",
     "de": "Gerätebeitritt [[val]] erlauben",
     "es": "Permitir unión de dispositivo [[val]]",
@@ -25,7 +26,8 @@
     "sv": "Tillåt enhetsanslutning [[val]]",
     "pl": "Zezwól na dołączanie urządzenia [[val]]",
     "ru": "Разрешить подключение устройства [[val]]",
-    "ko": "장치 가입 허용 [[val]]"
+    "ko": "장치 가입 허용 [[val]]",
+    "ar": "السماح بانضمام الجهاز [[val]]"
   },
   "hint": {
     "en": "When On, the Zigbee2MQTT bridge will allow joining for 5 minutes.",
@@ -39,7 +41,8 @@
     "sv": "När det är på, kommer Zigbee2MQTT bridge att tillåta anslutning i 5 minuter.",
     "pl": "Gdy jest włączone, bridge Zigbee2MQTT pozwoli na dołączanie przez 5 minut.",
     "ru": "Когда включен, мост Zigbee2MQTT разрешит подключение на 5 минут.",
-    "ko": "켜져 있을 때, Zigbee2MQTT 브리지는 5분 동안 가입을 허용합니다."
+    "ko": "켜져 있을 때, Zigbee2MQTT 브리지는 5분 동안 가입을 허용합니다.",
+    "ar": "عند التشغيل، سيسمح جسر Zigbee2MQTT بالانضمام لمدة 5 دقائق."
   },
   "highlight": true,
   "args": [
@@ -63,7 +66,8 @@
         "sv": "På",
         "pl": "Włączone",
         "ru": "Вкл",
-        "ko": "켜기"
+        "ko": "켜기",
+        "ar": "تشغيل"
       }
     }
   ]
