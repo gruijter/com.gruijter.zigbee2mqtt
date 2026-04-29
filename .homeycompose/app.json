@@ -1,25 +1,13 @@
 {
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "3.1.9",
+  "version": "3.2.0",
   "compatibility": ">=12.11.0",
   "sdk": 3,
   "platforms": [
     "local"
   ],
   "name": {
-    "en": "Zigbee2MQTT",
-    "nl": "Zigbee2MQTT",
-    "da": "Zigbee2MQTT",
-    "de": "Zigbee2MQTT",
-    "es": "Zigbee2MQTT",
-    "fr": "Zigbee2MQTT",
-    "it": "Zigbee2MQTT",
-    "no": "Zigbee2MQTT",
-    "sv": "Zigbee2MQTT",
-    "pl": "Zigbee2MQTT",
-    "ru": "Zigbee2MQTT",
-    "ko": "Zigbee2MQTT",
-    "ar": "Zigbee2MQTT"
+    "en": "Zigbee2MQTT"
   },
   "description": {
     "en": "Use Zigbee devices via MQTT",
@@ -41,54 +29,6 @@
   ],
   "tags": {
     "en": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "nl": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "da": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "de": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "es": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "fr": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "it": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "no": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "sv": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "pl": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "ru": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "ko": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "ar": [
       "Zigbee",
       "MQTT"
     ]

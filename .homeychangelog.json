@@ -1,4 +1,7 @@
 {
+  "3.2.0": {
+    "en": "Fix bridge and mqtt connection issues. Massive translation update."
+  },
   "3.1.9": {
     "en": "Added weather station support. Added L&S lighting support. Added curtain class mapping. Fixed offline device trigger card. Fixed MQTT pairing and reconnects. Homey compatibilty >=12.11.0"
   },

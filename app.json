@@ -1,26 +1,14 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "3.1.9",
+  "version": "3.2.0",
   "compatibility": ">=12.11.0",
   "sdk": 3,
   "platforms": [
     "local"
   ],
   "name": {
-    "en": "Zigbee2MQTT",
-    "nl": "Zigbee2MQTT",
-    "da": "Zigbee2MQTT",
-    "de": "Zigbee2MQTT",
-    "es": "Zigbee2MQTT",
-    "fr": "Zigbee2MQTT",
-    "it": "Zigbee2MQTT",
-    "no": "Zigbee2MQTT",
-    "sv": "Zigbee2MQTT",
-    "pl": "Zigbee2MQTT",
-    "ru": "Zigbee2MQTT",
-    "ko": "Zigbee2MQTT",
-    "ar": "Zigbee2MQTT"
+    "en": "Zigbee2MQTT"
   },
   "description": {
     "en": "Use Zigbee devices via MQTT",
@@ -42,54 +30,6 @@
   ],
   "tags": {
     "en": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "nl": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "da": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "de": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "es": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "fr": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "it": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "no": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "sv": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "pl": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "ru": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "ko": [
-      "Zigbee",
-      "MQTT"
-    ],
-    "ar": [
       "Zigbee",
       "MQTT"
     ]
@@ -210,7 +150,8 @@
           "sv": "Åtgärdshändelse mottagen",
           "pl": "Otrzymano zdarzenie akcji",
           "ru": "Получено событие действия",
-          "ko": "작동 이벤트 수신됨"
+          "ko": "작동 이벤트 수신됨",
+          "ar": "تم استلام حدث الإجراء"
         },
         "titleFormatted": {
           "en": "Action [[event]] received.",
@@ -224,7 +165,8 @@
           "sv": "Åtgärd [[event]] mottagen.",
           "pl": "Otrzymano zdarzenie [[event]].",
           "ru": "Получено событие [[event]].",
-          "ko": "작동 [[event]] 수신됨."
+          "ko": "작동 [[event]] 수신됨.",
+          "ar": "تم استلام الإجراء [[event]]."
         },
         "hint": {
           "en": "An action event matching given string was received.",
@@ -238,7 +180,8 @@
           "sv": "En åtgärdshändelse som matchar den angivna strängen mottogs.",
           "pl": "Otrzymano zdarzenie akcji pasujące do podanego ciągu.",
           "ru": "Получено событие действия, совпадающее с заданной строкой.",
-          "ko": "지정된 문자열과 일치하는 작동 이벤트가 수신되었습니다."
+          "ko": "지정된 문자열과 일치하는 작동 이벤트가 수신되었습니다.",
+          "ar": "تم استلام حدث إجراء يطابق السلسلة المحددة."
         },
         "highlight": true,
         "args": [
@@ -262,7 +205,8 @@
               "sv": "händelse",
               "pl": "wydarzenie",
               "ru": "событие",
-              "ko": "이벤트"
+              "ko": "이벤트",
+              "ar": "حدث"
             },
             "placeholder": {
               "en": "event_name",
@@ -276,7 +220,8 @@
               "sv": "händelse_namn",
               "pl": "nazwa_wydarzenia",
               "ru": "имя_события",
-              "ko": "이벤트_이름"
+              "ko": "이벤트_이름",
+              "ar": "اسم_الحدث"
             }
           }
         ],
@@ -296,7 +241,8 @@
               "sv": "Åtgärd",
               "pl": "Akcja",
               "ru": "Действие",
-              "ko": "작동"
+              "ko": "작동",
+              "ar": "إجراء"
             },
             "example": "off"
           }
@@ -305,7 +251,8 @@
       },
       {
         "title": {
-          "en": "The action group changed"
+          "en": "The action group changed",
+          "ar": "تغيرت مجموعة الإجراءات"
         },
         "highlight": true,
         "args": [
@@ -320,7 +267,8 @@
             "name": "action_group",
             "type": "number",
             "title": {
-              "en": "Action group"
+              "en": "Action group",
+              "ar": "مجموعة الإجراءات"
             },
             "example": 12456
           }
@@ -329,8 +277,8 @@
       },
       {
         "title": {
-          "en": "The Offline Alarm turned Off",
-          "nl": "Het Offline Alarm is Uitgeschakeld",
+          "en": "The Offline Alarm Turned Off",
+          "nl": "Het offline alarm is uitgeschakeld",
           "da": "Offline Alarmerne slukket",
           "de": "Der Offline-Alarm ist Ausgeschaltet",
           "es": "La Alarma Offline se Desactivó",
@@ -340,7 +288,8 @@
           "sv": "Offline-larmet stängdes av",
           "pl": "Alarm Offline Wyłączony",
           "ru": "Оффлайн-сигнализация выключена",
-          "ko": "오프라인 알람이 꺼졌습니다"
+          "ko": "오프라인 알람이 꺼졌습니다",
+          "ar": "تم إيقاف إنذار عدم الاتصال"
         },
         "highlight": true,
         "args": [
@@ -354,7 +303,7 @@
       },
       {
         "title": {
-          "en": "The Offline Alarm turned On",
+          "en": "The Offline Alarm Turned On",
           "da": "Offline-alarmen blev tændt",
           "de": "Der Offline-Alarm wurde eingeschaltet",
           "es": "La alarma fuera de línea se activó",
@@ -365,7 +314,8 @@
           "pl": "Alarm offline został włączony",
           "ru": "Оффлайн-сигнализация была включена",
           "ko": "오프라인 알람이 켜졌습니다",
-          "nl": "Het offline alarm is aangezet"
+          "nl": "Het offline alarm is ingeschakeld",
+          "ar": "تم تشغيل إنذار عدم الاتصال"
         },
         "highlight": true,
         "args": [
@@ -379,8 +329,8 @@
       },
       {
         "title": {
-          "en": "Joining turned Off",
-          "nl": "Deelnemen uitgeschakeld",
+          "en": "Joining Turned Off",
+          "nl": "Deelnemen Uitgeschakeld",
           "da": "Deltagelse slukket",
           "de": "Beitritt ausgeschaltet",
           "es": "Unirse desactivado",
@@ -390,7 +340,8 @@
           "sv": "Anslutning avstängd",
           "pl": "Dołączanie wyłączone",
           "ru": "Присоединение отключено",
-          "ko": "참여 꺼짐"
+          "ko": "참여 꺼짐",
+          "ar": "تم إيقاف الانضمام"
         },
         "highlight": true,
         "args": [
@@ -404,8 +355,8 @@
       },
       {
         "title": {
-          "en": "Joining turned On",
-          "nl": "Deelnemen ingeschakeld",
+          "en": "Joining Turned On",
+          "nl": "Deelnemen Ingeschakeld",
           "da": "Deltagelse aktiveret",
           "de": "Beitritt eingeschaltet",
           "es": "Participación activada",
@@ -415,7 +366,8 @@
           "sv": "Deltagande aktiverat",
           "pl": "Dołączenie włączone",
           "ru": "Присоединение включено",
-          "ko": "참여 켜짐"
+          "ko": "참여 켜짐",
+          "ar": "تم تشغيل الانضمام"
         },
         "highlight": true,
         "args": [
@@ -430,7 +382,7 @@
       {
         "title": {
           "en": "The battery state changed",
-          "nl": "De batterijstatus veranderde",
+          "nl": "De batterijstatus is gewijzigd",
           "da": "Batteritilstand ændret",
           "de": "Der Batteriestatus hat sich geändert",
           "es": "El estado de la batería cambió",
@@ -440,7 +392,8 @@
           "sv": "Batteristatus ändrat",
           "pl": "Stan baterii zmieniony",
           "ru": "Состояние батареи изменено",
-          "ko": "배터리 상태가 변경되었습니다"
+          "ko": "배터리 상태가 변경되었습니다",
+          "ar": "تغيرت حالة البطارية"
         },
         "highlight": true,
         "args": [
@@ -466,7 +419,8 @@
               "sv": "Batteristatus",
               "pl": "Stan baterii",
               "ru": "Состояние батареи",
-              "ko": "배터리 상태"
+              "ko": "배터리 상태",
+              "ar": "حالة البطارية"
             },
             "example": "low"
           }
@@ -476,7 +430,7 @@
       {
         "title": {
           "en": "The Color Power On Behavior changed",
-          "nl": "Het kleur aan-uitgedrag is gewijzigd",
+          "nl": "Het inschakelgedrag van kleur is gewijzigd",
           "da": "Farve tændingsadfærd er ændret",
           "de": "Das Farb-Einschaltverhalten hat sich geändert",
           "es": "El comportamiento de encendido de color ha cambiado",
@@ -486,7 +440,8 @@
           "sv": "Färgpåslaget har ändrats",
           "pl": "Zachowanie przy włączaniu koloru uległo zmianie",
           "ru": "Изменилось поведение при включении цвета",
-          "ko": "색상 전원 켜기 동작이 변경되었습니다"
+          "ko": "색상 전원 켜기 동작이 변경되었습니다",
+          "ar": "تغير سلوك تشغيل اللون"
         },
         "highlight": true,
         "args": [
@@ -502,7 +457,7 @@
             "type": "string",
             "title": {
               "en": "Power On Behavior",
-              "nl": "Aan-uitgedrag",
+              "nl": "Inschakelgedrag",
               "da": "Tændingsadfærd",
               "de": "Einschaltverhalten",
               "es": "Comportamiento de encendido",
@@ -512,7 +467,8 @@
               "sv": "Påslagningsbeteende",
               "pl": "Zachowanie przy włączaniu",
               "ru": "Поведение при включении",
-              "ko": "전원 켜기 동작"
+              "ko": "전원 켜기 동작",
+              "ar": "سلوك التشغيل"
             },
             "example": "previous"
           }
@@ -522,7 +478,7 @@
       {
         "title": {
           "en": "The X-angle changed",
-          "nl": "De X-hoek is veranderd",
+          "nl": "De X-hoek is gewijzigd",
           "da": "X-vinklen er ændret",
           "de": "Der X-Winkel hat sich geändert",
           "es": "El ángulo X cambió",
@@ -532,7 +488,8 @@
           "sv": "X-vinkeln har ändrats",
           "pl": "Kąt X został zmieniony",
           "ru": "Угол X изменился",
-          "ko": "X-각도가 변경되었습니다"
+          "ko": "X-각도가 변경되었습니다",
+          "ar": "تغيرت زاوية X"
         },
         "highlight": true,
         "args": [
@@ -558,7 +515,8 @@
               "sv": "vinkel_x",
               "pl": "kąt_x",
               "ru": "угол_x",
-              "ko": "각도_x"
+              "ko": "각도_x",
+              "ar": "زاوية_x"
             },
             "example": 48
           }
@@ -568,7 +526,7 @@
       {
         "title": {
           "en": "The Y-angle changed",
-          "nl": "De Y-hoek is veranderd",
+          "nl": "De Y-hoek is gewijzigd",
           "da": "Y-vinklen ændrede sig",
           "de": "Der Y-Winkel hat sich geändert",
           "es": "El ángulo Y cambió",
@@ -578,7 +536,8 @@
           "sv": "Y-vinkeln ändrades",
           "pl": "Kąt Y zmienił się",
           "ru": "Угол Y изменился",
-          "ko": "Y-각이 변했습니다"
+          "ko": "Y-각이 변했습니다",
+          "ar": "تغيرت زاوية Y"
         },
         "highlight": true,
         "args": [
@@ -604,7 +563,8 @@
               "sv": "vinkel_y",
               "pl": "kąt_y",
               "ru": "угол_y",
-              "ko": "각도_y"
+              "ko": "각도_y",
+              "ar": "زاوية_y"
             },
             "example": 48
           }
@@ -614,7 +574,7 @@
       {
         "title": {
           "en": "The Z-angle changed",
-          "nl": "De Z-hoek is veranderd",
+          "nl": "De Z-hoek is gewijzigd",
           "da": "Z-vinklen har ændret sig",
           "de": "Der Z-Winkel hat sich geändert",
           "es": "El ángulo Z ha cambiado",
@@ -624,7 +584,8 @@
           "sv": "Z-vinkeln har ändrats",
           "pl": "Kąt Z się zmienił",
           "ru": "Угол Z изменился",
-          "ko": "Z-각도가 변경되었습니다"
+          "ko": "Z-각도가 변경되었습니다",
+          "ar": "تغيرت زاوية Z"
         },
         "highlight": true,
         "args": [
@@ -650,7 +611,8 @@
               "sv": "vinkel_z",
               "pl": "kąt_z",
               "ru": "угол_z",
-              "ko": "각도_z"
+              "ko": "각도_z",
+              "ar": "زاوية_z"
             },
             "example": 48
           }
@@ -660,7 +622,7 @@
       {
         "title": {
           "en": "The strength changed",
-          "nl": "De sterkte veranderde",
+          "nl": "De sterkte is gewijzigd",
           "da": "Styrken ændrede sig",
           "de": "Die Stärke hat sich verändert",
           "es": "La fuerza cambió",
@@ -670,7 +632,8 @@
           "sv": "Styrkan ändrades",
           "pl": "Siła się zmieniła",
           "ru": "Сила изменилась",
-          "ko": "강도가 변경되었습니다"
+          "ko": "강도가 변경되었습니다",
+          "ar": "تغيرت القوة"
         },
         "highlight": true,
         "args": [
@@ -696,7 +659,8 @@
               "sv": "Styrka",
               "pl": "Siła",
               "ru": "Сила",
-              "ko": "강도"
+              "ko": "강도",
+              "ar": "القوة"
             },
             "example": 48
           }
@@ -716,7 +680,8 @@
           "sv": "Dämningsnivån L1 har ändrats",
           "pl": "Poziom ściemniania L1 został zmieniony",
           "ru": "Уровень затемнения L1 изменен",
-          "ko": "디밍 레벨 L1이 변경되었습니다"
+          "ko": "디밍 레벨 L1이 변경되었습니다",
+          "ar": "تغير مستوى التعتيم L1"
         },
         "highlight": true,
         "args": [
@@ -742,7 +707,8 @@
               "sv": "Dämningsnivå",
               "pl": "Poziom ściemniania",
               "ru": "Уровень затемнения",
-              "ko": "디밍 레벨"
+              "ko": "디밍 레벨",
+              "ar": "مستوى التعتيم"
             },
             "example": 53
           }
@@ -752,7 +718,7 @@
       {
         "title": {
           "en": "The dim level L2 changed",
-          "nl": "Het dimniveau L2 is veranderd",
+          "nl": "Het dimniveau L2 is gewijzigd",
           "da": "Dæmpningsniveau L2 er ændret",
           "de": "Das Dimmniveau L2 hat sich geändert",
           "es": "El nivel de atenuación L2 ha cambiado",
@@ -762,7 +728,8 @@
           "sv": "Dämningsnivå L2 har ändrats",
           "pl": "Poziom ściemniania L2 został zmieniony",
           "ru": "Уровень затемнения L2 изменился",
-          "ko": "디밍 수준 L2가 변경되었습니다"
+          "ko": "디밍 수준 L2가 변경되었습니다",
+          "ar": "تغير مستوى التعتيم L2"
         },
         "highlight": true,
         "args": [
@@ -788,7 +755,8 @@
               "sv": "Dämningsnivå",
               "pl": "Poziom ściemniania",
               "ru": "Уровень затемнения",
-              "ko": "디밍 수준"
+              "ko": "디밍 수준",
+              "ar": "مستوى التعتيم"
             },
             "example": 53
           }
@@ -798,7 +766,7 @@
       {
         "title": {
           "en": "The fan mode changed",
-          "nl": "De ventilatormodus veranderde",
+          "nl": "De ventilatormodus is gewijzigd",
           "da": "Ventilatortilstand ændret",
           "de": "Der Ventilatormodus hat sich geändert",
           "es": "El modo del ventilador cambió",
@@ -808,7 +776,8 @@
           "sv": "Fläktläge ändrat",
           "pl": "Tryb wentylatora zmieniony",
           "ru": "Режим вентилятора изменен",
-          "ko": "팬 모드가 변경되었습니다"
+          "ko": "팬 모드가 변경되었습니다",
+          "ar": "تغير وضع المروحة"
         },
         "highlight": true,
         "args": [
@@ -834,7 +803,8 @@
               "sv": "Fläktläge",
               "pl": "Tryb wentylatora",
               "ru": "Режим вентилятора",
-              "ko": "팬 모드"
+              "ko": "팬 모드",
+              "ar": "وضع المروحة"
             },
             "example": "auto"
           }
@@ -844,7 +814,7 @@
       {
         "title": {
           "en": "The Indicator Mode changed",
-          "nl": "De Indicator Modus veranderde",
+          "nl": "De indicatormodus is gewijzigd",
           "da": "Indikatortilstand ændret",
           "de": "Der Indikatormodus hat sich geändert",
           "es": "El modo indicador cambió",
@@ -854,7 +824,8 @@
           "sv": "Indikatormod läge ändrat",
           "pl": "Tryb wskaźnika zmieniony",
           "ru": "Режим индикатора изменен",
-          "ko": "지표 모드가 변경되었습니다"
+          "ko": "지표 모드가 변경되었습니다",
+          "ar": "تغير وضع المؤشر"
         },
         "highlight": true,
         "args": [
@@ -870,7 +841,7 @@
             "type": "string",
             "title": {
               "en": "Indicator Mode",
-              "nl": "Indicator Modus",
+              "nl": "Indicatormodus",
               "da": "Indikatortilstand",
               "de": "Indikatormodus",
               "es": "Modo indicador",
@@ -880,7 +851,8 @@
               "sv": "Indikatormod",
               "pl": "Tryb wskaźnika",
               "ru": "Режим индикатора",
-              "ko": "지표 모드"
+              "ko": "지표 모드",
+              "ar": "وضع المؤشر"
             },
             "example": "off"
           }
@@ -900,7 +872,8 @@
           "sv": "Den externa luftfuktigheten har ändrats",
           "pl": "Wilgotność zewnętrzna uległa zmianie",
           "ru": "Внешняя влажность изменилась",
-          "ko": "외부 습도가 변경되었습니다"
+          "ko": "외부 습도가 변경되었습니다",
+          "ar": "تغيرت الرطوبة الخارجية"
         },
         "highlight": true,
         "args": [
@@ -926,7 +899,8 @@
               "sv": "Fuktighet",
               "pl": "Wilgotność",
               "ru": "Влажность",
-              "ko": "습도"
+              "ko": "습도",
+              "ar": "الرطوبة"
             },
             "example": 53
           }
@@ -946,7 +920,8 @@
           "sv": "Jordfuktigheten har förändrats",
           "pl": "Wilgotność gleby uległa zmianie",
           "ru": "Влажность почвы изменилась",
-          "ko": "토양 습도가 변경되었습니다"
+          "ko": "토양 습도가 변경되었습니다",
+          "ar": "تغيرت رطوبة التربة"
         },
         "highlight": true,
         "args": [
@@ -972,7 +947,8 @@
               "sv": "Fuktighet",
               "pl": "Wilgotność",
               "ru": "Влажность",
-              "ko": "습도"
+              "ko": "습도",
+              "ar": "الرطوبة"
             },
             "example": 53
           }
@@ -982,7 +958,7 @@
       {
         "title": {
           "en": "The link quality changed",
-          "nl": "De verbindingskwaliteit is veranderd",
+          "nl": "De verbindingskwaliteit is gewijzigd",
           "da": "Linkkvaliteten ændrede sig",
           "de": "Die Verbindungsqualität hat sich geändert",
           "es": "La calidad del enlace cambió",
@@ -992,7 +968,8 @@
           "sv": "Länkkvaliteten har ändrats",
           "pl": "Jakość połączenia zmieniła się",
           "ru": "Качество соединения изменилось",
-          "ko": "링크 품질이 변경되었습니다"
+          "ko": "링크 품질이 변경되었습니다",
+          "ar": "تغيرت جودة الاتصال"
         },
         "highlight": true,
         "args": [
@@ -1018,7 +995,8 @@
               "sv": "Länkkvalitet",
               "pl": "Jakość połączenia",
               "ru": "Качество соединения",
-              "ko": "링크 품질"
+              "ko": "링크 품질",
+              "ar": "جودة الاتصال"
             },
             "example": 53
           }
@@ -1028,7 +1006,7 @@
       {
         "title": {
           "en": "The luminance lux changed",
-          "nl": "De luminantie lux is veranderd",
+          "nl": "De luminantie lux is gewijzigd",
           "da": "Luminans lux ændret sig",
           "de": "Die Lichtstärke lux hat sich geändert",
           "es": "La luminancia lux cambió",
@@ -1038,7 +1016,8 @@
           "sv": "Luminans lux ändrades",
           "pl": "Jasność lux została zmieniona",
           "ru": "Освещенность люкс изменилась",
-          "ko": "조도 럭스가 변경되었습니다"
+          "ko": "조도 럭스가 변경되었습니다",
+          "ar": "تغيرت إضاءة اللوكس"
         },
         "highlight": true,
         "args": [
@@ -1064,7 +1043,8 @@
               "sv": "Luminans",
               "pl": "Jasność",
               "ru": "Освещенность",
-              "ko": "조도"
+              "ko": "조도",
+              "ar": "الإضاءة"
             },
             "example": 53
           }
@@ -1084,7 +1064,8 @@
           "sv": "Enhetens temperatur har ändrats",
           "pl": "Temperatura urządzenia się zmieniła",
           "ru": "Температура устройства изменилась",
-          "ko": "장치 온도가 변경되었습니다"
+          "ko": "장치 온도가 변경되었습니다",
+          "ar": "تغيرت درجة حرارة الجهاز"
         },
         "highlight": true,
         "args": [
@@ -1110,7 +1091,8 @@
               "sv": "Temperatur",
               "pl": "Temperatura",
               "ru": "Температура",
-              "ko": "온도"
+              "ko": "온도",
+              "ar": "درجة الحرارة"
             },
             "example": 53
           }
@@ -1130,7 +1112,8 @@
           "sv": "Den externa temperaturen har ändrats",
           "pl": "Temperatura zewnętrzna uległa zmianie",
           "ru": "Внешняя температура изменилась",
-          "ko": "외부 온도가 변경되었습니다"
+          "ko": "외부 온도가 변경되었습니다",
+          "ar": "تغيرت درجة الحرارة الخارجية"
         },
         "highlight": true,
         "args": [
@@ -1156,7 +1139,8 @@
               "sv": "Temperatur",
               "pl": "Temperatura",
               "ru": "Температура",
-              "ko": "온도"
+              "ko": "온도",
+              "ar": "درجة الحرارة"
             },
             "example": 53
           }
@@ -1176,7 +1160,8 @@
           "sv": "Sensorns temperatur har ändrats",
           "pl": "Temperatura czujnika zmieniła się",
           "ru": "Температура датчика изменилась",
-          "ko": "센서 온도가 변경되었습니다"
+          "ko": "센서 온도가 변경되었습니다",
+          "ar": "تغيرت درجة حرارة المستشعر"
         },
         "highlight": true,
         "args": [
@@ -1202,7 +1187,8 @@
               "sv": "Temperatur",
               "pl": "Temperatura",
               "ru": "Температура",
-              "ko": "온도"
+              "ko": "온도",
+              "ar": "درجة الحرارة"
             },
             "example": 53
           }
@@ -1222,7 +1208,8 @@
           "sv": "Antalet anslutna enheter har ändrats",
           "pl": "Liczba podłączonych urządzeń uległa zmianie",
           "ru": "Количество подключенных устройств изменилось",
-          "ko": "연결된 장치 수가 변경되었습니다"
+          "ko": "연결된 장치 수가 변경되었습니다",
+          "ar": "تغير عدد الأجهزة المتصلة"
         },
         "highlight": true,
         "args": [
@@ -1248,7 +1235,8 @@
               "sv": "Anslutna enheter",
               "pl": "Podłączone urządzenia",
               "ru": "Подключенные устройства",
-              "ko": "연결된 장치"
+              "ko": "연결된 장치",
+              "ar": "الأجهزة المتصلة"
             },
             "example": 53
           }
@@ -1268,7 +1256,8 @@
           "sv": "Meddelanden per minut har ändrats",
           "pl": "Wiadomości na minutę zmieniły się",
           "ru": "Сообщения в минуту изменились",
-          "ko": "분당 메시지가 변경되었습니다"
+          "ko": "분당 메시지가 변경되었습니다",
+          "ar": "تغيرت الرسائل في الدقيقة"
         },
         "highlight": true,
         "args": [
@@ -1294,7 +1283,8 @@
               "sv": "Meddelanden per minut",
               "pl": "Wiadomości na minutę",
               "ru": "Сообщения в минуту",
-              "ko": "분당 메시지"
+              "ko": "분당 메시지",
+              "ar": "الرسائل في الدقيقة"
             },
             "example": 53
           }
@@ -1314,7 +1304,8 @@
           "sv": "Antalet otillgängliga enheter har ändrats",
           "pl": "Liczba niedostępnych urządzeń uległa zmianie",
           "ru": "Количество недоступных устройств изменилось",
-          "ko": "사용할 수 없는 장치 수가 변경되었습니다"
+          "ko": "사용할 수 없는 장치 수가 변경되었습니다",
+          "ar": "تغير عدد الأجهزة غير المتصلة"
         },
         "highlight": true,
         "args": [
@@ -1340,7 +1331,8 @@
               "sv": "Otillgängliga enheter",
               "pl": "Niedostępne urządzenia",
               "ru": "Недоступные устройства",
-              "ko": "사용할 수 없는 장치"
+              "ko": "사용할 수 없는 장치",
+              "ar": "الأجهزة غير المتصلة"
             },
             "example": 3
           }
@@ -1350,7 +1342,7 @@
       {
         "title": {
           "en": "The motion state changed",
-          "nl": "De bewegingsstatus is veranderd",
+          "nl": "De bewegingsstatus is gewijzigd",
           "da": "Bevægelsestaten ændrede sig",
           "de": "Der Bewegungszustand hat sich geändert",
           "es": "El estado de movimiento cambió",
@@ -1360,7 +1352,8 @@
           "sv": "Rörelsestaten har ändrats",
           "pl": "Stan ruchu uległ zmianie",
           "ru": "Состояние движения изменилось",
-          "ko": "움직임 상태가 변경되었습니다"
+          "ko": "움직임 상태가 변경되었습니다",
+          "ar": "تغيرت حالة الحركة"
         },
         "highlight": true,
         "args": [
@@ -1386,7 +1379,8 @@
               "sv": "Tillstånd",
               "pl": "Stan",
               "ru": "Состояние",
-              "ko": "상태"
+              "ko": "상태",
+              "ar": "حالة"
             },
             "example": "none"
           }
@@ -1395,18 +1389,19 @@
       },
       {
         "title": {
-          "en": "Backlight turned Off",
-          "nl": "Achtergrondverlichting uitgeschakeld",
-          "da": "Baggrundsbelysning slukket",
-          "de": "Hintergrundbeleuchtung ausgeschaltet",
-          "es": "Retroiluminación apagada",
-          "fr": "Rétroéclairage éteint",
-          "it": "Retroilluminazione spenta",
-          "no": "Bakgrunnsbelysning slått av",
-          "sv": "Bakgrundsbelysning avstängd",
-          "pl": "Podświetlenie wyłączone",
-          "ru": "Подсветка выключена",
-          "ko": "백라이트 꺼짐"
+          "en": "Backlight Turned Off",
+          "nl": "Achtergrondverlichting Uitgeschakeld",
+          "da": "Baggrundsbelysning Slukket",
+          "de": "Hintergrundbeleuchtung Ausgeschaltet",
+          "es": "Retroiluminación Apagada",
+          "fr": "Rétroéclairage Éteint",
+          "it": "Retroilluminazione Spenta",
+          "no": "Bakgrunnsbelysning Av",
+          "sv": "Bakgrundsbelysning Av",
+          "pl": "Podświetlenie Wyłączone",
+          "ru": "Подсветка Выключена",
+          "ko": "백라이트 꺼짐",
+          "ar": "تم إيقاف الإضاءة الخلفية"
         },
         "highlight": true,
         "args": [
@@ -1420,18 +1415,19 @@
       },
       {
         "title": {
-          "en": "Backlight turned On",
-          "nl": "Achtergrondverlichting ingeschakeld",
-          "da": "Baggrundslys tændt",
-          "de": "Beleuchtung eingeschaltet",
-          "es": "Retroiluminación activada",
-          "fr": "Rétroéclairage activé",
-          "it": "Retroilluminazione accesa",
-          "no": "Bakgrunnsbelysning slått på",
-          "sv": "Bakgrundsbelysning påslagen",
-          "pl": "Podświetlenie włączone",
-          "ru": "Подсветка включена",
-          "ko": "백라이트 켜짐"
+          "en": "Backlight Turned On",
+          "nl": "Achtergrondverlichting Ingeschakeld",
+          "da": "Baggrundsbelysning Tændt",
+          "de": "Hintergrundbeleuchtung Eingeschaltet",
+          "es": "Retroiluminación Encendida",
+          "fr": "Rétroéclairage Allumé",
+          "it": "Retroilluminazione Accesa",
+          "no": "Bakgrunnsbelysning På",
+          "sv": "Bakgrundsbelysning På",
+          "pl": "Podświetlenie Włączone",
+          "ru": "Подсветка Включена",
+          "ko": "백라이트 켜짐",
+          "ar": "تم تشغيل الإضاءة الخلفية"
         },
         "highlight": true,
         "args": [
@@ -1452,11 +1448,12 @@
           "es": "Abajo Apagado",
           "fr": "Bas Éteint",
           "it": "Basso Spento",
-          "no": "Bunn Slått Av",
-          "sv": "Botten Avstängd",
+          "no": "Bunn Av",
+          "sv": "Botten Av",
           "pl": "Dolny Wyłączony",
           "ru": "Низ Выключен",
-          "ko": "아래쪽 꺼짐"
+          "ko": "아래쪽 꺼짐",
+          "ar": "تم إيقاف الجزء السفلي"
         },
         "highlight": true,
         "args": [
@@ -1474,14 +1471,15 @@
           "nl": "Onder Ingeschakeld",
           "da": "Bund Tændt",
           "de": "Unten Eingeschaltet",
-          "es": "Abajo Activado",
-          "fr": "Bas Activé",
+          "es": "Abajo Encendido",
+          "fr": "Bas Allumé",
           "it": "Basso Acceso",
-          "no": "Bunn Slått På",
-          "sv": "Botten Påslagen",
+          "no": "Bunn På",
+          "sv": "Botten På",
           "pl": "Dolny Włączony",
           "ru": "Низ Включен",
-          "ko": "아래쪽 켜짐"
+          "ko": "아래쪽 켜짐",
+          "ar": "تم تشغيل الجزء السفلي"
         },
         "highlight": true,
         "args": [
@@ -1498,15 +1496,16 @@
           "en": "Center Turned Off",
           "nl": "Midden Uitgeschakeld",
           "da": "Center Slukket",
-          "de": "Zentrum Ausgeschaltet",
+          "de": "Mitte Ausgeschaltet",
           "es": "Centro Apagado",
           "fr": "Centre Éteint",
           "it": "Centro Spento",
-          "no": "Senter Slått Av",
-          "sv": "Centrum Avstängd",
+          "no": "Senter Av",
+          "sv": "Centrum Av",
           "pl": "Środek Wyłączony",
           "ru": "Центр Выключен",
-          "ko": "센터 꺼짐"
+          "ko": "센터 꺼짐",
+          "ar": "تم إيقاف الأوسط"
         },
         "highlight": true,
         "args": [
@@ -1527,11 +1526,12 @@
           "es": "Centro Izquierda Apagado",
           "fr": "Centre Gauche Éteint",
           "it": "Centro Sinistra Spento",
-          "no": "Senter Venstre Slått Av",
-          "sv": "Centrum Vänster Avstängd",
+          "no": "Senter Venstre Av",
+          "sv": "Centrum Vänster Av",
           "pl": "Środek Lewy Wyłączony",
           "ru": "Центр Лево Выключен",
-          "ko": "중앙 왼쪽 꺼짐"
+          "ko": "중앙 왼쪽 꺼짐",
+          "ar": "تم إيقاف الأوسط الأيسر"
         },
         "highlight": true,
         "args": [
@@ -1549,14 +1549,15 @@
           "nl": "Midden Links Ingeschakeld",
           "da": "Center Venstre Tændt",
           "de": "Mitte Links Eingeschaltet",
-          "es": "Centro Izquierda Activado",
-          "fr": "Centre Gauche Activé",
+          "es": "Centro Izquierda Encendido",
+          "fr": "Centre Gauche Allumé",
           "it": "Centro Sinistra Acceso",
-          "no": "Senter Venstre Slått På",
-          "sv": "Centrum Vänster Påslagen",
+          "no": "Senter Venstre På",
+          "sv": "Centrum Vänster På",
           "pl": "Środek Lewy Włączony",
           "ru": "Центр Лево Включен",
-          "ko": "중앙 왼쪽 켜짐"
+          "ko": "중앙 왼쪽 켜짐",
+          "ar": "تم تشغيل الأوسط الأيسر"
         },
         "highlight": true,
         "args": [
@@ -1577,11 +1578,12 @@
           "es": "Centro Derecha Apagado",
           "fr": "Centre Droite Éteint",
           "it": "Centro Destra Spento",
-          "no": "Senter Høyre Slått Av",
-          "sv": "Centrum Höger Avstängd",
+          "no": "Senter Høyre Av",
+          "sv": "Centrum Höger Av",
           "pl": "Środek Prawy Wyłączony",
           "ru": "Центр Право Выключен",
-          "ko": "중앙 오른쪽 꺼짐"
+          "ko": "중앙 오른쪽 꺼짐",
+          "ar": "تم إيقاف الأوسط الأيمن"
         },
         "highlight": true,
         "args": [
@@ -1599,14 +1601,15 @@
           "nl": "Midden Rechts Ingeschakeld",
           "da": "Center Højre Tændt",
           "de": "Mitte Rechts Eingeschaltet",
-          "es": "Centro Derecha Activado",
-          "fr": "Centre Droite Activé",
+          "es": "Centro Derecha Encendido",
+          "fr": "Centre Droite Allumé",
           "it": "Centro Destra Acceso",
-          "no": "Senter Høyre Slått På",
-          "sv": "Centrum Höger Påslagen",
+          "no": "Senter Høyre På",
+          "sv": "Centrum Höger På",
           "pl": "Środek Prawy Włączony",
           "ru": "Центр Право Включен",
-          "ko": "중앙 오른쪽 켜짐"
+          "ko": "중앙 오른쪽 켜짐",
+          "ar": "تم تشغيل الأوسط الأيمن"
         },
         "highlight": true,
         "args": [
@@ -1621,17 +1624,18 @@
       {
         "title": {
           "en": "Center Turned On",
-          "nl": "Center Ingeschakeld",
+          "nl": "Midden Ingeschakeld",
           "da": "Center Tændt",
-          "de": "Zentrum Eingeschaltet",
-          "es": "Centro Activado",
-          "fr": "Centre Activé",
+          "de": "Mitte Eingeschaltet",
+          "es": "Centro Encendido",
+          "fr": "Centre Allumé",
           "it": "Centro Acceso",
-          "no": "Senter Slått På",
-          "sv": "Centrum Påslagen",
-          "pl": "Centrum Włączone",
+          "no": "Senter På",
+          "sv": "Centrum På",
+          "pl": "Środek Włączony",
           "ru": "Центр Включен",
-          "ko": "센터 켜짐"
+          "ko": "센터 켜짐",
+          "ar": "تم تشغيل الأوسط"
         },
         "highlight": true,
         "args": [
@@ -1645,8 +1649,8 @@
       },
       {
         "title": {
-          "en": "L1 turned Off",
-          "nl": "L1 uitgeschakeld",
+          "en": "L1 Turned Off",
+          "nl": "L1 Uitgeschakeld",
           "da": "L1 slukket",
           "de": "L1 ausgeschaltet",
           "es": "L1 apagado",
@@ -1656,7 +1660,8 @@
           "sv": "L1 avstängd",
           "pl": "L1 wyłączony",
           "ru": "L1 выключен",
-          "ko": "L1 꺼짐"
+          "ko": "L1 꺼짐",
+          "ar": "تم إيقاف L1"
         },
         "highlight": true,
         "args": [
@@ -1670,8 +1675,8 @@
       },
       {
         "title": {
-          "en": "L1 turned On",
-          "nl": "L1 ingeschakeld",
+          "en": "L1 Turned On",
+          "nl": "L1 Ingeschakeld",
           "da": "L1 tændt",
           "de": "L1 eingeschaltet",
           "es": "L1 encendido",
@@ -1681,7 +1686,8 @@
           "sv": "L1 påslagen",
           "pl": "L1 włączono",
           "ru": "L1 включён",
-          "ko": "L1 켜짐"
+          "ko": "L1 켜짐",
+          "ar": "تم تشغيل L1"
         },
         "highlight": true,
         "args": [
@@ -1695,8 +1701,8 @@
       },
       {
         "title": {
-          "en": "L2 turned Off",
-          "nl": "L2 uitgeschakeld",
+          "en": "L2 Turned Off",
+          "nl": "L2 Uitgeschakeld",
           "da": "L2 slukket",
           "de": "L2 ausgeschaltet",
           "es": "L2 apagado",
@@ -1706,7 +1712,8 @@
           "sv": "L2 avstängd",
           "pl": "L2 wyłączony",
           "ru": "L2 выключен",
-          "ko": "L2 꺼짐"
+          "ko": "L2 꺼짐",
+          "ar": "تم إيقاف L2"
         },
         "highlight": true,
         "args": [
@@ -1720,18 +1727,19 @@
       },
       {
         "title": {
-          "en": "L2 turned On",
-          "nl": "L2 ingeschakeld",
+          "en": "L2 Turned On",
+          "nl": "L2 Ingeschakeld",
           "da": "L2 tændt",
           "de": "L2 eingeschaltet",
           "es": "L2 encendido",
-          "fr": "L2 activé",
+          "fr": "L2 allumé",
           "it": "L2 acceso",
           "no": "L2 slått på",
           "sv": "L2 påslagen",
           "pl": "L2 włączone",
           "ru": "L2 включен",
-          "ko": "L2 켜짐"
+          "ko": "L2 켜짐",
+          "ar": "تم تشغيل L2"
         },
         "highlight": true,
         "args": [
@@ -1745,8 +1753,8 @@
       },
       {
         "title": {
-          "en": "L3 turned Off",
-          "nl": "L3 uitgeschakeld",
+          "en": "L3 Turned Off",
+          "nl": "L3 Uitgeschakeld",
           "da": "L3 slukket",
           "de": "L3 ausgeschaltet",
           "es": "L3 apagado",
@@ -1756,7 +1764,8 @@
           "sv": "L3 avstängd",
           "pl": "L3 wyłączony",
           "ru": "L3 выключен",
-          "ko": "L3 꺼짐"
+          "ko": "L3 꺼짐",
+          "ar": "تم إيقاف L3"
         },
         "highlight": true,
         "args": [
@@ -1770,18 +1779,19 @@
       },
       {
         "title": {
-          "en": "L3 turned On",
-          "nl": "L3 ingeschakeld",
+          "en": "L3 Turned On",
+          "nl": "L3 Ingeschakeld",
           "da": "L3 tændt",
           "de": "L3 eingeschaltet",
-          "es": "L3 activado",
-          "fr": "L3 activé",
+          "es": "L3 encendido",
+          "fr": "L3 allumé",
           "it": "L3 acceso",
           "no": "L3 slått på",
           "sv": "L3 påslagen",
           "pl": "L3 włączony",
           "ru": "L3 включен",
-          "ko": "L3 켜짐"
+          "ko": "L3 켜짐",
+          "ar": "تم تشغيل L3"
         },
         "highlight": true,
         "args": [
@@ -1795,8 +1805,8 @@
       },
       {
         "title": {
-          "en": "L4 turned Off",
-          "nl": "L4 uitgeschakeld",
+          "en": "L4 Turned Off",
+          "nl": "L4 Uitgeschakeld",
           "da": "L4 slukket",
           "de": "L4 ausgeschaltet",
           "es": "L4 apagado",
@@ -1806,7 +1816,8 @@
           "sv": "L4 avstängd",
           "pl": "L4 wyłączony",
           "ru": "L4 выключен",
-          "ko": "L4 끄기"
+          "ko": "L4 꺼짐",
+          "ar": "تم إيقاف L4"
         },
         "highlight": true,
         "args": [
@@ -1820,18 +1831,19 @@
       },
       {
         "title": {
-          "en": "L4 turned On",
-          "nl": "L4 ingeschakeld",
+          "en": "L4 Turned On",
+          "nl": "L4 Ingeschakeld",
           "da": "L4 tændt",
           "de": "L4 eingeschaltet",
           "es": "L4 encendido",
-          "fr": "L4 activé",
+          "fr": "L4 allumé",
           "it": "L4 acceso",
           "no": "L4 slått på",
           "sv": "L4 påslagen",
           "pl": "L4 włączony",
           "ru": "L4 включен",
-          "ko": "L4 켜짐"
+          "ko": "L4 켜짐",
+          "ar": "تم تشغيل L4"
         },
         "highlight": true,
         "args": [
@@ -1850,13 +1862,14 @@
           "da": "Venstre Slukket",
           "de": "Links Ausgeschaltet",
           "es": "Izquierda Apagada",
-          "fr": "Gauche Éteint",
+          "fr": "Gauche Éteinte",
           "it": "Sinistra Spenta",
-          "no": "Venstre Avslått",
-          "sv": "Vänster Avstängd",
-          "pl": "Lewa Wyłączona",
+          "no": "Venstre Av",
+          "sv": "Vänster Av",
+          "pl": "Lewy Wyłączony",
           "ru": "Лево Выключено",
-          "ko": "왼쪽 꺼짐"
+          "ko": "왼쪽 꺼짐",
+          "ar": "تم إيقاف اليسار"
         },
         "highlight": true,
         "args": [
@@ -1871,7 +1884,7 @@
       {
         "title": {
           "en": "Left Turned On",
-          "nl": "Links Aangezet",
+          "nl": "Links Ingeschakeld",
           "da": "Venstre Tændt",
           "de": "Links Eingeschaltet",
           "es": "Izquierda Encendida",
@@ -1879,9 +1892,10 @@
           "it": "Sinistra Accesa",
           "no": "Venstre På",
           "sv": "Vänster På",
-          "pl": "Lewo Włączone",
-          "ru": "Включено Слева",
-          "ko": "왼쪽 켜짐"
+          "pl": "Lewy Włączony",
+          "ru": "Лево Включено",
+          "ko": "왼쪽 켜짐",
+          "ar": "تم تشغيل اليسار"
         },
         "highlight": true,
         "args": [
@@ -1897,16 +1911,17 @@
         "title": {
           "en": "Right Turned Off",
           "nl": "Rechts Uitgeschakeld",
-          "da": "Slukket til højre",
-          "de": "Rechts ausgeschaltet",
-          "es": "Apagado a la derecha",
-          "fr": "Éteint à droite",
-          "it": "Spento a destra",
-          "no": "Høyre slått av",
-          "sv": "Höger avstängd",
-          "pl": "Wyłączono po prawej",
-          "ru": "Выключено вправо",
-          "ko": "오른쪽 꺼짐"
+          "da": "Højre Slukket",
+          "de": "Rechts Ausgeschaltet",
+          "es": "Derecha Apagada",
+          "fr": "Droite Éteinte",
+          "it": "Destra Spenta",
+          "no": "Høyre Av",
+          "sv": "Höger Av",
+          "pl": "Prawy Wyłączony",
+          "ru": "Право Выключено",
+          "ko": "오른쪽 꺼짐",
+          "ar": "تم إيقاف اليمين"
         },
         "highlight": true,
         "args": [
@@ -1921,17 +1936,18 @@
       {
         "title": {
           "en": "Right Turned On",
-          "nl": "Rechts Aan",
+          "nl": "Rechts Ingeschakeld",
           "da": "Højre Tændt",
           "de": "Rechts Eingeschaltet",
-          "es": "Encendido a la Derecha",
-          "fr": "Allumé à Droite",
-          "it": "Acceso a Destra",
-          "no": "Høyre Påslått",
-          "sv": "Höger Påslagen",
-          "pl": "Włączono Prawy",
-          "ru": "Включено Право",
-          "ko": "오른쪽 켜짐"
+          "es": "Derecha Encendida",
+          "fr": "Droite Allumée",
+          "it": "Destra Accesa",
+          "no": "Høyre På",
+          "sv": "Höger På",
+          "pl": "Prawy Włączony",
+          "ru": "Право Включено",
+          "ko": "오른쪽 켜짐",
+          "ar": "تم تشغيل اليمين"
         },
         "highlight": true,
         "args": [
@@ -1945,7 +1961,7 @@
       },
       {
         "title": {
-          "en": "Thermostat mode turned Off",
+          "en": "Thermostat Mode Turned Off",
           "nl": "Thermostaatmodus uitgeschakeld",
           "da": "Termostattilstand slukket",
           "de": "Thermostatmodus ausgeschaltet",
@@ -1956,7 +1972,8 @@
           "sv": "Termostatläge avstängt",
           "pl": "Tryb termostatu wyłączony",
           "ru": "Режим термостата выключен",
-          "ko": "온도 조절기 모드 꺼짐"
+          "ko": "온도 조절기 모드 꺼짐",
+          "ar": "تم إيقاف وضع منظم الحرارة"
         },
         "highlight": true,
         "args": [
@@ -1970,7 +1987,7 @@
       },
       {
         "title": {
-          "en": "Thermostat mode turned On",
+          "en": "Thermostat Mode Turned On",
           "nl": "Thermostaatmodus ingeschakeld",
           "da": "Termostattilstand tændt",
           "de": "Thermostatmodus eingeschaltet",
@@ -1981,7 +1998,8 @@
           "sv": "Termostatläge påslaget",
           "pl": "Tryb termostatu włączony",
           "ru": "Режим термостата включен",
-          "ko": "온도 조절기 모드 켜짐"
+          "ko": "온도 조절기 모드 켜짐",
+          "ar": "تم تشغيل وضع منظم الحرارة"
         },
         "highlight": true,
         "args": [
@@ -2002,11 +2020,12 @@
           "es": "Arriba Apagado",
           "fr": "Haut Éteint",
           "it": "Alto Spento",
-          "no": "Topp Slått Av",
-          "sv": "Topp Avstängd",
+          "no": "Topp Av",
+          "sv": "Topp Av",
           "pl": "Górny Wyłączony",
           "ru": "Верх Выключен",
-          "ko": "위쪽 꺼짐"
+          "ko": "위쪽 꺼짐",
+          "ar": "تم إيقاف الأعلى"
         },
         "highlight": true,
         "args": [
@@ -2024,14 +2043,15 @@
           "nl": "Boven Ingeschakeld",
           "da": "Top Tændt",
           "de": "Oben Eingeschaltet",
-          "es": "Arriba Activado",
-          "fr": "Haut Activé",
+          "es": "Arriba Encendido",
+          "fr": "Haut Allumé",
           "it": "Alto Acceso",
-          "no": "Topp Slått På",
-          "sv": "Topp Påslagen",
+          "no": "Topp På",
+          "sv": "Topp På",
           "pl": "Górny Włączony",
           "ru": "Верх Включен",
-          "ko": "위쪽 켜짐"
+          "ko": "위쪽 켜짐",
+          "ar": "تم تشغيل الأعلى"
         },
         "highlight": true,
         "args": [
@@ -2046,7 +2066,7 @@
       {
         "title": {
           "en": "The Power On Behavior changed",
-          "nl": "Het gedrag bij inschakelen is gewijzigd",
+          "nl": "Het inschakelgedrag is gewijzigd",
           "da": "Tændingsadfærden er ændret",
           "de": "Das Einschaltverhalten hat sich geändert",
           "es": "El comportamiento al encender ha cambiado",
@@ -2056,7 +2076,8 @@
           "sv": "Ström på beteende har ändrats",
           "pl": "Zmieniono zachowanie przy włączaniu",
           "ru": "Изменено поведение при включении",
-          "ko": "전원 켜기 동작이 변경되었습니다"
+          "ko": "전원 켜기 동작이 변경되었습니다",
+          "ar": "تغير سلوك التشغيل"
         },
         "highlight": true,
         "args": [
@@ -2082,7 +2103,8 @@
               "sv": "Ström på beteende",
               "pl": "Zachowanie przy włączaniu",
               "ru": "Поведение при включении",
-              "ko": "전원 켜기 동작"
+              "ko": "전원 켜기 동작",
+              "ar": "سلوك التشغيل"
             },
             "example": "off"
           }
@@ -2102,7 +2124,8 @@
           "sv": "Minnet för strömavbrott ändrades",
           "pl": "Pamięć o przerwie w dostawie prądu została zmieniona",
           "ru": "Память об отключении электроэнергии изменилась",
-          "ko": "정전 메모리가 변경되었습니다"
+          "ko": "정전 메모리가 변경되었습니다",
+          "ar": "تغيرت ذاكرة انقطاع التيار الكهربائي"
         },
         "highlight": true,
         "args": [
@@ -2128,7 +2151,8 @@
               "sv": "Minnet för strömavbrott",
               "pl": "Pamięć o przerwie w dostawie prądu",
               "ru": "Память об отключении электроэнергии",
-              "ko": "정전 메모리"
+              "ko": "정전 메모리",
+              "ar": "ذاكرة انقطاع التيار الكهربائي"
             },
             "example": "off"
           }
@@ -2138,7 +2162,7 @@
       {
         "title": {
           "en": "The preset changed",
-          "nl": "Het preset is gewijzigd",
+          "nl": "De preset is gewijzigd",
           "da": "Forudindstillingen blev ændret",
           "de": "Das Preset wurde geändert",
           "es": "El ajuste preestablecido cambió",
@@ -2148,7 +2172,8 @@
           "sv": "Förinställningen ändrades",
           "pl": "Ustawienie wstępne zostało zmienione",
           "ru": "Предустановка изменена",
-          "ko": "사전 설정이 변경되었습니다"
+          "ko": "사전 설정이 변경되었습니다",
+          "ar": "تغير الإعداد المسبق"
         },
         "highlight": true,
         "args": [
@@ -2174,7 +2199,8 @@
               "sv": "Förinställning",
               "pl": "Ustawienie wstępne",
               "ru": "Предустановка",
-              "ko": "사전 설정"
+              "ko": "사전 설정",
+              "ar": "الإعداد المسبق"
             },
             "example": "auto"
           }
@@ -2184,7 +2210,7 @@
       {
         "title": {
           "en": "The running state changed",
-          "nl": "De draaiende status is veranderd",
+          "nl": "De bedrijfsstatus is gewijzigd",
           "da": "Den kørende tilstand ændret sig",
           "de": "Der Laufstatus hat sich geändert",
           "es": "El estado de funcionamiento ha cambiado",
@@ -2194,7 +2220,8 @@
           "sv": "Det körande läget har ändrats",
           "pl": "Stan pracy uległ zmianie",
           "ru": "Состояние работы изменилось",
-          "ko": "실행 상태가 변경되었습니다"
+          "ko": "실행 상태가 변경되었습니다",
+          "ar": "تغيرت حالة التشغيل"
         },
         "highlight": true,
         "args": [
@@ -2220,7 +2247,8 @@
               "sv": "Tillstånd",
               "pl": "Stan",
               "ru": "Состояние",
-              "ko": "상태"
+              "ko": "상태",
+              "ar": "الحالة"
             },
             "example": "off"
           }
@@ -2244,7 +2272,8 @@
           "ru": "Чувствительность изменилась",
           "zh": "灵敏度已更改",
           "ja": "感度が変わりました",
-          "ko": "감도가 변경되었습니다"
+          "ko": "감도가 변경되었습니다",
+          "ar": "تغيرت الحساسية"
         },
         "highlight": true,
         "args": [
@@ -2274,7 +2303,8 @@
               "ru": "Чувствительность",
               "zh": "灵敏度",
               "ja": "感度",
-              "ko": "감도"
+              "ko": "감도",
+              "ar": "الحساسية"
             },
             "example": "low"
           }
@@ -2283,7 +2313,8 @@
       },
       {
         "title": {
-          "en": "The siren state changed"
+          "en": "The siren state changed",
+          "ar": "تغيرت حالة صفارة الإنذار"
         },
         "highlight": true,
         "args": [
@@ -2298,7 +2329,8 @@
             "name": "siren_state",
             "type": "string",
             "title": {
-              "en": "clear"
+              "en": "clear",
+              "ar": "طبيعي"
             },
             "example": "none"
           }
@@ -2308,7 +2340,7 @@
       {
         "title": {
           "en": "The switch type changed",
-          "nl": "Het schakelaartype is veranderd",
+          "nl": "Het schakelaartype is gewijzigd",
           "da": "Kontakttypen blev ændret",
           "de": "Der Schaltertyp wurde geändert",
           "es": "El tipo de interruptor cambió",
@@ -2318,7 +2350,8 @@
           "sv": "Switchtypen ändrades",
           "pl": "Typ przełącznika został zmieniony",
           "ru": "Тип переключателя изменен",
-          "ko": "스위치 유형이 변경되었습니다"
+          "ko": "스위치 유형이 변경되었습니다",
+          "ar": "تغير نوع المفتاح"
         },
         "highlight": true,
         "args": [
@@ -2344,7 +2377,8 @@
               "sv": "Brytertyp",
               "pl": "Typ przełącznika",
               "ru": "Тип переключателя",
-              "ko": "스위치 유형"
+              "ko": "스위치 유형",
+              "ar": "نوع المفتاح"
             },
             "example": "toggle"
           }
@@ -2354,17 +2388,18 @@
       {
         "title": {
           "en": "The switch type Bottom changed",
-          "nl": "Het schakeltype Onder is gewijzigd",
-          "da": "Kontaktbundtype blev ændret",
-          "de": "Der Schalttyp Unten wurde geändert",
-          "es": "El tipo de interruptor cambió abajo",
-          "fr": "Le type de commutateur Bas a changé",
+          "nl": "Het schakelaartype Onder is gewijzigd",
+          "da": "Kontakttypen Bund er ændret",
+          "de": "Der Schaltertyp Unten hat sich geändert",
+          "es": "El tipo de interruptor Abajo ha cambiado",
+          "fr": "Le type d'interrupteur Bas a changé",
           "it": "Il tipo di interruttore Basso è cambiato",
-          "no": "Brytertypen Bunn endret",
-          "sv": "Brytartyp Botten ändras",
-          "pl": "Zmieniono typ przełącznika Dolny",
+          "no": "Brytertypen Bunn har endret seg",
+          "sv": "Strömbrytartypen Botten har ändrats",
+          "pl": "Typ przełącznika Dolny został zmieniony",
           "ru": "Тип переключателя Низ изменился",
-          "ko": "스위치 유형 아래쪽이 변경되었습니다"
+          "ko": "스위치 유형 아래쪽이 변경되었습니다",
+          "ar": "تغير نوع المفتاح السفلي"
         },
         "highlight": true,
         "args": [
@@ -2379,18 +2414,19 @@
             "name": "switch_type.bottom",
             "type": "string",
             "title": {
-              "en": "Switch type bottom",
-              "nl": "Schakeltype onder",
-              "da": "Kontaktbundtype",
-              "de": "Schalttyp Unten",
-              "es": "Tipo de interruptor abajo",
-              "fr": "Type de commutateur bas",
-              "it": "Tipo di interruttore basso",
-              "no": "Brytertype bunn",
-              "sv": "Brytartypbotten",
-              "pl": "Typ przełącznika dolny",
+              "en": "Switch type Bottom",
+              "nl": "Schakelaartype Onder",
+              "da": "Kontakttype Bund",
+              "de": "Schaltertyp Unten",
+              "es": "Tipo de interruptor Abajo",
+              "fr": "Type d'interrupteur Bas",
+              "it": "Tipo di interruttore Basso",
+              "no": "Brytertype Bunn",
+              "sv": "Strömbrytartyp Botten",
+              "pl": "Typ przełącznika Dolny",
               "ru": "Тип переключателя Низ",
-              "ko": "스위치 유형 아래쪽"
+              "ko": "스위치 유형 아래쪽",
+              "ar": "نوع المفتاح السفلي"
             },
             "example": "toggle"
           }
@@ -2400,17 +2436,18 @@
       {
         "title": {
           "en": "The switch type Center changed",
-          "nl": "Het schakeltype Center is gewijzigd",
-          "da": "Kontaktcentertypen blev ændret",
-          "de": "Der Schalttyp Center wurde geändert",
-          "es": "El tipo de interruptor cambió el centro",
-          "fr": "Le type de commutateur Centre a changé",
+          "nl": "Het schakelaartype Midden is gewijzigd",
+          "da": "Kontakttypen Center er ændret",
+          "de": "Der Schaltertyp Mitte hat sich geändert",
+          "es": "El tipo de interruptor Centro ha cambiado",
+          "fr": "Le type d'interrupteur Centre a changé",
           "it": "Il tipo di interruttore Centro è cambiato",
-          "no": "Brytertypen Senter endret",
-          "sv": "Brytartyp Centrum ändras",
-          "pl": "Zmieniono typ przełącznika Centrum",
+          "no": "Brytertypen Senter har endret seg",
+          "sv": "Strömbrytartypen Centrum har ändrats",
+          "pl": "Typ przełącznika Środek został zmieniony",
           "ru": "Тип переключателя Центр изменился",
-          "ko": "스위치 유형 센터가 변경되었습니다"
+          "ko": "스위치 유형 센터가 변경되었습니다",
+          "ar": "تغير نوع المفتاح الأوسط"
         },
         "highlight": true,
         "args": [
@@ -2425,18 +2462,19 @@
             "name": "switch_type.center",
             "type": "string",
             "title": {
-              "en": "Switch type center",
-              "nl": "Schakeltype midden",
-              "da": "Kontaktcentertype",
-              "de": "Schalttyp Mitte",
-              "es": "Tipo de interruptor centro",
-              "fr": "Type de commutateur centre",
-              "it": "Tipo di interruttore centro",
-              "no": "Brytertype senter",
-              "sv": "Brytartypcentrum",
-              "pl": "Typ przełącznika centrum",
+              "en": "Switch type Center",
+              "nl": "Schakelaartype Midden",
+              "da": "Kontakttype Center",
+              "de": "Schaltertyp Mitte",
+              "es": "Tipo de interruptor Centro",
+              "fr": "Type d'interrupteur Centre",
+              "it": "Tipo di interruttore Centro",
+              "no": "Brytertype Senter",
+              "sv": "Strömbrytartyp Centrum",
+              "pl": "Typ przełącznika Środek",
               "ru": "Тип переключателя Центр",
-              "ko": "스위치 유형 센터"
+              "ko": "스위치 유형 센터",
+              "ar": "نوع المفتاح الأوسط"
             },
             "example": "toggle"
           }
@@ -2446,7 +2484,7 @@
       {
         "title": {
           "en": "The switch type Center Left changed",
-          "nl": "Het schakeltype Midden Links is gewijzigd",
+          "nl": "Het schakelaartype Midden Links is gewijzigd",
           "da": "Kontakttype Center Venstre blev ændret",
           "de": "Der Schalttyp Mitte Links wurde geändert",
           "es": "El tipo de interruptor cambió centro izquierda",
@@ -2456,7 +2494,8 @@
           "sv": "Brytartyp Centrum Vänster ändras",
           "pl": "Zmieniono typ przełącznika Środek Lewy",
           "ru": "Тип переключателя Центр Лево изменился",
-          "ko": "스위치 유형 중앙 왼쪽이 변경되었습니다"
+          "ko": "스위치 유형 중앙 왼쪽이 변경되었습니다",
+          "ar": "تغير نوع المفتاح الأوسط الأيسر"
         },
         "highlight": true,
         "args": [
@@ -2471,8 +2510,8 @@
             "name": "switch_type.center_left",
             "type": "string",
             "title": {
-              "en": "Switch type center left",
-              "nl": "Schakeltype midden links",
+              "en": "Switch type Center Left",
+              "nl": "Schakelaartype Midden Links",
               "da": "Kontakttype center venstre",
               "de": "Schalttyp Mitte links",
               "es": "Tipo de interruptor centro izquierda",
@@ -2482,7 +2521,8 @@
               "sv": "Brytartyp centrum vänster",
               "pl": "Typ przełącznika środek lewy",
               "ru": "Тип переключателя Центр Лево",
-              "ko": "스위치 유형 중앙 왼쪽"
+              "ko": "스위치 유형 중앙 왼쪽",
+              "ar": "نوع المفتاح الأوسط الأيسر"
             },
             "example": "toggle"
           }
@@ -2492,7 +2532,7 @@
       {
         "title": {
           "en": "The switch type Center Right changed",
-          "nl": "Het schakeltype Midden Rechts is gewijzigd",
+          "nl": "Het schakelaartype Midden Rechts is gewijzigd",
           "da": "Kontakttype Center Højre blev ændret",
           "de": "Der Schalttyp Mitte Rechts wurde geändert",
           "es": "El tipo de interruptor cambió centro derecha",
@@ -2502,7 +2542,8 @@
           "sv": "Brytartyp Centrum Höger ändras",
           "pl": "Zmieniono typ przełącznika Środek Prawy",
           "ru": "Тип переключателя Центр Право изменился",
-          "ko": "스위치 유형 중앙 오른쪽이 변경되었습니다"
+          "ko": "스위치 유형 중앙 오른쪽이 변경되었습니다",
+          "ar": "تغير نوع المفتاح الأوسط الأيمن"
         },
         "highlight": true,
         "args": [
@@ -2517,8 +2558,8 @@
             "name": "switch_type.center_right",
             "type": "string",
             "title": {
-              "en": "Switch type center right",
-              "nl": "Schakeltype midden rechts",
+              "en": "Switch type Center Right",
+              "nl": "Schakelaartype Midden Rechts",
               "da": "Kontakttype center højre",
               "de": "Schalttyp Mitte rechts",
               "es": "Tipo de interruptor centro derecha",
@@ -2528,7 +2569,8 @@
               "sv": "Brytartyp centrum höger",
               "pl": "Typ przełącznika środek prawy",
               "ru": "Тип переключателя Центр Право",
-              "ko": "스위치 유형 중앙 오른쪽"
+              "ko": "스위치 유형 중앙 오른쪽",
+              "ar": "نوع المفتاح الأوسط الأيمن"
             },
             "example": "toggle"
           }
@@ -2544,11 +2586,12 @@
           "es": "El tipo de interruptor L1 cambió",
           "fr": "Le type de commutateur L1 a changé",
           "it": "Il tipo di interruttore L1 è stato modificato",
-          "no": "Byttetype L1 endret",
+          "no": "Brytertype L1 endret",
           "sv": "Strömbrytartyp L1 ändrades",
           "pl": "Typ przełącznika L1 został zmieniony",
           "ru": "Тип переключателя L1 изменился",
-          "ko": "스위치 타입 L1 변경됨"
+          "ko": "스위치 유형 L1이 변경되었습니다",
+          "ar": "تغير نوع المفتاح L1"
         },
         "highlight": true,
         "args": [
@@ -2570,11 +2613,12 @@
               "es": "Tipo de interruptor L1",
               "fr": "Type de commutateur L1",
               "it": "Tipo di interruttore L1",
-              "no": "Byttetype L1",
+              "no": "Brytertype L1",
               "sv": "Strömbrytartyp L1",
               "pl": "Typ przełącznika L1",
               "ru": "Тип переключателя L1",
-              "ko": "스위치 타입 L1"
+              "ko": "스위치 유형 L1",
+              "ar": "نوع المفتاح L1"
             },
             "example": "toggle"
           }
@@ -2583,18 +2627,19 @@
       },
       {
         "title": {
-          "en": "The switch type L1 changed",
-          "nl": "Het schakeltype L1 is gewijzigd",
-          "da": "Kontakttype L1 ændret",
-          "de": "Der Schaltertyp L1 hat sich geändert",
-          "es": "El tipo de interruptor L1 ha cambiado",
-          "fr": "Le type de commutateur L1 a changé",
-          "it": "Il tipo di interruttore L1 è cambiato",
-          "no": "Brytertype L1 endret",
-          "sv": "Strömställartyp L1 har ändrats",
-          "pl": "Typ przełącznika L1 został zmieniony",
-          "ru": "Тип переключателя L1 изменился",
-          "ko": "스위치 유형 L1이 변경되었습니다"
+          "en": "The switch type L2 changed",
+          "nl": "Het schakelaartype L2 is gewijzigd",
+          "da": "Kontakttype L2 ændret",
+          "de": "Der Schaltertyp L2 hat sich geändert",
+          "es": "El tipo de interruptor L2 ha cambiado",
+          "fr": "Le type de commutateur L2 a changé",
+          "it": "Il tipo di interruttore L2 è cambiato",
+          "no": "Brytertype L2 endret",
+          "sv": "Strömbrytartyp L2 har ändrats",
+          "pl": "Typ przełącznika L2 został zmieniony",
+          "ru": "Тип переключателя L2 изменился",
+          "ko": "스위치 유형 L2가 변경되었습니다",
+          "ar": "تغير نوع المفتاح L2"
         },
         "highlight": true,
         "args": [
@@ -2610,17 +2655,18 @@
             "type": "string",
             "title": {
               "en": "Switch type L2",
-              "nl": "Schakeltype L2",
+              "nl": "Schakelaartype L2",
               "da": "Kontakttype L2",
               "de": "Schaltertyp L2",
               "es": "Tipo de interruptor L2",
               "fr": "Type de commutateur L2",
               "it": "Tipo di interruttore L2",
               "no": "Brytertype L2",
-              "sv": "Strömställartyp L2",
+              "sv": "Strömbrytartyp L2",
               "pl": "Typ przełącznika L2",
               "ru": "Тип переключателя L2",
-              "ko": "스위치 유형 L2"
+              "ko": "스위치 유형 L2",
+              "ar": "نوع المفتاح L2"
             },
             "example": "toggle"
           }
@@ -2630,7 +2676,7 @@
       {
         "title": {
           "en": "The switch type Left changed",
-          "nl": "Het schakelaartype links is gewijzigd",
+          "nl": "Het schakelaartype Links is gewijzigd",
           "da": "Kontakttypen til venstre blev ændret",
           "de": "Der Schaltertyp Links wurde geändert",
           "es": "El tipo de interruptor izquierdo ha cambiado",
@@ -2640,7 +2686,8 @@
           "sv": "Strömbrytartypen vänster har ändrats",
           "pl": "Typ przełącznika lewy został zmieniony",
           "ru": "Тип переключателя слева изменился",
-          "ko": "왼쪽 스위치 유형이 변경됨"
+          "ko": "왼쪽 스위치 유형이 변경됨",
+          "ar": "تغير نوع المفتاح الأيسر"
         },
         "highlight": true,
         "args": [
@@ -2655,17 +2702,18 @@
             "name": "switch_type.left",
             "type": "string",
             "title": {
-              "en": "Switch type left",
-              "nl": "Schakelaartype links",
-              "de": "Schaltertyp links",
-              "fr": "Type d'interrupteur gauche",
-              "es": "Tipo de interruptor izquierdo",
-              "it": "Tipo di interruttore sinistro",
+              "en": "Switch type Left",
+              "nl": "Schakelaartype Links",
+              "de": "Schaltertyp Links",
+              "fr": "Type d'interrupteur Gauche",
+              "es": "Tipo de interruptor Izquierdo",
+              "it": "Tipo di interruttore Sinistro",
               "sv": "Strömbrytartyp vänster",
               "no": "Brytertype venstre",
               "da": "Kontakttype venstre",
               "fi": "Kytkimen tyyppi vasemmalla",
-              "ru": "Тип переключателя слева"
+              "ru": "Тип переключателя слева",
+              "ar": "نوع المفتاح الأيسر"
             },
             "example": "toggle"
           }
@@ -2675,7 +2723,7 @@
       {
         "title": {
           "en": "The switch type Right changed",
-          "nl": "Het schakelaartype rechts is gewijzigd",
+          "nl": "Het schakelaartype Rechts is gewijzigd",
           "de": "Der Schaltertyp rechts hat sich geändert",
           "fr": "Le type d'interrupteur droit a changé",
           "es": "El tipo de interruptor derecho ha cambiado",
@@ -2683,7 +2731,8 @@
           "sv": "Strömbrytartypen till höger har ändrats",
           "no": "Brytertypen til høyre har endret seg",
           "da": "Kontakttypen til højre er ændret",
-          "fi": "Kytkimen tyyppi oikealla on muuttunut"
+          "fi": "Kytkimen tyyppi oikealla on muuttunut",
+          "ar": "تغير نوع المفتاح الأيمن"
         },
         "highlight": true,
         "args": [
@@ -2698,16 +2747,17 @@
             "name": "switch_type.right",
             "type": "string",
             "title": {
-              "en": "Switch type right",
-              "nl": "Schakelaartype rechts",
-              "de": "Schaltertyp rechts",
-              "fr": "Type d'interrupteur droit",
-              "es": "Tipo de interruptor derecho",
-              "it": "Tipo di interruttore destro",
+              "en": "Switch type Right",
+              "nl": "Schakelaartype Rechts",
+              "de": "Schaltertyp Rechts",
+              "fr": "Type d'interrupteur Droit",
+              "es": "Tipo de interruptor Derecho",
+              "it": "Tipo di interruttore Destro",
               "sv": "Strömbrytartyp höger",
               "no": "Brytertype høyre",
               "da": "Kontakttype højre",
-              "fi": "Kytkimen tyyppi oikealla"
+              "fi": "Kytkimen tyyppi oikealla",
+              "ar": "نوع المفتاح الأيمن"
             },
             "example": "toggle"
           }
@@ -2717,7 +2767,7 @@
       {
         "title": {
           "en": "The switch type Top changed",
-          "nl": "Het schakeltype Boven is gewijzigd",
+          "nl": "Het schakelaartype Boven is gewijzigd",
           "da": "Kontakttoptype blev ændret",
           "de": "Der Schalttyp Oben wurde geändert",
           "es": "El tipo de interruptor cambió arriba",
@@ -2727,7 +2777,8 @@
           "sv": "Brytartyp Topp ändras",
           "pl": "Zmieniono typ przełącznika Górny",
           "ru": "Тип переключателя Верх изменился",
-          "ko": "스위치 유형 위쪽이 변경되었습니다"
+          "ko": "스위치 유형 위쪽이 변경되었습니다",
+          "ar": "تغير نوع المفتاح العلوي"
         },
         "highlight": true,
         "args": [
@@ -2742,18 +2793,19 @@
             "name": "switch_type.top",
             "type": "string",
             "title": {
-              "en": "Switch type top",
-              "nl": "Schakeltype boven",
+              "en": "Switch type Top",
+              "nl": "Schakelaartype Boven",
               "da": "Kontakttoptype",
               "de": "Schalttyp Oben",
               "es": "Tipo de interruptor arriba",
               "fr": "Type de commutateur haut",
               "it": "Tipo di interruttore alto",
-              "no": "Brytertype topp",
-              "sv": "Brytartyptopp",
+              "no": "Brytertype Topp",
+              "sv": "Strömbrytartyp Topp",
               "pl": "Typ przełącznika górny",
               "ru": "Тип переключателя Верх",
-              "ko": "스위치 유형 위쪽"
+              "ko": "스위치 유형 위쪽",
+              "ar": "نوع المفتاح العلوي"
             },
             "example": "toggle"
           }
@@ -2763,7 +2815,7 @@
       {
         "title": {
           "en": "The system mode changed",
-          "nl": "De systeemmodus veranderde",
+          "nl": "De systeemmodus is gewijzigd",
           "da": "Systemtilstand ændret",
           "de": "Der Systemmodus hat sich geändert",
           "es": "El modo del sistema cambió",
@@ -2773,7 +2825,8 @@
           "sv": "Systemläge ändrat",
           "pl": "Tryb systemu zmieniony",
           "ru": "Режим системы изменен",
-          "ko": "시스템 모드가 변경되었습니다"
+          "ko": "시스템 모드가 변경되었습니다",
+          "ar": "تغير وضع النظام"
         },
         "highlight": true,
         "args": [
@@ -2799,7 +2852,8 @@
               "sv": "Systemläge",
               "pl": "Tryb systemu",
               "ru": "Режим системы",
-              "ko": "시스템 모드"
+              "ko": "시스템 모드",
+              "ar": "وضع النظام"
             },
             "example": "off"
           }
@@ -2809,7 +2863,7 @@
       {
         "title": {
           "en": "The frost protection temperature changed",
-          "nl": "De vorstbeveiligingstemperatuur is veranderd",
+          "nl": "De vorstbeveiligingstemperatuur is gewijzigd",
           "da": "Frostbeskyttelsestemperaturen er ændret",
           "de": "Die Frostschutztemperatur hat sich geändert",
           "es": "La temperatura de protección contra heladas ha cambiado",
@@ -2819,7 +2873,8 @@
           "sv": "Frostskyddstemperaturen har ändrats",
           "pl": "Temperatura ochrony przed mrozem została zmieniona",
           "ru": "Температура защиты от замерзания изменилась",
-          "ko": "서리 방지 온도가 변경되었습니다"
+          "ko": "서리 방지 온도가 변경되었습니다",
+          "ar": "تغيرت درجة حرارة الحماية من الصقيع"
         },
         "args": [
           {
@@ -2844,7 +2899,8 @@
               "sv": "Temperatur",
               "pl": "Temperatura",
               "ru": "Температура",
-              "ko": "온도"
+              "ko": "온도",
+              "ar": "درجة الحرارة"
             },
             "example": 6
           }
@@ -2854,7 +2910,7 @@
       {
         "title": {
           "en": "The target temperature changed",
-          "nl": "De doeltemperatuur is veranderd",
+          "nl": "De doeltemperatuur is gewijzigd",
           "da": "Måltemperaturen er ændret",
           "de": "Die Zieltemperatur hat sich geändert",
           "es": "La temperatura objetivo ha cambiado",
@@ -2864,7 +2920,8 @@
           "sv": "Måltemperaturen har ändrats",
           "pl": "Temperatura docelowa została zmieniona",
           "ru": "Целевая температура изменилась",
-          "ko": "목표 온도가 변경되었습니다"
+          "ko": "목표 온도가 변경되었습니다",
+          "ar": "تغيرت درجة الحرارة المستهدفة"
         },
         "highlight": true,
         "args": [
@@ -2890,7 +2947,8 @@
               "sv": "Temperatur",
               "pl": "Temperatura",
               "ru": "Температура",
-              "ko": "온도"
+              "ko": "온도",
+              "ar": "درجة الحرارة"
             },
             "example": 23
           }
@@ -2900,7 +2958,7 @@
       {
         "title": {
           "en": "The valve state changed",
-          "nl": "De klepstatus is veranderd",
+          "nl": "De klepstatus is gewijzigd",
           "da": "Ventiltilstanden er ændret",
           "de": "Der Ventilstatus hat sich geändert",
           "es": "El estado de la válvula ha cambiado",
@@ -2910,7 +2968,8 @@
           "sv": "Ventilens tillstånd har ändrats",
           "pl": "Stan zaworu się zmienił",
           "ru": "Состояние клапана изменилось",
-          "ko": "밸브 상태가 변경되었습니다"
+          "ko": "밸브 상태가 변경되었습니다",
+          "ar": "تغيرت حالة الصمام"
         },
         "highlight": true,
         "args": [
@@ -2936,7 +2995,8 @@
               "sv": "%",
               "pl": "%",
               "ru": "%",
-              "ko": "%"
+              "ko": "%",
+              "ar": "%"
             },
             "example": 53
           }
@@ -2958,7 +3018,8 @@
           "sv": "Botten är !{{på|av}}",
           "pl": "Dolny jest !{{włączony|wyłączony}}",
           "ru": "Низ !{{включен|выключен}}",
-          "ko": "아래쪽이 !{{켜짐|꺼짐}}"
+          "ko": "아래쪽이 !{{켜짐|꺼짐}}",
+          "ar": "الأسفل !{{مُفعّل|مُعطّل}}"
         },
         "args": [
           {
@@ -2982,7 +3043,8 @@
           "sv": "Centrum är !{{på|av}}",
           "pl": "Środek jest !{{włączony|wyłączony}}",
           "ru": "Центр !{{включен|выключен}}",
-          "ko": "센터가 !{{켜짐|꺼짐}}"
+          "ko": "센터가 !{{켜짐|꺼짐}}",
+          "ar": "المركز !{{مُفعّل|مُعطّل}}"
         },
         "args": [
           {
@@ -3006,7 +3068,8 @@
           "sv": "Centrum Vänster är !{{på|av}}",
           "pl": "Środek Lewy jest !{{włączony|wyłączony}}",
           "ru": "Центр Лево !{{включен|выключен}}",
-          "ko": "중앙 왼쪽이 !{{켜짐|꺼짐}}"
+          "ko": "중앙 왼쪽이 !{{켜짐|꺼짐}}",
+          "ar": "المركز اليسار !{{مُفعّل|مُعطّل}}"
         },
         "args": [
           {
@@ -3030,7 +3093,8 @@
           "sv": "Centrum Höger är !{{på|av}}",
           "pl": "Środek Prawy jest !{{włączony|wyłączony}}",
           "ru": "Центр Право !{{включен|выключен}}",
-          "ko": "중앙 오른쪽이 !{{켜짐|꺼짐}}"
+          "ko": "중앙 오른쪽이 !{{켜짐|꺼짐}}",
+          "ar": "المركز اليمين !{{مُفعّل|مُعطّل}}"
         },
         "args": [
           {
@@ -3054,7 +3118,8 @@
           "sv": "L1 är !{{på|av}}",
           "pl": "L1 jest !{{włączony|wyłączony}}",
           "ru": "L1 !{{включен|выключен}}",
-          "ko": "L1이 !{{켜짐|꺼짐}}"
+          "ko": "L1이 !{{켜짐|꺼짐}}",
+          "ar": "L1 !{{مُفعّل|مُعطّل}}"
         },
         "args": [
           {
@@ -3078,7 +3143,8 @@
           "sv": "L2 är !{{på|av}}",
           "pl": "L2 jest !{{włączony|wyłączony}}",
           "ru": "L2 !{{включен|выключен}}",
-          "ko": "L2가 !{{켜짐|꺼짐}}"
+          "ko": "L2가 !{{켜짐|꺼짐}}",
+          "ar": "L2 !{{مُفعّل|مُعطّل}}"
         },
         "args": [
           {
@@ -3102,7 +3168,8 @@
           "sv": "L3 är !{{på|av}}",
           "pl": "L3 jest !{{włączony|wyłączony}}",
           "ru": "L3 !{{включен|выключен}}",
-          "ko": "L3이 !{{켜짐|꺼짐}}"
+          "ko": "L3이 !{{켜짐|꺼짐}}",
+          "ar": "L3 !{{مُفعّل|مُعطّل}}"
         },
         "args": [
           {
@@ -3126,7 +3193,8 @@
           "sv": "L4 är !{{på|av}}",
           "pl": "L4 jest !{{włączony|wyłączony}}",
           "ru": "L4 !{{включен|выключен}}",
-          "ko": "L4가 !{{켜짐|꺼짐}}"
+          "ko": "L4가 !{{켜짐|꺼짐}}",
+          "ar": "L4 !{{مُفعّل|مُعطّل}}"
         },
         "args": [
           {
@@ -3150,7 +3218,8 @@
           "sv": "Vänster är !{{på|av}}",
           "pl": "Lewy jest !{{włączony|wyłączony}}",
           "ru": "Левый !{{включен|выключен}}",
-          "ko": "왼쪽이 !{{켜짐|꺼짐}}"
+          "ko": "왼쪽이 !{{켜짐|꺼짐}}",
+          "ar": "اليسار !{{مُفعّل|مُعطّل}}"
         },
         "args": [
           {
@@ -3174,7 +3243,8 @@
           "sv": "Höger är !{{på|av}}",
           "pl": "Prawy jest !{{włączony|wyłączony}}",
           "ru": "Правый !{{включен|выключен}}",
-          "ko": "오른쪽이 !{{켜짐|꺼짐}}"
+          "ko": "오른쪽이 !{{켜짐|꺼짐}}",
+          "ar": "اليمين !{{مُفعّل|مُعطّل}}"
         },
         "args": [
           {
@@ -3198,7 +3268,8 @@
           "sv": "Topp är !{{på|av}}",
           "pl": "Górny jest !{{włączony|wyłączony}}",
           "ru": "Верх !{{включен|выключен}}",
-          "ko": "위쪽이 !{{켜짐|꺼짐}}"
+          "ko": "위쪽이 !{{켜짐|꺼짐}}",
+          "ar": "الأعلى !{{مُفعّل|مُعطّل}}"
         },
         "args": [
           {
@@ -3333,7 +3404,7 @@
       {
         "title": {
           "en": "Set Color Power On Behavior",
-          "nl": "Stel Kleuren Aan Gedrag in",
+          "nl": "Stel inschakelgedrag (kleur) in",
           "da": "Indstil farvetændingsadfærd",
           "de": "Farb-Einschaltverhalten festlegen",
           "es": "Establecer el comportamiento de encendido del color",
@@ -3348,7 +3419,7 @@
         },
         "titleFormatted": {
           "en": "Set Color Power On Behavior to [[val]]",
-          "nl": "Stel Kleuren Aan Gedrag in op [[val]]",
+          "nl": "Stel inschakelgedrag (kleur) in op [[val]]",
           "da": "Indstil farvetændingsadfærd til [[val]]",
           "de": "Farb-Einschaltverhalten auf [[val]] festlegen",
           "es": "Establecer el comportamiento de encendido del color en [[val]]",
@@ -3590,7 +3661,7 @@
         },
         "titleFormatted": {
           "en": "Dim L2 to [[val]]",
-          "nl": "Dim L2 naar [[val]]",
+          "nl": "Dim L2 tot [[val]]",
           "da": "Dæmp L2 til [[val]]",
           "de": "Dimmen L2 auf [[val]]",
           "es": "Atenuar L2 a [[val]]",
@@ -3818,7 +3889,7 @@
       {
         "title": {
           "en": "Set fan mode",
-          "nl": "Zet ventilatormodus",
+          "nl": "Stel ventilatormodus in",
           "da": "Sæt ventilatortilstand",
           "de": "Ventilatormodus setzen",
           "es": "Establecer modo del ventilador",
@@ -3833,7 +3904,7 @@
         },
         "titleFormatted": {
           "en": "Set fan mode to [[val]]",
-          "nl": "Zet ventilatormodus op [[val]]",
+          "nl": "Stel ventilatormodus in op [[val]]",
           "da": "Sæt ventilatortilstand til [[val]]",
           "de": "Setze Ventilatormodus auf [[val]]",
           "es": "Establecer modo del ventilador en [[val]]",
@@ -3991,7 +4062,7 @@
       {
         "title": {
           "en": "Set Indicator Mode",
-          "nl": "Stel de Indicator Modus in",
+          "nl": "Stel indicatormodus in",
           "da": "Indstil indikator tilstand",
           "de": "Indikatormodus einstellen",
           "es": "Establecer modo indicador",
@@ -4006,7 +4077,7 @@
         },
         "titleFormatted": {
           "en": "Set Indicator Mode to [[val]]",
-          "nl": "Stel de Indicator Modus in op [[val]]",
+          "nl": "Stel indicatormodus in op [[val]]",
           "da": "Indstil indikator tilstand til [[val]]",
           "de": "Indikatormodus auf [[val]] einstellen",
           "es": "Establecer modo indicador en [[val]]",
@@ -4110,7 +4181,7 @@
       {
         "title": {
           "en": "Allow Joining On or Off",
-          "nl": "Sta deelname aan of uit toe",
+          "nl": "Sta deelnemen toe (Aan/Uit)",
           "da": "Tillad tilslutning til eller fra",
           "de": "Beitritt erlauben An oder Aus",
           "es": "Permitir unión activada o desactivada",
@@ -4125,7 +4196,7 @@
         },
         "titleFormatted": {
           "en": "Allow device joining [[val]]",
-          "nl": "Sta apparaat [[val]] deelname toe",
+          "nl": "Sta apparaat deelnemen toe: [[val]]",
           "da": "Tillad enhed tilslutning [[val]]",
           "de": "Gerätebeitritt [[val]] erlauben",
           "es": "Permitir unión de dispositivo [[val]]",
@@ -4185,7 +4256,7 @@
       {
         "title": {
           "en": "Turn Child Lock On or Off",
-          "nl": "Zet kinderslot aan of uit",
+          "nl": "Zet kinderslot Aan of Uit",
           "da": "Tænd eller sluk børnesikringen",
           "de": "Kindersicherung ein- oder ausschalten",
           "es": "Activar o desactivar el bloqueo infantil",
@@ -4199,8 +4270,8 @@
           "ar": "تشغيل أو إيقاف قفل الأطفال"
         },
         "titleFormatted": {
-          "en": "Turn Child Lock on: [[val]]",
-          "nl": "Zet kinderslot aan: [[val]]",
+          "en": "Turn Child Lock On: [[val]]",
+          "nl": "Zet kinderslot Aan: [[val]]",
           "da": "Tænd børnesikring: [[val]]",
           "de": "Kindersicherung einschalten: [[val]]",
           "es": "Activar bloqueo infantil: [[val]]",
@@ -4395,7 +4466,7 @@
       {
         "title": {
           "en": "Switch Bottom On or Off",
-          "nl": "Zet onder aan of uit",
+          "nl": "Schakel Onder in of uit",
           "da": "Tænd eller sluk for bund",
           "de": "Schalten Sie unten ein oder aus",
           "es": "Activar o desactivar abajo",
@@ -4410,7 +4481,7 @@
         },
         "titleFormatted": {
           "en": "Switch Bottom [[val]]",
-          "nl": "Schakel onder [[val]]",
+          "nl": "Schakel Onder [[val]]",
           "da": "Skift bund [[val]]",
           "de": "Unten schalten [[val]]",
           "es": "Cambiar abajo [[val]]",
@@ -4515,7 +4586,7 @@
       {
         "title": {
           "en": "Switch Center Left On or Off",
-          "nl": "Zet midden links aan of uit",
+          "nl": "Schakel Midden Links in of uit",
           "da": "Tænd eller sluk for center venstre",
           "de": "Schalten Sie Mitte links ein oder aus",
           "es": "Activar o desactivar centro izquierda",
@@ -4530,7 +4601,7 @@
         },
         "titleFormatted": {
           "en": "Switch Center Left [[val]]",
-          "nl": "Schakel midden links [[val]]",
+          "nl": "Schakel Midden Links [[val]]",
           "da": "Skift center venstre [[val]]",
           "de": "Mitte links schalten [[val]]",
           "es": "Cambiar centro izquierda [[val]]",
@@ -6512,7 +6583,8 @@
           "sv": "Ställ in Strömbrytartyp",
           "pl": "Ustaw Typ Przełącznika",
           "ru": "Установить Тип Переключателя",
-          "ko": "스위치 유형 설정"
+          "ko": "스위치 유형 설정",
+          "ar": "تعيين نوع المفتاح"
         },
         "titleFormatted": {
           "en": "Set Switch Type to [[val]]",
@@ -6526,7 +6598,8 @@
           "sv": "Ställ in Strömbrytartyp till [[val]]",
           "pl": "Ustaw Typ Przełącznika na [[val]]",
           "ru": "Установить Тип Переключателя на [[val]]",
-          "ko": "스위치 유형을 [[val]]로 설정"
+          "ko": "스위치 유형을 [[val]]로 설정",
+          "ar": "تعيين نوع المفتاح إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -6553,7 +6626,8 @@
                   "sv": "växla",
                   "pl": "przełącz",
                   "ru": "переключить",
-                  "ko": "토글"
+                  "ko": "토글",
+                  "ar": "تبديل"
                 }
               },
               {
@@ -6570,7 +6644,8 @@
                   "sv": "Tillstånd",
                   "pl": "Stan",
                   "ru": "Состояние",
-                  "ko": "상태"
+                  "ko": "상태",
+                  "ar": "حالة"
                 }
               },
               {
@@ -6587,7 +6662,8 @@
                   "sv": "Tillfällig",
                   "pl": "Chwilowy",
                   "ru": "Моментальный",
-                  "ko": "순간적인"
+                  "ko": "순간적인",
+                  "ar": "لحظي"
                 }
               }
             ]
@@ -6608,7 +6684,8 @@
           "sv": "Ställ in Strömbrytartyp Botten",
           "pl": "Ustaw Typ Przełącznika Dolny",
           "ru": "Установить Тип Выключателя Нижний",
-          "ko": "스위치 유형 아래쪽 설정"
+          "ko": "스위치 유형 아래쪽 설정",
+          "ar": "تعيين نوع المفتاح السفلي"
         },
         "titleFormatted": {
           "en": "Set Bottom Switch Type to [[val]]",
@@ -6622,7 +6699,8 @@
           "sv": "Ställ in Bottenbrytartyp till [[val]]",
           "pl": "Ustaw Typ Przełącznika Dolny na [[val]]",
           "ru": "Установить Тип Нижнего Выключателя на [[val]]",
-          "ko": "아래쪽 스위치 유형을 [[val]]로 설정"
+          "ko": "아래쪽 스위치 유형을 [[val]]로 설정",
+          "ar": "تعيين نوع المفتاح السفلي إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -6649,7 +6727,8 @@
                   "sv": "växla",
                   "pl": "przełącz",
                   "ru": "переключатель",
-                  "ko": "토글"
+                  "ko": "토글",
+                  "ar": "تبديل"
                 }
               },
               {
@@ -6666,7 +6745,8 @@
                   "sv": "Tillstånd",
                   "pl": "Stan",
                   "ru": "Состояние",
-                  "ko": "상태"
+                  "ko": "상태",
+                  "ar": "حالة"
                 }
               },
               {
@@ -6683,7 +6763,8 @@
                   "sv": "Ögonblicklig",
                   "pl": "Chwilowy",
                   "ru": "Мгновенный",
-                  "ko": "순간적"
+                  "ko": "순간적",
+                  "ar": "لحظي"
                 }
               }
             ]
@@ -6704,7 +6785,8 @@
           "sv": "Ställ in Strömbrytartyp Centrum",
           "pl": "Ustaw Typ Przełącznika Środkowy",
           "ru": "Установить Тип Выключателя Центральный",
-          "ko": "스위치 유형 중앙 설정"
+          "ko": "스위치 유형 중앙 설정",
+          "ar": "تعيين نوع مفتاح المركز"
         },
         "titleFormatted": {
           "en": "Set Center Switch Type to [[val]]",
@@ -6718,7 +6800,8 @@
           "sv": "Ställ in Centrumbrytartyp till [[val]]",
           "pl": "Ustaw Typ Przełącznika Środkowy na [[val]]",
           "ru": "Установить Тип Центрального Выключателя на [[val]]",
-          "ko": "중앙 스위치 유형을 [[val]]로 설정"
+          "ko": "중앙 스위치 유형을 [[val]]로 설정",
+          "ar": "تعيين نوع مفتاح المركز إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -6745,7 +6828,8 @@
                   "sv": "växla",
                   "pl": "przełącz",
                   "ru": "переключатель",
-                  "ko": "토글"
+                  "ko": "토글",
+                  "ar": "تبديل"
                 }
               },
               {
@@ -6762,7 +6846,8 @@
                   "sv": "Tillstånd",
                   "pl": "Stan",
                   "ru": "Состояние",
-                  "ko": "상태"
+                  "ko": "상태",
+                  "ar": "حالة"
                 }
               },
               {
@@ -6779,7 +6864,8 @@
                   "sv": "Momentant",
                   "pl": "Chwilowy",
                   "ru": "Мгновенный",
-                  "ko": "순간적"
+                  "ko": "순간적",
+                  "ar": "لحظي"
                 }
               }
             ]
@@ -6800,7 +6886,8 @@
           "sv": "Ställ in Strömbrytartyp Centrum Vänster",
           "pl": "Ustaw Typ Przełącznika Środek Lewy",
           "ru": "Установить Тип Выключателя Центр Лево",
-          "ko": "스위치 유형 중앙 왼쪽 설정"
+          "ko": "스위치 유형 중앙 왼쪽 설정",
+          "ar": "تعيين نوع مفتاح المركز الأيسر"
         },
         "titleFormatted": {
           "en": "Set Center Left Switch Type to [[val]]",
@@ -6814,7 +6901,8 @@
           "sv": "Ställ in Centrum Vänster Brytartyp till [[val]]",
           "pl": "Ustaw Typ Przełącznika Środek Lewy na [[val]]",
           "ru": "Установить Тип Выключателя Центр Лево на [[val]]",
-          "ko": "중앙 왼쪽 스위치 유형을 [[val]]로 설정"
+          "ko": "중앙 왼쪽 스위치 유형을 [[val]]로 설정",
+          "ar": "تعيين نوع مفتاح المركز الأيسر إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -6841,7 +6929,8 @@
                   "sv": "växla",
                   "pl": "przełącz",
                   "ru": "переключатель",
-                  "ko": "토글"
+                  "ko": "토글",
+                  "ar": "تبديل"
                 }
               },
               {
@@ -6858,7 +6947,8 @@
                   "sv": "Tillstånd",
                   "pl": "Stan",
                   "ru": "Состояние",
-                  "ko": "상태"
+                  "ko": "상태",
+                  "ar": "حالة"
                 }
               },
               {
@@ -6875,7 +6965,8 @@
                   "sv": "Ögonblicklig",
                   "pl": "Chwilowy",
                   "ru": "Мгновенный",
-                  "ko": "순간적"
+                  "ko": "순간적",
+                  "ar": "لحظي"
                 }
               }
             ]
@@ -6896,7 +6987,8 @@
           "sv": "Ställ in Strömbrytartyp Centrum Höger",
           "pl": "Ustaw Typ Przełącznika Środek Prawy",
           "ru": "Установить Тип Выключателя Центр Право",
-          "ko": "스위치 유형 중앙 오른쪽 설정"
+          "ko": "스위치 유형 중앙 오른쪽 설정",
+          "ar": "تعيين نوع مفتاح المركز الأيمن"
         },
         "titleFormatted": {
           "en": "Set Center Right Switch Type to [[val]]",
@@ -6910,7 +7002,8 @@
           "sv": "Ställ in Centrum Höger Brytartyp till [[val]]",
           "pl": "Ustaw Typ Przełącznika Środek Prawy na [[val]]",
           "ru": "Установить Тип Выключателя Центр Право на [[val]]",
-          "ko": "중앙 오른쪽 스위치 유형을 [[val]]로 설정"
+          "ko": "중앙 오른쪽 스위치 유형을 [[val]]로 설정",
+          "ar": "تعيين نوع مفتاح المركز الأيمن إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -6937,7 +7030,8 @@
                   "sv": "växla",
                   "pl": "przełącz",
                   "ru": "переключатель",
-                  "ko": "토글"
+                  "ko": "토글",
+                  "ar": "تبديل"
                 }
               },
               {
@@ -6954,7 +7048,8 @@
                   "sv": "Tillstånd",
                   "pl": "Stan",
                   "ru": "Состояние",
-                  "ko": "상태"
+                  "ko": "상태",
+                  "ar": "حالة"
                 }
               },
               {
@@ -6971,7 +7066,8 @@
                   "sv": "Ögonblicklig",
                   "pl": "Chwilowy",
                   "ru": "Мгновенный",
-                  "ko": "순간적"
+                  "ko": "순간적",
+                  "ar": "لحظي"
                 }
               }
             ]
@@ -6992,7 +7088,8 @@
           "sv": "Ställ in L1 bryttyp",
           "pl": "Ustaw typ przełącznika L1",
           "ru": "Установить тип переключателя L1",
-          "ko": "스위치 유형 L1 설정"
+          "ko": "스위치 유형 L1 설정",
+          "ar": "تعيين نوع مفتاح L1"
         },
         "titleFormatted": {
           "en": "Set L1 Switch Type to [[val]]",
@@ -7006,7 +7103,8 @@
           "sv": "Ställ in L1 bryttyp till [[val]]",
           "pl": "Ustaw typ przełącznika L1 na [[val]]",
           "ru": "Установить тип переключателя L1 на [[val]]",
-          "ko": "스위치 유형 L1을 [[val]]로 설정"
+          "ko": "스위치 유형 L1을 [[val]]로 설정",
+          "ar": "تعيين نوع مفتاح L1 إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -7033,7 +7131,8 @@
                   "sv": "växla",
                   "pl": "przełącz",
                   "ru": "переключить",
-                  "ko": "전환"
+                  "ko": "전환",
+                  "ar": "تبديل"
                 }
               },
               {
@@ -7050,7 +7149,8 @@
                   "sv": "Tillstånd",
                   "pl": "Stan",
                   "ru": "Состояние",
-                  "ko": "상태"
+                  "ko": "상태",
+                  "ar": "حالة"
                 }
               },
               {
@@ -7067,7 +7167,8 @@
                   "sv": "Tillfällig",
                   "pl": "Chwilowy",
                   "ru": "Моментальный",
-                  "ko": "순간적"
+                  "ko": "순간적",
+                  "ar": "لحظي"
                 }
               }
             ]
@@ -7088,7 +7189,8 @@
           "sv": "Ställ in L2-brytartyp",
           "pl": "Ustaw typ przełącznika L2",
           "ru": "Установить тип переключателя L2",
-          "ko": "L2 스위치 유형 설정"
+          "ko": "L2 스위치 유형 설정",
+          "ar": "تعيين نوع مفتاح L2"
         },
         "titleFormatted": {
           "en": "Set L2 Switch Type to [[val]]",
@@ -7102,7 +7204,8 @@
           "sv": "Ställ in L2-brytartyp till [[val]]",
           "pl": "Ustaw typ przełącznika L2 na [[val]]",
           "ru": "Установить тип переключателя L2 на [[val]]",
-          "ko": "L2 스위치 유형을 [[val]]로 설정"
+          "ko": "L2 스위치 유형을 [[val]]로 설정",
+          "ar": "تعيين نوع مفتاح L2 إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -7129,7 +7232,8 @@
                   "sv": "växla",
                   "pl": "przełącz",
                   "ru": "переключить",
-                  "ko": "전환"
+                  "ko": "전환",
+                  "ar": "تبديل"
                 }
               },
               {
@@ -7146,7 +7250,8 @@
                   "sv": "Tillstånd",
                   "pl": "Stan",
                   "ru": "Состояние",
-                  "ko": "상태"
+                  "ko": "상태",
+                  "ar": "حالة"
                 }
               },
               {
@@ -7163,7 +7268,8 @@
                   "sv": "Momentant",
                   "pl": "Chwilowy",
                   "ru": "Моментальный",
-                  "ko": "순간적인"
+                  "ko": "순간적인",
+                  "ar": "لحظي"
                 }
               }
             ]
@@ -7184,7 +7290,8 @@
           "sv": "Ställ In Typ av Vänster Strömbrytare",
           "pl": "Ustaw Lewy Typ Przełącznika",
           "ru": "Установить Левый Тип Переключателя",
-          "ko": "왼쪽 스위치 유형 설정"
+          "ko": "왼쪽 스위치 유형 설정",
+          "ar": "تعيين نوع المفتاح الأيسر"
         },
         "titleFormatted": {
           "en": "Set Left Switch Type to [[val]]",
@@ -7198,7 +7305,8 @@
           "sv": "Ställ In Typ av Vänster Strömbrytare till [[val]]",
           "pl": "Ustaw Lewy Typ Przełącznika na [[val]]",
           "ru": "Установить Левый Тип Переключателя на [[val]]",
-          "ko": "왼쪽 스위치 유형을 [[val]](으)로 설정"
+          "ko": "왼쪽 스위치 유형을 [[val]](으)로 설정",
+          "ar": "تعيين نوع المفتاح الأيسر إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -7225,7 +7333,8 @@
                   "sv": "växla",
                   "pl": "przełącz",
                   "ru": "переключать",
-                  "ko": "전환"
+                  "ko": "전환",
+                  "ar": "تبديل"
                 }
               },
               {
@@ -7242,7 +7351,8 @@
                   "sv": "Tillstånd",
                   "pl": "Stan",
                   "ru": "Состояние",
-                  "ko": "상태"
+                  "ko": "상태",
+                  "ar": "حالة"
                 }
               },
               {
@@ -7259,7 +7369,8 @@
                   "sv": "Momentant",
                   "pl": "Chwilowy",
                   "ru": "Кратковременный",
-                  "ko": "순간적인"
+                  "ko": "순간적인",
+                  "ar": "لحظي"
                 }
               }
             ]
@@ -7280,7 +7391,8 @@
           "sv": "Ställ in Höger Strömställartyp",
           "pl": "Ustaw Typ Przełącznika po Prawej",
           "ru": "Установить Правый Тип Переключателя",
-          "ko": "오른쪽 스위치 유형 설정"
+          "ko": "오른쪽 스위치 유형 설정",
+          "ar": "تعيين نوع المفتاح الأيمن"
         },
         "titleFormatted": {
           "en": "Set Right Switch Type to [[val]]",
@@ -7294,7 +7406,8 @@
           "sv": "Ställ in Höger Strömställartyp till [[val]]",
           "pl": "Ustaw Typ Przełącznika po Prawej na [[val]]",
           "ru": "Установить Правый Тип Переключателя на [[val]]",
-          "ko": "오른쪽 스위치 유형을 [[val]]로 설정"
+          "ko": "오른쪽 스위치 유형을 [[val]]로 설정",
+          "ar": "تعيين نوع المفتاح الأيمن إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -7321,7 +7434,8 @@
                   "sv": "växla",
                   "pl": "przełącz",
                   "ru": "переключение",
-                  "ko": "토글"
+                  "ko": "토글",
+                  "ar": "تبديل"
                 }
               },
               {
@@ -7338,7 +7452,8 @@
                   "sv": "Tillstånd",
                   "pl": "Stan",
                   "ru": "Состояние",
-                  "ko": "상태"
+                  "ko": "상태",
+                  "ar": "حالة"
                 }
               },
               {
@@ -7355,7 +7470,8 @@
                   "sv": "Momentant",
                   "pl": "Chwilowy",
                   "ru": "Мгновенный",
-                  "ko": "순간적인"
+                  "ko": "순간적인",
+                  "ar": "لحظي"
                 }
               }
             ]
@@ -7376,7 +7492,8 @@
           "sv": "Ställ in Strömbrytartyp Topp",
           "pl": "Ustaw Typ Przełącznika Górny",
           "ru": "Установить Тип Выключателя Верхний",
-          "ko": "스위치 유형 위쪽 설정"
+          "ko": "스위치 유형 위쪽 설정",
+          "ar": "تعيين نوع المفتاح العلوي"
         },
         "titleFormatted": {
           "en": "Set Top Switch Type to [[val]]",
@@ -7390,7 +7507,8 @@
           "sv": "Ställ in Toppbrytartyp till [[val]]",
           "pl": "Ustaw Typ Przełącznika Górny na [[val]]",
           "ru": "Установить Тип Верхнего Выключателя на [[val]]",
-          "ko": "위쪽 스위치 유형을 [[val]]로 설정"
+          "ko": "위쪽 스위치 유형을 [[val]]로 설정",
+          "ar": "تعيين نوع المفتاح العلوي إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -7417,7 +7535,8 @@
                   "sv": "växla",
                   "pl": "przełącz",
                   "ru": "переключатель",
-                  "ko": "토글"
+                  "ko": "토글",
+                  "ar": "تبديل"
                 }
               },
               {
@@ -7434,7 +7553,8 @@
                   "sv": "Tillstånd",
                   "pl": "Stan",
                   "ru": "Состояние",
-                  "ko": "상태"
+                  "ko": "상태",
+                  "ar": "حالة"
                 }
               },
               {
@@ -7451,7 +7571,8 @@
                   "sv": "Ögonblicklig",
                   "pl": "Chwilowy",
                   "ru": "Мгновенный",
-                  "ko": "순간적"
+                  "ko": "순간적",
+                  "ar": "لحظي"
                 }
               }
             ]
@@ -7472,7 +7593,8 @@
           "sv": "Sätt systemläge",
           "pl": "Ustaw tryb systemu",
           "ru": "Установить режим системы",
-          "ko": "시스템 모드 설정"
+          "ko": "시스템 모드 설정",
+          "ar": "تعيين وضع النظام"
         },
         "titleFormatted": {
           "en": "Set system mode to [[val]]",
@@ -7486,7 +7608,8 @@
           "sv": "Sätt systemläge till [[val]]",
           "pl": "Ustaw tryb systemu na [[val]]",
           "ru": "Установить режим системы на [[val]]",
-          "ko": "시스템 모드를 [[val]]으로 설정"
+          "ko": "시스템 모드를 [[val]]으로 설정",
+          "ar": "تعيين وضع النظام إلى [[val]]"
         },
         "highlight": true,
         "args": [
@@ -7513,7 +7636,8 @@
                   "sv": "Automatisk",
                   "pl": "Auto",
                   "ru": "Авто",
-                  "ko": "자동"
+                  "ko": "자동",
+                  "ar": "تلقائي"
                 }
               },
               {
@@ -7530,7 +7654,8 @@
                   "sv": "Värme",
                   "pl": "Ciepło",
                   "ru": "Тепло",
-                  "ko": "난방"
+                  "ko": "난방",
+                  "ar": "تدفئة"
                 }
               },
               {
@@ -7547,7 +7672,8 @@
                   "sv": "Av",
                   "pl": "Wyłączony",
                   "ru": "Выкл",
-                  "ko": "꺼짐"
+                  "ko": "꺼짐",
+                  "ar": "إيقاف"
                 }
               },
               {
@@ -7564,7 +7690,8 @@
                   "sv": "Cool",
                   "pl": "Chłodzenie",
                   "ru": "Охлаждение",
-                  "ko": "냉방"
+                  "ko": "냉방",
+                  "ar": "تبريد"
                 }
               },
               {
@@ -7581,7 +7708,8 @@
                   "sv": "Nöduppvärmning",
                   "pl": "Ogrzewanie awaryjne",
                   "ru": "Аварийное отопление",
-                  "ko": "긴급 난방"
+                  "ko": "긴급 난방",
+                  "ar": "تدفئة الطوارئ"
                 }
               },
               {
@@ -7598,7 +7726,8 @@
                   "sv": "Förkylning",
                   "pl": "Wstępne chłodzenie",
                   "ru": "Предварительное охлаждение",
-                  "ko": "사전 냉각"
+                  "ko": "사전 냉각",
+                  "ar": "تبريد مسبق"
                 }
               },
               {
@@ -7615,7 +7744,8 @@
                   "sv": "Endast fläkt",
                   "pl": "Tylko wentylator",
                   "ru": "Только вентилятор",
-                  "ko": "팬만 작동"
+                  "ko": "팬만 작동",
+                  "ar": "مروحة فقط"
                 }
               },
               {
@@ -7632,7 +7762,8 @@
                   "sv": "Torr",
                   "pl": "Tryb osuszania",
                   "ru": "Сухой",
-                  "ko": "제습"
+                  "ko": "제습",
+                  "ar": "تجفيف"
                 }
               },
               {
@@ -7649,7 +7780,8 @@
                   "sv": "Sömn",
                   "pl": "Sen",
                   "ru": "Сон",
-                  "ko": "슬립"
+                  "ko": "슬립",
+                  "ar": "نوم"
                 }
               }
             ]
@@ -7670,7 +7802,8 @@
           "sv": "Ställ in frostskyddstemperatur",
           "pl": "Ustaw temperaturę ochrony przed mrozem",
           "ru": "Установить температуру защиты от замерзания",
-          "ko": "서리 방지 온도 설정"
+          "ko": "서리 방지 온도 설정",
+          "ar": "تعيين درجة حرارة الحماية من الصقيع"
         },
         "titleFormatted": {
           "en": "Set frost protection temperature to [[val]]",
@@ -7684,7 +7817,8 @@
           "sv": "Ställ in frostskyddstemperatur till [[val]]",
           "pl": "Ustaw temperaturę ochrony przed mrozem na [[val]]",
           "ru": "Установить температуру защиты от замерзания на [[val]]",
-          "ko": "[[val]]의 서리 방지 온도를 설정"
+          "ko": "[[val]]의 서리 방지 온도를 설정",
+          "ar": "تعيين درجة حرارة الحماية من الصقيع إلى [[val]]"
         },
         "args": [
           {
@@ -7812,7 +7946,8 @@
         "sv": "Bro",
         "pl": "Most",
         "ru": "Мост",
-        "ko": "브릿지"
+        "ko": "브릿지",
+        "ar": "جسر"
       },
       "class": "other",
       "capabilities": [],
@@ -7859,7 +7994,8 @@
             "sv": "Bridgeinformation",
             "pl": "Informacje o bridge'u",
             "ru": "Информация о мосте",
-            "ko": "브리지 정보"
+            "ko": "브리지 정보",
+            "ar": "معلومات الجسر"
           },
           "children": [
             {
@@ -7877,7 +8013,8 @@
                 "sv": "IEEE-adress",
                 "pl": "Adres IEEE",
                 "ru": "IEEE адрес",
-                "ko": "IEEE 주소"
+                "ko": "IEEE 주소",
+                "ar": "عنوان IEEE"
               },
               "value": ""
             },
@@ -7896,7 +8033,8 @@
                 "sv": "Version",
                 "pl": "Wersja",
                 "ru": "Версия",
-                "ko": "버전"
+                "ko": "버전",
+                "ar": "الإصدار"
               },
               "value": ""
             },
@@ -7915,7 +8053,8 @@
                 "sv": "Kanal",
                 "pl": "Kanał",
                 "ru": "Канал",
-                "ko": "채널"
+                "ko": "채널",
+                "ar": "القناة"
               },
               "value": ""
             },
@@ -7934,7 +8073,8 @@
                 "sv": "PAN ID",
                 "pl": "Identyfikator PAN",
                 "ru": "PAN ID",
-                "ko": "PAN ID"
+                "ko": "PAN ID",
+                "ar": "معرف PAN"
               },
               "value": ""
             }
@@ -7954,7 +8094,8 @@
             "sv": "MQTT-inställningar",
             "pl": "Ustawienia MQTT",
             "ru": "Настройки MQTT",
-            "ko": "MQTT 설정"
+            "ko": "MQTT 설정",
+            "ar": "إعدادات MQTT"
           },
           "children": [
             {
@@ -7972,7 +8113,8 @@
                 "sv": "Värd",
                 "pl": "Host",
                 "ru": "Хост",
-                "ko": "호스트"
+                "ko": "호스트",
+                "ar": "المضيف"
               },
               "value": ""
             },
@@ -7991,7 +8133,8 @@
                 "sv": "Port",
                 "pl": "Port",
                 "ru": "Порт",
-                "ko": "포트"
+                "ko": "포트",
+                "ar": "المنفذ"
               },
               "value": 1883
             },
@@ -8010,7 +8153,8 @@
                 "sv": "Använd TLS",
                 "pl": "Użyj TLS",
                 "ru": "Использовать TLS",
-                "ko": "TLS 사용"
+                "ko": "TLS 사용",
+                "ar": "استخدام TLS"
               },
               "value": false
             },
@@ -8029,7 +8173,8 @@
                 "sv": "Användarnamn",
                 "pl": "Nazwa użytkownika",
                 "ru": "Имя пользователя",
-                "ko": "사용자 이름"
+                "ko": "사용자 이름",
+                "ar": "اسم المستخدم"
               },
               "value": ""
             },
@@ -8048,7 +8193,8 @@
                 "sv": "Lösenord",
                 "pl": "Hasło",
                 "ru": "Пароль",
-                "ko": "비밀번호"
+                "ko": "비밀번호",
+                "ar": "كلمة المرور"
               },
               "value": ""
             },
@@ -8067,7 +8213,8 @@
                 "sv": "Basämne",
                 "pl": "Temat bazowy",
                 "ru": "Базовая тема",
-                "ko": "기본 주제"
+                "ko": "기본 주제",
+                "ar": "الموضوع الأساسي"
               },
               "hint": {
                 "en": "Default is zigbee2mqtt",
@@ -8081,7 +8228,8 @@
                 "sv": "Standard är zigbee2mqtt",
                 "pl": "Domyślnie zigbee2mqtt",
                 "ru": "По умолчанию zigbee2mqtt",
-                "ko": "기본값은 zigbee2mqtt"
+                "ko": "기본값은 zigbee2mqtt",
+                "ar": "الافتراضي هو zigbee2mqtt"
               },
               "value": ""
             }
@@ -8101,7 +8249,8 @@
             "sv": "Bridgeinställningar",
             "pl": "Ustawienia bridge'a",
             "ru": "Настройки моста",
-            "ko": "브리지 설정"
+            "ko": "브리지 설정",
+            "ar": "إعدادات الجسر"
           },
           "children": [
             {
@@ -8119,7 +8268,8 @@
                 "sv": "Tvinga Info Loggar",
                 "pl": "Wymuś dzienniki informacyjne",
                 "ru": "Принудительные лог-файлы",
-                "ko": "정보 로그 강제 사용"
+                "ko": "정보 로그 강제 사용",
+                "ar": "فرض سجلات المعلومات"
               },
               "hint": {
                 "en": "Force the log level to INFO on (re)start. INFO or DEBUG level is required for the Msgs/minute counter.",
@@ -8133,7 +8283,8 @@
                 "sv": "Tvinga loggnivån till INFO vid (om)start. INFO eller DEBUG-nivå krävs för Msgs/minut-räknaren.",
                 "pl": "Wymusz poziom logowania na INFO przy (ponownym) uruchomieniu. Wymagany jest poziom INFO lub DEBUG dla licznika wiadomości/minutę.",
                 "ru": "Принудительное изменение уровня логирования на INFO при (пере)запуске. Для счетчика сообщений/минуту требуется уровень INFO или DEBUG.",
-                "ko": "(재)시작 시 로그 레벨을 INFO로 강제 설정합니다. Msgs/분 카운터에는 INFO 또는 DEBUG 레벨이 필요합니다."
+                "ko": "(재)시작 시 로그 레벨을 INFO로 강제 설정합니다. Msgs/분 카운터에는 INFO 또는 DEBUG 레벨이 필요합니다.",
+                "ar": "فرض مستوى السجل على INFO عند (إعادة) التشغيل. مطلوب مستوى INFO أو DEBUG لعداد الرسائل/دقيقة."
               },
               "value": true
             }
@@ -8154,7 +8305,8 @@
         "sv": "Enhet",
         "pl": "Urządzenie",
         "ru": "Устройство",
-        "ko": "장치"
+        "ko": "장치",
+        "ar": "جهاز"
       },
       "class": "socket",
       "capabilities": [],
@@ -8172,7 +8324,8 @@
             "sv": "Termostatläge",
             "pl": "Tryb termostatu",
             "ru": "Режим термостата",
-            "ko": "온도 조절기 모드"
+            "ko": "온도 조절기 모드",
+            "ar": "وضع الحرارة"
           },
           "uiComponent": "button",
           "uiQuickAction": false
@@ -8190,7 +8343,8 @@
             "sv": "Barnlås",
             "pl": "Blokada rodzicielska",
             "ru": "Детский замок",
-            "ko": "아동 잠금"
+            "ko": "아동 잠금",
+            "ar": "قفل الأطفال"
           },
           "uiComponent": "button",
           "uiQuickAction": false
@@ -8208,7 +8362,8 @@
             "sv": "Bakgrundsbelysning",
             "pl": "Podświetlenie",
             "ru": "Подсветка",
-            "ko": "백라이트"
+            "ko": "백라이트",
+            "ar": "الإضاءة الخلفية"
           },
           "uiComponent": "button",
           "uiQuickAction": false
@@ -8226,7 +8381,8 @@
             "sv": "Centrum",
             "pl": "Środek",
             "ru": "Центр",
-            "ko": "센터"
+            "ko": "센터",
+            "ar": "المركز"
           },
           "uiQuickAction": false
         },
@@ -8243,7 +8399,8 @@
             "sv": "Hjärtslag",
             "pl": "Puls",
             "ru": "Сердцебиение",
-            "ko": "하트비트"
+            "ko": "하트비트",
+            "ar": "نبض القلب"
           },
           "uiComponent": "button",
           "uiQuickAction": false
@@ -8261,7 +8418,8 @@
             "sv": "Indikator",
             "pl": "Wskaźnik",
             "ru": "Индикатор",
-            "ko": "표시기"
+            "ko": "표시기",
+            "ar": "المؤشر"
           },
           "uiComponent": "button",
           "uiQuickAction": false
@@ -8279,7 +8437,8 @@
             "sv": "L1",
             "pl": "L1",
             "ru": "L1",
-            "ko": "L1"
+            "ko": "L1",
+            "ar": "L1"
           },
           "uiQuickAction": true
         },
@@ -8296,7 +8455,8 @@
             "sv": "L2",
             "pl": "L2",
             "ru": "L2",
-            "ko": "L2"
+            "ko": "L2",
+            "ar": "L2"
           },
           "uiQuickAction": false
         },
@@ -8313,7 +8473,8 @@
             "sv": "L3",
             "pl": "L3",
             "ru": "L3",
-            "ko": "L3"
+            "ko": "L3",
+            "ar": "L3"
           },
           "uiQuickAction": false
         },
@@ -8330,7 +8491,8 @@
             "sv": "L4",
             "pl": "L4",
             "ru": "L4",
-            "ko": "L4"
+            "ko": "L4",
+            "ar": "L4"
           },
           "uiQuickAction": false
         },
@@ -8347,7 +8509,8 @@
             "sv": "Vänster",
             "pl": "Lewo",
             "ru": "Левый",
-            "ko": "왼쪽"
+            "ko": "왼쪽",
+            "ar": "يسار"
           },
           "uiQuickAction": false
         },
@@ -8364,7 +8527,8 @@
             "sv": "Förlarm",
             "pl": "Pre-alarm",
             "ru": "Предварительная тревога",
-            "ko": "사전 알람"
+            "ko": "사전 알람",
+            "ar": "إنذار مسبق"
           },
           "uiComponent": "button",
           "uiQuickAction": false
@@ -8382,7 +8546,8 @@
             "sv": "Höger",
             "pl": "Prawo",
             "ru": "Правый",
-            "ko": "오른쪽"
+            "ko": "오른쪽",
+            "ar": "يمين"
           },
           "uiQuickAction": false
         },
@@ -8399,7 +8564,8 @@
             "sv": "Topp",
             "pl": "Góra",
             "ru": "Верх",
-            "ko": "위쪽"
+            "ko": "위쪽",
+            "ar": "أعلى"
           },
           "uiQuickAction": false
         },
@@ -8416,7 +8582,8 @@
             "sv": "Botten",
             "pl": "Dół",
             "ru": "Низ",
-            "ko": "아래쪽"
+            "ko": "아래쪽",
+            "ar": "أسفل"
           },
           "uiQuickAction": false
         },
@@ -8433,7 +8600,8 @@
             "sv": "Centrum vänster",
             "pl": "Środek lewo",
             "ru": "Центр лево",
-            "ko": "중앙 왼쪽"
+            "ko": "중앙 왼쪽",
+            "ar": "المركز اليسار"
           },
           "uiQuickAction": false
         },
@@ -8450,7 +8618,8 @@
             "sv": "Centrum höger",
             "pl": "Środek prawo",
             "ru": "Центр право",
-            "ko": "중앙 오른쪽"
+            "ko": "중앙 오른쪽",
+            "ar": "المركز اليمين"
           },
           "uiQuickAction": false
         },
@@ -8467,7 +8636,8 @@
             "sv": "Självtest",
             "pl": "Autotest",
             "ru": "Самопроверка",
-            "ko": "자체 테스트"
+            "ko": "자체 테스트",
+            "ar": "اختبار ذاتي"
           },
           "uiComponent": "button",
           "uiQuickAction": false
@@ -8485,7 +8655,8 @@
             "sv": "Systemläge",
             "pl": "Tryb systemu",
             "ru": "Режим системы",
-            "ko": "시스템 모드"
+            "ko": "시스템 모드",
+            "ar": "وضع النظام"
           },
           "uiComponent": "button",
           "uiQuickAction": false
@@ -8531,7 +8702,8 @@
             "sv": "Enhetsinformation",
             "pl": "Informacje o urządzeniu",
             "ru": "Информация об устройстве",
-            "ko": "장치 정보"
+            "ko": "장치 정보",
+            "ar": "معلومات الجهاز"
           },
           "children": [
             {
@@ -8549,7 +8721,8 @@
                 "sv": "Zigbee2mqtt Namn",
                 "pl": "Nazwa Zigbee2mqtt",
                 "ru": "Имя Zigbee2mqtt",
-                "ko": "Zigbee2mqtt 이름"
+                "ko": "Zigbee2mqtt 이름",
+                "ar": "اسم Zigbee2mqtt"
               },
               "value": ""
             },
@@ -8568,7 +8741,8 @@
                 "sv": "Brygga IEEE-adress",
                 "pl": "Adres IEEE mostka",
                 "ru": "Адрес IEEE моста",
-                "ko": "브리지 IEEE 주소"
+                "ko": "브리지 IEEE 주소",
+                "ar": "عنوان IEEE للجسر"
               },
               "value": ""
             },
@@ -8587,7 +8761,8 @@
                 "sv": "Enhet IEEE-adress",
                 "pl": "Adres IEEE urządzenia",
                 "ru": "Адрес IEEE устройства",
-                "ko": "장치 IEEE 주소"
+                "ko": "장치 IEEE 주소",
+                "ar": "عنوان IEEE للجهاز"
               },
               "value": ""
             },
@@ -8606,7 +8781,8 @@
                 "sv": "Modell",
                 "pl": "Model",
                 "ru": "Модель",
-                "ko": "모델"
+                "ko": "모델",
+                "ar": "الموديل"
               },
               "value": ""
             },
@@ -8625,7 +8801,8 @@
                 "sv": "Beskrivning",
                 "pl": "Opis",
                 "ru": "Описание",
-                "ko": "설명"
+                "ko": "설명",
+                "ar": "الوصف"
               },
               "value": ""
             }
@@ -8645,7 +8822,8 @@
             "sv": "Enhetsinställningar",
             "pl": "Ustawienia urządzenia",
             "ru": "Настройки устройства",
-            "ko": "장치 설정"
+            "ko": "장치 설정",
+            "ar": "إعدادات الجهاز"
           },
           "children": [
             {
@@ -8664,7 +8842,8 @@
                 "sv": "Enhetsklass",
                 "pl": "Klasa urządzenia",
                 "ru": "Класс устройства",
-                "ko": "장치 클래스"
+                "ko": "장치 클래스",
+                "ar": "فئة الجهاز"
               },
               "hint": {
                 "en": "This setting will effect the behavior in Homey flows.",
@@ -8678,7 +8857,8 @@
                 "sv": "Denna inställning kommer att påverka beteendet i Homey flöden.",
                 "pl": "To ustawienie wpłynie na zachowanie w przepływach Homey.",
                 "ru": "Эта настройка повлияет на поведение в потоках Homey.",
-                "ko": "이 설정은 Homey 흐름에서의 동작에 영향을 줍니다."
+                "ko": "이 설정은 Homey 흐름에서의 동작에 영향을 줍니다.",
+                "ar": "سيؤثر هذا الإعداد على السلوك في تدفقات Homey."
               },
               "values": [
                 {
@@ -9150,7 +9330,8 @@
         "sv": "Grupp",
         "pl": "Grupa",
         "ru": "Группа",
-        "ko": "그룹"
+        "ko": "그룹",
+        "ar": "مجموعة"
       },
       "class": "socket",
       "capabilities": [],
@@ -9168,7 +9349,8 @@
             "sv": "Termostatläge",
             "pl": "Tryb termostatu",
             "ru": "Режим термостата",
-            "ko": "온도 조절기 모드"
+            "ko": "온도 조절기 모드",
+            "ar": "وضع الحرارة"
           },
           "uiComponent": "button",
           "uiQuickAction": false
@@ -9186,7 +9368,8 @@
             "sv": "Barnlås",
             "pl": "Blokada rodzicielska",
             "ru": "Детский замок",
-            "ko": "아동 잠금"
+            "ko": "아동 잠금",
+            "ar": "قفل الأطفال"
           },
           "uiComponent": "button",
           "uiQuickAction": false
@@ -9204,7 +9387,8 @@
             "sv": "Bakgrundsbelysning",
             "pl": "Podświetlenie",
             "ru": "Подсветка",
-            "ko": "백라이트"
+            "ko": "백라이트",
+            "ar": "الإضاءة الخلفية"
           },
           "uiComponent": "button",
           "uiQuickAction": false
@@ -9222,7 +9406,8 @@
             "sv": "Centrum",
             "pl": "Środek",
             "ru": "Центр",
-            "ko": "센터"
+            "ko": "센터",
+            "ar": "المركز"
           },
           "uiQuickAction": false
         },
@@ -9239,7 +9424,8 @@
             "sv": "Hjärtslag",
             "pl": "Puls",
             "ru": "Сердцебиение",
-            "ko": "하트비트"
+            "ko": "하트비트",
+            "ar": "نبض القلب"
           },
           "uiComponent": "button",
           "uiQuickAction": false
@@ -9257,7 +9443,8 @@
             "sv": "Indikator",
             "pl": "Wskaźnik",
             "ru": "Индикатор",
-            "ko": "표시기"
+            "ko": "표시기",
+            "ar": "المؤشر"
           },
           "uiComponent": "button",
           "uiQuickAction": false
@@ -9275,7 +9462,8 @@
             "sv": "L1",
             "pl": "L1",
             "ru": "L1",
-            "ko": "L1"
+            "ko": "L1",
+            "ar": "L1"
           },
           "uiQuickAction": true
         },
@@ -9292,7 +9480,8 @@
             "sv": "L2",
             "pl": "L2",
             "ru": "L2",
-            "ko": "L2"
+            "ko": "L2",
+            "ar": "L2"
           },
           "uiQuickAction": false
         },
@@ -9309,7 +9498,8 @@
             "sv": "L3",
             "pl": "L3",
             "ru": "L3",
-            "ko": "L3"
+            "ko": "L3",
+            "ar": "L3"
           },
           "uiQuickAction": false
         },
@@ -9326,7 +9516,8 @@
             "sv": "L4",
             "pl": "L4",
             "ru": "L4",
-            "ko": "L4"
+            "ko": "L4",
+            "ar": "L4"
           },
           "uiQuickAction": false
         },
@@ -9343,7 +9534,8 @@
             "sv": "Vänster",
             "pl": "Lewo",
             "ru": "Левый",
-            "ko": "왼쪽"
+            "ko": "왼쪽",
+            "ar": "يسار"
           },
           "uiQuickAction": false
         },
@@ -9360,7 +9552,8 @@
             "sv": "Topp",
             "pl": "Góra",
             "ru": "Верх",
-            "ko": "위쪽"
+            "ko": "위쪽",
+            "ar": "أعلى"
           },
           "uiQuickAction": false
         },
@@ -9377,7 +9570,8 @@
             "sv": "Botten",
             "pl": "Dół",
             "ru": "Низ",
-            "ko": "아래쪽"
+            "ko": "아래쪽",
+            "ar": "أسفل"
           },
           "uiQuickAction": false
         },
@@ -9394,7 +9588,8 @@
             "sv": "Centrum vänster",
             "pl": "Środek lewo",
             "ru": "Центр лево",
-            "ko": "중앙 왼쪽"
+            "ko": "중앙 왼쪽",
+            "ar": "المركز اليسار"
           },
           "uiQuickAction": false
         },
@@ -9411,7 +9606,8 @@
             "sv": "Centrum höger",
             "pl": "Środek prawo",
             "ru": "Центр право",
-            "ko": "중앙 오른쪽"
+            "ko": "중앙 오른쪽",
+            "ar": "المركز اليمين"
           },
           "uiQuickAction": false
         },
@@ -9428,7 +9624,8 @@
             "sv": "Förlarm",
             "pl": "Pre-alarm",
             "ru": "Предварительная тревога",
-            "ko": "사전 알람"
+            "ko": "사전 알람",
+            "ar": "إنذار مسبق"
           },
           "uiComponent": "button",
           "uiQuickAction": false
@@ -9446,7 +9643,8 @@
             "sv": "Höger",
             "pl": "Prawo",
             "ru": "Правый",
-            "ko": "오른쪽"
+            "ko": "오른쪽",
+            "ar": "يمين"
           },
           "uiQuickAction": false
         },
@@ -9463,7 +9661,8 @@
             "sv": "Självtest",
             "pl": "Autotest",
             "ru": "Самопроверка",
-            "ko": "자체 테스트"
+            "ko": "자체 테스트",
+            "ar": "اختبار ذاتي"
           },
           "uiComponent": "button",
           "uiQuickAction": false
@@ -9481,7 +9680,8 @@
             "sv": "Systemläge",
             "pl": "Tryb systemu",
             "ru": "Режим системы",
-            "ko": "시스템 모드"
+            "ko": "시스템 모드",
+            "ar": "وضع النظام"
           },
           "uiComponent": "button",
           "uiQuickAction": false
@@ -9527,7 +9727,8 @@
             "sv": "Gruppinformation",
             "pl": "Informacje o grupie",
             "ru": "Информация о группе",
-            "ko": "그룹 정보"
+            "ko": "그룹 정보",
+            "ar": "معلومات المجموعة"
           },
           "children": [
             {
@@ -9545,7 +9746,8 @@
                 "sv": "Zigbee2mqtt Namn",
                 "pl": "Nazwa Zigbee2mqtt",
                 "ru": "Имя Zigbee2mqtt",
-                "ko": "Zigbee2mqtt 이름"
+                "ko": "Zigbee2mqtt 이름",
+                "ar": "اسم Zigbee2mqtt"
               },
               "value": ""
             },
@@ -9564,7 +9766,8 @@
                 "sv": "Bridge IEEE-adress",
                 "pl": "Adres IEEE mostka",
                 "ru": "IEEE адрес моста",
-                "ko": "브리지 IEEE 주소"
+                "ko": "브리지 IEEE 주소",
+                "ar": "عنوان IEEE للجسر"
               },
               "value": ""
             },
@@ -9583,7 +9786,8 @@
                 "sv": "Grupp-ID",
                 "pl": "ID grupy",
                 "ru": "ID группы",
-                "ko": "그룹 ID"
+                "ko": "그룹 ID",
+                "ar": "معرف المجموعة"
               },
               "value": ""
             },
@@ -9602,7 +9806,8 @@
                 "sv": "Modeller",
                 "pl": "Modele",
                 "ru": "Модели",
-                "ko": "모델"
+                "ko": "모델",
+                "ar": "النماذج"
               },
               "value": ""
             },
@@ -9621,7 +9826,8 @@
                 "sv": "Beskrivning",
                 "pl": "Opis",
                 "ru": "Описание",
-                "ko": "설명"
+                "ko": "설명",
+                "ar": "الوصف"
               },
               "value": ""
             }
@@ -9641,7 +9847,8 @@
             "sv": "Gruppinställningar",
             "pl": "Ustawienia grupy",
             "ru": "Настройки группы",
-            "ko": "그룹 설정"
+            "ko": "그룹 설정",
+            "ar": "إعدادات المجموعة"
           },
           "children": [
             {
@@ -9660,7 +9867,8 @@
                 "sv": "Gruppklass",
                 "pl": "Klasa grupy",
                 "ru": "Класс группы",
-                "ko": "그룹 클래스"
+                "ko": "그룹 클래스",
+                "ar": "فئة المجموعة"
               },
               "hint": {
                 "en": "This setting will effect the behavior in Homey flows.",
@@ -9674,7 +9882,8 @@
                 "sv": "Denna inställning påverkar beteendet i Homey-flöden.",
                 "pl": "To ustawienie wpłynie na zachowanie w przepływach Homey.",
                 "ru": "Эта настройка повлияет на поведение в потоках Homey.",
-                "ko": "이 설정은 Homey 플로우에서의 동작에 영향을 미칩니다."
+                "ko": "이 설정은 Homey 플로우에서의 동작에 영향을 미칩니다.",
+                "ar": "سيؤثر هذا الإعداد على السلوك في تدفقات Homey."
               },
               "values": [
                 {
