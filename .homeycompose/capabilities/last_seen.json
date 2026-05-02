@@ -1,0 +1,21 @@
+{
+	"type": "string",
+	"title": {
+		"en": "Last seen",
+		"nl": "Laatst gezien",
+		"da": "Sidst set",
+		"de": "Zuletzt gesehen",
+		"es": "Visto por última vez",
+		"fr": "Dernière vue",
+		"it": "Visto l'ultima volta",
+		"no": "Sist sett",
+		"sv": "Senast sedd",
+		"pl": "Ostatnio widziano",
+		"ru": "Последняя активность",
+		"ko": "마지막 확인",
+		"ar": "آخر ظهور"
+	},
+	"getable": true,
+	"setable": false,
+	"icon": "./assets/last_seen.svg"
+}

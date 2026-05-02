@@ -458,7 +458,9 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
 
             if (topic === this.deviceTopic) {
               const state = info as Z2MState;
-              await this.handleDeviceStateMessage(state);
+              if (this.isStoreUpToDate()) {
+                await this.handleDeviceStateMessage(state);
+              }
             }
 
             if (this.zigbee2MqttType !== 'Group' && topic === `${this.deviceTopic}/availability`) {
@@ -519,7 +521,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
       const capValues = converters.z2mToHomey(z2mValue, z2mState);
 
       // Skip if converter returns null (indicates capability should not be set)
-      if (capValues === null) continue;
+      if (!capValues) continue;
 
       for (const [capName, capVal] of Object.entries(capValues)) {
         // Skip undefined or null values
@@ -559,7 +561,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     if (!deviceInfo) {
       const isGroup = this.zigbee2MqttType === 'Group';
       const list = isGroup ? this.bridge?.groups : this.bridge?.devices;
-      
+
       if (!list || list.length === 0) {
         this.log(`Bridge ${isGroup ? 'group' : 'device'} list is empty, waiting for update before assuming deleted...`);
         return;

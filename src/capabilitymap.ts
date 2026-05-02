@@ -108,9 +108,12 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   color_temp_11: ['light_temperature.11', (v) => (Number(v) - 153) / 347, (v) => ({ color_temp_11: 153 + Number(v) * 347 })],
   color: (expose) => ({
     caps: ['light_hue', 'light_saturation', 'light_mode'],
-    z2mToHomey: ({
-      hue, saturation, x, y,
-    }, { color_mode: colorMode }) => {
+    z2mToHomey: (colorObj, { color_mode: colorMode }) => {
+      if (!colorObj) return null;
+      const {
+        hue, saturation, x, y,
+      } = colorObj;
+
       let lightHue: number | undefined;
       let lightSaturation: number | undefined;
 
@@ -226,6 +229,17 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
 
   // Custom string capabilities
   action: ['action', (v) => (v || '').toString()],
+  last_seen: ['last_seen', (v) => {
+    if (!v) return '';
+    const parsedValue = (typeof v === 'string' && /^\d+$/.test(v)) ? Number(v) : v;
+    const date = new Date(parsedValue);
+    if (Number.isNaN(date.getTime())) return v.toString();
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    return `${day}-${month} ${hours}:${minutes}`;
+  }],
   running_state: ['running_state', (v) => (v || '').toString()],
   motion_state: ['motion_state', (v) => (v || '').toString()],
   siren_state: ['siren_state', (v) => (v || '').toString()],
@@ -400,6 +414,26 @@ export function mapCapabilities(device: Z2MDevice, options: MapCapabilitiesOptio
 
   // Add model-specific additional properties
   exposes = exposes.concat(addProperties);
+
+  // Add global properties that are not in the device definition but are provided by Z2M
+  if (!isGroup) {
+    if (!exposes.find((e) => e.property === 'last_seen')) {
+      exposes.push({
+        type: 'text',
+        name: 'last_seen',
+        property: 'last_seen',
+        access: 1,
+      } as any);
+    }
+    if (!exposes.find((e) => e.property === 'linkquality')) {
+      exposes.push({
+        type: 'numeric',
+        name: 'linkquality',
+        property: 'linkquality',
+        access: 1,
+      } as any);
+    }
+  }
 
   // Process all exposes
   exposes.forEach((expose) => {
