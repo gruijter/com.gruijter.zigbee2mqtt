@@ -518,7 +518,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
       const converters = getCapabilityConverters(z2mProperty, mapping.expose);
       if (!converters) continue;
 
-      const capValues = converters.z2mToHomey(z2mValue, z2mState);
+      const capValues = converters.z2mToHomey(z2mValue, z2mState, this);
 
       // Skip if converter returns null (indicates capability should not be set)
       if (!capValues) continue;

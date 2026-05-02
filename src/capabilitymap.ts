@@ -229,16 +229,46 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
 
   // Custom string capabilities
   action: ['action', (v) => (v || '').toString()],
-  last_seen: ['last_seen', (v) => {
+  last_seen: ['last_seen', (v, state, device) => {
     if (!v) return '';
     const parsedValue = (typeof v === 'string' && /^\d+$/.test(v)) ? Number(v) : v;
     const date = new Date(parsedValue);
     if (Number.isNaN(date.getTime())) return v.toString();
-    const day = date.getDate().toString().padStart(2, '0');
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const hours = date.getHours().toString().padStart(2, '0');
-    const minutes = date.getMinutes().toString().padStart(2, '0');
-    return `${day}-${month} ${hours}:${minutes}`;
+
+    let timeZone = 'UTC';
+    try {
+      if (device?.homey?.clock) {
+        timeZone = device.homey.clock.getTimezone() || 'UTC';
+      }
+    } catch (e) {
+      // fallback to UTC
+    }
+
+    try {
+      const formatter = new Intl.DateTimeFormat('en-GB', {
+        timeZone,
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+      });
+
+      const parts = formatter.formatToParts(date);
+      const dd = parts.find((p) => p.type === 'day')?.value || '00';
+      const mm = parts.find((p) => p.type === 'month')?.value || '00';
+      const hh = parts.find((p) => p.type === 'hour')?.value || '00';
+      const min = parts.find((p) => p.type === 'minute')?.value || '00';
+
+      return `${dd}-${mm} ${hh}:${min}`;
+    } catch (e) {
+      // Fallback if Intl.DateTimeFormat fails
+      const day = date.getDate().toString().padStart(2, '0');
+      const month = (date.getMonth() + 1).toString().padStart(2, '0');
+      const hours = date.getHours().toString().padStart(2, '0');
+      const minutes = date.getMinutes().toString().padStart(2, '0');
+      return `${day}-${month} ${hours}:${minutes}`;
+    }
   }],
   running_state: ['running_state', (v) => (v || '').toString()],
   motion_state: ['motion_state', (v) => (v || '').toString()],
@@ -320,8 +350,8 @@ function resolveCapabilityEntry(
     const [cap, z2mToHomey, homeyToZ2m] = tuple as SingleCapabilityMap;
     return {
       caps: [cap],
-      z2mToHomey: (z2mVal, z2mState) => {
-        const result = z2mToHomey(z2mVal, z2mState);
+      z2mToHomey: (z2mVal, z2mState, device) => {
+        const result = z2mToHomey(z2mVal, z2mState, device);
         if (result === null) return null;
         return { [cap]: result };
       },

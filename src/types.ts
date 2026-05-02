@@ -60,15 +60,21 @@ export interface Z2MGroup {
 }
 
 /*------------------------------------------------------------------------*/
+/* Zigbee2MQTT State types
+/*------------------------------------------------------------------------*/
+
+export type Z2MState = Record<string, any>;
+
+/*------------------------------------------------------------------------*/
 /* Capability mapping types
 /*------------------------------------------------------------------------*/
 
 // Single-capability converters (used in capabilityMap for 1:1 mappings)
-export type SingleZ2MToHomeyConverter = (z2mVal: any, z2mState: Z2MState) => any;
+export type SingleZ2MToHomeyConverter = (z2mVal: any, z2mState: Z2MState, device?: any) => any;
 export type SingleHomeyToZ2MConverter = (homeyVal: any, getCapValue: (cap: string) => any) => Record<string, any>;
 
 // Multi-capability converters (used in capabilityMap for 1:N mappings)
-export type MultiZ2MToHomeyConverter = (z2mVal: any, z2mState: Z2MState) => Record<string, any> | null;
+export type MultiZ2MToHomeyConverter = (z2mVal: any, z2mState: Z2MState, device?: any) => Record<string, any> | null;
 export type MultiHomeyToZ2MConverter = (values: Record<string, any>, getCapValue: (cap: string) => any) => Record<string, any> | null;
 
 export type SingleCapabilityMap = [string, SingleZ2MToHomeyConverter, SingleHomeyToZ2MConverter?];
@@ -131,9 +137,3 @@ export interface GroupSettings extends DeviceSettings {
     members: Z2MGroupMember[];
     models: string;
 }
-
-/*------------------------------------------------------------------------*/
-/* Zigbee2MQTT State types
-/*------------------------------------------------------------------------*/
-
-export type Z2MState = Record<string, any>;
