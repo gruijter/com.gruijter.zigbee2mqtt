@@ -463,6 +463,14 @@ export function mapCapabilities(device: Z2MDevice, options: MapCapabilitiesOptio
         access: 1,
       } as any);
     }
+    if (!exposes.find((e) => e.property === 'battery_low') && (device.power_source === 'Battery' || exposes.find((e) => e.property === 'battery'))) {
+      exposes.push({
+        type: 'binary',
+        name: 'battery_low',
+        property: 'battery_low',
+        access: 1,
+      } as any);
+    }
   }
 
   // Process all exposes
