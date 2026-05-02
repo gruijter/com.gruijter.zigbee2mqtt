@@ -353,7 +353,9 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
         .on('message', (topic: string, message: any) => {
           handleMessage(topic, message).catch((error) => this.error(error));
         });
-      this.client.setMaxListeners(1000); // Support large networks
+      if (typeof this.client.setMaxListeners === 'function') {
+        this.client.setMaxListeners(1000); // Support large networks
+      }
       if (this.client.connected) await subscribeTopics();
       return Promise.resolve(true);
     } catch (error) {

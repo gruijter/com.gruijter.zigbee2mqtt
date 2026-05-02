@@ -150,7 +150,14 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
       }
     }
 
-    const deviceInfo = this.getDeviceInfo();
+    let deviceInfo;
+    try {
+      deviceInfo = this.getDeviceInfo();
+    } catch (e) {
+      this.log(`Cannot migrate store for ${this.getName()}: ${(e as Error).message}`);
+      return false;
+    }
+
     if (deviceInfo) {
       const isGroup = deviceInfo.type === 'group';
       const device = isGroup ? deviceInfo.devices[0] : deviceInfo.device;
@@ -541,9 +548,23 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
   // ============================================================================
 
   async checkChangedOrDeleted() {
-    const deviceInfo = this.getDeviceInfo();
+    let deviceInfo;
+    try {
+      deviceInfo = this.getDeviceInfo();
+    } catch (e) {
+      this.log(`Could not get device info yet: ${(e as Error).message}`);
+      return;
+    }
 
     if (!deviceInfo) {
+      const isGroup = this.zigbee2MqttType === 'Group';
+      const list = isGroup ? this.bridge?.groups : this.bridge?.devices;
+      
+      if (!list || list.length === 0) {
+        this.log(`Bridge ${isGroup ? 'group' : 'device'} list is empty, waiting for update before assuming deleted...`);
+        return;
+      }
+
       // Device deleted deleted
       this.error(this.zigbee2MqttType, 'was deleted in Zigbee2MQTT', this.settings.friendly_name);
       this.setUnavailable(`${this.zigbee2MqttType} went missing in Zigbee2MQTT`).catch(this.error);
@@ -580,7 +601,9 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
         this.bridgeOffline = true;
       } else if (this.bridgeOffline) {
         this.bridgeOffline = false;
-        this.restartDevice(1000).catch((error) => this.error(error));
+        if (this.availability !== 'offline') {
+          this.setAvailable().catch(this.error);
+        }
       }
     };
     this.homey.on('bridgeoffline', this.eventListenerBridgeOffline);

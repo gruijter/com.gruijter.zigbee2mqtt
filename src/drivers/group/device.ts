@@ -37,6 +37,10 @@ module.exports = class ZigbeeGroup extends Zigbee2MQTTDevice {
 
     const groups = allGroups.filter((group) => group.id.toString() === this.settings.uid);
     const group = groups[0];
+    if (!group) {
+      this.log('Could not find group with id', this.settings.uid, 'in bridge groups');
+      return null;
+    }
     const members = group.members.map((member: any) => member.ieee_address);
     const devices = allDevices.filter((dev: Z2MDevice) => dev.definition && dev.definition.exposes && members.includes(dev.ieee_address));
 
