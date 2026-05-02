@@ -69,6 +69,96 @@
         "ko": "휴일",
         "ar": "عطلة"
       }
+    },
+    {
+      "id": "comfort",
+      "title": {
+        "en": "Comfort",
+        "nl": "Comfort",
+        "da": "Komfort",
+        "de": "Komfort",
+        "es": "Confort",
+        "fr": "Confort",
+        "it": "Comfort",
+        "no": "Komfort",
+        "sv": "Komfort",
+        "pl": "Komfort",
+        "ru": "Комфорт",
+        "ko": "편안함",
+        "ar": "راحة"
+      }
+    },
+    {
+      "id": "eco",
+      "title": {
+        "en": "Eco",
+        "nl": "Eco",
+        "da": "Eco",
+        "de": "Eco",
+        "es": "Eco",
+        "fr": "Éco",
+        "it": "Eco",
+        "no": "Eco",
+        "sv": "Eco",
+        "pl": "Eko",
+        "ru": "Эко",
+        "ko": "에코",
+        "ar": "اقتصادي"
+      }
+    },
+    {
+      "id": "boost",
+      "title": {
+        "en": "Boost",
+        "nl": "Boost",
+        "da": "Boost",
+        "de": "Boost",
+        "es": "Boost",
+        "fr": "Boost",
+        "it": "Boost",
+        "no": "Boost",
+        "sv": "Boost",
+        "pl": "Boost",
+        "ru": "Буст",
+        "ko": "부스트",
+        "ar": "تعزيز"
+      }
+    },
+    {
+      "id": "complex",
+      "title": {
+        "en": "Complex",
+        "nl": "Complex",
+        "da": "Kompleks",
+        "de": "Komplex",
+        "es": "Complejo",
+        "fr": "Complexe",
+        "it": "Complesso",
+        "no": "Kompleks",
+        "sv": "Komplex",
+        "pl": "Złożony",
+        "ru": "Сложный",
+        "ko": "복합",
+        "ar": "معقد"
+      }
+    },
+    {
+      "id": "away",
+      "title": {
+        "en": "Away",
+        "nl": "Afwezig",
+        "da": "Væk",
+        "de": "Abwesend",
+        "es": "Ausente",
+        "fr": "Absent",
+        "it": "Assente",
+        "no": "Borte",
+        "sv": "Borta",
+        "pl": "Poza domem",
+        "ru": "Отсутствует",
+        "ko": "외출",
+        "ar": "بالخارج"
+      }
     }
   ],
   "uiComponent": "picker",

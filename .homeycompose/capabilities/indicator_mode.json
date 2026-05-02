@@ -87,6 +87,24 @@
         "ko": "켬/끔",
         "ar": "تشغيل/إيقاف"
       }
+    },
+    {
+      "id": "pos",
+      "title": {
+        "en": "Position",
+        "nl": "Positie",
+        "da": "Position",
+        "de": "Position",
+        "es": "Posición",
+        "fr": "Position",
+        "it": "Posizione",
+        "no": "Posisjon",
+        "sv": "Position",
+        "pl": "Pozycja",
+        "ru": "Позиция",
+        "ko": "위치",
+        "ar": "موضع"
+      }
     }
   ],
   "uiComponent": "picker",
