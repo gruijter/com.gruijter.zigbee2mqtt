@@ -47,6 +47,7 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
       this.settings = this.getSettings();
       this.baseTopic = `${this.settings.topic}`; // default zigbee2mqtt
       this.devices = await this.getStoreValue('devices') || [];
+      this.groups = await this.getStoreValue('groups') || [];
       this.msgCounter = 0;
       this.lastMPMUpdate = Date.now();
       await this.destroyListeners();
@@ -263,6 +264,7 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
             });
             this.devices = devices;
             // console.dir(this.devices, { depth: null });
+            this.setStoreValue('devices', this.devices).catch(this.error);
             this.homey.emit('devicelistupdate', true);
           }
 
@@ -281,6 +283,7 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
             // console.log('group list was updated', info);
             this.groups = info;
             // console.dir(this.groups, { depth: null });
+            this.setStoreValue('groups', this.groups).catch(this.error);
             this.homey.emit('grouplistupdate', true);
           }
         } catch (error) {
