@@ -1,6 +1,6 @@
 {
   "3.2.1": {
-    "en": "Fix bridge and mqtt (re)connection issues. Extend preset and indicator_mode capabilities. Stability improvements."
+    "en": "Fix bridge and mqtt (re)connection issues. Added last_seen. Added dynamic capability mapping based on status reports. Extend preset and indicator_mode capabilities. Stability improvements."
   },
   "3.2.0": {
     "en": "Fix bridge and mqtt connection issues. Massive translation update."
