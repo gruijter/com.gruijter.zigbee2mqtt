@@ -382,15 +382,21 @@ export function getCapabilityConverters(z2mProperty: string, expose: zigbeeHerds
   };
 }
 
+export function isPropertySupported(z2mProperty: string): boolean {
+  return z2mProperty in capabilityMap;
+}
+
 export interface MapCapabilitiesOptions {
   /** Whether this is a group (skips linkquality capability) */
   isGroup?: boolean;
+  /** Properties discovered from status reports that are missing from Z2M exposes */
+  discoveredProperties?: string[];
 }
 
 export function mapCapabilities(device: Z2MDevice, options: MapCapabilitiesOptions = {}): CapabilityMappings {
   const mappings: CapabilityMappings = {};
   const definedHomeyCapabilities = new Set<string>();
-  const { isGroup = false } = options;
+  const { isGroup = false, discoveredProperties = [] } = options;
 
   // Get the device model for skip/add map lookups
   const modelId = getDeviceModel(device);
@@ -463,11 +469,14 @@ export function mapCapabilities(device: Z2MDevice, options: MapCapabilitiesOptio
         access: 1,
       } as any);
     }
-    if (!exposes.find((e) => e.property === 'battery_low') && (device.power_source === 'Battery' || exposes.find((e) => e.property === 'battery'))) {
+  }
+
+  // Add dynamically discovered properties missing from Z2M exposes
+  for (const prop of discoveredProperties) {
+    if (!exposes.find((e) => e.property === prop)) {
       exposes.push({
-        type: 'binary',
-        name: 'battery_low',
-        property: 'battery_low',
+        name: prop,
+        property: prop,
         access: 1,
       } as any);
     }

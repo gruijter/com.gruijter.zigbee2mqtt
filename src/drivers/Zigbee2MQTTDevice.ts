@@ -24,7 +24,7 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 import Homey from 'homey';
 import util from 'util';
-import { mapCapabilities, getCapabilityConverters } from '../capabilitymap';
+import { mapCapabilities, getCapabilityConverters, isPropertySupported } from '../capabilitymap';
 import {
   CapabilityMapping, CapabilityMappings, DeviceAvailability, Z2MDevice, Z2MGroup, DeviceSettings, CapabilityOptions, Z2MState,
 } from '../types';
@@ -39,7 +39,7 @@ const STORE_VERSION = 2;
 const DURATION_CAPABILITIES = ['dim', 'dim.l1', 'dim.l2', 'light_temperature', 'light_hue', 'light_saturation', 'onoff'];
 
 export default abstract class Zigbee2MQTTDevice extends Homey.Device {
-  store: { capabilityMappings: CapabilityMappings; storeVersion: number };
+  store: { capabilityMappings: CapabilityMappings; storeVersion: number; discoveredProperties?: string[] };
   settings: DeviceSettings;
   bridge: Zigbee2MQTTBridge;
   deviceTopic: string;
@@ -140,7 +140,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
 
     // Remove unexpected store values
     if (this.store) {
-      const keysToKeep = ['capabilityMappings', 'storeVersion'];
+      const keysToKeep = ['capabilityMappings', 'storeVersion', 'discoveredProperties'];
       for (const key of Object.keys(this.store)) {
         if (!keysToKeep.includes(key)) {
           this.log(`Removing deprecated ${key} from store for ${this.getName()}`);
@@ -161,7 +161,8 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     if (deviceInfo) {
       const isGroup = deviceInfo.type === 'group';
       const device = isGroup ? deviceInfo.devices[0] : deviceInfo.device;
-      const capabilityMappings = mapCapabilities(device, { isGroup });
+      const discoveredProperties = this.store?.discoveredProperties || [];
+      const capabilityMappings = mapCapabilities(device, { isGroup, discoveredProperties });
 
       const needsUpdate = !this.store?.capabilityMappings
         || !util.isDeepStrictEqual(this.store.capabilityMappings, capabilityMappings)
@@ -238,6 +239,11 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     }
 
     await this.setCapabilityUnits();
+
+    if (this.availability !== 'offline' && !this.bridgeOffline && !this.restarting) {
+      this.setAvailable().catch(this.error);
+    }
+
     return true;
   }
 
@@ -505,10 +511,34 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
   }
 
   private async handleDeviceStateMessage(z2mState: Z2MState) {
+    let requiresMigration = false;
+    const discoveredProperties: string[] = this.store.discoveredProperties || [];
+
+    // First pass: check for newly discovered properties missing from Z2M exposes
+    for (const [z2mProperty] of Object.entries(z2mState)) {
+      const mapping = this.store.capabilityMappings?.[z2mProperty];
+      if (!mapping) {
+        if (!discoveredProperties.includes(z2mProperty) && isPropertySupported(z2mProperty)) {
+          this.log(`Discovered supported property '${z2mProperty}' in status report. Adding to capabilities.`);
+          discoveredProperties.push(z2mProperty);
+          requiresMigration = true;
+        }
+      }
+    }
+
+    if (requiresMigration) {
+      await this.setStoreValue('discoveredProperties', discoveredProperties);
+      this.store.discoveredProperties = discoveredProperties;
+      await this.migrateStore();
+      await this.migrate();
+      await this.registerListeners();
+    }
+
+    // Second pass: process the capability values
     for (const [z2mProperty, z2mValue] of Object.entries(z2mState)) {
       const mapping = this.store.capabilityMappings?.[z2mProperty];
       if (!mapping) {
-        if (!this.unmappedLogged.has(z2mProperty)) {
+        if (!this.unmappedLogged.has(z2mProperty) && !isPropertySupported(z2mProperty)) {
           this.log(`Capability ${z2mProperty} not mapped`);
           this.unmappedLogged.add(z2mProperty);
         }
