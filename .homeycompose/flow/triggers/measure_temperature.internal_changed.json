@@ -1,0 +1,47 @@
+{
+  "title": {
+    "en": "The internal temperature changed",
+    "nl": "De interne temperatuur is gewijzigd",
+    "da": "Den interne temperatur er ændret",
+    "de": "Die interne Temperatur hat sich geändert",
+    "es": "La temperatura interna ha cambiado",
+    "fr": "La température interne a changé",
+    "it": "La temperatura interna è cambiata",
+    "no": "Den interne temperaturen er endret",
+    "sv": "Den interna temperaturen ändrades",
+    "pl": "Temperatura wewnętrzna uległa zmianie",
+    "ru": "Внутренняя температура изменилась",
+    "ko": "내부 온도가 변경되었습니다",
+    "ar": "تغيرت درجة الحرارة الداخلية"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=measure_temperature.internal"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_temperature.internal",
+      "type": "number",
+      "title": {
+        "en": "Internal temperature",
+        "nl": "Interne temperatuur",
+        "da": "Intern temperatur",
+        "de": "Interne Temperatur",
+        "es": "Temperatura interna",
+        "fr": "Température interne",
+        "it": "Temperatura interna",
+        "no": "Intern temperatur",
+        "sv": "Intern temperatur",
+        "pl": "Temperatura wewnętrzna",
+        "ru": "Внутренняя температура",
+        "ko": "내부 온도",
+        "ar": "درجة الحرارة الداخلية"
+      },
+      "example": 35.5
+    }
+  ]
+}

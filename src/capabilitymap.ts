@@ -69,6 +69,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   local_temperature: ['measure_temperature.local', (v) => Number(v)],
   frost_protection_temperature: ['target_temperature.frost_protection', (v) => Number(v), (v) => ({ frost_protection_temperature: Number(v) })],
   device_temperature: ['measure_temperature.device', (v) => Number(v)],
+  internalTemperature: ['measure_temperature.internal', (v) => Number(v)],
   external_temperature: ['measure_temperature.external', (v) => Number(v), (v) => ({ external_temperature: Number(v) })],
   co: ['measure_co', (v) => Number(v)],
   co2: ['measure_co2', (v) => Number(v)],
