@@ -1,0 +1,25 @@
+{
+  "title": {
+    "en": "The light temperature 11 changed",
+    "nl": "De lichttemperatuur 11 is gewijzigd"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=light_temperature.11"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "light_temperature.11",
+      "type": "number",
+      "title": {
+        "en": "Light temperature",
+        "nl": "Lichttemperatuur"
+      },
+      "example": 0.5
+    }
+  ]
+}

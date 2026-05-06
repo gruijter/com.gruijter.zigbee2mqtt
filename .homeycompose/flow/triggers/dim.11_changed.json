@@ -1,19 +1,19 @@
 {
   "title": {
-    "en": "The dim level L2 changed",
-    "nl": "Het dimniveau L2 is gewijzigd"
+    "en": "The dim level 11 changed",
+    "nl": "Het dimniveau 11 is gewijzigd"
   },
   "highlight": true,
   "args": [
     {
       "type": "device",
       "name": "device",
-      "filter": "driver_id=device|group&capabilities=dim.l2"
+      "filter": "driver_id=device|group&capabilities=dim.11"
     }
   ],
   "tokens": [
     {
-      "name": "dim.l2",
+      "name": "dim.11",
       "type": "number",
       "title": {
         "en": "Dim level",

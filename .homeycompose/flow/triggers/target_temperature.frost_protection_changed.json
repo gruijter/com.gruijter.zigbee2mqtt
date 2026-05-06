@@ -1,19 +1,9 @@
 {
   "title": {
     "en": "The frost protection temperature changed",
-    "nl": "De vorstbeveiligingstemperatuur is gewijzigd",
-    "da": "Frostbeskyttelsestemperaturen er ændret",
-    "de": "Die Frostschutztemperatur hat sich geändert",
-    "es": "La temperatura de protección contra heladas ha cambiado",
-    "fr": "La température de protection contre le gel a changé",
-    "it": "La temperatura di protezione dal gelo è cambiata",
-    "no": "Frostbeskyttelsestemperaturen har endret seg",
-    "sv": "Frostskyddstemperaturen har ändrats",
-    "pl": "Temperatura ochrony przed mrozem została zmieniona",
-    "ru": "Температура защиты от замерзания изменилась",
-    "ko": "서리 방지 온도가 변경되었습니다",
-    "ar": "تغيرت درجة حرارة الحماية من الصقيع"
+    "nl": "De vorstbeveiliging temperatuur is gewijzigd"
   },
+  "highlight": true,
   "args": [
     {
       "type": "device",
@@ -26,21 +16,10 @@
       "name": "target_temperature.frost_protection",
       "type": "number",
       "title": {
-        "en": "Temperature",
-        "nl": "Temperatuur",
-        "da": "Temperatur",
-        "de": "Temperatur",
-        "es": "Temperatura",
-        "fr": "Température",
-        "it": "Temperatura",
-        "no": "Temperatur",
-        "sv": "Temperatur",
-        "pl": "Temperatura",
-        "ru": "Температура",
-        "ko": "온도",
-        "ar": "درجة الحرارة"
+        "en": "Frost protection temperature",
+        "nl": "Vorstbeveiliging temperatuur"
       },
-      "example": 6
+      "example": 5.0
     }
   ]
 }
