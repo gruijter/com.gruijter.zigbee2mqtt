@@ -1,0 +1,14 @@
+{
+  "title": {
+    "en": "Rain Stopped",
+    "nl": "Regen Gestopt"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=alarm_water.rain"
+    }
+  ]
+}

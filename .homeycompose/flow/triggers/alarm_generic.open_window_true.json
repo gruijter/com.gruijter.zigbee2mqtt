@@ -1,0 +1,14 @@
+{
+  "title": {
+    "en": "Window Opened",
+    "nl": "Raam Geopend"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=alarm_generic.open_window"
+    }
+  ]
+}

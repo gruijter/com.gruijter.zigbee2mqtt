@@ -1,0 +1,14 @@
+{
+  "title": {
+    "en": "Area 1 Occupancy Cleared",
+    "nl": "Gebied 1 Bezetting Vrij"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=alarm_occupancy.area1"
+    }
+  ]
+}

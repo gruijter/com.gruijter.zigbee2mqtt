@@ -1,0 +1,14 @@
+{
+  "title": {
+    "en": "Water Warning Cleared",
+    "nl": "Water Waarschuwing Opgeheven"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=alarm_water.warning"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": {
+    "en": "Self-test Turned On",
+    "nl": "Zelftest Ingeschakeld"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.self_test"
+    }
+  ]
+}

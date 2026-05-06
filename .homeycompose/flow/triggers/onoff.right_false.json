@@ -1,18 +1,7 @@
 {
   "title": {
-    "en": "Right Turned Off",
-    "nl": "Rechts Uitgeschakeld",
-    "da": "Højre Slukket",
-    "de": "Rechts Ausgeschaltet",
-    "es": "Derecha Apagada",
-    "fr": "Droite Éteinte",
-    "it": "Destra Spenta",
-    "no": "Høyre Av",
-    "sv": "Höger Av",
-    "pl": "Prawy Wyłączony",
-    "ru": "Право Выключено",
-    "ko": "오른쪽 꺼짐",
-    "ar": "تم إيقاف اليمين"
+    "en": "Turned Off Right",
+    "nl": "Rechts Uitgeschakeld"
   },
   "highlight": true,
   "args": [

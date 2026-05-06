@@ -1,0 +1,14 @@
+{
+  "title": {
+    "en": "Child Lock Activated",
+    "nl": "Kinderslot Geactiveerd"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=locked.child"
+    }
+  ]
+}

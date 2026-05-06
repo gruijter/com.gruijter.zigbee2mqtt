@@ -1,0 +1,14 @@
+{
+  "title": {
+    "en": "Area 1 Occupancy Detected",
+    "nl": "Gebied 1 Bezetting Gedetecteerd"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=alarm_occupancy.area1"
+    }
+  ]
+}

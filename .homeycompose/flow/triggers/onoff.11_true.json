@@ -1,14 +1,14 @@
 {
   "title": {
-    "en": "Turned On L4",
-    "nl": "Ingeschakeld L4"
+    "en": "Turned On 11",
+    "nl": "Ingeschakeld 11"
   },
   "highlight": true,
   "args": [
     {
       "type": "device",
       "name": "device",
-      "filter": "driver_id=device|group&capabilities=onoff.l4"
+      "filter": "driver_id=device|group&capabilities=onoff.11"
     }
   ]
 }

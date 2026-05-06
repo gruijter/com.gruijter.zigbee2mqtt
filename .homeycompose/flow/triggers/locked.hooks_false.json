@@ -1,0 +1,14 @@
+{
+  "title": {
+    "en": "Hooks Unlocked",
+    "nl": "Haken Ontgrendeld"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=locked.hooks"
+    }
+  ]
+}

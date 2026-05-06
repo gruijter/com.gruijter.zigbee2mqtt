@@ -1,0 +1,14 @@
+{
+  "title": {
+    "en": "Turned Off 11",
+    "nl": "Uitgeschakeld 11"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.11"
+    }
+  ]
+}

@@ -1,18 +1,7 @@
 {
   "title": {
-    "en": "Bottom Turned Off",
-    "nl": "Onder Uitgeschakeld",
-    "da": "Bund Slukket",
-    "de": "Unten Ausgeschaltet",
-    "es": "Abajo Apagado",
-    "fr": "Bas Éteint",
-    "it": "Basso Spento",
-    "no": "Bunn Av",
-    "sv": "Botten Av",
-    "pl": "Dolny Wyłączony",
-    "ru": "Низ Выключен",
-    "ko": "아래쪽 꺼짐",
-    "ar": "تم إيقاف الجزء السفلي"
+    "en": "Turned Off Bottom",
+    "nl": "Onder Uitgeschakeld"
   },
   "highlight": true,
   "args": [

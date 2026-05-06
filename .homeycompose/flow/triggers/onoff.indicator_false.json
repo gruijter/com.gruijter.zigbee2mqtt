@@ -1,0 +1,14 @@
+{
+  "title": {
+    "en": "Indicator Turned Off",
+    "nl": "Indicator Uitgeschakeld"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.indicator"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": {
+    "en": "Water Warning",
+    "nl": "Water Waarschuwing"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=alarm_water.warning"
+    }
+  ]
+}

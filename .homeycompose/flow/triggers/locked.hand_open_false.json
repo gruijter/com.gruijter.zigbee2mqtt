@@ -1,0 +1,14 @@
+{
+  "title": {
+    "en": "Hand Open Unlocked",
+    "nl": "Hand Open Ontgrendeld"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=locked.hand_open"
+    }
+  ]
+}

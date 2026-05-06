@@ -1,18 +1,7 @@
 {
   "title": {
-    "en": "L4 Turned Off",
-    "nl": "L4 Uitgeschakeld",
-    "da": "L4 slukket",
-    "de": "L4 ausgeschaltet",
-    "es": "L4 apagado",
-    "fr": "L4 éteint",
-    "it": "L4 spento",
-    "no": "L4 slått av",
-    "sv": "L4 avstängd",
-    "pl": "L4 wyłączony",
-    "ru": "L4 выключен",
-    "ko": "L4 꺼짐",
-    "ar": "تم إيقاف L4"
+    "en": "Turned Off L4",
+    "nl": "Uitgeschakeld L4"
   },
   "highlight": true,
   "args": [

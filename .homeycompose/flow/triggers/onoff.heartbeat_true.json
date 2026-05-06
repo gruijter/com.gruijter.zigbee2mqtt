@@ -1,0 +1,14 @@
+{
+  "title": {
+    "en": "Heartbeat Turned On",
+    "nl": "Heartbeat Ingeschakeld"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.heartbeat"
+    }
+  ]
+}

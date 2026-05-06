@@ -1,0 +1,14 @@
+{
+  "title": {
+    "en": "Pre-alarm Turned On",
+    "nl": "Voor-alarm Ingeschakeld"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.pre_alarm"
+    }
+  ]
+}
