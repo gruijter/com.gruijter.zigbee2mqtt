@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.zigbee2mqtt",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "compatibility": ">=12.11.0",
   "sdk": 3,
   "platforms": [
@@ -277,6 +277,266 @@
       },
       {
         "title": {
+          "en": "Window Closed",
+          "nl": "Raam Gesloten",
+          "da": "Vindue lukket",
+          "de": "Fenster geschlossen",
+          "es": "Ventana cerrada",
+          "fr": "Fenêtre fermée",
+          "it": "Finestra chiusa",
+          "no": "Vindu lukket",
+          "sv": "Fönster stängt",
+          "pl": "Okno zamknięte",
+          "ru": "Окно закрыто",
+          "ko": "창문 닫힘",
+          "ar": "نافذة مغلقة"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=alarm_generic.open_window"
+          }
+        ],
+        "id": "alarm_generic.open_window_false"
+      },
+      {
+        "title": {
+          "en": "Window Opened",
+          "nl": "Raam Geopend",
+          "da": "Vindue åbnet",
+          "de": "Fenster geöffnet",
+          "es": "Ventana abierta",
+          "fr": "Fenêtre ouverte",
+          "it": "Finestra aperta",
+          "no": "Vindu åpnet",
+          "sv": "Fönster öppnat",
+          "pl": "Okno otwarte",
+          "ru": "Окно открыто",
+          "ko": "창문 열림",
+          "ar": "نافذة مفتوحة"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=alarm_generic.open_window"
+          }
+        ],
+        "id": "alarm_generic.open_window_true"
+      },
+      {
+        "title": {
+          "en": "Area 1 Occupancy Cleared",
+          "nl": "Gebied 1 Bezetting Vrij",
+          "da": "Område 1 belægning ryddet",
+          "de": "Bereich 1 Belegung geräumt",
+          "es": "Ocupación en área 1 despejada",
+          "fr": "Occupation de la zone 1 effacée",
+          "it": "Occupazione Area 1 libera",
+          "no": "Område 1 belegg ledig",
+          "sv": "Område 1 närvaro rensad",
+          "pl": "Strefa 1 pusta",
+          "ru": "Зона 1: присутствие не обнаружено",
+          "ko": "구역 1 점유 해제됨",
+          "ar": "تم إخلاء إشغال المنطقة 1"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=alarm_occupancy.area1"
+          }
+        ],
+        "id": "alarm_occupancy.area1_false"
+      },
+      {
+        "title": {
+          "en": "Area 1 Occupancy Detected",
+          "nl": "Gebied 1 Bezetting Gedetecteerd",
+          "da": "Område 1 belægning opdaget",
+          "de": "Bereich 1 Belegung erkannt",
+          "es": "Ocupación en área 1 detectada",
+          "fr": "Occupation de la zone 1 détectée",
+          "it": "Occupazione Area 1 rilevata",
+          "no": "Område 1 belegg oppdaget",
+          "sv": "Område 1 närvaro upptäckt",
+          "pl": "Wykryto obecność w strefie 1",
+          "ru": "Зона 1: обнаружено присутствие",
+          "ko": "구역 1 점유 감지됨",
+          "ar": "تم اكتشاف إشغال المنطقة 1"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=alarm_occupancy.area1"
+          }
+        ],
+        "id": "alarm_occupancy.area1_true"
+      },
+      {
+        "title": {
+          "en": "Area 2 Occupancy Cleared",
+          "nl": "Gebied 2 Bezetting Vrij",
+          "da": "Område 2 belægning ryddet",
+          "de": "Bereich 2 Belegung geräumt",
+          "es": "Ocupación en área 2 despejada",
+          "fr": "Occupation de la zone 2 effacée",
+          "it": "Occupazione Area 2 libera",
+          "no": "Område 2 belegg ledig",
+          "sv": "Område 2 närvaro rensad",
+          "pl": "Strefa 2 pusta",
+          "ru": "Зона 2: присутствие не обнаружено",
+          "ko": "구역 2 점유 해제됨",
+          "ar": "تم إخلاء إشغال المنطقة 2"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=alarm_occupancy.area2"
+          }
+        ],
+        "id": "alarm_occupancy.area2_false"
+      },
+      {
+        "title": {
+          "en": "Area 2 Occupancy Detected",
+          "nl": "Gebied 2 Bezetting Gedetecteerd",
+          "da": "Område 2 belægning opdaget",
+          "de": "Bereich 2 Belegung erkannt",
+          "es": "Ocupación en área 2 detectada",
+          "fr": "Occupation de la zone 2 détectée",
+          "it": "Occupazione Area 2 rilevata",
+          "no": "Område 2 belegg oppdaget",
+          "sv": "Område 2 närvaro upptäckt",
+          "pl": "Wykryto obecność w strefie 2",
+          "ru": "Зона 2: обнаружено присутствие",
+          "ko": "구역 2 점유 감지됨",
+          "ar": "تم اكتشاف إشغال المنطقة 2"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=alarm_occupancy.area2"
+          }
+        ],
+        "id": "alarm_occupancy.area2_true"
+      },
+      {
+        "title": {
+          "en": "Area 3 Occupancy Cleared",
+          "nl": "Gebied 3 Bezetting Vrij",
+          "da": "Område 3 belægning ryddet",
+          "de": "Bereich 3 Belegung geräumt",
+          "es": "Ocupación en área 3 despejada",
+          "fr": "Occupation de la zone 3 effacée",
+          "it": "Occupazione Area 3 libera",
+          "no": "Område 3 belegg ledig",
+          "sv": "Område 3 närvaro rensad",
+          "pl": "Strefa 3 pusta",
+          "ru": "Зона 3: присутствие не обнаружено",
+          "ko": "구역 3 점유 해제됨",
+          "ar": "تم إخلاء إشغال المنطقة 3"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=alarm_occupancy.area3"
+          }
+        ],
+        "id": "alarm_occupancy.area3_false"
+      },
+      {
+        "title": {
+          "en": "Area 3 Occupancy Detected",
+          "nl": "Gebied 3 Bezetting Gedetecteerd",
+          "da": "Område 3 belægning opdaget",
+          "de": "Bereich 3 Belegung erkannt",
+          "es": "Ocupación en área 3 detectada",
+          "fr": "Occupation de la zone 3 détectée",
+          "it": "Occupazione Area 3 rilevata",
+          "no": "Område 3 belegg oppdaget",
+          "sv": "Område 3 närvaro upptäckt",
+          "pl": "Wykryto obecność w strefie 3",
+          "ru": "Зона 3: обнаружено присутствие",
+          "ko": "구역 3 점유 감지됨",
+          "ar": "تم اكتشاف إشغال المنطقة 3"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=alarm_occupancy.area3"
+          }
+        ],
+        "id": "alarm_occupancy.area3_true"
+      },
+      {
+        "title": {
+          "en": "Area 4 Occupancy Cleared",
+          "nl": "Gebied 4 Bezetting Vrij",
+          "da": "Område 4 belægning ryddet",
+          "de": "Bereich 4 Belegung geräumt",
+          "es": "Ocupación en área 4 despejada",
+          "fr": "Occupation de la zone 4 effacée",
+          "it": "Occupazione Area 4 libera",
+          "no": "Område 4 belegg ledig",
+          "sv": "Område 4 närvaro rensad",
+          "pl": "Strefa 4 pusta",
+          "ru": "Зона 4: присутствие не обнаружено",
+          "ko": "구역 4 점유 해제됨",
+          "ar": "تم إخلاء إشغال المنطقة 4"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=alarm_occupancy.area4"
+          }
+        ],
+        "id": "alarm_occupancy.area4_false"
+      },
+      {
+        "title": {
+          "en": "Area 4 Occupancy Detected",
+          "nl": "Gebied 4 Bezetting Gedetecteerd",
+          "da": "Område 4 belægning opdaget",
+          "de": "Bereich 4 Belegung erkannt",
+          "es": "Ocupación en área 4 detectada",
+          "fr": "Occupation de la zone 4 détectée",
+          "it": "Occupazione Area 4 rilevata",
+          "no": "Område 4 belegg oppdaget",
+          "sv": "Område 4 närvaro upptäckt",
+          "pl": "Wykryto obecność w strefie 4",
+          "ru": "Зона 4: обнаружено присутствие",
+          "ko": "구역 4 점유 감지됨",
+          "ar": "تم اكتشاف إشغال المنطقة 4"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=alarm_occupancy.area4"
+          }
+        ],
+        "id": "alarm_occupancy.area4_true"
+      },
+      {
+        "title": {
           "en": "The Offline Alarm Turned Off",
           "nl": "Het offline alarm is uitgeschakeld",
           "da": "Offline Alarmerne slukket",
@@ -326,6 +586,110 @@
           }
         ],
         "id": "alarm_offline_true"
+      },
+      {
+        "title": {
+          "en": "Rain Stopped",
+          "nl": "Regen Gestopt",
+          "da": "Regnen er stoppet",
+          "de": "Regen hat aufgehört",
+          "es": "La lluvia se detuvo",
+          "fr": "La pluie s'est arrêtée",
+          "it": "Pioggia fermata",
+          "no": "Regnet har stoppet",
+          "sv": "Regnet slutade",
+          "pl": "Deszcz przestał padać",
+          "ru": "Дождь прекратился",
+          "ko": "비가 그침",
+          "ar": "توقف المطر"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=alarm_water.rain"
+          }
+        ],
+        "id": "alarm_water.rain_false"
+      },
+      {
+        "title": {
+          "en": "Rain Detected",
+          "nl": "Regen Gedetecteerd",
+          "da": "Regn opdaget",
+          "de": "Regen erkannt",
+          "es": "Lluvia detectada",
+          "fr": "Pluie détectée",
+          "it": "Pioggia rilevata",
+          "no": "Regn oppdaget",
+          "sv": "Regn upptäckt",
+          "pl": "Wykryto deszcz",
+          "ru": "Обнаружен дождь",
+          "ko": "비 감지됨",
+          "ar": "تم اكتشاف مطر"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=alarm_water.rain"
+          }
+        ],
+        "id": "alarm_water.rain_true"
+      },
+      {
+        "title": {
+          "en": "Water Warning Cleared",
+          "nl": "Water Waarschuwing Opgeheven",
+          "da": "Vandadvarsel afblæst",
+          "de": "Wasserwarnung aufgehoben",
+          "es": "Advertencia de agua cancelada",
+          "fr": "Avertissement d'eau annulé",
+          "it": "Avviso acqua annullato",
+          "no": "Vannadvarsel avblåst",
+          "sv": "Vattenvarning avblåst",
+          "pl": "Ostrzeżenie o wodzie odwołane",
+          "ru": "Предупреждение о воде снято",
+          "ko": "물 경고 해제됨",
+          "ar": "تم إزالة تحذير المياه"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=alarm_water.warning"
+          }
+        ],
+        "id": "alarm_water.warning_false"
+      },
+      {
+        "title": {
+          "en": "Water Warning",
+          "nl": "Water Waarschuwing",
+          "da": "Vandadvarsel",
+          "de": "Wasserwarnung",
+          "es": "Advertencia de agua",
+          "fr": "Avertissement d'eau",
+          "it": "Avviso acqua",
+          "no": "Vannadvarsel",
+          "sv": "Vattenvarning",
+          "pl": "Ostrzeżenie o wodzie",
+          "ru": "Предупреждение о воде",
+          "ko": "물 경고",
+          "ar": "تحذير من المياه"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=alarm_water.warning"
+          }
+        ],
+        "id": "alarm_water.warning_true"
       },
       {
         "title": {
@@ -669,6 +1033,54 @@
       },
       {
         "title": {
+          "en": "The dim level 11 changed",
+          "nl": "Het dimniveau 11 is gewijzigd",
+          "da": "Lysstyrkeniveau 11 er ændret",
+          "de": "Das Dimmniveau 11 hat sich geändert",
+          "es": "El nivel de atenuación 11 ha cambiado",
+          "fr": "Le niveau de luminosité 11 a changé",
+          "it": "Il livello di oscuramento 11 è cambiato",
+          "no": "Dimmenivå 11 er endret",
+          "sv": "Dämningsnivån 11 har ändrats",
+          "pl": "Poziom ściemniania 11 został zmieniony",
+          "ru": "Уровень затемнения 11 изменен",
+          "ko": "디밍 레벨 11이 변경되었습니다",
+          "ar": "تغير مستوى التعتيم 11"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=dim.11"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "dim.11",
+            "type": "number",
+            "title": {
+              "en": "Dim level",
+              "nl": "Dimniveau",
+              "da": "Lysstyrkeniveau",
+              "de": "Dimmniveau",
+              "es": "Nivel de atenuación",
+              "fr": "Niveau de luminosité",
+              "it": "Livello di oscuramento",
+              "no": "Dimmenivå",
+              "sv": "Dämningsnivå",
+              "pl": "Poziom ściemniania",
+              "ru": "Уровень затемнения",
+              "ko": "디밍 레벨",
+              "ar": "مستوى التعتيم"
+            },
+            "example": 50
+          }
+        ],
+        "id": "dim.11_changed"
+      },
+      {
+        "title": {
           "en": "The dim level L1 changed",
           "nl": "Het dimniveau L1 is gewijzigd",
           "da": "Lysstyrkeniveau L1 er ændret",
@@ -719,16 +1131,16 @@
         "title": {
           "en": "The dim level L2 changed",
           "nl": "Het dimniveau L2 is gewijzigd",
-          "da": "Dæmpningsniveau L2 er ændret",
+          "da": "Lysstyrkeniveau L2 er ændret",
           "de": "Das Dimmniveau L2 hat sich geändert",
           "es": "El nivel de atenuación L2 ha cambiado",
-          "fr": "Le niveau de gradation L2 a changé",
-          "it": "Il livello di attenuazione L2 è cambiato",
-          "no": "Dempe nivå L2 har endret seg",
-          "sv": "Dämningsnivå L2 har ändrats",
+          "fr": "Le niveau de luminosité L2 a changé",
+          "it": "Il livello di oscuramento L2 è cambiato",
+          "no": "Dimmenivå L2 er endret",
+          "sv": "Dämningsnivån L2 har ändrats",
           "pl": "Poziom ściemniania L2 został zmieniony",
-          "ru": "Уровень затемнения L2 изменился",
-          "ko": "디밍 수준 L2가 변경되었습니다",
+          "ru": "Уровень затемнения L2 изменен",
+          "ko": "디밍 레벨 L2가 변경되었습니다",
           "ar": "تغير مستوى التعتيم L2"
         },
         "highlight": true,
@@ -746,19 +1158,19 @@
             "title": {
               "en": "Dim level",
               "nl": "Dimniveau",
-              "da": "Dæmpningsniveau",
+              "da": "Lysstyrkeniveau",
               "de": "Dimmniveau",
               "es": "Nivel de atenuación",
-              "fr": "Niveau de la gradation",
-              "it": "Livello di attenuazione",
-              "no": "Dempingsnivå",
+              "fr": "Niveau de luminosité",
+              "it": "Livello di oscuramento",
+              "no": "Dimmenivå",
               "sv": "Dämningsnivå",
               "pl": "Poziom ściemniania",
               "ru": "Уровень затемнения",
-              "ko": "디밍 수준",
+              "ko": "디밍 레벨",
               "ar": "مستوى التعتيم"
             },
-            "example": 53
+            "example": 50
           }
         ],
         "id": "dim.l2_changed"
@@ -861,15 +1273,219 @@
       },
       {
         "title": {
+          "en": "The light temperature 11 changed",
+          "nl": "De lichttemperatuur 11 is gewijzigd",
+          "da": "Lystemperaturen 11 er ændret",
+          "de": "Die Lichttemperatur 11 hat sich geändert",
+          "es": "La temperatura de la luz 11 ha cambiado",
+          "fr": "La température de la lumière 11 a changé",
+          "it": "La temperatura della luce 11 è cambiata",
+          "no": "Lystemperaturen 11 er endret",
+          "sv": "Ljustemperaturen 11 ändrades",
+          "pl": "Temperatura światła 11 uległa zmianie",
+          "ru": "Цветовая температура 11 изменилась",
+          "ko": "조명 온도 11이 변경되었습니다",
+          "ar": "تغيرت درجة حرارة الضوء 11"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=light_temperature.11"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "light_temperature.11",
+            "type": "number",
+            "title": {
+              "en": "Light temperature",
+              "nl": "Lichttemperatuur",
+              "da": "Lystemperatur",
+              "de": "Lichttemperatur",
+              "es": "Temperatura de la luz",
+              "fr": "Température de la lumière",
+              "it": "Temperatura della luce",
+              "no": "Lystemperatur",
+              "sv": "Ljustemperatur",
+              "pl": "Temperatura światła",
+              "ru": "Цветовая температура",
+              "ko": "조명 온도",
+              "ar": "درجة حرارة الضوء"
+            },
+            "example": 0.5
+          }
+        ],
+        "id": "light_temperature.11_changed"
+      },
+      {
+        "title": {
+          "en": "Child Lock Deactivated",
+          "nl": "Kinderslot Gedeactiveerd",
+          "da": "Børnesikring deaktiveret",
+          "de": "Kindersicherung deaktiviert",
+          "es": "Bloqueo para niños desactivado",
+          "fr": "Sécurité enfant désactivée",
+          "it": "Blocco bambini disattivato",
+          "no": "Barnesikring deaktivert",
+          "sv": "Barnspärr inaktiverad",
+          "pl": "Blokada rodzicielska wyłączona",
+          "ru": "Детский замок деактивирован",
+          "ko": "차일드락 비활성화됨",
+          "ar": "تم إلغاء تفعيل قفل الأطفال"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=locked.child"
+          }
+        ],
+        "id": "locked.child_false"
+      },
+      {
+        "title": {
+          "en": "Child Lock Activated",
+          "nl": "Kinderslot Geactiveerd",
+          "da": "Børnesikring aktiveret",
+          "de": "Kindersicherung aktiviert",
+          "es": "Bloqueo para niños activado",
+          "fr": "Sécurité enfant activée",
+          "it": "Blocco bambini attivato",
+          "no": "Barnesikring aktivert",
+          "sv": "Barnspärr aktiverad",
+          "pl": "Blokada rodzicielska włączona",
+          "ru": "Детский замок активирован",
+          "ko": "차일드락 활성화됨",
+          "ar": "تم تفعيل قفل الأطفال"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=locked.child"
+          }
+        ],
+        "id": "locked.child_true"
+      },
+      {
+        "title": {
+          "en": "Hand Open Unlocked",
+          "nl": "Hand Open Ontgrendeld",
+          "da": "Håndåben låst op",
+          "de": "Hand-Offen entriegelt",
+          "es": "Apertura manual desbloqueada",
+          "fr": "Ouverture manuelle déverrouillée",
+          "it": "Apertura manuale sbloccata",
+          "no": "Håndåpning låst opp",
+          "sv": "Handöppning upplåst",
+          "pl": "Ręczne otwieranie odblokowane",
+          "ru": "Ручное открытие разблокировано",
+          "ko": "수동 열림 잠금 해제됨",
+          "ar": "الفتح اليدوي غير مقفل"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=locked.hand_open"
+          }
+        ],
+        "id": "locked.hand_open_false"
+      },
+      {
+        "title": {
+          "en": "Hand Open Locked",
+          "nl": "Hand Open Vergrendeld",
+          "da": "Håndåben låst",
+          "de": "Hand-Offen verriegelt",
+          "es": "Apertura manual bloqueada",
+          "fr": "Ouverture manuelle verrouillée",
+          "it": "Apertura manuale bloccata",
+          "no": "Håndåpning låst",
+          "sv": "Handöppning låst",
+          "pl": "Ręczne otwieranie zablokowane",
+          "ru": "Ручное открытие заблокировано",
+          "ko": "수동 열림 잠김",
+          "ar": "الفتح اليدوي مقفل"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=locked.hand_open"
+          }
+        ],
+        "id": "locked.hand_open_true"
+      },
+      {
+        "title": {
+          "en": "Hooks Unlocked",
+          "nl": "Haken Ontgrendeld",
+          "da": "Kroge låst op",
+          "de": "Haken entriegelt",
+          "es": "Ganchos desbloqueados",
+          "fr": "Crochets déverrouillés",
+          "it": "Ganci sbloccati",
+          "no": "Kroker låst opp",
+          "sv": "Krokar upplåsta",
+          "pl": "Haki odblokowane",
+          "ru": "Крюки разблокированы",
+          "ko": "후크 잠금 해제됨",
+          "ar": "تم فتح الخطافات"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=locked.hooks"
+          }
+        ],
+        "id": "locked.hooks_false"
+      },
+      {
+        "title": {
+          "en": "Hooks Locked",
+          "nl": "Haken Vergrendeld",
+          "da": "Kroge låst",
+          "de": "Haken verriegelt",
+          "es": "Ganchos bloqueados",
+          "fr": "Crochets verrouillés",
+          "it": "Ganci bloccati",
+          "no": "Kroker låst",
+          "sv": "Krokar låsta",
+          "pl": "Haki zablokowane",
+          "ru": "Крюки заблокированы",
+          "ko": "후크 잠김",
+          "ar": "الخطافات مقفلة"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=locked.hooks"
+          }
+        ],
+        "id": "locked.hooks_true"
+      },
+      {
+        "title": {
           "en": "The external humidity changed",
           "nl": "De externe luchtvochtigheid is gewijzigd",
-          "da": "Den eksterne luftfugtighed ændrede sig",
+          "da": "Den eksterne luftfugtighed er ændret",
           "de": "Die externe Luftfeuchtigkeit hat sich geändert",
           "es": "La humedad externa ha cambiado",
           "fr": "L'humidité externe a changé",
           "it": "L'umidità esterna è cambiata",
-          "no": "Den eksterne luftfuktigheten endret seg",
-          "sv": "Den externa luftfuktigheten har ändrats",
+          "no": "Den eksterne luftfuktigheten er endret",
+          "sv": "Den yttre luftfuktigheten ändrades",
           "pl": "Wilgotność zewnętrzna uległa zmianie",
           "ru": "Внешняя влажность изменилась",
           "ko": "외부 습도가 변경되었습니다",
@@ -888,39 +1504,39 @@
             "name": "measure_humidity.external",
             "type": "number",
             "title": {
-              "en": "Humidity",
-              "nl": "Vochtigheid",
-              "da": "Fugtighed",
-              "de": "Feuchtigkeit",
-              "es": "Humedad",
-              "fr": "Humidité",
-              "it": "Umidità",
-              "no": "Fuktighet",
-              "sv": "Fuktighet",
-              "pl": "Wilgotność",
-              "ru": "Влажность",
-              "ko": "습도",
-              "ar": "الرطوبة"
+              "en": "External humidity",
+              "nl": "Externe luchtvochtigheid",
+              "da": "Ekstern luftfugtighed",
+              "de": "Externe Luftfeuchtigkeit",
+              "es": "Humedad externa",
+              "fr": "Humidité externe",
+              "it": "Umidità esterna",
+              "no": "Ekstern luftfuktighet",
+              "sv": "Yttre luftfuktighet",
+              "pl": "Wilgotność zewnętrzna",
+              "ru": "Внешняя влажность",
+              "ko": "외부 습도",
+              "ar": "الرطوبة الخارجية"
             },
-            "example": 53
+            "example": 55
           }
         ],
         "id": "measure_humidity.external_changed"
       },
       {
         "title": {
-          "en": "The soil humidity changed",
+          "en": "The soil moisture changed",
           "nl": "De bodemvochtigheid is gewijzigd",
-          "da": "Jordfugtigheden ændrede sig",
+          "da": "Jordfugtigheden er ændret",
           "de": "Die Bodenfeuchtigkeit hat sich geändert",
           "es": "La humedad del suelo ha cambiado",
           "fr": "L'humidité du sol a changé",
           "it": "L'umidità del suolo è cambiata",
-          "no": "Jordfuktigheten endret seg",
-          "sv": "Jordfuktigheten har förändrats",
+          "no": "Jordfuktigheten er endret",
+          "sv": "Markfuktigheten ändrades",
           "pl": "Wilgotność gleby uległa zmianie",
           "ru": "Влажность почвы изменилась",
-          "ko": "토양 습도가 변경되었습니다",
+          "ko": "토양 수분이 변경되었습니다",
           "ar": "تغيرت رطوبة التربة"
         },
         "highlight": true,
@@ -936,21 +1552,21 @@
             "name": "measure_humidity.soil",
             "type": "number",
             "title": {
-              "en": "Humidity",
-              "nl": "Vochtigheid",
-              "da": "Fugtighed",
-              "de": "Feuchtigkeit",
-              "es": "Humedad",
-              "fr": "Humidité",
-              "it": "Umidità",
-              "no": "Fuktighet",
-              "sv": "Fuktighet",
-              "pl": "Wilgotność",
-              "ru": "Влажность",
-              "ko": "습도",
-              "ar": "الرطوبة"
+              "en": "Soil moisture",
+              "nl": "Bodemvochtigheid",
+              "da": "Jordfugtighed",
+              "de": "Bodenfeuchtigkeit",
+              "es": "Humedad del suelo",
+              "fr": "Humidité du sol",
+              "it": "Umidità del suolo",
+              "no": "Jordfuktighet",
+              "sv": "Markfuktighet",
+              "pl": "Wilgotność gleby",
+              "ru": "Влажность почвы",
+              "ko": "토양 수분",
+              "ar": "رطوبة التربة"
             },
-            "example": 53
+            "example": 40
           }
         ],
         "id": "measure_humidity.soil_changed"
@@ -1005,19 +1621,19 @@
       },
       {
         "title": {
-          "en": "The luminance lux changed",
-          "nl": "De luminantie lux is gewijzigd",
-          "da": "Luminans lux ændret sig",
-          "de": "Die Lichtstärke lux hat sich geändert",
-          "es": "La luminancia lux cambió",
-          "fr": "La luminance lux a changé",
-          "it": "La luminosità lux è cambiata",
-          "no": "Luminans lux endret seg",
-          "sv": "Luminans lux ändrades",
-          "pl": "Jasność lux została zmieniona",
-          "ru": "Освещенность люкс изменилась",
-          "ko": "조도 럭스가 변경되었습니다",
-          "ar": "تغيرت إضاءة اللوكس"
+          "en": "The illuminance changed",
+          "nl": "De verlichtingssterkte is gewijzigd",
+          "da": "Belysningsstyrken er ændret",
+          "de": "Die Beleuchtungsstärke hat sich geändert",
+          "es": "La iluminancia ha cambiado",
+          "fr": "L'éclairement a changé",
+          "it": "L'illuminamento è cambiato",
+          "no": "Belysningsstyrken er endret",
+          "sv": "Belysningsstyrkan ändrades",
+          "pl": "Natężenie oświetlenia uległo zmianie",
+          "ru": "Освещенность изменилась",
+          "ko": "조도가 변경되었습니다",
+          "ar": "تغيرت الإضاءة"
         },
         "highlight": true,
         "args": [
@@ -1032,84 +1648,36 @@
             "name": "measure_luminance.lux",
             "type": "number",
             "title": {
-              "en": "Luminance",
-              "nl": "Luminantie",
-              "da": "Luminans",
-              "de": "Lichtstärke",
-              "es": "Luminancia",
-              "fr": "Luminance",
-              "it": "Luminosità",
-              "no": "Luminans",
-              "sv": "Luminans",
-              "pl": "Jasność",
-              "ru": "Освещенность",
-              "ko": "조도",
-              "ar": "الإضاءة"
+              "en": "Illuminance (Lux)",
+              "nl": "Verlichtingssterkte (Lux)",
+              "da": "Belysningsstyrke (Lux)",
+              "de": "Beleuchtungsstärke (Lux)",
+              "es": "Iluminancia (Lux)",
+              "fr": "Éclairement (Lux)",
+              "it": "Illuminamento (Lux)",
+              "no": "Belysningsstyrke (Lux)",
+              "sv": "Belysningsstyrka (Lux)",
+              "pl": "Natężenie oświetlenia (Lux)",
+              "ru": "Освещенность (Lux)",
+              "ko": "조도 (Lux)",
+              "ar": "الإضاءة (Lux)"
             },
-            "example": 53
+            "example": 120
           }
         ],
         "id": "measure_luminance.lux_changed"
       },
       {
         "title": {
-          "en": "The device temperature changed",
-          "nl": "De apparaattemperatuur is gewijzigd",
-          "da": "Enhedens temperatur er ændret",
-          "de": "Die Gerätetemperatur hat sich geändert",
-          "es": "La temperatura del dispositivo ha cambiado",
-          "fr": "La température de l'appareil a changé",
-          "it": "La temperatura del dispositivo è cambiata",
-          "no": "Enhetstemperaturen har endret seg",
-          "sv": "Enhetens temperatur har ändrats",
-          "pl": "Temperatura urządzenia się zmieniła",
-          "ru": "Температура устройства изменилась",
-          "ko": "장치 온도가 변경되었습니다",
-          "ar": "تغيرت درجة حرارة الجهاز"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device|group&capabilities=measure_temperature.device"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "measure_temperature.device",
-            "type": "number",
-            "title": {
-              "en": "Temperature",
-              "nl": "Temperatuur",
-              "da": "Temperatur",
-              "de": "Temperatur",
-              "es": "Temperatura",
-              "fr": "Température",
-              "it": "Temperatura",
-              "no": "Temperatur",
-              "sv": "Temperatur",
-              "pl": "Temperatura",
-              "ru": "Температура",
-              "ko": "온도",
-              "ar": "درجة الحرارة"
-            },
-            "example": 53
-          }
-        ],
-        "id": "measure_temperature.device_changed"
-      },
-      {
-        "title": {
           "en": "The external temperature changed",
           "nl": "De externe temperatuur is gewijzigd",
-          "da": "Den eksterne temperatur ændrede sig",
-          "de": "Die externe Temperatur hat sich geändert",
-          "es": "La temperatura externa cambió",
+          "da": "Den eksterne temperatur er ændret",
+          "de": "Die Außentemperatur hat sich geändert",
+          "es": "La temperatura externa ha cambiado",
           "fr": "La température externe a changé",
           "it": "La temperatura esterna è cambiata",
-          "no": "Den eksterne temperaturen endret seg",
-          "sv": "Den externa temperaturen har ändrats",
+          "no": "Den eksterne temperaturen er endret",
+          "sv": "Den yttre temperaturen ändrades",
           "pl": "Temperatura zewnętrzna uległa zmianie",
           "ru": "Внешняя температура изменилась",
           "ko": "외부 온도가 변경되었습니다",
@@ -1128,40 +1696,88 @@
             "name": "measure_temperature.external",
             "type": "number",
             "title": {
-              "en": "Temperature",
-              "nl": "Temperatuur",
-              "da": "Temperatur",
-              "de": "Temperatur",
-              "es": "Temperatura",
-              "fr": "Température",
-              "it": "Temperatura",
-              "no": "Temperatur",
-              "sv": "Temperatur",
-              "pl": "Temperatura",
-              "ru": "Температура",
-              "ko": "온도",
-              "ar": "درجة الحرارة"
+              "en": "External temperature",
+              "nl": "Externe temperatuur",
+              "da": "Ekstern temperatur",
+              "de": "Außentemperatur",
+              "es": "Temperatura externa",
+              "fr": "Température externe",
+              "it": "Temperatura esterna",
+              "no": "Ekstern temperatur",
+              "sv": "Yttre temperatur",
+              "pl": "Temperatura zewnętrzna",
+              "ru": "Внешняя температура",
+              "ko": "외부 온도",
+              "ar": "درجة الحرارة الخارجية"
             },
-            "example": 53
+            "example": 15
           }
         ],
         "id": "measure_temperature.external_changed"
       },
       {
         "title": {
-          "en": "The sensor temperature changed",
-          "nl": "De temperatuur van de sensor is gewijzigd",
-          "da": "Sensorens temperatur ændrede sig",
-          "de": "Die Sensortemperatur hat sich geändert",
-          "es": "La temperatura del sensor cambió",
-          "fr": "La température du capteur a changé",
-          "it": "La temperatura del sensore è cambiata",
-          "no": "Sensorens temperatur har endret seg",
-          "sv": "Sensorns temperatur har ändrats",
-          "pl": "Temperatura czujnika zmieniła się",
-          "ru": "Температура датчика изменилась",
-          "ko": "센서 온도가 변경되었습니다",
-          "ar": "تغيرت درجة حرارة المستشعر"
+          "en": "The internal temperature changed",
+          "nl": "De interne temperatuur is gewijzigd",
+          "da": "Den interne temperatur er ændret",
+          "de": "Die interne Temperatur hat sich geändert",
+          "es": "La temperatura interna ha cambiado",
+          "fr": "La température interne a changé",
+          "it": "La temperatura interna è cambiata",
+          "no": "Den interne temperaturen er endret",
+          "sv": "Den interna temperaturen ändrades",
+          "pl": "Temperatura wewnętrzna uległa zmianie",
+          "ru": "Внутренняя температура изменилась",
+          "ko": "내부 온도가 변경되었습니다",
+          "ar": "تغيرت درجة الحرارة الداخلية"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=measure_temperature.internal"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_temperature.internal",
+            "type": "number",
+            "title": {
+              "en": "Internal temperature",
+              "nl": "Interne temperatuur",
+              "da": "Intern temperatur",
+              "de": "Interne Temperatur",
+              "es": "Temperatura interna",
+              "fr": "Température interne",
+              "it": "Temperatura interna",
+              "no": "Intern temperatur",
+              "sv": "Intern temperatur",
+              "pl": "Temperatura wewnętrzna",
+              "ru": "Внутренняя температура",
+              "ko": "내부 온도",
+              "ar": "درجة الحرارة الداخلية"
+            },
+            "example": 35.5
+          }
+        ],
+        "id": "measure_temperature.internal_changed"
+      },
+      {
+        "title": {
+          "en": "The local temperature changed",
+          "nl": "De lokale temperatuur is gewijzigd",
+          "da": "Den lokale temperatur er ændret",
+          "de": "Die lokale Temperatur hat sich geändert",
+          "es": "La temperatura local ha cambiado",
+          "fr": "La température locale a changé",
+          "it": "La temperatura locale è cambiata",
+          "no": "Den lokale temperaturen er endret",
+          "sv": "Den lokala temperaturen ändrades",
+          "pl": "Lokalna temperatura uległa zmianie",
+          "ru": "Локальная температура изменилась",
+          "ko": "로컬 온도가 변경되었습니다",
+          "ar": "تغيرت درجة الحرارة المحلية"
         },
         "highlight": true,
         "args": [
@@ -1176,21 +1792,21 @@
             "name": "measure_temperature.local",
             "type": "number",
             "title": {
-              "en": "Temperature",
-              "nl": "Temperatuur",
-              "da": "Temperatur",
-              "de": "Temperatur",
-              "es": "Temperatura",
-              "fr": "Température",
-              "it": "Temperatura",
-              "no": "Temperatur",
-              "sv": "Temperatur",
-              "pl": "Temperatura",
-              "ru": "Температура",
-              "ko": "온도",
-              "ar": "درجة الحرارة"
+              "en": "Local temperature",
+              "nl": "Lokale temperatuur",
+              "da": "Lokal temperatur",
+              "de": "Lokale Temperatur",
+              "es": "Temperatura local",
+              "fr": "Température locale",
+              "it": "Temperatura locale",
+              "no": "Lokal temperatur",
+              "sv": "Lokal temperatur",
+              "pl": "Lokalna temperatura",
+              "ru": "Локальная температура",
+              "ko": "로컬 온도",
+              "ar": "درجة الحرارة المحلية"
             },
-            "example": 53
+            "example": 20
           }
         ],
         "id": "measure_temperature.local_changed"
@@ -1389,6 +2005,58 @@
       },
       {
         "title": {
+          "en": "Turned Off 11",
+          "nl": "Uitgeschakeld 11",
+          "da": "Slukket 11",
+          "de": "Ausgeschaltet 11",
+          "es": "Apagado 11",
+          "fr": "Éteint 11",
+          "it": "Spento 11",
+          "no": "Slått av 11",
+          "sv": "Avstängd 11",
+          "pl": "Wyłączono 11",
+          "ru": "Выключено 11",
+          "ko": "꺼짐 11",
+          "ar": "تم إيقاف 11"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.11"
+          }
+        ],
+        "id": "onoff.11_false"
+      },
+      {
+        "title": {
+          "en": "Turned On 11",
+          "nl": "Ingeschakeld 11",
+          "da": "Tændt 11",
+          "de": "Eingeschaltet 11",
+          "es": "Encendido 11",
+          "fr": "Allumé 11",
+          "it": "Acceso 11",
+          "no": "Slått på 11",
+          "sv": "Påslagen 11",
+          "pl": "Włączono 11",
+          "ru": "Включено 11",
+          "ko": "켜짐 11",
+          "ar": "تم تشغيل 11"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.11"
+          }
+        ],
+        "id": "onoff.11_true"
+      },
+      {
+        "title": {
           "en": "Backlight Turned Off",
           "nl": "Achtergrondverlichting Uitgeschakeld",
           "da": "Baggrundsbelysning Slukket",
@@ -1441,19 +2109,19 @@
       },
       {
         "title": {
-          "en": "Bottom Turned Off",
+          "en": "Turned Off Bottom",
           "nl": "Onder Uitgeschakeld",
-          "da": "Bund Slukket",
-          "de": "Unten Ausgeschaltet",
-          "es": "Abajo Apagado",
-          "fr": "Bas Éteint",
-          "it": "Basso Spento",
-          "no": "Bunn Av",
-          "sv": "Botten Av",
-          "pl": "Dolny Wyłączony",
-          "ru": "Низ Выключен",
-          "ko": "아래쪽 꺼짐",
-          "ar": "تم إيقاف الجزء السفلي"
+          "da": "Slukket Bund",
+          "de": "Ausgeschaltet Unten",
+          "es": "Apagado Abajo",
+          "fr": "Éteint Bas",
+          "it": "Spento Sotto",
+          "no": "Slått av Bunn",
+          "sv": "Avstängd Nere",
+          "pl": "Wyłączono Dolne",
+          "ru": "Выключено снизу",
+          "ko": "꺼짐 아래쪽",
+          "ar": "تم إيقاف الأسفل"
         },
         "highlight": true,
         "args": [
@@ -1467,19 +2135,19 @@
       },
       {
         "title": {
-          "en": "Bottom Turned On",
+          "en": "Turned On Bottom",
           "nl": "Onder Ingeschakeld",
-          "da": "Bund Tændt",
-          "de": "Unten Eingeschaltet",
-          "es": "Abajo Encendido",
-          "fr": "Bas Allumé",
-          "it": "Basso Acceso",
-          "no": "Bunn På",
-          "sv": "Botten På",
-          "pl": "Dolny Włączony",
-          "ru": "Низ Включен",
-          "ko": "아래쪽 켜짐",
-          "ar": "تم تشغيل الجزء السفلي"
+          "da": "Tændt Bund",
+          "de": "Eingeschaltet Unten",
+          "es": "Encendido Abajo",
+          "fr": "Allumé Bas",
+          "it": "Acceso Sotto",
+          "no": "Slått på Bunn",
+          "sv": "Påslagen Nere",
+          "pl": "Włączono Dolne",
+          "ru": "Включено снизу",
+          "ko": "켜짐 아래쪽",
+          "ar": "تم تشغيل الأسفل"
         },
         "highlight": true,
         "args": [
@@ -1493,19 +2161,19 @@
       },
       {
         "title": {
-          "en": "Center Turned Off",
+          "en": "Turned Off Center",
           "nl": "Midden Uitgeschakeld",
-          "da": "Center Slukket",
-          "de": "Mitte Ausgeschaltet",
-          "es": "Centro Apagado",
-          "fr": "Centre Éteint",
-          "it": "Centro Spento",
-          "no": "Senter Av",
-          "sv": "Centrum Av",
-          "pl": "Środek Wyłączony",
-          "ru": "Центр Выключен",
-          "ko": "센터 꺼짐",
-          "ar": "تم إيقاف الأوسط"
+          "da": "Slukket Midte",
+          "de": "Ausgeschaltet Mitte",
+          "es": "Apagado Centro",
+          "fr": "Éteint Centre",
+          "it": "Spento Centro",
+          "no": "Slått av Midten",
+          "sv": "Avstängd Mitten",
+          "pl": "Wyłączono Środek",
+          "ru": "Выключено по центру",
+          "ko": "꺼짐 중앙",
+          "ar": "تم إيقاف الوسط"
         },
         "highlight": true,
         "args": [
@@ -1519,19 +2187,19 @@
       },
       {
         "title": {
-          "en": "Center Left Turned Off",
-          "nl": "Midden Links Uitgeschakeld",
-          "da": "Center Venstre Slukket",
-          "de": "Mitte Links Ausgeschaltet",
-          "es": "Centro Izquierda Apagado",
-          "fr": "Centre Gauche Éteint",
-          "it": "Centro Sinistra Spento",
-          "no": "Senter Venstre Av",
-          "sv": "Centrum Vänster Av",
-          "pl": "Środek Lewy Wyłączony",
-          "ru": "Центр Лево Выключен",
-          "ko": "중앙 왼쪽 꺼짐",
-          "ar": "تم إيقاف الأوسط الأيسر"
+          "en": "Turned Off Center-Left",
+          "nl": "Midden-Links Uitgeschakeld",
+          "da": "Slukket Midte-Venstre",
+          "de": "Ausgeschaltet Mitte-Links",
+          "es": "Apagado Centro-Izquierda",
+          "fr": "Éteint Centre-Gauche",
+          "it": "Spento Centro-Sinistra",
+          "no": "Slått av Midt-Venstre",
+          "sv": "Avstängd Mitten-Vänster",
+          "pl": "Wyłączono Środek-Lewe",
+          "ru": "Выключено по центру слева",
+          "ko": "꺼짐 중앙-왼쪽",
+          "ar": "تم إيقاف الوسط-اليسار"
         },
         "highlight": true,
         "args": [
@@ -1545,19 +2213,19 @@
       },
       {
         "title": {
-          "en": "Center Left Turned On",
-          "nl": "Midden Links Ingeschakeld",
-          "da": "Center Venstre Tændt",
-          "de": "Mitte Links Eingeschaltet",
-          "es": "Centro Izquierda Encendido",
-          "fr": "Centre Gauche Allumé",
-          "it": "Centro Sinistra Acceso",
-          "no": "Senter Venstre På",
-          "sv": "Centrum Vänster På",
-          "pl": "Środek Lewy Włączony",
-          "ru": "Центр Лево Включен",
-          "ko": "중앙 왼쪽 켜짐",
-          "ar": "تم تشغيل الأوسط الأيسر"
+          "en": "Turned On Center-Left",
+          "nl": "Midden-Links Ingeschakeld",
+          "da": "Tændt Midte-Venstre",
+          "de": "Eingeschaltet Mitte-Links",
+          "es": "Encendido Centro-Izquierda",
+          "fr": "Allumé Centre-Gauche",
+          "it": "Acceso Centro-Sinistra",
+          "no": "Slått på Midt-Venstre",
+          "sv": "Påslagen Mitten-Vänster",
+          "pl": "Włączono Środek-Lewe",
+          "ru": "Включено по центру слева",
+          "ko": "켜짐 중앙-왼쪽",
+          "ar": "تم تشغيل الوسط-اليسار"
         },
         "highlight": true,
         "args": [
@@ -1571,19 +2239,19 @@
       },
       {
         "title": {
-          "en": "Center Right Turned Off",
-          "nl": "Midden Rechts Uitgeschakeld",
-          "da": "Center Højre Slukket",
-          "de": "Mitte Rechts Ausgeschaltet",
-          "es": "Centro Derecha Apagado",
-          "fr": "Centre Droite Éteint",
-          "it": "Centro Destra Spento",
-          "no": "Senter Høyre Av",
-          "sv": "Centrum Höger Av",
-          "pl": "Środek Prawy Wyłączony",
-          "ru": "Центр Право Выключен",
-          "ko": "중앙 오른쪽 꺼짐",
-          "ar": "تم إيقاف الأوسط الأيمن"
+          "en": "Turned Off Center-Right",
+          "nl": "Midden-Rechts Uitgeschakeld",
+          "da": "Slukket Midte-Højre",
+          "de": "Ausgeschaltet Mitte-Rechts",
+          "es": "Apagado Centro-Derecha",
+          "fr": "Éteint Centre-Droite",
+          "it": "Spento Centro-Destra",
+          "no": "Slått av Midt-Høyre",
+          "sv": "Avstängd Mitten-Höger",
+          "pl": "Wyłączono Środek-Prawe",
+          "ru": "Выключено по центру справа",
+          "ko": "꺼짐 중앙-오른쪽",
+          "ar": "تم إيقاف الوسط-اليمين"
         },
         "highlight": true,
         "args": [
@@ -1597,19 +2265,19 @@
       },
       {
         "title": {
-          "en": "Center Right Turned On",
-          "nl": "Midden Rechts Ingeschakeld",
-          "da": "Center Højre Tændt",
-          "de": "Mitte Rechts Eingeschaltet",
-          "es": "Centro Derecha Encendido",
-          "fr": "Centre Droite Allumé",
-          "it": "Centro Destra Acceso",
-          "no": "Senter Høyre På",
-          "sv": "Centrum Höger På",
-          "pl": "Środek Prawy Włączony",
-          "ru": "Центр Право Включен",
-          "ko": "중앙 오른쪽 켜짐",
-          "ar": "تم تشغيل الأوسط الأيمن"
+          "en": "Turned On Center-Right",
+          "nl": "Midden-Rechts Ingeschakeld",
+          "da": "Tændt Midte-Højre",
+          "de": "Eingeschaltet Mitte-Rechts",
+          "es": "Encendido Centro-Derecha",
+          "fr": "Allumé Centre-Droite",
+          "it": "Acceso Centro-Destra",
+          "no": "Slått på Midt-Høyre",
+          "sv": "Påslagen Mitten-Höger",
+          "pl": "Włączono Środek-Prawe",
+          "ru": "Включено по центру справа",
+          "ko": "켜짐 중앙-오른쪽",
+          "ar": "تم تشغيل الوسط-اليمين"
         },
         "highlight": true,
         "args": [
@@ -1623,19 +2291,19 @@
       },
       {
         "title": {
-          "en": "Center Turned On",
+          "en": "Turned On Center",
           "nl": "Midden Ingeschakeld",
-          "da": "Center Tændt",
-          "de": "Mitte Eingeschaltet",
-          "es": "Centro Encendido",
-          "fr": "Centre Allumé",
-          "it": "Centro Acceso",
-          "no": "Senter På",
-          "sv": "Centrum På",
-          "pl": "Środek Włączony",
-          "ru": "Центр Включен",
-          "ko": "센터 켜짐",
-          "ar": "تم تشغيل الأوسط"
+          "da": "Tændt Midte",
+          "de": "Eingeschaltet Mitte",
+          "es": "Encendido Centro",
+          "fr": "Allumé Centre",
+          "it": "Acceso Centro",
+          "no": "Slått på Midten",
+          "sv": "Påslagen Mitten",
+          "pl": "Włączono Środek",
+          "ru": "Включено по центру",
+          "ko": "켜짐 중앙",
+          "ar": "تم تشغيل الوسط"
         },
         "highlight": true,
         "args": [
@@ -1649,18 +2317,122 @@
       },
       {
         "title": {
-          "en": "L1 Turned Off",
-          "nl": "L1 Uitgeschakeld",
-          "da": "L1 slukket",
-          "de": "L1 ausgeschaltet",
-          "es": "L1 apagado",
-          "fr": "L1 éteint",
-          "it": "L1 spento",
-          "no": "L1 slått av",
-          "sv": "L1 avstängd",
-          "pl": "L1 wyłączony",
-          "ru": "L1 выключен",
-          "ko": "L1 꺼짐",
+          "en": "Heartbeat Turned Off",
+          "nl": "Heartbeat Uitgeschakeld",
+          "da": "Hjerteslag slukket",
+          "de": "Herzschlag ausgeschaltet",
+          "es": "Latido apagado",
+          "fr": "Battement de cœur éteint",
+          "it": "Battito cardiaco spento",
+          "no": "Hjerteslag slått av",
+          "sv": "Hjärtslag avstängd",
+          "pl": "Puls wyłączony",
+          "ru": "Сердцебиение выключено",
+          "ko": "하트비트 꺼짐",
+          "ar": "تم إيقاف نبض القلب"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.heartbeat"
+          }
+        ],
+        "id": "onoff.heartbeat_false"
+      },
+      {
+        "title": {
+          "en": "Heartbeat Turned On",
+          "nl": "Heartbeat Ingeschakeld",
+          "da": "Hjerteslag tændt",
+          "de": "Herzschlag eingeschaltet",
+          "es": "Latido encendido",
+          "fr": "Battement de cœur allumé",
+          "it": "Battito cardiaco acceso",
+          "no": "Hjerteslag slått på",
+          "sv": "Hjärtslag påslagen",
+          "pl": "Puls włączony",
+          "ru": "Сердцебиение включено",
+          "ko": "하트비트 켜짐",
+          "ar": "تم تشغيل نبض القلب"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.heartbeat"
+          }
+        ],
+        "id": "onoff.heartbeat_true"
+      },
+      {
+        "title": {
+          "en": "Indicator Turned Off",
+          "nl": "Indicator Uitgeschakeld",
+          "da": "Indikator slukket",
+          "de": "Indikator ausgeschaltet",
+          "es": "Indicador apagado",
+          "fr": "Indicateur éteint",
+          "it": "Indicatore spento",
+          "no": "Indikator slått av",
+          "sv": "Indikator avstängd",
+          "pl": "Wskaźnik wyłączony",
+          "ru": "Индикатор выключен",
+          "ko": "표시기 꺼짐",
+          "ar": "تم إيقاف المؤشر"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.indicator"
+          }
+        ],
+        "id": "onoff.indicator_false"
+      },
+      {
+        "title": {
+          "en": "Indicator Turned On",
+          "nl": "Indicator Ingeschakeld",
+          "da": "Indikator tændt",
+          "de": "Indikator eingeschaltet",
+          "es": "Indicador encendido",
+          "fr": "Indicateur allumé",
+          "it": "Indicatore acceso",
+          "no": "Indikator slått på",
+          "sv": "Indikator påslagen",
+          "pl": "Wskaźnik włączony",
+          "ru": "Индикатор включен",
+          "ko": "표시기 켜짐",
+          "ar": "تم تشغيل المؤشر"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.indicator"
+          }
+        ],
+        "id": "onoff.indicator_true"
+      },
+      {
+        "title": {
+          "en": "Turned Off L1",
+          "nl": "Uitgeschakeld L1",
+          "da": "Slukket L1",
+          "de": "Ausgeschaltet L1",
+          "es": "Apagado L1",
+          "fr": "Éteint L1",
+          "it": "Spento L1",
+          "no": "Slått av L1",
+          "sv": "Avstängd L1",
+          "pl": "Wyłączono L1",
+          "ru": "Выключено L1",
+          "ko": "꺼짐 L1",
           "ar": "تم إيقاف L1"
         },
         "highlight": true,
@@ -1675,18 +2447,18 @@
       },
       {
         "title": {
-          "en": "L1 Turned On",
-          "nl": "L1 Ingeschakeld",
-          "da": "L1 tændt",
-          "de": "L1 eingeschaltet",
-          "es": "L1 encendido",
-          "fr": "L1 allumé",
-          "it": "L1 acceso",
-          "no": "L1 slått på",
-          "sv": "L1 påslagen",
-          "pl": "L1 włączono",
-          "ru": "L1 включён",
-          "ko": "L1 켜짐",
+          "en": "Turned On L1",
+          "nl": "Ingeschakeld L1",
+          "da": "Tændt L1",
+          "de": "Eingeschaltet L1",
+          "es": "Encendido L1",
+          "fr": "Allumé L1",
+          "it": "Acceso L1",
+          "no": "Slått på L1",
+          "sv": "Påslagen L1",
+          "pl": "Włączono L1",
+          "ru": "Включено L1",
+          "ko": "켜짐 L1",
           "ar": "تم تشغيل L1"
         },
         "highlight": true,
@@ -1701,18 +2473,18 @@
       },
       {
         "title": {
-          "en": "L2 Turned Off",
-          "nl": "L2 Uitgeschakeld",
-          "da": "L2 slukket",
-          "de": "L2 ausgeschaltet",
-          "es": "L2 apagado",
-          "fr": "L2 éteint",
-          "it": "L2 spento",
-          "no": "L2 slått av",
-          "sv": "L2 avstängd",
-          "pl": "L2 wyłączony",
-          "ru": "L2 выключен",
-          "ko": "L2 꺼짐",
+          "en": "Turned Off L2",
+          "nl": "Uitgeschakeld L2",
+          "da": "Slukket L2",
+          "de": "Ausgeschaltet L2",
+          "es": "Apagado L2",
+          "fr": "Éteint L2",
+          "it": "Spento L2",
+          "no": "Slått av L2",
+          "sv": "Avstängd L2",
+          "pl": "Wyłączono L2",
+          "ru": "Выключено L2",
+          "ko": "꺼짐 L2",
           "ar": "تم إيقاف L2"
         },
         "highlight": true,
@@ -1727,18 +2499,18 @@
       },
       {
         "title": {
-          "en": "L2 Turned On",
-          "nl": "L2 Ingeschakeld",
-          "da": "L2 tændt",
-          "de": "L2 eingeschaltet",
-          "es": "L2 encendido",
-          "fr": "L2 allumé",
-          "it": "L2 acceso",
-          "no": "L2 slått på",
-          "sv": "L2 påslagen",
-          "pl": "L2 włączone",
-          "ru": "L2 включен",
-          "ko": "L2 켜짐",
+          "en": "Turned On L2",
+          "nl": "Ingeschakeld L2",
+          "da": "Tændt L2",
+          "de": "Eingeschaltet L2",
+          "es": "Encendido L2",
+          "fr": "Allumé L2",
+          "it": "Acceso L2",
+          "no": "Slått på L2",
+          "sv": "Påslagen L2",
+          "pl": "Włączono L2",
+          "ru": "Включено L2",
+          "ko": "켜짐 L2",
           "ar": "تم تشغيل L2"
         },
         "highlight": true,
@@ -1753,18 +2525,18 @@
       },
       {
         "title": {
-          "en": "L3 Turned Off",
-          "nl": "L3 Uitgeschakeld",
-          "da": "L3 slukket",
-          "de": "L3 ausgeschaltet",
-          "es": "L3 apagado",
-          "fr": "L3 éteint",
-          "it": "L3 spento",
-          "no": "L3 slått av",
-          "sv": "L3 avstängd",
-          "pl": "L3 wyłączony",
-          "ru": "L3 выключен",
-          "ko": "L3 꺼짐",
+          "en": "Turned Off L3",
+          "nl": "Uitgeschakeld L3",
+          "da": "Slukket L3",
+          "de": "Ausgeschaltet L3",
+          "es": "Apagado L3",
+          "fr": "Éteint L3",
+          "it": "Spento L3",
+          "no": "Slått av L3",
+          "sv": "Avstängd L3",
+          "pl": "Wyłączono L3",
+          "ru": "Выключено L3",
+          "ko": "꺼짐 L3",
           "ar": "تم إيقاف L3"
         },
         "highlight": true,
@@ -1779,18 +2551,18 @@
       },
       {
         "title": {
-          "en": "L3 Turned On",
-          "nl": "L3 Ingeschakeld",
-          "da": "L3 tændt",
-          "de": "L3 eingeschaltet",
-          "es": "L3 encendido",
-          "fr": "L3 allumé",
-          "it": "L3 acceso",
-          "no": "L3 slått på",
-          "sv": "L3 påslagen",
-          "pl": "L3 włączony",
-          "ru": "L3 включен",
-          "ko": "L3 켜짐",
+          "en": "Turned On L3",
+          "nl": "Ingeschakeld L3",
+          "da": "Tændt L3",
+          "de": "Eingeschaltet L3",
+          "es": "Encendido L3",
+          "fr": "Allumé L3",
+          "it": "Acceso L3",
+          "no": "Slått på L3",
+          "sv": "Påslagen L3",
+          "pl": "Włączono L3",
+          "ru": "Включено L3",
+          "ko": "켜짐 L3",
           "ar": "تم تشغيل L3"
         },
         "highlight": true,
@@ -1805,18 +2577,18 @@
       },
       {
         "title": {
-          "en": "L4 Turned Off",
-          "nl": "L4 Uitgeschakeld",
-          "da": "L4 slukket",
-          "de": "L4 ausgeschaltet",
-          "es": "L4 apagado",
-          "fr": "L4 éteint",
-          "it": "L4 spento",
-          "no": "L4 slått av",
-          "sv": "L4 avstängd",
-          "pl": "L4 wyłączony",
-          "ru": "L4 выключен",
-          "ko": "L4 꺼짐",
+          "en": "Turned Off L4",
+          "nl": "Uitgeschakeld L4",
+          "da": "Slukket L4",
+          "de": "Ausgeschaltet L4",
+          "es": "Apagado L4",
+          "fr": "Éteint L4",
+          "it": "Spento L4",
+          "no": "Slått av L4",
+          "sv": "Avstängd L4",
+          "pl": "Wyłączono L4",
+          "ru": "Выключено L4",
+          "ko": "꺼짐 L4",
           "ar": "تم إيقاف L4"
         },
         "highlight": true,
@@ -1831,18 +2603,18 @@
       },
       {
         "title": {
-          "en": "L4 Turned On",
-          "nl": "L4 Ingeschakeld",
-          "da": "L4 tændt",
-          "de": "L4 eingeschaltet",
-          "es": "L4 encendido",
-          "fr": "L4 allumé",
-          "it": "L4 acceso",
-          "no": "L4 slått på",
-          "sv": "L4 påslagen",
-          "pl": "L4 włączony",
-          "ru": "L4 включен",
-          "ko": "L4 켜짐",
+          "en": "Turned On L4",
+          "nl": "Ingeschakeld L4",
+          "da": "Tændt L4",
+          "de": "Eingeschaltet L4",
+          "es": "Encendido L4",
+          "fr": "Allumé L4",
+          "it": "Acceso L4",
+          "no": "Slått på L4",
+          "sv": "Påslagen L4",
+          "pl": "Włączono L4",
+          "ru": "Включено L4",
+          "ko": "켜짐 L4",
           "ar": "تم تشغيل L4"
         },
         "highlight": true,
@@ -1857,18 +2629,18 @@
       },
       {
         "title": {
-          "en": "Left Turned Off",
+          "en": "Turned Off Left",
           "nl": "Links Uitgeschakeld",
-          "da": "Venstre Slukket",
-          "de": "Links Ausgeschaltet",
-          "es": "Izquierda Apagada",
-          "fr": "Gauche Éteinte",
-          "it": "Sinistra Spenta",
-          "no": "Venstre Av",
-          "sv": "Vänster Av",
-          "pl": "Lewy Wyłączony",
-          "ru": "Лево Выключено",
-          "ko": "왼쪽 꺼짐",
+          "da": "Slukket Venstre",
+          "de": "Ausgeschaltet Links",
+          "es": "Apagado Izquierda",
+          "fr": "Éteint Gauche",
+          "it": "Spento Sinistra",
+          "no": "Slått av Venstre",
+          "sv": "Avstängd Vänster",
+          "pl": "Wyłączono Lewe",
+          "ru": "Выключено слева",
+          "ko": "꺼짐 왼쪽",
           "ar": "تم إيقاف اليسار"
         },
         "highlight": true,
@@ -1883,18 +2655,18 @@
       },
       {
         "title": {
-          "en": "Left Turned On",
+          "en": "Turned On Left",
           "nl": "Links Ingeschakeld",
-          "da": "Venstre Tændt",
-          "de": "Links Eingeschaltet",
-          "es": "Izquierda Encendida",
-          "fr": "Gauche Allumée",
-          "it": "Sinistra Accesa",
-          "no": "Venstre På",
-          "sv": "Vänster På",
-          "pl": "Lewy Włączony",
-          "ru": "Лево Включено",
-          "ko": "왼쪽 켜짐",
+          "da": "Tændt Venstre",
+          "de": "Eingeschaltet Links",
+          "es": "Encendido Izquierda",
+          "fr": "Allumé Gauche",
+          "it": "Acceso Sinistra",
+          "no": "Slått på Venstre",
+          "sv": "Påslagen Vänster",
+          "pl": "Włączono Lewe",
+          "ru": "Включено слева",
+          "ko": "켜짐 왼쪽",
           "ar": "تم تشغيل اليسار"
         },
         "highlight": true,
@@ -1909,18 +2681,70 @@
       },
       {
         "title": {
-          "en": "Right Turned Off",
+          "en": "Pre-alarm Turned Off",
+          "nl": "Voor-alarm Uitgeschakeld",
+          "da": "For-alarm slukket",
+          "de": "Voralarm ausgeschaltet",
+          "es": "Pre-alarma apagada",
+          "fr": "Pré-alarme éteinte",
+          "it": "Pre-allarme spento",
+          "no": "For-alarm slått av",
+          "sv": "Förlarm avstängd",
+          "pl": "Pre-alarm wyłączony",
+          "ru": "Предварительная тревога выключена",
+          "ko": "사전 알람 꺼짐",
+          "ar": "تم إيقاف الإنذار المسبق"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.pre_alarm"
+          }
+        ],
+        "id": "onoff.pre_alarm_false"
+      },
+      {
+        "title": {
+          "en": "Pre-alarm Turned On",
+          "nl": "Voor-alarm Ingeschakeld",
+          "da": "For-alarm tændt",
+          "de": "Voralarm eingeschaltet",
+          "es": "Pre-alarma encendida",
+          "fr": "Pré-alarme allumée",
+          "it": "Pre-allarme acceso",
+          "no": "For-alarm slått på",
+          "sv": "Förlarm påslagen",
+          "pl": "Pre-alarm włączony",
+          "ru": "Предварительная тревога включена",
+          "ko": "사전 알람 켜짐",
+          "ar": "تم تشغيل الإنذار المسبق"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.pre_alarm"
+          }
+        ],
+        "id": "onoff.pre_alarm_true"
+      },
+      {
+        "title": {
+          "en": "Turned Off Right",
           "nl": "Rechts Uitgeschakeld",
-          "da": "Højre Slukket",
-          "de": "Rechts Ausgeschaltet",
-          "es": "Derecha Apagada",
-          "fr": "Droite Éteinte",
-          "it": "Destra Spenta",
-          "no": "Høyre Av",
-          "sv": "Höger Av",
-          "pl": "Prawy Wyłączony",
-          "ru": "Право Выключено",
-          "ko": "오른쪽 꺼짐",
+          "da": "Slukket Højre",
+          "de": "Ausgeschaltet Rechts",
+          "es": "Apagado Derecha",
+          "fr": "Éteint Droite",
+          "it": "Spento Destra",
+          "no": "Slått av Høyre",
+          "sv": "Avstängd Höger",
+          "pl": "Wyłączono Prawe",
+          "ru": "Выключено справа",
+          "ko": "꺼짐 오른쪽",
           "ar": "تم إيقاف اليمين"
         },
         "highlight": true,
@@ -1935,18 +2759,18 @@
       },
       {
         "title": {
-          "en": "Right Turned On",
+          "en": "Turned On Right",
           "nl": "Rechts Ingeschakeld",
-          "da": "Højre Tændt",
-          "de": "Rechts Eingeschaltet",
-          "es": "Derecha Encendida",
-          "fr": "Droite Allumée",
-          "it": "Destra Accesa",
-          "no": "Høyre På",
-          "sv": "Höger På",
-          "pl": "Prawy Włączony",
-          "ru": "Право Включено",
-          "ko": "오른쪽 켜짐",
+          "da": "Tændt Højre",
+          "de": "Eingeschaltet Rechts",
+          "es": "Encendido Derecha",
+          "fr": "Allumé Droite",
+          "it": "Acceso Destra",
+          "no": "Slått på Høyre",
+          "sv": "Påslagen Höger",
+          "pl": "Włączono Prawe",
+          "ru": "Включено справа",
+          "ko": "켜짐 오른쪽",
           "ar": "تم تشغيل اليمين"
         },
         "highlight": true,
@@ -1961,8 +2785,60 @@
       },
       {
         "title": {
+          "en": "Self-test Turned Off",
+          "nl": "Zelftest Uitgeschakeld",
+          "da": "Selvtest slukket",
+          "de": "Selbsttest ausgeschaltet",
+          "es": "Autotest apagado",
+          "fr": "Auto-test éteint",
+          "it": "Auto-test spento",
+          "no": "Selvtest slått av",
+          "sv": "Självtest avstängd",
+          "pl": "Autotest wyłączony",
+          "ru": "Самотестирование выключено",
+          "ko": "자가 테스트 꺼짐",
+          "ar": "تم إيقاف الاختبار الذاتي"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.self_test"
+          }
+        ],
+        "id": "onoff.self_test_false"
+      },
+      {
+        "title": {
+          "en": "Self-test Turned On",
+          "nl": "Zelftest Ingeschakeld",
+          "da": "Selvtest tændt",
+          "de": "Selbsttest eingeschaltet",
+          "es": "Autotest encendido",
+          "fr": "Auto-test allumé",
+          "it": "Auto-test acceso",
+          "no": "Selvtest slått på",
+          "sv": "Självtest påslagen",
+          "pl": "Autotest włączony",
+          "ru": "Самотестирование включено",
+          "ko": "자가 테스트 켜짐",
+          "ar": "تم تشغيل الاختبار الذاتي"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.self_test"
+          }
+        ],
+        "id": "onoff.self_test_true"
+      },
+      {
+        "title": {
           "en": "Thermostat Mode Turned Off",
-          "nl": "Thermostaatmodus uitgeschakeld",
+          "nl": "Thermostaatmodus Uitgeschakeld",
           "da": "Termostattilstand slukket",
           "de": "Thermostatmodus ausgeschaltet",
           "es": "Modo termostato apagado",
@@ -1988,7 +2864,7 @@
       {
         "title": {
           "en": "Thermostat Mode Turned On",
-          "nl": "Thermostaatmodus ingeschakeld",
+          "nl": "Thermostaatmodus Ingeschakeld",
           "da": "Termostattilstand tændt",
           "de": "Thermostatmodus eingeschaltet",
           "es": "Modo termostato encendido",
@@ -2013,18 +2889,18 @@
       },
       {
         "title": {
-          "en": "Top Turned Off",
+          "en": "Turned Off Top",
           "nl": "Boven Uitgeschakeld",
-          "da": "Top Slukket",
-          "de": "Oben Ausgeschaltet",
-          "es": "Arriba Apagado",
-          "fr": "Haut Éteint",
-          "it": "Alto Spento",
-          "no": "Topp Av",
-          "sv": "Topp Av",
-          "pl": "Górny Wyłączony",
-          "ru": "Верх Выключен",
-          "ko": "위쪽 꺼짐",
+          "da": "Slukket Top",
+          "de": "Ausgeschaltet Oben",
+          "es": "Apagado Arriba",
+          "fr": "Éteint Haut",
+          "it": "Spento Sopra",
+          "no": "Slått av Topp",
+          "sv": "Avstängd Uppe",
+          "pl": "Wyłączono Górne",
+          "ru": "Выключено сверху",
+          "ko": "꺼짐 위쪽",
           "ar": "تم إيقاف الأعلى"
         },
         "highlight": true,
@@ -2039,18 +2915,18 @@
       },
       {
         "title": {
-          "en": "Top Turned On",
+          "en": "Turned On Top",
           "nl": "Boven Ingeschakeld",
-          "da": "Top Tændt",
-          "de": "Oben Eingeschaltet",
-          "es": "Arriba Encendido",
-          "fr": "Haut Allumé",
-          "it": "Alto Acceso",
-          "no": "Topp På",
-          "sv": "Topp På",
-          "pl": "Górny Włączony",
-          "ru": "Верх Включен",
-          "ko": "위쪽 켜짐",
+          "da": "Tændt Top",
+          "de": "Eingeschaltet Oben",
+          "es": "Encendido Arriba",
+          "fr": "Allumé Haut",
+          "it": "Acceso Sopra",
+          "no": "Slått på Topp",
+          "sv": "Påslagen Uppe",
+          "pl": "Włączono Górne",
+          "ru": "Включено сверху",
+          "ko": "켜짐 위쪽",
           "ar": "تم تشغيل الأعلى"
         },
         "highlight": true,
@@ -2863,19 +3739,20 @@
       {
         "title": {
           "en": "The frost protection temperature changed",
-          "nl": "De vorstbeveiligingstemperatuur is gewijzigd",
-          "da": "Frostbeskyttelsestemperaturen er ændret",
+          "nl": "De vorstbeveiliging temperatuur is gewijzigd",
+          "da": "Frostsikringstemperaturen er ændret",
           "de": "Die Frostschutztemperatur hat sich geändert",
           "es": "La temperatura de protección contra heladas ha cambiado",
-          "fr": "La température de protection contre le gel a changé",
-          "it": "La temperatura di protezione dal gelo è cambiata",
-          "no": "Frostbeskyttelsestemperaturen har endret seg",
-          "sv": "Frostskyddstemperaturen har ändrats",
-          "pl": "Temperatura ochrony przed mrozem została zmieniona",
+          "fr": "La température de protection hors gel a changé",
+          "it": "La temperatura di protezione antigelo è cambiata",
+          "no": "Frostsikringstemperaturen er endret",
+          "sv": "Frostskyddstemperaturen ändrades",
+          "pl": "Temperatura ochrony przed mrozem uległa zmianie",
           "ru": "Температура защиты от замерзания изменилась",
           "ko": "서리 방지 온도가 변경되었습니다",
           "ar": "تغيرت درجة حرارة الحماية من الصقيع"
         },
+        "highlight": true,
         "args": [
           {
             "type": "device",
@@ -2888,40 +3765,40 @@
             "name": "target_temperature.frost_protection",
             "type": "number",
             "title": {
-              "en": "Temperature",
-              "nl": "Temperatuur",
-              "da": "Temperatur",
-              "de": "Temperatur",
-              "es": "Temperatura",
-              "fr": "Température",
-              "it": "Temperatura",
-              "no": "Temperatur",
-              "sv": "Temperatur",
-              "pl": "Temperatura",
-              "ru": "Температура",
-              "ko": "온도",
-              "ar": "درجة الحرارة"
+              "en": "Frost protection temperature",
+              "nl": "Vorstbeveiliging temperatuur",
+              "da": "Frostsikringstemperatur",
+              "de": "Frostschutztemperatur",
+              "es": "Temperatura de protección contra heladas",
+              "fr": "Température de protection hors gel",
+              "it": "Temperatura di protezione antigelo",
+              "no": "Frostsikringstemperatur",
+              "sv": "Frostskyddstemperatur",
+              "pl": "Temperatura ochrony przed mrozem",
+              "ru": "Температура защиты от замерзания",
+              "ko": "서리 방지 온도",
+              "ar": "درجة حرارة الحماية من الصقيع"
             },
-            "example": 6
+            "example": 5
           }
         ],
         "id": "target_temperature.frost_protection_changed"
       },
       {
         "title": {
-          "en": "The target temperature changed",
-          "nl": "De doeltemperatuur is gewijzigd",
-          "da": "Måltemperaturen er ændret",
-          "de": "Die Zieltemperatur hat sich geändert",
-          "es": "La temperatura objetivo ha cambiado",
-          "fr": "La température cible a changé",
-          "it": "La temperatura target è cambiata",
-          "no": "Måltemperaturen har endret seg",
-          "sv": "Måltemperaturen har ändrats",
-          "pl": "Temperatura docelowa została zmieniona",
-          "ru": "Целевая температура изменилась",
-          "ko": "목표 온도가 변경되었습니다",
-          "ar": "تغيرت درجة الحرارة المستهدفة"
+          "en": "The local target temperature changed",
+          "nl": "De lokale doeltemperatuur is gewijzigd",
+          "da": "Den lokale måltemperatur er ændret",
+          "de": "Die lokale Ziel-Temperatur hat sich geändert",
+          "es": "La temperatura objetivo local ha cambiado",
+          "fr": "La température cible locale a changé",
+          "it": "La temperatura target locale è cambiata",
+          "no": "Den lokale måltemperaturen er endret",
+          "sv": "Den lokala måltemperaturen ändrades",
+          "pl": "Lokalna temperatura docelowa uległa zmianie",
+          "ru": "Локальная целевая температура изменилась",
+          "ko": "로컬 목표 온도가 변경되었습니다",
+          "ar": "تغيرت درجة الحرارة المستهدفة المحلية"
         },
         "highlight": true,
         "args": [
@@ -2936,21 +3813,21 @@
             "name": "target_temperature.local",
             "type": "number",
             "title": {
-              "en": "Temperature",
-              "nl": "Temperatuur",
-              "da": "Temperatur",
-              "de": "Temperatur",
-              "es": "Temperatura",
-              "fr": "Température",
-              "it": "Temperatura",
-              "no": "Temperatur",
-              "sv": "Temperatur",
-              "pl": "Temperatura",
-              "ru": "Температура",
-              "ko": "온도",
-              "ar": "درجة الحرارة"
+              "en": "Local target temperature",
+              "nl": "Lokale doeltemperatuur",
+              "da": "Lokal måltemperatur",
+              "de": "Lokale Ziel-Temperatur",
+              "es": "Temperatura objetivo local",
+              "fr": "Température cible locale",
+              "it": "Temperatura target locale",
+              "no": "Lokal måltemperatur",
+              "sv": "Lokal måltemperatur",
+              "pl": "Lokalna temperatura docelowa",
+              "ru": "Локальная целевая температура",
+              "ko": "로컬 목표 온도",
+              "ar": "درجة الحرارة المستهدفة المحلية"
             },
-            "example": 23
+            "example": 21.5
           }
         ],
         "id": "target_temperature.local_changed"
@@ -3403,6 +4280,32 @@
       },
       {
         "title": {
+          "en": "Identify",
+          "nl": "Identificeer",
+          "da": "Identificer",
+          "de": "Identifizieren",
+          "es": "Identificar",
+          "fr": "Identifier",
+          "it": "Identificare",
+          "no": "Identifisere",
+          "sv": "Identifiera",
+          "pl": "Zidentyfikuj",
+          "ru": "Идентифицировать",
+          "ko": "식별하다",
+          "ar": "تحديد"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=button.identify"
+          }
+        ],
+        "id": "button.identify"
+      },
+      {
+        "title": {
           "en": "Set Color Power On Behavior",
           "nl": "Stel inschakelgedrag (kleur) in",
           "da": "Indstil farvetændingsadfærd",
@@ -3590,6 +4493,58 @@
           }
         ],
         "id": "custom_payload_set"
+      },
+      {
+        "title": {
+          "en": "Dim 11",
+          "nl": "Dim 11",
+          "da": "Dæmp 11",
+          "de": "Dimmen 11",
+          "es": "Atenuar 11",
+          "fr": "Atténuer 11",
+          "it": "Abbassa 11",
+          "no": "Dim 11",
+          "sv": "Dämpa 11",
+          "pl": "Przyciemnij 11",
+          "ru": "Затемнить 11",
+          "ko": "디밍 11",
+          "ar": "تعتيم 11"
+        },
+        "titleFormatted": {
+          "en": "Dim 11 to [[val]]",
+          "nl": "Dim 11 tot [[val]]",
+          "da": "Dæmp 11 til [[val]]",
+          "de": "Dimmen 11 auf [[val]]",
+          "es": "Atenuar 11 a [[val]]",
+          "fr": "Atténuer 11 à [[val]]",
+          "it": "Abbassa 11 a [[val]]",
+          "no": "Dim 11 til [[val]]",
+          "sv": "Dämpa 11 till [[val]]",
+          "pl": "Przyciemnij 11 do [[val]]",
+          "ru": "Затемнить 11 до [[val]]",
+          "ko": "디밍 11 [[val]]로",
+          "ar": "تعتيم 11 إلى [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=dim.11"
+          },
+          {
+            "name": "val",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "value": 0.5,
+            "label": "%",
+            "labelMultiplier": 100,
+            "labelDecimals": 0
+          }
+        ],
+        "id": "dim.11"
       },
       {
         "title": {
@@ -3885,6 +4840,107 @@
           }
         ],
         "id": "effect"
+      },
+      {
+        "title": {
+          "en": "Set effect 11",
+          "nl": "Effect 11 instellen",
+          "da": "Indstil effekt 11",
+          "de": "Effekt 11 festlegen",
+          "es": "Establecer efecto 11",
+          "fr": "Définir l'effet 11",
+          "it": "Imposta effetto 11",
+          "no": "Angi effekt 11",
+          "sv": "Ställ in effekt 11",
+          "pl": "Ustaw efekt 11",
+          "ru": "Установить эффект 11",
+          "ko": "효과 11 설정",
+          "ar": "تعيين التأثير 11"
+        },
+        "titleFormatted": {
+          "en": "Set Effect 11 to [[val]]",
+          "nl": "Stel Effect 11 in op [[val]]",
+          "da": "Sæt Effekt 11 til [[val]]",
+          "de": "Setze Effekt 11 auf [[val]]",
+          "es": "Establecer Efecto 11 a [[val]]",
+          "fr": "Définir l'effet 11 sur [[val]]",
+          "it": "Imposta Effetto 11 su [[val]]",
+          "no": "Sett Effekt 11 til [[val]]",
+          "sv": "Sätt Effekt 11 till [[val]]",
+          "pl": "Ustaw Efekt 11 na [[val]]",
+          "ru": "Установить Эффект 11 на [[val]]",
+          "ko": "효과 11을 [[val]]로 설정",
+          "ar": "تعيين التأثير 11 إلى [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=effect.11"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "blink",
+                "title": {
+                  "en": "Blink",
+                  "nl": "Knipperen",
+                  "de": "Blinken",
+                  "fr": "Clignoter"
+                }
+              },
+              {
+                "id": "breathe",
+                "title": {
+                  "en": "Breathe",
+                  "nl": "Ademhalen",
+                  "de": "Atmen",
+                  "fr": "Respirer"
+                }
+              },
+              {
+                "id": "okay",
+                "title": {
+                  "en": "Okay",
+                  "nl": "Oké",
+                  "de": "Okay",
+                  "fr": "D'accord"
+                }
+              },
+              {
+                "id": "channel_change",
+                "title": {
+                  "en": "Channel change",
+                  "nl": "Kanaal wijzigen",
+                  "de": "Kanalwechsel",
+                  "fr": "Changement de chaîne"
+                }
+              },
+              {
+                "id": "finish_effect",
+                "title": {
+                  "en": "Finish effect",
+                  "nl": "Effect beëindigen",
+                  "de": "Effekt beenden",
+                  "fr": "Finir effet"
+                }
+              },
+              {
+                "id": "stop_effect",
+                "title": {
+                  "en": "Stop effect",
+                  "nl": "Effect stoppen",
+                  "de": "Effekt stoppen",
+                  "fr": "Arrêter l'effet"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "effect.11"
       },
       {
         "title": {
@@ -4255,6 +5311,55 @@
       },
       {
         "title": {
+          "en": "Set light temperature 11",
+          "nl": "Stel lichttemperatuur 11 in",
+          "da": "Indstil lystemperatur 11",
+          "de": "Lichttemperatur 11 einstellen",
+          "es": "Establecer temperatura de luz 11",
+          "fr": "Régler la température de la lumière 11",
+          "it": "Imposta la temperatura della luce 11",
+          "no": "Angi lystemperatur 11",
+          "sv": "Ställ in ljustemperatur 11",
+          "pl": "Ustaw temperaturę światła 11",
+          "ru": "Установить температуру света 11",
+          "ko": "조명 온도 11 설정",
+          "ar": "تحديد درجة حرارة الضوء 11"
+        },
+        "titleFormatted": {
+          "en": "Set light temperature 11 to [[val]]",
+          "nl": "Stel lichttemperatuur 11 in op [[val]]",
+          "da": "Indstil lystemperatur 11 til [[val]]",
+          "de": "Lichttemperatur 11 auf [[val]] einstellen",
+          "es": "Establecer temperatura de luz 11 a [[val]]",
+          "fr": "Régler la température de la lumière 11 à [[val]]",
+          "it": "Imposta la temperatura della luce 11 su [[val]]",
+          "no": "Angi lystemperatur 11 til [[val]]",
+          "sv": "Ställ in ljustemperatur 11 till [[val]]",
+          "pl": "Ustaw temperaturę światła 11 na [[val]]",
+          "ru": "Установить температуру света 11 на [[val]]",
+          "ko": "조명 온도 11을 [[val]]로 설정",
+          "ar": "تحديد درجة حرارة الضوء 11 إلى [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=light_temperature.11"
+          },
+          {
+            "name": "val",
+            "type": "range",
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "value": 0.5
+          }
+        ],
+        "id": "light_temperature.11"
+      },
+      {
+        "title": {
           "en": "Turn Child Lock On or Off",
           "nl": "Zet kinderslot Aan of Uit",
           "da": "Tænd eller sluk børnesikringen",
@@ -4312,6 +5417,104 @@
           }
         ],
         "id": "locked.child"
+      },
+      {
+        "title": {
+          "en": "Turn Hand Open On or Off",
+          "nl": "Zet Handmatig Openen Aan of Uit",
+          "da": "Slå manuel åbning til eller fra",
+          "de": "Manuelles Öffnen ein- oder ausschalten",
+          "es": "Activar o desactivar apertura manual",
+          "fr": "Activer ou désactiver l'ouverture manuelle",
+          "it": "Attiva o disattiva l'apertura manuale",
+          "no": "Slå manuell åpning på eller av",
+          "sv": "Slå på eller av manuell öppning",
+          "pl": "Włącz lub wyłącz ręczne otwieranie",
+          "ru": "Включить или выключить ручное открытие",
+          "ko": "수동 열기 켜기 또는 끄기",
+          "ar": "تشغيل أو إيقاف الفتح اليدوي"
+        },
+        "titleFormatted": {
+          "en": "Turn Hand Open On: [[val]]",
+          "nl": "Zet Handmatig Openen Aan: [[val]]",
+          "da": "Slå manuel åbning til: [[val]]",
+          "de": "Manuelles Öffnen einschalten: [[val]]",
+          "es": "Activar apertura manual: [[val]]",
+          "fr": "Activer l'ouverture manuelle: [[val]]",
+          "it": "Attiva l'apertura manuale: [[val]]",
+          "no": "Slå på manuell åpning: [[val]]",
+          "sv": "Slå på manuell öppning: [[val]]",
+          "pl": "Włącz ręczne otwieranie: [[val]]",
+          "ru": "Включить ручное открытие: [[val]]",
+          "ko": "수동 열기 켜기: [[val]]",
+          "ar": "تشغيل الفتح اليدوي: [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=locked.hand_open"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On",
+              "nl": "Aan"
+            }
+          }
+        ],
+        "id": "locked.hand_open"
+      },
+      {
+        "title": {
+          "en": "Turn Hooks Lock On or Off",
+          "nl": "Zet haken slot Aan of Uit",
+          "da": "Slå kroge lås til eller fra",
+          "de": "Haken-Sperre ein- oder ausschalten",
+          "es": "Activar o desactivar bloqueo de ganchos",
+          "fr": "Activer ou désactiver le verrouillage des crochets",
+          "it": "Attiva o disattiva il blocco dei ganci",
+          "no": "Slå krok-lås på eller av",
+          "sv": "Slå på eller av kroklås",
+          "pl": "Włącz lub wyłącz blokadę haków",
+          "ru": "Включить или выключить блокировку крюков",
+          "ko": "후크 잠금 켜기 또는 끄기",
+          "ar": "تشغيل أو إيقاف قفل الخطافات"
+        },
+        "titleFormatted": {
+          "en": "Turn Hooks Lock On: [[val]]",
+          "nl": "Zet haken slot Aan: [[val]]",
+          "da": "Slå kroge lås til: [[val]]",
+          "de": "Haken-Sperre einschalten: [[val]]",
+          "es": "Activar bloqueo de ganchos: [[val]]",
+          "fr": "Activer le verrouillage des crochets: [[val]]",
+          "it": "Attiva il blocco dei ganci: [[val]]",
+          "no": "Slå på krok-lås: [[val]]",
+          "sv": "Slå på kroklås: [[val]]",
+          "pl": "Włącz blokadę haków: [[val]]",
+          "ru": "Включить блокировку крюков: [[val]]",
+          "ko": "후크 잠금 켜기: [[val]]",
+          "ar": "تشغيل قفل الخطافات: [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=locked.hooks"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On",
+              "nl": "Aan"
+            }
+          }
+        ],
+        "id": "locked.hooks"
       },
       {
         "title": {
@@ -4405,6 +5608,55 @@
       },
       {
         "title": {
+          "en": "Switch 11 On or Off",
+          "nl": "Schakel 11 in of uit",
+          "da": "Tænd eller sluk 11",
+          "de": "11 ein- oder ausschalten",
+          "es": "Encender o apagar 11",
+          "fr": "Allumer ou éteindre 11",
+          "it": "Accendere o spegnere 11",
+          "no": "Slå 11 på eller av",
+          "sv": "Slå på eller av 11",
+          "pl": "Włącz lub wyłącz 11",
+          "ru": "Включить или выключить 11",
+          "ko": "11 켜기 또는 끄기",
+          "ar": "تشغيل أو إيقاف 11"
+        },
+        "titleFormatted": {
+          "en": "Switch 11 [[val]]",
+          "nl": "Schakel 11 [[val]]",
+          "da": "Tænd/sluk 11 [[val]]",
+          "de": "11 schalten [[val]]",
+          "es": "Cambiar 11 [[val]]",
+          "fr": "Basculer 11 [[val]]",
+          "it": "Interruttore 11 [[val]]",
+          "no": "Bytt 11 [[val]]",
+          "sv": "Byt 11 [[val]]",
+          "pl": "Przełącz 11 [[val]]",
+          "ru": "Переключить 11 [[val]]",
+          "ko": "11 [[val]] 전환",
+          "ar": "تبديل 11 [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=onoff.11"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On",
+              "nl": "Aan"
+            }
+          }
+        ],
+        "id": "onoff.11"
+      },
+      {
+        "title": {
           "en": "Switch backlight On or Off",
           "nl": "Schakel achtergrondverlichting in of uit",
           "da": "Tænd eller sluk baggrundsbelysningen",
@@ -4465,34 +5717,34 @@
       },
       {
         "title": {
-          "en": "Switch Bottom On or Off",
-          "nl": "Schakel Onder in of uit",
-          "da": "Tænd eller sluk for bund",
-          "de": "Schalten Sie unten ein oder aus",
-          "es": "Activar o desactivar abajo",
-          "fr": "Activer ou désactiver le bas",
-          "it": "Accendi o spegni il basso",
-          "no": "Slå bunnen på eller av",
-          "sv": "Slå på eller av botten",
-          "pl": "Włącz lub wyłącz dolny",
-          "ru": "Включить или выключить низ",
+          "en": "Turn Bottom On or Off",
+          "nl": "Zet Onder Aan of Uit",
+          "da": "Tænd eller sluk Bund",
+          "de": "Unten ein- oder ausschalten",
+          "es": "Encender o apagar Abajo",
+          "fr": "Allumer ou éteindre Bas",
+          "it": "Accendi o spegni Sotto",
+          "no": "Slå Bunn på eller av",
+          "sv": "Slå på eller av Botten",
+          "pl": "Włącz lub wyłącz Dolne",
+          "ru": "Включить или выключить Нижний",
           "ko": "아래쪽 켜기 또는 끄기",
-          "ar": "تشغيل أو إيقاف الجزء السفلي"
+          "ar": "تشغيل أو إيقاف الأسفل"
         },
         "titleFormatted": {
-          "en": "Switch Bottom [[val]]",
-          "nl": "Schakel Onder [[val]]",
-          "da": "Skift bund [[val]]",
-          "de": "Unten schalten [[val]]",
-          "es": "Cambiar abajo [[val]]",
-          "fr": "Bas de commutation [[val]]",
-          "it": "Basso di commutazione [[val]]",
-          "no": "Bytt bunn [[val]]",
-          "sv": "Växla botten [[val]]",
-          "pl": "Przełącz dolny [[val]]",
-          "ru": "Переключить низ [[val]]",
-          "ko": "아래쪽 전환 [[val]]",
-          "ar": "التبديل السفلي [[val]]"
+          "en": "Turn Bottom On: [[val]]",
+          "nl": "Zet Onder Aan: [[val]]",
+          "da": "Tænd Bund: [[val]]",
+          "de": "Unten einschalten: [[val]]",
+          "es": "Encender Abajo: [[val]]",
+          "fr": "Allumer Bas: [[val]]",
+          "it": "Accendi Sotto: [[val]]",
+          "no": "Slå på Bunn: [[val]]",
+          "sv": "Slå på Botten: [[val]]",
+          "pl": "Włącz Dolne: [[val]]",
+          "ru": "Включить Нижний: [[val]]",
+          "ko": "아래쪽 켜기: [[val]]",
+          "ar": "تشغيل الأسفل: [[val]]"
         },
         "highlight": true,
         "args": [
@@ -4507,16 +5759,16 @@
             "title": {
               "en": "On",
               "nl": "Aan",
-              "da": "På",
-              "de": "Ein",
+              "da": "Til",
+              "de": "An",
               "es": "Encendido",
-              "fr": "Allumé",
+              "fr": "Activé",
               "it": "Acceso",
               "no": "På",
               "sv": "På",
               "pl": "Włączone",
               "ru": "Включено",
-              "ko": "켬",
+              "ko": "켜짐",
               "ar": "تشغيل"
             }
           }
@@ -5759,6 +7011,89 @@
       },
       {
         "title": {
+          "en": "Set Power On Behavior 11",
+          "nl": "Zet Stroom Aanzet Gedrag 11",
+          "da": "Indstil Tændingsadfærd 11",
+          "de": "Einschaltverhalten 11 festlegen",
+          "es": "Configurar Comportamiento de Encendido 11",
+          "fr": "Définir le comportement de mise sous tension 11",
+          "it": "Imposta Comportamento di Accensione 11",
+          "no": "Sett Strøm På Atferd 11",
+          "sv": "Ställ in Uppstartsbeteende 11",
+          "pl": "Ustaw Zachowanie Po Włączeniu 11",
+          "ru": "Установить Поведение Включения 11",
+          "ko": "전원 켜짐 동작 11 설정",
+          "ar": "تعيين سلوك التشغيل 11"
+        },
+        "titleFormatted": {
+          "en": "Set Power On Behavior 11 to [[val]]",
+          "nl": "Zet Stroom Aanzet Gedrag 11 op [[val]]",
+          "da": "Indstil Tændingsadfærd 11 til [[val]]",
+          "de": "Einschaltverhalten 11 auf [[val]] setzen",
+          "es": "Configurar Comportamiento de Encendido 11 a [[val]]",
+          "fr": "Définir le comportement de mise sous tension 11 sur [[val]]",
+          "it": "Imposta Comportamento di Accensione 11 su [[val]]",
+          "no": "Sett Strøm På Atferd 11 til [[val]]",
+          "sv": "Ställ in Uppstartsbeteende 11 till [[val]]",
+          "pl": "Ustaw Zachowanie Po Włączeniu 11 na [[val]]",
+          "ru": "Установить Поведение Включения 11 на [[val]]",
+          "ko": "[[val]]의 전원 켜짐 동작 11 설정",
+          "ar": "تعيين سلوك التشغيل 11 إلى [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=power_on_behavior.11"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "off",
+                "title": {
+                  "en": "Off",
+                  "nl": "Uit",
+                  "de": "Aus",
+                  "fr": "Éteint"
+                }
+              },
+              {
+                "id": "on",
+                "title": {
+                  "en": "On",
+                  "nl": "Aan",
+                  "de": "Ein",
+                  "fr": "Allumé"
+                }
+              },
+              {
+                "id": "toggle",
+                "title": {
+                  "en": "Toggle",
+                  "nl": "Wissel",
+                  "de": "Umschalten",
+                  "fr": "Basculer"
+                }
+              },
+              {
+                "id": "previous",
+                "title": {
+                  "en": "Previous",
+                  "nl": "Vorige",
+                  "de": "Vorherige",
+                  "fr": "Précédent"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "power_on_behavior.11"
+      },
+      {
+        "title": {
           "en": "Set Power Outage Memory",
           "nl": "Stel stroomuitvalgeheugen in",
           "da": "Indstil strømafbrydelseshukommelse",
@@ -6100,6 +7435,80 @@
           }
         ],
         "id": "sensitivity"
+      },
+      {
+        "title": {
+          "en": "Set motion sensitivity",
+          "nl": "Stel bewegingsgevoeligheid in",
+          "da": "Indstil bevægelsesfølsomhed",
+          "de": "Bewegungsempfindlichkeit einstellen",
+          "es": "Establecer sensibilidad de movimiento",
+          "fr": "Régler la sensibilité au mouvement",
+          "it": "Imposta sensibilità al movimento",
+          "no": "Angi bevegelsesfølsomhet",
+          "sv": "Ställ in rörelsekänslighet",
+          "pl": "Ustaw czułość na ruch",
+          "ru": "Установить чувствительность к движению",
+          "ko": "동작 민감도 설정",
+          "ar": "تعيين حساسية الحركة"
+        },
+        "titleFormatted": {
+          "en": "Set motion sensitivity to [[val]]",
+          "nl": "Stel bewegingsgevoeligheid in op [[val]]",
+          "da": "Indstil bevægelsesfølsomhed til [[val]]",
+          "de": "Bewegungsempfindlichkeit auf [[val]] einstellen",
+          "es": "Establecer sensibilidad de movimiento en [[val]]",
+          "fr": "Régler la sensibilité au mouvement sur [[val]]",
+          "it": "Imposta sensibilità al movimento su [[val]]",
+          "no": "Angi bevegelsesfølsomhet til [[val]]",
+          "sv": "Ställ in rörelsekänslighet till [[val]]",
+          "pl": "Ustaw czułość na ruch na [[val]]",
+          "ru": "Установить чувствительность к движению на [[val]]",
+          "ko": "동작 민감도를 [[val]]로 설정",
+          "ar": "تعيين حساسية الحركة إلى [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=sensitivity.motion"
+          },
+          {
+            "type": "dropdown",
+            "name": "val",
+            "values": [
+              {
+                "id": "low",
+                "title": {
+                  "en": "Low",
+                  "nl": "Laag",
+                  "de": "Niedrig",
+                  "fr": "Bas"
+                }
+              },
+              {
+                "id": "medium",
+                "title": {
+                  "en": "Medium",
+                  "nl": "Gemiddeld",
+                  "de": "Mittel",
+                  "fr": "Moyen"
+                }
+              },
+              {
+                "id": "high",
+                "title": {
+                  "en": "High",
+                  "nl": "Hoog",
+                  "de": "Hoch",
+                  "fr": "Élevé"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "sensitivity.motion"
       },
       {
         "title": {
