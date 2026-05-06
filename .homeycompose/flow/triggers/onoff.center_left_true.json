@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Turned On Center-Left",
-    "nl": "Midden-Links Ingeschakeld"
+    "nl": "Midden-Links Ingeschakeld",
+    "da": "Tændt Midte-Venstre",
+    "de": "Eingeschaltet Mitte-Links",
+    "es": "Encendido Centro-Izquierda",
+    "fr": "Allumé Centre-Gauche",
+    "it": "Acceso Centro-Sinistra",
+    "no": "Slått på Midt-Venstre",
+    "sv": "Påslagen Mitten-Vänster",
+    "pl": "Włączono Środek-Lewe",
+    "ru": "Включено по центру слева",
+    "ko": "켜짐 중앙-왼쪽",
+    "ar": "تم تشغيل الوسط-اليسار"
   },
   "highlight": true,
   "args": [

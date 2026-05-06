@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Turned Off Top",
-    "nl": "Boven Uitgeschakeld"
+    "nl": "Boven Uitgeschakeld",
+    "da": "Slukket Top",
+    "de": "Ausgeschaltet Oben",
+    "es": "Apagado Arriba",
+    "fr": "Éteint Haut",
+    "it": "Spento Sopra",
+    "no": "Slått av Topp",
+    "sv": "Avstängd Uppe",
+    "pl": "Wyłączono Górne",
+    "ru": "Выключено сверху",
+    "ko": "꺼짐 위쪽",
+    "ar": "تم إيقاف الأعلى"
   },
   "highlight": true,
   "args": [

@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Hooks Unlocked",
-    "nl": "Haken Ontgrendeld"
+    "nl": "Haken Ontgrendeld",
+    "da": "Kroge låst op",
+    "de": "Haken entriegelt",
+    "es": "Ganchos desbloqueados",
+    "fr": "Crochets déverrouillés",
+    "it": "Ganci sbloccati",
+    "no": "Kroker låst opp",
+    "sv": "Krokar upplåsta",
+    "pl": "Haki odblokowane",
+    "ru": "Крюки разблокированы",
+    "ko": "후크 잠금 해제됨",
+    "ar": "تم فتح الخطافات"
   },
   "highlight": true,
   "args": [

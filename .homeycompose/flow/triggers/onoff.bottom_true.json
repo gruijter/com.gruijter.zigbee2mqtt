@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Turned On Bottom",
-    "nl": "Onder Ingeschakeld"
+    "nl": "Onder Ingeschakeld",
+    "da": "Tændt Bund",
+    "de": "Eingeschaltet Unten",
+    "es": "Encendido Abajo",
+    "fr": "Allumé Bas",
+    "it": "Acceso Sotto",
+    "no": "Slått på Bunn",
+    "sv": "Påslagen Nere",
+    "pl": "Włączono Dolne",
+    "ru": "Включено снизу",
+    "ko": "켜짐 아래쪽",
+    "ar": "تم تشغيل الأسفل"
   },
   "highlight": true,
   "args": [

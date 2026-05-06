@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Self-test Turned On",
-    "nl": "Zelftest Ingeschakeld"
+    "nl": "Zelftest Ingeschakeld",
+    "da": "Selvtest tændt",
+    "de": "Selbsttest eingeschaltet",
+    "es": "Autotest encendido",
+    "fr": "Auto-test allumé",
+    "it": "Auto-test acceso",
+    "no": "Selvtest slått på",
+    "sv": "Självtest påslagen",
+    "pl": "Autotest włączony",
+    "ru": "Самотестирование включено",
+    "ko": "자가 테스트 켜짐",
+    "ar": "تم تشغيل الاختبار الذاتي"
   },
   "highlight": true,
   "args": [

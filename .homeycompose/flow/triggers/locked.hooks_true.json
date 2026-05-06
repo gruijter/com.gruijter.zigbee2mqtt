@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Hooks Locked",
-    "nl": "Haken Vergrendeld"
+    "nl": "Haken Vergrendeld",
+    "da": "Kroge låst",
+    "de": "Haken verriegelt",
+    "es": "Ganchos bloqueados",
+    "fr": "Crochets verrouillés",
+    "it": "Ganci bloccati",
+    "no": "Kroker låst",
+    "sv": "Krokar låsta",
+    "pl": "Haki zablokowane",
+    "ru": "Крюки заблокированы",
+    "ko": "후크 잠김",
+    "ar": "الخطافات مقفلة"
   },
   "highlight": true,
   "args": [

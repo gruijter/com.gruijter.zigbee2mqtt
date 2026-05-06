@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Area 3 Occupancy Detected",
-    "nl": "Gebied 3 Bezetting Gedetecteerd"
+    "nl": "Gebied 3 Bezetting Gedetecteerd",
+    "da": "Område 3 belægning opdaget",
+    "de": "Bereich 3 Belegung erkannt",
+    "es": "Ocupación en área 3 detectada",
+    "fr": "Occupation de la zone 3 détectée",
+    "it": "Occupazione Area 3 rilevata",
+    "no": "Område 3 belegg oppdaget",
+    "sv": "Område 3 närvaro upptäckt",
+    "pl": "Wykryto obecność w strefie 3",
+    "ru": "Зона 3: обнаружено присутствие",
+    "ko": "구역 3 점유 감지됨",
+    "ar": "تم اكتشاف إشغال المنطقة 3"
   },
   "highlight": true,
   "args": [

@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "The light temperature 11 changed",
-    "nl": "De lichttemperatuur 11 is gewijzigd"
+    "nl": "De lichttemperatuur 11 is gewijzigd",
+    "da": "Lystemperaturen 11 er ændret",
+    "de": "Die Lichttemperatur 11 hat sich geändert",
+    "es": "La temperatura de la luz 11 ha cambiado",
+    "fr": "La température de la lumière 11 a changé",
+    "it": "La temperatura della luce 11 è cambiata",
+    "no": "Lystemperaturen 11 er endret",
+    "sv": "Ljustemperaturen 11 ändrades",
+    "pl": "Temperatura światła 11 uległa zmianie",
+    "ru": "Цветовая температура 11 изменилась",
+    "ko": "조명 온도 11이 변경되었습니다",
+    "ar": "تغيرت درجة حرارة الضوء 11"
   },
   "highlight": true,
   "args": [
@@ -17,7 +28,18 @@
       "type": "number",
       "title": {
         "en": "Light temperature",
-        "nl": "Lichttemperatuur"
+        "nl": "Lichttemperatuur",
+        "da": "Lystemperatur",
+        "de": "Lichttemperatur",
+        "es": "Temperatura de la luz",
+        "fr": "Température de la lumière",
+        "it": "Temperatura della luce",
+        "no": "Lystemperatur",
+        "sv": "Ljustemperatur",
+        "pl": "Temperatura światła",
+        "ru": "Цветовая температура",
+        "ko": "조명 온도",
+        "ar": "درجة حرارة الضوء"
       },
       "example": 0.5
     }

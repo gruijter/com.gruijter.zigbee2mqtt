@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Turned Off Center-Right",
-    "nl": "Midden-Rechts Uitgeschakeld"
+    "nl": "Midden-Rechts Uitgeschakeld",
+    "da": "Slukket Midte-Højre",
+    "de": "Ausgeschaltet Mitte-Rechts",
+    "es": "Apagado Centro-Derecha",
+    "fr": "Éteint Centre-Droite",
+    "it": "Spento Centro-Destra",
+    "no": "Slått av Midt-Høyre",
+    "sv": "Avstängd Mitten-Höger",
+    "pl": "Wyłączono Środek-Prawe",
+    "ru": "Выключено по центру справа",
+    "ko": "꺼짐 중앙-오른쪽",
+    "ar": "تم إيقاف الوسط-اليمين"
   },
   "highlight": true,
   "args": [

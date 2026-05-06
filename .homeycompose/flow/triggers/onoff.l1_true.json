@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Turned On L1",
-    "nl": "Ingeschakeld L1"
+    "nl": "Ingeschakeld L1",
+    "da": "Tændt L1",
+    "de": "Eingeschaltet L1",
+    "es": "Encendido L1",
+    "fr": "Allumé L1",
+    "it": "Acceso L1",
+    "no": "Slått på L1",
+    "sv": "Påslagen L1",
+    "pl": "Włączono L1",
+    "ru": "Включено L1",
+    "ko": "켜짐 L1",
+    "ar": "تم تشغيل L1"
   },
   "highlight": true,
   "args": [

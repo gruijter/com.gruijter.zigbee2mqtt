@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Area 1 Occupancy Detected",
-    "nl": "Gebied 1 Bezetting Gedetecteerd"
+    "nl": "Gebied 1 Bezetting Gedetecteerd",
+    "da": "Område 1 belægning opdaget",
+    "de": "Bereich 1 Belegung erkannt",
+    "es": "Ocupación en área 1 detectada",
+    "fr": "Occupation de la zone 1 détectée",
+    "it": "Occupazione Area 1 rilevata",
+    "no": "Område 1 belegg oppdaget",
+    "sv": "Område 1 närvaro upptäckt",
+    "pl": "Wykryto obecność w strefie 1",
+    "ru": "Зона 1: обнаружено присутствие",
+    "ko": "구역 1 점유 감지됨",
+    "ar": "تم اكتشاف إشغال المنطقة 1"
   },
   "highlight": true,
   "args": [

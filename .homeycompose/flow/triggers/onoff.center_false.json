@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Turned Off Center",
-    "nl": "Midden Uitgeschakeld"
+    "nl": "Midden Uitgeschakeld",
+    "da": "Slukket Midte",
+    "de": "Ausgeschaltet Mitte",
+    "es": "Apagado Centro",
+    "fr": "Éteint Centre",
+    "it": "Spento Centro",
+    "no": "Slått av Midten",
+    "sv": "Avstängd Mitten",
+    "pl": "Wyłączono Środek",
+    "ru": "Выключено по центру",
+    "ko": "꺼짐 중앙",
+    "ar": "تم إيقاف الوسط"
   },
   "highlight": true,
   "args": [

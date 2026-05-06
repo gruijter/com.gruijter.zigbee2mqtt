@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Turned Off Bottom",
-    "nl": "Onder Uitgeschakeld"
+    "nl": "Onder Uitgeschakeld",
+    "da": "Slukket Bund",
+    "de": "Ausgeschaltet Unten",
+    "es": "Apagado Abajo",
+    "fr": "Éteint Bas",
+    "it": "Spento Sotto",
+    "no": "Slått av Bunn",
+    "sv": "Avstängd Nere",
+    "pl": "Wyłączono Dolne",
+    "ru": "Выключено снизу",
+    "ko": "꺼짐 아래쪽",
+    "ar": "تم إيقاف الأسفل"
   },
   "highlight": true,
   "args": [

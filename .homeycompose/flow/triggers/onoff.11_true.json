@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Turned On 11",
-    "nl": "Ingeschakeld 11"
+    "nl": "Ingeschakeld 11",
+    "da": "Tændt 11",
+    "de": "Eingeschaltet 11",
+    "es": "Encendido 11",
+    "fr": "Allumé 11",
+    "it": "Acceso 11",
+    "no": "Slått på 11",
+    "sv": "Påslagen 11",
+    "pl": "Włączono 11",
+    "ru": "Включено 11",
+    "ko": "켜짐 11",
+    "ar": "تم تشغيل 11"
   },
   "highlight": true,
   "args": [

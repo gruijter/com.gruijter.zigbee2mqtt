@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Area 4 Occupancy Cleared",
-    "nl": "Gebied 4 Bezetting Vrij"
+    "nl": "Gebied 4 Bezetting Vrij",
+    "da": "Område 4 belægning ryddet",
+    "de": "Bereich 4 Belegung geräumt",
+    "es": "Ocupación en área 4 despejada",
+    "fr": "Occupation de la zone 4 effacée",
+    "it": "Occupazione Area 4 libera",
+    "no": "Område 4 belegg ledig",
+    "sv": "Område 4 närvaro rensad",
+    "pl": "Strefa 4 pusta",
+    "ru": "Зона 4: присутствие не обнаружено",
+    "ko": "구역 4 점유 해제됨",
+    "ar": "تم إخلاء إشغال المنطقة 4"
   },
   "highlight": true,
   "args": [

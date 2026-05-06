@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "The external humidity changed",
-    "nl": "De externe luchtvochtigheid is gewijzigd"
+    "nl": "De externe luchtvochtigheid is gewijzigd",
+    "da": "Den eksterne luftfugtighed er ændret",
+    "de": "Die externe Luftfeuchtigkeit hat sich geändert",
+    "es": "La humedad externa ha cambiado",
+    "fr": "L'humidité externe a changé",
+    "it": "L'umidità esterna è cambiata",
+    "no": "Den eksterne luftfuktigheten er endret",
+    "sv": "Den yttre luftfuktigheten ändrades",
+    "pl": "Wilgotność zewnętrzna uległa zmianie",
+    "ru": "Внешняя влажность изменилась",
+    "ko": "외부 습도가 변경되었습니다",
+    "ar": "تغيرت الرطوبة الخارجية"
   },
   "highlight": true,
   "args": [
@@ -17,7 +28,18 @@
       "type": "number",
       "title": {
         "en": "External humidity",
-        "nl": "Externe luchtvochtigheid"
+        "nl": "Externe luchtvochtigheid",
+        "da": "Ekstern luftfugtighed",
+        "de": "Externe Luftfeuchtigkeit",
+        "es": "Humedad externa",
+        "fr": "Humidité externe",
+        "it": "Umidità esterna",
+        "no": "Ekstern luftfuktighet",
+        "sv": "Yttre luftfuktighet",
+        "pl": "Wilgotność zewnętrzna",
+        "ru": "Внешняя влажность",
+        "ko": "외부 습도",
+        "ar": "الرطوبة الخارجية"
       },
       "example": 55
     }

@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Turned On Right",
-    "nl": "Rechts Ingeschakeld"
+    "nl": "Rechts Ingeschakeld",
+    "da": "Tændt Højre",
+    "de": "Eingeschaltet Rechts",
+    "es": "Encendido Derecha",
+    "fr": "Allumé Droite",
+    "it": "Acceso Destra",
+    "no": "Slått på Høyre",
+    "sv": "Påslagen Höger",
+    "pl": "Włączono Prawe",
+    "ru": "Включено справа",
+    "ko": "켜짐 오른쪽",
+    "ar": "تم تشغيل اليمين"
   },
   "highlight": true,
   "args": [

@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Window Opened",
-    "nl": "Raam Geopend"
+    "nl": "Raam Geopend",
+    "da": "Vindue åbnet",
+    "de": "Fenster geöffnet",
+    "es": "Ventana abierta",
+    "fr": "Fenêtre ouverte",
+    "it": "Finestra aperta",
+    "no": "Vindu åpnet",
+    "sv": "Fönster öppnat",
+    "pl": "Okno otwarte",
+    "ru": "Окно открыто",
+    "ko": "창문 열림",
+    "ar": "نافذة مفتوحة"
   },
   "highlight": true,
   "args": [

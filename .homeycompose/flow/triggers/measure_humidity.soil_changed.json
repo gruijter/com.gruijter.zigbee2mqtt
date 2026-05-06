@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "The soil moisture changed",
-    "nl": "De bodemvochtigheid is gewijzigd"
+    "nl": "De bodemvochtigheid is gewijzigd",
+    "da": "Jordfugtigheden er ændret",
+    "de": "Die Bodenfeuchtigkeit hat sich geändert",
+    "es": "La humedad del suelo ha cambiado",
+    "fr": "L'humidité du sol a changé",
+    "it": "L'umidità del suolo è cambiata",
+    "no": "Jordfuktigheten er endret",
+    "sv": "Markfuktigheten ändrades",
+    "pl": "Wilgotność gleby uległa zmianie",
+    "ru": "Влажность почвы изменилась",
+    "ko": "토양 수분이 변경되었습니다",
+    "ar": "تغيرت رطوبة التربة"
   },
   "highlight": true,
   "args": [
@@ -17,7 +28,18 @@
       "type": "number",
       "title": {
         "en": "Soil moisture",
-        "nl": "Bodemvochtigheid"
+        "nl": "Bodemvochtigheid",
+        "da": "Jordfugtighed",
+        "de": "Bodenfeuchtigkeit",
+        "es": "Humedad del suelo",
+        "fr": "Humidité du sol",
+        "it": "Umidità del suolo",
+        "no": "Jordfuktighet",
+        "sv": "Markfuktighet",
+        "pl": "Wilgotność gleby",
+        "ru": "Влажность почвы",
+        "ko": "토양 수분",
+        "ar": "رطوبة التربة"
       },
       "example": 40
     }

@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Area 2 Occupancy Cleared",
-    "nl": "Gebied 2 Bezetting Vrij"
+    "nl": "Gebied 2 Bezetting Vrij",
+    "da": "Område 2 belægning ryddet",
+    "de": "Bereich 2 Belegung geräumt",
+    "es": "Ocupación en área 2 despejada",
+    "fr": "Occupation de la zone 2 effacée",
+    "it": "Occupazione Area 2 libera",
+    "no": "Område 2 belegg ledig",
+    "sv": "Område 2 närvaro rensad",
+    "pl": "Strefa 2 pusta",
+    "ru": "Зона 2: присутствие не обнаружено",
+    "ko": "구역 2 점유 해제됨",
+    "ar": "تم إخلاء إشغال المنطقة 2"
   },
   "highlight": true,
   "args": [

@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Pre-alarm Turned On",
-    "nl": "Voor-alarm Ingeschakeld"
+    "nl": "Voor-alarm Ingeschakeld",
+    "da": "For-alarm tændt",
+    "de": "Voralarm eingeschaltet",
+    "es": "Pre-alarma encendida",
+    "fr": "Pré-alarme allumée",
+    "it": "Pre-allarme acceso",
+    "no": "For-alarm slått på",
+    "sv": "Förlarm påslagen",
+    "pl": "Pre-alarm włączony",
+    "ru": "Предварительная тревога включена",
+    "ko": "사전 알람 켜짐",
+    "ar": "تم تشغيل الإنذار المسبق"
   },
   "highlight": true,
   "args": [

@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Child Lock Deactivated",
-    "nl": "Kinderslot Gedeactiveerd"
+    "nl": "Kinderslot Gedeactiveerd",
+    "da": "Børnesikring deaktiveret",
+    "de": "Kindersicherung deaktiviert",
+    "es": "Bloqueo para niños desactivado",
+    "fr": "Sécurité enfant désactivée",
+    "it": "Blocco bambini disattivato",
+    "no": "Barnesikring deaktivert",
+    "sv": "Barnspärr inaktiverad",
+    "pl": "Blokada rodzicielska wyłączona",
+    "ru": "Детский замок деактивирован",
+    "ko": "차일드락 비활성화됨",
+    "ar": "تم إلغاء تفعيل قفل الأطفال"
   },
   "highlight": true,
   "args": [

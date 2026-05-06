@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Rain Detected",
-    "nl": "Regen Gedetecteerd"
+    "nl": "Regen Gedetecteerd",
+    "da": "Regn opdaget",
+    "de": "Regen erkannt",
+    "es": "Lluvia detectada",
+    "fr": "Pluie détectée",
+    "it": "Pioggia rilevata",
+    "no": "Regn oppdaget",
+    "sv": "Regn upptäckt",
+    "pl": "Wykryto deszcz",
+    "ru": "Обнаружен дождь",
+    "ko": "비 감지됨",
+    "ar": "تم اكتشاف مطر"
   },
   "highlight": true,
   "args": [

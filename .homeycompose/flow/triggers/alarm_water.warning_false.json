@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Water Warning Cleared",
-    "nl": "Water Waarschuwing Opgeheven"
+    "nl": "Water Waarschuwing Opgeheven",
+    "da": "Vandadvarsel afblæst",
+    "de": "Wasserwarnung aufgehoben",
+    "es": "Advertencia de agua cancelada",
+    "fr": "Avertissement d'eau annulé",
+    "it": "Avviso acqua annullato",
+    "no": "Vannadvarsel avblåst",
+    "sv": "Vattenvarning avblåst",
+    "pl": "Ostrzeżenie o wodzie odwołane",
+    "ru": "Предупреждение о воде снято",
+    "ko": "물 경고 해제됨",
+    "ar": "تم إزالة تحذير المياه"
   },
   "highlight": true,
   "args": [

@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Heartbeat Turned On",
-    "nl": "Heartbeat Ingeschakeld"
+    "nl": "Heartbeat Ingeschakeld",
+    "da": "Hjerteslag tændt",
+    "de": "Herzschlag eingeschaltet",
+    "es": "Latido encendido",
+    "fr": "Battement de cœur allumé",
+    "it": "Battito cardiaco acceso",
+    "no": "Hjerteslag slått på",
+    "sv": "Hjärtslag påslagen",
+    "pl": "Puls włączony",
+    "ru": "Сердцебиение включено",
+    "ko": "하트비트 켜짐",
+    "ar": "تم تشغيل نبض القلب"
   },
   "highlight": true,
   "args": [

@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Turned On L3",
-    "nl": "Ingeschakeld L3"
+    "nl": "Ingeschakeld L3",
+    "da": "Tændt L3",
+    "de": "Eingeschaltet L3",
+    "es": "Encendido L3",
+    "fr": "Allumé L3",
+    "it": "Acceso L3",
+    "no": "Slått på L3",
+    "sv": "Påslagen L3",
+    "pl": "Włączono L3",
+    "ru": "Включено L3",
+    "ko": "켜짐 L3",
+    "ar": "تم تشغيل L3"
   },
   "highlight": true,
   "args": [

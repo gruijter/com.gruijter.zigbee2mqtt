@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Self-test Turned Off",
-    "nl": "Zelftest Uitgeschakeld"
+    "nl": "Zelftest Uitgeschakeld",
+    "da": "Selvtest slukket",
+    "de": "Selbsttest ausgeschaltet",
+    "es": "Autotest apagado",
+    "fr": "Auto-test éteint",
+    "it": "Auto-test spento",
+    "no": "Selvtest slått av",
+    "sv": "Självtest avstängd",
+    "pl": "Autotest wyłączony",
+    "ru": "Самотестирование выключено",
+    "ko": "자가 테스트 꺼짐",
+    "ar": "تم إيقاف الاختبار الذاتي"
   },
   "highlight": true,
   "args": [

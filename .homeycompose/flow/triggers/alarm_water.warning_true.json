@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Water Warning",
-    "nl": "Water Waarschuwing"
+    "nl": "Water Waarschuwing",
+    "da": "Vandadvarsel",
+    "de": "Wasserwarnung",
+    "es": "Advertencia de agua",
+    "fr": "Avertissement d'eau",
+    "it": "Avviso acqua",
+    "no": "Vannadvarsel",
+    "sv": "Vattenvarning",
+    "pl": "Ostrzeżenie o wodzie",
+    "ru": "Предупреждение о воде",
+    "ko": "물 경고",
+    "ar": "تحذير من المياه"
   },
   "highlight": true,
   "args": [

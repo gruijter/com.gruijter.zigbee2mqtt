@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Indicator Turned On",
-    "nl": "Indicator Ingeschakeld"
+    "nl": "Indicator Ingeschakeld",
+    "da": "Indikator tændt",
+    "de": "Indikator eingeschaltet",
+    "es": "Indicador encendido",
+    "fr": "Indicateur allumé",
+    "it": "Indicatore acceso",
+    "no": "Indikator slått på",
+    "sv": "Indikator påslagen",
+    "pl": "Wskaźnik włączony",
+    "ru": "Индикатор включен",
+    "ko": "표시기 켜짐",
+    "ar": "تم تشغيل المؤشر"
   },
   "highlight": true,
   "args": [

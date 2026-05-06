@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Indicator Turned Off",
-    "nl": "Indicator Uitgeschakeld"
+    "nl": "Indicator Uitgeschakeld",
+    "da": "Indikator slukket",
+    "de": "Indikator ausgeschaltet",
+    "es": "Indicador apagado",
+    "fr": "Indicateur éteint",
+    "it": "Indicatore spento",
+    "no": "Indikator slått av",
+    "sv": "Indikator avstängd",
+    "pl": "Wskaźnik wyłączony",
+    "ru": "Индикатор выключен",
+    "ko": "표시기 꺼짐",
+    "ar": "تم إيقاف المؤشر"
   },
   "highlight": true,
   "args": [

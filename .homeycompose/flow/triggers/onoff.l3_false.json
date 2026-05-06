@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Turned Off L3",
-    "nl": "Uitgeschakeld L3"
+    "nl": "Uitgeschakeld L3",
+    "da": "Slukket L3",
+    "de": "Ausgeschaltet L3",
+    "es": "Apagado L3",
+    "fr": "Éteint L3",
+    "it": "Spento L3",
+    "no": "Slått av L3",
+    "sv": "Avstängd L3",
+    "pl": "Wyłączono L3",
+    "ru": "Выключено L3",
+    "ko": "꺼짐 L3",
+    "ar": "تم إيقاف L3"
   },
   "highlight": true,
   "args": [

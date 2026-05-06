@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Child Lock Activated",
-    "nl": "Kinderslot Geactiveerd"
+    "nl": "Kinderslot Geactiveerd",
+    "da": "Børnesikring aktiveret",
+    "de": "Kindersicherung aktiviert",
+    "es": "Bloqueo para niños activado",
+    "fr": "Sécurité enfant activée",
+    "it": "Blocco bambini attivato",
+    "no": "Barnesikring aktivert",
+    "sv": "Barnspärr aktiverad",
+    "pl": "Blokada rodzicielska włączona",
+    "ru": "Детский замок активирован",
+    "ko": "차일드락 활성화됨",
+    "ar": "تم تفعيل قفل الأطفال"
   },
   "highlight": true,
   "args": [

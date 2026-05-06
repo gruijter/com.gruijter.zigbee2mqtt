@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Turned Off 11",
-    "nl": "Uitgeschakeld 11"
+    "nl": "Uitgeschakeld 11",
+    "da": "Slukket 11",
+    "de": "Ausgeschaltet 11",
+    "es": "Apagado 11",
+    "fr": "Éteint 11",
+    "it": "Spento 11",
+    "no": "Slått av 11",
+    "sv": "Avstängd 11",
+    "pl": "Wyłączono 11",
+    "ru": "Выключено 11",
+    "ko": "꺼짐 11",
+    "ar": "تم إيقاف 11"
   },
   "highlight": true,
   "args": [

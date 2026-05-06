@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "The local temperature changed",
-    "nl": "De lokale temperatuur is gewijzigd"
+    "nl": "De lokale temperatuur is gewijzigd",
+    "da": "Den lokale temperatur er ændret",
+    "de": "Die lokale Temperatur hat sich geändert",
+    "es": "La temperatura local ha cambiado",
+    "fr": "La température locale a changé",
+    "it": "La temperatura locale è cambiata",
+    "no": "Den lokale temperaturen er endret",
+    "sv": "Den lokala temperaturen ändrades",
+    "pl": "Lokalna temperatura uległa zmianie",
+    "ru": "Локальная температура изменилась",
+    "ko": "로컬 온도가 변경되었습니다",
+    "ar": "تغيرت درجة الحرارة المحلية"
   },
   "highlight": true,
   "args": [
@@ -17,7 +28,18 @@
       "type": "number",
       "title": {
         "en": "Local temperature",
-        "nl": "Lokale temperatuur"
+        "nl": "Lokale temperatuur",
+        "da": "Lokal temperatur",
+        "de": "Lokale Temperatur",
+        "es": "Temperatura local",
+        "fr": "Température locale",
+        "it": "Temperatura locale",
+        "no": "Lokal temperatur",
+        "sv": "Lokal temperatur",
+        "pl": "Lokalna temperatura",
+        "ru": "Локальная температура",
+        "ko": "로컬 온도",
+        "ar": "درجة الحرارة المحلية"
       },
       "example": 20.0
     }

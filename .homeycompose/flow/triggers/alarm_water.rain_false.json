@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Rain Stopped",
-    "nl": "Regen Gestopt"
+    "nl": "Regen Gestopt",
+    "da": "Regnen er stoppet",
+    "de": "Regen hat aufgehört",
+    "es": "La lluvia se detuvo",
+    "fr": "La pluie s'est arrêtée",
+    "it": "Pioggia fermata",
+    "no": "Regnet har stoppet",
+    "sv": "Regnet slutade",
+    "pl": "Deszcz przestał padać",
+    "ru": "Дождь прекратился",
+    "ko": "비가 그침",
+    "ar": "توقف المطر"
   },
   "highlight": true,
   "args": [

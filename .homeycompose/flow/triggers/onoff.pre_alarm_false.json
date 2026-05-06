@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Pre-alarm Turned Off",
-    "nl": "Voor-alarm Uitgeschakeld"
+    "nl": "Voor-alarm Uitgeschakeld",
+    "da": "For-alarm slukket",
+    "de": "Voralarm ausgeschaltet",
+    "es": "Pre-alarma apagada",
+    "fr": "Pré-alarme éteinte",
+    "it": "Pre-allarme spento",
+    "no": "For-alarm slått av",
+    "sv": "Förlarm avstängd",
+    "pl": "Pre-alarm wyłączony",
+    "ru": "Предварительная тревога выключена",
+    "ko": "사전 알람 꺼짐",
+    "ar": "تم إيقاف الإنذار المسبق"
   },
   "highlight": true,
   "args": [

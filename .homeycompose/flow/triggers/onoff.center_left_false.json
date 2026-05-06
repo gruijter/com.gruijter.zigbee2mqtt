@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Turned Off Center-Left",
-    "nl": "Midden-Links Uitgeschakeld"
+    "nl": "Midden-Links Uitgeschakeld",
+    "da": "Slukket Midte-Venstre",
+    "de": "Ausgeschaltet Mitte-Links",
+    "es": "Apagado Centro-Izquierda",
+    "fr": "Éteint Centre-Gauche",
+    "it": "Spento Centro-Sinistra",
+    "no": "Slått av Midt-Venstre",
+    "sv": "Avstängd Mitten-Vänster",
+    "pl": "Wyłączono Środek-Lewe",
+    "ru": "Выключено по центру слева",
+    "ko": "꺼짐 중앙-왼쪽",
+    "ar": "تم إيقاف الوسط-اليسار"
   },
   "highlight": true,
   "args": [

@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Hand Open Locked",
-    "nl": "Hand Open Vergrendeld"
+    "nl": "Hand Open Vergrendeld",
+    "da": "Håndåben låst",
+    "de": "Hand-Offen verriegelt",
+    "es": "Apertura manual bloqueada",
+    "fr": "Ouverture manuelle verrouillée",
+    "it": "Apertura manuale bloccata",
+    "no": "Håndåpning låst",
+    "sv": "Handöppning låst",
+    "pl": "Ręczne otwieranie zablokowane",
+    "ru": "Ручное открытие заблокировано",
+    "ko": "수동 열림 잠김",
+    "ar": "الفتح اليدوي مقفل"
   },
   "highlight": true,
   "args": [

@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "The dim level 11 changed",
-    "nl": "Het dimniveau 11 is gewijzigd"
+    "nl": "Het dimniveau 11 is gewijzigd",
+    "da": "Lysstyrkeniveau 11 er ændret",
+    "de": "Das Dimmniveau 11 hat sich geändert",
+    "es": "El nivel de atenuación 11 ha cambiado",
+    "fr": "Le niveau de luminosité 11 a changé",
+    "it": "Il livello di oscuramento 11 è cambiato",
+    "no": "Dimmenivå 11 er endret",
+    "sv": "Dämningsnivån 11 har ändrats",
+    "pl": "Poziom ściemniania 11 został zmieniony",
+    "ru": "Уровень затемнения 11 изменен",
+    "ko": "디밍 레벨 11이 변경되었습니다",
+    "ar": "تغير مستوى التعتيم 11"
   },
   "highlight": true,
   "args": [
@@ -17,7 +28,18 @@
       "type": "number",
       "title": {
         "en": "Dim level",
-        "nl": "Dimniveau"
+        "nl": "Dimniveau",
+        "da": "Lysstyrkeniveau",
+        "de": "Dimmniveau",
+        "es": "Nivel de atenuación",
+        "fr": "Niveau de luminosité",
+        "it": "Livello di oscuramento",
+        "no": "Dimmenivå",
+        "sv": "Dämningsnivå",
+        "pl": "Poziom ściemniania",
+        "ru": "Уровень затемнения",
+        "ko": "디밍 레벨",
+        "ar": "مستوى التعتيم"
       },
       "example": 50
     }

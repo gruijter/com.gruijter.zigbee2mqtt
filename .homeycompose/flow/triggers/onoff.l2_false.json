@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Turned Off L2",
-    "nl": "Uitgeschakeld L2"
+    "nl": "Uitgeschakeld L2",
+    "da": "Slukket L2",
+    "de": "Ausgeschaltet L2",
+    "es": "Apagado L2",
+    "fr": "Éteint L2",
+    "it": "Spento L2",
+    "no": "Slått av L2",
+    "sv": "Avstängd L2",
+    "pl": "Wyłączono L2",
+    "ru": "Выключено L2",
+    "ko": "꺼짐 L2",
+    "ar": "تم إيقاف L2"
   },
   "highlight": true,
   "args": [

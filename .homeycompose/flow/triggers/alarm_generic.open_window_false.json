@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Window Closed",
-    "nl": "Raam Gesloten"
+    "nl": "Raam Gesloten",
+    "da": "Vindue lukket",
+    "de": "Fenster geschlossen",
+    "es": "Ventana cerrada",
+    "fr": "Fenêtre fermée",
+    "it": "Finestra chiusa",
+    "no": "Vindu lukket",
+    "sv": "Fönster stängt",
+    "pl": "Okno zamknięte",
+    "ru": "Окно закрыто",
+    "ko": "창문 닫힘",
+    "ar": "نافذة مغلقة"
   },
   "highlight": true,
   "args": [

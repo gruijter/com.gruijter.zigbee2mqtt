@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Turned Off Left",
-    "nl": "Links Uitgeschakeld"
+    "nl": "Links Uitgeschakeld",
+    "da": "Slukket Venstre",
+    "de": "Ausgeschaltet Links",
+    "es": "Apagado Izquierda",
+    "fr": "Éteint Gauche",
+    "it": "Spento Sinistra",
+    "no": "Slått av Venstre",
+    "sv": "Avstängd Vänster",
+    "pl": "Wyłączono Lewe",
+    "ru": "Выключено слева",
+    "ko": "꺼짐 왼쪽",
+    "ar": "تم إيقاف اليسار"
   },
   "highlight": true,
   "args": [

@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Area 1 Occupancy Cleared",
-    "nl": "Gebied 1 Bezetting Vrij"
+    "nl": "Gebied 1 Bezetting Vrij",
+    "da": "Område 1 belægning ryddet",
+    "de": "Bereich 1 Belegung geräumt",
+    "es": "Ocupación en área 1 despejada",
+    "fr": "Occupation de la zone 1 effacée",
+    "it": "Occupazione Area 1 libera",
+    "no": "Område 1 belegg ledig",
+    "sv": "Område 1 närvaro rensad",
+    "pl": "Strefa 1 pusta",
+    "ru": "Зона 1: присутствие не обнаружено",
+    "ko": "구역 1 점유 해제됨",
+    "ar": "تم إخلاء إشغال المنطقة 1"
   },
   "highlight": true,
   "args": [

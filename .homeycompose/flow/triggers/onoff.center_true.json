@@ -1,7 +1,18 @@
 {
   "title": {
     "en": "Turned On Center",
-    "nl": "Midden Ingeschakeld"
+    "nl": "Midden Ingeschakeld",
+    "da": "Tændt Midte",
+    "de": "Eingeschaltet Mitte",
+    "es": "Encendido Centro",
+    "fr": "Allumé Centre",
+    "it": "Acceso Centro",
+    "no": "Slått på Midten",
+    "sv": "Påslagen Mitten",
+    "pl": "Włączono Środek",
+    "ru": "Включено по центру",
+    "ko": "켜짐 중앙",
+    "ar": "تم تشغيل الوسط"
   },
   "highlight": true,
   "args": [
