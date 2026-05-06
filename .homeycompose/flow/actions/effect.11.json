@@ -1,0 +1,70 @@
+{
+  "title": {
+    "en": "Set effect 11",
+    "nl": "Effect 11 instellen",
+    "da": "Indstil effekt 11",
+    "de": "Effekt 11 festlegen",
+    "es": "Establecer efecto 11",
+    "fr": "Définir l'effet 11",
+    "it": "Imposta effetto 11",
+    "no": "Angi effekt 11",
+    "sv": "Ställ in effekt 11",
+    "pl": "Ustaw efekt 11",
+    "ru": "Установить эффект 11",
+    "ko": "효과 11 설정",
+    "ar": "تعيين التأثير 11"
+  },
+  "titleFormatted": {
+    "en": "Set Effect 11 to [[val]]",
+    "nl": "Stel Effect 11 in op [[val]]",
+    "da": "Sæt Effekt 11 til [[val]]",
+    "de": "Setze Effekt 11 auf [[val]]",
+    "es": "Establecer Efecto 11 a [[val]]",
+    "fr": "Définir l'effet 11 sur [[val]]",
+    "it": "Imposta Effetto 11 su [[val]]",
+    "no": "Sett Effekt 11 til [[val]]",
+    "sv": "Sätt Effekt 11 till [[val]]",
+    "pl": "Ustaw Efekt 11 na [[val]]",
+    "ru": "Установить Эффект 11 на [[val]]",
+    "ko": "효과 11을 [[val]]로 설정",
+    "ar": "تعيين التأثير 11 إلى [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=effect.11"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "blink",
+          "title": { "en": "Blink", "nl": "Knipperen", "de": "Blinken", "fr": "Clignoter" }
+        },
+        {
+          "id": "breathe",
+          "title": { "en": "Breathe", "nl": "Ademhalen", "de": "Atmen", "fr": "Respirer" }
+        },
+        {
+          "id": "okay",
+          "title": { "en": "Okay", "nl": "Oké", "de": "Okay", "fr": "D'accord" }
+        },
+        {
+          "id": "channel_change",
+          "title": { "en": "Channel change", "nl": "Kanaal wijzigen", "de": "Kanalwechsel", "fr": "Changement de chaîne" }
+        },
+        {
+          "id": "finish_effect",
+          "title": { "en": "Finish effect", "nl": "Effect beëindigen", "de": "Effekt beenden", "fr": "Finir effet" }
+        },
+        {
+          "id": "stop_effect",
+          "title": { "en": "Stop effect", "nl": "Effect stoppen", "de": "Effekt stoppen", "fr": "Arrêter l'effet" }
+        }
+      ]
+    }
+  ]
+}

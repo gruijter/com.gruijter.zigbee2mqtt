@@ -1,0 +1,50 @@
+{
+  "title": {
+    "en": "Set Power On Behavior 11",
+    "nl": "Zet Stroom Aanzet Gedrag 11",
+    "da": "Indstil Tændingsadfærd 11",
+    "de": "Einschaltverhalten 11 festlegen",
+    "es": "Configurar Comportamiento de Encendido 11",
+    "fr": "Définir le comportement de mise sous tension 11",
+    "it": "Imposta Comportamento di Accensione 11",
+    "no": "Sett Strøm På Atferd 11",
+    "sv": "Ställ in Uppstartsbeteende 11",
+    "pl": "Ustaw Zachowanie Po Włączeniu 11",
+    "ru": "Установить Поведение Включения 11",
+    "ko": "전원 켜짐 동작 11 설정",
+    "ar": "تعيين سلوك التشغيل 11"
+  },
+  "titleFormatted": {
+    "en": "Set Power On Behavior 11 to [[val]]",
+    "nl": "Zet Stroom Aanzet Gedrag 11 op [[val]]",
+    "da": "Indstil Tændingsadfærd 11 til [[val]]",
+    "de": "Einschaltverhalten 11 auf [[val]] setzen",
+    "es": "Configurar Comportamiento de Encendido 11 a [[val]]",
+    "fr": "Définir le comportement de mise sous tension 11 sur [[val]]",
+    "it": "Imposta Comportamento di Accensione 11 su [[val]]",
+    "no": "Sett Strøm På Atferd 11 til [[val]]",
+    "sv": "Ställ in Uppstartsbeteende 11 till [[val]]",
+    "pl": "Ustaw Zachowanie Po Włączeniu 11 na [[val]]",
+    "ru": "Установить Поведение Включения 11 на [[val]]",
+    "ko": "[[val]]의 전원 켜짐 동작 11 설정",
+    "ar": "تعيين سلوك التشغيل 11 إلى [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=power_on_behavior.11"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        { "id": "off", "title": { "en": "Off", "nl": "Uit", "de": "Aus", "fr": "Éteint" } },
+        { "id": "on", "title": { "en": "On", "nl": "Aan", "de": "Ein", "fr": "Allumé" } },
+        { "id": "toggle", "title": { "en": "Toggle", "nl": "Wissel", "de": "Umschalten", "fr": "Basculer" } },
+        { "id": "previous", "title": { "en": "Previous", "nl": "Vorige", "de": "Vorherige", "fr": "Précédent" } }
+      ]
+    }
+  ]
+}

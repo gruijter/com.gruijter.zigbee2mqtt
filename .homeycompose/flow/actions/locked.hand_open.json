@@ -1,0 +1,48 @@
+{
+  "title": {
+    "en": "Turn Hand Open On or Off",
+    "nl": "Zet Handmatig Openen Aan of Uit",
+    "da": "Slå manuel åbning til eller fra",
+    "de": "Manuelles Öffnen ein- oder ausschalten",
+    "es": "Activar o desactivar apertura manual",
+    "fr": "Activer ou désactiver l'ouverture manuelle",
+    "it": "Attiva o disattiva l'apertura manuale",
+    "no": "Slå manuell åpning på eller av",
+    "sv": "Slå på eller av manuell öppning",
+    "pl": "Włącz lub wyłącz ręczne otwieranie",
+    "ru": "Включить или выключить ручное открытие",
+    "ko": "수동 열기 켜기 또는 끄기",
+    "ar": "تشغيل أو إيقاف الفتح اليدوي"
+  },
+  "titleFormatted": {
+    "en": "Turn Hand Open On: [[val]]",
+    "nl": "Zet Handmatig Openen Aan: [[val]]",
+    "da": "Slå manuel åbning til: [[val]]",
+    "de": "Manuelles Öffnen einschalten: [[val]]",
+    "es": "Activar apertura manual: [[val]]",
+    "fr": "Activer l'ouverture manuelle: [[val]]",
+    "it": "Attiva l'apertura manuale: [[val]]",
+    "no": "Slå på manuell åpning: [[val]]",
+    "sv": "Slå på manuell öppning: [[val]]",
+    "pl": "Włącz ręczne otwieranie: [[val]]",
+    "ru": "Включить ручное открытие: [[val]]",
+    "ko": "수동 열기 켜기: [[val]]",
+    "ar": "تشغيل الفتح اليدوي: [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=locked.hand_open"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan"
+      }
+    }
+  ]
+}

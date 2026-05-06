@@ -1,0 +1,49 @@
+{
+  "title": {
+    "en": "Set motion sensitivity",
+    "nl": "Stel bewegingsgevoeligheid in",
+    "da": "Indstil bevægelsesfølsomhed",
+    "de": "Bewegungsempfindlichkeit einstellen",
+    "es": "Establecer sensibilidad de movimiento",
+    "fr": "Régler la sensibilité au mouvement",
+    "it": "Imposta sensibilità al movimento",
+    "no": "Angi bevegelsesfølsomhet",
+    "sv": "Ställ in rörelsekänslighet",
+    "pl": "Ustaw czułość na ruch",
+    "ru": "Установить чувствительность к движению",
+    "ko": "동작 민감도 설정",
+    "ar": "تعيين حساسية الحركة"
+  },
+  "titleFormatted": {
+    "en": "Set motion sensitivity to [[val]]",
+    "nl": "Stel bewegingsgevoeligheid in op [[val]]",
+    "da": "Indstil bevægelsesfølsomhed til [[val]]",
+    "de": "Bewegungsempfindlichkeit auf [[val]] einstellen",
+    "es": "Establecer sensibilidad de movimiento en [[val]]",
+    "fr": "Régler la sensibilité au mouvement sur [[val]]",
+    "it": "Imposta sensibilità al movimento su [[val]]",
+    "no": "Angi bevegelsesfølsomhet til [[val]]",
+    "sv": "Ställ in rörelsekänslighet till [[val]]",
+    "pl": "Ustaw czułość na ruch na [[val]]",
+    "ru": "Установить чувствительность к движению на [[val]]",
+    "ko": "동작 민감도를 [[val]]로 설정",
+    "ar": "تعيين حساسية الحركة إلى [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=sensitivity.motion"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        { "id": "low", "title": { "en": "Low", "nl": "Laag", "de": "Niedrig", "fr": "Bas" } },
+        { "id": "medium", "title": { "en": "Medium", "nl": "Gemiddeld", "de": "Mittel", "fr": "Moyen" } },
+        { "id": "high", "title": { "en": "High", "nl": "Hoog", "de": "Hoch", "fr": "Élevé" } }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "title": {
+    "en": "Switch 11 On or Off",
+    "nl": "Schakel 11 in of uit",
+    "da": "Tænd eller sluk 11",
+    "de": "11 ein- oder ausschalten",
+    "es": "Encender o apagar 11",
+    "fr": "Allumer ou éteindre 11",
+    "it": "Accendere o spegnere 11",
+    "no": "Slå 11 på eller av",
+    "sv": "Slå på eller av 11",
+    "pl": "Włącz lub wyłącz 11",
+    "ru": "Включить или выключить 11",
+    "ko": "11 켜기 또는 끄기",
+    "ar": "تشغيل أو إيقاف 11"
+  },
+  "titleFormatted": {
+    "en": "Switch 11 [[val]]",
+    "nl": "Schakel 11 [[val]]",
+    "da": "Tænd/sluk 11 [[val]]",
+    "de": "11 schalten [[val]]",
+    "es": "Cambiar 11 [[val]]",
+    "fr": "Basculer 11 [[val]]",
+    "it": "Interruttore 11 [[val]]",
+    "no": "Bytt 11 [[val]]",
+    "sv": "Byt 11 [[val]]",
+    "pl": "Przełącz 11 [[val]]",
+    "ru": "Переключить 11 [[val]]",
+    "ko": "11 [[val]] 전환",
+    "ar": "تبديل 11 [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.11"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan"
+      }
+    }
+  ]
+}

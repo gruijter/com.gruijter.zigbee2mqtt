@@ -1,0 +1,48 @@
+{
+  "title": {
+    "en": "Turn Hooks Lock On or Off",
+    "nl": "Zet haken slot Aan of Uit",
+    "da": "Slå kroge lås til eller fra",
+    "de": "Haken-Sperre ein- oder ausschalten",
+    "es": "Activar o desactivar bloqueo de ganchos",
+    "fr": "Activer ou désactiver le verrouillage des crochets",
+    "it": "Attiva o disattiva il blocco dei ganci",
+    "no": "Slå krok-lås på eller av",
+    "sv": "Slå på eller av kroklås",
+    "pl": "Włącz lub wyłącz blokadę haków",
+    "ru": "Включить или выключить блокировку крюков",
+    "ko": "후크 잠금 켜기 또는 끄기",
+    "ar": "تشغيل أو إيقاف قفل الخطافات"
+  },
+  "titleFormatted": {
+    "en": "Turn Hooks Lock On: [[val]]",
+    "nl": "Zet haken slot Aan: [[val]]",
+    "da": "Slå kroge lås til: [[val]]",
+    "de": "Haken-Sperre einschalten: [[val]]",
+    "es": "Activar bloqueo de ganchos: [[val]]",
+    "fr": "Activer le verrouillage des crochets: [[val]]",
+    "it": "Attiva il blocco dei ganci: [[val]]",
+    "no": "Slå på krok-lås: [[val]]",
+    "sv": "Slå på kroklås: [[val]]",
+    "pl": "Włącz blokadę haków: [[val]]",
+    "ru": "Включить блокировку крюков: [[val]]",
+    "ko": "후크 잠금 켜기: [[val]]",
+    "ar": "تشغيل قفل الخطافات: [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=locked.hooks"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan"
+      }
+    }
+  ]
+}

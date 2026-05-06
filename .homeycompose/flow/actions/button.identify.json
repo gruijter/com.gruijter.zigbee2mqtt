@@ -1,0 +1,25 @@
+{
+  "title": {
+    "en": "Identify",
+    "nl": "Identificeer",
+    "da": "Identificer",
+    "de": "Identifizieren",
+    "es": "Identificar",
+    "fr": "Identifier",
+    "it": "Identificare",
+    "no": "Identifisere",
+    "sv": "Identifiera",
+    "pl": "Zidentyfikuj",
+    "ru": "Идентифицировать",
+    "ko": "식별하다",
+    "ar": "تحديد"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=button.identify"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "title": {
+    "en": "Dim 11",
+    "nl": "Dim 11",
+    "da": "Dæmp 11",
+    "de": "Dimmen 11",
+    "es": "Atenuar 11",
+    "fr": "Atténuer 11",
+    "it": "Abbassa 11",
+    "no": "Dim 11",
+    "sv": "Dämpa 11",
+    "pl": "Przyciemnij 11",
+    "ru": "Затемнить 11",
+    "ko": "디밍 11",
+    "ar": "تعتيم 11"
+  },
+  "titleFormatted": {
+    "en": "Dim 11 to [[val]]",
+    "nl": "Dim 11 tot [[val]]",
+    "da": "Dæmp 11 til [[val]]",
+    "de": "Dimmen 11 auf [[val]]",
+    "es": "Atenuar 11 a [[val]]",
+    "fr": "Atténuer 11 à [[val]]",
+    "it": "Abbassa 11 a [[val]]",
+    "no": "Dim 11 til [[val]]",
+    "sv": "Dämpa 11 till [[val]]",
+    "pl": "Przyciemnij 11 do [[val]]",
+    "ru": "Затемнить 11 до [[val]]",
+    "ko": "디밍 11 [[val]]로",
+    "ar": "تعتيم 11 إلى [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=dim.11"
+    },
+    {
+      "name": "val",
+      "type": "range",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "value": 0.5,
+      "label": "%",
+      "labelMultiplier": 100,
+      "labelDecimals": 0
+    }
+  ]
+}

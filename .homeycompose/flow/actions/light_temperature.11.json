@@ -1,0 +1,48 @@
+{
+  "title": {
+    "en": "Set light temperature 11",
+    "nl": "Stel lichttemperatuur 11 in",
+    "da": "Indstil lystemperatur 11",
+    "de": "Lichttemperatur 11 einstellen",
+    "es": "Establecer temperatura de luz 11",
+    "fr": "Régler la température de la lumière 11",
+    "it": "Imposta la temperatura della luce 11",
+    "no": "Angi lystemperatur 11",
+    "sv": "Ställ in ljustemperatur 11",
+    "pl": "Ustaw temperaturę światła 11",
+    "ru": "Установить температуру света 11",
+    "ko": "조명 온도 11 설정",
+    "ar": "تحديد درجة حرارة الضوء 11"
+  },
+  "titleFormatted": {
+    "en": "Set light temperature 11 to [[val]]",
+    "nl": "Stel lichttemperatuur 11 in op [[val]]",
+    "da": "Indstil lystemperatur 11 til [[val]]",
+    "de": "Lichttemperatur 11 auf [[val]] einstellen",
+    "es": "Establecer temperatura de luz 11 a [[val]]",
+    "fr": "Régler la température de la lumière 11 à [[val]]",
+    "it": "Imposta la temperatura della luce 11 su [[val]]",
+    "no": "Angi lystemperatur 11 til [[val]]",
+    "sv": "Ställ in ljustemperatur 11 till [[val]]",
+    "pl": "Ustaw temperaturę światła 11 na [[val]]",
+    "ru": "Установить температуру света 11 на [[val]]",
+    "ko": "조명 온도 11을 [[val]]로 설정",
+    "ar": "تحديد درجة حرارة الضوء 11 إلى [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=light_temperature.11"
+    },
+    {
+      "name": "val",
+      "type": "range",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "value": 0.5
+    }
+  ]
+}
