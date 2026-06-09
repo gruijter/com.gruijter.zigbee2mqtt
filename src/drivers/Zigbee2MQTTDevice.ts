@@ -267,7 +267,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
         capOptions.units = { en: expose.unit };
       }
       if (expose.name && !homeyCapability.includes('onoff')) {
-        const title = expose.name.replace(/./, (c) => c.toUpperCase());
+        const title = expose.name.replace(/_/g, ' ').replace(/^./, (c) => c.toUpperCase());
         capOptions.title = { en: title };
       }
       // Add duration support for eligible capabilities on devices that support transition

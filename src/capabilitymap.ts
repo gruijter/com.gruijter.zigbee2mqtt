@@ -107,48 +107,66 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   brightness_l2: ['dim.l2', (v) => Number(v) / 254, (v) => ({ brightness_l2: Number(v) * 254 })],
   color_temp: ['light_temperature', (v) => (Number(v) - 153) / 347, (v) => ({ color_temp: 153 + Number(v) * 347 })],
   color_temp_11: ['light_temperature.11', (v) => (Number(v) - 153) / 347, (v) => ({ color_temp_11: 153 + Number(v) * 347 })],
-  color: (expose) => ({
-    caps: ['light_hue', 'light_saturation', 'light_mode'],
-    z2mToHomey: (colorObj, { color_mode: colorMode }) => {
-      if (!colorObj) return null;
-      const {
-        hue, saturation, x, y,
-      } = colorObj;
+  color: (expose) => {
+    // --- SAFEGUARD ---
+    const isColorTemp = expose.name && expose.name.includes('color_temp');
+    // Ensure the expose features array exists before checking it, and cast f to 'any' to prevent implicit-any errors
+    const hasTrueColor = expose.name === 'color_hs' || expose.name === 'color_xy' || 
+      (expose.features && expose.features.some((f: any) => ['x', 'y', 'hue', 'saturation'].includes(f.name)));
 
-      let lightHue: number | undefined;
-      let lightSaturation: number | undefined;
-
-      if (x !== undefined && y !== undefined) {
-        const hsFromXy = xyYToHueSat(x, y);
-        lightHue = hsFromXy.hue / 360;
-        lightSaturation = hsFromXy.saturation / 100;
-      } else {
-        lightHue = hue !== undefined ? hue / 360 : undefined;
-        lightSaturation = saturation !== undefined ? saturation / 100 : undefined;
-      }
-
-      return {
-        light_hue: lightHue,
-        light_saturation: lightSaturation,
-        light_mode: colorMode === 'color_temp' ? 'temperature' : 'color',
+    if (isColorTemp || !hasTrueColor) {
+      // Return empty capabilities, but include dummy functions to satisfy TypeScript's strict object structure
+      return { 
+        caps: [] as string[],
+        z2mToHomey: () => null,
+        homeyToZ2m: () => null
       };
-    },
-    homeyToZ2m: (values) => {
-      const lightMode = values.light_mode;
-      if (lightMode === 'temperature') return null;
+    }
+    // -----------------
 
-      if (expose.name === 'color_hs') {
+    return {
+      caps: ['light_hue', 'light_saturation', 'light_mode'],
+      z2mToHomey: (colorObj: any, { color_mode: colorMode }: any) => {
+        if (!colorObj) return null;
+        const {
+          hue, saturation, x, y,
+        } = colorObj;
+
+        let lightHue: number | undefined;
+        let lightSaturation: number | undefined;
+
+        if (x !== undefined && y !== undefined) {
+          const hsFromXy = xyYToHueSat(x, y);
+          lightHue = hsFromXy.hue / 360;
+          lightSaturation = hsFromXy.saturation / 100;
+        } else {
+          lightHue = hue !== undefined ? hue / 360 : undefined;
+          lightSaturation = saturation !== undefined ? saturation / 100 : undefined;
+        }
+
         return {
-          color: {
-            hue: values.light_hue * 360,
-            saturation: values.light_saturation * 100,
-          },
+          light_hue: lightHue,
+          light_saturation: lightSaturation,
+          light_mode: colorMode === 'color_temp' ? 'temperature' : 'color',
         };
-      }
-      const { x, y } = hsToXy(values.light_hue, values.light_saturation);
-      return { color: { x, y } };
-    },
-  }),
+      },
+      homeyToZ2m: (values: any) => {
+        const lightMode = values.light_mode;
+        if (lightMode === 'temperature') return null;
+
+        if (expose.name === 'color_hs') {
+          return {
+            color: {
+              hue: values.light_hue * 360,
+              saturation: values.light_saturation * 100,
+            },
+          };
+        }
+        const { x, y } = hsToXy(values.light_hue, values.light_saturation);
+        return { color: { x, y } };
+      },
+    };
+  },
 
   // Air Quality capabilities
   voc: ['measure_tvoc', (v) => Number(v)],
