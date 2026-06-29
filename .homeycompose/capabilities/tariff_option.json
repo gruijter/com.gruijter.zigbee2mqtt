@@ -1,0 +1,25 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Tariff option",
+    "nl": "Tariefoptie",
+    "da": "Tarifmulighed",
+    "de": "Tarifoption",
+    "es": "Opción tarifaria",
+    "fr": "Option tarifaire",
+    "it": "Opzione tariffaria",
+    "no": "Tariffalternativ",
+    "sv": "Tariffalternativ",
+    "pl": "Opcja taryfowa",
+    "ru": "Тарифный вариант",
+    "ko": "요금제 옵션",
+    "ar": "خيار التعريفة"
+  },
+  "units": {
+    "en": ""
+  },
+  "getable": true,
+  "setable": false,
+  "insights": true,
+  "icon": "./assets/tariff_option.svg"
+}

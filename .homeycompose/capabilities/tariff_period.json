@@ -1,0 +1,25 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Tariff period",
+    "nl": "Tariefperiode",
+    "da": "Tarifperiode",
+    "de": "Tarifzeitraum",
+    "es": "Período tarifario",
+    "fr": "Période tarifaire",
+    "it": "Periodo tariffario",
+    "no": "Tariffperiode",
+    "sv": "Tariffperiod",
+    "pl": "Okres taryfowy",
+    "ru": "Тарифный период",
+    "ko": "요금 기간",
+    "ar": "فترة التعريفة"
+  },
+  "units": {
+    "en": ""
+  },
+  "getable": true,
+  "setable": false,
+  "insights": true,
+  "icon": "./assets/tariff_period.svg"
+}

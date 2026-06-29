@@ -307,6 +307,14 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   sensitivity: ['sensitivity', (v) => v, (v) => ({ sensitivity: v })], // [low, medium, high]
   motion_sensitivity: ['sensitivity.motion', (v) => v, (v) => ({ motion_sensitivity: v })], // [low, medium, high]
   pilot_wire_mode: ['pilot_wire_mode', (v) => v, (v) => ({ pilot_wire_mode: v })], // [comfort, eco, frost_protection, off, comfort_-1, comfort_-2]
+
+  // LiXee ZLinky_TIC (French Linky teleinfo, mode historique)
+  apparent_power: ['measure_power', (v) => Number(v)], // PAPP (VA), no active power (PACT) available in mode historique
+  current_summ_delivered: ['meter_power', (v) => Number(v)], // BASE (kWh)
+  rms_current: ['measure_current', (v) => Number(v)], // IINST (A)
+  warn_d_p_s: ['measure_current.dps', (v) => Number(v)], // ADPS (A), subscribed power exceeded warning
+  active_register_tier_delivered: ['tariff_period', (v) => (v || '').toString()], // PTEC
+  current_tarif: ['tariff_option', (v) => (v || '').toString()], // OPTARIF
 };
 
 // Define the skip map for specific device models (model name -> capabilities to skip)
