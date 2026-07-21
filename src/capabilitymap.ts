@@ -61,6 +61,14 @@ import { hsToXy, xyYToHueSat } from './utilities';
  * - The only file to modify to add device support is this capabilitymap
  */
 
+// Marker fields added to stored copies of exposes by mapCapabilities(); consumed by the 'state' and
+// 'state_up' capabilityMap entries (mapCapabilities() and getCapabilityConverters() both resolve
+// through the same static table, so the stored expose is the only shared channel between them).
+type SyntheticStateExpose = zigbeeHerdsmanConverter.Expose & {
+  'endpoint_properties'?: string[];
+  'promote_to_main'?: boolean;
+};
+
 const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   // Standard Homey Number capabilities
   current_heating_setpoint: ['target_temperature', (v) => Number(v), (v) => ({ current_heating_setpoint: Number(v) })],
@@ -173,6 +181,14 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
         },
       ];
     }
+    // Multi-gang fan-out: mapCapabilities() marks the synthetic aggregate 'state' expose with the
+    // per-gang properties; main onoff then sets ALL gangs (Z2M does not accept a plain state set
+    // on multi-endpoint devices). Incoming aggregate 'state' still drives the tile value.
+    const gangProperties = (expose as SyntheticStateExpose).endpoint_properties;
+    if (gangProperties?.length) {
+      return ['onoff', (v) => v === 'ON',
+        (v) => Object.fromEntries(gangProperties.map((p) => [p, v ? 'ON' : 'OFF']))];
+    }
     return ['onoff', (v) => v === 'ON', (v) => ({ state: v ? 'ON' : 'OFF' })];
   },
   state_11: ['onoff.11', (v) => v === 'ON', (v) => ({ state_11: v ? 'ON' : 'OFF' })],
@@ -180,6 +196,16 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   state_l2: ['onoff.l2', (v) => v === 'ON', (v) => ({ state_l2: v ? 'ON' : 'OFF' })],
   state_l3: ['onoff.l3', (v) => v === 'ON', (v) => ({ state_l3: v ? 'ON' : 'OFF' })],
   state_l4: ['onoff.l4', (v) => v === 'ON', (v) => ({ state_l4: v ? 'ON' : 'OFF' })],
+  // Aqara H2 EU rockers expose endpoint 'up' (WS-K07E single) or 'up'+'down' (WS-K03E double) instead
+  // of left/right. When the device's ONLY relay is state_up, mapCapabilities() promotes it to main
+  // onoff (marker on the stored expose) so the device tile is settable; otherwise it is a sub-capability.
+  state_up: (expose) => {
+    if ((expose as SyntheticStateExpose).promote_to_main) {
+      return ['onoff', (v) => v === 'ON', (v) => ({ state_up: v ? 'ON' : 'OFF' })];
+    }
+    return ['onoff.up', (v) => v === 'ON', (v) => ({ state_up: v ? 'ON' : 'OFF' })];
+  },
+  state_down: ['onoff.down', (v) => v === 'ON', (v) => ({ state_down: v ? 'ON' : 'OFF' })],
   state_left: ['onoff.left', (v) => v === 'ON', (v) => ({ state_left: v ? 'ON' : 'OFF' })],
   state_center: ['onoff.center', (v) => v === 'ON', (v) => ({ state_center: v ? 'ON' : 'OFF' })],
   state_right: ['onoff.right', (v) => v === 'ON', (v) => ({ state_right: v ? 'ON' : 'OFF' })],
@@ -493,6 +519,62 @@ export function mapCapabilities(device: Z2MDevice, options: MapCapabilitiesOptio
     expose.features?.forEach(addCapability);
     addCapability(expose);
   });
+
+  // Endpoint-only switches (no plain 'state' in the definition) leave the main onoff tile broken:
+  // the aggregate 'state' arrives via discoveredProperties as read-only, so pressing the tile throws
+  // 'not settable'. Two repairs, guarded to devices whose relays are ALL binary ON/OFF and mapped:
+  // - exactly one relay, endpoint 'up' (Aqara WS-K07E): promote its mapping to main onoff
+  // - two or more relays, all mapped (e.g. WS-K08E left/right, WS-K03E up/down): make the aggregate
+  //   mapping settable and fan a main-onoff set out to every gang (Z2M does not accept a plain
+  //   state set on multi-endpoint devices)
+  if (!isGroup) {
+    const settableMask = 0b00010;
+
+    // Every settable binary ON/OFF state_<endpoint> property in the definition, mapped or not —
+    // the fan-out must cover the whole device or not exist at all (e.g. 8-relay boards where the
+    // static table only maps l1-l4 must keep their read-only main tile rather than claim "all")
+    const allGangProperties = new Set<string>();
+    exposes.forEach((expose) => {
+      (expose.features ?? [expose]).forEach((feature) => {
+        const raw = feature as unknown as Record<string, unknown>;
+        if (feature.property && /^state_.+$/.test(feature.property) && feature.type === 'binary'
+          && raw['value_on'] === 'ON' && raw['value_off'] === 'OFF'
+          && ((feature.access ?? 0) & settableMask) === settableMask) {
+          allGangProperties.add(feature.property);
+        }
+      });
+    });
+
+    const mappedGangs = Object.entries(mappings)
+      .filter(([property, m]) => allGangProperties.has(property)
+        && m.homeyCapabilities.some((cap) => cap.startsWith('onoff.')));
+
+    const aggregate = mappings.state;
+    const aggregateReadOnlyOnOff = !!aggregate
+      && aggregate.homeyCapabilities.includes('onoff')
+      && ((aggregate.expose.access ?? 0) & settableMask) === 0;
+
+    if (allGangProperties.size === 1 && allGangProperties.has('state_up')
+      && mappedGangs.length === 1 && (!aggregate || aggregateReadOnlyOnOff)) {
+      const [property, mapping] = mappedGangs[0];
+      mappings[property] = {
+        homeyCapabilities: ['onoff'],
+        expose: { ...mapping.expose, promote_to_main: true } as SyntheticStateExpose,
+      };
+      if (aggregateReadOnlyOnOff) delete mappings.state;
+    } else if (aggregate && aggregateReadOnlyOnOff
+      && mappedGangs.length >= 2 && mappedGangs.length === allGangProperties.size) {
+      mappings.state = {
+        homeyCapabilities: aggregate.homeyCapabilities,
+        expose: {
+          ...aggregate.expose,
+          type: 'binary',
+          access: (aggregate.expose.access ?? 0) | settableMask,
+          endpoint_properties: mappedGangs.map(([property]) => property),
+        } as SyntheticStateExpose,
+      };
+    }
+  }
 
   return mappings;
 }

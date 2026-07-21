@@ -1,0 +1,25 @@
+{
+  "title": {
+    "en": "Turned Off Up",
+    "nl": "Omhoog Uitgeschakeld",
+    "da": "Slukket Op",
+    "de": "Ausgeschaltet Oben",
+    "es": "Apagado Arriba",
+    "fr": "Éteint Haut",
+    "it": "Spento Su",
+    "no": "Slått av Opp",
+    "sv": "Avstängd Upp",
+    "pl": "Wyłączono Góra",
+    "ru": "Выключено Вверх",
+    "ko": "꺼짐 위",
+    "ar": "تم إيقاف الأعلى"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.up"
+    }
+  ]
+}

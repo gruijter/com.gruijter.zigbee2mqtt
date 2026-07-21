@@ -1,0 +1,59 @@
+{
+  "title": {
+    "en": "Switch Down On or Off",
+    "nl": "Schakel Omlaag Aan of Uit",
+    "da": "Slå Ned til eller fra",
+    "de": "Unten ein- oder ausschalten",
+    "es": "Activar o desactivar Abajo",
+    "fr": "Activer ou désactiver à Bas",
+    "it": "Accendi o spegni a Giù",
+    "no": "Slå på eller av Ned",
+    "sv": "Slå på eller av Ner",
+    "pl": "Włącz lub wyłącz lewą stronę",
+    "ru": "Включить или выключить Вниз",
+    "ko": "아래을 켜거나 끄기",
+    "ar": "تشغيل أو إيقاف الأسفل"
+  },
+  "titleFormatted": {
+    "en": "Switch Down [[val]]",
+    "nl": "Schakel Omlaag [[val]]",
+    "da": "Slå til Ned [[val]]",
+    "de": "Schalter Unten [[val]]",
+    "es": "Interruptor Abajo [[val]]",
+    "fr": "Interrupteur Bas [[val]]",
+    "it": "Interruttore Giù [[val]]",
+    "no": "Bryter til Ned [[val]]",
+    "sv": "Ner brytare [[val]]",
+    "pl": "Przełącznik Dół [[val]]",
+    "ru": "Переключить Вниз [[val]]",
+    "ko": "아래 스위치 [[val]]",
+    "ar": "تبديل الأسفل [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.down"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "Tændt",
+        "de": "Ein",
+        "es": "Activado",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączony",
+        "ru": "Вкл",
+        "ko": "켜기",
+        "ar": "تشغيل"
+      }
+    }
+  ]
+}

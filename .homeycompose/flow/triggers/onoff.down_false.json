@@ -1,0 +1,25 @@
+{
+  "title": {
+    "en": "Turned Off Down",
+    "nl": "Omlaag Uitgeschakeld",
+    "da": "Slukket Ned",
+    "de": "Ausgeschaltet Unten",
+    "es": "Apagado Abajo",
+    "fr": "Éteint Bas",
+    "it": "Spento Giù",
+    "no": "Slått av Ned",
+    "sv": "Avstängd Ner",
+    "pl": "Wyłączono Dół",
+    "ru": "Выключено Вниз",
+    "ko": "꺼짐 아래",
+    "ar": "تم إيقاف الأسفل"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.down"
+    }
+  ]
+}
