@@ -173,6 +173,10 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
         },
       ];
     }
+    // Door locks expose their state as a binary with value_on 'LOCK' / value_off 'UNLOCK'
+    if (expose.type === 'binary' && expose.value_on === 'LOCK' && expose.value_off === 'UNLOCK') {
+      return ['locked', (v) => v === 'LOCK', (v) => ({ state: v ? 'LOCK' : 'UNLOCK' })];
+    }
     return ['onoff', (v) => v === 'ON', (v) => ({ state: v ? 'ON' : 'OFF' })];
   },
   state_11: ['onoff.11', (v) => v === 'ON', (v) => ({ state_11: v ? 'ON' : 'OFF' })],
