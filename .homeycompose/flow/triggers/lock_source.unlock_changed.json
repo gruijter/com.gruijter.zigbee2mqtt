@@ -1,0 +1,47 @@
+{
+  "title": {
+    "en": "The unlock source changed",
+    "nl": "De ontgrendelbron is gewijzigd",
+    "da": "Oplåsningskilden ændrede sig",
+    "de": "Die Entriegelungsquelle hat sich geändert",
+    "es": "La fuente de desbloqueo cambió",
+    "fr": "La source de déverrouillage a changé",
+    "it": "La sorgente di sblocco è cambiata",
+    "no": "Opplåsingskilden endret seg",
+    "sv": "Upplåsningskällan har ändrats",
+    "pl": "Źródło otwarcia uległo zmianie",
+    "ru": "Источник отпирания изменился",
+    "ko": "잠금 해제 소스가 변경되었습니다",
+    "ar": "تغير مصدر فتح القفل"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=lock_source.unlock"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "lock_source.unlock",
+      "type": "string",
+      "title": {
+        "en": "Source",
+        "nl": "Bron",
+        "da": "Kilde",
+        "de": "Quelle",
+        "es": "Fuente",
+        "fr": "Source",
+        "it": "Sorgente",
+        "no": "Kilde",
+        "sv": "Källa",
+        "pl": "Źródło",
+        "ru": "Источник",
+        "ko": "소스",
+        "ar": "المصدر"
+      },
+      "example": "fingerprintsensor"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Lock state",
+    "nl": "Slotstatus",
+    "da": "Låsetilstand",
+    "de": "Schlossstatus",
+    "es": "Estado de la cerradura",
+    "fr": "État de la serrure",
+    "it": "Stato della serratura",
+    "no": "Låsetilstand",
+    "sv": "Låsstatus",
+    "pl": "Stan zamka",
+    "ru": "Состояние замка",
+    "ko": "잠금 상태",
+    "ar": "حالة القفل"
+  },
+  "units": {
+    "en": ""
+  },
+  "getable": true,
+  "setable": false,
+  "insights": false
+}

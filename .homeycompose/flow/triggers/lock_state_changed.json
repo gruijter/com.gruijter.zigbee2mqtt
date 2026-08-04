@@ -1,0 +1,47 @@
+{
+  "title": {
+    "en": "The lock state changed",
+    "nl": "De slotstatus is gewijzigd",
+    "da": "Låsetilstanden ændrede sig",
+    "de": "Der Schlossstatus hat sich geändert",
+    "es": "El estado de la cerradura cambió",
+    "fr": "L'état de la serrure a changé",
+    "it": "Lo stato della serratura è cambiato",
+    "no": "Låsetilstanden endret seg",
+    "sv": "Låsstatus har ändrats",
+    "pl": "Stan zamka uległ zmianie",
+    "ru": "Состояние замка изменилось",
+    "ko": "잠금 상태가 변경되었습니다",
+    "ar": "تغيرت حالة القفل"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=lock_state"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "lock_state",
+      "type": "string",
+      "title": {
+        "en": "State",
+        "nl": "Staat",
+        "da": "Tilstand",
+        "de": "Zustand",
+        "es": "Estado",
+        "fr": "État",
+        "it": "Stato",
+        "no": "Tilstand",
+        "sv": "Tillstånd",
+        "pl": "Stan",
+        "ru": "Состояние",
+        "ko": "상태",
+        "ar": "الحالة"
+      },
+      "example": "locked"
+    }
+  ]
+}

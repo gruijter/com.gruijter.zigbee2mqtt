@@ -1,0 +1,47 @@
+{
+  "title": {
+    "en": "The lock source changed",
+    "nl": "De vergrendelbron is gewijzigd",
+    "da": "Låsekilden ændrede sig",
+    "de": "Die Verriegelungsquelle hat sich geändert",
+    "es": "La fuente de bloqueo cambió",
+    "fr": "La source de verrouillage a changé",
+    "it": "La sorgente di blocco è cambiata",
+    "no": "Låsekilden endret seg",
+    "sv": "Låskällan har ändrats",
+    "pl": "Źródło zamknięcia uległo zmianie",
+    "ru": "Источник запирания изменился",
+    "ko": "잠금 소스가 변경되었습니다",
+    "ar": "تغير مصدر القفل"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=lock_source.lock"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "lock_source.lock",
+      "type": "string",
+      "title": {
+        "en": "Source",
+        "nl": "Bron",
+        "da": "Kilde",
+        "de": "Quelle",
+        "es": "Fuente",
+        "fr": "Source",
+        "it": "Sorgente",
+        "no": "Kilde",
+        "sv": "Källa",
+        "pl": "Źródło",
+        "ru": "Источник",
+        "ko": "소스",
+        "ar": "المصدر"
+      },
+      "example": "keypad"
+    }
+  ]
+}

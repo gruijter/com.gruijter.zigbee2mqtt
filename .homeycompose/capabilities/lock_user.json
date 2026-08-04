@@ -1,0 +1,24 @@
+{
+  "type": "string",
+  "title": {
+    "en": "User",
+    "nl": "Gebruiker",
+    "da": "Bruger",
+    "de": "Benutzer",
+    "es": "Usuario",
+    "fr": "Utilisateur",
+    "it": "Utente",
+    "no": "Bruker",
+    "sv": "Användare",
+    "pl": "Użytkownik",
+    "ru": "Пользователь",
+    "ko": "사용자",
+    "ar": "المستخدم"
+  },
+  "units": {
+    "en": ""
+  },
+  "getable": true,
+  "setable": false,
+  "insights": false
+}

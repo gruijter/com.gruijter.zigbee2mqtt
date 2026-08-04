@@ -1,0 +1,78 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Sound volume",
+    "nl": "Geluidsvolume",
+    "da": "Lydstyrke",
+    "de": "Lautstärke",
+    "es": "Volumen de sonido",
+    "fr": "Volume sonore",
+    "it": "Volume audio",
+    "no": "Lydstyrke",
+    "sv": "Ljudvolym",
+    "pl": "Głośność",
+    "ru": "Громкость",
+    "ko": "음량",
+    "ar": "مستوى الصوت"
+  },
+  "values": [
+    {
+      "id": "silent_mode",
+      "title": {
+        "en": "Silent",
+        "nl": "Stil",
+        "da": "Lydløs",
+        "de": "Stumm",
+        "es": "Silencio",
+        "fr": "Silencieux",
+        "it": "Silenzioso",
+        "no": "Stille",
+        "sv": "Tyst",
+        "pl": "Cichy",
+        "ru": "Тихий",
+        "ko": "무음",
+        "ar": "صامت"
+      }
+    },
+    {
+      "id": "low_volume",
+      "title": {
+        "en": "Low",
+        "nl": "Laag",
+        "da": "Lav",
+        "de": "Niedrig",
+        "es": "Bajo",
+        "fr": "Faible",
+        "it": "Basso",
+        "no": "Lav",
+        "sv": "Låg",
+        "pl": "Niski",
+        "ru": "Низкий",
+        "ko": "낮음",
+        "ar": "منخفض"
+      }
+    },
+    {
+      "id": "high_volume",
+      "title": {
+        "en": "High",
+        "nl": "Hoog",
+        "da": "Høj",
+        "de": "Hoch",
+        "es": "Alto",
+        "fr": "Élevé",
+        "it": "Alto",
+        "no": "Høy",
+        "sv": "Hög",
+        "pl": "Wysoki",
+        "ru": "Высокий",
+        "ko": "높음",
+        "ar": "مرتفع"
+      }
+    }
+  ],
+  "uiComponent": "picker",
+  "getable": true,
+  "setable": true,
+  "insights": false
+}

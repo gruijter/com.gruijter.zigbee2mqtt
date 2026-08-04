@@ -1,0 +1,100 @@
+{
+  "title": {
+    "en": "Set sound volume",
+    "nl": "Stel geluidsvolume in",
+    "da": "Indstil lydstyrke",
+    "de": "Lautstärke einstellen",
+    "es": "Establecer volumen de sonido",
+    "fr": "Régler le volume sonore",
+    "it": "Imposta volume audio",
+    "no": "Angi lydstyrke",
+    "sv": "Ställ in ljudvolym",
+    "pl": "Ustaw głośność",
+    "ru": "Установить громкость",
+    "ko": "음량 설정",
+    "ar": "ضبط مستوى الصوت"
+  },
+  "titleFormatted": {
+    "en": "Set sound volume to [[val]]",
+    "nl": "Stel geluidsvolume in op [[val]]",
+    "da": "Indstil lydstyrke til [[val]]",
+    "de": "Lautstärke auf [[val]] einstellen",
+    "es": "Establecer volumen de sonido en [[val]]",
+    "fr": "Régler le volume sonore sur [[val]]",
+    "it": "Imposta volume audio su [[val]]",
+    "no": "Angi lydstyrke til [[val]]",
+    "sv": "Ställ in ljudvolym till [[val]]",
+    "pl": "Ustaw głośność na [[val]]",
+    "ru": "Установить громкость на [[val]]",
+    "ko": "음량을 [[val]]로 설정",
+    "ar": "ضبط مستوى الصوت على [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=sound_volume"
+    },
+    {
+      "type": "dropdown",
+      "name": "val",
+      "values": [
+        {
+          "id": "silent_mode",
+          "title": {
+            "en": "Silent",
+            "nl": "Stil",
+            "da": "Lydløs",
+            "de": "Stumm",
+            "es": "Silencio",
+            "fr": "Silencieux",
+            "it": "Silenzioso",
+            "no": "Stille",
+            "sv": "Tyst",
+            "pl": "Cichy",
+            "ru": "Тихий",
+            "ko": "무음",
+            "ar": "صامت"
+          }
+        },
+        {
+          "id": "low_volume",
+          "title": {
+            "en": "Low",
+            "nl": "Laag",
+            "da": "Lav",
+            "de": "Niedrig",
+            "es": "Bajo",
+            "fr": "Faible",
+            "it": "Basso",
+            "no": "Lav",
+            "sv": "Låg",
+            "pl": "Niski",
+            "ru": "Низкий",
+            "ko": "낮음",
+            "ar": "منخفض"
+          }
+        },
+        {
+          "id": "high_volume",
+          "title": {
+            "en": "High",
+            "nl": "Hoog",
+            "da": "Høj",
+            "de": "Hoch",
+            "es": "Alto",
+            "fr": "Élevé",
+            "it": "Alto",
+            "no": "Høy",
+            "sv": "Hög",
+            "pl": "Wysoki",
+            "ru": "Высокий",
+            "ko": "높음",
+            "ar": "مرتفع"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -173,6 +173,10 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
         },
       ];
     }
+    // Door locks expose their state as a binary with value_on 'LOCK' / value_off 'UNLOCK'
+    if (expose.type === 'binary' && expose.value_on === 'LOCK' && expose.value_off === 'UNLOCK') {
+      return ['locked', (v) => v === 'LOCK', (v) => ({ state: v ? 'LOCK' : 'UNLOCK' })];
+    }
     return ['onoff', (v) => v === 'ON', (v) => ({ state: v ? 'ON' : 'OFF' })];
   },
   state_11: ['onoff.11', (v) => v === 'ON', (v) => ({ state_11: v ? 'ON' : 'OFF' })],
@@ -276,6 +280,11 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
     }
   }],
   running_state: ['running_state', (v) => (v || '').toString()],
+  lock_state: ['lock_state', (v) => (v || '').toString()],
+  last_lock_source: ['lock_source.lock', (v) => (v || '').toString()],
+  last_unlock_source: ['lock_source.unlock', (v) => (v || '').toString()],
+  last_lock_user: ['lock_user.lock', (v) => (v || '').toString()],
+  last_unlock_user: ['lock_user.unlock', (v) => (v || '').toString()],
   motion_state: ['motion_state', (v) => (v || '').toString()],
   siren_state: ['siren_state', (v) => (v || '').toString()],
   weather_condition: ['weather_condition', (v) => (v || '').toString()],
@@ -305,6 +314,8 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   effect_11: ['effect.11', (v) => v, (v) => ({ effect_11: v })], // [blink, breathe, okay, channel_change, finish_effect, stop_effect]
   alarm: ['alarm_sound', (v) => v, (v) => ({ alarm: v })], // [stop, pre_alarm, fire, burglar]
   sensitivity: ['sensitivity', (v) => v, (v) => ({ sensitivity: v })], // [low, medium, high]
+  sound_volume: ['sound_volume', (v) => v, (v) => ({ sound_volume: v })], // [silent_mode, low_volume, high_volume]
+  auto_relock: ['onoff.auto_relock', (v) => v === true, (v) => ({ auto_relock: v })],
   motion_sensitivity: ['sensitivity.motion', (v) => v, (v) => ({ motion_sensitivity: v })], // [low, medium, high]
   pilot_wire_mode: ['pilot_wire_mode', (v) => v, (v) => ({ pilot_wire_mode: v })], // [comfort, eco, frost_protection, off, comfort_-1, comfort_-2]
 };

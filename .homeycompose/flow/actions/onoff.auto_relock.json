@@ -1,0 +1,59 @@
+{
+  "title": {
+    "en": "Switch auto relock On or Off",
+    "nl": "Schakel automatisch vergrendelen in of uit",
+    "da": "Tænd eller sluk automatisk genlåsning",
+    "de": "Automatische Wiederverriegelung ein- oder ausschalten",
+    "es": "Activar o desactivar el rebloqueo automático",
+    "fr": "Activer ou désactiver le reverrouillage automatique",
+    "it": "Attivare o disattivare il riblocco automatico",
+    "no": "Slå automatisk gjenlåsing av eller på",
+    "sv": "Slå på eller av automatisk återlåsning",
+    "pl": "Włącz lub wyłącz automatyczne ponowne zamknięcie",
+    "ru": "Включить или выключить автоматическое перезапирание",
+    "ko": "자동 재잠금 켜기 또는 끄기",
+    "ar": "تشغيل أو إيقاف إعادة القفل التلقائي"
+  },
+  "titleFormatted": {
+    "en": "Auto relock [[val]]",
+    "nl": "Automatisch vergrendelen [[val]]",
+    "da": "Automatisk genlåsning [[val]]",
+    "de": "Automatische Wiederverriegelung [[val]]",
+    "es": "Rebloqueo automático [[val]]",
+    "fr": "Reverrouillage automatique [[val]]",
+    "it": "Riblocco automatico [[val]]",
+    "no": "Automatisk gjenlåsing [[val]]",
+    "sv": "Automatisk återlåsning [[val]]",
+    "pl": "Automatyczne ponowne zamknięcie [[val]]",
+    "ru": "Автоматическое перезапирание [[val]]",
+    "ko": "자동 재잠금 [[val]]",
+    "ar": "إعادة القفل التلقائي [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=onoff.auto_relock"
+    },
+    {
+      "type": "checkbox",
+      "name": "val",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "da": "Tændt",
+        "de": "Ein",
+        "es": "Encendido",
+        "fr": "Allumé",
+        "it": "Acceso",
+        "no": "På",
+        "sv": "På",
+        "pl": "Włączone",
+        "ru": "Включено",
+        "ko": "켜짐",
+        "ar": "تشغيل"
+      }
+    }
+  ]
+}

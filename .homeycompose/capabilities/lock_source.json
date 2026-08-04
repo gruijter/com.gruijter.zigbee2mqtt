@@ -1,0 +1,24 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Source",
+    "nl": "Bron",
+    "da": "Kilde",
+    "de": "Quelle",
+    "es": "Fuente",
+    "fr": "Source",
+    "it": "Sorgente",
+    "no": "Kilde",
+    "sv": "Källa",
+    "pl": "Źródło",
+    "ru": "Источник",
+    "ko": "소스",
+    "ar": "المصدر"
+  },
+  "units": {
+    "en": ""
+  },
+  "getable": true,
+  "setable": false,
+  "insights": false
+}
