@@ -9568,6 +9568,41 @@
               "value": false
             },
             {
+              "id": "tls_reject_unauthorized",
+              "type": "checkbox",
+              "label": {
+                "en": "Verify TLS certificate",
+                "nl": "Verifieer TLS-certificaat",
+                "da": "Bekræft TLS-certifikat",
+                "de": "TLS-Zertifikat überprüfen",
+                "es": "Verificar certificado TLS",
+                "fr": "Vérifier le certificat TLS",
+                "it": "Verifica certificato TLS",
+                "no": "Bekreft TLS-sertifikat",
+                "sv": "Verifiera TLS-certifikat",
+                "pl": "Weryfikuj certyfikat TLS",
+                "ru": "Проверять TLS-сертификат",
+                "ko": "TLS 인증서 확인",
+                "ar": "التحقق من شهادة TLS"
+              },
+              "hint": {
+                "en": "Disable if your MQTT broker uses a self-signed certificate. Off by default for compatibility.",
+                "nl": "Zet uit als je MQTT-broker een zelfondertekend certificaat gebruikt. Standaard uit voor compatibiliteit.",
+                "da": "Deaktiver, hvis din MQTT-broker bruger et selvsigneret certifikat. Slået fra som standard for kompatibilitet.",
+                "de": "Deaktivieren, wenn Ihr MQTT-Broker ein selbstsigniertes Zertifikat verwendet. Standardmäßig aus für Kompatibilität.",
+                "es": "Desactive si su broker MQTT usa un certificado autofirmado. Desactivado por defecto por compatibilidad.",
+                "fr": "Désactivez si votre broker MQTT utilise un certificat auto-signé. Désactivé par défaut pour la compatibilité.",
+                "it": "Disattiva se il tuo broker MQTT utilizza un certificato autofirmato. Disattivato per impostazione predefinita per compatibilità.",
+                "no": "Slå av hvis MQTT-brokeren din bruker et selvsignert sertifikat. Av som standard for kompatibilitet.",
+                "sv": "Inaktivera om din MQTT-broker använder ett självsignerat certifikat. Av som standard för kompatibilitet.",
+                "pl": "Wyłącz, jeśli twój broker MQTT używa certyfikatu z podpisem własnym. Domyślnie wyłączone dla kompatybilności.",
+                "ru": "Отключите, если ваш MQTT-брокер использует самоподписанный сертификат. По умолчанию выключено для совместимости.",
+                "ko": "MQTT 브로커가 자체 서명된 인증서를 사용하는 경우 비활성화하세요. 호환성을 위해 기본적으로 꺼져 있습니다.",
+                "ar": "عطّل هذا الخيار إذا كان وسيط MQTT الخاص بك يستخدم شهادة موقعة ذاتيًا. معطّل افتراضيًا للتوافق."
+              },
+              "value": false
+            },
+            {
               "id": "username",
               "type": "text",
               "label": {

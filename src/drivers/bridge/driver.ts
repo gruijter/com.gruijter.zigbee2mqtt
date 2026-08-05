@@ -114,7 +114,9 @@ export default class Zigbee2MQTTBridgeDriver extends Homey.Driver {
         password: mqttSettings.password || undefined,
         // protocolId: 'MQTT',
         // protocolVersion: 4,
-        rejectUnauthorized: false,
+        // Defaults to false to preserve compatibility with the many local brokers running
+        // self-signed certificates. Users who want strict certificate validation can opt in.
+        rejectUnauthorized: !!mqttSettings.tls_reject_unauthorized,
         keepalive: 60,
         reconnectPeriod: 10000,
         clean: true,

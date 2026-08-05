@@ -113,6 +113,7 @@ export interface MQTTSettings {
     username?: string;
     password?: string;
     tls: boolean;
+    tls_reject_unauthorized?: boolean;
     topic: string;
 }
 

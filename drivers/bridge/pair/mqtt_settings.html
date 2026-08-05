@@ -10,6 +10,7 @@
 				host: document.getElementById('host').value.trim(),
 				port: Number(document.getElementById('port').value) || 1883,
 				tls: document.getElementById('tls').checked,
+				tls_reject_unauthorized: document.getElementById('tls_reject_unauthorized').checked,
 				username: document.getElementById('username').value.trim(),
 				password: document.getElementById('password').value,
 				topic: document.getElementById('topic').value.trim(),
@@ -37,6 +38,12 @@
 	<input class="homey-form-checkbox-input" type="checkbox" id="tls" name="tls" />
 	<span class="homey-form-checkbox-checkmark"></span>
 	<span class="homey-form-checkbox-text">Secure TLS</span>
+</label>
+
+<label class="homey-form-checkbox">
+	<input class="homey-form-checkbox-input" type="checkbox" id="tls_reject_unauthorized" name="tls_reject_unauthorized" />
+	<span class="homey-form-checkbox-checkmark"></span>
+	<span class="homey-form-checkbox-text">Verify TLS certificate (disable for self-signed certificates)</span>
 </label>
 
 <div class="homey-form-group">
