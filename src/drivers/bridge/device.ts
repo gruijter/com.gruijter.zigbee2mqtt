@@ -159,7 +159,7 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
   async connectBridge() {
     try {
       if (!this.settings.host) throw Error('No MQTT server configured');
-      if (this.client) await this.client.end();
+      if (this.client) await this.client.endAsync();
 
       const handleMessage = async (topic: string, message: any) => {
         try {

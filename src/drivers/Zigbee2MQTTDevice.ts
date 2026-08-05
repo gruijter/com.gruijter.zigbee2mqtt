@@ -362,7 +362,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     if (deviceInfo?.type === 'device' && deviceInfo.device.power_source === 'Battery') return;
 
     const pl = payload || { state: '' };
-    await this.bridge.client.publish(`${this.deviceTopic}/get`, JSON.stringify(pl));
+    await this.bridge.client.publishAsync(`${this.deviceTopic}/get`, JSON.stringify(pl));
     this.log(`${JSON.stringify(pl)} sent by ${source}`);
   }
 
@@ -389,7 +389,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
       throw Error(`${payLoadArray[1]} command not supported`);
     }
 
-    await this.bridge.client.publish(`${this.deviceTopic}/set`, JSON.stringify(payload));
+    await this.bridge.client.publishAsync(`${this.deviceTopic}/set`, JSON.stringify(payload));
     this.log(`${JSON.stringify(payload)} sent by ${source}`);
   }
 
@@ -422,7 +422,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     if (!this.isStoreUpToDate()) throw Error('Store outdated');
     if (!payload) throw Error('setCommand started without payload');
 
-    await this.bridge.client.publish(`${this.deviceTopic}/set`, payload);
+    await this.bridge.client.publishAsync(`${this.deviceTopic}/set`, payload);
     this.log(`${payload} sent by ${source}`);
   }
 
@@ -485,8 +485,8 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
       (async () => {
         try {
           this.log(`Subscribing to ${this.deviceTopic}`);
-          await this.bridge.client.subscribe([`${this.deviceTopic}`]); // device state updates
-          await this.bridge.client.subscribe([`${this.deviceTopic}/availability`]); // device availability updates
+          await this.bridge.client.subscribeAsync([`${this.deviceTopic}`]); // device state updates
+          await this.bridge.client.subscribeAsync([`${this.deviceTopic}/availability`]); // device availability updates
           this.log(`${this.getName()} mqtt subscriptions ok`);
         } catch (error) {
           this.error(error);
