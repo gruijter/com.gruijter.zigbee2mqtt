@@ -1,3 +1,37 @@
+interface CapabilityHost {
+  hasCapability(capability: string): boolean;
+  setCapabilityValue(capability: string, value: any): Promise<void>;
+  log: (...args: any[]) => void;
+}
+
+/**
+ * Sets a Homey capability value if the capability exists, swallowing and logging any error.
+ */
+export async function setDeviceCapability(host: CapabilityHost, capability: string, value: any) {
+  if (host.hasCapability(capability) && value !== undefined) {
+    await host.setCapabilityValue(capability, value)
+      .catch((error) => host.log(error, capability, value));
+  }
+}
+
+interface SettingsHost {
+  settings: any;
+  setSettings(settings: Record<string, any>): Promise<void>;
+  log: (...args: any[]) => void;
+}
+
+/**
+ * Updates a single Homey device setting if it changed, swallowing and logging any error.
+ */
+export function setDeviceSetting(host: SettingsHost, setting: string, value: any) {
+  if (host.settings && host.settings[setting] !== value) {
+    const settings: Record<string, any> = { [setting]: value };
+    host.log('New setting:', settings);
+    host.setSettings(settings)
+      .catch((error) => host.log(error, setting, value));
+  }
+}
+
 /**
  * Converts hsb data to rgb object.
  * @param {number} hue Hue [0 - 1]

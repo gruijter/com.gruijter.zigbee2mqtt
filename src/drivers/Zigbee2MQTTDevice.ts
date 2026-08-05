@@ -28,6 +28,7 @@ import { mapCapabilities, getCapabilityConverters, isPropertySupported } from '.
 import {
   CapabilityMapping, CapabilityMappings, DeviceAvailability, Z2MDevice, Z2MGroup, DeviceSettings, CapabilityOptions, Z2MState,
 } from '../types';
+import { setDeviceCapability, setDeviceSetting } from '../utilities';
 import Zigbee2MQTTBridge from './bridge/device';
 
 const setTimeoutPromise = util.promisify(setTimeout);
@@ -172,6 +173,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
         this.log(`Updating capabilityMappings in store for ${this.getName()}`);
         await this.setStoreValue('capabilityMappings', capabilityMappings);
         await this.setStoreValue('storeVersion', STORE_VERSION);
+        this.unmappedLogged.clear();
         storeChanged = true;
       }
     } else {
@@ -301,12 +303,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
   }
 
   async setCapability(capability: string, value: any) {
-    if (this.hasCapability(capability) && value !== undefined) {
-      await this.setCapabilityValue(capability, value)
-        .catch((error) => {
-          this.log(error, capability, value);
-        });
-    }
+    return setDeviceCapability(this, capability, value);
   }
 
   // ============================================================================
@@ -340,13 +337,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
   }
 
   setSetting(setting: string, value: any) {
-    if (this.settings?.[setting] !== value) {
-      const settings = { [setting]: value };
-      this.log('New setting:', settings);
-      this.setSettings(settings).catch((error) => {
-        this.log(error, setting, value);
-      });
-    }
+    return setDeviceSetting(this, setting, value);
   }
 
   // ============================================================================

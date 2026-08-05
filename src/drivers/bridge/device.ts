@@ -26,6 +26,7 @@ import type { MqttClient } from 'mqtt';
 import {
   DeviceAvailability, Z2MDevice, Z2MGroup, BridgeSettings,
 } from '../../types';
+import { setDeviceCapability, setDeviceSetting } from '../../utilities';
 import Zigbee2MQTTBridgeDriver from './driver';
 
 const setTimeoutPromise = util.promisify(setTimeout);
@@ -136,24 +137,11 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
   }
 
   async setCapability(capability: string, value: any) {
-    if (this.hasCapability(capability) && value !== undefined) {
-      await this.setCapabilityValue(capability, value)
-        .catch((error) => {
-          this.log(error, capability, value);
-        });
-    }
+    return setDeviceCapability(this, capability, value);
   }
 
   setSetting(setting: string, value: any) {
-    if (this.settings && this.settings[setting] !== value) {
-      const settings: any = {};
-      settings[setting] = value;
-      this.log('New setting:', settings);
-      this.setSettings(settings)
-        .catch((error) => {
-          this.log(error, setting, value);
-        });
-    }
+    return setDeviceSetting(this, setting, value);
   }
 
   async connectBridge() {
@@ -202,15 +190,15 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
               this.log(excerpt);
               (this.homey.notifications as any).createNotification({ excerpt });
             }
-            if (info.network.pan_id.toString() !== this.getSettings().pan_id) {
-              const pid = info.network && info.network.pan_id ? info.network.pan_id.toString() : '';
+            if (info.network?.pan_id !== undefined && info.network.pan_id.toString() !== this.getSettings().pan_id) {
+              const pid = info.network.pan_id.toString();
               this.setSetting('pan_id', pid);
               const excerpt = `Zigbee2MQTT PanID was changed to ${pid}`;
               this.log(excerpt);
               (this.homey.notifications as any).createNotification({ excerpt });
             }
-            if (info.network.channel.toString() !== this.getSettings().zigbee_channel) {
-              const zc = info.network && info.network.channel ? info.network.channel.toString() : '';
+            if (info.network?.channel !== undefined && info.network.channel.toString() !== this.getSettings().zigbee_channel) {
+              const zc = info.network.channel.toString();
               this.setSetting('zigbee_channel', zc);
               const excerpt = `Zigbee2MQTT channel was changed to ${zc}`;
               this.log(excerpt);
