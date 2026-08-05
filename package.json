@@ -16,7 +16,7 @@
     "lint:fix": "eslint 'src/**/*.{ts,tsx}' --fix"
   },
   "dependencies": {
-    "async-mqtt": "^2.6.3",
+    "mqtt": "^5.15.2",
     "source-map-support": "^0.5.21"
   },
   "devDependencies": {

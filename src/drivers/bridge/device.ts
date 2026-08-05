@@ -22,7 +22,7 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 import Homey from 'homey';
 import util from 'util';
-import { AsyncMqttClient } from 'async-mqtt';
+import type { MqttClient } from 'mqtt';
 import {
   DeviceAvailability, Z2MDevice, Z2MGroup, BridgeSettings,
 } from '../../types';
@@ -37,7 +37,7 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
   msgCounter: number;
   lastMPMUpdate: number;
   restarting: boolean;
-  client: AsyncMqttClient;
+  client: MqttClient;
   endTime: number | null;
   listenersSet: boolean;
   groups: Z2MGroup[];
@@ -127,7 +127,7 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
     if (this.restarting) return;
     this.restarting = true;
     await this.destroyListeners();
-    if (this.client) await this.client.end();
+    if (this.client) await this.client.endAsync();
     const dly = delay || 1000 * 5;
     this.log(`Device will restart in ${dly / 1000} seconds`);
     // this.setUnavailable('Device is restarting');
@@ -294,17 +294,17 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
       const subscribeTopics = async () => {
         try {
           this.log(`Subscribing to ${this.baseTopic}/bridge/info`);
-          await this.client.subscribe([`${this.baseTopic}/bridge/info`]); // bridge info updates
+          await this.client.subscribeAsync([`${this.baseTopic}/bridge/info`]); // bridge info updates
           this.log(`Subscribing to ${this.baseTopic}/bridge/logging`);
-          await this.client.subscribe([`${this.baseTopic}/bridge/logging`]); // bridge logging updates
+          await this.client.subscribeAsync([`${this.baseTopic}/bridge/logging`]); // bridge logging updates
           this.log(`Subscribing to ${this.baseTopic}/bridge/groups`);
-          await this.client.subscribe([`${this.baseTopic}/bridge/groups`]); // bridge all group updates
+          await this.client.subscribeAsync([`${this.baseTopic}/bridge/groups`]); // bridge all group updates
           this.log(`Subscribing to ${this.baseTopic}/bridge/state`);
-          await this.client.subscribe([`${this.baseTopic}/bridge/state`]); // bridge online/offline updates
+          await this.client.subscribeAsync([`${this.baseTopic}/bridge/state`]); // bridge online/offline updates
           this.log(`Subscribing to ${this.baseTopic}/bridge/devices`);
-          await this.client.subscribe([`${this.baseTopic}/bridge/devices`]); // bridge all device updates
+          await this.client.subscribeAsync([`${this.baseTopic}/bridge/devices`]); // bridge all device updates
           this.log(`Subscribing to ${this.baseTopic}/+/availability`);
-          await this.client.subscribe([`${this.baseTopic}/+/availability`]); // bridge all devices availability update
+          await this.client.subscribeAsync([`${this.baseTopic}/+/availability`]); // bridge all devices availability update
           this.log('mqtt bridge subscriptions ok');
         } catch (error) {
           this.error(error);
@@ -378,7 +378,7 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
   async joinOnOff(onoff: boolean, source: string) {
     if (!this.client || !this.client.connected) return Promise.reject(Error('Bridge is not connected'));
     const payload = { value: onoff, time: 240 * (onoff ? 1 : 0) };
-    await this.client.publish(`${this.baseTopic}/bridge/request/permit_join`, JSON.stringify(payload));
+    await this.client.publishAsync(`${this.baseTopic}/bridge/request/permit_join`, JSON.stringify(payload));
     this.log(`Permit_join ${onoff} sent by ${source}`);
     return Promise.resolve(true);
   }
@@ -386,14 +386,14 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
   async setLogLevel(level: string, source: string) {
     if (!this.client || !this.client.connected) return Promise.reject(Error('Bridge is not connected'));
     const payload = { options: { advanced: { log_level: level } } };
-    await this.client.publish(`${this.baseTopic}/bridge/request/options`, JSON.stringify(payload));
+    await this.client.publishAsync(`${this.baseTopic}/bridge/request/options`, JSON.stringify(payload));
     this.log(`Log level set to ${level} by ${source}`);
     return Promise.resolve(true);
   }
 
   async restart(_ignore: unknown, source: string) {
     if (!this.client || !this.client.connected) return Promise.reject(Error('Bridge is not connected'));
-    await this.client.publish(`${this.baseTopic}/bridge/request/restart`, '');
+    await this.client.publishAsync(`${this.baseTopic}/bridge/request/restart`, '');
     this.log(`Restart Z2M command sent by ${source}`);
     return Promise.resolve(true);
   }
@@ -405,7 +405,7 @@ export default class Zigbee2MQTTBridge extends Homey.Device {
       // this.homey.removeAllListeners('devicelistupdate');
       // this.homey.removeAllListeners('grouplistupdate');
       // this.homey.removeAllListeners('bridgeoffline');
-      if (this.client) await this.client.end();
+      if (this.client) await this.client.endAsync();
     } catch (error) {
       this.error(error);
     }

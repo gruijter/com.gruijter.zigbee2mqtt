@@ -21,8 +21,8 @@ along with com.gruijter.zigbee2mqtt.  If not, see <http://www.gnu.org/licenses/>
 
 import Homey from 'homey';
 import PairSession from 'homey/lib/PairSession';
-import * as MQTT from 'async-mqtt';
-import { AsyncMqttClient, IClientOptions } from 'async-mqtt';
+import * as MQTT from 'mqtt';
+import type { MqttClient, IClientOptions } from 'mqtt';
 import util from 'util';
 import { BridgeSettings, MQTTSettings } from '../../types';
 
@@ -54,7 +54,7 @@ export default class Zigbee2MQTTBridgeDriver extends Homey.Driver {
 
   async onPair(session: PairSession) {
     let settings: MQTTSettings & Record<string, any> | null = null;
-    let mqttClient: AsyncMqttClient | null = null;
+    let mqttClient: MqttClient | null = null;
     let discovered: any = null;
 
     session.setHandler('mqtt', async (mqttSettings: MQTTSettings) => {
@@ -68,12 +68,12 @@ export default class Zigbee2MQTTBridgeDriver extends Homey.Driver {
         }
         mqttClient = await this.connectMQTT(settings);
         discovered = await this.discoverBridge(mqttClient, settings.topic);
-        await mqttClient.end();
+        await mqttClient.endAsync();
         await session.showView('list_devices');
         return Promise.resolve(discovered);
       } catch (error) {
         this.error(error);
-        if (mqttClient) await mqttClient.end();
+        if (mqttClient) await mqttClient.endAsync();
         return Promise.reject(error);
       }
     });
@@ -102,7 +102,7 @@ export default class Zigbee2MQTTBridgeDriver extends Homey.Driver {
   }
 
   // returns a connected MQTT client
-  async connectMQTT(mqttSettings: MQTTSettings): Promise<AsyncMqttClient> {
+  async connectMQTT(mqttSettings: MQTTSettings): Promise<MqttClient> {
     try {
       if (!mqttSettings) throw Error('mqttSettings are required');
       const protocol = mqttSettings.tls ? 'mqtts' : 'mqtt';
@@ -129,7 +129,7 @@ export default class Zigbee2MQTTBridgeDriver extends Homey.Driver {
   }
 
   // returns bridge info on the MQTT broker
-  async discoverBridge(mqttClient: AsyncMqttClient, baseTopic: string) {
+  async discoverBridge(mqttClient: MqttClient, baseTopic: string) {
     const infoTopic = baseTopic === '' ? 'zigbee2mqtt/bridge/info' : `${baseTopic}/bridge/info`;
     let info = null;
     const messageListener = (topic: string, message: any) => {
@@ -144,7 +144,7 @@ export default class Zigbee2MQTTBridgeDriver extends Homey.Driver {
     };
     mqttClient.on('message', messageListener);
 
-    const granted = await mqttClient.subscribe(infoTopic).catch((err: any) => {
+    const granted = await mqttClient.subscribeAsync(infoTopic).catch((err: any) => {
       this.error('Subscribe error:', err);
       return null;
     }) as any[] | null;
@@ -155,7 +155,7 @@ export default class Zigbee2MQTTBridgeDriver extends Homey.Driver {
     }
 
     await setTimeoutPromise(5000); // wait 5 secs for message
-    await mqttClient.unsubscribe(infoTopic);
+    await mqttClient.unsubscribeAsync(infoTopic);
     await mqttClient.removeListener('message', messageListener);
     if (!info) throw Error(`MQTT settings OK, but no Zigbee2MQTT bridge info found on topic: ${infoTopic}`);
     return info;
