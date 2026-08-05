@@ -1,6 +1,6 @@
 {
   "3.3.0": {
-    "en": "Migrated MQTT client to mqtt.js v5. Fixed a crash when bridge info messages lack network data. Added optional TLS certificate verification for the MQTT broker. Various bridge/device connection stability improvements."
+    "en": "Fixed white lights incorrectly showing a color picker. Fixed capability titles containing underscores. Migrated MQTT client to mqtt.js v5. Fixed a crash when bridge info messages lack network data. Added optional TLS certificate verification for the MQTT broker. Various bridge/device connection stability improvements."
   },
   "3.2.2": {
     "en": "Added more capability mappings. Added more flow cards, Added more translations."
