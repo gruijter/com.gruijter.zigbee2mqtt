@@ -22,15 +22,15 @@
   "devDependencies": {
     "@tsconfig/node18": "^18.2.6",
     "@types/homey": "npm:homey-apps-sdk-v3-types@^0.3.12",
-    "@types/node": "^24.10.1",
+    "@types/node": "^24.13.3",
     "@types/source-map-support": "^0.5.10",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^7.32.0",
     "eslint-config-athom": "^3.1.5",
     "eslint-plugin-homey-app": "^1.0.2",
-    "typescript": "^5.7.2",
-    "zigbee-herdsman": "^7.0.1",
-    "zigbee-herdsman-converters": "^25.78.0"
+    "typescript": "^5.9.3",
+    "zigbee-herdsman": "^7.0.6",
+    "zigbee-herdsman-converters": "^25.122.0"
   }
 }
