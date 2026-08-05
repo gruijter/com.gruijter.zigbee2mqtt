@@ -82,7 +82,7 @@ export type CapabilityMap = { caps: string[], z2mToHomey: MultiZ2MToHomeyConvert
 export type AnyCapabilityMap = SingleCapabilityMap | CapabilityMap;
 
 // Map entry (can be tuple or function returning tuple)
-export type CapabilityMapEntry = AnyCapabilityMap | ((exp: zigbeeHerdsmanConverter.Expose) => AnyCapabilityMap);
+export type CapabilityMapEntry = AnyCapabilityMap | ((exp: zigbeeHerdsmanConverter.Expose) => AnyCapabilityMap | null);
 
 // Converter result interface from getCapabilityConverters()
 export interface CapabilityConverters {

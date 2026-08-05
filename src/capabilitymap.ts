@@ -107,9 +107,16 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   brightness_l2: ['dim.l2', (v) => Number(v) / 254, (v) => ({ brightness_l2: Number(v) * 254 })],
   color_temp: ['light_temperature', (v) => (Number(v) - 153) / 347, (v) => ({ color_temp: 153 + Number(v) * 347 })],
   color_temp_11: ['light_temperature.11', (v) => (Number(v) - 153) / 347, (v) => ({ color_temp_11: 153 + Number(v) * 347 })],
-  color: (expose) => ({
-    caps: ['light_hue', 'light_saturation', 'light_mode'],
-    z2mToHomey: (colorObj, { color_mode: colorMode }) => {
+  color: (expose) => {
+    const isColorTemp = expose.name && expose.name.includes('color_temp');
+    const hasTrueColor = expose.name === 'color_hs' || expose.name === 'color_xy' || 
+      (expose.features && expose.features.some((f: any) => ['x', 'y', 'hue', 'saturation'].includes(f.name)));
+
+    if (isColorTemp || !hasTrueColor) return null;
+
+    return {
+      caps: ['light_hue', 'light_saturation', 'light_mode'],
+      z2mToHomey: (colorObj, { color_mode: colorMode }: any) => {
       if (!colorObj) return null;
       const {
         hue, saturation, x, y,
@@ -148,7 +155,8 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
       const { x, y } = hsToXy(values.light_hue, values.light_saturation);
       return { color: { x, y } };
     },
-  }),
+  };
+},
 
   // Air Quality capabilities
   voc: ['measure_tvoc', (v) => Number(v)],
@@ -347,8 +355,10 @@ function getDeviceModel(device: Z2MDevice): string {
 function resolveCapabilityEntry(
   entry: CapabilityMapEntry,
   expose: zigbeeHerdsmanConverter.Expose,
-): CapabilityMap {
-  const tuple: AnyCapabilityMap = typeof entry === 'function' ? entry(expose) : entry;
+): CapabilityMap | null {
+  const tuple = typeof entry === 'function' ? entry(expose) : entry;
+
+  if (!tuple) return null;
 
   if (Array.isArray(tuple)) {
     // Normalize single-cap tuple to multi-cap format
@@ -370,7 +380,10 @@ export function getCapabilityConverters(z2mProperty: string, expose: zigbeeHerds
   const entry = capabilityMap[z2mProperty];
   if (!entry) return null;
 
-  const { caps: homeyCapabilities, z2mToHomey, homeyToZ2m } = resolveCapabilityEntry(entry, expose);
+  const resolved = resolveCapabilityEntry(entry, expose);
+  if (!resolved) return null;
+
+  const { caps: homeyCapabilities, z2mToHomey, homeyToZ2m } = resolved;
 
   return {
     z2mToHomey,
@@ -426,7 +439,10 @@ export function mapCapabilities(device: Z2MDevice, options: MapCapabilitiesOptio
     const entry = capabilityMap[expose.property];
     if (!entry) return;
 
-    const { caps: homeyCapabilities } = resolveCapabilityEntry(entry, expose);
+    const resolved = resolveCapabilityEntry(entry, expose);
+    if (!resolved) return;
+
+    const { caps: homeyCapabilities } = resolved;
 
     // Filter out already defined, skipped, or group-excluded capabilities
     const capsToAdd = homeyCapabilities.filter((cap) => {
