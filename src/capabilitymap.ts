@@ -511,6 +511,7 @@ export function mapCapabilities(device: Z2MDevice, options: MapCapabilitiesOptio
 // Map Z2M device description to Homey class and icon. First hit is chosen.
 // Format: '(part of) description': ['homeyClass', 'iconName']
 const classIconMap: { [key: string]: [string, string] } = {
+  easyaccess: ['lock', 'lock.svg'],
   'door sensor': ['sensor', 'contact.svg'],
   'radiator valve': ['thermostat', 'radiator_valve.svg'],
   thermostat: ['thermostat', 'thermostat.svg'],
