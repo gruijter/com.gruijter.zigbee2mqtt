@@ -1,0 +1,47 @@
+{
+  "title": {
+    "en": "The temperature calibration changed",
+    "nl": "De temperatuurkalibratie is gewijzigd",
+    "da": "Temperaturkalibreringen er ændret",
+    "de": "Die Temperaturkalibrierung hat sich geändert",
+    "es": "La calibración de temperatura ha cambiado",
+    "fr": "Le calibrage de la température a changé",
+    "it": "La calibrazione della temperatura è cambiata",
+    "no": "Temperaturkalibreringen har endret seg",
+    "sv": "Temperaturkalibreringen har ändrats",
+    "pl": "Kalibracja temperatury się zmieniła",
+    "ru": "Калибровка температуры изменилась",
+    "ko": "온도 보정이 변경되었습니다",
+    "ar": "تغيرت معايرة درجة الحرارة"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=temperature_calibration"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "temperature_calibration",
+      "type": "number",
+      "title": {
+        "en": "°C",
+        "nl": "°C",
+        "da": "°C",
+        "de": "°C",
+        "es": "°C",
+        "fr": "°C",
+        "it": "°C",
+        "no": "°C",
+        "sv": "°C",
+        "pl": "°C",
+        "ru": "°C",
+        "ko": "°C",
+        "ar": "°C"
+      },
+      "example": -1.5
+    }
+  ]
+}

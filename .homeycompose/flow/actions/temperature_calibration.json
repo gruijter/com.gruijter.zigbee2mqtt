@@ -1,0 +1,50 @@
+{
+  "title": {
+    "en": "Set temperature calibration",
+    "nl": "Stel temperatuurkalibratie in",
+    "da": "Indstil temperaturkalibrering",
+    "de": "Temperaturkalibrierung einstellen",
+    "es": "Establecer calibración de temperatura",
+    "fr": "Définir le calibrage de la température",
+    "it": "Imposta calibrazione della temperatura",
+    "no": "Angi temperaturkalibrering",
+    "sv": "Ställ in temperaturkalibrering",
+    "pl": "Ustaw kalibrację temperatury",
+    "ru": "Установить калибровку температуры",
+    "ko": "온도 보정 설정",
+    "ar": "تعيين معايرة درجة الحرارة"
+  },
+  "titleFormatted": {
+    "en": "Set temperature calibration to [[val]]",
+    "nl": "Stel temperatuurkalibratie in op [[val]]",
+    "da": "Indstil temperaturkalibrering til [[val]]",
+    "de": "Temperaturkalibrierung auf [[val]] einstellen",
+    "es": "Establecer calibración de temperatura a [[val]]",
+    "fr": "Définir le calibrage de la température sur [[val]]",
+    "it": "Imposta calibrazione della temperatura a [[val]]",
+    "no": "Angi temperaturkalibrering til [[val]]",
+    "sv": "Ställ in temperaturkalibrering till [[val]]",
+    "pl": "Ustaw kalibrację temperatury na [[val]]",
+    "ru": "Установить калибровку температуры на [[val]]",
+    "ko": "온도 보정을 [[val]]로 설정",
+    "ar": "تعيين معايرة درجة الحرارة إلى [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=temperature_calibration"
+    },
+    {
+      "name": "val",
+      "type": "range",
+      "min": -12.7,
+      "max": 12.7,
+      "step": 0.1,
+      "value": 0,
+      "label": " °C",
+      "labelDecimals": 1
+    }
+  ]
+}

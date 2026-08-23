@@ -1,0 +1,24 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Valve closing degree",
+    "nl": "Klepsluitingsgraad",
+    "da": "Ventillukningsgrad",
+    "de": "Ventilschließgrad",
+    "es": "Grado de cierre de la válvula",
+    "fr": "Degré de fermeture de la vanne",
+    "it": "Grado di chiusura della valvola",
+    "no": "Ventillukkingsgrad",
+    "sv": "Ventilstängningsgrad",
+    "pl": "Stopień zamknięcia zaworu",
+    "ru": "Степень закрытия клапана",
+    "ko": "밸브 폐쇄 정도",
+    "ar": "درجة إغلاق الصمام"
+  },
+  "units": {
+    "en": "%"
+  },
+  "getable": true,
+  "setable": true,
+  "insights": true
+}

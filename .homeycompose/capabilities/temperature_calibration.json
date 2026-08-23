@@ -1,0 +1,24 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Temperature calibration",
+    "nl": "Temperatuurkalibratie",
+    "da": "Temperaturkalibrering",
+    "de": "Temperaturkalibrierung",
+    "es": "Calibración de temperatura",
+    "fr": "Calibrage de la température",
+    "it": "Calibrazione della temperatura",
+    "no": "Temperaturkalibrering",
+    "sv": "Temperaturkalibrering",
+    "pl": "Kalibracja temperatury",
+    "ru": "Калибровка температуры",
+    "ko": "온도 보정",
+    "ar": "معايرة درجة الحرارة"
+  },
+  "units": {
+    "en": "°C"
+  },
+  "getable": true,
+  "setable": true,
+  "insights": true
+}

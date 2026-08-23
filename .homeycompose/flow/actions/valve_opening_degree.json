@@ -1,0 +1,51 @@
+{
+  "title": {
+    "en": "Set valve opening degree",
+    "nl": "Stel klepopeningsgraad in",
+    "da": "Indstil ventilåbningsgrad",
+    "de": "Ventilöffnungsgrad einstellen",
+    "es": "Establecer grado de apertura de la válvula",
+    "fr": "Définir le degré d'ouverture de la vanne",
+    "it": "Imposta grado di apertura della valvola",
+    "no": "Angi ventilåpningsgrad",
+    "sv": "Ställ in ventilöppningsgrad",
+    "pl": "Ustaw stopień otwarcia zaworu",
+    "ru": "Установить степень открытия клапана",
+    "ko": "밸브 개방 정도 설정",
+    "ar": "تعيين درجة فتح الصمام"
+  },
+  "titleFormatted": {
+    "en": "Set valve opening degree to [[val]]",
+    "nl": "Stel klepopeningsgraad in op [[val]]",
+    "da": "Indstil ventilåbningsgrad til [[val]]",
+    "de": "Ventilöffnungsgrad auf [[val]] einstellen",
+    "es": "Establecer grado de apertura de la válvula a [[val]]",
+    "fr": "Définir le degré d'ouverture de la vanne sur [[val]]",
+    "it": "Imposta grado di apertura della valvola a [[val]]",
+    "no": "Angi ventilåpningsgrad til [[val]]",
+    "sv": "Ställ in ventilöppningsgrad till [[val]]",
+    "pl": "Ustaw stopień otwarcia zaworu na [[val]]",
+    "ru": "Установить степень открытия клапана на [[val]]",
+    "ko": "밸브 개방 정도를 [[val]]로 설정",
+    "ar": "تعيين درجة فتح الصمام إلى [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=valve_opening_degree"
+    },
+    {
+      "name": "val",
+      "type": "range",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "value": 1,
+      "label": "%",
+      "labelMultiplier": 100,
+      "labelDecimals": 0
+    }
+  ]
+}

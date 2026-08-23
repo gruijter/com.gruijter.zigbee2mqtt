@@ -107,6 +107,42 @@
       }
     },
     {
+      "id": "external_2",
+      "title": {
+        "en": "External 2",
+        "nl": "Extern 2",
+        "da": "Ekstern 2",
+        "de": "Extern 2",
+        "es": "Externo 2",
+        "fr": "Externe 2",
+        "it": "Esterno 2",
+        "no": "Ekstern 2",
+        "sv": "Extern 2",
+        "pl": "Zewnętrzny 2",
+        "ru": "Внешний 2",
+        "ko": "외부 2",
+        "ar": "خارجي 2"
+      }
+    },
+    {
+      "id": "external_3",
+      "title": {
+        "en": "External 3",
+        "nl": "Extern 3",
+        "da": "Ekstern 3",
+        "de": "Extern 3",
+        "es": "Externo 3",
+        "fr": "Externe 3",
+        "it": "Esterno 3",
+        "no": "Ekstern 3",
+        "sv": "Extern 3",
+        "pl": "Zewnętrzny 3",
+        "ru": "Внешний 3",
+        "ko": "외부 3",
+        "ar": "خارجي 3"
+      }
+    },
+    {
       "id": "both",
       "title": {
         "en": "Both",

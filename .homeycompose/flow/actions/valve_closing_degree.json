@@ -1,0 +1,51 @@
+{
+  "title": {
+    "en": "Set valve closing degree",
+    "nl": "Stel klepsluitingsgraad in",
+    "da": "Indstil ventillukningsgrad",
+    "de": "Ventilschließgrad einstellen",
+    "es": "Establecer grado de cierre de la válvula",
+    "fr": "Définir le degré de fermeture de la vanne",
+    "it": "Imposta grado di chiusura della valvola",
+    "no": "Angi ventillukkingsgrad",
+    "sv": "Ställ in ventilstängningsgrad",
+    "pl": "Ustaw stopień zamknięcia zaworu",
+    "ru": "Установить степень закрытия клапана",
+    "ko": "밸브 폐쇄 정도 설정",
+    "ar": "تعيين درجة إغلاق الصمام"
+  },
+  "titleFormatted": {
+    "en": "Set valve closing degree to [[val]]",
+    "nl": "Stel klepsluitingsgraad in op [[val]]",
+    "da": "Indstil ventillukningsgrad til [[val]]",
+    "de": "Ventilschließgrad auf [[val]] einstellen",
+    "es": "Establecer grado de cierre de la válvula a [[val]]",
+    "fr": "Définir le degré de fermeture de la vanne sur [[val]]",
+    "it": "Imposta grado di chiusura della valvola a [[val]]",
+    "no": "Angi ventillukkingsgrad til [[val]]",
+    "sv": "Ställ in ventilstängningsgrad till [[val]]",
+    "pl": "Ustaw stopień zamknięcia zaworu na [[val]]",
+    "ru": "Установить степень закрытия клапана на [[val]]",
+    "ko": "밸브 폐쇄 정도를 [[val]]로 설정",
+    "ar": "تعيين درجة إغلاق الصمام إلى [[val]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=device|group&capabilities=valve_closing_degree"
+    },
+    {
+      "name": "val",
+      "type": "range",
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "value": 1,
+      "label": "%",
+      "labelMultiplier": 100,
+      "labelDecimals": 0
+    }
+  ]
+}

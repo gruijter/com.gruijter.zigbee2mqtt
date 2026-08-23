@@ -1,0 +1,24 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Valve opening degree",
+    "nl": "Klepopeningsgraad",
+    "da": "Ventilåbningsgrad",
+    "de": "Ventilöffnungsgrad",
+    "es": "Grado de apertura de la válvula",
+    "fr": "Degré d'ouverture de la vanne",
+    "it": "Grado di apertura della valvola",
+    "no": "Ventilåpningsgrad",
+    "sv": "Ventilöppningsgrad",
+    "pl": "Stopień otwarcia zaworu",
+    "ru": "Степень открытия клапана",
+    "ko": "밸브 개방 정도",
+    "ar": "درجة فتح الصمام"
+  },
+  "units": {
+    "en": "%"
+  },
+  "getable": true,
+  "setable": true,
+  "insights": true
+}

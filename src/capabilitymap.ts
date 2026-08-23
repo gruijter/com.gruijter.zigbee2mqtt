@@ -71,6 +71,8 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   device_temperature: ['measure_temperature.device', (v) => Number(v)],
   internalTemperature: ['measure_temperature.internal', (v) => Number(v)],
   external_temperature: ['measure_temperature.external', (v) => Number(v), (v) => ({ external_temperature: Number(v) })],
+  external_temperature_input: ['measure_temperature.external', (v) => Number(v), (v) => ({ external_temperature_input: Number(v) })], // SONOFF TRVZB
+  local_temperature_calibration: ['temperature_calibration', (v) => Number(v), (v) => ({ local_temperature_calibration: Number(v) })],
   co: ['measure_co', (v) => Number(v)],
   co2: ['measure_co2', (v) => Number(v)],
   smoke_concentration: ['measure_pm1', (v) => Number(v)],
@@ -92,6 +94,8 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   position: ['windowcoverings_set', (v) => Number(v) / 100, (v) => ({ position: Number(v) * 100 })],
   tilt: ['windowcoverings_tilt_set', (v) => Number(v) / 100, (v) => ({ tilt: Number(v) * 100 })],
   valve_state: ['valve_state', (v) => Number(v), (v) => ({ valve_state: Number(v) * 100 })],
+  valve_opening_degree: ['valve_opening_degree', (v) => Number(v) / 100, (v) => ({ valve_opening_degree: Math.round(Number(v) * 100) })], // SONOFF TRVZB
+  valve_closing_degree: ['valve_closing_degree', (v) => Number(v) / 100, (v) => ({ valve_closing_degree: Math.round(Number(v) * 100) })], // SONOFF TRVZB
   target_distance: ['target_distance', (v) => Number(v)],
   wind_speed: ['measure_wind_strength', (v) => Number(v)],
   wind_direction: ['measure_wind_angle', (v) => Number(v)],
@@ -309,6 +313,7 @@ const capabilityMap: { [key: string]: CapabilityMapEntry } = {
   system_mode: ['system_mode', (v) => v, (v) => ({ system_mode: v })], // thermostats
   fan_mode: ['fan_mode', (v) => v, (v) => ({ fan_mode: v })],
   sensor: ['sensor', (v) => v, (v) => ({ sensor: v })], // ["IN", "AL", "OU"]  // thermostats and mmWave presence
+  temperature_sensor_select: ['sensor', (v) => v, (v) => ({ temperature_sensor_select: v })], // ["internal", "external", "external_2", "external_3"]  // SONOFF TRVZB
   effect: ['effect', (v) => v, (v) => ({ effect: v })], // [blink, breathe, okay, channel_change, finish_effect, stop_effect]
   effect_11: ['effect.11', (v) => v, (v) => ({ effect_11: v })], // [blink, breathe, okay, channel_change, finish_effect, stop_effect]
   alarm: ['alarm_sound', (v) => v, (v) => ({ alarm: v })], // [stop, pre_alarm, fire, burglar]
