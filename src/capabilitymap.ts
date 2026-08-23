@@ -517,6 +517,7 @@ export function mapCapabilities(device: Z2MDevice, options: MapCapabilitiesOptio
 // Format: '(part of) description': ['homeyClass', 'iconName']
 const classIconMap: { [key: string]: [string, string] } = {
   'door sensor': ['sensor', 'contact.svg'],
+  'contact sensor': ['sensor', 'contact.svg'],
   'radiator valve': ['thermostat', 'radiator_valve.svg'],
   thermostat: ['thermostat', 'thermostat.svg'],
   w100: ['thermostat', 'thermostat.svg'],
@@ -530,6 +531,7 @@ const classIconMap: { [key: string]: [string, string] } = {
   motion: ['sensor', 'motion.svg'],
   presence: ['sensor', 'motion.svg'],
   occupancy: ['sensor', 'motion.svg'],
+  'human breathe': ['sensor', 'motion.svg'],
   'wall switch module': ['button', 'wireless_switch.svg'],
   'smart button': ['button', 'wireless_switch.svg'],
   '2 gang switch module': ['socket', '2gangswitch.svg'],
@@ -562,6 +564,15 @@ const classIconMap: { [key: string]: [string, string] } = {
   'weather station': ['sensor', 'weather_station.svg'],
 };
 
+// Fallback map used when the description matches nothing in classIconMap above.
+// Maps an exposed Z2M property to a Homey class and icon. First hit is chosen.
+// Format: 'z2m property': ['homeyClass', 'iconName']
+const propertyClassIconMap: { [key: string]: [string, string] } = {
+  contact: ['sensor', 'contact.svg'],
+  occupancy: ['sensor', 'motion.svg'],
+  presence: ['sensor', 'motion.svg'],
+};
+
 export function mapClassAndIcon(device: Z2MDevice) {
   let icon = 'icon.svg';
   let homeyClass = 'other';
@@ -574,6 +585,25 @@ export function mapClassAndIcon(device: Z2MDevice) {
         homeyClass = value[0];
       }
     });
+  }
+  // The description is free text and does not always contain a known keyword. The SONOFF
+  // SNZB-04 is described as 'Contact sensor' and the ZY-M100-S_2 as 'Mini human breathe
+  // sensor', so keyword-only matching leaves such devices as a class-less 'other' device.
+  // Fall back to the exposed properties in that case.
+  if (homeyClass === 'other' && device.definition?.exposes) {
+    const properties = new Set<string>();
+    device.definition.exposes.forEach((expose) => {
+      if (expose.property) properties.add(expose.property);
+      expose.features?.forEach((feature) => {
+        if (feature.property) properties.add(feature.property);
+      });
+    });
+    const match = Object.entries(propertyClassIconMap)
+      .find(([property]) => properties.has(property));
+    if (match) {
+      homeyClass = match[1][0];
+      icon = match[1][1];
+    }
   }
   return { homeyClass, icon };
 }
