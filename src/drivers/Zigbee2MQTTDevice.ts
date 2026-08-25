@@ -268,7 +268,16 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
       if (expose.type === 'numeric' && expose.unit) {
         capOptions.units = { en: expose.unit };
       }
-      if (expose.name && !homeyCapability.includes('onoff')) {
+      // Only sub-capabilities get their title from the Zigbee2MQTT property name. They are the
+      // ones a device can carry several of - `measure_temperature` next to
+      // `measure_temperature.local` - where the shared system title cannot tell them apart.
+      // A canonical capability already has a title that Homey, or this app for its own
+      // capabilities, ships translated in every supported language. Overriding that with the raw
+      // property name replaces it with untranslated English for everyone: `measure_temperature`
+      // showed up as "Temperature" instead of "Température", `measure_linkquality` as
+      // "Linkquality" instead of "Qualité du lien". `onoff.*` is left alone because its titles
+      // come from the driver's own `capabilitiesOptions`.
+      if (expose.name && homeyCapability.includes('.') && !homeyCapability.startsWith('onoff')) {
         const title = expose.name.replace(/_/g, ' ').replace(/^./, (c) => c.toUpperCase());
         capOptions.title = { en: title };
       }
@@ -277,26 +286,25 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
         capOptions.duration = true;
       }
 
-      if (Object.keys(capOptions).length > 0) {
-        // check if the options changed for this capability
-        let currentCapOptions: any = {};
-        try {
-          currentCapOptions = this.getCapabilityOptions(homeyCapability);
-        } catch (error) {
-          this.log(`${this.getName()} has no capability options set for ${homeyCapability}`);
+      // Read the stored options unconditionally: a device paired by an older version may carry a
+      // title that is no longer generated, and it has to be cleared rather than left behind.
+      let currentCapOptions: any = {};
+      try {
+        currentCapOptions = this.getCapabilityOptions(homeyCapability);
+      } catch (error) {
+        this.log(`${this.getName()} has no capability options set for ${homeyCapability}`);
+      }
+      if (currentCapOptions.units?.en !== capOptions.units?.en
+        || currentCapOptions.title?.en !== capOptions.title?.en
+        || currentCapOptions.duration !== capOptions.duration) {
+        if (!optionsChanged) {
+          // Only show migrating message on first change
+          this.setUnavailable(`${this.zigbee2MqttType} is migrating. Please wait!`).catch(this.error);
         }
-        if (currentCapOptions.units?.en !== capOptions.units?.en
-          || currentCapOptions.title?.en !== capOptions.title?.en
-          || currentCapOptions.duration !== capOptions.duration) {
-          if (!optionsChanged) {
-            // Only show migrating message on first change
-            this.setUnavailable(`${this.zigbee2MqttType} is migrating. Please wait!`).catch(this.error);
-          }
-          optionsChanged = true;
-          this.log('Migrating capability options for', homeyCapability, (expose.type === 'numeric' ? expose.unit : 'no unit'), expose.name);
-          await this.setCapabilityOptions(homeyCapability, capOptions).catch(this.error);
-          await setTimeoutPromise(2 * 1000).catch((error) => this.log(error));
-        }
+        optionsChanged = true;
+        this.log('Migrating capability options for', homeyCapability, (expose.type === 'numeric' ? expose.unit : 'no unit'), expose.name);
+        await this.setCapabilityOptions(homeyCapability, capOptions).catch(this.error);
+        await setTimeoutPromise(2 * 1000).catch((error) => this.log(error));
       }
     }
     if (optionsChanged) this.restartDevice(1000).catch((error) => this.error(error));
