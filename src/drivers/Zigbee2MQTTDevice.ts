@@ -35,6 +35,13 @@ const setTimeoutPromise = util.promisify(setTimeout);
 
 // Store version - increment when CapabilityMappings format changes
 const STORE_VERSION = 2;
+const SWITCH_REPORT_TIMEOUT = 2000;
+
+interface PendingSwitch {
+  expected: boolean;
+  reported?: boolean;
+  timeout: NodeJS.Timeout;
+}
 
 // Capabilities that support transition duration (when the Z2M device has the transition option)
 const DURATION_CAPABILITIES = ['dim', 'dim.l1', 'dim.l2', 'light_temperature', 'light_hue', 'light_saturation', 'onoff'];
@@ -51,6 +58,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
   bridgeOffline: boolean;
   capabilityListeners: Record<string, boolean>;
   unmappedLogged: Set<string> = new Set();
+  private pendingSwitches = new Map<string, PendingSwitch>();
 
   abstract getDeviceInfo(): { type: 'group', device: Z2MGroup, devices: Z2MDevice[] } |
     { type: 'device', device: Z2MDevice } |
@@ -380,7 +388,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
       throw Error(`${payLoadArray[1]} command not supported`);
     }
 
-    await this.bridge.client.publishAsync(`${this.deviceTopic}/set`, JSON.stringify(payload));
+    await this.publishSet(JSON.stringify(payload), payload);
     this.log(`${JSON.stringify(payload)} sent by ${source}`);
   }
 
@@ -413,8 +421,78 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     if (!this.isStoreUpToDate()) throw Error('Store outdated');
     if (!payload) throw Error('setCommand started without payload');
 
-    await this.bridge.client.publishAsync(`${this.deviceTopic}/set`, payload);
-    this.log(`${payload} sent by ${source}`);
+    let properties;
+    try {
+      properties = JSON.parse(payload);
+    } catch {
+      // Custom payloads are passed through verbatim.
+    }
+    await this.publishSet(payload, properties);
+    this.log(`Custom payload sent by ${source}`);
+  }
+
+  private switchCapability(property: string): string | undefined {
+    if (property !== 'state' && !property.startsWith('state_')) return undefined;
+    const capability = this.store.capabilityMappings[property]?.homeyCapabilities[0];
+    return capability === 'onoff' || capability?.startsWith('onoff.') ? capability : undefined;
+  }
+
+  private clearPendingSwitch(capability: string) {
+    const pending = this.pendingSwitches.get(capability);
+    if (pending) {
+      this.homey.clearTimeout(pending.timeout);
+      this.pendingSwitches.delete(capability);
+    }
+  }
+
+  private async publishSet(payload: string, properties?: Record<string, unknown>) {
+    const started = new Map<string, PendingSwitch>();
+    for (const [property, value] of Object.entries(properties ?? {})) {
+      const capability = this.switchCapability(property);
+      if (!capability) continue;
+      this.clearPendingSwitch(capability);
+      if (value !== 'ON' && value !== 'OFF') continue;
+
+      const pending: PendingSwitch = {
+        expected: value === 'ON',
+        timeout: this.homey.setTimeout(() => {
+          this.pendingSwitches.delete(capability);
+          if (pending.reported !== undefined) {
+            this.log(`No confirmation for ${capability}, applying last reported value ${pending.reported}`);
+            this.setCapability(capability, pending.reported).catch(this.error);
+          }
+        }, SWITCH_REPORT_TIMEOUT),
+      };
+      this.pendingSwitches.set(capability, pending);
+      started.set(capability, pending);
+    }
+    try {
+      await this.bridge.client.publishAsync(`${this.deviceTopic}/set`, payload);
+    } catch (error) {
+      for (const [capability, pending] of started) {
+        if (this.pendingSwitches.get(capability) === pending) {
+          this.clearPendingSwitch(capability);
+          if (pending.reported !== undefined) this.setCapability(capability, pending.reported).catch(this.error);
+        }
+      }
+      throw error;
+    }
+  }
+
+  private handleSwitchReport(property: string, value: unknown): boolean {
+    const capability = this.switchCapability(property);
+    if (!capability) return false;
+    if (value !== 'ON' && value !== 'OFF') return true;
+    const reported = value === 'ON';
+    const pending = this.pendingSwitches.get(capability);
+    if (pending && pending.expected !== reported) {
+      if (pending.reported === undefined) this.log(`Deferring ${property}=${value} while awaiting switch confirmation`);
+      pending.reported = reported;
+    } else {
+      this.clearPendingSwitch(capability);
+      this.setCapability(capability, reported).catch(this.error);
+    }
+    return true;
   }
 
   // ============================================================================
@@ -504,9 +582,11 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
   private async handleDeviceStateMessage(z2mState: Z2MState) {
     let requiresMigration = false;
     const discoveredProperties: string[] = this.store.discoveredProperties || [];
+    // Consume switch reports in MQTT arrival order, before awaiting telemetry or migration.
+    const otherProperties = Object.entries(z2mState).filter(([key, value]) => !this.handleSwitchReport(key, value));
 
     // First pass: check for newly discovered properties missing from Z2M exposes
-    for (const [z2mProperty] of Object.entries(z2mState)) {
+    for (const [z2mProperty] of otherProperties) {
       const mapping = this.store.capabilityMappings?.[z2mProperty];
       if (!mapping) {
         if (!discoveredProperties.includes(z2mProperty) && isPropertySupported(z2mProperty)) {
@@ -526,7 +606,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
     }
 
     // Second pass: process the capability values
-    for (const [z2mProperty, z2mValue] of Object.entries(z2mState)) {
+    for (const [z2mProperty, z2mValue] of otherProperties) {
       const mapping = this.store.capabilityMappings?.[z2mProperty];
       if (!mapping) {
         if (!this.unmappedLogged.has(z2mProperty) && !isPropertySupported(z2mProperty)) {
@@ -692,6 +772,7 @@ export default abstract class Zigbee2MQTTDevice extends Homey.Device {
   }
 
   destroyListeners() {
+    for (const capability of this.pendingSwitches.keys()) this.clearPendingSwitch(capability);
     if (!this.bridge?.client) return;
     this.log('removing listeners', this.getName());
     this.removeBridgeListeners();

@@ -59,51 +59,20 @@ module.exports = class MyApp extends Homey.App {
     // const setDimL1 = this.homey.flow.getActionCard('set_dim.l1');
     // setDimL1.registerRunListener((args) => args.device.setCommand({ brightness_l1: Number(args.dim) * 254 }, 'flow'));
 
-    const actionListeners: Record<string, Homey.FlowCardAction> = {};
     const actionList = this.manifest.flow.actions as ManifestFlowAction[];
 
     actionList.forEach((action) => {
-      // actions for bridge
-      if (action.args && action.args[0].filter && action.args[0].filter.includes('bridge')) {
-        this.log('setting up Bridge action listener', action.id);
-        actionListeners[action.id] = this.homey.flow.getActionCard(action.id);
-        actionListeners[action.id].registerRunListener(async (args) => {
-          try {
-            const method = (args.device as any)[action.id];
-            if (typeof method === 'function') {
-              await method.call(args.device, args.val, 'flow');
-            } else {
-              throw new Error(`Action ${action.id} is not implemented on this device`);
-            }
-          } catch (error) {
-            this.error(error);
-          }
-        });
-        return; // Skip device/group registration for bridge actions
-      }
-
-      // actions for device or group
       this.log('setting up action listener', action.id);
-      actionListeners[action.id] = this.homey.flow.getActionCard(action.id);
-      actionListeners[action.id].registerRunListener(async (args) => {
-        try {
-          const device = args.device as Zigbee2MQTTDevice;
-          await device.setCapabilityCommand(action.id, args.val, 'flow');
-        } catch (error) {
-          this.error(error);
+      this.homey.flow.getActionCard(action.id).registerRunListener(async (args) => {
+        if (action.args?.[0]?.filter?.includes('bridge')) {
+          const method = (args.device as any)[action.id];
+          if (typeof method !== 'function') throw new Error(`Action ${action.id} is not implemented on this device`);
+          return method.call(args.device, args.val, 'flow');
         }
+        const device = args.device as Zigbee2MQTTDevice;
+        if (action.id === 'custom_payload_set') return device.setCustomPayload(args.val, 'flow');
+        return device.setCapabilityCommand(action.id, args.val, 'flow');
       });
-    });
-
-    // add custom payload action
-    this.log('setting up action listener custom_payload_set');
-    actionListeners.custom_payload_set = this.homey.flow.getActionCard('custom_payload_set');
-    actionListeners.custom_payload_set.registerRunListener(async (args) => {
-      try {
-        await args.device.setCustomPayload(args.val, 'flow');
-      } catch (error) {
-        this.error(error);
-      }
     });
 
     // Register condition cards
