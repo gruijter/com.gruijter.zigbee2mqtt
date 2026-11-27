@@ -93,52 +93,6 @@
     "triggers": [
       {
         "title": {
-          "en": "The action changed",
-          "nl": "De actie is gewijzigd",
-          "da": "Handling ændret",
-          "de": "Die Aktion wurde geändert",
-          "es": "La acción cambió",
-          "fr": "L'action a changé",
-          "it": "L'azione è cambiata",
-          "no": "Handlingen endret",
-          "sv": "Åtgärden ändrades",
-          "pl": "Akcja została zmieniona",
-          "ru": "Действие изменилось",
-          "ko": "작업이 변경되었습니다"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device|group&capabilities=action"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action",
-              "nl": "Actie",
-              "da": "Handling",
-              "de": "Aktion",
-              "es": "Acción",
-              "fr": "Action",
-              "it": "Azione",
-              "no": "Handling",
-              "sv": "Åtgärd",
-              "pl": "Akcja",
-              "ru": "Действие",
-              "ko": "작업"
-            },
-            "example": "off"
-          }
-        ],
-        "id": "action_changed"
-      },
-      {
-        "title": {
           "en": "Action event received",
           "nl": "Actiegebeurtenis ontvangen",
           "da": "Handling begivenhed modtaget",
@@ -274,6 +228,52 @@
           }
         ],
         "id": "action_group_changed"
+      },
+      {
+        "title": {
+          "en": "The action changed",
+          "nl": "De actie is gewijzigd",
+          "da": "Handling ændret",
+          "de": "Die Aktion wurde geändert",
+          "es": "La acción cambió",
+          "fr": "L'action a changé",
+          "it": "L'azione è cambiata",
+          "no": "Handlingen endret",
+          "sv": "Åtgärden ändrades",
+          "pl": "Akcja została zmieniona",
+          "ru": "Действие изменилось",
+          "ko": "작업이 변경되었습니다"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=action"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "action",
+            "type": "string",
+            "title": {
+              "en": "Action",
+              "nl": "Actie",
+              "da": "Handling",
+              "de": "Aktion",
+              "es": "Acción",
+              "fr": "Action",
+              "it": "Azione",
+              "no": "Handling",
+              "sv": "Åtgärd",
+              "pl": "Akcja",
+              "ru": "Действие",
+              "ko": "작업"
+            },
+            "example": "off"
+          }
+        ],
+        "id": "action_changed"
       },
       {
         "title": {
@@ -1321,58 +1321,6 @@
       },
       {
         "title": {
-          "en": "Child Lock Deactivated",
-          "nl": "Kinderslot Gedeactiveerd",
-          "da": "Børnesikring deaktiveret",
-          "de": "Kindersicherung deaktiviert",
-          "es": "Bloqueo para niños desactivado",
-          "fr": "Sécurité enfant désactivée",
-          "it": "Blocco bambini disattivato",
-          "no": "Barnesikring deaktivert",
-          "sv": "Barnspärr inaktiverad",
-          "pl": "Blokada rodzicielska wyłączona",
-          "ru": "Детский замок деактивирован",
-          "ko": "차일드락 비활성화됨",
-          "ar": "تم إلغاء تفعيل قفل الأطفال"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device|group&capabilities=locked.child"
-          }
-        ],
-        "id": "locked.child_false"
-      },
-      {
-        "title": {
-          "en": "Child Lock Activated",
-          "nl": "Kinderslot Geactiveerd",
-          "da": "Børnesikring aktiveret",
-          "de": "Kindersicherung aktiviert",
-          "es": "Bloqueo para niños activado",
-          "fr": "Sécurité enfant activée",
-          "it": "Blocco bambini attivato",
-          "no": "Barnesikring aktivert",
-          "sv": "Barnspärr aktiverad",
-          "pl": "Blokada rodzicielska włączona",
-          "ru": "Детский замок активирован",
-          "ko": "차일드락 활성화됨",
-          "ar": "تم تفعيل قفل الأطفال"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device|group&capabilities=locked.child"
-          }
-        ],
-        "id": "locked.child_true"
-      },
-      {
-        "title": {
           "en": "Hand Open Unlocked",
           "nl": "Hand Open Ontgrendeld",
           "da": "Håndåben låst op",
@@ -1474,6 +1422,58 @@
           }
         ],
         "id": "locked.hooks_true"
+      },
+      {
+        "title": {
+          "en": "Child Lock Deactivated",
+          "nl": "Kinderslot Gedeactiveerd",
+          "da": "Børnesikring deaktiveret",
+          "de": "Kindersicherung deaktiviert",
+          "es": "Bloqueo para niños desactivado",
+          "fr": "Sécurité enfant désactivée",
+          "it": "Blocco bambini disattivato",
+          "no": "Barnesikring deaktivert",
+          "sv": "Barnspärr inaktiverad",
+          "pl": "Blokada rodzicielska wyłączona",
+          "ru": "Детский замок деактивирован",
+          "ko": "차일드락 비활성화됨",
+          "ar": "تم إلغاء تفعيل قفل الأطفال"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=locked.child"
+          }
+        ],
+        "id": "locked.child_false"
+      },
+      {
+        "title": {
+          "en": "Child Lock Activated",
+          "nl": "Kinderslot Geactiveerd",
+          "da": "Børnesikring aktiveret",
+          "de": "Kindersicherung aktiviert",
+          "es": "Bloqueo para niños activado",
+          "fr": "Sécurité enfant activée",
+          "it": "Blocco bambini attivato",
+          "no": "Barnesikring aktivert",
+          "sv": "Barnspärr aktiverad",
+          "pl": "Blokada rodzicielska włączona",
+          "ru": "Детский замок активирован",
+          "ko": "차일드락 활성화됨",
+          "ar": "تم تفعيل قفل الأطفال"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=locked.child"
+          }
+        ],
+        "id": "locked.child_true"
       },
       {
         "title": {
@@ -5360,66 +5360,6 @@
       },
       {
         "title": {
-          "en": "Turn Child Lock On or Off",
-          "nl": "Zet kinderslot Aan of Uit",
-          "da": "Tænd eller sluk børnesikringen",
-          "de": "Kindersicherung ein- oder ausschalten",
-          "es": "Activar o desactivar el bloqueo infantil",
-          "fr": "Activer ou désactiver le verrouillage enfant",
-          "it": "Attiva o disattiva il blocco bambini",
-          "no": "Slå barnelås på eller av",
-          "sv": "Slå på eller av barnlåset",
-          "pl": "Włącz lub wyłącz blokadę rodzicielską",
-          "ru": "Включить или выключить детский замок",
-          "ko": "아동 잠금 장치를 켜거나 끄세요",
-          "ar": "تشغيل أو إيقاف قفل الأطفال"
-        },
-        "titleFormatted": {
-          "en": "Turn Child Lock On: [[val]]",
-          "nl": "Zet kinderslot Aan: [[val]]",
-          "da": "Tænd børnesikring: [[val]]",
-          "de": "Kindersicherung einschalten: [[val]]",
-          "es": "Activar bloqueo infantil: [[val]]",
-          "fr": "Activer le verrouillage enfant: [[val]]",
-          "it": "Attiva il blocco bambini: [[val]]",
-          "no": "Slå på barnelås: [[val]]",
-          "sv": "Slå på barnlås: [[val]]",
-          "pl": "Włącz blokadę rodzicielską: [[val]]",
-          "ru": "Включить детский замок: [[val]]",
-          "ko": "아동 잠금 장치 켜기: [[val]]",
-          "ar": "تشغيل قفل الأطفال: [[val]]"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=device|group&capabilities=locked.child"
-          },
-          {
-            "type": "checkbox",
-            "name": "val",
-            "title": {
-              "en": "On",
-              "nl": "Aan",
-              "da": "Til",
-              "de": "An",
-              "es": "Encendido",
-              "fr": "Activé",
-              "it": "Acceso",
-              "no": "På",
-              "sv": "På",
-              "pl": "Włączone",
-              "ru": "Включено",
-              "ko": "켜짐",
-              "ar": "تشغيل"
-            }
-          }
-        ],
-        "id": "locked.child"
-      },
-      {
-        "title": {
           "en": "Turn Hand Open On or Off",
           "nl": "Zet Handmatig Openen Aan of Uit",
           "da": "Slå manuel åbning til eller fra",
@@ -5515,6 +5455,66 @@
           }
         ],
         "id": "locked.hooks"
+      },
+      {
+        "title": {
+          "en": "Turn Child Lock On or Off",
+          "nl": "Zet kinderslot Aan of Uit",
+          "da": "Tænd eller sluk børnesikringen",
+          "de": "Kindersicherung ein- oder ausschalten",
+          "es": "Activar o desactivar el bloqueo infantil",
+          "fr": "Activer ou désactiver le verrouillage enfant",
+          "it": "Attiva o disattiva il blocco bambini",
+          "no": "Slå barnelås på eller av",
+          "sv": "Slå på eller av barnlåset",
+          "pl": "Włącz lub wyłącz blokadę rodzicielską",
+          "ru": "Включить или выключить детский замок",
+          "ko": "아동 잠금 장치를 켜거나 끄세요",
+          "ar": "تشغيل أو إيقاف قفل الأطفال"
+        },
+        "titleFormatted": {
+          "en": "Turn Child Lock On: [[val]]",
+          "nl": "Zet kinderslot Aan: [[val]]",
+          "da": "Tænd børnesikring: [[val]]",
+          "de": "Kindersicherung einschalten: [[val]]",
+          "es": "Activar bloqueo infantil: [[val]]",
+          "fr": "Activer le verrouillage enfant: [[val]]",
+          "it": "Attiva il blocco bambini: [[val]]",
+          "no": "Slå på barnelås: [[val]]",
+          "sv": "Slå på barnlås: [[val]]",
+          "pl": "Włącz blokadę rodzicielską: [[val]]",
+          "ru": "Включить детский замок: [[val]]",
+          "ko": "아동 잠금 장치 켜기: [[val]]",
+          "ar": "تشغيل قفل الأطفال: [[val]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device|group&capabilities=locked.child"
+          },
+          {
+            "type": "checkbox",
+            "name": "val",
+            "title": {
+              "en": "On",
+              "nl": "Aan",
+              "da": "Til",
+              "de": "An",
+              "es": "Encendido",
+              "fr": "Activé",
+              "it": "Acceso",
+              "no": "På",
+              "sv": "På",
+              "pl": "Włączone",
+              "ru": "Включено",
+              "ko": "켜짐",
+              "ar": "تشغيل"
+            }
+          }
+        ],
+        "id": "locked.child"
       },
       {
         "title": {

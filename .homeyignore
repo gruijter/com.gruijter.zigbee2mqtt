@@ -1,7 +1,13 @@
 tmp_*
+tests/
 zzz_*
 /.vscode/
 roadmap.txt
 .claude
 .github
 AGENTS.md
+
+# AI development tooling
+graft/
+.graft/
+.ignore
